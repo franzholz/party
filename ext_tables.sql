@@ -503,16 +503,17 @@ CREATE TABLE tx_party_documents (
 
 
 #
-# Table structure for table 'tx_party_email_addresses'
+# Table structure for table 'tx_party_eletronic_address_identifiers'
 #
-CREATE TABLE tx_party_email_addresses (
+CREATE TABLE tx_party_eletronic_address_identifiers (
 	uid int(11) NOT NULL auto_increment,
 	pid int(11) DEFAULT '0' NOT NULL,
 	tstamp int(11) DEFAULT '0' NOT NULL,
 	crdate int(11) DEFAULT '0' NOT NULL,
 	cruser_id int(11) DEFAULT '0' NOT NULL,
 	deleted tinyint(4) DEFAULT '0' NOT NULL,
-	email_address varchar(90) DEFAULT '' NOT NULL,
+	type int(11) DEFAULT '0' NOT NULL,
+	electronic_address_identifier varchar(90) DEFAULT '' NOT NULL,
 	remarks text NOT NULL,
 	
 	PRIMARY KEY (uid),
@@ -553,7 +554,7 @@ CREATE TABLE tx_party_languages (
 	cruser_id int(11) DEFAULT '0' NOT NULL,
 	deleted tinyint(4) DEFAULT '0' NOT NULL,
 	language int(11) DEFAULT '0' NOT NULL,
-	type blob NOT NULL,
+	type int(11) DEFAULT '0' NOT NULL,
 	read_skills varchar(4) DEFAULT '' NOT NULL,
 	write_skills varchar(4) DEFAULT '' NOT NULL,
 	listen_skills varchar(4) DEFAULT '' NOT NULL,
@@ -767,26 +768,6 @@ CREATE TABLE tx_party_stock_markets (
 
 
 #
-# Table structure for table 'tx_party_urls'
-#
-CREATE TABLE tx_party_urls (
-	uid int(11) NOT NULL auto_increment,
-	pid int(11) DEFAULT '0' NOT NULL,
-	tstamp int(11) DEFAULT '0' NOT NULL,
-	crdate int(11) DEFAULT '0' NOT NULL,
-	cruser_id int(11) DEFAULT '0' NOT NULL,
-	deleted tinyint(4) DEFAULT '0' NOT NULL,
-	title varchar(90) DEFAULT '' NOT NULL,
-	url varchar(180) DEFAULT '' NOT NULL,
-	remarks text NOT NULL,
-	
-	PRIMARY KEY (uid),
-	KEY parent (pid)
-);
-
-
-
-#
 # Table structure for table 'tx_party_vehicles'
 #
 CREATE TABLE tx_party_vehicles (
@@ -871,6 +852,22 @@ CREATE TABLE tx_party_parties_habits_mm (
 
 
 
+
+#
+# Table structure for table 'tx_party_parties_allergies_mm'
+# 
+#
+CREATE TABLE tx_party_parties_allergies_mm (
+  uid_local int(11) DEFAULT '0' NOT NULL,
+  uid_foreign int(11) DEFAULT '0' NOT NULL,
+  tablenames varchar(30) DEFAULT '' NOT NULL,
+  sorting int(11) DEFAULT '0' NOT NULL,
+  KEY uid_local (uid_local),
+  KEY uid_foreign (uid_foreign)
+);
+
+
+
 #
 # Table structure for table 'tx_party_parties'
 #
@@ -903,7 +900,6 @@ CREATE TABLE tx_party_parties (
 	gender int(11) DEFAULT '0' NOT NULL,
 	hobbies int(11) DEFAULT '0' NOT NULL,
 	habits int(11) DEFAULT '0' NOT NULL,
-	taxation_office_id varchar(90) DEFAULT '' NOT NULL,
 	organisation_type int(11) DEFAULT '0' NOT NULL,
 	organisation_nature int(11) DEFAULT '0' NOT NULL,
 	company_registration_id varchar(90) DEFAULT '' NOT NULL,
@@ -930,6 +926,139 @@ CREATE TABLE tx_party_parties (
 	occupations tinytext NOT NULL,
 	qualifications tinytext NOT NULL,
 	stock_markets tinytext NOT NULL,
+	events tinytext NOT NULL,
+	identifiers tinytext NOT NULL,
+	memberships tinytext NOT NULL,
+	allergies int(11) DEFAULT '0' NOT NULL,
+	favourites tinytext NOT NULL,
+	preferences tinytext NOT NULL,
+	
+	PRIMARY KEY (uid),
+	KEY parent (pid)
+);
+
+
+
+#
+# Table structure for table 'tx_party_events'
+#
+CREATE TABLE tx_party_events (
+	uid int(11) NOT NULL auto_increment,
+	pid int(11) DEFAULT '0' NOT NULL,
+	tstamp int(11) DEFAULT '0' NOT NULL,
+	crdate int(11) DEFAULT '0' NOT NULL,
+	cruser_id int(11) DEFAULT '0' NOT NULL,
+	deleted tinyint(4) DEFAULT '0' NOT NULL,
+	type int(11) DEFAULT '0' NOT NULL,
+	date int(11) DEFAULT '0' NOT NULL,
+	date_from int(11) DEFAULT '0' NOT NULL,
+	date_to int(11) DEFAULT '0' NOT NULL,
+	remarks text NOT NULL,
+	
+	PRIMARY KEY (uid),
+	KEY parent (pid)
+);
+
+
+
+#
+# Table structure for table 'tx_party_identifiers'
+#
+CREATE TABLE tx_party_identifiers (
+	uid int(11) NOT NULL auto_increment,
+	pid int(11) DEFAULT '0' NOT NULL,
+	tstamp int(11) DEFAULT '0' NOT NULL,
+	crdate int(11) DEFAULT '0' NOT NULL,
+	cruser_id int(11) DEFAULT '0' NOT NULL,
+	deleted tinyint(4) DEFAULT '0' NOT NULL,
+	type int(11) DEFAULT '0' NOT NULL,
+	identifier varchar(90) DEFAULT '' NOT NULL,
+	issue_date int(11) DEFAULT '0' NOT NULL,
+	expiry_date int(11) DEFAULT '0' NOT NULL,
+	remarks text NOT NULL,
+	
+	PRIMARY KEY (uid),
+	KEY parent (pid)
+);
+
+
+
+#
+# Table structure for table 'tx_party_memberships'
+#
+CREATE TABLE tx_party_memberships (
+	uid int(11) NOT NULL auto_increment,
+	pid int(11) DEFAULT '0' NOT NULL,
+	tstamp int(11) DEFAULT '0' NOT NULL,
+	crdate int(11) DEFAULT '0' NOT NULL,
+	cruser_id int(11) DEFAULT '0' NOT NULL,
+	deleted tinyint(4) DEFAULT '0' NOT NULL,
+	type int(11) DEFAULT '0' NOT NULL,
+	organisation int(11) DEFAULT '0' NOT NULL,
+	issue_date int(11) DEFAULT '0' NOT NULL,
+	expiry_date int(11) DEFAULT '0' NOT NULL,
+	remarks text NOT NULL,
+	
+	PRIMARY KEY (uid),
+	KEY parent (pid)
+);
+
+
+
+#
+# Table structure for table 'tx_party_allergies'
+#
+CREATE TABLE tx_party_allergies (
+	uid int(11) NOT NULL auto_increment,
+	pid int(11) DEFAULT '0' NOT NULL,
+	tstamp int(11) DEFAULT '0' NOT NULL,
+	crdate int(11) DEFAULT '0' NOT NULL,
+	cruser_id int(11) DEFAULT '0' NOT NULL,
+	sorting int(10) DEFAULT '0' NOT NULL,
+	deleted tinyint(4) DEFAULT '0' NOT NULL,
+	short_title varchar(30) DEFAULT '' NOT NULL,
+	title varchar(60) DEFAULT '' NOT NULL,
+	long_title varchar(90) DEFAULT '' NOT NULL,
+	
+	PRIMARY KEY (uid),
+	KEY parent (pid)
+);
+
+
+
+#
+# Table structure for table 'tx_party_favourites'
+#
+CREATE TABLE tx_party_favourites (
+	uid int(11) NOT NULL auto_increment,
+	pid int(11) DEFAULT '0' NOT NULL,
+	tstamp int(11) DEFAULT '0' NOT NULL,
+	crdate int(11) DEFAULT '0' NOT NULL,
+	cruser_id int(11) DEFAULT '0' NOT NULL,
+	deleted tinyint(4) DEFAULT '0' NOT NULL,
+	type int(11) DEFAULT '0' NOT NULL,
+	favourite varchar(90) DEFAULT '' NOT NULL,
+	remarks text NOT NULL,
+	
+	PRIMARY KEY (uid),
+	KEY parent (pid)
+);
+
+
+
+#
+# Table structure for table 'tx_party_preferences'
+#
+CREATE TABLE tx_party_preferences (
+	uid int(11) NOT NULL auto_increment,
+	pid int(11) DEFAULT '0' NOT NULL,
+	tstamp int(11) DEFAULT '0' NOT NULL,
+	crdate int(11) DEFAULT '0' NOT NULL,
+	cruser_id int(11) DEFAULT '0' NOT NULL,
+	deleted tinyint(4) DEFAULT '0' NOT NULL,
+	type int(11) DEFAULT '0' NOT NULL,
+	preference varchar(90) DEFAULT '' NOT NULL,
+	remarks text NOT NULL,
 	
 	PRIMARY KEY (uid),
 	KEY parent (pid)

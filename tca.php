@@ -1759,16 +1759,28 @@ $TCA["tx_party_documents"] = array (
 
 
 
-$TCA["tx_party_email_addresses"] = array (
-	"ctrl" => $TCA["tx_party_email_addresses"]["ctrl"],
+$TCA["tx_party_eletronic_address_identifiers"] = array (
+	"ctrl" => $TCA["tx_party_eletronic_address_identifiers"]["ctrl"],
 	"interface" => array (
-		"showRecordFieldList" => "email_address,remarks"
+		"showRecordFieldList" => "type,electronic_address_identifier,remarks"
 	),
-	"feInterface" => $TCA["tx_party_email_addresses"]["feInterface"],
+	"feInterface" => $TCA["tx_party_eletronic_address_identifiers"]["feInterface"],
 	"columns" => array (
-		"email_address" => Array (		
+		"type" => Array (		
 			"exclude" => 1,		
-			"label" => "LLL:EXT:party/locallang_db.xml:tx_party_email_addresses.email_address",		
+			"label" => "LLL:EXT:party/locallang_db.xml:tx_party_eletronic_address_identifiers.type",		
+			"config" => Array (
+				"type" => "select",	
+				"foreign_table" => "tx_party_types",	
+				"foreign_table_where" => "AND tx_party_types.pid=###STORAGE_PID### ORDER BY tx_party_types.uid",	
+				"size" => 1,	
+				"minitems" => 0,
+				"maxitems" => 1,
+			)
+		),
+		"electronic_address_identifier" => Array (		
+			"exclude" => 1,		
+			"label" => "LLL:EXT:party/locallang_db.xml:tx_party_eletronic_address_identifiers.electronic_address_identifier",		
 			"config" => Array (
 				"type" => "input",	
 				"size" => "30",	
@@ -1778,7 +1790,7 @@ $TCA["tx_party_email_addresses"] = array (
 		),
 		"remarks" => Array (		
 			"exclude" => 1,		
-			"label" => "LLL:EXT:party/locallang_db.xml:tx_party_email_addresses.remarks",		
+			"label" => "LLL:EXT:party/locallang_db.xml:tx_party_eletronic_address_identifiers.remarks",		
 			"config" => Array (
 				"type" => "text",
 				"cols" => "30",	
@@ -1787,7 +1799,7 @@ $TCA["tx_party_email_addresses"] = array (
 		),
 	),
 	"types" => array (
-		"0" => array("showitem" => "email_address;;;;1-1-1, remarks")
+		"0" => array("showitem" => "type;;;;1-1-1, electronic_address_identifier, remarks")
 	),
 	"palettes" => array (
 		"1" => array("showitem" => "")
@@ -1881,9 +1893,9 @@ $TCA["tx_party_languages"] = array (
 			"exclude" => 1,		
 			"label" => "LLL:EXT:party/locallang_db.xml:tx_party_languages.type",		
 			"config" => Array (
-				"type" => "group",	
-				"internal_type" => "db",	
-				"allowed" => "tx_party_types",	
+				"type" => "select",	
+				"foreign_table" => "tx_party_types",	
+				"foreign_table_where" => "AND tx_party_types.pid=###STORAGE_PID### ORDER BY tx_party_types.uid",	
 				"size" => 1,	
 				"minitems" => 0,
 				"maxitems" => 1,
@@ -2763,63 +2775,6 @@ $TCA["tx_party_stock_markets"] = array (
 
 
 
-$TCA["tx_party_urls"] = array (
-	"ctrl" => $TCA["tx_party_urls"]["ctrl"],
-	"interface" => array (
-		"showRecordFieldList" => "title,url,remarks"
-	),
-	"feInterface" => $TCA["tx_party_urls"]["feInterface"],
-	"columns" => array (
-		"title" => Array (		
-			"exclude" => 1,		
-			"label" => "LLL:EXT:party/locallang_db.xml:tx_party_urls.title",		
-			"config" => Array (
-				"type" => "input",	
-				"size" => "30",	
-				"max" => "90",	
-				"eval" => "trim",
-			)
-		),
-		"url" => Array (		
-			"exclude" => 1,		
-			"label" => "LLL:EXT:party/locallang_db.xml:tx_party_urls.url",		
-			"config" => Array (
-				"type" => "input",	
-				"size" => "30",	
-				"max" => "180",	
-				"wizards" => Array(
-					"_PADDING" => 2,
-					"link" => Array(
-						"type" => "popup",
-						"title" => "Link",
-						"icon" => "link_popup.gif",
-						"script" => "browse_links.php?mode=wizard",
-						"JSopenParams" => "height=300,width=500,status=0,menubar=0,scrollbars=1"
-					),
-				),
-				"eval" => "trim",
-			)
-		),
-		"remarks" => Array (		
-			"exclude" => 1,		
-			"label" => "LLL:EXT:party/locallang_db.xml:tx_party_urls.remarks",		
-			"config" => Array (
-				"type" => "text",
-				"cols" => "30",	
-				"rows" => "5",
-			)
-		),
-	),
-	"types" => array (
-		"0" => array("showitem" => "title;;;;2-2-2, url;;;;3-3-3, remarks")
-	),
-	"palettes" => array (
-		"1" => array("showitem" => "")
-	)
-);
-
-
-
 $TCA["tx_party_vehicles"] = array (
 	"ctrl" => $TCA["tx_party_vehicles"]["ctrl"],
 	"interface" => array (
@@ -3053,7 +3008,7 @@ $TCA["tx_party_visas"] = array (
 $TCA["tx_party_parties"] = array (
 	"ctrl" => $TCA["tx_party_parties"]["ctrl"],
 	"interface" => array (
-		"showRecordFieldList" => "type,marital_status,religion,birth_place,birth_date_time,birth_date_time_precision,birth_sign,birth_star,weight,height,breast,waist,hip,hair_colour,eye_colour,skin_colour,blood_group,physical_status,ethnicity,gender,hobbies,habits,taxation_office_id,organisation_type,organisation_nature,company_registration_id,company_registration_date,number_of_employees,remarks,names,addresses,accounts,contact_numbers,countries_of_residence,documents,emailaddresses,images,nationalities,relationships,revenues,urls,vehicles,visas,disabilities,languages,marks,occupations,qualifications,stock_markets"
+		"showRecordFieldList" => "type,marital_status,religion,birth_place,birth_date_time,birth_date_time_precision,birth_sign,birth_star,weight,height,breast,waist,hip,hair_colour,eye_colour,skin_colour,blood_group,physical_status,ethnicity,gender,hobbies,habits,organisation_type,organisation_nature,company_registration_id,company_registration_date,number_of_employees,remarks,names,addresses,accounts,contact_numbers,countries_of_residence,documents,emailaddresses,images,nationalities,relationships,revenues,urls,vehicles,visas,disabilities,languages,marks,occupations,qualifications,stock_markets,events,identifiers,memberships,allergies,favourites,preferences"
 	),
 	"feInterface" => $TCA["tx_party_parties"]["feInterface"],
 	"columns" => array (
@@ -3311,7 +3266,7 @@ $TCA["tx_party_parties"] = array (
 			"config" => Array (
 				"type" => "select",	
 				"foreign_table" => "tx_party_hobbies",	
-				"foreign_table_where" => "AND tx_party_hobbies.pid=###SITEROOT### ORDER BY tx_party_hobbies.uid",	
+				"foreign_table_where" => "AND tx_party_hobbies.pid=###STORAGE_PID### ORDER BY tx_party_hobbies.uid",	
 				"size" => 10,	
 				"minitems" => 0,
 				"maxitems" => 99,	
@@ -3324,21 +3279,11 @@ $TCA["tx_party_parties"] = array (
 			"config" => Array (
 				"type" => "select",	
 				"foreign_table" => "tx_party_habits",	
-				"foreign_table_where" => "AND tx_party_habits.pid=###SITEROOT### ORDER BY tx_party_habits.uid",	
+				"foreign_table_where" => "AND tx_party_habits.pid=###STORAGE_PID### ORDER BY tx_party_habits.uid",	
 				"size" => 10,	
 				"minitems" => 0,
 				"maxitems" => 99,	
 				"MM" => "tx_party_parties_habits_mm",
-			)
-		),
-		"taxation_office_id" => Array (		
-			"exclude" => 1,		
-			"label" => "LLL:EXT:party/locallang_db.xml:tx_party_parties.taxation_office_id",		
-			"config" => Array (
-				"type" => "input",	
-				"size" => "30",	
-				"max" => "90",	
-				"eval" => "trim",
 			)
 		),
 		"organisation_type" => Array (		
@@ -3409,14 +3354,9 @@ $TCA["tx_party_parties"] = array (
 		),
 		"names" => Array (		
 			"exclude" => 1,		
-			"label" => "LLL:EXT:party/locallang_db.xml:tx_party_parties.names",
+			"label" => "LLL:EXT:party/locallang_db.xml:tx_party_parties.names",		
 			"config" => Array (
-				'type' => 'inline',
-					'foreign_table' => 'tx_party_names',	
-					'foreign_field' => 'party',
-					'appearance' => Array (
-						'expandSingle' => 1,
-					),
+				"type" => "none",
 			)
 		),
 		"addresses" => Array (		
@@ -3552,9 +3492,426 @@ $TCA["tx_party_parties"] = array (
 				"type" => "none",
 			)
 		),
+		"events" => Array (		
+			"exclude" => 1,		
+			"label" => "LLL:EXT:party/locallang_db.xml:tx_party_parties.events",		
+			"config" => Array (
+				"type" => "none",
+			)
+		),
+		"identifiers" => Array (		
+			"exclude" => 1,		
+			"label" => "LLL:EXT:party/locallang_db.xml:tx_party_parties.identifiers",		
+			"config" => Array (
+				"type" => "none",
+			)
+		),
+		"memberships" => Array (		
+			"exclude" => 1,		
+			"label" => "LLL:EXT:party/locallang_db.xml:tx_party_parties.memberships",		
+			"config" => Array (
+				"type" => "none",
+			)
+		),
+		"allergies" => Array (		
+			"exclude" => 1,		
+			"label" => "LLL:EXT:party/locallang_db.xml:tx_party_parties.allergies",		
+			"config" => Array (
+				"type" => "select",	
+				"foreign_table" => "tx_party_allergies",	
+				"foreign_table_where" => "AND tx_party_allergies.pid=###STORAGE_PID### ORDER BY tx_party_allergies.uid",	
+				"size" => 10,	
+				"minitems" => 0,
+				"maxitems" => 99,	
+				"MM" => "tx_party_parties_allergies_mm",
+			)
+		),
+		"favourites" => Array (		
+			"exclude" => 1,		
+			"label" => "LLL:EXT:party/locallang_db.xml:tx_party_parties.favourites",		
+			"config" => Array (
+				"type" => "none",
+			)
+		),
+		"preferences" => Array (		
+			"exclude" => 1,		
+			"label" => "LLL:EXT:party/locallang_db.xml:tx_party_parties.preferences",		
+			"config" => Array (
+				"type" => "none",
+			)
+		),
 	),
 	"types" => array (
-		"0" => array("showitem" => "type;;;;1-1-1, marital_status, religion, birth_place, birth_date_time, birth_date_time_precision, birth_sign, birth_star, weight, height, breast, waist, hip, hair_colour, eye_colour, skin_colour, blood_group, physical_status, ethnicity, gender, hobbies, habits, taxation_office_id, organisation_type, organisation_nature, company_registration_id, company_registration_date, number_of_employees, remarks, names, addresses, accounts, contact_numbers, countries_of_residence, documents, emailaddresses, images, nationalities, relationships, revenues, urls, vehicles, visas, disabilities, languages, marks, occupations, qualifications, stock_markets")
+		"0" => array("showitem" => "type;;;;1-1-1, marital_status, religion, birth_place, birth_date_time, birth_date_time_precision, birth_sign, birth_star, weight, height, breast, waist, hip, hair_colour, eye_colour, skin_colour, blood_group, physical_status, ethnicity, gender, hobbies, habits, organisation_type, organisation_nature, company_registration_id, company_registration_date, number_of_employees, remarks, names, addresses, accounts, contact_numbers, countries_of_residence, documents, emailaddresses, images, nationalities, relationships, revenues, urls, vehicles, visas, disabilities, languages, marks, occupations, qualifications, stock_markets, events, identifiers, memberships, allergies, favourites, preferences")
+	),
+	"palettes" => array (
+		"1" => array("showitem" => "")
+	)
+);
+
+
+
+$TCA["tx_party_events"] = array (
+	"ctrl" => $TCA["tx_party_events"]["ctrl"],
+	"interface" => array (
+		"showRecordFieldList" => "type,date,date_from,date_to,remarks"
+	),
+	"feInterface" => $TCA["tx_party_events"]["feInterface"],
+	"columns" => array (
+		"type" => Array (		
+			"exclude" => 1,		
+			"label" => "LLL:EXT:party/locallang_db.xml:tx_party_events.type",		
+			"config" => Array (
+				"type" => "select",	
+				"foreign_table" => "tx_party_types",	
+				"foreign_table_where" => "AND tx_party_types.pid=###STORAGE_PID### ORDER BY tx_party_types.uid",	
+				"size" => 1,	
+				"minitems" => 0,
+				"maxitems" => 1,
+			)
+		),
+		"date" => Array (		
+			"exclude" => 1,		
+			"label" => "LLL:EXT:party/locallang_db.xml:tx_party_events.date",		
+			"config" => Array (
+				"type"     => "input",
+				"size"     => "8",
+				"max"      => "20",
+				"eval"     => "date",
+				"checkbox" => "0",
+				"default"  => "0"
+			)
+		),
+		"date_from" => Array (		
+			"exclude" => 1,		
+			"label" => "LLL:EXT:party/locallang_db.xml:tx_party_events.date_from",		
+			"config" => Array (
+				"type"     => "input",
+				"size"     => "8",
+				"max"      => "20",
+				"eval"     => "date",
+				"checkbox" => "0",
+				"default"  => "0"
+			)
+		),
+		"date_to" => Array (		
+			"exclude" => 1,		
+			"label" => "LLL:EXT:party/locallang_db.xml:tx_party_events.date_to",		
+			"config" => Array (
+				"type"     => "input",
+				"size"     => "8",
+				"max"      => "20",
+				"eval"     => "date",
+				"checkbox" => "0",
+				"default"  => "0"
+			)
+		),
+		"remarks" => Array (		
+			"exclude" => 1,		
+			"label" => "LLL:EXT:party/locallang_db.xml:tx_party_events.remarks",		
+			"config" => Array (
+				"type" => "text",
+				"cols" => "30",	
+				"rows" => "5",
+			)
+		),
+	),
+	"types" => array (
+		"0" => array("showitem" => "type;;;;1-1-1, date, date_from, date_to, remarks")
+	),
+	"palettes" => array (
+		"1" => array("showitem" => "")
+	)
+);
+
+
+
+$TCA["tx_party_identifiers"] = array (
+	"ctrl" => $TCA["tx_party_identifiers"]["ctrl"],
+	"interface" => array (
+		"showRecordFieldList" => "type,identifier,issue_date,expiry_date,remarks"
+	),
+	"feInterface" => $TCA["tx_party_identifiers"]["feInterface"],
+	"columns" => array (
+		"type" => Array (		
+			"exclude" => 1,		
+			"label" => "LLL:EXT:party/locallang_db.xml:tx_party_identifiers.type",		
+			"config" => Array (
+				"type" => "select",	
+				"foreign_table" => "tx_party_types",	
+				"foreign_table_where" => "AND tx_party_types.pid=###STORAGE_PID### ORDER BY tx_party_types.uid",	
+				"size" => 1,	
+				"minitems" => 0,
+				"maxitems" => 1,
+			)
+		),
+		"identifier" => Array (		
+			"exclude" => 1,		
+			"label" => "LLL:EXT:party/locallang_db.xml:tx_party_identifiers.identifier",		
+			"config" => Array (
+				"type" => "input",	
+				"size" => "30",	
+				"max" => "90",	
+				"eval" => "trim",
+			)
+		),
+		"issue_date" => Array (		
+			"exclude" => 1,		
+			"label" => "LLL:EXT:party/locallang_db.xml:tx_party_identifiers.issue_date",		
+			"config" => Array (
+				"type"     => "input",
+				"size"     => "8",
+				"max"      => "20",
+				"eval"     => "date",
+				"checkbox" => "0",
+				"default"  => "0"
+			)
+		),
+		"expiry_date" => Array (		
+			"exclude" => 1,		
+			"label" => "LLL:EXT:party/locallang_db.xml:tx_party_identifiers.expiry_date",		
+			"config" => Array (
+				"type"     => "input",
+				"size"     => "8",
+				"max"      => "20",
+				"eval"     => "date",
+				"checkbox" => "0",
+				"default"  => "0"
+			)
+		),
+		"remarks" => Array (		
+			"exclude" => 1,		
+			"label" => "LLL:EXT:party/locallang_db.xml:tx_party_identifiers.remarks",		
+			"config" => Array (
+				"type" => "text",
+				"cols" => "30",	
+				"rows" => "5",
+			)
+		),
+	),
+	"types" => array (
+		"0" => array("showitem" => "type;;;;1-1-1, identifier, issue_date, expiry_date, remarks")
+	),
+	"palettes" => array (
+		"1" => array("showitem" => "")
+	)
+);
+
+
+
+$TCA["tx_party_memberships"] = array (
+	"ctrl" => $TCA["tx_party_memberships"]["ctrl"],
+	"interface" => array (
+		"showRecordFieldList" => "type,organisation,issue_date,expiry_date,remarks"
+	),
+	"feInterface" => $TCA["tx_party_memberships"]["feInterface"],
+	"columns" => array (
+		"type" => Array (		
+			"exclude" => 1,		
+			"label" => "LLL:EXT:party/locallang_db.xml:tx_party_memberships.type",		
+			"config" => Array (
+				"type" => "select",	
+				"foreign_table" => "tx_party_types",	
+				"foreign_table_where" => "AND tx_party_types.pid=###STORAGE_PID### ORDER BY tx_party_types.uid",	
+				"size" => 1,	
+				"minitems" => 0,
+				"maxitems" => 1,
+			)
+		),
+		"organisation" => Array (		
+			"exclude" => 1,		
+			"label" => "LLL:EXT:party/locallang_db.xml:tx_party_memberships.organisation",		
+			"config" => Array (
+				"type" => "select",	
+				"foreign_table" => "tx_party_parties",	
+				"foreign_table_where" => "AND tx_party_parties.pid=###STORAGE_PID### ORDER BY tx_party_parties.uid",	
+				"size" => 1,	
+				"minitems" => 0,
+				"maxitems" => 1,
+			)
+		),
+		"issue_date" => Array (		
+			"exclude" => 1,		
+			"label" => "LLL:EXT:party/locallang_db.xml:tx_party_memberships.issue_date",		
+			"config" => Array (
+				"type"     => "input",
+				"size"     => "8",
+				"max"      => "20",
+				"eval"     => "date",
+				"checkbox" => "0",
+				"default"  => "0"
+			)
+		),
+		"expiry_date" => Array (		
+			"exclude" => 1,		
+			"label" => "LLL:EXT:party/locallang_db.xml:tx_party_memberships.expiry_date",		
+			"config" => Array (
+				"type"     => "input",
+				"size"     => "8",
+				"max"      => "20",
+				"eval"     => "date",
+				"checkbox" => "0",
+				"default"  => "0"
+			)
+		),
+		"remarks" => Array (		
+			"exclude" => 1,		
+			"label" => "LLL:EXT:party/locallang_db.xml:tx_party_memberships.remarks",		
+			"config" => Array (
+				"type" => "text",
+				"cols" => "30",	
+				"rows" => "5",
+			)
+		),
+	),
+	"types" => array (
+		"0" => array("showitem" => "type;;;;1-1-1, organisation, issue_date, expiry_date, remarks")
+	),
+	"palettes" => array (
+		"1" => array("showitem" => "")
+	)
+);
+
+
+
+$TCA["tx_party_allergies"] = array (
+	"ctrl" => $TCA["tx_party_allergies"]["ctrl"],
+	"interface" => array (
+		"showRecordFieldList" => "short_title,title,long_title"
+	),
+	"feInterface" => $TCA["tx_party_allergies"]["feInterface"],
+	"columns" => array (
+		"short_title" => Array (		
+			"exclude" => 1,		
+			"label" => "LLL:EXT:party/locallang_db.xml:tx_party_allergies.short_title",		
+			"config" => Array (
+				"type" => "input",	
+				"size" => "30",	
+				"max" => "30",	
+				"eval" => "trim",
+			)
+		),
+		"title" => Array (		
+			"exclude" => 1,		
+			"label" => "LLL:EXT:party/locallang_db.xml:tx_party_allergies.title",		
+			"config" => Array (
+				"type" => "input",	
+				"size" => "48",	
+				"max" => "60",	
+				"eval" => "trim",
+			)
+		),
+		"long_title" => Array (		
+			"exclude" => 1,		
+			"label" => "LLL:EXT:party/locallang_db.xml:tx_party_allergies.long_title",		
+			"config" => Array (
+				"type" => "input",	
+				"size" => "48",	
+				"max" => "90",	
+				"eval" => "trim",
+			)
+		),
+	),
+	"types" => array (
+		"0" => array("showitem" => "short_title;;;;1-1-1, title;;;;2-2-2, long_title;;;;3-3-3")
+	),
+	"palettes" => array (
+		"1" => array("showitem" => "")
+	)
+);
+
+
+
+$TCA["tx_party_favourites"] = array (
+	"ctrl" => $TCA["tx_party_favourites"]["ctrl"],
+	"interface" => array (
+		"showRecordFieldList" => "type,favourite,remarks"
+	),
+	"feInterface" => $TCA["tx_party_favourites"]["feInterface"],
+	"columns" => array (
+		"type" => Array (		
+			"exclude" => 1,		
+			"label" => "LLL:EXT:party/locallang_db.xml:tx_party_favourites.type",		
+			"config" => Array (
+				"type" => "select",	
+				"foreign_table" => "tx_party_types",	
+				"foreign_table_where" => "AND tx_party_types.pid=###STORAGE_PID### ORDER BY tx_party_types.uid",	
+				"size" => 1,	
+				"minitems" => 0,
+				"maxitems" => 1,
+			)
+		),
+		"favourite" => Array (		
+			"exclude" => 1,		
+			"label" => "LLL:EXT:party/locallang_db.xml:tx_party_favourites.favourite",		
+			"config" => Array (
+				"type" => "input",	
+				"size" => "30",	
+				"max" => "90",	
+				"eval" => "trim",
+			)
+		),
+		"remarks" => Array (		
+			"exclude" => 1,		
+			"label" => "LLL:EXT:party/locallang_db.xml:tx_party_favourites.remarks",		
+			"config" => Array (
+				"type" => "text",
+				"cols" => "30",	
+				"rows" => "5",
+			)
+		),
+	),
+	"types" => array (
+		"0" => array("showitem" => "type;;;;1-1-1, favourite, remarks")
+	),
+	"palettes" => array (
+		"1" => array("showitem" => "")
+	)
+);
+
+
+
+$TCA["tx_party_preferences"] = array (
+	"ctrl" => $TCA["tx_party_preferences"]["ctrl"],
+	"interface" => array (
+		"showRecordFieldList" => "type,preference,remarks"
+	),
+	"feInterface" => $TCA["tx_party_preferences"]["feInterface"],
+	"columns" => array (
+		"type" => Array (		
+			"exclude" => 1,		
+			"label" => "LLL:EXT:party/locallang_db.xml:tx_party_preferences.type",		
+			"config" => Array (
+				"type" => "select",	
+				"foreign_table" => "tx_party_types",	
+				"foreign_table_where" => "AND tx_party_types.pid=###STORAGE_PID### ORDER BY tx_party_types.uid",	
+				"size" => 1,	
+				"minitems" => 0,
+				"maxitems" => 1,
+			)
+		),
+		"preference" => Array (		
+			"exclude" => 1,		
+			"label" => "LLL:EXT:party/locallang_db.xml:tx_party_preferences.preference",		
+			"config" => Array (
+				"type" => "input",	
+				"size" => "30",	
+				"max" => "90",	
+				"eval" => "trim",
+			)
+		),
+		"remarks" => Array (		
+			"exclude" => 1,		
+			"label" => "LLL:EXT:party/locallang_db.xml:tx_party_preferences.remarks",		
+			"config" => Array (
+				"type" => "text",
+				"cols" => "30",	
+				"rows" => "5",
+			)
+		),
+	),
+	"types" => array (
+		"0" => array("showitem" => "type;;;;1-1-1, preference, remarks")
 	),
 	"palettes" => array (
 		"1" => array("showitem" => "")

@@ -3,7 +3,7 @@
 ########################################################################
 # Extension Manager/Repository config file for ext: "party"
 #
-# Auto generated 14-02-2007 17:53
+# Auto generated 26-02-2007 08:12
 #
 # Manual updates:
 # Only the data in the array - anything else is removed by next write.

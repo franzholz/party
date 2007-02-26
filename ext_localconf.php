@@ -64,7 +64,7 @@ t3lib_extMgm::addUserTSConfig('
 	options.saveDocNew.tx_party_documents=1
 ');
 t3lib_extMgm::addUserTSConfig('
-	options.saveDocNew.tx_party_email_addresses=1
+	options.saveDocNew.tx_party_eletronic_address_identifiers=1
 ');
 t3lib_extMgm::addUserTSConfig('
 	options.saveDocNew.tx_party_images=1
@@ -94,9 +94,6 @@ t3lib_extMgm::addUserTSConfig('
 	options.saveDocNew.tx_party_stock_markets=1
 ');
 t3lib_extMgm::addUserTSConfig('
-	options.saveDocNew.tx_party_urls=1
-');
-t3lib_extMgm::addUserTSConfig('
 	options.saveDocNew.tx_party_vehicles=1
 ');
 t3lib_extMgm::addUserTSConfig('
@@ -104,5 +101,23 @@ t3lib_extMgm::addUserTSConfig('
 ');
 t3lib_extMgm::addUserTSConfig('
 	options.saveDocNew.tx_party_parties=1
+');
+t3lib_extMgm::addUserTSConfig('
+	options.saveDocNew.tx_party_events=1
+');
+t3lib_extMgm::addUserTSConfig('
+	options.saveDocNew.tx_party_identifiers=1
+');
+t3lib_extMgm::addUserTSConfig('
+	options.saveDocNew.tx_party_memberships=1
+');
+t3lib_extMgm::addUserTSConfig('
+	options.saveDocNew.tx_party_allergies=1
+');
+t3lib_extMgm::addUserTSConfig('
+	options.saveDocNew.tx_party_favourites=1
+');
+t3lib_extMgm::addUserTSConfig('
+	options.saveDocNew.tx_party_preferences=1
 ');
 ?>

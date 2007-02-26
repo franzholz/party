@@ -137,9 +137,10 @@
 			<label index="tx_party_documents.group_name">Group name</label>
 			<label index="tx_party_documents.name_on_document">Name on document</label>
 			<label index="tx_party_documents.remarks">Remarks</label>
-			<label index="tx_party_email_addresses">Email Addresses</label>
-			<label index="tx_party_email_addresses.email_address">Email address</label>
-			<label index="tx_party_email_addresses.remarks">Remarks</label>
+			<label index="tx_party_eletronic_address_identifiers">Electronic Address Identifiers</label>
+			<label index="tx_party_eletronic_address_identifiers.type">Type</label>
+			<label index="tx_party_eletronic_address_identifiers.electronic_address_identifier">Electronic address identifier</label>
+			<label index="tx_party_eletronic_address_identifiers.remarks">Remarks</label>
 			<label index="tx_party_images">Images</label>
 			<label index="tx_party_images.image">Image</label>
 			<label index="tx_party_images.title">Title</label>
@@ -242,10 +243,6 @@
 			<label index="tx_party_stock_markets.market">Market</label>
 			<label index="tx_party_stock_markets.listed_code">Listed code</label>
 			<label index="tx_party_stock_markets.remarks">Remarks</label>
-			<label index="tx_party_urls">URLs</label>
-			<label index="tx_party_urls.title">Title</label>
-			<label index="tx_party_urls.url">URL</label>
-			<label index="tx_party_urls.remarks">Remarks</label>
 			<label index="tx_party_vehicles">Vehicles</label>
 			<label index="tx_party_vehicles.make">Make</label>
 			<label index="tx_party_vehicles.type">Type</label>
@@ -316,7 +313,6 @@
 			<label index="tx_party_parties.gender">Gender</label>
 			<label index="tx_party_parties.hobbies">Hobbies</label>
 			<label index="tx_party_parties.habits">Habits</label>
-			<label index="tx_party_parties.taxation_office_id">Taxation office ID</label>
 			<label index="tx_party_parties.organisation_type">Organisation type</label>
 			<label index="tx_party_parties.organisation_nature">Organisation nature</label>
 			<label index="tx_party_parties.company_registration_id">Company registration ID</label>
@@ -343,6 +339,42 @@
 			<label index="tx_party_parties.occupations">Occupations</label>
 			<label index="tx_party_parties.qualifications">Qualifications</label>
 			<label index="tx_party_parties.stock_markets">Stock markets</label>
+			<label index="tx_party_parties.events">Events</label>
+			<label index="tx_party_parties.identifiers">Identifiers</label>
+			<label index="tx_party_parties.memberships">Memberships</label>
+			<label index="tx_party_parties.allergies">Allergies</label>
+			<label index="tx_party_parties.favourites">Favourites</label>
+			<label index="tx_party_parties.preferences">Preferences</label>
+			<label index="tx_party_events">Events</label>
+			<label index="tx_party_events.type">Type</label>
+			<label index="tx_party_events.date">Date</label>
+			<label index="tx_party_events.date_from">Date from</label>
+			<label index="tx_party_events.date_to">Date to</label>
+			<label index="tx_party_events.remarks">Remarks</label>
+			<label index="tx_party_identifiers">Identifiers</label>
+			<label index="tx_party_identifiers.type">Type</label>
+			<label index="tx_party_identifiers.identifier">Identifier</label>
+			<label index="tx_party_identifiers.issue_date">Issue date</label>
+			<label index="tx_party_identifiers.expiry_date">Expiry date</label>
+			<label index="tx_party_identifiers.remarks">Remarks</label>
+			<label index="tx_party_memberships">Memberships</label>
+			<label index="tx_party_memberships.type">Type</label>
+			<label index="tx_party_memberships.organisation">Organisation</label>
+			<label index="tx_party_memberships.issue_date">Issue date</label>
+			<label index="tx_party_memberships.expiry_date">Expiry date</label>
+			<label index="tx_party_memberships.remarks">Remarks</label>
+			<label index="tx_party_allergies">Allergies</label>
+			<label index="tx_party_allergies.short_title">Short title</label>
+			<label index="tx_party_allergies.title">Title</label>
+			<label index="tx_party_allergies.long_title">Long title</label>
+			<label index="tx_party_favourites">Favourites</label>
+			<label index="tx_party_favourites.type">Type</label>
+			<label index="tx_party_favourites.favourite">Favourite</label>
+			<label index="tx_party_favourites.remarks">Remarks</label>
+			<label index="tx_party_preferences">Preferences</label>
+			<label index="tx_party_preferences.type">Type</label>
+			<label index="tx_party_preferences.preference">Preference</label>
+			<label index="tx_party_preferences.remarks">Remarks</label>
 		</languageKey>
 	</data>
 </T3locallang>
