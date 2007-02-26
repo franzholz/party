@@ -345,6 +345,7 @@
 			<label index="tx_party_parties.allergies">Allergies</label>
 			<label index="tx_party_parties.favourites">Favourites</label>
 			<label index="tx_party_parties.preferences">Preferences</label>
+			<label index="tx_party_parties.relations">Relations</label>
 			<label index="tx_party_events">Events</label>
 			<label index="tx_party_events.type">Type</label>
 			<label index="tx_party_events.date">Date</label>
@@ -375,6 +376,7 @@
 			<label index="tx_party_preferences.type">Type</label>
 			<label index="tx_party_preferences.preference">Preference</label>
 			<label index="tx_party_preferences.remarks">Remarks</label>
+			<label index="tx_party_parties_addresses">Parties/Addresses</label>
 		</languageKey>
 	</data>
 </T3locallang>

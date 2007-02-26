@@ -627,6 +627,7 @@ $TCA["tx_party_parties"] = array (
 		'cruser_id' => 'cruser_id',
 		'type' => 'type',	
 		'default_sortby' => "ORDER BY crdate",	
+		'dividers2tabs' => true,
 		'delete' => 'deleted',	
 		'dynamicConfigFile' => t3lib_extMgm::extPath($_EXTKEY).'tca.php',
 		'iconfile'          => t3lib_extMgm::extRelPath($_EXTKEY).'icon_tx_party_parties.gif',
@@ -736,6 +737,23 @@ $TCA["tx_party_preferences"] = array (
 	),
 	"feInterface" => array (
 		"fe_admin_fieldList" => "type, preference, remarks",
+	)
+);
+
+$TCA["tx_party_parties_addresses"] = array (
+	"ctrl" => array (
+	'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_parties_addresses',
+		'label'     => 'party',	
+		'tstamp'    => 'tstamp',
+		'crdate'    => 'crdate',
+		'cruser_id' => 'cruser_id',
+		'default_sortby' => "ORDER BY crdate",
+		'delete' => 'deleted',
+		'dynamicConfigFile' => t3lib_extMgm::extPath($_EXTKEY).'tca.php',
+		'iconfile'          => t3lib_extMgm::extRelPath($_EXTKEY).'icon_tx_party_parties_addresses.gif',
+	),
+	"feInterface" => array (
+		"fe_admin_fieldList" => "party, address, address_usage",
 	)
 );
 ?>
