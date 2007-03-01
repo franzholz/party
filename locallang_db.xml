@@ -365,6 +365,11 @@
 			<label index="tx_party_parties.allergies">Allergies</label>
 			<label index="tx_party_parties.favourites">Favourites</label>
 			<label index="tx_party_parties.preferences">Preferences</label>
+			<label index="tx_party_parties.person">Person</label>
+			<label index="tx_party_parties.organisation">Organisation</label>
+			<label index="tx_party_parties.events">Events</label>
+			<label index="tx_party_parties.physical">Physical</label>
+			<label index="tx_party_parties.ownership">Ownership</label>
 			<label index="tx_party_events">Event</label>
 			<label index="tx_party_events.party">Party</label>
 			<label index="tx_party_events.type">Type</label>

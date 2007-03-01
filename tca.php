@@ -1191,7 +1191,7 @@ $TCA["tx_party_accounts"] = array (
 		),
 	),
 	"types" => array (
-	"0" => array("showitem" => "party;;;;1-1-1, organisation, ownership_type, account_id, issuing_authority, account_type, remarks")
+	"0" => array("showitem" => "party;;;;1-1-1, account_id, organisation, ownership_type, issuing_authority;;;;1-1-1, account_type, remarks;;;;1-1-1")
 	),
 	"palettes" => array (
 		"1" => array("showitem" => "")
@@ -1245,7 +1245,7 @@ $TCA["tx_party_addresses"] = array (
 			"label" => "LLL:EXT:party/locallang_db.xml:tx_party_addresses.thoroughfare_number",		
 			"config" => Array (
 				"type" => "input",	
-				"size" => "30",	
+				"size" => "3",	
 				"max" => "90",	
 				"eval" => "trim",
 			)
@@ -1255,7 +1255,7 @@ $TCA["tx_party_addresses"] = array (
 			"label" => "LLL:EXT:party/locallang_db.xml:tx_party_addresses.building_name",		
 			"config" => Array (
 				"type" => "input",	
-				"size" => "30",	
+				"size" => "10",	
 				"max" => "90",	
 				"eval" => "trim",
 			)
@@ -1265,7 +1265,7 @@ $TCA["tx_party_addresses"] = array (
 			"label" => "LLL:EXT:party/locallang_db.xml:tx_party_addresses.location",		
 			"config" => Array (
 				"type" => "input",	
-				"size" => "30",	
+				"size" => "10",	
 				"max" => "90",	
 				"eval" => "trim",
 			)
@@ -1275,7 +1275,7 @@ $TCA["tx_party_addresses"] = array (
 			"label" => "LLL:EXT:party/locallang_db.xml:tx_party_addresses.lot",		
 			"config" => Array (
 				"type" => "input",	
-				"size" => "30",	
+				"size" => "10",	
 				"max" => "90",	
 				"eval" => "trim",
 			)
@@ -1284,9 +1284,9 @@ $TCA["tx_party_addresses"] = array (
 			"exclude" => 1,		
 			"label" => "LLL:EXT:party/locallang_db.xml:tx_party_addresses.premise_type",		
 			"config" => Array (
-				"type" => "group",	
-				"internal_type" => "db",	
-				"allowed" => "tx_party_types",	
+				"type" => "select",	
+				"foreign_table" => "tx_party_types",	
+				"foreign_table_where" => "AND tx_party_types.pid=###STORAGE_PID### ORDER BY tx_party_types.uid",
 				"size" => 1,	
 				"minitems" => 0,
 				"maxitems" => 1,
@@ -1297,7 +1297,7 @@ $TCA["tx_party_addresses"] = array (
 			"label" => "LLL:EXT:party/locallang_db.xml:tx_party_addresses.internal_thoroughfare",		
 			"config" => Array (
 				"type" => "input",	
-				"size" => "30",	
+				"size" => "10",	
 				"max" => "90",	
 				"eval" => "trim",
 			)
@@ -1307,7 +1307,7 @@ $TCA["tx_party_addresses"] = array (
 			"label" => "LLL:EXT:party/locallang_db.xml:tx_party_addresses.reference_location",		
 			"config" => Array (
 				"type" => "input",	
-				"size" => "30",	
+				"size" => "10",	
 				"max" => "90",	
 				"eval" => "trim",
 			)
@@ -1327,7 +1327,7 @@ $TCA["tx_party_addresses"] = array (
 			"label" => "LLL:EXT:party/locallang_db.xml:tx_party_addresses.rural_delivery",		
 			"config" => Array (
 				"type" => "input",	
-				"size" => "30",	
+				"size" => "10",	
 				"max" => "90",	
 				"eval" => "trim",
 			)
@@ -1357,7 +1357,7 @@ $TCA["tx_party_addresses"] = array (
 			"label" => "LLL:EXT:party/locallang_db.xml:tx_party_addresses.postal_delivery_point",		
 			"config" => Array (
 				"type" => "input",	
-				"size" => "30",	
+				"size" => "10",	
 				"max" => "90",	
 				"eval" => "trim",
 			)
@@ -1367,7 +1367,7 @@ $TCA["tx_party_addresses"] = array (
 			"label" => "LLL:EXT:party/locallang_db.xml:tx_party_addresses.post_office",		
 			"config" => Array (
 				"type" => "input",	
-				"size" => "30",	
+				"size" => "10",	
 				"max" => "90",	
 				"eval" => "trim",
 			)
@@ -1377,7 +1377,7 @@ $TCA["tx_party_addresses"] = array (
 			"label" => "LLL:EXT:party/locallang_db.xml:tx_party_addresses.post_town",		
 			"config" => Array (
 				"type" => "input",	
-				"size" => "30",	
+				"size" => "10",	
 				"max" => "90",	
 				"eval" => "trim",
 			)
@@ -1417,10 +1417,13 @@ $TCA["tx_party_addresses"] = array (
 		),
 	),
 	"types" => array (
-		"0" => array("showitem" => "parties;;;;1-1-1, locality, thoroughfare, thoroughfare_number, building_name, location, lot, premise_type, internal_thoroughfare, reference_location, post_code, rural_delivery, longitude, latitude, postal_delivery_point, post_office, post_town, administrative_area, country, remarks")
+	"0" => array("showitem" => "parties;;;;1-1-1, thoroughfare;;1, post_code;;2, locality;;3, administrative_area;;4, country, longitude;;;;1-1-1, latitude, remarks;;;;1-1-1")
 	),
 	"palettes" => array (
-		"1" => array("showitem" => "")
+		"1" => array("showitem" => "thoroughfare_number, building_name, location, lot"),
+		"2" => array("showitem" => "premise_type, internal_thoroughfare, reference_location"),
+		"3" => array("showitem" => "rural_delivery"),
+		"4" => array("showitem" => "postal_delivery_point, post_office, post_town, "),
 	)
 );
 
@@ -1452,9 +1455,12 @@ $TCA["tx_party_contacts"] = array (
 			"exclude" => 1,		
 			"label" => "LLL:EXT:party/locallang_db.xml:tx_party_contacts.type",		
 			"config" => Array (
-				"type" => "group",	
-				"internal_type" => "db",	
-				"allowed" => "tx_party_types",	
+				"type" => "select",	
+				"items" => Array (
+					Array("",0),
+				),
+				"foreign_table" => "tx_party_types",	
+				"foreign_table_where" => "AND tx_party_types.pid=###STORAGE_PID### ORDER BY tx_party_types.uid",	
 				"size" => 1,	
 				"minitems" => 0,
 				"maxitems" => 1,
@@ -1481,7 +1487,7 @@ $TCA["tx_party_contacts"] = array (
 		),
 	),
 	"types" => array (
-		"0" => array("showitem" => "party;;;;1-1-1, type, contact, remarks")
+		"0" => array("showitem" => "party;;;;1-1-1, type, contact, remarks;;;;1-1-1")
 	),
 	"palettes" => array (
 		"1" => array("showitem" => "")
@@ -1562,7 +1568,7 @@ $TCA["tx_party_contact_numbers"] = array (
 			"label" => "LLL:EXT:party/locallang_db.xml:tx_party_contact_numbers.extension",		
 			"config" => Array (
 				"type" => "input",	
-				"size" => "30",	
+				"size" => "10",	
 				"max" => "90",	
 				"eval" => "trim",
 			)
@@ -1572,7 +1578,7 @@ $TCA["tx_party_contact_numbers"] = array (
 			"label" => "LLL:EXT:party/locallang_db.xml:tx_party_contact_numbers.pin",		
 			"config" => Array (
 				"type" => "input",	
-				"size" => "30",	
+				"size" => "10",	
 				"max" => "90",	
 				"eval" => "trim",
 			)
@@ -1597,10 +1603,10 @@ $TCA["tx_party_contact_numbers"] = array (
 		),
 	),
 	"types" => array (
-		"0" => array("showitem" => "parties;;;;1-1-1, media_type, country_code, area_code, local_number, extension, pin, contact_hours, remarks")
+		"0" => array("showitem" => "parties;;;;1-1-1, media_type, country_code, area_code, local_number;;1, contact_hours;;;;1-1-1, remarks;;;;1-1-1")
 	),
 	"palettes" => array (
-		"1" => array("showitem" => "")
+		"1" => array("showitem" => "extension, pin")
 	)
 );
 
@@ -1644,9 +1650,12 @@ $TCA["tx_party_countries_of_residence"] = array (
 			"exclude" => 1,		
 			"label" => "LLL:EXT:party/locallang_db.xml:tx_party_countries_of_residence.residency_type",		
 			"config" => Array (
-				"type" => "group",	
-				"internal_type" => "db",	
-				"allowed" => "tx_party_types",	
+				"type" => "select",	
+				"items" => Array (
+					Array("",0),
+				),
+				"foreign_table" => "tx_party_types",	
+				"foreign_table_where" => "AND tx_party_types.pid=###STORAGE_PID### ORDER BY tx_party_types.uid",	
 				"size" => 1,	
 				"minitems" => 0,
 				"maxitems" => 1,
@@ -1663,7 +1672,7 @@ $TCA["tx_party_countries_of_residence"] = array (
 		),
 	),
 	"types" => array (
-		"0" => array("showitem" => "party;;;;1-1-1, country, residency_type, remarks")
+		"0" => array("showitem" => "party;;;;1-1-1, residency_type, country, remarks;;;;1-1-1")
 	),
 	"palettes" => array (
 		"1" => array("showitem" => "")
@@ -1725,7 +1734,7 @@ $TCA["tx_party_disabilities"] = array (
 		),
 	),
 	"types" => array (
-		"0" => array("showitem" => "party;;;;1-1-1, disability, cause, remarks")
+		"0" => array("showitem" => "party;;;;1-1-1, disability, cause, remarks;;;;1-1-1")
 	),
 	"palettes" => array (
 		"1" => array("showitem" => "")
@@ -1760,9 +1769,9 @@ $TCA["tx_party_documents"] = array (
 			"exclude" => 1,		
 			"label" => "LLL:EXT:party/locallang_db.xml:tx_party_documents.document_type",		
 			"config" => Array (
-				"type" => "group",	
-				"internal_type" => "db",	
-				"allowed" => "tx_party_types",	
+				"type" => "select",	
+				"foreign_table" => "tx_party_types",	
+				"foreign_table_where" => "AND tx_party_types.pid=###STORAGE_PID### ORDER BY tx_party_types.uid",	
 				"size" => 1,	
 				"minitems" => 0,
 				"maxitems" => 1,
@@ -1805,7 +1814,7 @@ $TCA["tx_party_documents"] = array (
 			"label" => "LLL:EXT:party/locallang_db.xml:tx_party_documents.privilege",		
 			"config" => Array (
 				"type" => "input",	
-				"size" => "30",	
+				"size" => "10",	
 				"max" => "90",	
 				"eval" => "trim",
 			)
@@ -1815,7 +1824,7 @@ $TCA["tx_party_documents"] = array (
 			"label" => "LLL:EXT:party/locallang_db.xml:tx_party_documents.restriction",		
 			"config" => Array (
 				"type" => "input",	
-				"size" => "30",	
+				"size" => "10",	
 				"max" => "90",	
 				"eval" => "trim",
 			)
@@ -1825,7 +1834,7 @@ $TCA["tx_party_documents"] = array (
 			"label" => "LLL:EXT:party/locallang_db.xml:tx_party_documents.group_name",		
 			"config" => Array (
 				"type" => "input",	
-				"size" => "30",	
+				"size" => "10",	
 				"max" => "90",	
 				"eval" => "trim",
 			)
@@ -1851,10 +1860,10 @@ $TCA["tx_party_documents"] = array (
 		),
 	),
 	"types" => array (
-		"0" => array("showitem" => "party;;;;1-1-1, document_type, document_id, issued_by, issue_place, privilege, restriction, group_name, name_on_document, remarks")
+		"0" => array("showitem" => "party;;;;1-1-1, document_type, document_id, issued_by;;;;1-1-1, issue_place, name_on_document;;1;;1-1-1, remarks;;;;1-1-1")
 	),
 	"palettes" => array (
-		"1" => array("showitem" => "")
+		"1" => array("showitem" => "privilege, restriction, group_name"),
 	)
 );
 
@@ -2134,7 +2143,7 @@ $TCA["tx_party_languages"] = array (
 		),
 	),
 	"types" => array (
-		"0" => array("showitem" => "party;;;;1-1-1, language, type, read_skills, write_skills, listen_skills, speak_skills, preference, remarks")
+		"0" => array("showitem" => "party;;;;1-1-1, type, language, preference, read_skills;;;;1-1-1, write_skills, listen_skills, speak_skills, remarks;;;;1-1-1")
 	),
 	"palettes" => array (
 		"1" => array("showitem" => "")
@@ -2206,7 +2215,7 @@ $TCA["tx_party_marks"] = array (
 		),
 	),
 	"types" => array (
-		"0" => array("showitem" => "party;;;;1-1-1, mark, body_part, body_part_mark_location, remarks")
+		"0" => array("showitem" => "party;;;;1-1-1, mark, body_part;;;;1-1-1, body_part_mark_location, remarks;;;;1-1-1")
 	),
 	"palettes" => array (
 		"1" => array("showitem" => "")
@@ -2253,9 +2262,9 @@ $TCA["tx_party_nationalities"] = array (
 			"exclude" => 1,		
 			"label" => "LLL:EXT:party/locallang_db.xml:tx_party_nationalities.nationality_type",		
 			"config" => Array (
-				"type" => "group",	
-				"internal_type" => "db",	
-				"allowed" => "tx_party_types",	
+				"type" => "select",	
+				"foreign_table" => "tx_party_types",	
+				"foreign_table_where" => "AND tx_party_types.pid=###STORAGE_PID### ORDER BY tx_party_types.uid",
 				"size" => 1,	
 				"minitems" => 0,
 				"maxitems" => 1,
@@ -2272,7 +2281,7 @@ $TCA["tx_party_nationalities"] = array (
 		),
 	),
 	"types" => array (
-		"0" => array("showitem" => "party;;;;1-1-1, country, nationality_type, remarks")
+		"0" => array("showitem" => "party;;;;1-1-1, nationality_type, country, remarks;;;;1-1-1")
 	),
 	"palettes" => array (
 		"1" => array("showitem" => "")
@@ -2354,7 +2363,7 @@ $TCA["tx_party_occupations"] = array (
 			"label" => "LLL:EXT:party/locallang_db.xml:tx_party_occupations.cost_centre",		
 			"config" => Array (
 				"type" => "input",	
-				"size" => "30",	
+				"size" => "10",	
 				"max" => "90",	
 				"eval" => "trim",
 			)
@@ -2364,7 +2373,7 @@ $TCA["tx_party_occupations"] = array (
 			"label" => "LLL:EXT:party/locallang_db.xml:tx_party_occupations.reports_to",		
 			"config" => Array (
 				"type" => "input",	
-				"size" => "30",	
+				"size" => "10",	
 				"max" => "90",	
 				"eval" => "trim",
 			)
@@ -2380,10 +2389,11 @@ $TCA["tx_party_occupations"] = array (
 		),
 	),
 	"types" => array (
-		"0" => array("showitem" => "party;;;;1-1-1, role, rank, employment_type, position_title, cost_centre, reports_to, remarks")
+		"0" => array("showitem" => "party;;;;1-1-1, role;;1, position_title;;2, remarks;;;;1-1-1")
 	),
 	"palettes" => array (
-		"1" => array("showitem" => "")
+		"1" => array("showitem" => "rank, employment_type"),
+		"2" => array("showitem" => "cost_centre, reports_to"),
 	)
 );
 
@@ -2478,7 +2488,7 @@ $TCA["tx_party_names"] = array (
 			"label" => "LLL:EXT:party/locallang_db.xml:tx_party_names.other_name",		
 			"config" => Array (
 				"type" => "input",	
-				"size" => "30",	
+				"size" => "10",	
 				"max" => "90",	
 				"eval" => "trim",
 			)
@@ -2498,7 +2508,7 @@ $TCA["tx_party_names"] = array (
 			"label" => "LLL:EXT:party/locallang_db.xml:tx_party_names.alias",		
 			"config" => Array (
 				"type" => "input",	
-				"size" => "30",	
+				"size" => "10",	
 				"max" => "90",	
 				"eval" => "trim",
 			)
@@ -2508,7 +2518,7 @@ $TCA["tx_party_names"] = array (
 			"label" => "LLL:EXT:party/locallang_db.xml:tx_party_names.generation_identifier",		
 			"config" => Array (
 				"type" => "input",	
-				"size" => "30",	
+				"size" => "10",	
 				"max" => "90",	
 				"eval" => "trim",
 			)
@@ -2518,7 +2528,7 @@ $TCA["tx_party_names"] = array (
 			"label" => "LLL:EXT:party/locallang_db.xml:tx_party_names.place_name",		
 			"config" => Array (
 				"type" => "input",	
-				"size" => "30",	
+				"size" => "10",	
 				"max" => "90",	
 				"eval" => "trim",
 			)
@@ -2568,10 +2578,13 @@ $TCA["tx_party_names"] = array (
 		),
 	),
 	"types" => array (
-		"0" => array("showitem" => "party;;;;1-1-1, type, person_name_title, first_name, middle_name, ancestor_name, last_name, other_name, preceding_title, alias, generation_identifier, place_name, organisation_name_type, organisation_name, abbreviation, remarks")
+	"0" => array("showitem" => "party;;;;1-1-1, type, person_name_title;;1, first_name;;2, last_name;;3, remarks;;;;1-1-1"),
+	"1" => array("showitem" => "party;;;;1-1-1, type, organisation_name_type, organisation_name, abbreviation, remarks;;;;1-1-1")
 	),
 	"palettes" => array (
-		"1" => array("showitem" => "")
+		"1" => array("showitem" => "preceding_title"),
+		"2" => array("showitem" => "middle_name, ancestor_name"),
+		"3" => array("showitem" => "other_name, alias, generation_identifier, place_name"),
 	)
 );
 
@@ -2662,7 +2675,7 @@ $TCA["tx_party_qualifications"] = array (
 			"label" => "LLL:EXT:party/locallang_db.xml:tx_party_qualifications.way_of_study",		
 			"config" => Array (
 				"type" => "input",	
-				"size" => "30",	
+				"size" => "10",	
 				"max" => "90",	
 				"eval" => "trim",
 			)
@@ -2702,7 +2715,7 @@ $TCA["tx_party_qualifications"] = array (
 			"label" => "LLL:EXT:party/locallang_db.xml:tx_party_qualifications.course_duration",		
 			"config" => Array (
 				"type" => "input",	
-				"size" => "30",	
+				"size" => "10",	
 				"max" => "90",	
 				"eval" => "trim",
 			)
@@ -2712,7 +2725,7 @@ $TCA["tx_party_qualifications"] = array (
 			"label" => "LLL:EXT:party/locallang_db.xml:tx_party_qualifications.award",		
 			"config" => Array (
 				"type" => "input",	
-				"size" => "30",	
+				"size" => "10",	
 				"max" => "90",	
 				"eval" => "trim",
 			)
@@ -2722,7 +2735,7 @@ $TCA["tx_party_qualifications"] = array (
 			"label" => "LLL:EXT:party/locallang_db.xml:tx_party_qualifications.restriction",		
 			"config" => Array (
 				"type" => "input",	
-				"size" => "30",	
+				"size" => "10",	
 				"max" => "90",	
 				"eval" => "trim",
 			)
@@ -2732,7 +2745,7 @@ $TCA["tx_party_qualifications"] = array (
 			"label" => "LLL:EXT:party/locallang_db.xml:tx_party_qualifications.registration",		
 			"config" => Array (
 				"type" => "input",	
-				"size" => "30",	
+				"size" => "10",	
 				"max" => "90",	
 				"eval" => "trim",
 			)
@@ -2748,10 +2761,11 @@ $TCA["tx_party_qualifications"] = array (
 		),
 	),
 	"types" => array (
-		"0" => array("showitem" => "party;;;;1-1-1, qualification_name, status, institution, start_date, completion_date, way_of_study, major_subject, minor_subject, mark, course_duration, award, restriction, registration, remarks")
+		"0" => array("showitem" => "party;;;;1-1-1, qualification_name, institution, status, start_date;;;;1-1-1, completion_date;;1, major_subject;;;;1-1-1, minor_subject, mark;;2, remarks;;;;1-1-1")
 	),
 	"palettes" => array (
-		"1" => array("showitem" => "")
+		"1" => array("showitem" => "way_of_study"),
+		"2" => array("showitem" => "course_duration, award, restriction, registration"),
 	)
 );
 
@@ -2882,7 +2896,7 @@ $TCA["tx_party_revenues"] = array (
 			"label" => "LLL:EXT:party/locallang_db.xml:tx_party_revenues.amount_precision",		
 			"config" => Array (
 				"type" => "input",	
-				"size" => "30",	
+				"size" => "10",	
 				"max" => "90",	
 				"eval" => "double2,nospace",
 			)
@@ -2951,10 +2965,10 @@ $TCA["tx_party_revenues"] = array (
 		),
 	),
 	"types" => array (
-		"0" => array("showitem" => "party;;;;1-1-1, currency, amount, amount_precision, after_tax, type, period_from, period_to, source, remarks")
+		"0" => array("showitem" => "party;;;;1-1-1, type, currency, amount;;1, period_from;;;;1-1-1, period_to, source;;;;1-1-1, remarks;;;;1-1-1")
 	),
 	"palettes" => array (
-		"1" => array("showitem" => "")
+		"1" => array("showitem" => "amount_precision, after_tax"),
 	)
 );
 
@@ -3278,7 +3292,7 @@ $TCA["tx_party_visas"] = array (
 		),
 	),
 	"types" => array (
-		"0" => array("showitem" => "party;;;;1-1-1, country, number, code, issue_date, issue_place, maximum_stay, restriction, privilege, special_condition, remarks")
+		"0" => array("showitem" => "party;;;;1-1-1, country, number, code, issue_date;;;;1-1-1, issue_place, maximum_stay;;;;1-1-1, restriction, privilege, special_condition, remarks;;;;1-1-1")
 	),
 	"palettes" => array (
 		"1" => array("showitem" => "")
@@ -3363,7 +3377,7 @@ $TCA["tx_party_parties"] = array (
 			"label" => "LLL:EXT:party/locallang_db.xml:tx_party_parties.birth_date_time_precision",		
 			"config" => Array (
 				"type" => "input",	
-				"size" => "30",	
+				"size" => "10",	
 				"max" => "90",	
 				"eval" => "trim",
 			)
@@ -3463,6 +3477,7 @@ $TCA["tx_party_parties"] = array (
 			"config" => Array (
 				"type" => "select",
 				"items" => Array (
+					Array("", ""),
 					Array("LLL:EXT:party/locallang_db.xml:tx_party_parties.eye_colour.I.0", "AMBER"),
 					Array("LLL:EXT:party/locallang_db.xml:tx_party_parties.eye_colour.I.1", "BLUE"),
 					Array("LLL:EXT:party/locallang_db.xml:tx_party_parties.eye_colour.I.2", "BROWN"),
@@ -3549,9 +3564,11 @@ $TCA["tx_party_parties"] = array (
 				"type" => "select",	
 				"foreign_table" => "tx_party_hobbies",	
 				"foreign_table_where" => "AND tx_party_hobbies.pid=###STORAGE_PID### ORDER BY tx_party_hobbies.uid",	
-				"size" => 10,	
-				"minitems" => 0,
-				"maxitems" => 99,	
+				'size' => 5,
+				'autoSizeMax' => 20,
+				'minitems' => 0,
+				'maxitems' => 99,
+				'renderMode' => 'checkbox',
 				"MM" => "tx_party_parties_hobbies_mm",
 			)
 		),
@@ -3562,9 +3579,11 @@ $TCA["tx_party_parties"] = array (
 				"type" => "select",	
 				"foreign_table" => "tx_party_habits",	
 				"foreign_table_where" => "AND tx_party_habits.pid=###STORAGE_PID### ORDER BY tx_party_habits.uid",	
-				"size" => 10,	
-				"minitems" => 0,
-				"maxitems" => 99,	
+				'size' => 5,
+				'autoSizeMax' => 20,
+				'minitems' => 0,
+				'maxitems' => 99,
+				'renderMode' => 'checkbox',
 				"MM" => "tx_party_parties_habits_mm",
 			)
 		),
@@ -3900,9 +3919,11 @@ $TCA["tx_party_parties"] = array (
 				"type" => "select",	
 				"foreign_table" => "tx_party_allergies",	
 				"foreign_table_where" => "AND tx_party_allergies.pid=###STORAGE_PID### ORDER BY tx_party_allergies.uid",	
-				"size" => 10,	
-				"minitems" => 0,
-				"maxitems" => 99,	
+				'size' => 5,
+				'autoSizeMax' => 20,
+				'minitems' => 0,
+				'maxitems' => 99,
+				'renderMode' => 'checkbox',
 				"MM" => "tx_party_parties_allergies_mm",
 			)
 		),
@@ -3930,11 +3951,139 @@ $TCA["tx_party_parties"] = array (
 		),
 	),
 	"types" => array (
-	"0" => array("showitem" => "type;;;;1-1-1, marital_status, religion, birth_place, birth_date_time, birth_date_time_precision, birth_sign, birth_star, weight, height, breast, waist, hip, hair_colour, eye_colour, skin_colour, blood_group, physical_status, ethnicity, gender, hobbies, habits, organisation_type, organisation_nature, company_registration_id, company_registration_date, number_of_employees, remarks, names, addresses, accounts, contact_numbers, countries_of_residence, documents, electronic_address_identifiers, images, nationalities, relationships, revenues, urls, vehicles, contacts, visas, disabilities, languages, marks, occupations, qualifications, stock_markets, events, identifiers, memberships, allergies, favourites, preferences")
+	"0" => array("showitem" => "
+		type,
+		
+		names;;;;1-1-1, 
+		addresses,
+		contact_numbers, 
+		electronic_address_identifiers 
+		
+		images;;;;1-1-1, 
+		
+		relationships;;;;1-1-1, 
+		
+		identifiers;;;;1-1-1, 
+		
+		remarks;;;;1-1-1, 
+		
+		--div--;LLL:EXT:party/locallang_db.xml:tx_party_parties.person, 
+		
+		marital_status, 
+		religion,
+		
+		hobbies;;;;1-1-1, 
+		habits, 
+
+		favourites;;;;1-1-1, 
+		preferences,
+		
+		languages;;;;1-1-1, 
+		qualifications,
+		
+		occupations;;;;1-1-1, 
+		
+		--div--;LLL:EXT:party/locallang_db.xml:tx_party_parties.events, 
+		
+		birth_date_time;;1,
+		birth_place;;2,
+		
+		contacts;;;;1-1-1, 
+		events,
+		
+		--div--;LLL:EXT:party/locallang_db.xml:tx_party_parties.physical, 
+		
+		gender,
+		
+		weight;;;;1-1-1, 
+		height,
+		breast,
+		waist,
+		hip,
+		
+		hair_colour;;;;1-1-1, 
+		eye_colour,
+		skin_colour,
+		
+		blood_group;;;;1-1-1, 
+		physical_status,
+		ethnicity,
+		
+		allergies;;;;1-1-1, 
+		marks, 
+		disabilities,
+		
+		--div--;LLL:EXT:party/locallang_db.xml:tx_party_parties.ownership, 
+		
+		nationalities, 
+		countries_of_residence,
+
+		visas;;;;1-1-1,
+		
+		accounts;;;;1-1-1, 
+		memberships,
+		
+		documents;;;;1-1-1, 
+		
+		revenues;;;;1-1-1, 
+		
+		vehicles;;;;1-1-1, 
+	"),
+	"1" => array("showitem" => "
+		type,
+		
+		names;;;;1-1-1, 
+		addresses,
+		contact_numbers, 
+		electronic_address_identifiers 
+		
+		images;;;;1-1-1, 
+		
+		relationships;;;;1-1-1, 
+		
+		identifiers;;;;1-1-1, 
+		
+		remarks;;;;1-1-1, 
+		
+		--div--;LLL:EXT:party/locallang_db.xml:tx_party_parties.organisation, 
+		
+		organisation_type,
+		organisation_nature;;;;1-1-1, 
+		
+		company_registration_id;;;;1-1-1, 
+		
+		number_of_employees;;;;1-1-1, 
+		
+		stock_markets;;;;1-1-1, 
+		
+		--div--;LLL:EXT:party/locallang_db.xml:tx_party_parties.events, 
+		
+		company_registration_date,
+		
+		contacts;;;;1-1-1, 
+		events,
+		
+		--div--;LLL:EXT:party/locallang_db.xml:tx_party_parties.ownership, 
+		
+		nationalities, 
+		countries_of_residence,
+
+		visas;;;;1-1-1,
+		
+		accounts;;;;1-1-1, 
+		memberships,
+		
+		documents;;;;1-1-1, 
+		
+		revenues;;;;1-1-1, 
+		
+		vehicles;;;;1-1-1, 
+	"),
 	),
 	"palettes" => array (
-		"1" => array("showitem" => "")
-	)
+		"1" => array("showitem" => "birth_date_time_precision"),
+		"2" => array("showitem" => "birth_sign, birth_star"),
+	),
 );
 
 
@@ -4020,7 +4169,7 @@ $TCA["tx_party_events"] = array (
 		),
 	),
 	"types" => array (
-		"0" => array("showitem" => "party;;;;1-1-1, type, date, date_from, date_to, remarks")
+		"0" => array("showitem" => "party;;;;1-1-1, type, date;;;;1-1-1, date_from;;;;1-1-1, date_to, remarks;;;;1-1-1")
 	),
 	"palettes" => array (
 		"1" => array("showitem" => "")
@@ -4108,7 +4257,7 @@ $TCA["tx_party_identifiers"] = array (
 		),
 	),
 	"types" => array (
-		"0" => array("showitem" => "party;;;;1-1-1, type, identifier, issue_date, expiry_date, remarks")
+		"0" => array("showitem" => "party;;;;1-1-1, type, identifier, issue_date;;;;1-1-1, expiry_date, remarks;;;;1-1-1")
 	),
 	"palettes" => array (
 		"1" => array("showitem" => "")
@@ -4198,7 +4347,7 @@ $TCA["tx_party_memberships"] = array (
 		),
 	),
 	"types" => array (
-		"0" => array("showitem" => "party;;;;1-1-1, type, organisation, issue_date, expiry_date, remarks")
+		"0" => array("showitem" => "party;;;;1-1-1, type, organisation, issue_date;;;;1-1-1, expiry_date, remarks;;;;1-1-1")
 	),
 	"palettes" => array (
 		"1" => array("showitem" => "")
@@ -4310,7 +4459,7 @@ $TCA["tx_party_favourites"] = array (
 		),
 	),
 	"types" => array (
-		"0" => array("showitem" => "party;;;;1-1-1, type, favourite, remarks")
+		"0" => array("showitem" => "party;;;;1-1-1, type, favourite, remarks;;;;1-1-1")
 	),
 	"palettes" => array (
 		"1" => array("showitem" => "")
@@ -4374,7 +4523,7 @@ $TCA["tx_party_preferences"] = array (
 		),
 	),
 	"types" => array (
-		"0" => array("showitem" => "party;;;;1-1-1, type, preference, remarks")
+		"0" => array("showitem" => "party;;;;1-1-1, type, preference, remarks;;;;1-1-1")
 	),
 	"palettes" => array (
 		"1" => array("showitem" => "")
@@ -4734,7 +4883,7 @@ $TCA["tx_party_relationships"] = array (
 		),
 	),
 	"types" => array (
-		"0" => array("showitem" => "primary_party;;;;1-1-1, secondary_party, relationship_type, date_established, date_lapsed, reason_lapsed, remarks")
+		"0" => array("showitem" => "primary_party;;;;1-1-1, relationship_type, secondary_party, date_established;;;;1-1-1, date_lapsed, reason_lapsed, remarks;;;;1-1-1")
 	),
 	"palettes" => array (
 		"1" => array("showitem" => "")
