@@ -342,12 +342,13 @@ CREATE TABLE tx_party_accounts (
 	crdate int(11) DEFAULT '0' NOT NULL,
 	cruser_id int(11) DEFAULT '0' NOT NULL,
 	deleted tinyint(4) DEFAULT '0' NOT NULL,
+	party int(11) DEFAULT '0' NOT NULL,
+	organisation int(11) DEFAULT '0' NOT NULL,
 	ownership_type int(11) DEFAULT '0' NOT NULL,
 	account_id varchar(30) DEFAULT '' NOT NULL,
 	issuing_authority varchar(30) DEFAULT '' NOT NULL,
 	account_type blob NOT NULL,
 	remarks text NOT NULL,
-	organisation int(11) DEFAULT '0' NOT NULL,
 	
 	PRIMARY KEY (uid),
 	KEY parent (pid)
@@ -365,6 +366,7 @@ CREATE TABLE tx_party_addresses (
 	crdate int(11) DEFAULT '0' NOT NULL,
 	cruser_id int(11) DEFAULT '0' NOT NULL,
 	deleted tinyint(4) DEFAULT '0' NOT NULL,
+	parties tinytext NOT NULL,
 	locality varchar(90) DEFAULT '' NOT NULL,
 	thoroughfare varchar(90) DEFAULT '' NOT NULL,
 	thoroughfare_number varchar(90) DEFAULT '' NOT NULL,
@@ -384,7 +386,6 @@ CREATE TABLE tx_party_addresses (
 	administrative_area int(11) DEFAULT '0' NOT NULL,
 	country int(11) DEFAULT '0' NOT NULL,
 	remarks text NOT NULL,
-	parties tinytext NOT NULL,
 	
 	PRIMARY KEY (uid),
 	KEY parent (pid)
@@ -402,6 +403,7 @@ CREATE TABLE tx_party_contacts (
 	crdate int(11) DEFAULT '0' NOT NULL,
 	cruser_id int(11) DEFAULT '0' NOT NULL,
 	deleted tinyint(4) DEFAULT '0' NOT NULL,
+	party int(11) DEFAULT '0' NOT NULL,
 	type blob NOT NULL,
 	contact varchar(90) DEFAULT '' NOT NULL,
 	remarks text NOT NULL,
@@ -422,6 +424,7 @@ CREATE TABLE tx_party_contact_numbers (
 	crdate int(11) DEFAULT '0' NOT NULL,
 	cruser_id int(11) DEFAULT '0' NOT NULL,
 	deleted tinyint(4) DEFAULT '0' NOT NULL,
+	parties tinytext NOT NULL,
 	media_type varchar(9) DEFAULT '' NOT NULL,
 	country_code int(11) DEFAULT '0' NOT NULL,
 	area_code varchar(90) DEFAULT '' NOT NULL,
@@ -447,6 +450,7 @@ CREATE TABLE tx_party_countries_of_residence (
 	crdate int(11) DEFAULT '0' NOT NULL,
 	cruser_id int(11) DEFAULT '0' NOT NULL,
 	deleted tinyint(4) DEFAULT '0' NOT NULL,
+	party int(11) DEFAULT '0' NOT NULL,
 	country int(11) DEFAULT '0' NOT NULL,
 	residency_type blob NOT NULL,
 	remarks text NOT NULL,
@@ -467,6 +471,7 @@ CREATE TABLE tx_party_disabilities (
 	crdate int(11) DEFAULT '0' NOT NULL,
 	cruser_id int(11) DEFAULT '0' NOT NULL,
 	deleted tinyint(4) DEFAULT '0' NOT NULL,
+	party int(11) DEFAULT '0' NOT NULL,
 	disability varchar(90) DEFAULT '' NOT NULL,
 	cause varchar(90) DEFAULT '' NOT NULL,
 	remarks text NOT NULL,
@@ -487,6 +492,7 @@ CREATE TABLE tx_party_documents (
 	crdate int(11) DEFAULT '0' NOT NULL,
 	cruser_id int(11) DEFAULT '0' NOT NULL,
 	deleted tinyint(4) DEFAULT '0' NOT NULL,
+	party int(11) DEFAULT '0' NOT NULL,
 	document_type blob NOT NULL,
 	document_id varchar(90) DEFAULT '' NOT NULL,
 	issued_by int(11) DEFAULT '0' NOT NULL,
@@ -513,6 +519,7 @@ CREATE TABLE tx_party_eletronic_address_identifiers (
 	crdate int(11) DEFAULT '0' NOT NULL,
 	cruser_id int(11) DEFAULT '0' NOT NULL,
 	deleted tinyint(4) DEFAULT '0' NOT NULL,
+	parties tinytext NOT NULL,
 	type int(11) DEFAULT '0' NOT NULL,
 	electronic_address_identifier varchar(90) DEFAULT '' NOT NULL,
 	remarks text NOT NULL,
@@ -533,6 +540,8 @@ CREATE TABLE tx_party_images (
 	crdate int(11) DEFAULT '0' NOT NULL,
 	cruser_id int(11) DEFAULT '0' NOT NULL,
 	deleted tinyint(4) DEFAULT '0' NOT NULL,
+	party int(11) DEFAULT '0' NOT NULL,
+	address int(11) DEFAULT '0' NOT NULL,
 	image blob NOT NULL,
 	title varchar(90) DEFAULT '' NOT NULL,
 	description varchar(90) DEFAULT '' NOT NULL,
@@ -554,6 +563,7 @@ CREATE TABLE tx_party_languages (
 	crdate int(11) DEFAULT '0' NOT NULL,
 	cruser_id int(11) DEFAULT '0' NOT NULL,
 	deleted tinyint(4) DEFAULT '0' NOT NULL,
+	party int(11) DEFAULT '0' NOT NULL,
 	language int(11) DEFAULT '0' NOT NULL,
 	type int(11) DEFAULT '0' NOT NULL,
 	read_skills varchar(4) DEFAULT '' NOT NULL,
@@ -579,6 +589,7 @@ CREATE TABLE tx_party_marks (
 	crdate int(11) DEFAULT '0' NOT NULL,
 	cruser_id int(11) DEFAULT '0' NOT NULL,
 	deleted tinyint(4) DEFAULT '0' NOT NULL,
+	party int(11) DEFAULT '0' NOT NULL,
 	mark varchar(90) DEFAULT '' NOT NULL,
 	body_part varchar(90) DEFAULT '' NOT NULL,
 	body_part_mark_location varchar(90) DEFAULT '' NOT NULL,
@@ -600,6 +611,7 @@ CREATE TABLE tx_party_nationalities (
 	crdate int(11) DEFAULT '0' NOT NULL,
 	cruser_id int(11) DEFAULT '0' NOT NULL,
 	deleted tinyint(4) DEFAULT '0' NOT NULL,
+	party int(11) DEFAULT '0' NOT NULL,
 	country int(11) DEFAULT '0' NOT NULL,
 	nationality_type blob NOT NULL,
 	remarks text NOT NULL,
@@ -620,6 +632,7 @@ CREATE TABLE tx_party_occupations (
 	crdate int(11) DEFAULT '0' NOT NULL,
 	cruser_id int(11) DEFAULT '0' NOT NULL,
 	deleted tinyint(4) DEFAULT '0' NOT NULL,
+	party int(11) DEFAULT '0' NOT NULL,
 	role int(11) DEFAULT '0' NOT NULL,
 	rank int(11) DEFAULT '0' NOT NULL,
 	employment_type int(11) DEFAULT '0' NOT NULL,
@@ -677,6 +690,7 @@ CREATE TABLE tx_party_qualifications (
 	crdate int(11) DEFAULT '0' NOT NULL,
 	cruser_id int(11) DEFAULT '0' NOT NULL,
 	deleted tinyint(4) DEFAULT '0' NOT NULL,
+	party int(11) DEFAULT '0' NOT NULL,
 	qualification_name varchar(90) DEFAULT '' NOT NULL,
 	status int(11) DEFAULT '0' NOT NULL,
 	institution int(11) DEFAULT '0' NOT NULL,
@@ -732,9 +746,10 @@ CREATE TABLE tx_party_revenues (
 	crdate int(11) DEFAULT '0' NOT NULL,
 	cruser_id int(11) DEFAULT '0' NOT NULL,
 	deleted tinyint(4) DEFAULT '0' NOT NULL,
+	party int(11) DEFAULT '0' NOT NULL,
 	currency int(11) DEFAULT '0' NOT NULL,
-	amount double(11,2) DEFAULT '0.00' NOT NULL,
-	amount_precision double(11,2) DEFAULT '0.00' NOT NULL,
+	amount varchar(90) DEFAULT '0.00' NOT NULL,
+	amount_precision varchar(90) DEFAULT '0.00' NOT NULL,
 	after_tax tinyint(3) DEFAULT '0' NOT NULL,
 	type blob NOT NULL,
 	period_from int(11) DEFAULT '0' NOT NULL,
@@ -758,6 +773,7 @@ CREATE TABLE tx_party_stock_markets (
 	crdate int(11) DEFAULT '0' NOT NULL,
 	cruser_id int(11) DEFAULT '0' NOT NULL,
 	deleted tinyint(4) DEFAULT '0' NOT NULL,
+	party int(11) DEFAULT '0' NOT NULL,
 	market int(11) DEFAULT '0' NOT NULL,
 	listed_code varchar(10) DEFAULT '' NOT NULL,
 	remarks text NOT NULL,
@@ -778,6 +794,7 @@ CREATE TABLE tx_party_vehicles (
 	crdate int(11) DEFAULT '0' NOT NULL,
 	cruser_id int(11) DEFAULT '0' NOT NULL,
 	deleted tinyint(4) DEFAULT '0' NOT NULL,
+	party int(11) DEFAULT '0' NOT NULL,
 	make int(11) DEFAULT '0' NOT NULL,
 	type blob NOT NULL,
 	model varchar(90) DEFAULT '' NOT NULL,
@@ -804,6 +821,7 @@ CREATE TABLE tx_party_visas (
 	crdate int(11) DEFAULT '0' NOT NULL,
 	cruser_id int(11) DEFAULT '0' NOT NULL,
 	deleted tinyint(4) DEFAULT '0' NOT NULL,
+	party int(11) DEFAULT '0' NOT NULL,
 	country int(11) DEFAULT '0' NOT NULL,
 	number varchar(90) DEFAULT '' NOT NULL,
 	code varchar(90) DEFAULT '' NOT NULL,
@@ -913,13 +931,13 @@ CREATE TABLE tx_party_parties (
 	contact_numbers tinytext NOT NULL,
 	countries_of_residence tinytext NOT NULL,
 	documents tinytext NOT NULL,
-	emailaddresses tinytext NOT NULL,
+	electronic_address_identifiers tinytext NOT NULL,
 	images tinytext NOT NULL,
 	nationalities tinytext NOT NULL,
 	relationships tinytext NOT NULL,
 	revenues tinytext NOT NULL,
-	urls tinytext NOT NULL,
 	vehicles tinytext NOT NULL,
+	contacts tinytext NOT NULL,
 	visas tinytext NOT NULL,
 	disabilities tinytext NOT NULL,
 	languages tinytext NOT NULL,
@@ -950,6 +968,7 @@ CREATE TABLE tx_party_events (
 	crdate int(11) DEFAULT '0' NOT NULL,
 	cruser_id int(11) DEFAULT '0' NOT NULL,
 	deleted tinyint(4) DEFAULT '0' NOT NULL,
+	party int(11) DEFAULT '0' NOT NULL,
 	type int(11) DEFAULT '0' NOT NULL,
 	date int(11) DEFAULT '0' NOT NULL,
 	date_from int(11) DEFAULT '0' NOT NULL,
@@ -972,6 +991,7 @@ CREATE TABLE tx_party_identifiers (
 	crdate int(11) DEFAULT '0' NOT NULL,
 	cruser_id int(11) DEFAULT '0' NOT NULL,
 	deleted tinyint(4) DEFAULT '0' NOT NULL,
+	party int(11) DEFAULT '0' NOT NULL,
 	type int(11) DEFAULT '0' NOT NULL,
 	identifier varchar(90) DEFAULT '' NOT NULL,
 	issue_date int(11) DEFAULT '0' NOT NULL,
@@ -994,6 +1014,7 @@ CREATE TABLE tx_party_memberships (
 	crdate int(11) DEFAULT '0' NOT NULL,
 	cruser_id int(11) DEFAULT '0' NOT NULL,
 	deleted tinyint(4) DEFAULT '0' NOT NULL,
+	party int(11) DEFAULT '0' NOT NULL,
 	type int(11) DEFAULT '0' NOT NULL,
 	organisation int(11) DEFAULT '0' NOT NULL,
 	issue_date int(11) DEFAULT '0' NOT NULL,
@@ -1037,6 +1058,7 @@ CREATE TABLE tx_party_favourites (
 	crdate int(11) DEFAULT '0' NOT NULL,
 	cruser_id int(11) DEFAULT '0' NOT NULL,
 	deleted tinyint(4) DEFAULT '0' NOT NULL,
+	party int(11) DEFAULT '0' NOT NULL,
 	type int(11) DEFAULT '0' NOT NULL,
 	favourite varchar(90) DEFAULT '' NOT NULL,
 	remarks text NOT NULL,
@@ -1057,6 +1079,7 @@ CREATE TABLE tx_party_preferences (
 	crdate int(11) DEFAULT '0' NOT NULL,
 	cruser_id int(11) DEFAULT '0' NOT NULL,
 	deleted tinyint(4) DEFAULT '0' NOT NULL,
+	party int(11) DEFAULT '0' NOT NULL,
 	type int(11) DEFAULT '0' NOT NULL,
 	preference varchar(90) DEFAULT '' NOT NULL,
 	remarks text NOT NULL,
@@ -1068,10 +1091,9 @@ CREATE TABLE tx_party_preferences (
 
 
 #
-# Table structure for table 'tx_party_parties_addresses'
-# 
+# Table structure for table 'tx_party_address_usages'
 #
-CREATE TABLE tx_party_parties_addresses (
+CREATE TABLE tx_party_address_usages (
 	uid int(11) NOT NULL auto_increment,
 	pid int(11) DEFAULT '0' NOT NULL,
 	tstamp int(11) DEFAULT '0' NOT NULL,
@@ -1080,7 +1102,95 @@ CREATE TABLE tx_party_parties_addresses (
 	deleted tinyint(4) DEFAULT '0' NOT NULL,
 	party int(11) DEFAULT '0' NOT NULL,
 	address int(11) DEFAULT '0' NOT NULL,
-	address_usage varchar(90) DEFAULT '' NOT NULL,
+	address_usage int(11) DEFAULT '0' NOT NULL,
+	standard tinyint(3) DEFAULT '0' NOT NULL,
+	
+	PRIMARY KEY (uid),
+	KEY parent (pid)
+);
+
+
+
+#
+# Table structure for table 'tx_party_contact_number_usages'
+#
+CREATE TABLE tx_party_contact_number_usages (
+	uid int(11) NOT NULL auto_increment,
+	pid int(11) DEFAULT '0' NOT NULL,
+	tstamp int(11) DEFAULT '0' NOT NULL,
+	crdate int(11) DEFAULT '0' NOT NULL,
+	cruser_id int(11) DEFAULT '0' NOT NULL,
+	deleted tinyint(4) DEFAULT '0' NOT NULL,
+	party int(11) DEFAULT '0' NOT NULL,
+	contact_number blob NOT NULL,
+	contact_number_usage int(11) DEFAULT '0' NOT NULL,
+	standard tinyint(3) DEFAULT '0' NOT NULL,
+	
+	PRIMARY KEY (uid),
+	KEY parent (pid)
+);
+
+
+
+#
+# Table structure for table 'tx_party_electronic_address_identifier_usages'
+#
+CREATE TABLE tx_party_electronic_address_identifier_usages (
+	uid int(11) NOT NULL auto_increment,
+	pid int(11) DEFAULT '0' NOT NULL,
+	tstamp int(11) DEFAULT '0' NOT NULL,
+	crdate int(11) DEFAULT '0' NOT NULL,
+	cruser_id int(11) DEFAULT '0' NOT NULL,
+	deleted tinyint(4) DEFAULT '0' NOT NULL,
+	party int(11) DEFAULT '0' NOT NULL,
+	electronic_address_identifier int(11) DEFAULT '0' NOT NULL,
+	electronic_address_identifier_usage int(11) DEFAULT '0' NOT NULL,
+	standard tinyint(3) DEFAULT '0' NOT NULL,
+	
+	PRIMARY KEY (uid),
+	KEY parent (pid)
+);
+
+
+
+#
+# Table structure for table 'tx_party_usages'
+#
+CREATE TABLE tx_party_usages (
+	uid int(11) NOT NULL auto_increment,
+	pid int(11) DEFAULT '0' NOT NULL,
+	tstamp int(11) DEFAULT '0' NOT NULL,
+	crdate int(11) DEFAULT '0' NOT NULL,
+	cruser_id int(11) DEFAULT '0' NOT NULL,
+	sorting int(10) DEFAULT '0' NOT NULL,
+	deleted tinyint(4) DEFAULT '0' NOT NULL,
+	short_title varchar(30) DEFAULT '' NOT NULL,
+	title varchar(60) DEFAULT '' NOT NULL,
+	long_title varchar(90) DEFAULT '' NOT NULL,
+	
+	PRIMARY KEY (uid),
+	KEY parent (pid)
+);
+
+
+
+#
+# Table structure for table 'tx_party_relationships'
+#
+CREATE TABLE tx_party_relationships (
+	uid int(11) NOT NULL auto_increment,
+	pid int(11) DEFAULT '0' NOT NULL,
+	tstamp int(11) DEFAULT '0' NOT NULL,
+	crdate int(11) DEFAULT '0' NOT NULL,
+	cruser_id int(11) DEFAULT '0' NOT NULL,
+	deleted tinyint(4) DEFAULT '0' NOT NULL,
+	primary_party int(11) DEFAULT '0' NOT NULL,
+	secondary_party int(11) DEFAULT '0' NOT NULL,
+	relationship_type int(11) DEFAULT '0' NOT NULL,
+	date_established int(11) DEFAULT '0' NOT NULL,
+	date_lapsed int(11) DEFAULT '0' NOT NULL,
+	reason_lapsed text NOT NULL,
+	remarks text NOT NULL,
 	
 	PRIMARY KEY (uid),
 	KEY parent (pid)

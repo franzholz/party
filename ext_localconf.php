@@ -1,5 +1,6 @@
 <?php
 if (!defined ('TYPO3_MODE')) 	die ('Access denied.');
+
 t3lib_extMgm::addUserTSConfig('
 	options.saveDocNew.tx_party_birth_signs=1
 ');
@@ -119,5 +120,11 @@ t3lib_extMgm::addUserTSConfig('
 ');
 t3lib_extMgm::addUserTSConfig('
 	options.saveDocNew.tx_party_preferences=1
+');
+t3lib_extMgm::addUserTSConfig('
+	options.saveDocNew.tx_party_usages=1
+');
+t3lib_extMgm::addUserTSConfig('
+	options.saveDocNew.tx_party_relationships=1
 ');
 ?>

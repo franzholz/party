@@ -1,5 +1,21 @@
 <?php
 if (!defined ('TYPO3_MODE')) 	die ('Access denied.');
+
+$GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['party']['inline_appearance']['default'] = array(
+	'collapseAll' => 1,
+	'expandSingle' => 1,
+	'newRecordLinkPosition' => 'bottom',
+	'newRecordLinkAddTitle' => 1,
+);
+
+$GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['party']['inline_appearance']['combined'] = array(
+	'collapseAll' => 1,
+	'expandSingle' => 1,
+	'newRecordLinkPosition' => 'bottom',
+	'newRecordLinkAddTitle' => 1,
+	'useCombination' => 1,
+);
+					
 $TCA["tx_party_birth_signs"] = array (
 	"ctrl" => array (
 		'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_birth_signs',		
@@ -290,7 +306,7 @@ $TCA["tx_party_accounts"] = array (
 		'iconfile'          => t3lib_extMgm::extRelPath($_EXTKEY).'icon_tx_party_accounts.gif',
 	),
 	"feInterface" => array (
-		"fe_admin_fieldList" => "ownership_type, account_id, issuing_authority, account_type, remarks, organisation",
+		"fe_admin_fieldList" => "party, ownership_type, account_id, issuing_authority, account_type, remarks, organisation",
 	)
 );
 
@@ -324,7 +340,7 @@ $TCA["tx_party_contacts"] = array (
 		'iconfile'          => t3lib_extMgm::extRelPath($_EXTKEY).'icon_tx_party_contacts.gif',
 	),
 	"feInterface" => array (
-		"fe_admin_fieldList" => "type, contact, remarks",
+		"fe_admin_fieldList" => "party, type, contact, remarks",
 	)
 );
 
@@ -358,7 +374,7 @@ $TCA["tx_party_countries_of_residence"] = array (
 		'iconfile'          => t3lib_extMgm::extRelPath($_EXTKEY).'icon_tx_party_countries_of_residence.gif',
 	),
 	"feInterface" => array (
-		"fe_admin_fieldList" => "country, residency_type, remarks",
+		"fe_admin_fieldList" => "party, country, residency_type, remarks",
 	)
 );
 
@@ -375,7 +391,7 @@ $TCA["tx_party_disabilities"] = array (
 		'iconfile'          => t3lib_extMgm::extRelPath($_EXTKEY).'icon_tx_party_disabilities.gif',
 	),
 	"feInterface" => array (
-		"fe_admin_fieldList" => "disability, cause, remarks",
+		"fe_admin_fieldList" => "party, disability, cause, remarks",
 	)
 );
 
@@ -392,7 +408,7 @@ $TCA["tx_party_documents"] = array (
 		'iconfile'          => t3lib_extMgm::extRelPath($_EXTKEY).'icon_tx_party_documents.gif',
 	),
 	"feInterface" => array (
-		"fe_admin_fieldList" => "document_type, document_id, issued_by, issue_place, privilege, restriction, group_name, name_on_document, remarks",
+		"fe_admin_fieldList" => "party, document_type, document_id, issued_by, issue_place, privilege, restriction, group_name, name_on_document, remarks",
 	)
 );
 
@@ -426,7 +442,7 @@ $TCA["tx_party_images"] = array (
 		'iconfile'          => t3lib_extMgm::extRelPath($_EXTKEY).'icon_tx_party_images.gif',
 	),
 	"feInterface" => array (
-		"fe_admin_fieldList" => "image, title, description, remarks",
+		"fe_admin_fieldList" => "party, address, image, title, description, remarks",
 	)
 );
 
@@ -444,7 +460,7 @@ $TCA["tx_party_languages"] = array (
 		'iconfile'          => t3lib_extMgm::extRelPath($_EXTKEY).'icon_tx_party_languages.gif',
 	),
 	"feInterface" => array (
-		"fe_admin_fieldList" => "language, type, read_skills, write_skills, listen_skills, speak_skills, preference, remarks",
+		"fe_admin_fieldList" => "party, language, type, read_skills, write_skills, listen_skills, speak_skills, preference, remarks",
 	)
 );
 
@@ -461,7 +477,7 @@ $TCA["tx_party_marks"] = array (
 		'iconfile'          => t3lib_extMgm::extRelPath($_EXTKEY).'icon_tx_party_marks.gif',
 	),
 	"feInterface" => array (
-		"fe_admin_fieldList" => "mark, body_part, body_part_mark_location, remarks",
+		"fe_admin_fieldList" => "party, mark, body_part, body_part_mark_location, remarks",
 	)
 );
 
@@ -478,7 +494,7 @@ $TCA["tx_party_nationalities"] = array (
 		'iconfile'          => t3lib_extMgm::extRelPath($_EXTKEY).'icon_tx_party_nationalities.gif',
 	),
 	"feInterface" => array (
-		"fe_admin_fieldList" => "country, nationality_type, remarks",
+		"fe_admin_fieldList" => "party, country, nationality_type, remarks",
 	)
 );
 
@@ -495,7 +511,7 @@ $TCA["tx_party_occupations"] = array (
 		'iconfile'          => t3lib_extMgm::extRelPath($_EXTKEY).'icon_tx_party_occupations.gif',
 	),
 	"feInterface" => array (
-		"fe_admin_fieldList" => "role, rank, employment_type, position_title, cost_centre, reports_to, remarks",
+		"fe_admin_fieldList" => "party, role, rank, employment_type, position_title, cost_centre, reports_to, remarks",
 	)
 );
 
@@ -529,7 +545,7 @@ $TCA["tx_party_qualifications"] = array (
 		'iconfile'          => t3lib_extMgm::extRelPath($_EXTKEY).'icon_tx_party_qualifications.gif',
 	),
 	"feInterface" => array (
-		"fe_admin_fieldList" => "qualification_name, status, institution, start_date, completion_date, way_of_study, major_subject, minor_subject, mark, course_duration, award, restriction, registration, remarks",
+		"fe_admin_fieldList" => "party, qualification_name, status, institution, start_date, completion_date, way_of_study, major_subject, minor_subject, mark, course_duration, award, restriction, registration, remarks",
 	)
 );
 
@@ -563,7 +579,7 @@ $TCA["tx_party_revenues"] = array (
 		'iconfile'          => t3lib_extMgm::extRelPath($_EXTKEY).'icon_tx_party_revenues.gif',
 	),
 	"feInterface" => array (
-		"fe_admin_fieldList" => "currency, amount, amount_precision, after_tax, type, period_from, period_to, source, remarks",
+		"fe_admin_fieldList" => "party, currency, amount, amount_precision, after_tax, type, period_from, period_to, source, remarks",
 	)
 );
 
@@ -580,7 +596,7 @@ $TCA["tx_party_stock_markets"] = array (
 		'iconfile'          => t3lib_extMgm::extRelPath($_EXTKEY).'icon_tx_party_stock_markets.gif',
 	),
 	"feInterface" => array (
-		"fe_admin_fieldList" => "market, listed_code, remarks",
+		"fe_admin_fieldList" => "party, market, listed_code, remarks",
 	)
 );
 
@@ -597,7 +613,7 @@ $TCA["tx_party_vehicles"] = array (
 		'iconfile'          => t3lib_extMgm::extRelPath($_EXTKEY).'icon_tx_party_vehicles.gif',
 	),
 	"feInterface" => array (
-		"fe_admin_fieldList" => "make, type, model, license_place, manufacture_date, engine_number, chassis_number, body_number, remarks",
+		"fe_admin_fieldList" => "party, make, type, model, license_place, manufacture_date, engine_number, chassis_number, body_number, remarks",
 	)
 );
 
@@ -614,7 +630,7 @@ $TCA["tx_party_visas"] = array (
 		'iconfile'          => t3lib_extMgm::extRelPath($_EXTKEY).'icon_tx_party_visas.gif',
 	),
 	"feInterface" => array (
-		"fe_admin_fieldList" => "country, number, code, issue_date, issue_place, maximum_stay, restriction, privilege, special_condition, remarks",
+		"fe_admin_fieldList" => "party, country, number, code, issue_date, issue_place, maximum_stay, restriction, privilege, special_condition, remarks",
 	)
 );
 
@@ -627,8 +643,8 @@ $TCA["tx_party_parties"] = array (
 		'cruser_id' => 'cruser_id',
 		'type' => 'type',	
 		'default_sortby' => "ORDER BY crdate",	
-		'dividers2tabs' => true,
 		'delete' => 'deleted',	
+		'dividers2tabs' => true,
 		'dynamicConfigFile' => t3lib_extMgm::extPath($_EXTKEY).'tca.php',
 		'iconfile'          => t3lib_extMgm::extRelPath($_EXTKEY).'icon_tx_party_parties.gif',
 	),
@@ -650,7 +666,7 @@ $TCA["tx_party_events"] = array (
 		'iconfile'          => t3lib_extMgm::extRelPath($_EXTKEY).'icon_tx_party_events.gif',
 	),
 	"feInterface" => array (
-		"fe_admin_fieldList" => "type, date, date_from, date_to, remarks",
+		"fe_admin_fieldList" => "party, type, date, date_from, date_to, remarks",
 	)
 );
 
@@ -667,7 +683,7 @@ $TCA["tx_party_identifiers"] = array (
 		'iconfile'          => t3lib_extMgm::extRelPath($_EXTKEY).'icon_tx_party_identifiers.gif',
 	),
 	"feInterface" => array (
-		"fe_admin_fieldList" => "type, identifier, issue_date, expiry_date, remarks",
+		"fe_admin_fieldList" => "party, type, identifier, issue_date, expiry_date, remarks",
 	)
 );
 
@@ -684,7 +700,7 @@ $TCA["tx_party_memberships"] = array (
 		'iconfile'          => t3lib_extMgm::extRelPath($_EXTKEY).'icon_tx_party_memberships.gif',
 	),
 	"feInterface" => array (
-		"fe_admin_fieldList" => "type, organisation, issue_date, expiry_date, remarks",
+		"fe_admin_fieldList" => "party, type, organisation, issue_date, expiry_date, remarks",
 	)
 );
 
@@ -719,7 +735,7 @@ $TCA["tx_party_favourites"] = array (
 		'iconfile'          => t3lib_extMgm::extRelPath($_EXTKEY).'icon_tx_party_favourites.gif',
 	),
 	"feInterface" => array (
-		"fe_admin_fieldList" => "type, favourite, remarks",
+		"fe_admin_fieldList" => "party, type, favourite, remarks",
 	)
 );
 
@@ -736,24 +752,92 @@ $TCA["tx_party_preferences"] = array (
 		'iconfile'          => t3lib_extMgm::extRelPath($_EXTKEY).'icon_tx_party_preferences.gif',
 	),
 	"feInterface" => array (
-		"fe_admin_fieldList" => "type, preference, remarks",
+		"fe_admin_fieldList" => "party, type, preference, remarks",
 	)
 );
 
-$TCA["tx_party_parties_addresses"] = array (
+$TCA["tx_party_address_usages"] = array (
 	"ctrl" => array (
-	'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_parties_addresses',
-		'label'     => 'party',	
+		'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_address_usages',		
+		'label'     => 'uid',	
 		'tstamp'    => 'tstamp',
 		'crdate'    => 'crdate',
 		'cruser_id' => 'cruser_id',
-		'default_sortby' => "ORDER BY crdate",
-		'delete' => 'deleted',
+		'default_sortby' => "ORDER BY crdate",	
+		'delete' => 'deleted',	
 		'dynamicConfigFile' => t3lib_extMgm::extPath($_EXTKEY).'tca.php',
-		'iconfile'          => t3lib_extMgm::extRelPath($_EXTKEY).'icon_tx_party_parties_addresses.gif',
+		'iconfile'          => t3lib_extMgm::extRelPath($_EXTKEY).'icon_tx_party_address_usages.gif',
 	),
 	"feInterface" => array (
-		"fe_admin_fieldList" => "party, address, address_usage",
+		"fe_admin_fieldList" => "party, address, address_usage, standard",
+	)
+);
+
+$TCA["tx_party_contact_number_usages"] = array (
+	"ctrl" => array (
+		'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_contact_number_usages',		
+		'label'     => 'uid',	
+		'tstamp'    => 'tstamp',
+		'crdate'    => 'crdate',
+		'cruser_id' => 'cruser_id',
+		'default_sortby' => "ORDER BY crdate",	
+		'delete' => 'deleted',	
+		'dynamicConfigFile' => t3lib_extMgm::extPath($_EXTKEY).'tca.php',
+		'iconfile'          => t3lib_extMgm::extRelPath($_EXTKEY).'icon_tx_party_contact_number_usages.gif',
+	),
+	"feInterface" => array (
+		"fe_admin_fieldList" => "party, contact_number, contact_number_usage, standard",
+	)
+);
+
+$TCA["tx_party_electronic_address_identifier_usages"] = array (
+	"ctrl" => array (
+		'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_electronic_address_identifier_usages',		
+		'label'     => 'uid',	
+		'tstamp'    => 'tstamp',
+		'crdate'    => 'crdate',
+		'cruser_id' => 'cruser_id',
+		'default_sortby' => "ORDER BY crdate",	
+		'delete' => 'deleted',	
+		'dynamicConfigFile' => t3lib_extMgm::extPath($_EXTKEY).'tca.php',
+		'iconfile'          => t3lib_extMgm::extRelPath($_EXTKEY).'icon_tx_party_electronic_address_identifier_usages.gif',
+	),
+	"feInterface" => array (
+		"fe_admin_fieldList" => "party, electronic_address_identifier, electronic_address_identifier_usage, standard",
+	)
+);
+
+$TCA["tx_party_usages"] = array (
+	"ctrl" => array (
+		'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_usages',		
+		'label'     => 'title',	
+		'tstamp'    => 'tstamp',
+		'crdate'    => 'crdate',
+		'cruser_id' => 'cruser_id',
+		'sortby' => 'sorting',	
+		'delete' => 'deleted',	
+		'dynamicConfigFile' => t3lib_extMgm::extPath($_EXTKEY).'tca.php',
+		'iconfile'          => t3lib_extMgm::extRelPath($_EXTKEY).'icon_tx_party_usages.gif',
+	),
+	"feInterface" => array (
+		"fe_admin_fieldList" => "short_title, title, long_title",
+	)
+);
+
+$TCA["tx_party_relationships"] = array (
+	"ctrl" => array (
+		'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_relationships',		
+		'label'     => 'uid',	
+		'tstamp'    => 'tstamp',
+		'crdate'    => 'crdate',
+		'cruser_id' => 'cruser_id',
+		'default_sortby' => "ORDER BY crdate",	
+		'delete' => 'deleted',	
+		'dynamicConfigFile' => t3lib_extMgm::extPath($_EXTKEY).'tca.php',
+		'iconfile'          => t3lib_extMgm::extRelPath($_EXTKEY).'icon_tx_party_relationships.gif',
+	),
+	"feInterface" => array (
+		"fe_admin_fieldList" => "primary_party, secondary_party, relationship_type, date_established, date_lapsed, reason_lapsed, remarks",
 	)
 );
 ?>
