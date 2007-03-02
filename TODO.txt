@@ -1,0 +1,47 @@
+Description
+-----------
+Management of party-related data, such as persons, organisations, names, addresses, etc. Based on the OASIS-Standard xPIL (Extensible Party Information Language).
+
+Todo
+----
+* Create patch for static_info_tables (div->selectItemsTCA)
+* Create new static extension for stock markets
+* Update stock_markets to use hotlist once it's included in static_info_tables
+* tx_party_types: allowed_for is varchar(48). That's probably not long enough
+* All type-fields: Add php-restriction so that only the allowed types are displayed
+* All date and date/time fields: Extend beyond UNIX time range (e.g. tx_party_persons: birth_date_time)
+* Create label_user_func for all tables which do not have a clear label field
+* 'Optimize' the use of the generated labels (e.g. define a label for "party" only once)
+* Show only the possible 'name types' according to the party type
+* Events: Define in the type of the event whether it's a single point in time or a time range. Show only the possible fields
+* General: Concept which allows it to either use an existing record or define a free text (e.g. issuingAuthority of an Account)
+* ISO-Standard for West/East/North/South?
+
+
+
+Wishlist
+--------
+* Link to Google Maps for an address (either directly with lat/long or trying to resolve the address)
+
+
+
+To discuss
+----------
+Where should the dependant records be stored? Same page, storage page, ...?
+which tables shall be "manually sortable"?
+tx_party_contact_numbers: Should contact_hours be an RTE field?
+
+Suggestions for IRRE
+* newRecordLinkAddTitle option: Optionally, this can be an LLL reference which will be used instead of the label of the table
+
+
+Design decisions
+----------------
+* Inherited classes (e.g. person/organisation from party) are built as one database table, with the name of the base class.
+** Advantages
+*** Simple data access, no joins or views necessary
+*** TYPO3 standard mechanisms (the "type-field") can be used to limit the available fields according to the inherited class
+** Disadvantages
+*** There are unused database fields in every record
+*** No direct representation of the class model with the physical database model
+
