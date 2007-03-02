@@ -323,7 +323,7 @@ $TCA["tx_party_addresses"] = array (
 		'iconfile'          => t3lib_extMgm::extRelPath($_EXTKEY).'icon_tx_party_addresses.gif',
 	),
 	"feInterface" => array (
-		"fe_admin_fieldList" => "locality, thoroughfare, thoroughfare_number, building_name, location, lot, premise_type, internal_thoroughfare, reference_location, post_code, rural_delivery, longitude, latitude, postal_delivery_point, post_office, post_town, administrative_area, country, remarks",
+	"fe_admin_fieldList" => "locality, thoroughfare, thoroughfare_number, building_name, location, lot, premise_type, internal_thoroughfare, reference_location, post_code, rural_delivery, latitude_degrees_measure, latitude_minutes_measure, latitude_seconds_measure, latitude_direction_code, longitude_degrees_measure, longitude_minutes_measure, longitude_seconds_measure, longitude_direction_code, postal_delivery_point, post_office, post_town, administrative_area, country, remarks",
 	)
 );
 
@@ -649,7 +649,7 @@ $TCA["tx_party_parties"] = array (
 		'iconfile'          => t3lib_extMgm::extRelPath($_EXTKEY).'icon_tx_party_parties.gif',
 	),
 	"feInterface" => array (
-		"fe_admin_fieldList" => "type, marital_status, religion, birth_place, birth_date_time, birth_date_time_precision, birth_sign, birth_star, weight, height, breast, waist, hip, hair_colour, eye_colour, skin_colour, blood_group, physical_status, ethnicity, gender, hobbies, habits, organisation_type, organisation_nature, company_registration_id, company_registration_date, number_of_employees, remarks, names, addresses, accounts, contact_numbers, countries_of_residence, documents, emailaddresses, images, nationalities, relationships, revenues, urls, vehicles, visas, disabilities, languages, marks, occupations, qualifications, stock_markets, events, identifiers, memberships, allergies, favourites, preferences",
+		"fe_admin_fieldList" => "type, marital_status, religion, birth_place, birth_date_time, birth_date_time_precision, birth_sign, birth_star, weight, height, breast, waist, hip, hair_colour, eye_colour, skin_colour, blood_group, physical_status, ethnicity, gender, hobbies, habits, organisation_type, organisation_nature, company_registration_id, company_registration_date, number_of_employees, remarks, names, addresses, accounts, contact_numbers, countries_of_residence, documents, images, nationalities, relationships, revenues, vehicles, visas, disabilities, languages, marks, occupations, qualifications, stock_markets, events, identifiers, memberships, allergies, favourites, preferences",
 	)
 );
 

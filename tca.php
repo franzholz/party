@@ -1172,9 +1172,12 @@ $TCA["tx_party_accounts"] = array (
 			"exclude" => 1,		
 			"label" => "LLL:EXT:party/locallang_db.xml:tx_party_accounts.account_type",		
 			"config" => Array (
-				"type" => "group",	
-				"internal_type" => "db",	
-				"allowed" => "tx_party_types",	
+				"type" => "select",	
+				"items" => Array (
+					Array("",0),
+				),
+				"foreign_table" => "tx_party_types",	
+				"foreign_table_where" => "AND tx_party_types.pid=###STORAGE_PID### ORDER BY tx_party_types.uid",	
 				"size" => 1,	
 				"minitems" => 0,
 				"maxitems" => 1,
@@ -1203,7 +1206,7 @@ $TCA["tx_party_accounts"] = array (
 $TCA["tx_party_addresses"] = array (
 	"ctrl" => $TCA["tx_party_addresses"]["ctrl"],
 	"interface" => array (
-		"showRecordFieldList" => "parties,locality,thoroughfare,thoroughfare_number,building_name,location,lot,premise_type,internal_thoroughfare,reference_location,post_code,rural_delivery,longitude,latitude,postal_delivery_point,post_office,post_town,administrative_area,country,remarks"
+	"showRecordFieldList" => "parties,locality,thoroughfare,thoroughfare_number,building_name,location,lot,premise_type,internal_thoroughfare,reference_location,post_code,rural_delivery,latitude_degrees_measure,latitude_minutes_measure,latitude_seconds_measure,latitude_direction_code,longitude_degrees_measure,longitude_minutes_measure,longitude_seconds_measure,longitude_direction_code,postal_delivery_point,post_office,post_town,administrative_area,country,remarks"
 	),
 	"feInterface" => $TCA["tx_party_addresses"]["feInterface"],
 	"columns" => array (
@@ -1332,24 +1335,102 @@ $TCA["tx_party_addresses"] = array (
 				"eval" => "trim",
 			)
 		),
-		"longitude" => Array (		
+		"latitude_degrees_measure" => Array (		
 			"exclude" => 1,		
-			"label" => "LLL:EXT:party/locallang_db.xml:tx_party_addresses.longitude",		
+			"label" => "LLL:EXT:party/locallang_db.xml:tx_party_addresses.latitude_degrees_measure",		
 			"config" => Array (
 				"type" => "input",	
-				"size" => "30",	
-				"max" => "90",	
-				"eval" => "trim",
+				"size" => "5",	
+				"max" => "5",	
+				"range" => Array ("lower"=>0,"upper"=>180),	
+				"checkbox" => "0",	
+				"eval" => "int,nospace",
 			)
 		),
-		"latitude" => Array (		
+		"latitude_minutes_measure" => Array (		
 			"exclude" => 1,		
-			"label" => "LLL:EXT:party/locallang_db.xml:tx_party_addresses.latitude",		
+			"label" => "LLL:EXT:party/locallang_db.xml:tx_party_addresses.latitude_minutes_measure",		
 			"config" => Array (
 				"type" => "input",	
-				"size" => "30",	
-				"max" => "90",	
-				"eval" => "trim",
+				"size" => "5",	
+				"max" => "5",	
+				"range" => Array ("lower"=>0,"upper"=>60),	
+				"checkbox" => "0",	
+				"eval" => "int,nospace",
+			)
+		),
+		"latitude_seconds_measure" => Array (		
+			"exclude" => 1,		
+			"label" => "LLL:EXT:party/locallang_db.xml:tx_party_addresses.latitude_seconds_measure",		
+			"config" => Array (
+				"type" => "input",	
+				"size" => "5",	
+				"max" => "5",	
+				"range" => Array ("lower"=>0,"upper"=>60),	
+				"checkbox" => "0",	
+				"eval" => "int,nospace",
+			)
+		),
+		"latitude_direction_code" => Array (		
+			"exclude" => 1,		
+			"label" => "LLL:EXT:party/locallang_db.xml:tx_party_addresses.latitude_direction_code",		
+			"config" => Array (
+				"type" => "select",
+				"items" => Array (
+					Array("LLL:EXT:party/locallang_db.xml:tx_party_addresses.latitude_direction_code.I.0", "N"),
+					Array("LLL:EXT:party/locallang_db.xml:tx_party_addresses.latitude_direction_code.I.1", "S"),
+				),
+				"size" => 1,	
+				"maxitems" => 1,
+			)
+		),
+		"longitude_degrees_measure" => Array (		
+			"exclude" => 1,		
+			"label" => "LLL:EXT:party/locallang_db.xml:tx_party_addresses.longitude_degrees_measure",		
+			"config" => Array (
+				"type" => "input",	
+				"size" => "5",	
+				"max" => "5",	
+				"range" => Array ("lower"=>0,"upper"=>180),	
+				"checkbox" => "0",	
+				"eval" => "int,nospace",
+			)
+		),
+		"longitude_minutes_measure" => Array (		
+			"exclude" => 1,		
+			"label" => "LLL:EXT:party/locallang_db.xml:tx_party_addresses.longitude_minutes_measure",		
+			"config" => Array (
+				"type" => "input",	
+				"size" => "5",	
+				"max" => "5",	
+				"range" => Array ("lower"=>0,"upper"=>60),	
+				"checkbox" => "0",	
+				"eval" => "int,nospace",
+			)
+		),
+		"longitude_seconds_measure" => Array (		
+			"exclude" => 1,		
+			"label" => "LLL:EXT:party/locallang_db.xml:tx_party_addresses.longitude_seconds_measure",		
+			"config" => Array (
+				"type" => "input",	
+				"size" => "5",	
+				"max" => "5",	
+				"range" => Array ("lower"=>0,"upper"=>60),	
+				"checkbox" => "0",	
+				"eval" => "int,nospace",
+			)
+		),
+		"longitude_direction_code" => Array (		
+			"exclude" => 1,		
+			"label" => "LLL:EXT:party/locallang_db.xml:tx_party_addresses.longitude_direction_code",		
+			"config" => Array (
+				"type" => "select",
+				"items" => Array (
+					Array("LLL:EXT:party/locallang_db.xml:tx_party_addresses.longitude_direction_code.I.0", "W"),
+					Array("LLL:EXT:party/locallang_db.xml:tx_party_addresses.longitude_direction_code.I.1", "E"),
+				),
+				"size" => 1,	
+				"maxitems" => 1,
 			)
 		),
 		"postal_delivery_point" => Array (		
@@ -1417,13 +1498,15 @@ $TCA["tx_party_addresses"] = array (
 		),
 	),
 	"types" => array (
-	"0" => array("showitem" => "parties;;;;1-1-1, thoroughfare;;1, post_code;;2, locality;;3, administrative_area;;4, country, longitude;;;;1-1-1, latitude, remarks;;;;1-1-1")
+	"0" => array("showitem" => "parties;;;;1-1-1, thoroughfare;;1, post_code;;2, locality;;3, administrative_area;;4, country, --palette--;LLL:EXT:party/locallang_db.xml:tx_party_addresses.latitude;5;;1-1-1, --palette--;LLL:EXT:party/locallang_db.xml:tx_party_addresses.longitude;6, remarks;;;;1-1-1")
 	),
 	"palettes" => array (
 		"1" => array("showitem" => "thoroughfare_number, building_name, location, lot"),
 		"2" => array("showitem" => "premise_type, internal_thoroughfare, reference_location"),
 		"3" => array("showitem" => "rural_delivery"),
-		"4" => array("showitem" => "postal_delivery_point, post_office, post_town, "),
+		"4" => array("showitem" => "postal_delivery_point, post_office, post_town"),
+		"5" => array("showitem" => "latitude_degrees_measure, latitude_minutes_measure, latitude_seconds_measure, latitude_direction_code"),
+		"6" => array("showitem" => "longitude_degrees_measure, longitude_minutes_measure, longitude_seconds_measure, longitude_direction_code"),
 	)
 );
 
@@ -2912,9 +2995,12 @@ $TCA["tx_party_revenues"] = array (
 			"exclude" => 1,		
 			"label" => "LLL:EXT:party/locallang_db.xml:tx_party_revenues.type",		
 			"config" => Array (
-				"type" => "group",	
-				"internal_type" => "db",	
-				"allowed" => "tx_party_types",	
+				"type" => "select",	
+				"items" => Array (
+					Array("",0),
+				),
+				"foreign_table" => "tx_party_types",	
+				"foreign_table_where" => "AND tx_party_types.pid=###STORAGE_PID### ORDER BY tx_party_types.uid",	
 				"size" => 1,	
 				"minitems" => 0,
 				"maxitems" => 1,
@@ -3005,7 +3091,7 @@ $TCA["tx_party_stock_markets"] = array (
 					Array("",0),
 				),
 				"foreign_table" => "static_markets",	
-				"foreign_table_where" => "AND static_markets.pid=###STORAGE_PID### ORDER BY static_markets.uid",	
+				"foreign_table_where" => "AND static_markets.pid=###SITEROOT### ORDER BY static_markets.uid",	
 				"size" => 1,	
 				"minitems" => 0,
 				"maxitems" => 1,
@@ -3032,7 +3118,7 @@ $TCA["tx_party_stock_markets"] = array (
 		),
 	),
 	"types" => array (
-		"0" => array("showitem" => "party;;;;1-1-1, market, listed_code, remarks")
+		"0" => array("showitem" => "party;;;;1-1-1, market, listed_code, remarks;;;;1-1-1")
 	),
 	"palettes" => array (
 		"1" => array("showitem" => "")
@@ -3079,9 +3165,12 @@ $TCA["tx_party_vehicles"] = array (
 			"exclude" => 1,		
 			"label" => "LLL:EXT:party/locallang_db.xml:tx_party_vehicles.type",		
 			"config" => Array (
-				"type" => "group",	
-				"internal_type" => "db",	
-				"allowed" => "tx_party_types",	
+				"type" => "select",	
+				"items" => Array (
+					Array("",0),
+				),
+				"foreign_table" => "tx_party_types",	
+				"foreign_table_where" => "AND tx_party_types.pid=###STORAGE_PID### ORDER BY tx_party_types.uid",	
 				"size" => 1,	
 				"minitems" => 0,
 				"maxitems" => 1,
@@ -3158,7 +3247,7 @@ $TCA["tx_party_vehicles"] = array (
 		),
 	),
 	"types" => array (
-		"0" => array("showitem" => "party;;;;1-1-1, make, type, model, license_place, manufacture_date, engine_number, chassis_number, body_number, remarks")
+		"0" => array("showitem" => "party;;;;1-1-1, type, make, model, license_place;;;;1-1-1, manufacture_date, engine_number, chassis_number, body_number, remarks;;;;1-1-1")
 	),
 	"palettes" => array (
 		"1" => array("showitem" => "")
@@ -3304,7 +3393,7 @@ $TCA["tx_party_visas"] = array (
 $TCA["tx_party_parties"] = array (
 	"ctrl" => $TCA["tx_party_parties"]["ctrl"],
 	"interface" => array (
-		"showRecordFieldList" => "type,marital_status,religion,birth_place,birth_date_time,birth_date_time_precision,birth_sign,birth_star,weight,height,breast,waist,hip,hair_colour,eye_colour,skin_colour,blood_group,physical_status,ethnicity,gender,hobbies,habits,organisation_type,organisation_nature,company_registration_id,company_registration_date,number_of_employees,remarks,names,addresses,accounts,contact_numbers,countries_of_residence,documents,electronic_address_identifiers,images,nationalities,relationships,revenues,urls,vehicles,contacts,visas,disabilities,languages,marks,occupations,qualifications,stock_markets,events,identifiers,memberships,allergies,favourites,preferences"
+		"showRecordFieldList" => "type,marital_status,religion,birth_place,birth_date_time,birth_date_time_precision,birth_sign,birth_star,weight,height,breast,waist,hip,hair_colour,eye_colour,skin_colour,blood_group,physical_status,ethnicity,gender,hobbies,habits,organisation_type,organisation_nature,company_registration_id,company_registration_date,number_of_employees,remarks,names,addresses,accounts,contact_numbers,countries_of_residence,documents,electronic_address_identifiers,images,nationalities,relationships,revenues,vehicles,contacts,visas,disabilities,languages,marks,occupations,qualifications,stock_markets,events,identifiers,memberships,allergies,favourites,preferences"
 	),
 	"feInterface" => $TCA["tx_party_parties"]["feInterface"],
 	"columns" => array (
