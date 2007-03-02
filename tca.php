@@ -1342,7 +1342,7 @@ $TCA["tx_party_addresses"] = array (
 				"type" => "input",	
 				"size" => "5",	
 				"max" => "5",	
-				"range" => Array ("lower"=>0,"upper"=>180),	
+				"range" => Array ("lower"=>0,"upper"=>90),	
 				"checkbox" => "0",	
 				"eval" => "int,nospace",
 			)
@@ -1467,24 +1467,42 @@ $TCA["tx_party_addresses"] = array (
 			"exclude" => 1,		
 			"label" => "LLL:EXT:party/locallang_db.xml:tx_party_addresses.administrative_area",		
 			"config" => Array (
-				"type" => "select",	
-				"foreign_table" => "static_country_zones",	
-				"foreign_table_where" => "AND static_country_zones.pid=###SITEROOT### ORDER BY static_country_zones.uid",	
-				"size" => 1,	
-				"minitems" => 0,
-				"maxitems" => 1,
+				'type' => 'select',
+				'items' => Array (
+					Array('',0),
+				),
+				'itemsProcFunc' => 'tx_staticinfotables_div->selectItemsTCA',
+				'itemsProcFunc_config' => array (
+					'table' => 'static_country_zones',
+					'indexField' => 'uid',
+					'prependHotlist' => 1,
+					'hotlistLimit' => 5,
+					'hotlistApp' => 'tx_party',
+				),
+				'size' => 1,
+				'minitems' => 0,
+				'maxitems' => 1,
 			)
 		),
 		"country" => Array (		
 			"exclude" => 1,		
 			"label" => "LLL:EXT:party/locallang_db.xml:tx_party_addresses.country",		
 			"config" => Array (
-				"type" => "select",	
-				"foreign_table" => "static_countries",	
-				"foreign_table_where" => "AND static_countries.pid=###SITEROOT### ORDER BY static_countries.uid",	
-				"size" => 1,	
-				"minitems" => 0,
-				"maxitems" => 1,
+				'type' => 'select',
+				'items' => Array (
+					Array('',0),
+				),
+				'itemsProcFunc' => 'tx_staticinfotables_div->selectItemsTCA',
+				'itemsProcFunc_config' => array (
+					'table' => 'static_countries',
+					'indexField' => 'uid',
+					'prependHotlist' => 1,
+					'hotlistLimit' => 5,
+					'hotlistApp' => 'tx_party',
+				),
+				'size' => 1,
+				'minitems' => 0,
+				'maxitems' => 1,
 			)
 		),
 		"remarks" => Array (		
@@ -1618,12 +1636,21 @@ $TCA["tx_party_contact_numbers"] = array (
 			"exclude" => 1,		
 			"label" => "LLL:EXT:party/locallang_db.xml:tx_party_contact_numbers.country_code",		
 			"config" => Array (
-				"type" => "select",	
-				"foreign_table" => "static_countries",	
-				"foreign_table_where" => "AND static_countries.pid=###SITEROOT### ORDER BY static_countries.uid",	
-				"size" => 1,	
-				"minitems" => 0,
-				"maxitems" => 1,
+				'type' => 'select',
+				'items' => Array (
+					Array('',0),
+				),
+				'itemsProcFunc' => 'tx_staticinfotables_div->selectItemsTCA',
+				'itemsProcFunc_config' => array (
+					'table' => 'static_countries',
+					'indexField' => 'uid',
+					'prependHotlist' => 1,
+					'hotlistLimit' => 5,
+					'hotlistApp' => 'tx_party',
+				),
+				'size' => 1,
+				'minitems' => 0,
+				'maxitems' => 1,
 			)
 		),
 		"area_code" => Array (		
@@ -1721,12 +1748,21 @@ $TCA["tx_party_countries_of_residence"] = array (
 			"exclude" => 1,		
 			"label" => "LLL:EXT:party/locallang_db.xml:tx_party_countries_of_residence.country",		
 			"config" => Array (
-				"type" => "select",	
-				"foreign_table" => "static_countries",	
-				"foreign_table_where" => "AND static_countries.pid=###SITEROOT### ORDER BY static_countries.uid",	
-				"size" => 1,	
-				"minitems" => 0,
-				"maxitems" => 1,
+				'type' => 'select',
+				'items' => Array (
+					Array('',0),
+				),
+				'itemsProcFunc' => 'tx_staticinfotables_div->selectItemsTCA',
+				'itemsProcFunc_config' => array (
+					'table' => 'static_countries',
+					'indexField' => 'uid',
+					'prependHotlist' => 1,
+					'hotlistLimit' => 5,
+					'hotlistApp' => 'tx_party',
+				),
+				'size' => 1,
+				'minitems' => 0,
+				'maxitems' => 1,
 			)
 		),
 		"residency_type" => Array (		
@@ -2132,12 +2168,21 @@ $TCA["tx_party_languages"] = array (
 			"exclude" => 1,		
 			"label" => "LLL:EXT:party/locallang_db.xml:tx_party_languages.language",		
 			"config" => Array (
-				"type" => "select",	
-				"foreign_table" => "static_languages",	
-				"foreign_table_where" => "AND static_languages.pid=###SITEROOT### ORDER BY static_languages.uid",	
-				"size" => 1,	
-				"minitems" => 0,
-				"maxitems" => 1,
+				'type' => 'select',
+				'items' => Array (
+					Array('',0),
+				),
+				'itemsProcFunc' => 'tx_staticinfotables_div->selectItemsTCA',
+				'itemsProcFunc_config' => array (
+					'table' => 'static_languages',
+					'indexField' => 'uid',
+					'prependHotlist' => 1,
+					'hotlistLimit' => 5,
+					'hotlistApp' => 'tx_party',
+				),
+				'size' => 1,
+				'minitems' => 0,
+				'maxitems' => 1,
 			)
 		),
 		"type" => Array (		
@@ -2333,12 +2378,21 @@ $TCA["tx_party_nationalities"] = array (
 			"exclude" => 1,		
 			"label" => "LLL:EXT:party/locallang_db.xml:tx_party_nationalities.country",		
 			"config" => Array (
-				"type" => "select",	
-				"foreign_table" => "static_countries",	
-				"foreign_table_where" => "AND static_countries.pid=###SITEROOT### ORDER BY static_countries.uid",	
-				"size" => 1,	
-				"minitems" => 0,
-				"maxitems" => 1,
+				'type' => 'select',
+				'items' => Array (
+					Array('',0),
+				),
+				'itemsProcFunc' => 'tx_staticinfotables_div->selectItemsTCA',
+				'itemsProcFunc_config' => array (
+					'table' => 'static_countries',
+					'indexField' => 'uid',
+					'prependHotlist' => 1,
+					'hotlistLimit' => 5,
+					'hotlistApp' => 'tx_party',
+				),
+				'size' => 1,
+				'minitems' => 0,
+				'maxitems' => 1,
 			)
 		),
 		"nationality_type" => Array (		
@@ -2956,12 +3010,21 @@ $TCA["tx_party_revenues"] = array (
 			"exclude" => 1,		
 			"label" => "LLL:EXT:party/locallang_db.xml:tx_party_revenues.currency",		
 			"config" => Array (
-				"type" => "select",	
-				"foreign_table" => "static_currencies",	
-				"foreign_table_where" => "AND static_currencies.pid=###SITEROOT### ORDER BY static_currencies.uid",	
-				"size" => 1,	
-				"minitems" => 0,
-				"maxitems" => 1,
+				'type' => 'select',
+				'items' => Array (
+					Array('',0),
+				),
+				'itemsProcFunc' => 'tx_staticinfotables_div->selectItemsTCA',
+				'itemsProcFunc_config' => array (
+					'table' => 'static_currencies',
+					'indexField' => 'uid',
+					'prependHotlist' => 1,
+					'hotlistLimit' => 5,
+					'hotlistApp' => 'tx_party',
+				),
+				'size' => 1,
+				'minitems' => 0,
+				'maxitems' => 1,
 			)
 		),
 		"amount" => Array (		
@@ -3282,12 +3345,21 @@ $TCA["tx_party_visas"] = array (
 			"exclude" => 1,		
 			"label" => "LLL:EXT:party/locallang_db.xml:tx_party_visas.country",		
 			"config" => Array (
-				"type" => "select",	
-				"foreign_table" => "static_countries",	
-				"foreign_table_where" => "AND static_countries.pid=###SITEROOT### ORDER BY static_countries.uid",	
-				"size" => 1,	
-				"minitems" => 0,
-				"maxitems" => 1,
+				'type' => 'select',
+				'items' => Array (
+					Array('',0),
+				),
+				'itemsProcFunc' => 'tx_staticinfotables_div->selectItemsTCA',
+				'itemsProcFunc_config' => array (
+					'table' => 'static_countries',
+					'indexField' => 'uid',
+					'prependHotlist' => 1,
+					'hotlistLimit' => 5,
+					'hotlistApp' => 'tx_party',
+				),
+				'size' => 1,
+				'minitems' => 0,
+				'maxitems' => 1,
 			)
 		),
 		"number" => Array (		

@@ -453,7 +453,6 @@ $TCA["tx_party_languages"] = array (
 		'tstamp'    => 'tstamp',
 		'crdate'    => 'crdate',
 		'cruser_id' => 'cruser_id',
-		'type' => 'language',	
 		'default_sortby' => "ORDER BY language",	
 		'delete' => 'deleted',	
 		'dynamicConfigFile' => t3lib_extMgm::extPath($_EXTKEY).'tca.php',
