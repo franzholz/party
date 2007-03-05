@@ -300,7 +300,7 @@ CREATE TABLE tx_party_types (
 	short_title varchar(30) DEFAULT '' NOT NULL,
 	title varchar(60) DEFAULT '' NOT NULL,
 	long_title varchar(90) DEFAULT '' NOT NULL,
-	allowed_for varchar(48) DEFAULT '' NOT NULL,
+	allowed_for varchar(1000) DEFAULT '' NOT NULL,
 	
 	PRIMARY KEY (uid),
 	KEY parent (pid)
@@ -516,9 +516,9 @@ CREATE TABLE tx_party_documents (
 
 
 #
-# Table structure for table 'tx_party_eletronic_address_identifiers'
+# Table structure for table 'tx_party_electronic_address_identifiers'
 #
-CREATE TABLE tx_party_eletronic_address_identifiers (
+CREATE TABLE tx_party_electronic_address_identifiers (
 	uid int(11) NOT NULL auto_increment,
 	pid int(11) DEFAULT '0' NOT NULL,
 	tstamp int(11) DEFAULT '0' NOT NULL,

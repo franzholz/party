@@ -19,7 +19,7 @@ DROP TABLE tx_party_contact_numbers;
 DROP TABLE tx_party_countries_of_residence;
 DROP TABLE tx_party_disabilities;
 DROP TABLE tx_party_documents;
-DROP TABLE tx_party_eletronic_address_identifiers;
+DROP TABLE tx_party_electronic_address_identifiers;
 DROP TABLE tx_party_images;
 DROP TABLE tx_party_languages;
 DROP TABLE tx_party_marks;

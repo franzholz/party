@@ -69,7 +69,7 @@ t3lib_extMgm::addUserTSConfig('
 	options.saveDocNew.tx_party_documents=1
 ');
 t3lib_extMgm::addUserTSConfig('
-	options.saveDocNew.tx_party_eletronic_address_identifiers=1
+	options.saveDocNew.tx_party_electronic_address_identifiers=1
 ');
 t3lib_extMgm::addUserTSConfig('
 	options.saveDocNew.tx_party_images=1

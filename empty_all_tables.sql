@@ -19,7 +19,7 @@ DELETE FROM tx_party_contact_numbers;
 DELETE FROM tx_party_countries_of_residence;
 DELETE FROM tx_party_disabilities;
 DELETE FROM tx_party_documents;
-DELETE FROM tx_party_eletronic_address_identifiers;
+DELETE FROM tx_party_electronic_address_identifiers;
 DELETE FROM tx_party_images;
 DELETE FROM tx_party_languages;
 DELETE FROM tx_party_marks;
