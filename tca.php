@@ -80,85 +80,6 @@ $TCA["tx_party_birth_signs"] = array (
 
 
 
-$TCA["tx_party_birth_stars"] = array (
-	"ctrl" => $TCA["tx_party_birth_stars"]["ctrl"],
-	"interface" => array (
-		"showRecordFieldList" => "sys_language_uid,l18n_parent,l18n_diffsource,short_title,title,long_title"
-	),
-	"feInterface" => $TCA["tx_party_birth_stars"]["feInterface"],
-	"columns" => array (
-		'sys_language_uid' => array (		
-			'exclude' => 1,
-			'label'  => 'LLL:EXT:lang/locallang_general.xml:LGL.language',
-			'config' => array (
-				'type'                => 'select',
-				'foreign_table'       => 'sys_language',
-				'foreign_table_where' => 'ORDER BY sys_language.title',
-				'items' => array(
-					array('LLL:EXT:lang/locallang_general.xml:LGL.allLanguages', -1),
-					array('LLL:EXT:lang/locallang_general.xml:LGL.default_value', 0)
-				)
-			)
-		),
-		'l18n_parent' => array (		
-			'displayCond' => 'FIELD:sys_language_uid:>:0',
-			'exclude'     => 1,
-			'label'       => 'LLL:EXT:lang/locallang_general.xml:LGL.l18n_parent',
-			'config'      => array (
-				'type'  => 'select',
-				'items' => array (
-					array('', 0),
-				),
-				'foreign_table'       => 'tx_party_birth_stars',
-				'foreign_table_where' => 'AND tx_party_birth_stars.pid=###CURRENT_PID### AND tx_party_birth_stars.sys_language_uid IN (-1,0)',
-			)
-		),
-		'l18n_diffsource' => array (		
-			'config' => array (
-				'type' => 'passthrough'
-			)
-		),
-		"short_title" => Array (		
-			"exclude" => 1,		
-			"label" => "LLL:EXT:party/locallang_db.xml:tx_party_birth_stars.short_title",		
-			"config" => Array (
-				"type" => "input",	
-				"size" => "30",	
-				"max" => "30",	
-				"eval" => "trim",
-			)
-		),
-		"title" => Array (		
-			"exclude" => 1,		
-			"label" => "LLL:EXT:party/locallang_db.xml:tx_party_birth_stars.title",		
-			"config" => Array (
-				"type" => "input",	
-				"size" => "48",	
-				"max" => "60",	
-				"eval" => "trim",
-			)
-		),
-		"long_title" => Array (		
-			"exclude" => 1,		
-			"label" => "LLL:EXT:party/locallang_db.xml:tx_party_birth_stars.long_title",		
-			"config" => Array (
-				"type" => "input",	
-				"size" => "48",	
-				"max" => "90",	
-				"eval" => "trim",
-			)
-		),
-	),
-	"types" => array (
-		"0" => array("showitem" => "sys_language_uid;;;;1-1-1, l18n_parent, l18n_diffsource, short_title, title;;;;2-2-2, long_title;;;;3-3-3")
-	),
-	"palettes" => array (
-		"1" => array("showitem" => "")
-	)
-);
-
-
-
 $TCA["tx_party_ethnicities"] = array (
 	"ctrl" => $TCA["tx_party_ethnicities"]["ctrl"],
 	"interface" => array (
@@ -241,10 +162,41 @@ $TCA["tx_party_ethnicities"] = array (
 $TCA["tx_party_habits"] = array (
 	"ctrl" => $TCA["tx_party_habits"]["ctrl"],
 	"interface" => array (
-		"showRecordFieldList" => "short_title,title,long_title"
+		"showRecordFieldList" => "sys_language_uid,l18n_parent,l18n_diffsource,short_title,title,long_title"
 	),
 	"feInterface" => $TCA["tx_party_habits"]["feInterface"],
 	"columns" => array (
+		'sys_language_uid' => array (		
+			'exclude' => 1,
+			'label'  => 'LLL:EXT:lang/locallang_general.xml:LGL.language',
+			'config' => array (
+				'type'                => 'select',
+				'foreign_table'       => 'sys_language',
+				'foreign_table_where' => 'ORDER BY sys_language.title',
+				'items' => array(
+					array('LLL:EXT:lang/locallang_general.xml:LGL.allLanguages', -1),
+					array('LLL:EXT:lang/locallang_general.xml:LGL.default_value', 0)
+				)
+			)
+		),
+		'l18n_parent' => array (		
+			'displayCond' => 'FIELD:sys_language_uid:>:0',
+			'exclude'     => 1,
+			'label'       => 'LLL:EXT:lang/locallang_general.xml:LGL.l18n_parent',
+			'config'      => array (
+				'type'  => 'select',
+				'items' => array (
+					array('', 0),
+				),
+				'foreign_table'       => 'tx_party_habits',
+				'foreign_table_where' => 'AND tx_party_habits.pid=###CURRENT_PID### AND tx_party_habits.sys_language_uid IN (-1,0)',
+			)
+		),
+		'l18n_diffsource' => array (		
+			'config' => array (
+				'type' => 'passthrough'
+			)
+		),
 		"short_title" => Array (		
 			"exclude" => 1,		
 			"label" => "LLL:EXT:party/locallang_db.xml:tx_party_habits.short_title",		
@@ -277,7 +229,7 @@ $TCA["tx_party_habits"] = array (
 		),
 	),
 	"types" => array (
-		"0" => array("showitem" => "short_title;;;;1-1-1, title;;;;2-2-2, long_title;;;;3-3-3")
+		"0" => array("showitem" => "sys_language_uid;;;;1-1-1, l18n_parent, l18n_diffsource, short_title, title;;;;2-2-2, long_title;;;;3-3-3")
 	),
 	"palettes" => array (
 		"1" => array("showitem" => "")
@@ -2597,7 +2549,10 @@ $TCA["tx_party_names"] = array (
 			"exclude" => 1,		
 			"label" => "LLL:EXT:party/locallang_db.xml:tx_party_names.person_name_title",		
 			"config" => Array (
-				"type" => "select",	
+				"type" => "select",
+				"items" => Array (
+					Array("",0),
+				),
 				"foreign_table" => "tx_party_person_name_titles",	
 				"foreign_table_where" => "AND tx_party_person_name_titles.pid=###STORAGE_PID### ORDER BY tx_party_person_name_titles.uid",	
 				"size" => 1,	
@@ -3513,6 +3468,7 @@ $TCA["tx_party_parties"] = array (
 			"config" => Array (
 				"type" => "select",
 				"items" => Array (
+					Array("", ""),
 					Array("LLL:EXT:party/locallang_db.xml:tx_party_parties.marital_status.I.0", "SINGLE"),
 					Array("LLL:EXT:party/locallang_db.xml:tx_party_parties.marital_status.I.1", "ENGAGED"),
 					Array("LLL:EXT:party/locallang_db.xml:tx_party_parties.marital_status.I.2", "MARRIED"),
@@ -3529,6 +3485,9 @@ $TCA["tx_party_parties"] = array (
 			"label" => "LLL:EXT:party/locallang_db.xml:tx_party_parties.religion",		
 			"config" => Array (
 				"type" => "select",	
+				"items" => Array (
+					Array("",0),
+				),
 				"foreign_table" => "tx_party_religions",	
 				"foreign_table_where" => "AND tx_party_religions.pid=###STORAGE_PID### ORDER BY tx_party_religions.uid",	
 				"size" => 1,	
@@ -3573,6 +3532,9 @@ $TCA["tx_party_parties"] = array (
 			"label" => "LLL:EXT:party/locallang_db.xml:tx_party_parties.birth_sign",		
 			"config" => Array (
 				"type" => "select",	
+				"items" => Array (
+					Array("",0),
+				),
 				"foreign_table" => "tx_party_birth_signs",	
 				"foreign_table_where" => "AND tx_party_birth_signs.pid=###SITEROOT### ORDER BY tx_party_birth_signs.uid",	
 				"size" => 1,	
@@ -3584,12 +3546,10 @@ $TCA["tx_party_parties"] = array (
 			"exclude" => 1,		
 			"label" => "LLL:EXT:party/locallang_db.xml:tx_party_parties.birth_star",		
 			"config" => Array (
-				"type" => "select",	
-				"foreign_table" => "tx_party_birth_stars",	
-				"foreign_table_where" => "AND tx_party_birth_stars.pid=###STORAGE_PID### ORDER BY tx_party_birth_stars.uid",	
-				"size" => 1,	
-				"minitems" => 0,
-				"maxitems" => 1,
+				"type" => "input",	
+				"size" => "30",	
+				"max" => "90",	
+				"eval" => "trim",
 			)
 		),
 		"weight" => Array (		
@@ -3691,6 +3651,7 @@ $TCA["tx_party_parties"] = array (
 			"config" => Array (
 				"type" => "select",
 				"items" => Array (
+					Array("", ""),
 					Array("LLL:EXT:party/locallang_db.xml:tx_party_parties.blood_group.I.0", "O_NEGATIVE"),
 					Array("LLL:EXT:party/locallang_db.xml:tx_party_parties.blood_group.I.1", "O_POSITIVE"),
 					Array("LLL:EXT:party/locallang_db.xml:tx_party_parties.blood_group.I.2", "A_NEGATIVE"),
@@ -3709,6 +3670,9 @@ $TCA["tx_party_parties"] = array (
 			"label" => "LLL:EXT:party/locallang_db.xml:tx_party_parties.physical_status",		
 			"config" => Array (
 				"type" => "select",	
+				"items" => Array (
+					Array("",0),
+				),
 				"foreign_table" => "tx_party_physical_status",	
 				"foreign_table_where" => "AND tx_party_physical_status.pid=###SITEROOT### ORDER BY tx_party_physical_status.uid",	
 				"size" => 1,	
@@ -3721,6 +3685,9 @@ $TCA["tx_party_parties"] = array (
 			"label" => "LLL:EXT:party/locallang_db.xml:tx_party_parties.ethnicity",		
 			"config" => Array (
 				"type" => "select",	
+				"items" => Array (
+					Array("",0),
+				),
 				"foreign_table" => "tx_party_ethnicities",	
 				"foreign_table_where" => "AND tx_party_ethnicities.pid=###STORAGE_PID### ORDER BY tx_party_ethnicities.uid",	
 				"size" => 1,	
@@ -3762,7 +3729,7 @@ $TCA["tx_party_parties"] = array (
 			"exclude" => 1,		
 			"label" => "LLL:EXT:party/locallang_db.xml:tx_party_parties.habits",		
 			"config" => Array (
-				"type" => "select",	
+				"type" => "select",
 				"foreign_table" => "tx_party_habits",	
 				"foreign_table_where" => "AND tx_party_habits.pid=###STORAGE_PID### ORDER BY tx_party_habits.uid",	
 				'size' => 5,
@@ -3793,6 +3760,9 @@ $TCA["tx_party_parties"] = array (
 			"label" => "LLL:EXT:party/locallang_db.xml:tx_party_parties.organisation_nature",		
 			"config" => Array (
 				"type" => "select",	
+				"items" => Array (
+					Array("",0),
+				),
 				"foreign_table" => "tx_party_organisation_natures",	
 				"foreign_table_where" => "AND tx_party_organisation_natures.pid=###STORAGE_PID### ORDER BY tx_party_organisation_natures.uid",	
 				"size" => 1,	
@@ -4106,6 +4076,9 @@ $TCA["tx_party_parties"] = array (
 			"label" => "LLL:EXT:party/locallang_db.xml:tx_party_parties.allergies",		
 			"config" => Array (
 				"type" => "select",	
+				"items" => Array (
+					Array("",0),
+					),
 				"foreign_table" => "tx_party_allergies",	
 				"foreign_table_where" => "AND tx_party_allergies.pid=###STORAGE_PID### ORDER BY tx_party_allergies.uid",	
 				'size' => 5,

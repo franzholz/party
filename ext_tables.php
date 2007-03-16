@@ -36,26 +36,6 @@ $TCA["tx_party_birth_signs"] = array (
 	)
 );
 
-$TCA["tx_party_birth_stars"] = array (
-	"ctrl" => array (
-		'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_birth_stars',		
-		'label'     => 'title',	
-		'tstamp'    => 'tstamp',
-		'crdate'    => 'crdate',
-		'cruser_id' => 'cruser_id',
-		'languageField'            => 'sys_language_uid',	
-		'transOrigPointerField'    => 'l18n_parent',	
-		'transOrigDiffSourceField' => 'l18n_diffsource',	
-		'sortby' => 'sorting',	
-		'delete' => 'deleted',	
-		'dynamicConfigFile' => t3lib_extMgm::extPath($_EXTKEY).'tca.php',
-		'iconfile'          => t3lib_extMgm::extRelPath($_EXTKEY).'icons/icon_tx_party_birth_stars.gif',
-	),
-	"feInterface" => array (
-		"fe_admin_fieldList" => "sys_language_uid, l18n_parent, l18n_diffsource, short_title, title, long_title",
-	)
-);
-
 $TCA["tx_party_ethnicities"] = array (
 	"ctrl" => array (
 		'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_ethnicities',		
@@ -83,6 +63,9 @@ $TCA["tx_party_habits"] = array (
 		'tstamp'    => 'tstamp',
 		'crdate'    => 'crdate',
 		'cruser_id' => 'cruser_id',
+		'languageField'            => 'sys_language_uid',	
+		'transOrigPointerField'    => 'l18n_parent',	
+		'transOrigDiffSourceField' => 'l18n_diffsource',
 		'sortby' => 'sorting',	
 		'delete' => 'deleted',	
 		'dynamicConfigFile' => t3lib_extMgm::extPath($_EXTKEY).'tca.php',
@@ -712,7 +695,7 @@ $TCA["tx_party_memberships"] = array (
 $TCA["tx_party_allergies"] = array (
 	"ctrl" => array (
 		'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_allergies',		
-		'label'     => 'uid',	
+		'label'     => 'title',	
 		'tstamp'    => 'tstamp',
 		'crdate'    => 'crdate',
 		'cruser_id' => 'cruser_id',

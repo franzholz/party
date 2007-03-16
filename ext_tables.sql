@@ -23,30 +23,6 @@ CREATE TABLE tx_party_birth_signs (
 
 
 #
-# Table structure for table 'tx_party_birth_stars'
-#
-CREATE TABLE tx_party_birth_stars (
-	uid int(11) NOT NULL auto_increment,
-	pid int(11) DEFAULT '0' NOT NULL,
-	tstamp int(11) DEFAULT '0' NOT NULL,
-	crdate int(11) DEFAULT '0' NOT NULL,
-	cruser_id int(11) DEFAULT '0' NOT NULL,
-	sys_language_uid int(11) DEFAULT '0' NOT NULL,
-	l18n_parent int(11) DEFAULT '0' NOT NULL,
-	l18n_diffsource mediumblob NOT NULL,
-	sorting int(10) DEFAULT '0' NOT NULL,
-	deleted tinyint(4) DEFAULT '0' NOT NULL,
-	short_title varchar(30) DEFAULT '' NOT NULL,
-	title varchar(60) DEFAULT '' NOT NULL,
-	long_title varchar(90) DEFAULT '' NOT NULL,
-	
-	PRIMARY KEY (uid),
-	KEY parent (pid)
-);
-
-
-
-#
 # Table structure for table 'tx_party_ethnicities'
 #
 CREATE TABLE tx_party_ethnicities (
@@ -79,6 +55,9 @@ CREATE TABLE tx_party_habits (
 	tstamp int(11) DEFAULT '0' NOT NULL,
 	crdate int(11) DEFAULT '0' NOT NULL,
 	cruser_id int(11) DEFAULT '0' NOT NULL,
+	sys_language_uid int(11) DEFAULT '0' NOT NULL,
+	l18n_parent int(11) DEFAULT '0' NOT NULL,
+	l18n_diffsource mediumblob NOT NULL,
 	sorting int(10) DEFAULT '0' NOT NULL,
 	deleted tinyint(4) DEFAULT '0' NOT NULL,
 	short_title varchar(30) DEFAULT '' NOT NULL,
@@ -910,7 +889,7 @@ CREATE TABLE tx_party_parties (
 	birth_date_time int(11) DEFAULT '0' NOT NULL,
 	birth_date_time_precision varchar(90) DEFAULT '' NOT NULL,
 	birth_sign int(11) DEFAULT '0' NOT NULL,
-	birth_star int(11) DEFAULT '0' NOT NULL,
+	birth_star varchar(90) DEFAULT '' NOT NULL,
 	weight int(11) DEFAULT '0' NOT NULL,
 	height int(11) DEFAULT '0' NOT NULL,
 	breast int(11) DEFAULT '0' NOT NULL,

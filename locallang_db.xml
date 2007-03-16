@@ -10,10 +10,6 @@
 			<label index="tx_party_birth_signs.short_title">Short title</label>
 			<label index="tx_party_birth_signs.title">Title</label>
 			<label index="tx_party_birth_signs.long_title">Long title</label>
-			<label index="tx_party_birth_stars">Birth Star</label>
-			<label index="tx_party_birth_stars.short_title">Short title</label>
-			<label index="tx_party_birth_stars.title">Title</label>
-			<label index="tx_party_birth_stars.long_title">Long title</label>
 			<label index="tx_party_ethnicities">Ethnicity</label>
 			<label index="tx_party_ethnicities.short_title">Short title</label>
 			<label index="tx_party_ethnicities.title">Title</label>
@@ -42,7 +38,7 @@
 			<label index="tx_party_person_name_titles.short_title">Short title</label>
 			<label index="tx_party_person_name_titles.title">Title</label>
 			<label index="tx_party_person_name_titles.long_title">Long title</label>
-			<label index="tx_party_physical_status">Physical Statu</label>
+			<label index="tx_party_physical_status">Physical Status</label>
 			<label index="tx_party_physical_status.short_title">Short title</label>
 			<label index="tx_party_physical_status.title">Title</label>
 			<label index="tx_party_physical_status.long_title">Long title</label>

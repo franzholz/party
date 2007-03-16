@@ -1,5 +1,4 @@
 DROP TABLE tx_party_birth_signs;
-DROP TABLE tx_party_birth_stars;
 DROP TABLE tx_party_ethnicities;
 DROP TABLE tx_party_habits;
 DROP TABLE tx_party_hobbies;

@@ -1,5 +1,4 @@
 TRUNCATE tx_party_birth_signs;
-TRUNCATE tx_party_birth_stars;
 TRUNCATE tx_party_ethnicities;
 TRUNCATE tx_party_habits;
 TRUNCATE tx_party_hobbies;

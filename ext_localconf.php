@@ -9,9 +9,6 @@ t3lib_extMgm::addUserTSConfig('
 	options.saveDocNew.tx_party_birth_signs=1
 ');
 t3lib_extMgm::addUserTSConfig('
-	options.saveDocNew.tx_party_birth_stars=1
-');
-t3lib_extMgm::addUserTSConfig('
 	options.saveDocNew.tx_party_ethnicities=1
 ');
 t3lib_extMgm::addUserTSConfig('
