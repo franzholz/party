@@ -128,4 +128,7 @@ t3lib_extMgm::addUserTSConfig('
 t3lib_extMgm::addUserTSConfig('
 	options.saveDocNew.tx_party_relationships=1
 ');
+t3lib_extMgm::addUserTSConfig('
+	options.saveDocNew.tx_party_relationship_types=1
+');
 ?>

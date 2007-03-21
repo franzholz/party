@@ -19,6 +19,7 @@ Prio 2
 * All date and date/time fields: Extend beyond UNIX time range (e.g. tx_party_persons: birth_date_time)
 * 'Optimize' the use of the generated labels (e.g. define a label for "party" only once)
 * General: Concept which allows it to either use an existing record or define a free text (e.g. issuingAuthority of an Account)
+* Events: Extend type-definition (is is a single point in time or a time span?, is it allowed for persons and/or organisations?), perhaps as a general concept for types?
 
 
 

@@ -279,7 +279,8 @@ CREATE TABLE tx_party_types (
 	short_title varchar(30) DEFAULT '' NOT NULL,
 	title varchar(60) DEFAULT '' NOT NULL,
 	long_title varchar(90) DEFAULT '' NOT NULL,
-	allowed_for varchar(1000) DEFAULT '' NOT NULL,
+	allowed_for_field varchar(255) DEFAULT '' NOT NULL,
+	allowed_for_party_type varchar(13) DEFAULT '' NOT NULL,
 	
 	PRIMARY KEY (uid),
 	KEY parent (pid)
@@ -783,7 +784,7 @@ CREATE TABLE tx_party_vehicles (
 	make int(11) DEFAULT '0' NOT NULL,
 	type blob NOT NULL,
 	model varchar(90) DEFAULT '' NOT NULL,
-	license_place varchar(90) DEFAULT '' NOT NULL,
+	license_plate varchar(90) DEFAULT '' NOT NULL,
 	manufacture_date varchar(90) DEFAULT '' NOT NULL,
 	engine_number varchar(90) DEFAULT '' NOT NULL,
 	chassis_number varchar(90) DEFAULT '' NOT NULL,
@@ -810,7 +811,7 @@ CREATE TABLE tx_party_visas (
 	country int(11) DEFAULT '0' NOT NULL,
 	number varchar(90) DEFAULT '' NOT NULL,
 	code varchar(90) DEFAULT '' NOT NULL,
-	issue_date varchar(90) DEFAULT '' NOT NULL,
+	issue_date int(11) DEFAULT '0' NOT NULL,
 	issue_place varchar(90) DEFAULT '' NOT NULL,
 	maximum_stay varchar(90) DEFAULT '' NOT NULL,
 	restriction varchar(90) DEFAULT '' NOT NULL,

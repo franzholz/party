@@ -1,6 +1,9 @@
 <?php
 if (!defined ('TYPO3_MODE')) 	die ('Access denied.');
 
+// Include the class for getting own lables
+include_once(t3lib_extMgm::extPath('party').'hooks/class.tx_party_labels.php');
+
 $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['party']['inline_appearance']['default'] = array(
 	'collapseAll' => 1,
 	'expandSingle' => 1,
@@ -500,7 +503,8 @@ $TCA["tx_party_occupations"] = array (
 $TCA["tx_party_names"] = array (
 	"ctrl" => array (
 		'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_names',		
-		'label'     => 'last_name',	
+		'label'     => 'last_name',
+		'label_userFunc' => 'tx_party_labels->getLabel',
 		'tstamp'    => 'tstamp',
 		'crdate'    => 'crdate',
 		'cruser_id' => 'cruser_id',
@@ -586,17 +590,17 @@ $TCA["tx_party_stock_markets"] = array (
 $TCA["tx_party_vehicles"] = array (
 	"ctrl" => array (
 		'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_vehicles',		
-		'label'     => 'license_place',	
+		'label'     => 'license_plate',	
 		'tstamp'    => 'tstamp',
 		'crdate'    => 'crdate',
 		'cruser_id' => 'cruser_id',
-		'default_sortby' => "ORDER BY license_place",	
+		'default_sortby' => "ORDER BY license_plate",	
 		'delete' => 'deleted',	
 		'dynamicConfigFile' => t3lib_extMgm::extPath($_EXTKEY).'tca.php',
 		'iconfile'          => t3lib_extMgm::extRelPath($_EXTKEY).'icons/icon_tx_party_vehicles.gif',
 	),
 	"feInterface" => array (
-		"fe_admin_fieldList" => "party, make, type, model, license_place, manufacture_date, engine_number, chassis_number, body_number, remarks",
+		"fe_admin_fieldList" => "party, make, type, model, license_plate, manufacture_date, engine_number, chassis_number, body_number, remarks",
 	)
 );
 
@@ -620,7 +624,8 @@ $TCA["tx_party_visas"] = array (
 $TCA["tx_party_parties"] = array (
 	"ctrl" => array (
 		'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_parties',		
-		'label'     => 'uid',	
+		'label'     => 'uid',
+		'label_userFunc' => 'tx_party_labels->getLabel',
 		'tstamp'    => 'tstamp',
 		'crdate'    => 'crdate',
 		'cruser_id' => 'cruser_id',
