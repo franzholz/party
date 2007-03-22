@@ -26,6 +26,7 @@ Prio 2
 Wishlist
 --------
 * Link to Google Maps for an address (either directly with lat/long or trying to resolve the address)
+* "Normalize/verify" addresses using the Google API Geocoder (Feedback from Christoph Koehler)
 
 
 

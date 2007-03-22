@@ -1,5 +1,4 @@
 TRUNCATE tx_party_accounts;
-TRUNCATE tx_party_addresses;
 TRUNCATE tx_party_contacts;
 TRUNCATE tx_party_contact_numbers;
 TRUNCATE tx_party_countries_of_residence;
