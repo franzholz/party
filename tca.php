@@ -1178,7 +1178,7 @@ $TCA['tx_party_accounts'] = array (
 $TCA['tx_party_addresses'] = array (
 	'ctrl' => $TCA['tx_party_addresses']['ctrl'],
 	'interface' => array (
-	'showRecordFieldList' => 'parties,locality,thoroughfare,thoroughfare_number,building_name,location,lot,premise_type,internal_thoroughfare,reference_location,post_code,rural_delivery,latitude_degrees_measure,latitude_minutes_measure,latitude_seconds_measure,latitude_direction_code,longitude_degrees_measure,longitude_minutes_measure,longitude_seconds_measure,longitude_direction_code,postal_delivery_point,post_office,post_town,administrative_area,country,remarks'
+	'showRecordFieldList' => 'parties,locality,thoroughfare,thoroughfare_number,building_name,location,lot,premise_type,internal_thoroughfare,reference_location,post_code,rural_delivery,latitude_degrees_measure,latitude_minutes_measure,latitude_seconds_measure,latitude_direction_code,longitude_degrees_measure,longitude_minutes_measure,longitude_seconds_measure,longitude_direction_code,postal_delivery_point,post_office,post_town,administrative_area,country,images,remarks'
 	),
 	'feInterface' => $TCA['tx_party_addresses']['feInterface'],
 	'columns' => array (
@@ -1480,6 +1480,17 @@ $TCA['tx_party_addresses'] = array (
 				'maxitems' => 1,
 			)
 		),
+		'images' => Array (		
+			'exclude' => 1,		
+			'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_addresses.images',		
+			'config' => Array (
+				'type' => 'inline',
+				'foreign_table' => 'tx_party_images',
+				'foreign_field' => 'address',
+				'maxitems' => 99,
+				'appearance' => $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['party']['inline_appearance']['default'],
+			)
+		),
 		'remarks' => Array (		
 			'exclude' => 1,		
 			'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_addresses.remarks',		
@@ -1491,7 +1502,7 @@ $TCA['tx_party_addresses'] = array (
 		),
 	),
 	'types' => array (
-	'0' => array('showitem' => 'parties;;;;1-1-1, thoroughfare;;1, post_code;;2, locality;;3, administrative_area;;4, country, --palette--;LLL:EXT:party/locallang_db.xml:tx_party_addresses.latitude;5;;1-1-1, --palette--;LLL:EXT:party/locallang_db.xml:tx_party_addresses.longitude;6, remarks;;;;1-1-1')
+		'0' => array('showitem' => 'parties;;;;1-1-1, thoroughfare;;1, post_code;;2, locality;;3, administrative_area;;4, country, --palette--;LLL:EXT:party/locallang_db.xml:tx_party_addresses.latitude;5;;1-1-1, --palette--;LLL:EXT:party/locallang_db.xml:tx_party_addresses.longitude;6, images, remarks;;;;1-1-1')
 	),
 	'palettes' => array (
 		'1' => array('showitem' => 'thoroughfare_number, building_name, location, lot'),
@@ -3687,7 +3698,7 @@ $TCA['tx_party_parties'] = array (
 					Array('LLL:EXT:party/locallang_db.xml:tx_party_parties.blood_group.I.0', 'O_NEGATIVE'),
 					Array('LLL:EXT:party/locallang_db.xml:tx_party_parties.blood_group.I.1', 'O_POSITIVE'),
 					Array('LLL:EXT:party/locallang_db.xml:tx_party_parties.blood_group.I.2', 'A_NEGATIVE'),
-					Array('LLL:EXT:party/locallang_db.xml:tx_party_parties.blood_group.I.3', '3A_POSITIVE'),
+					Array('LLL:EXT:party/locallang_db.xml:tx_party_parties.blood_group.I.3', 'A_POSITIVE'),
 					Array('LLL:EXT:party/locallang_db.xml:tx_party_parties.blood_group.I.4', 'B_NEGATIVE'),
 					Array('LLL:EXT:party/locallang_db.xml:tx_party_parties.blood_group.I.5', 'B_POSITIVE'),
 					Array('LLL:EXT:party/locallang_db.xml:tx_party_parties.blood_group.I.6', 'AB_NEGATIVE'),
@@ -4258,8 +4269,6 @@ $TCA['tx_party_parties'] = array (
 		
 		nationalities, 
 		countries_of_residence,
-
-		visas;;;;1-1-1,
 		
 		accounts;;;;1-1-1, 
 		memberships,

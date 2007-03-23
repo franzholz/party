@@ -5,7 +5,6 @@ Management of party-related data, such as persons, organisations, names, address
 Todo
 ----
 Prio 1
-* Test image and eletronic address identifier
 * Image: Don't show reference to address when used in party and vice-versa
 * Create patch for static_info_tables (div->selectItemsTCA)
 * Create label_user_func for all tables which do not have a clear label field
@@ -20,6 +19,7 @@ Prio 2
 * 'Optimize' the use of the generated labels (e.g. define a label for "party" only once)
 * General: Concept which allows it to either use an existing record or define a free text (e.g. issuingAuthority of an Account)
 * Events: Extend type-definition (is is a single point in time or a time span?, is it allowed for persons and/or organisations?), perhaps as a general concept for types?
+* Check all SQL definitions and remove unnecessary blob fields
 
 
 
@@ -32,9 +32,10 @@ Wishlist
 
 To discuss
 ----------
-Where should the dependant records be stored? Same page, storage page, ...?
-which tables shall be "manually sortable"?
-tx_party_contact_numbers: Should contact_hours be an RTE field?
+* Where should the dependant records be stored? Same page, storage page, ...?
+* Which tables shall be "manually sortable"?
+* tx_party_contact_numbers: Should contact_hours be an RTE field?
+* Should Eye Colour and Skin Colour also be select fields?
 
 Suggestions for IRRE
 * newRecordLinkAddTitle option: Optionally, this can be an LLL reference which will be used instead of the label of the table

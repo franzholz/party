@@ -121,6 +121,7 @@
 			<label index="tx_party_addresses.post_town">Post town</label>
 			<label index="tx_party_addresses.administrative_area">Administrative area</label>
 			<label index="tx_party_addresses.country">Country</label>
+			<label index="tx_party_addresses.images">Images</label>
 			<label index="tx_party_addresses.remarks">Remarks</label>
 			<label index="tx_party_contacts">Contact</label>
 			<label index="tx_party_contacts.party">Party</label>

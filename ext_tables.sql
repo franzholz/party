@@ -371,6 +371,7 @@ CREATE TABLE tx_party_addresses (
 	longitude_minutes_measure int(11) DEFAULT '0' NOT NULL,
 	longitude_seconds_measure int(11) DEFAULT '0' NOT NULL,
 	longitude_direction_code char(1) DEFAULT '' NOT NULL,
+	images tinytext NOT NULL,
 	remarks text NOT NULL,
 	
 	PRIMARY KEY (uid),
