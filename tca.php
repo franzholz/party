@@ -1487,6 +1487,7 @@ $TCA['tx_party_addresses'] = array (
 				'type' => 'inline',
 				'foreign_table' => 'tx_party_images',
 				'foreign_field' => 'address',
+				'foreign_type' => 1,	// Image type = 1 (Address)
 				'maxitems' => 99,
 				'appearance' => $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['party']['inline_appearance']['default'],
 			)
@@ -3952,11 +3953,8 @@ $TCA['tx_party_parties'] = array (
 				'type' => 'inline',
 				'foreign_table' => 'tx_party_images',
 				'foreign_field' => 'party',
+				'foreign_type' => 0,	// Any party type => Image type = 0 (Party)
 				'maxitems' => 99,
-				'foreign_type' => array(
-					'0' => '0',		// Any party type => Image type = 0 (Party)
-					'1' => '0',		// Any party type => Image type = 0 (Party)
-				),
 				'appearance' => $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['party']['inline_appearance']['default'],
 			)
 		),
