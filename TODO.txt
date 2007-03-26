@@ -5,18 +5,16 @@ Management of party-related data, such as persons, organisations, names, address
 Todo
 ----
 Prio 1
-* Image: Don't show reference to address when used in party and vice-versa
 * Create patch for static_info_tables (div->selectItemsTCA)
 * Create label_user_func for all tables which do not have a clear label field
-* Show only the possible 'name types' according to the party type
-* Events: Define in the type of the event whether it's a single point in time or a time range. Show only the possible fields
+* Show only the possible 'name types' and 'image types' according to the party/address type
 * ISO-Standard for West/East/North/South?
 
 Prio 2
 * Create new static extension for stock markets (done, proposed to Franz Holzinger for integration into static_info_tables)
 * Update stock_markets to use hotlist once it's included in static_info_tables
 * All date and date/time fields: Extend beyond UNIX time range (e.g. tx_party_persons: birth_date_time)
-* 'Optimize' the use of the generated labels (e.g. define a label for "party" only once)
+* 'Optimize' the use of the generated xml-labels (e.g. define a label for "party" only once)
 * General: Concept which allows it to either use an existing record or define a free text (e.g. issuingAuthority of an Account)
 * Events: Extend type-definition (is is a single point in time or a time span?, is it allowed for persons and/or organisations?), perhaps as a general concept for types?
 * Check all SQL definitions and remove unnecessary blob fields

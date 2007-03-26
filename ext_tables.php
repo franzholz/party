@@ -424,6 +424,7 @@ $TCA['tx_party_images'] = array (
 		'cruser_id' => 'cruser_id',
 		'default_sortby' => 'ORDER BY title',	
 		'delete' => 'deleted',	
+		'type' => 'type',
 		'dynamicConfigFile' => t3lib_extMgm::extPath($_EXTKEY).'tca.php',
 		'iconfile'          => t3lib_extMgm::extRelPath($_EXTKEY).'icons/icon_tx_party_images.gif',
 	),

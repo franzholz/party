@@ -527,6 +527,7 @@ CREATE TABLE tx_party_images (
 	crdate int(11) DEFAULT '0' NOT NULL,
 	cruser_id int(11) DEFAULT '0' NOT NULL,
 	deleted tinyint(4) DEFAULT '0' NOT NULL,
+	type int(11) DEFAULT '0' NOT NULL,
 	party int(11) DEFAULT '0' NOT NULL,
 	address int(11) DEFAULT '0' NOT NULL,
 	image blob NOT NULL,

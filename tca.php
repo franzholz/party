@@ -2045,20 +2045,30 @@ $TCA['tx_party_electronic_address_identifiers'] = array (
 $TCA['tx_party_images'] = array (
 	'ctrl' => $TCA['tx_party_images']['ctrl'],
 	'interface' => array (
-		'showRecordFieldList' => 'party,address,image,title,description,remarks'
+		'showRecordFieldList' => 'type,party,address,image,title,description,remarks'
 	),
 	'feInterface' => $TCA['tx_party_images']['feInterface'],
 	'columns' => array (
+		'type' => Array (		
+			'exclude' => 1,		
+			'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_images.type',
+			'config' => Array (
+				'type' => 'select',
+				'items' => Array (
+					Array('LLL:EXT:party/locallang_db.xml:tx_party_images.type.I.0', '0'),
+					Array('LLL:EXT:party/locallang_db.xml:tx_party_images.type.I.1', '1'),
+				),
+				'size' => 1,	
+				'maxitems' => 1,
+			)
+		),
 		'party' => Array (		
 			'exclude' => 1,		
 			'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_images.party',		
 			'config' => Array (
-				'type' => 'select',	
-				'items' => Array (
-					Array('',0),
-				),
-				'foreign_table' => 'tx_party_parties',	
-				'foreign_table_where' => 'AND tx_party_parties.pid=###STORAGE_PID### ORDER BY tx_party_parties.uid',	
+				'type' => 'group',
+				'internal_type' => 'db',
+				'allowed' => 'tx_party_parties',	
 				'size' => 1,	
 				'minitems' => 0,
 				'maxitems' => 1,
@@ -2068,12 +2078,9 @@ $TCA['tx_party_images'] = array (
 			'exclude' => 1,		
 			'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_images.address',		
 			'config' => Array (
-				'type' => 'select',	
-				'items' => Array (
-					Array('',0),
-				),
-				'foreign_table' => 'tx_party_addresses',	
-				'foreign_table_where' => 'AND tx_party_addresses.pid=###STORAGE_PID### ORDER BY tx_party_addresses.uid',	
+				'type' => 'group',	
+				'internal_type' => 'db',
+				'allowed' => 'tx_party_addresses',	
 				'size' => 1,	
 				'minitems' => 0,
 				'maxitems' => 1,
@@ -2125,11 +2132,9 @@ $TCA['tx_party_images'] = array (
 		),
 	),
 	'types' => array (
-		'0' => array('showitem' => 'party;;;;1-1-1, address, image, title;;;;2-2-2, description;;;;3-3-3, remarks')
+		'0' => array('showitem' => 'type;;;;1-1-1, party, image, title;;;;2-2-2, description;;;;3-3-3, remarks'),
+		'1' => array('showitem' => 'type;;;;1-1-1, address, image, title;;;;2-2-2, description;;;;3-3-3, remarks')
 	),
-	'palettes' => array (
-		'1' => array('showitem' => '')
-	)
 );
 
 
@@ -3764,7 +3769,6 @@ $TCA['tx_party_parties'] = array (
 				'autoSizeMax' => 20,
 				'minitems' => 0,
 				'maxitems' => 99,
-				'renderMode' => 'checkbox',
 				'MM' => 'tx_party_parties_hobbies_mm',
 			)
 		),
@@ -3779,7 +3783,6 @@ $TCA['tx_party_parties'] = array (
 				'autoSizeMax' => 20,
 				'minitems' => 0,
 				'maxitems' => 99,
-				'renderMode' => 'checkbox',
 				'MM' => 'tx_party_parties_habits_mm',
 			)
 		),
@@ -3862,6 +3865,10 @@ $TCA['tx_party_parties'] = array (
 				'type' => 'inline',
 				'foreign_table' => 'tx_party_names',
 				'foreign_field' => 'party',
+				'foreign_type' => array(
+					'0' => '0',		// Party type = 0 (Person) => Name type = 0 (Person name)
+					'1' => '1',		// Party type = 1 (Organisation) => Name type = 1 (Organisation name)
+				),
 				'maxitems' => 99,
 				'appearance' => $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['party']['inline_appearance']['default'],
 			)
@@ -3946,6 +3953,10 @@ $TCA['tx_party_parties'] = array (
 				'foreign_table' => 'tx_party_images',
 				'foreign_field' => 'party',
 				'maxitems' => 99,
+				'foreign_type' => array(
+					'0' => '0',		// Any party type => Image type = 0 (Party)
+					'1' => '0',		// Any party type => Image type = 0 (Party)
+				),
 				'appearance' => $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['party']['inline_appearance']['default'],
 			)
 		),
@@ -4125,7 +4136,6 @@ $TCA['tx_party_parties'] = array (
 				'autoSizeMax' => 20,
 				'minitems' => 0,
 				'maxitems' => 99,
-				'renderMode' => 'checkbox',
 				'MM' => 'tx_party_parties_allergies_mm',
 			)
 		),
@@ -4758,12 +4768,9 @@ $TCA['tx_party_address_usages'] = array (
 			'exclude' => 1,		
 			'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_address_usages.party',		
 			'config' => Array (
-				'type' => 'select',	
-				'items' => Array (
-					Array('',0),
-				),
-				'foreign_table' => 'tx_party_parties',	
-				'foreign_table_where' => 'AND tx_party_parties.pid=###STORAGE_PID### ORDER BY tx_party_parties.uid',	
+				'type' => 'group',	
+				'internal_type' => 'db',
+				'allowed' => 'tx_party_parties',	
 				'size' => 1,	
 				'minitems' => 0,
 				'maxitems' => 1,
@@ -4773,12 +4780,9 @@ $TCA['tx_party_address_usages'] = array (
 			'exclude' => 1,		
 			'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_address_usages.address',		
 			'config' => Array (
-				'type' => 'select',	
-				'items' => Array (
-					Array('',0),
-				),
-				'foreign_table' => 'tx_party_addresses',	
-				'foreign_table_where' => 'AND tx_party_addresses.pid=###STORAGE_PID### ORDER BY tx_party_addresses.uid',	
+				'type' => 'group',
+				'internal_type' => 'db',
+				'allowed' => 'tx_party_addresses',
 				'size' => 1,	
 				'minitems' => 0,
 				'maxitems' => 1,
@@ -4828,12 +4832,9 @@ $TCA['tx_party_contact_number_usages'] = array (
 			'exclude' => 1,		
 			'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_contact_number_usages.party',		
 			'config' => Array (
-				'type' => 'select',	
-				'items' => Array (
-					Array('',0),
-				),
-				'foreign_table' => 'tx_party_parties',	
-				'foreign_table_where' => 'AND tx_party_parties.pid=###STORAGE_PID### ORDER BY tx_party_parties.uid',	
+				'type' => 'group',
+				'internal_type' => 'db',
+				'allowed' => 'tx_party_parties',	
 				'size' => 1,	
 				'minitems' => 0,
 				'maxitems' => 1,
@@ -4843,13 +4844,10 @@ $TCA['tx_party_contact_number_usages'] = array (
 			'exclude' => 1,		
 			'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_contact_number_usages.contact_number',		
 			'config' => Array (
-				'type' => 'select',	
-				'items' => Array (
-					Array('',0),
-				),
-				'foreign_table' => 'tx_party_contact_numbers',	
-				'foreign_table_where' => 'AND tx_party_contact_numbers.pid=###STORAGE_PID### ORDER BY tx_party_contact_numbers.uid',
-				'size' => 1,	
+				'type' => 'group',
+				'internal_type' => 'db',
+				'allowed' => 'tx_party_contact_numbers',	
+				'size' => 1,
 				'minitems' => 0,
 				'maxitems' => 1,
 			)
@@ -4898,12 +4896,9 @@ $TCA['tx_party_electronic_address_identifier_usages'] = array (
 			'exclude' => 1,		
 			'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_electronic_address_identifier_usages.party',		
 			'config' => Array (
-				'type' => 'select',	
-				'items' => Array (
-					Array('',0),
-				),
-				'foreign_table' => 'tx_party_parties',	
-				'foreign_table_where' => 'AND tx_party_parties.pid=###STORAGE_PID### ORDER BY tx_party_parties.uid',	
+				'type' => 'group',
+				'internal_type' => 'db',
+				'allowed' => 'tx_party_parties',
 				'size' => 1,	
 				'minitems' => 0,
 				'maxitems' => 1,
@@ -4913,13 +4908,10 @@ $TCA['tx_party_electronic_address_identifier_usages'] = array (
 			'exclude' => 1,		
 			'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_electronic_address_identifier_usages.electronic_address_identifier',		
 			'config' => Array (
-				'type' => 'select',	
-				'items' => Array (
-					Array('',0),
-				),
-				'foreign_table' => 'tx_party_electronic_address_identifiers',	
-				'foreign_table_where' => 'AND tx_party_electronic_address_identifiers.pid=###STORAGE_PID### ORDER BY tx_party_electronic_address_identifiers.uid',	
-				'size' => 1,	
+				'type' => 'group',
+				'internal_type' => 'db',
+				'allowed' => 'tx_party_electronic_address_identifiers',
+				'size' => 1,
 				'minitems' => 0,
 				'maxitems' => 1,
 			)

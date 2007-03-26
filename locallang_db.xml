@@ -169,6 +169,9 @@
 			<label index="tx_party_electronic_address_identifiers.electronic_address_identifier">Electronic address identifier</label>
 			<label index="tx_party_electronic_address_identifiers.remarks">Remarks</label>
 			<label index="tx_party_images">Image</label>
+			<label index="tx_party_images.type">Type</label>
+			<label index="tx_party_images.type.I.0">Party</label>
+			<label index="tx_party_images.type.I.1">Address</label>
 			<label index="tx_party_images.party">Party</label>
 			<label index="tx_party_images.address">Address</label>
 			<label index="tx_party_images.image">Image</label>
