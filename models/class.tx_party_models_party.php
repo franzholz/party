@@ -24,7 +24,9 @@
 
 
 /** 
- * Model for the class Party
+ * Abstract base class for the Party model. This class is
+ * extended by the class tx_party_models_person and
+ * tx_party_models_organisation.
  * 
  * Depends on: liv/div 
  *
@@ -32,11 +34,66 @@
  * @package TYPO3
  * @subpackage tx_party
  */
-class tx_party_models_party extends tx_lib_object {
+
+require_once(t3lib_extMgm::extPath('div').'class.tx_div.php');
+tx_div::load('tx_lib_object');
+require_once (t3lib_extMgm::extPath('party').'models/class.tx_party_models_names.php');
+require_once (t3lib_extMgm::extPath('party').'models/class.tx_party_models_addresses.php');
+
+abstract class tx_party_models_party extends tx_lib_object {
+
+	protected $table = 'tx_party_parties';
 	
-	public function load($uid, $parameters = null) {
+	public function load($uid,$fields) {
+		$uid = intval($uid);
+		$groupBy = '';
+		$orderBy = '';
 		
-	}	
+		// Load the party from the database and build the object
+		$query = $GLOBALS['TYPO3_DB']->SELECTquery($fields, $this->table, $this->table.'.uid='.$uid, $groupBy, $orderBy);
+		$result = $GLOBALS['TYPO3_DB']->sql_query($query);
+		if($result) {
+			$row = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($result);
+			$this->overwriteArray($row);
+		}
+		
+		// Names
+		if ($this->get('names')) {
+
+			// Load the names
+			$names = t3lib_div::makeInstance('tx_party_models_names');
+			$names->loadByParty($uid);
+			$this->set('names',$names);
+			
+			// Include the values of the standard name as parameters of the party
+			$standardName = $names->get('standard');
+			if (is_object($standardName)) {
+				for ($standardName->rewind();$standardName->valid();$standardName->next()) {
+					if ($standardName->key() == 'remarks') continue;	// Don't overwrite the remarks of the party
+					$this->set($standardName->key(),$standardName->current());
+				}
+			}
+		}
+		
+		// Addresses
+		if ($this->get('addresses')) {
+
+			// Load the addresses
+			$addresses = t3lib_div::makeInstance('tx_party_models_addresses');
+			$addresses->loadByParty($uid);
+			$this->set('addresses',$addresses);
+			
+			// Include the values of the standard address as parameters of the party
+			$standardAddress = $addresses->get('standard');
+			if (is_object($standardAddress)) {
+				for ($standardAddress->rewind();$standardAddress->valid();$standardAddress->next()) {
+					if ($standardAddress->key() == 'remarks') continue;	// Don't overwrite the remarks of the party
+					$this->set($standardAddress->key(),$standardAddress->current());
+				}
+			}
+		}
+
+	}
 }
 
 if (defined('TYPO3_MODE') && $TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/party/models/class.tx_party_models_party.php']) {

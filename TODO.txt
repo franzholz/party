@@ -8,16 +8,34 @@ Prio 1
 * Create patch for static_info_tables (div->selectItemsTCA)
 * Create label_user_func for all tables which do not have a clear label field
 * Show only the possible 'name types' and 'image types' according to the party/address type
-* ISO-Standard for West/East/North/South?
+* ISO-Standard for West/East/North/South? http://en.wikipedia.org/wiki/ISO_6709 uses positive/negative values
+* Add new 'suggest' type for input fields (see below)
 
 Prio 2
 * Create new static extension for stock markets (done, proposed to Franz Holzinger for integration into static_info_tables)
 * Update stock_markets to use hotlist once it's included in static_info_tables
 * All date and date/time fields: Extend beyond UNIX time range (e.g. tx_party_persons: birth_date_time)
 * 'Optimize' the use of the generated xml-labels (e.g. define a label for "party" only once)
-* General: Concept which allows it to either use an existing record or define a free text (e.g. issuingAuthority of an Account)
 * Events: Extend type-definition (is is a single point in time or a time span?, is it allowed for persons and/or organisations?), perhaps as a general concept for types?
 * Check all SQL definitions and remove unnecessary blob fields
+
+
+
+New 'suggest' type for input fields
+-----------------------------------
+* See: http://lists.netfielders.de/pipermail/typo3-project-irre/2007-March/000098.html
+* General: Concept which allows it to either use an existing record or define a free text (e.g. issuingAuthority of an Account)
+
+I found a page describing a way of using suggest using prototype:
+http://www.ajaxon.com/michael/?p=8
+http://www.ajaxon.com/michael/?p=10
+
+script.aculo.us has "autocomplete" fields, maybe this could be better?
+http://wiki.script.aculo.us/scriptaculous/show/Demos
+http://demo.script.aculo.us/ajax/autocompleter
+
+The prototype framework is described here:
+http://www.sergiopereira.com/articles/prototype.js.html
 
 
 

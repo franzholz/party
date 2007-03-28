@@ -225,6 +225,7 @@
 			<label index="tx_party_names.type.I.0">Person Name</label>
 			<label index="tx_party_names.type.I.1">Organisation Name</label>
 			<label index="tx_party_names.type">Type</label>
+			<label index="tx_party_names.standard">Standard</label>
 			<label index="tx_party_names.person_name_title">Person Name Title</label>
 			<label index="tx_party_names.first_name">First name</label>
 			<label index="tx_party_names.middle_name">Middle name</label>

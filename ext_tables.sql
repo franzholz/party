@@ -647,6 +647,7 @@ CREATE TABLE tx_party_names (
 	deleted tinyint(4) DEFAULT '0' NOT NULL,
 	party int(11) DEFAULT '0' NOT NULL,
 	type int(11) DEFAULT '0' NOT NULL,
+	standard tinyint(3) DEFAULT '0' NOT NULL,
 	person_name_title int(11) DEFAULT '0' NOT NULL,
 	first_name varchar(90) DEFAULT '' NOT NULL,
 	middle_name varchar(90) DEFAULT '' NOT NULL,

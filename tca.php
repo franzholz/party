@@ -2550,7 +2550,7 @@ $TCA['tx_party_occupations'] = array (
 $TCA['tx_party_names'] = array (
 	'ctrl' => $TCA['tx_party_names']['ctrl'],
 	'interface' => array (
-		'showRecordFieldList' => 'party,type,person_name_title,first_name,middle_name,ancestor_name,last_name,other_name,preceding_title,alias,generation_identifier,place_name,organisation_name_type,organisation_name,abbreviation,remarks'
+		'showRecordFieldList' => 'party,type,standard,person_name_title,first_name,middle_name,ancestor_name,last_name,other_name,preceding_title,alias,generation_identifier,place_name,organisation_name_type,organisation_name,abbreviation,remarks'
 	),
 	'feInterface' => $TCA['tx_party_names']['feInterface'],
 	'columns' => array (
@@ -2577,6 +2577,13 @@ $TCA['tx_party_names'] = array (
 				),
 				'size' => 1,	
 				'maxitems' => 1,
+			)
+		),
+		'standard' => Array (		
+			'exclude' => 1,		
+			'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_names.standard',		
+			'config' => Array (
+				'type' => 'check',
 			)
 		),
 		'person_name_title' => Array (		
@@ -2729,8 +2736,8 @@ $TCA['tx_party_names'] = array (
 		),
 	),
 	'types' => array (
-	'0' => array('showitem' => 'party;;;;1-1-1, type, person_name_title;;1, first_name;;2, last_name;;3, remarks;;;;1-1-1'),
-	'1' => array('showitem' => 'party;;;;1-1-1, type, organisation_name_type, organisation_name, abbreviation, remarks;;;;1-1-1')
+		'0' => array('showitem' => 'party;;;;1-1-1, type, standard, person_name_title;;1, first_name;;2, last_name;;3, remarks;;;;1-1-1'),
+		'1' => array('showitem' => 'party;;;;1-1-1, type, standard, organisation_name_type, organisation_name, abbreviation, remarks;;;;1-1-1')
 	),
 	'palettes' => array (
 		'1' => array('showitem' => 'preceding_title'),
@@ -4237,7 +4244,7 @@ $TCA['tx_party_parties'] = array (
 		
 		revenues;;;;1-1-1, 
 		
-		vehicles;;;;1-1-1, 
+		vehicles;;;;1-1-1
 	'),
 	'1' => array('showitem' => '
 		type,
@@ -4285,7 +4292,7 @@ $TCA['tx_party_parties'] = array (
 		
 		revenues;;;;1-1-1, 
 		
-		vehicles;;;;1-1-1, 
+		vehicles;;;;1-1-1
 	'),
 	),
 	'palettes' => array (
