@@ -52,6 +52,9 @@ To discuss
 * Which tables shall be "manually sortable"?
 * tx_party_contact_numbers: Should contact_hours be an RTE field?
 * Should Eye Colour and Skin Colour also be select fields?
+* Label of addresses: Make dependant of the country-specific address format?
+* Is it ok to use t3lib_BEfunc::getRecord() in the model?
+* label_userFunc is nice, but there's no way records can be sorted by this 'virtual' label. Store it redundantly?
 
 Suggestions for IRRE
 * newRecordLinkAddTitle option: Optionally, this can be an LLL reference which will be used instead of the label of the table

@@ -37,6 +37,13 @@ require_once (t3lib_extMgm::extPath('party').'models/class.tx_party_models_party
 
 class tx_party_models_organisation extends tx_party_models_party {
 		
+
+	/**
+	 * Loads the organisation.
+	 * 
+	 * @param	integer		$uid: UID of the organisation
+	 * @return	void		The data is loaded into the object
+	 */
 	public function load($uid) {
 		global $TCA;
 		$uid = intval($uid);

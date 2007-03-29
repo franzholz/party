@@ -40,6 +40,12 @@ class tx_party_models_names extends tx_lib_object {
 
 	protected $table = 'tx_party_names';
 	
+	/**
+	 * Loads all names which are assigned to a specific party.
+	 * 
+	 * @param	integer		$uid: UID of the party
+	 * @return	void		The data is loaded into the object
+	 */
 	public function loadByParty($partyUid) {
 		$partyUid = intval($partyUid);
 		$groupBy = '';

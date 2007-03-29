@@ -39,11 +39,20 @@ require_once(t3lib_extMgm::extPath('div').'class.tx_div.php');
 tx_div::load('tx_lib_object');
 require_once (t3lib_extMgm::extPath('party').'models/class.tx_party_models_names.php');
 require_once (t3lib_extMgm::extPath('party').'models/class.tx_party_models_addresses.php');
+require_once (t3lib_extMgm::extPath('party').'models/class.tx_party_models_electronic_address_identifiers.php');
 
 abstract class tx_party_models_party extends tx_lib_object {
 
 	protected $table = 'tx_party_parties';
 	
+	
+	/**
+	 * Loads the party.
+	 * 
+	 * @param	integer		$uid: UID of the party
+	 * @param	string		$fields: Comma-separated list of field names to load (determined by the derived classes)
+	 * @return	void		The data is loaded into the object
+	 */
 	public function load($uid,$fields) {
 		$uid = intval($uid);
 		$groupBy = '';
@@ -92,7 +101,49 @@ abstract class tx_party_models_party extends tx_lib_object {
 				}
 			}
 		}
+		
+			// ElectronicAddressIdentifiers
+		if ($this->get('electronic_address_identifiers')) {
 
+			// Load the electronic address identifiers
+			$electronicAddressIdentifiers = t3lib_div::makeInstance('tx_party_models_electronic_address_identifiers');
+			$electronicAddressIdentifiers->loadByParty($uid);
+			$this->set('electronic_address_identifiers',$electronicAddressIdentifiers);
+			
+			// Include the values of the standard electronic address identifier as parameters of the party
+			$standardElectronicAddressIdentifier = $electronicAddressIdentifiers->get('standard');
+			if (is_object($standardElectronicAddressIdentifier)) {
+				for ($standardElectronicAddressIdentifier->rewind();$standardElectronicAddressIdentifier->valid();$standardElectronicAddressIdentifier->next()) {
+					if ($standardAddress->key() == 'remarks') continue;	// Don't overwrite the remarks of the party
+					$this->set($standardElectronicAddressIdentifier->key(),$standardElectronicAddressIdentifier->current());
+				}
+			}
+		}
+	}
+	
+	/**
+	 * Returns the label of the party in the following format:
+	 * "[label_name], [locality]"
+	 * 
+	 * The data must be loaded before, by calling $this->load();
+	 * 
+	 * @return	string		Label of the party
+	 */
+	public function getLabel() {
+		if ($this->isEmpty()) return false;		// Data must be loaded
+		$label = array();
+		$out = '';
+		
+		// Get all relevant parts
+		$names = $this->get('names');
+		$locality = $this->get('locality');
+		
+		// Assemble the label
+		if (is_object($names)) $label[0] = $names->get('standard')->getLabel();
+		if ($locality) $label[1] = $locality;
+		
+		$out = implode(' - ',$label);		
+		return $out;
 	}
 }
 

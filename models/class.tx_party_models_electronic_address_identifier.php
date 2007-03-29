@@ -24,7 +24,7 @@
 
 
 /** 
- * Model for the class Address
+ * Model for the class ElectronicAddressIdentifier
  * 
  * Depends on: liv/div 
  *
@@ -36,14 +36,14 @@
 require_once(t3lib_extMgm::extPath('div').'class.tx_div.php');
 tx_div::load('tx_lib_object');
 
-class tx_party_models_address extends tx_lib_object {
+class tx_party_models_electronic_address_identifier extends tx_lib_object {
 
-	protected $table = 'tx_party_addresses';
+	protected $table = 'tx_party_electronic_address_identifiers';
 	
 	/**
-	 * Loads the address.
+	 * Loads the electronic address identifier.
 	 * 
-	 * @param	integer		$uid: UID of the address
+	 * @param	integer		$uid: UID of the electronic address identifier
 	 * @return	void		The data is loaded into the object
 	 */
 	public function load($uid) {
@@ -61,46 +61,23 @@ class tx_party_models_address extends tx_lib_object {
 	}
 	
 	/**
-	 * Returns the label of the address in the following format:
-	 * "[thoroughfare] [thoroughfare_number], [post_code] [locality] ([administrative_area])"
+	 * Returns the label of the electronic address identifier in the following format:
+	 * "[electronic_address_identifier]"
 	 * 
 	 * The data must be loaded before, by calling $this->load();
 	 * 
-	 * @return	string		Label of the address
+	 * @return	string		Label of the electronic address identifier
 	 */
 	public function getLabel() {
 		if ($this->isEmpty()) return false;		// Data must be loaded
-		$label = array();
-		$out = '';
-		
-		// Get all relevant parts
-		$thoroughfare = $this->get('thoroughfare');
-		$thoroughfareNumber = $this->get('thoroughfare_number');
-		$postCode = $this->get('post_code');
-		$locality = $this->get('locality');
-		$administrativeArea = $this->get('administrative_area');
-		
-		// Replace the administrativeArea code through the (language-neutral) code
-		if ($administrativeArea) {
-			$rec = t3lib_BEfunc::getRecord('static_country_zones',$administrativeArea,'zn_code');
-			$administrativeArea = $rec['zn_code'];
-		}
-		
-		// Assemble the label
-		if ($thoroughfare && !$thoroughfareNumber) $label[0] = $thoroughfare;
-		if ($thoroughfare && $thoroughfareNumber) $label[0] = $thoroughfare.' '.$thoroughfareNumber;
-		if ($locality && $administrativeArea) $locality = $locality.' ('.$administrativeArea.')';
-		if ($postCode) $label[1] = $postCode;
-		if ($locality) $label[1] = $locality;
-		if ($postCode && $locality) $label[1] = $postCode.' '.$locality;
 
-		$out = implode(', ',$label);
+		$out = $this->get('electronic_address_identifier');
 		return $out;
 	}
 }
 
-if (defined('TYPO3_MODE') && $TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/party/models/class.tx_party_models_address.php']) {
-	include_once($TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/party/models/class.tx_party_models_address.php']);
+if (defined('TYPO3_MODE') && $TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/party/models/class.tx_party_models_electronic_address_identifier.php']) {
+	include_once($TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/party/models/class.tx_party_models_electronic_address_identifier.php']);
 }
 
 

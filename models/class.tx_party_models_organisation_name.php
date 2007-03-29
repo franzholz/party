@@ -38,6 +38,13 @@ require_once (t3lib_extMgm::extPath('party').'div/class.tx_party_div.php');
 
 class tx_party_models_organisation_name extends tx_party_models_name {
 	
+
+	/**
+	 * Loads the organisation name.
+	 * 
+	 * @param	integer		$uid: UID of the organisation name
+	 * @return	void		The data is loaded into the object
+	 */
 	public function load($uid) {
 		global $TCA;
 		$uid = intval($uid);
@@ -45,11 +52,27 @@ class tx_party_models_organisation_name extends tx_party_models_name {
 		// Check that the name is an organisation name
 		$rec = t3lib_BEfunc::getRecord($this->table,$uid,'type');
 		if (!$rec['type'] == 1) return false;
+				
 		
 		// Get all fields belonging to the type 'organisation name' and load the object
 		$typeFields = tx_party_div::getAllTypeFields($this->table,$rec);
 		parent::load($uid,$typeFields);
 	}
+	
+	/**
+	 * Returns the label of the organisation name in the following format:
+	 * "[organisation_name]"
+	 * 
+	 * The data must be loaded before, by calling $this->load();
+	 * 
+	 * @return	string		Label of the organisation name
+	 */
+	public function getLabel() {
+		if ($this->isEmpty()) return false;		// Data must be loaded
+		$out = $this->get('organisation_name');	
+		return $out;
+	}
+	
 	
 }
 

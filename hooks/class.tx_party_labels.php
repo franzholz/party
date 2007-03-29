@@ -21,17 +21,19 @@
 *
 *  This copyright notice MUST APPEAR in all copies of the script!
 ***************************************************************/
+
+
+require_once (t3lib_extMgm::extPath('party').'models/class.tx_party_models_person.php');
+require_once (t3lib_extMgm::extPath('party').'models/class.tx_party_models_organisation.php');
+require_once (t3lib_extMgm::extPath('party').'models/class.tx_party_models_person_name.php');
+require_once (t3lib_extMgm::extPath('party').'models/class.tx_party_models_organisation_name.php');
+require_once (t3lib_extMgm::extPath('party').'models/class.tx_party_models_address.php');
+
+
 /**
  * Building (backend) labels, using label_userFunc.
  *
  * @author David Bruehlmeier <typo3@bruehlmeier.com>
- */
-
-
-
-/**
- * Building (backend) labels, using label_userFunc
- *
  */
 class tx_party_labels {
 		
@@ -41,7 +43,7 @@ class tx_party_labels {
 	 * Factory function which is called by label_userFunc. The function decides how to build the label.
 	 * The result is directly written to $params['title'], since this parameter is passed by reference.
 	 * 
-	 * TEMPORARY! This will be refactored using the API once it's available.
+	 * The function gets the label from the proper model.
 	 *
 	 * @param	array		$params: Parameters, passed by reference!
 	 * @param	object		$pObj: Parent object from the calling function, passed by reference, not used.
@@ -54,74 +56,38 @@ class tx_party_labels {
 		
 		// Init
 		$label = '';
-		$table = $params['table'];
-	
-		// Get complete record
-		$rec = t3lib_BEfunc::getRecord($params['table'], $params['row']['uid']);
+		$className = '';
 		
-		// Assemble the label
-		switch ($table) {
+		// Get the className of the model
+		switch ($params['table']) {
 			case 'tx_party_names':
-				$label = $this->getNameLabel($rec);			
+				if ($params['row']['type'] == 0) $className = 'tx_party_models_person_name';
+				if ($params['row']['type'] == 1) $className = 'tx_party_models_organisation_name';
 				break;
 				
 			case 'tx_party_parties':
-				// TODO: A dirty hack... the _standard_ name and address should be taken, not just the first one!
-				$names = t3lib_BEfunc::getRecordsByField('tx_party_names','party',$params['row']['uid']);
-				if (is_array($names)) {
-					$label = $this->getNameLabel(reset($names));
-				} else {
-					$label = $params['row']['uid'];
-				}
+				if ($params['row']['type'] == 0) $className = 'tx_party_models_person';
+				if ($params['row']['type'] == 1) $className = 'tx_party_models_organisation';
+				break;
 				
-				$addressUsages = t3lib_BEfunc::getRecordsByField('tx_party_address_usages','party',$params['row']['uid']);
-				if (is_array($addressUsages)) {
-					$addressUsage = reset($addressUsages);
-					$address = t3lib_BEfunc::getRecord('tx_party_addresses',$addressUsage['address']);
-					$label.= ' - '.$this->getAddressLabel($address);
-				}
+			case 'tx_party_addresses':
+				$className = 'tx_party_models_address';
 				break;
 				
 			default:
-				debug ('No label defined for table '.$table);
+				debug ('No model className found for table '.$params['table'].'. (hooks/tx_party_labels)');
 				break;
+		}
+		
+		// Get the label from the model
+		if ($className) {
+			$model = t3lib_div::makeInstance($className);
+			$model->load($params['row']['uid']);
+			$label = $model->getLabel();
 		}
 		
 		// Write new label back to the params-array (passed by reference)
 		if ($label != '') $params['title'] = $label;
-	}
-	
-	
-	
-	/**
-	 * Builds a name label based on the passed record.
-	 *
-	 * @param	array		$rec: Record from tx_party_names
-	 * @return	string		Name label
-	 */
-	private function getNameLabel($rec) {
-		if ($rec['type'] == 0) {	// Person Name
-			if ($rec['last_name']) $label.= $rec['last_name'].', ';
-			if ($rec['first_name']) $label.= $rec['first_name'].' ';
-			if ($rec['middle_name']) $label.= strtoupper(substr($rec['middle_name'],0,1)).'. ';					
-		}
-		if ($rec['type'] == 1) {	// Organisation Name
-			$label = $rec['organisation_name'];
-		}
-		
-		return $label;
-	}
-	
-	/**
-	 * Builds an address label based on the passed record.
-	 *
-	 * @param	array		$rec: Record from tx_party_addresses
-	 * @return	string		Name label
-	 */
-	private function getAddressLabel($rec) {
-		$label = $rec['locality'];
-		
-		return $label;
 	}
 	
 }

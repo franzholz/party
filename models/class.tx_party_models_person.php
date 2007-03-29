@@ -38,6 +38,13 @@ require_once (t3lib_extMgm::extPath('party').'div/class.tx_party_div.php');
 
 class tx_party_models_person extends tx_party_models_party {
 	
+
+	/**
+	 * Loads the person.
+	 * 
+	 * @param	integer		$uid: UID of the person
+	 * @return	void		The data is loaded into the object
+	 */
 	public function load($uid) {
 		global $TCA;
 		$uid = intval($uid);

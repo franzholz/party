@@ -39,6 +39,12 @@ class tx_party_models_addresses extends tx_lib_object {
 
 	protected $table = 'tx_party_address_usages';
 	
+	/**
+	 * Loads all addresses which are assigned to a specific party.
+	 * 
+	 * @param	integer		$uid: UID of the party
+	 * @return	void		The data is loaded into the object
+	 */
 	public function loadByParty($partyUid) {
 		$partyUid = intval($partyUid);
 		$groupBy = '';
