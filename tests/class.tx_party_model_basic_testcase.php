@@ -22,6 +22,7 @@
 *  This copyright notice MUST APPEAR in all copies of the script!
 ***************************************************************/
 
+require_once (t3lib_extMgm::extPath('party').'tests/class.tx_party_fixture.php');
 
 require_once (t3lib_extMgm::extPath('party').'models/class.tx_party_models_person.php');
 require_once (t3lib_extMgm::extPath('party').'models/class.tx_party_models_organisation.php');
@@ -33,27 +34,25 @@ require_once (t3lib_extMgm::extPath('party').'models/class.tx_party_models_elect
 /**
  * Basic test case for checking the Party Model.
  * 
- * WARNING: Never ever run a unit test like this on a live site!
+ * WARNING!!: Never ever run a unit test like this on a live site!!
+ * WARNING!!: Writes and overwrites arbitrary records to PID 1!!
  *         
  *
  * @author	David Bruehlmeier <typo3@bruehlmeier.com>
- * @todo	Add permanent fixture
  */
 class tx_party_model_basic_testcase extends tx_t3unit_testcase {
 	
-	public function __construct ($name) {
-		global $TYPO3_DB, $BE_USER;
-
-		parent::__construct ($name);
-		$TYPO3_DB->debugOutput = TRUE;
+	public function __construct($name) {
+		parent::__construct($name);
 	}
 
 	public function setUp() {
-		global $TYPO3_DB;
+		$fixture = t3lib_div::makeInstance('tx_party_fixture');
+		$fixture->create(1,1);	// basic test dataset to PID 1
 	}
 	
 	public function tearDown () {
-		global $TYPO3_DB;
+		// TODO: Delete all records and files
 	}
 
 	/*********************************************************
@@ -101,13 +100,15 @@ class tx_party_model_basic_testcase extends tx_t3unit_testcase {
 		self::assertSame($organisationName->getLabel(),'Newton Mearns Church','The label is not "Newton Mearns Church"');
 	}
 	
+
 	public function test_readAddress_basic() {
 		$address = t3lib_div::makeInstance('tx_party_models_address');
-		$address->load(1);
+		$address->load(1578);
 
-		self::assertSame($address->get('locality'),'Bonfol','The locality is not "Bonfol"');
-		self::assertSame($address->getLabel(),'rue du Chasseron 35, 2944 Bonfol (JU)','The label is not "rue du Chasseron 35, 2944 Bonfol (JU)"');
+		self::assertSame($address->get('locality'),'Vendlincourt','The locality is not "Vendlincourt"');
+		self::assertSame($address->getLabel(),'ch. du Fontenay 3, 2943 Vendlincourt (JU)','The label is not "ch. du Fontenay 3, 2943 Vendlincourt (JU)"');
 	}
+
 	
 	public function test_readElectronicAddressIdentifier_basic() {
 		$electronicAddressIdentifier = t3lib_div::makeInstance('tx_party_models_electronic_address_identifier');
@@ -116,6 +117,14 @@ class tx_party_model_basic_testcase extends tx_t3unit_testcase {
 		self::assertSame($electronicAddressIdentifier->get('electronic_address_identifier'),'info@newton-mearns-church.com','The electronic address identifier is not "info@newton-mearns-church.com"');
 		self::assertSame($electronicAddressIdentifier->getLabel(),'info@newton-mearns-church.com','The label is not "info@newton-mearns-church.com"');
 	}
+	
+	
+/*
+	public function test_exportFixture() {
+		$fixture = t3lib_div::makeInstance('tx_party_fixture');
+		$fixture->export(12);
+	}
+*/
 	
 
 }
