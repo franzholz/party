@@ -10,6 +10,7 @@ Prio 1
 * Show only the possible 'name types' and 'image types' according to the party/address type
 * ISO-Standard for West/East/North/South? http://en.wikipedia.org/wiki/ISO_6709 uses positive/negative values
 * Add new 'suggest' type for input fields (see below)
+* When merging 'standard'-records into tx_party_models_party, are uid,pid... overwritten?
 
 Prio 2
 * Create new static extension for stock markets (done, proposed to Franz Holzinger for integration into static_info_tables)
