@@ -114,7 +114,7 @@ abstract class tx_party_models_party extends tx_lib_object {
 			$standardElectronicAddressIdentifier = $electronicAddressIdentifiers->get('standard');
 			if (is_object($standardElectronicAddressIdentifier)) {
 				for ($standardElectronicAddressIdentifier->rewind();$standardElectronicAddressIdentifier->valid();$standardElectronicAddressIdentifier->next()) {
-					if ($standardAddress->key() == 'remarks') continue;	// Don't overwrite the remarks of the party
+					if ($standardElectronicAddressIdentifier->key() == 'remarks') continue;	// Don't overwrite the remarks of the party
 					$this->set($standardElectronicAddressIdentifier->key(),$standardElectronicAddressIdentifier->current());
 				}
 			}
