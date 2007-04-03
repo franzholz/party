@@ -24,7 +24,7 @@
 
 
 /** 
- * Model for a list of Addresses
+ * Model for a collection of Addresses
  * 
  * Depends on: liv/div 
  *
@@ -42,7 +42,7 @@ class tx_party_models_addresses extends tx_lib_object {
 	/**
 	 * Loads all addresses which are assigned to a specific party.
 	 * 
-	 * @param	integer		$uid: UID of the party
+	 * @param	integer		$partyUid: UID of the party
 	 * @return	void		The data is loaded into the object
 	 */
 	public function loadByParty($partyUid) {

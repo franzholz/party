@@ -30,6 +30,7 @@ require_once (t3lib_extMgm::extPath('party').'models/class.tx_party_models_perso
 require_once (t3lib_extMgm::extPath('party').'models/class.tx_party_models_organisation_name.php');
 require_once (t3lib_extMgm::extPath('party').'models/class.tx_party_models_address.php');
 require_once (t3lib_extMgm::extPath('party').'models/class.tx_party_models_electronic_address_identifier.php');
+require_once (t3lib_extMgm::extPath('party').'models/class.tx_party_models_parties.php');
 
 /**
  * Basic test case for checking the Party Model.
@@ -116,6 +117,25 @@ class tx_party_model_basic_testcase extends tx_t3unit_testcase {
 
 		self::assertSame($electronicAddressIdentifier->get('electronic_address_identifier'),'info@newton-mearns-church.com','The electronic address identifier is not "info@newton-mearns-church.com"');
 		self::assertSame($electronicAddressIdentifier->getLabel(),'info@newton-mearns-church.com','The label is not "info@newton-mearns-church.com"');
+	}
+	
+	public function test_readCollectionParties_byPid() {
+		$parties = t3lib_div::makeInstance('tx_party_models_parties');
+		$parties->loadByPid(1);
+		
+		self::assertSame($parties->get('list')->count(),17,'The collection does not contain 17 parties.');
+	}
+	
+	public function test_readCollectionParties_byCountry() {
+		$parties = t3lib_div::makeInstance('tx_party_models_parties');
+		$parties->loadByCountry(41,TRUE);
+
+		self::assertSame($parties->get('list')->count(),3,'The collection does not contain 3 parties.');
+		
+		$parties = t3lib_div::makeInstance('tx_party_models_parties');
+		$parties->loadByCountry(41,FALSE);
+
+		self::assertSame($parties->get('list')->count(),5,'The collection does not contain 5 parties.');
 	}
 	
 	

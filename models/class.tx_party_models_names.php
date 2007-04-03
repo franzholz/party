@@ -24,7 +24,7 @@
 
 
 /** 
- * Model for a list of Names (both PersonName and OrganisationName)
+ * Model for a collection of Names (both PersonName and OrganisationName)
  * 
  * Depends on: liv/div 
  *

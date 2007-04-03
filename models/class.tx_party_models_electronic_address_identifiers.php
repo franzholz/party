@@ -26,7 +26,7 @@
 require_once (t3lib_extMgm::extPath('party').'models/class.tx_party_models_electronic_address_identifier.php');
 
 /** 
- * Model for a list of ElectronicAddressIdentifier
+ * Model for a collection of ElectronicAddressIdentifier
  * 
  * Depends on: liv/div 
  *
