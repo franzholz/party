@@ -56,6 +56,8 @@ class tx_party_fixture {
 				$files[] = t3lib_extMgm::extPath('party').'tests/fixture/0001_o.t3d';
 				$files[] = t3lib_extMgm::extPath('party').'tests/fixture/0012_p.t3d';
 				$files[] = t3lib_extMgm::extPath('party').'tests/fixture/0013_p.t3d';
+				$files[] = t3lib_extMgm::extPath('party').'tests/fixture/habit.t3d';
+				$files[] = t3lib_extMgm::extPath('party').'tests/fixture/mark.t3d';
 			break;
 			
 			default:

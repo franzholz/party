@@ -13,7 +13,6 @@ Prio 1
 * When merging 'standard'-records into tx_party_models_party, are uid,pid... overwritten?
 
 Prio 2
-* Create new static extension for stock markets (done, proposed to Franz Holzinger for integration into static_info_tables)
 * Update stock_markets to use hotlist once it's included in static_info_tables
 * All date and date/time fields: Extend beyond UNIX time range (e.g. tx_party_persons: birth_date_time)
 * 'Optimize' the use of the generated xml-labels (e.g. define a label for "party" only once)

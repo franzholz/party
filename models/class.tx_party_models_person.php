@@ -33,11 +33,11 @@
  * @subpackage tx_party
  */
 
-require_once (t3lib_extMgm::extPath('party').'models/class.tx_party_models_party.php');
 require_once (t3lib_extMgm::extPath('party').'div/class.tx_party_div.php');
+require_once(t3lib_extMgm::extPath('div').'class.tx_div.php');
+tx_div::load('tx_party_models_party');
 
 class tx_party_models_person extends tx_party_models_party {
-	
 
 	/**
 	 * Loads the person.

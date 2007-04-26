@@ -23,12 +23,12 @@
 ***************************************************************/
 
 
-require_once (t3lib_extMgm::extPath('party').'models/class.tx_party_models_person.php');
-require_once (t3lib_extMgm::extPath('party').'models/class.tx_party_models_organisation.php');
-require_once (t3lib_extMgm::extPath('party').'models/class.tx_party_models_person_name.php');
-require_once (t3lib_extMgm::extPath('party').'models/class.tx_party_models_organisation_name.php');
-require_once (t3lib_extMgm::extPath('party').'models/class.tx_party_models_address.php');
-
+require_once(t3lib_extMgm::extPath('div').'class.tx_div.php');
+tx_div::load('tx_party_models_person');
+tx_div::load('tx_party_models_organisation');
+tx_div::load('tx_party_models_personname');
+tx_div::load('tx_party_models_organisationname');
+tx_div::load('tx_party_models_address');
 
 /**
  * Building (backend) labels, using label_userFunc.
@@ -61,8 +61,8 @@ class tx_party_labels {
 		// Get the className of the model
 		switch ($params['table']) {
 			case 'tx_party_names':
-				if ($params['row']['type'] == 0) $className = 'tx_party_models_person_name';
-				if ($params['row']['type'] == 1) $className = 'tx_party_models_organisation_name';
+				if ($params['row']['type'] == 0) $className = 'tx_party_models_personname';
+				if ($params['row']['type'] == 1) $className = 'tx_party_models_organisationname';
 				break;
 				
 			case 'tx_party_parties':

@@ -36,47 +36,14 @@
  */
 
 require_once(t3lib_extMgm::extPath('div').'class.tx_div.php');
-tx_div::load('tx_lib_object');
+tx_div::load('tx_party_models_object');
 
-abstract class tx_party_models_name extends tx_lib_object {
-
-	protected $table = 'tx_party_names';
-	
-	
-	/**
-	 * Loads the name.
-	 * 
-	 * @param	integer		$uid: UID of the name
-	 * @param	string		$fields: Comma-separated list of field names to load (determined by the derived classes)
-	 * @return	void		The data is loaded into the object
-	 */
-	public function load($uid,$fields) {
-		$uid = intval($uid);
-		$groupBy = '';
-		$orderBy = '';
-				
-		$query = $GLOBALS['TYPO3_DB']->SELECTquery($fields, $this->table, $this->table.'.uid='.$uid, $groupBy, $orderBy);
-		$result = $GLOBALS['TYPO3_DB']->sql_query($query);
-		if($result) {
-			$row = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($result);
-			$this->overwriteArray($row);
-		}
-	}
-	
-	/**
-	 * Returns the label of the name in the specific format of the
-	 * name. Since the implementation is dependant of name type,
-	 * this function is only abstract and must be overwritten by
-	 * the child classes.
-	 * 
-	 * @return	string		Label of the name
-	 */
-	abstract public function getLabel();
+abstract class tx_party_models_name extends tx_party_models_object {
+	protected $table = 'tx_party_names';	
 }
 
 if (defined('TYPO3_MODE') && $TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/party/models/class.tx_party_models_name.php']) {
 	include_once($TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/party/models/class.tx_party_models_name.php']);
 }
-
 
 ?>

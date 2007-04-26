@@ -33,8 +33,9 @@
  * @subpackage tx_party
  */
 
-require_once (t3lib_extMgm::extPath('party').'models/class.tx_party_models_name.php');
-require_once (t3lib_extMgm::extPath('party').'div/class.tx_party_div.php');
+require_once(t3lib_extMgm::extPath('div').'class.tx_div.php');
+require_once(t3lib_extMgm::extPath('party').'div/class.tx_party_div.php');
+tx_div::load('tx_party_models_name');
 
 class tx_party_models_names extends tx_lib_object {
 
@@ -59,11 +60,11 @@ class tx_party_models_names extends tx_lib_object {
 			while($row = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($result)) {
 				$item = null;
 				if ($row['type'] == 0) {	// Person Name
-					$item = t3lib_div::makeInstance('tx_party_models_person_name');
+					$item = t3lib_div::makeInstance('tx_party_models_personname');
 					$item->load($row['uid']);
 				}
 				if ($row['type'] == 1) {	// Organisation Name
-					$item = t3lib_div::makeInstance('tx_party_models_organisation_name');
+					$item = t3lib_div::makeInstance('tx_party_models_organisationname');
 					$item->load($row['uid']);
 				}
 				if ($item->get('standard') == 1) $this->set('standard',$item);

@@ -33,7 +33,8 @@
  * @subpackage tx_party
  */
 
-require_once (t3lib_extMgm::extPath('party').'models/class.tx_party_models_address.php');
+require_once(t3lib_extMgm::extPath('div').'class.tx_div.php');
+tx_div::load('tx_party_models_address');
 
 class tx_party_models_addresses extends tx_lib_object {
 

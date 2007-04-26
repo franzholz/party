@@ -24,13 +24,30 @@
 
 require_once (t3lib_extMgm::extPath('party').'tests/class.tx_party_fixture.php');
 
-require_once (t3lib_extMgm::extPath('party').'models/class.tx_party_models_person.php');
-require_once (t3lib_extMgm::extPath('party').'models/class.tx_party_models_organisation.php');
-require_once (t3lib_extMgm::extPath('party').'models/class.tx_party_models_person_name.php');
-require_once (t3lib_extMgm::extPath('party').'models/class.tx_party_models_organisation_name.php');
-require_once (t3lib_extMgm::extPath('party').'models/class.tx_party_models_address.php');
-require_once (t3lib_extMgm::extPath('party').'models/class.tx_party_models_electronic_address_identifier.php');
-require_once (t3lib_extMgm::extPath('party').'models/class.tx_party_models_parties.php');
+tx_div::load('tx_party_models_person');
+tx_div::load('tx_party_models_organisation');
+tx_div::load('tx_party_models_personname');
+tx_div::load('tx_party_models_organisationname');
+tx_div::load('tx_party_models_address');
+tx_div::load('tx_party_models_electronicaddressidentifier');
+tx_div::load('tx_party_models_parties');
+tx_div::load('tx_party_models_account');
+tx_div::load('tx_party_models_allergy');
+tx_div::load('tx_party_models_birthsign');
+tx_div::load('tx_party_models_contact');
+tx_div::load('tx_party_models_countryofresidence');
+tx_div::load('tx_party_models_disability');
+tx_div::load('tx_party_models_document');
+tx_div::load('tx_party_models_type');
+tx_div::load('tx_party_models_ethnicity');
+tx_div::load('tx_party_models_event');
+tx_div::load('tx_party_models_favourite');
+tx_div::load('tx_party_models_habit');
+tx_div::load('tx_party_models_hobby');
+tx_div::load('tx_party_models_identifier');
+tx_div::load('tx_party_models_image');
+tx_div::load('tx_party_models_language');
+tx_div::load('tx_party_models_mark');
 
 /**
  * Basic test case for checking the Party Model.
@@ -49,7 +66,7 @@ class tx_party_model_basic_testcase extends tx_t3unit_testcase {
 
 	public function setUp() {
 		$fixture = t3lib_div::makeInstance('tx_party_fixture');
-		$fixture->create(1,1);	// basic test dataset to PID 1
+		//$fixture->create(1,1);	// basic test dataset to PID 1
 	}
 	
 	public function tearDown () {
@@ -62,87 +79,264 @@ class tx_party_model_basic_testcase extends tx_t3unit_testcase {
 	 *
 	 *********************************************************/
 
+	public function test_getPartyInstance() {
+		$object = tx_party_models_party::getInstance(534);
+
+		self::assertSame(get_class($object),'tx_party_models_person');
+		self::assertSame($object->getLabel(),'Delgado, Hubert - Fairfax');
+		
+		$object = tx_party_models_party::getInstance(2);
+		self::assertSame(get_class($object),'tx_party_models_organisation');
+		self::assertSame($object->getLabel(),'CFM Corporation - S. Carlo (Poschiavo)');
+	}
+
 	public function test_readPerson_basic() {
-		$person = t3lib_div::makeInstance('tx_party_models_person');
-		$person->load(12);
+		$object = t3lib_div::makeInstance('tx_party_models_person');
+		$object->load(12);
 				
-		self::assertSame($person->get('marital_status'),'SEPARATED','The marital status is not "separated"');
-		self::assertSame($person->get('last_name'),'Omini','The last name of the standard name is not "Omini"');
-		self::assertSame($person->get('locality'),'Fairfax','The locality of the standard address is not "Fairfax"');
-		self::assertSame($person->get('electronic_address_identifier'),'safiye.omini@googlemail.com','The locality of the standard address is not "safiye.omini@googlemail.com"');
-		self::assertSame($person->getLabel(),'Omini, Safiye - Fairfax','The label is not "Omini, Safiye - Fairfax"');
+		self::assertSame($object->get('marital_status'),'SEPARATED');
+		self::assertSame($object->get('last_name'),'Omini');
+		self::assertSame($object->get('locality'),'Fairfax');
+		self::assertSame($object->get('electronic_address_identifier'),'safiye.omini@googlemail.com');
+		self::assertSame($object->getLabel(),'Omini, Safiye - Fairfax');
 	}
 	
 	public function test_readOrganisation_basic() {
-		$organisation = t3lib_div::makeInstance('tx_party_models_organisation');
-		$organisation->load(1);
+		$object = t3lib_div::makeInstance('tx_party_models_organisation');
+		$object->load(1);
 
-		self::assertSame($organisation->get('company_registration_id'),'2D43EE391CAFB86F8BBC463DD9D4B6C7','The company registration ID is not "2D43EE391CAFB86F8BBC463DD9D4B6C7"');
-		self::assertSame($organisation->get('organisation_name'),'Newton Mearns Church','The organisation name of the standard name is not "Newton Mearns Church"');
-		self::assertSame($organisation->get('locality'),'Vendlincourt','The locality of the standard address is not "Vendlincourt"');
-		self::assertSame($organisation->get('electronic_address_identifier'),'info@newton-mearns-church.com','The locality of the standard address is not "info@newton-mearns-church.com"');
-		self::assertSame($organisation->getLabel(),'Newton Mearns Church - Vendlincourt','The label is not "Newton Mearns Church - Vendlincourt"');
+		self::assertSame($object->get('company_registration_id'),'2D43EE391CAFB86F8BBC463DD9D4B6C7');
+		self::assertSame($object->get('organisation_name'),'Newton Mearns Church');
+		self::assertSame($object->get('locality'),'Vendlincourt');
+		self::assertSame($object->get('electronic_address_identifier'),'info@newton-mearns-church.com');
+		self::assertSame($object->getLabel(),'Newton Mearns Church - Vendlincourt');
 		
 	}
 	
 	public function test_readPersonName_basic() {
-		$personName = t3lib_div::makeInstance('tx_party_models_person_name');
-		$personName->load(12);
+		$object = t3lib_div::makeInstance('tx_party_models_personname');
+		$object->load(12);
 
-		self::assertSame($personName->get('last_name'),'Omini','The last name is not "Omini"');
-		self::assertSame($personName->getLabel(),'Omini, Safiye','The label is not "Omini, Safiye"');
+		self::assertSame($object->get('last_name'),'Omini');
+		self::assertSame($object->getLabel(),'Omini, Safiye');
 	}
 	
 	public function test_readOrganisationName_basic() {
-		$organisationName = t3lib_div::makeInstance('tx_party_models_organisation_name');
-		$organisationName->load(1);
+		$object = t3lib_div::makeInstance('tx_party_models_organisationname');
+		$object->load(1);
 		
-		self::assertSame($organisationName->get('organisation_name'),'Newton Mearns Church','The last name is not "Newton Mearns Church"');
-		self::assertSame($organisationName->getLabel(),'Newton Mearns Church','The label is not "Newton Mearns Church"');
+		self::assertSame($object->get('organisation_name'),'Newton Mearns Church');
+		self::assertSame($object->getLabel(),'Newton Mearns Church');
 	}
 	
 
 	public function test_readAddress_basic() {
-		$address = t3lib_div::makeInstance('tx_party_models_address');
-		$address->load(1578);
+		$object = t3lib_div::makeInstance('tx_party_models_address');
+		$object->load(1578);
 
-		self::assertSame($address->get('locality'),'Vendlincourt','The locality is not "Vendlincourt"');
-		self::assertSame($address->getLabel(),'ch. du Fontenay 3, 2943 Vendlincourt (JU)','The label is not "ch. du Fontenay 3, 2943 Vendlincourt (JU)"');
+		self::assertSame($object->get('locality'),'Vendlincourt');
+		self::assertSame($object->getLabel(),'ch. du Fontenay 3, 2943 Vendlincourt (JU)');
 	}
 
 	
 	public function test_readElectronicAddressIdentifier_basic() {
-		$electronicAddressIdentifier = t3lib_div::makeInstance('tx_party_models_electronic_address_identifier');
-		$electronicAddressIdentifier->load(1);
+		$object = t3lib_div::makeInstance('tx_party_models_electronicaddressidentifier');
+		$object->load(1);
 
-		self::assertSame($electronicAddressIdentifier->get('electronic_address_identifier'),'info@newton-mearns-church.com','The electronic address identifier is not "info@newton-mearns-church.com"');
-		self::assertSame($electronicAddressIdentifier->getLabel(),'info@newton-mearns-church.com','The label is not "info@newton-mearns-church.com"');
+		self::assertSame($object->get('electronic_address_identifier'),'info@newton-mearns-church.com');
+		self::assertSame($object->getLabel(),'info@newton-mearns-church.com');
 	}
 	
 	public function test_readCollectionParties_byPid() {
-		$parties = t3lib_div::makeInstance('tx_party_models_parties');
-		$parties->loadByPid(1);
+		$object = t3lib_div::makeInstance('tx_party_models_parties');
+		$object->loadByPid(1);
 		
-		self::assertSame($parties->get('list')->count(),17,'The collection does not contain 17 parties.');
+		self::assertSame($object->get('list')->count(),17);
 	}
 	
 	public function test_readCollectionParties_byCountry() {
-		$parties = t3lib_div::makeInstance('tx_party_models_parties');
-		$parties->loadByCountry(41,TRUE);
+		$object = t3lib_div::makeInstance('tx_party_models_parties');
+		$object->loadByCountry(41,TRUE);
 
-		self::assertSame($parties->get('list')->count(),3,'The collection does not contain 3 parties.');
+		self::assertSame($object->get('list')->count(),3);
 		
-		$parties = t3lib_div::makeInstance('tx_party_models_parties');
-		$parties->loadByCountry(41,FALSE);
+		$object = t3lib_div::makeInstance('tx_party_models_parties');
+		$object->loadByCountry(41,FALSE);
 
-		self::assertSame($parties->get('list')->count(),5,'The collection does not contain 5 parties.');
+		self::assertSame($object->get('list')->count(),5);
+	}
+	
+	public function test_readAccount_basic() {
+		$object = t3lib_div::makeInstance('tx_party_models_account');
+		$object->load(6);
+
+		self::assertSame($object->get('account_id'),'YG-4603893db1cbf');
+		self::assertSame($object->getLabel(),'YG-4603893db1cbf (Anheuser-Busch - Genthod)');
+	}
+	
+	public function test_readAllergy_basic() {
+		$object = t3lib_div::makeInstance('tx_party_models_allergy');
+		$object->load(1);
+		
+		self::assertSame($object->get('short_title'),'Allergic Dermatitis');
+		self::assertSame($object->getLabel(),'Allergic Dermatitis');
+	}
+	
+	public function test_readBirthSign_basic() {
+		$object = t3lib_div::makeInstance('tx_party_models_birthsign');
+		$object->load(1);
+		
+		self::assertSame($object->get('short_title'),'Aries');
+		self::assertSame($object->getLabel(),'Aries');
+	}
+	
+	public function test_readContact_basic() {
+		$object = t3lib_div::makeInstance('tx_party_models_contact');
+		$object->load(808);
+		
+		self::assertSame($object->get('contact'),'Excepteur sint occaecat cupidatat non proident.');
+		self::assertSame($object->getLabel(),'Excepteur sint occaecat cupidatat non proident.');
+	}
+	
+	public function test_readCountryOfResidence_basic() {
+		$object = t3lib_div::makeInstance('tx_party_models_countryofresidence');
+		$object->load(1113);
+		
+		self::assertSame($object->get('party'),'2565');
+		self::assertSame($object->getLabel(),'Palestine (Balshagray Victoria Park Church)');
+	}
+	
+	public function test_readDisability_basic() {
+		$object = t3lib_div::makeInstance('tx_party_models_disability');
+		$object->load(24);
+		
+		self::assertSame($object->get('disability'),'Alzheimers disease');
+		self::assertSame($object->getLabel(),'Alzheimers disease (Schrago, Fernand)');
+	}
+	
+	public function test_readDocument_basic() {
+		$object = t3lib_div::makeInstance('tx_party_models_document');
+		$object->load(1417);
+		
+		self::assertSame($object->get('document_id'),'2D4EC0869D');
+		self::assertSame($object->getLabel(),'Credit Card (Master Card): 2D4EC0869D (Lehmann, Charles)');
+	}
+	
+	public function test_readType_basic() {
+		$object = t3lib_div::makeInstance('tx_party_models_type');
+		$object->load(42);
+		
+		self::assertSame($object->get('short_title'),'Taxation ID');
+		self::assertSame($object->getLabel(),'Taxation ID');
+	}
+	
+	public function test_type_isAllowedForPartyType() {
+		// Any partyType is allowed
+		$object = t3lib_div::makeInstance('tx_party_models_type');
+		$object->load(42);
+		self::assertSame($object->isAllowedForPartyType(0),true);
+		self::assertSame($object->isAllowedForPartyType(1),true);
+		
+		// Only persons are allowed
+		$object = t3lib_div::makeInstance('tx_party_models_type');
+		$object->load(37);
+		self::assertSame($object->isAllowedForPartyType(1),false);
+		self::assertSame($object->isAllowedForPartyType(0),true);
+		
+		// Only organisations are allowed
+		$object = t3lib_div::makeInstance('tx_party_models_type');
+		$object->load(57);
+		self::assertSame($object->isAllowedForPartyType(0),false);
+		self::assertSame($object->isAllowedForPartyType(1),true);
+	}
+	
+	public function test_type_isAllowedForField() {
+		$object = t3lib_div::makeInstance('tx_party_models_type');
+		$object->load(1);
+		
+		self::assertSame($object->isAllowedForField('TX_PARTY_ACCOUNTS-ACCOUNT_TYPE'),true);
+		self::assertSame($object->isAllowedForField('TX_PARTY_CONTACTS-TYPE'),false);
+	}
+	
+	public function test_readEthnicity_basic() {
+		$object = t3lib_div::makeInstance('tx_party_models_ethnicity');
+		$object->load(11);
+		
+		self::assertSame($object->get('long_title'),'African');
+		self::assertSame($object->getLabel(),'African');
+	}
+	
+	public function test_readEvent_basic() {
+		$object = t3lib_div::makeInstance('tx_party_models_event');
+		$object->load(937);
+		
+		self::assertSame($object->get('remarks'),'Consectetur adipisicing elit.');
+		self::assertSame($object->getLabel(),'Marriage (Schrago, Fernand)');
+	}
+	
+	public function test_readFavourite_basic() {
+		$object = t3lib_div::makeInstance('tx_party_models_favourite');
+		$object->load(153);
+		
+		self::assertSame($object->get('favourite'),'Excepteur sint occaecat cupidatat non proident.');
+		self::assertSame($object->getLabel(),'Excepteur sint occaecat cupidatat non proident. (Delgado, Hubert - Fairfax)');
+	}
+	
+	public function test_readHabit_basic() {
+		$object = t3lib_div::makeInstance('tx_party_models_habit');
+		$object->load(1);
+		
+		self::assertSame($object->get('title'),'Smoking');
+		self::assertSame($object->getLabel(),'Smoking');
+	}
+	
+	public function test_readHobby_basic() {
+		$object = t3lib_div::makeInstance('tx_party_models_hobby');
+		$object->load(24);
+		
+		self::assertSame($object->get('title'),'Educational Courses');
+		self::assertSame($object->getLabel(),'Educational Courses');
+	}
+	
+	public function test_readIdentifier_basic() {
+		$object = t3lib_div::makeInstance('tx_party_models_identifier');
+		$object->load(250);
+		
+		self::assertSame($object->get('identifier'),'02FA9F33');
+		self::assertSame($object->getLabel(),'Taxation ID: 02FA9F33 (Cumbernauld Old Church)');
+	}
+	
+	public function test_readImage_basic() {
+		$object = t3lib_div::makeInstance('tx_party_models_image');
+		$object->load(1);
+		
+		self::assertSame($object->get('image'),'10049064_3409d92e27_07.jpg');
+		self::assertSame($object->getLabel(),'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.');
+	}
+	
+	public function test_readLanguage_basic() {
+		$object = t3lib_div::makeInstance('tx_party_models_language');
+		$object->load(120);
+		
+		self::assertSame($object->get('read_skills'),'POOR');
+		self::assertSame($object->getLabel(),'Sanskrit (Balestra, Daniela)');
+	}
+	
+	public function test_readMark_basic() {
+		$object = t3lib_div::makeInstance('tx_party_models_mark');
+		$object->load(1);
+
+		self::assertSame($object->get('body_part'),'Arm');
+		self::assertSame($object->getLabel(),'Arm: Cut');
 	}
 	
 	
 /*
 	public function test_exportFixture() {
+		debug ($object);
+		debug ($object->getLabel());
 		$fixture = t3lib_div::makeInstance('tx_party_fixture');
-		$fixture->export(12);
+		$fixture->export(19);
 	}
 */
 	

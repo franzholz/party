@@ -34,31 +34,11 @@
  */
 
 require_once(t3lib_extMgm::extPath('div').'class.tx_div.php');
-tx_div::load('tx_lib_object');
+tx_div::load('tx_party_models_object');
 
-class tx_party_models_address extends tx_lib_object {
+class tx_party_models_address extends tx_party_models_object {
 
 	protected $table = 'tx_party_addresses';
-	
-	/**
-	 * Loads the address.
-	 * 
-	 * @param	integer		$uid: UID of the address
-	 * @return	void		The data is loaded into the object
-	 */
-	public function load($uid) {
-		$uid = intval($uid);
-		$groupBy = '';
-		$orderBy = '';
-		
-		// Load the address from the database and build the object
-		$query = $GLOBALS['TYPO3_DB']->SELECTquery('*', $this->table, $this->table.'.uid='.$uid, $groupBy, $orderBy);
-		$result = $GLOBALS['TYPO3_DB']->sql_query($query);
-		if($result) {
-			$row = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($result);
-			$this->overwriteArray($row);
-		}
-	}
 	
 	/**
 	 * Returns the label of the address in the following format:

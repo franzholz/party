@@ -36,14 +36,46 @@
  */
 
 require_once(t3lib_extMgm::extPath('div').'class.tx_div.php');
-tx_div::load('tx_lib_object');
-require_once (t3lib_extMgm::extPath('party').'models/class.tx_party_models_names.php');
-require_once (t3lib_extMgm::extPath('party').'models/class.tx_party_models_addresses.php');
-require_once (t3lib_extMgm::extPath('party').'models/class.tx_party_models_electronic_address_identifiers.php');
+tx_div::load('tx_party_models_object');
+tx_div::load('tx_party_models_names');
+tx_div::load('tx_party_models_addresses');
+tx_div::load('tx_party_models_electronicaddressidentifiers');
 
-abstract class tx_party_models_party extends tx_lib_object {
+
+abstract class tx_party_models_party extends tx_party_models_object {
 
 	protected $table = 'tx_party_parties';
+	
+	/**
+	 * Returns the loaded instance of the party. Depending on the type of the party, this function
+	 * returns an instance of tx_party_models_person or tx_party_models_organisation.
+	 *
+	 * @param	integer		$uid: UID of the party
+	 * @return	object		Instance of tx_party_models_person or tx_party_models_organisation
+	 */
+	public static function getInstance($uid) {
+		$uid = intval($uid);
+		
+		// Get the type of the party
+		$rec = t3lib_BEfunc::getRecord('tx_party_parties',$uid,'type');
+		
+		// Depending on the type, create the proper instance and load the data
+		switch (intval($rec['type'])) {
+			case 0:
+				$party = t3lib_div::makeInstance('tx_party_models_person');
+				$party->load($uid);
+			break;
+			case 1:
+				$party = t3lib_div::makeInstance('tx_party_models_organisation');
+				$party->load($uid);
+			break;
+			default:
+				$party = null;
+			break;
+		}
+		
+		return $party;		
+	}
 	
 	
 	/**
@@ -102,11 +134,11 @@ abstract class tx_party_models_party extends tx_lib_object {
 			}
 		}
 		
-			// ElectronicAddressIdentifiers
+		// ElectronicAddressIdentifiers
 		if ($this->get('electronic_address_identifiers')) {
 
 			// Load the electronic address identifiers
-			$electronicAddressIdentifiers = t3lib_div::makeInstance('tx_party_models_electronic_address_identifiers');
+			$electronicAddressIdentifiers = t3lib_div::makeInstance('tx_party_models_electronicaddressidentifiers');
 			$electronicAddressIdentifiers->loadByParty($uid);
 			$this->set('electronic_address_identifiers',$electronicAddressIdentifiers);
 			

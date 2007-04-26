@@ -24,7 +24,7 @@
 
 
 /** 
- * Model for the class Organisation
+ * Model for the class Disability
  * 
  * Depends on: liv/div 
  *
@@ -34,33 +34,38 @@
  */
 
 require_once(t3lib_extMgm::extPath('div').'class.tx_div.php');
-tx_div::load('tx_party_models_party');
+tx_div::load('tx_party_models_object');
 
-class tx_party_models_organisation extends tx_party_models_party {
-		
-
+class tx_party_models_disability extends tx_party_models_object {
+	protected $table = 'tx_party_disabilities';
+	
 	/**
-	 * Loads the organisation.
-	 * 
-	 * @param	integer		$uid: UID of the organisation
-	 * @return	void		The data is loaded into the object
+	 * Returns the label of the Disability in the following format:
+	 * "[disability] ([party])"
+	 *
+	 * The data must be loaded before, by calling $this->load();
+	 *
+	 * @return	string		Label of the Disability
 	 */
-	public function load($uid) {
-		global $TCA;
-		$uid = intval($uid);
+	public function getLabel() {
+		if ($this->isEmpty()) return false;		// Data must be loaded
+		$label = array();
+		$out = '';
 		
-		// Check that the party is an organisation
-		$rec = t3lib_BEfunc::getRecord($this->table,$uid,'type');
-		if (!$rec['type'] == 1) return false;
+		// Get all relevant parts
+		$party = tx_party_models_party::getInstance($this->get('party'));
 		
-		// Get all fields belonging to the type 'organisation' and load the object
-		$typeFields = tx_party_div::getAllTypeFields($this->table,$rec);
-		parent::load($uid,$typeFields);
+		// Assemble the label
+		$label[0] = $this->get('disability');
+		if (!$party->isEmpty()) $label[1] = '('.$party->getLabel().')';
+
+		$out = implode(' ',$label);
+		return $out;
 	}
 }
 
-if (defined('TYPO3_MODE') && $TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/party/models/class.tx_party_models_organisation.php']) {
-	include_once($TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/party/models/class.tx_party_models_organisation.php']);
+if (defined('TYPO3_MODE') && $TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/party/models/class.tx_party_models_disability.php']) {
+	include_once($TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/party/models/class.tx_party_models_disability.php']);
 }
 
 
