@@ -24,7 +24,7 @@
 
 
 /** 
- * Model for the class Document
+ * Model for the class Occupation
  * 
  * Depends on: liv/div 
  *
@@ -35,18 +35,18 @@
 
 require_once(t3lib_extMgm::extPath('div').'class.tx_div.php');
 tx_div::load('tx_party_models_object');
-tx_div::load('tx_party_models_type');
+tx_div::load('tx_party_models_occupationrole');
 
-class tx_party_models_document extends tx_party_models_object {
-	protected $table = 'tx_party_documents';
+class tx_party_models_occupation extends tx_party_models_object {
+	protected $table = 'tx_party_occupations';
 	
 	/**
-	 * Returns the label of the Document in the following format:
-	 * "[type]: [document_id] ([party])"
+	 * Returns the label of the Occupation in the following format:
+	 * "[role]: [position_title] ([party])"
 	 *
 	 * The data must be loaded before, by calling $this->load();
 	 *
-	 * @return	string		Label of the Document
+	 * @return	string		Label of the Occupation
 	 */
 	public function getLabel() {
 		if ($this->isEmpty()) return false;		// Data must be loaded
@@ -54,14 +54,14 @@ class tx_party_models_document extends tx_party_models_object {
 		$out = '';
 		
 		// Get all relevant parts
-		$documentType = t3lib_div::makeInstance('tx_party_models_type');
-		$documentType->load($this->get('document_type'));
-		$documentId = $this->get('document_id');
+		$role = t3lib_div::makeInstance('tx_party_models_occupationrole');
+		$role->load($this->get('role'));
+		$positionTitle = $this->get('position_title');
 		$party = tx_party_models_party::getInstance($this->get('party'));
 		
 		// Assemble the label
-		if (!$documentType->isEmpty()) $label[0] = $documentType->getLabel().':';
-		if ($documentId) $label[1] = $documentId;
+		if (!$role->isEmpty()) $label[0] = $role->getLabel().':';
+		if ($positionTitle) $label[1] = $positionTitle;
 		if (!$party->isEmpty()) $label[2] = '('.$party->getLabel().')';
 
 		$out = implode(' ',$label);

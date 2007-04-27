@@ -48,6 +48,12 @@ tx_div::load('tx_party_models_identifier');
 tx_div::load('tx_party_models_image');
 tx_div::load('tx_party_models_language');
 tx_div::load('tx_party_models_mark');
+tx_div::load('tx_party_models_membership');
+tx_div::load('tx_party_models_nationality');
+tx_div::load('tx_party_models_occupationrank');
+tx_div::load('tx_party_models_occupationrole');
+tx_div::load('tx_party_models_occupation');
+tx_div::load('tx_party_models_organisationnature');
 
 /**
  * Basic test case for checking the Party Model.
@@ -59,14 +65,18 @@ tx_div::load('tx_party_models_mark');
  * @author	David Bruehlmeier <typo3@bruehlmeier.com>
  */
 class tx_party_model_basic_testcase extends tx_t3unit_testcase {
+
+	private $useFixture = false;
 	
 	public function __construct($name) {
 		parent::__construct($name);
 	}
 
 	public function setUp() {
-		$fixture = t3lib_div::makeInstance('tx_party_fixture');
-		//$fixture->create(1,1);	// basic test dataset to PID 1
+		if ($this->useFixture) {
+			$fixture = t3lib_div::makeInstance('tx_party_fixture');
+			$fixture->create(1,1);	// basic test dataset to PID
+		}
 	}
 	
 	public function tearDown () {
@@ -151,7 +161,7 @@ class tx_party_model_basic_testcase extends tx_t3unit_testcase {
 		$object = t3lib_div::makeInstance('tx_party_models_parties');
 		$object->loadByPid(1);
 		
-		self::assertSame($object->get('list')->count(),17);
+		self::assertSame($object->get('list')->count(),20);
 	}
 	
 	public function test_readCollectionParties_byCountry() {
@@ -309,8 +319,9 @@ class tx_party_model_basic_testcase extends tx_t3unit_testcase {
 	public function test_readImage_basic() {
 		$object = t3lib_div::makeInstance('tx_party_models_image');
 		$object->load(1);
-		
-		self::assertSame($object->get('image'),'10049064_3409d92e27_07.jpg');
+
+		$image = substr($object->get('image'),0,19);	// The suffix changes with every import
+		self::assertSame($image,'10049064_3409d92e27');
 		self::assertSame($object->getLabel(),'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.');
 	}
 	
@@ -328,6 +339,54 @@ class tx_party_model_basic_testcase extends tx_t3unit_testcase {
 
 		self::assertSame($object->get('body_part'),'Arm');
 		self::assertSame($object->getLabel(),'Arm: Cut');
+	}
+	
+	public function test_readMembership_basic() {
+		$object = t3lib_div::makeInstance('tx_party_models_membership');
+		$object->load(1);
+
+		self::assertSame($object->get('issue_date'),'1177538400');
+		self::assertSame($object->getLabel(),'Trial: T3 Sports (Meyer, Caroline)');
+	}
+	
+	public function test_readNationality_basic() {
+		$object = t3lib_div::makeInstance('tx_party_models_nationality');
+		$object->load(3);
+
+		self::assertSame($object->get('country'),'153');
+		self::assertSame($object->getLabel(),'By Naturalization: Niger (Anheuser-Busch - Genthod)');
+	}
+	
+	public function test_readOccupationRank_basic() {
+		$object = t3lib_div::makeInstance('tx_party_models_occupationrank');
+		$object->load(1);
+
+		self::assertSame($object->get('short_title'),'Officer');
+		self::assertSame($object->getLabel(),'Officer');
+	}
+	
+	public function test_readOccupationRole_basic() {
+		$object = t3lib_div::makeInstance('tx_party_models_occupationrole');
+		$object->load(1);
+
+		self::assertSame($object->get('long_title'),'Coach');
+		self::assertSame($object->getLabel(),'Coach');
+	}
+	
+	public function test_readOccupation_basic() {
+		$object = t3lib_div::makeInstance('tx_party_models_occupation');
+		$object->load(1);
+
+		self::assertSame($object->get('remarks'),'');
+		self::assertSame($object->getLabel(),'Coach: Lead Coach (Miller, Steve)');
+	}
+	
+	public function test_readOrganisationNature_basic() {
+		$object = t3lib_div::makeInstance('tx_party_models_organisationnature');
+		$object->load(3);
+
+		self::assertSame($object->get('title'),'Association');
+		self::assertSame($object->getLabel(),'Association');
 	}
 	
 	

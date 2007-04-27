@@ -24,7 +24,7 @@
 
 
 /** 
- * Model for the class Document
+ * Model for the class Membership
  * 
  * Depends on: liv/div 
  *
@@ -37,16 +37,16 @@ require_once(t3lib_extMgm::extPath('div').'class.tx_div.php');
 tx_div::load('tx_party_models_object');
 tx_div::load('tx_party_models_type');
 
-class tx_party_models_document extends tx_party_models_object {
-	protected $table = 'tx_party_documents';
+class tx_party_models_membership extends tx_party_models_object {
+	protected $table = 'tx_party_memberships';
 	
 	/**
-	 * Returns the label of the Document in the following format:
-	 * "[type]: [document_id] ([party])"
+	 * Returns the label of the Membership in the following format:
+	 * "[type]: [organisation] ([party])"
 	 *
 	 * The data must be loaded before, by calling $this->load();
 	 *
-	 * @return	string		Label of the Document
+	 * @return	string		Label of the Membership
 	 */
 	public function getLabel() {
 		if ($this->isEmpty()) return false;		// Data must be loaded
@@ -54,14 +54,14 @@ class tx_party_models_document extends tx_party_models_object {
 		$out = '';
 		
 		// Get all relevant parts
-		$documentType = t3lib_div::makeInstance('tx_party_models_type');
-		$documentType->load($this->get('document_type'));
-		$documentId = $this->get('document_id');
+		$type = t3lib_div::makeInstance('tx_party_models_type');
+		$type->load($this->get('type'));
+		$organisation = tx_party_models_party::getInstance($this->get('organisation'));
 		$party = tx_party_models_party::getInstance($this->get('party'));
 		
 		// Assemble the label
-		if (!$documentType->isEmpty()) $label[0] = $documentType->getLabel().':';
-		if ($documentId) $label[1] = $documentId;
+		if (!$type->isEmpty()) $label[0] = $type->getLabel().':';
+		if (!$organisation->isEmpty()) $label[1] = $organisation->getLabel();
 		if (!$party->isEmpty()) $label[2] = '('.$party->getLabel().')';
 
 		$out = implode(' ',$label);
@@ -69,8 +69,8 @@ class tx_party_models_document extends tx_party_models_object {
 	}
 }
 
-if (defined('TYPO3_MODE') && $TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/party/models/class.tx_party_models_document.php']) {
-	include_once($TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/party/models/class.tx_party_models_document.php']);
+if (defined('TYPO3_MODE') && $TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/party/models/class.tx_party_models_membership.php']) {
+	include_once($TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/party/models/class.tx_party_models_membership.php']);
 }
 
 

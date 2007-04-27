@@ -171,7 +171,7 @@ abstract class tx_party_models_party extends tx_party_models_object {
 		$locality = $this->get('locality');
 		
 		// Assemble the label
-		if (is_object($names)) $label[0] = $names->get('standard')->getLabel();
+		if (is_object($names->get('standard'))) $label[0] = $names->get('standard')->getLabel();
 		if ($locality) $label[1] = $locality;
 		
 		$out = implode(' - ',$label);		

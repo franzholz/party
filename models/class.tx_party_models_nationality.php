@@ -24,7 +24,7 @@
 
 
 /** 
- * Model for the class Document
+ * Model for the class Nationality
  * 
  * Depends on: liv/div 
  *
@@ -36,17 +36,18 @@
 require_once(t3lib_extMgm::extPath('div').'class.tx_div.php');
 tx_div::load('tx_party_models_object');
 tx_div::load('tx_party_models_type');
+tx_div::load('tx_party_models_party');
 
-class tx_party_models_document extends tx_party_models_object {
-	protected $table = 'tx_party_documents';
+class tx_party_models_nationality extends tx_party_models_object {
+	protected $table = 'tx_party_nationalities';
 	
 	/**
-	 * Returns the label of the Document in the following format:
-	 * "[type]: [document_id] ([party])"
+	 * Returns the label of the Nationality in the following format:
+	 * "[nationality_type]: [country] ([party])"
 	 *
 	 * The data must be loaded before, by calling $this->load();
 	 *
-	 * @return	string		Label of the Document
+	 * @return	string		Label of the Nationality
 	 */
 	public function getLabel() {
 		if ($this->isEmpty()) return false;		// Data must be loaded
@@ -54,14 +55,14 @@ class tx_party_models_document extends tx_party_models_object {
 		$out = '';
 		
 		// Get all relevant parts
-		$documentType = t3lib_div::makeInstance('tx_party_models_type');
-		$documentType->load($this->get('document_type'));
-		$documentId = $this->get('document_id');
+		$nationalityType = t3lib_div::makeInstance('tx_party_models_type');
+		$nationalityType->load($this->get('nationality_type'));
 		$party = tx_party_models_party::getInstance($this->get('party'));
-		
+		$country = reset(t3lib_BEfunc::getRecord('static_countries',$this->get('country'),'cn_short_en'));
+
 		// Assemble the label
-		if (!$documentType->isEmpty()) $label[0] = $documentType->getLabel().':';
-		if ($documentId) $label[1] = $documentId;
+		if (!$nationalityType->isEmpty()) $label[0] = $nationalityType->getLabel().':';
+		$label[1] = $country;
 		if (!$party->isEmpty()) $label[2] = '('.$party->getLabel().')';
 
 		$out = implode(' ',$label);
@@ -69,8 +70,8 @@ class tx_party_models_document extends tx_party_models_object {
 	}
 }
 
-if (defined('TYPO3_MODE') && $TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/party/models/class.tx_party_models_document.php']) {
-	include_once($TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/party/models/class.tx_party_models_document.php']);
+if (defined('TYPO3_MODE') && $TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/party/models/class.tx_party_models_countryofresidence.php']) {
+	include_once($TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/party/models/class.tx_party_models_countryofresidence.php']);
 }
 
 

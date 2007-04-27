@@ -43,7 +43,7 @@ class tx_party_fixture {
 	 * 1. Basic (Two persons and one organisation)
 	 *
 	 * @param	integer		$dataset: ID of the test dataset
-	 * @param	integer		$pid: PID where to wirte the dataset to
+	 * @param	integer		$pid: PID where to write the dataset to
 	 * @return	void		The fixture is written to the database/the filesystem
 	 */
 	public function create($dataset,$pid=1) {
@@ -58,6 +58,8 @@ class tx_party_fixture {
 				$files[] = t3lib_extMgm::extPath('party').'tests/fixture/0013_p.t3d';
 				$files[] = t3lib_extMgm::extPath('party').'tests/fixture/habit.t3d';
 				$files[] = t3lib_extMgm::extPath('party').'tests/fixture/mark.t3d';
+				$files[] = t3lib_extMgm::extPath('party').'tests/fixture/membership.t3d';
+				$files[] = t3lib_extMgm::extPath('party').'tests/fixture/occupation.t3d';
 			break;
 			
 			default:

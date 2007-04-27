@@ -2461,7 +2461,10 @@ $TCA['tx_party_occupations'] = array (
 			'exclude' => 1,		
 			'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_occupations.role',		
 			'config' => Array (
-				'type' => 'select',	
+				'type' => 'select',
+				'items' => Array (
+					Array('',0),
+				),
 				'foreign_table' => 'tx_party_occupation_roles',	
 				'foreign_table_where' => 'AND tx_party_occupation_roles.pid=###STORAGE_PID### ORDER BY tx_party_occupation_roles.uid',	
 				'size' => 1,	
@@ -2474,6 +2477,9 @@ $TCA['tx_party_occupations'] = array (
 			'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_occupations.rank',		
 			'config' => Array (
 				'type' => 'select',	
+				'items' => Array (
+					Array('',0),
+				),
 				'foreign_table' => 'tx_party_occupation_ranks',	
 				'foreign_table_where' => 'AND tx_party_occupation_ranks.pid=###STORAGE_PID### ORDER BY tx_party_occupation_ranks.uid',	
 				'size' => 1,	
