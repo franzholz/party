@@ -77,10 +77,10 @@
 			<label index="tx_party_types.allowed_for_party_type.I.1">Only Persons</label>
 			<label index="tx_party_types.allowed_for_party_type.I.2">Only Organisations</label>
 			<label index="tx_party_types.allowed_for_party_type">Allowed for party types</label>
-			<label index="tx_party_vehicle_manufacturer">Vehicle Manufacturer</label>
-			<label index="tx_party_vehicle_manufacturer.short_title">Short title</label>
-			<label index="tx_party_vehicle_manufacturer.title">Title</label>
-			<label index="tx_party_vehicle_manufacturer.long_title">Long title</label>
+			<label index="tx_party_vehicle_manufacturers">Vehicle Manufacturer</label>
+			<label index="tx_party_vehicle_manufacturers.short_title">Short title</label>
+			<label index="tx_party_vehicle_manufacturers.title">Title</label>
+			<label index="tx_party_vehicle_manufacturers.long_title">Long title</label>
 			<label index="tx_party_accounts">Account</label>
 			<label index="tx_party_accounts.party">Party</label>
 			<label index="tx_party_accounts.organisation">Organisation</label>

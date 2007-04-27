@@ -11,6 +11,7 @@ Prio 1
 * ISO-Standard for West/East/North/South? http://en.wikipedia.org/wiki/ISO_6709 uses positive/negative values
 * Add new 'suggest' type for input fields (see below)
 * When merging 'standard'-records into tx_party_models_party, are uid,pid... overwritten?
+* Is tx_party_usages not language-dependant?
 
 Prio 2
 * Update stock_markets to use hotlist once it's included in static_info_tables

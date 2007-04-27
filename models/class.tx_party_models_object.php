@@ -49,11 +49,12 @@ abstract class tx_party_models_object extends tx_lib_object {
 	 */
 	public function load($uid) {
 		$uid = intval($uid);
+		$deleteClause = t3lib_BEfunc::deleteClause($this->table);
 		$groupBy = '';
 		$orderBy = '';
 		
 		// Load the data from the database and build the object
-		$query = $GLOBALS['TYPO3_DB']->SELECTquery('*', $this->table, $this->table.'.uid='.$uid, $groupBy, $orderBy);
+		$query = $GLOBALS['TYPO3_DB']->SELECTquery('*', $this->table, $this->table.'.uid='.$uid.$deleteClause, $groupBy, $orderBy);
 		$result = $GLOBALS['TYPO3_DB']->sql_query($query);
 		if($result) {
 			$row = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($result);

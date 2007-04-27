@@ -42,7 +42,7 @@ t3lib_extMgm::addUserTSConfig('
 	options.saveDocNew.tx_party_types=1
 ');
 t3lib_extMgm::addUserTSConfig('
-	options.saveDocNew.tx_party_vehicle_manufacturer=1
+	options.saveDocNew.tx_party_vehicle_manufacturers=1
 ');
 t3lib_extMgm::addUserTSConfig('
 	options.saveDocNew.tx_party_accounts=1

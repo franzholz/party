@@ -259,9 +259,9 @@ $TCA['tx_party_types'] = array (
 	)
 );
 
-$TCA['tx_party_vehicle_manufacturer'] = array (
+$TCA['tx_party_vehicle_manufacturers'] = array (
 	'ctrl' => array (
-		'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_vehicle_manufacturer',		
+		'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_vehicle_manufacturers',		
 		'label'     => 'title',	
 		'tstamp'    => 'tstamp',
 		'crdate'    => 'crdate',
@@ -272,7 +272,7 @@ $TCA['tx_party_vehicle_manufacturer'] = array (
 		'sortby' => 'sorting',	
 		'delete' => 'deleted',	
 		'dynamicConfigFile' => t3lib_extMgm::extPath($_EXTKEY).'tca.php',
-		'iconfile'          => t3lib_extMgm::extRelPath($_EXTKEY).'icons/icon_tx_party_vehicle_manufacturer.gif',
+		'iconfile'          => t3lib_extMgm::extRelPath($_EXTKEY).'icons/icon_tx_party_vehicle_manufacturers.gif',
 	),
 	'feInterface' => array (
 		'fe_admin_fieldList' => 'sys_language_uid, l18n_parent, l18n_diffsource, short_title, title, long_title',

@@ -289,9 +289,9 @@ CREATE TABLE tx_party_types (
 
 
 #
-# Table structure for table 'tx_party_vehicle_manufacturer'
+# Table structure for table 'tx_party_vehicle_manufacturers'
 #
-CREATE TABLE tx_party_vehicle_manufacturer (
+CREATE TABLE tx_party_vehicle_manufacturers (
 	uid int(11) NOT NULL auto_increment,
 	pid int(11) DEFAULT '0' NOT NULL,
 	tstamp int(11) DEFAULT '0' NOT NULL,

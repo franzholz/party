@@ -992,12 +992,12 @@ $TCA['tx_party_types'] = array (
 
 
 
-$TCA['tx_party_vehicle_manufacturer'] = array (
-	'ctrl' => $TCA['tx_party_vehicle_manufacturer']['ctrl'],
+$TCA['tx_party_vehicle_manufacturers'] = array (
+	'ctrl' => $TCA['tx_party_vehicle_manufacturers']['ctrl'],
 	'interface' => array (
 		'showRecordFieldList' => 'sys_language_uid,l18n_parent,l18n_diffsource,short_title,title,long_title'
 	),
-	'feInterface' => $TCA['tx_party_vehicle_manufacturer']['feInterface'],
+	'feInterface' => $TCA['tx_party_vehicle_manufacturers']['feInterface'],
 	'columns' => array (
 		'sys_language_uid' => array (		
 			'exclude' => 1,
@@ -1021,8 +1021,8 @@ $TCA['tx_party_vehicle_manufacturer'] = array (
 				'items' => array (
 					array('', 0),
 				),
-				'foreign_table'       => 'tx_party_vehicle_manufacturer',
-				'foreign_table_where' => 'AND tx_party_vehicle_manufacturer.pid=###CURRENT_PID### AND tx_party_vehicle_manufacturer.sys_language_uid IN (-1,0)',
+				'foreign_table'       => 'tx_party_vehicle_manufacturers',
+				'foreign_table_where' => 'AND tx_party_vehicle_manufacturers.pid=###CURRENT_PID### AND tx_party_vehicle_manufacturers.sys_language_uid IN (-1,0)',
 			)
 		),
 		'l18n_diffsource' => array (		
@@ -1032,7 +1032,7 @@ $TCA['tx_party_vehicle_manufacturer'] = array (
 		),
 		'short_title' => Array (		
 			'exclude' => 1,		
-			'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_vehicle_manufacturer.short_title',		
+			'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_vehicle_manufacturers.short_title',		
 			'config' => Array (
 				'type' => 'input',	
 				'size' => '30',	
@@ -1042,7 +1042,7 @@ $TCA['tx_party_vehicle_manufacturer'] = array (
 		),
 		'title' => Array (		
 			'exclude' => 1,		
-			'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_vehicle_manufacturer.title',		
+			'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_vehicle_manufacturers.title',		
 			'config' => Array (
 				'type' => 'input',	
 				'size' => '48',	
@@ -1052,7 +1052,7 @@ $TCA['tx_party_vehicle_manufacturer'] = array (
 		),
 		'long_title' => Array (		
 			'exclude' => 1,		
-			'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_vehicle_manufacturer.long_title',		
+			'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_vehicle_manufacturers.long_title',		
 			'config' => Array (
 				'type' => 'input',	
 				'size' => '48',	
@@ -3244,8 +3244,8 @@ $TCA['tx_party_vehicles'] = array (
 			'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_vehicles.make',		
 			'config' => Array (
 				'type' => 'select',	
-				'foreign_table' => 'tx_party_vehicle_manufacturer',	
-				'foreign_table_where' => 'AND tx_party_vehicle_manufacturer.pid=###STORAGE_PID### ORDER BY tx_party_vehicle_manufacturer.uid',	
+				'foreign_table' => 'tx_party_vehicle_manufacturers',	
+				'foreign_table_where' => 'AND tx_party_vehicle_manufacturers.pid=###STORAGE_PID### ORDER BY tx_party_vehicle_manufacturers.uid',	
 				'size' => 1,	
 				'minitems' => 0,
 				'maxitems' => 1,

@@ -80,13 +80,14 @@ class tx_party_models_parties extends tx_lib_object {
 	 *
 	 * @param	string		$select: The fields to select
 	 * @param	string		$from: The FROM clause
-	 * @param	string		$where: The WHERE clause
+	 * @param	string		$where: The WHERE clause. The deleteClause is automatically added
 	 * @param	string		$groupBy: The GROUP BY clause (optional)
 	 * @param	string		$orderBy: The ORDER BY clause (optional)
 	 * @param	string		$limit: The LIMIT clause (optional)
 	 * @return	object		A tx_lib_object instance with the selected persons/organisations
 	 */
 	private function selectFromDatabase($select,$from,$where,$groupBy='',$orderBy='',$limit='') {
+		$where = $where.t3lib_BEfunc::deleteClause($from);
 		$query = $GLOBALS['TYPO3_DB']->SELECTquery($select,$from,$where,$groupBy,$orderBy,$limit);
 		$result = $GLOBALS['TYPO3_DB']->sql_query($query);
 		$list = tx_div::makeInstance('tx_lib_object');
