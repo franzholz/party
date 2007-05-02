@@ -35,14 +35,35 @@
 
 require_once(t3lib_extMgm::extPath('div').'class.tx_div.php');
 tx_div::load('tx_party_models_object');
-tx_div::load('tx_party_models_type');
 
 class tx_party_models_relationship extends tx_party_models_object {
 	protected $table = 'tx_party_relationships';
 	
 	/**
+	 * Loads the relationship.
+	 * 
+	 * @param	integer		$uid: UID of the relationship
+	 * @return	void		The data is loaded into the object
+	 */
+	public function load($uid) {
+		parent::load($uid);
+		
+		if ($this->get('primary_party')) {
+			$this->set('primary_party', tx_party_models_party::getInstance($this->get('primary_party')));
+		}
+		if ($this->get('secondary_party')) {
+			$this->set('secondary_party', tx_party_models_party::getInstance($this->get('secondary_party')));
+		}
+		if ($this->get('relationship_type')) {
+			$relationshipType = tx_div::makeInstance('tx_party_models_relationshiptype');
+			$relationshipType->load($this->get('relationship_type'));
+			$this->set('relationship_type', $relationshipType);
+		}
+	}
+	
+	/**
 	 * Returns the label of the Relationship in the following format:
-	 * "[primary_party] [description_as_primary] [secondary_party]"
+	 * "[primary_party] [description_as_primary]: [secondary_party]"
 	 *
 	 * The data must be loaded before, by calling $this->load();
 	 *
@@ -54,23 +75,22 @@ class tx_party_models_relationship extends tx_party_models_object {
 		$out = '';
 		
 		// Get all relevant parts
-		$documentType = t3lib_div::makeInstance('tx_party_models_type');
-		$documentType->load($this->get('document_type'));
-		$documentId = $this->get('document_id');
-		$party = tx_party_models_party::getInstance($this->get('party'));
+		$primaryParty = $this->get('primary_party');
+		$relationshipType = $this->get('relationship_type');
+		$secondaryParty = $this->get('secondary_party');
 		
 		// Assemble the label
-		if (!$documentType->isEmpty()) $label[0] = $documentType->getLabel().':';
-		if ($documentId) $label[1] = $documentId;
-		if (!$party->isEmpty()) $label[2] = '('.$party->getLabel().')';
+		if (is_object($primaryParty) && !$primaryParty->isEmpty()) $label[] = $primaryParty->getLabel();
+		if (is_object($relationshipType) && !$relationshipType->isEmpty()) $label[] = $relationshipType->get('description_as_primary').':';
+		if (is_object($secondaryParty) && !$secondaryParty->isEmpty()) $label[] = $secondaryParty->getLabel();
 
 		$out = implode(' ',$label);
 		return $out;
 	}
 }
 
-if (defined('TYPO3_MODE') && $TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/party/models/class.tx_party_models_document.php']) {
-	include_once($TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/party/models/class.tx_party_models_document.php']);
+if (defined('TYPO3_MODE') && $TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/party/models/class.tx_party_models_relationship.php']) {
+	include_once($TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/party/models/class.tx_party_models_relationship.php']);
 }
 
 

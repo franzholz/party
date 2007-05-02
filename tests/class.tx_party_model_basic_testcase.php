@@ -37,22 +37,23 @@ class tx_party_model_basic_testcase extends tx_t3unit_testcase {
 
 	private $fixture;				// Instance of the fixture class
 	private $useFixture = false;	// If false, the fixture will _not_ be loaded. Much faster, but the consitency of the test data is not assured.
+	private $testPage;				// PID of the test page with the fixture
 	
 	public function __construct($name) {
 		$this->fixture = tx_div::makeInstance('tx_party_tests_fixture');
-		parent::__construct($name);		
+		parent::__construct($name);
 	}
 
 	public function setUp() {
 		if ($this->useFixture) {			
-			$this->fixture->deleteAll();	// Delete all party data
-			$this->fixture->create(1,1);	// Write basic test dataset to PID 1
+			$this->fixture->deleteAll();					// Delete all party data
+			$this->testPage = $this->fixture->create(1);	// Write basic test dataset to a new page
 		}
 	}
 	
 	public function tearDown () {
 		if ($this->useFixture) {
-			$this->fixture->deleteAll();	// Delete all party data
+			$this->fixture->deletePage($this->testPage);	// Delete the fixture from the test page
 		}
 	}
 
@@ -125,8 +126,17 @@ class tx_party_model_basic_testcase extends tx_t3unit_testcase {
 	
 	public function test_readCollectionParties_byPid() {
 		$object = tx_div::makeInstance('tx_party_models_parties');
-		$object->loadByPid(1);
-		self::assertSame($object->get('list')->count(),20);
+		
+		// Get current PID
+		if ($this->testPage) {
+			$pid = $this->testPage;	// Only available if useFixture is true
+		} else {
+			$rec = t3lib_BEfunc::getRecord('tx_party_parties',1,'pid');
+			$pid = $rec['pid'];
+		}
+		
+		$object->loadByPid($pid);
+		self::assertSame($object->get('list')->count(),22);
 	}
 	
 	public function test_readCollectionParties_byCountry() {
@@ -367,12 +377,19 @@ class tx_party_model_basic_testcase extends tx_t3unit_testcase {
 	public function test_readRelationshipType_basic() {
 		$object = tx_div::makeInstance('tx_party_models_relationshiptype');
 		$object->load(1);
-		self::assertSame($object->get('relationship_type'),'Has wife');
-		self::assertSame($object->getLabel(),'Has wife');
+		self::assertSame($object->get('description_as_primary'),'Has wife');
+		self::assertSame($object->getLabel(),'Marriage');
 		self::assertSame($object->isRelationshipAllowed(0,0),true);
 		self::assertSame($object->isRelationshipAllowed(0,1),false);
 		self::assertSame($object->isRelationshipAllowed(1,0),false);
 		self::assertSame($object->isRelationshipAllowed(1,1),false);
+	}
+	
+	public function test_readRelationship_basic() {
+		$object = tx_div::makeInstance('tx_party_models_relationship');
+		$object->load(1);
+		self::assertSame($object->get('date_established'),'1178056800');
+		self::assertSame($object->getLabel(),'Finn, Roger Has wife: Finn, Heather');
 	}
 	
 	public function test_readReligion_basic() {
@@ -405,33 +422,31 @@ class tx_party_model_basic_testcase extends tx_t3unit_testcase {
 	
 	public function test_readVehicleManufacturer_basic() {
 		$object = tx_div::makeInstance('tx_party_models_vehiclemanufacturer');
-		$object->load(16);
-		self::assertSame($object->get('title'),'Ajax');
-		self::assertSame($object->getLabel(),'Ajax');
+		$object->load(1);
+		self::assertSame($object->get('title'),'Ford');
+		self::assertSame($object->getLabel(),'Ford');
 	}
 	
 	public function test_readVehicle_basic() {
 		$object = tx_div::makeInstance('tx_party_models_vehicle');
-		$object->load(3);
-		self::assertSame($object->get('body_number'),'AAEEDBC50A7F25C75B977A58DC82B84F');
-		self::assertSame($object->getLabel(),'Excalibur: UK-4234 (Anheuser-Busch - Genthod)');
+		$object->load(4);
+		self::assertSame($object->get('license_plate'),'XL-7664');
+		self::assertSame($object->getLabel(),'Ford: XL-7664 (Anheuser-Busch - Genthod)');
 	}
 	
 	public function test_readVisa_basic() {
 		$object = tx_div::makeInstance('tx_party_models_visa');
 		$object->load(1);
 		self::assertSame($object->get('number'),'4711');
-		self::assertSame($object->getLabel(),'Honduras (Kobler, Maria)');
+		self::assertSame($object->getLabel(),'Andorra (Finn, Roger)');
 	}
 	
 	
 	
 /*
 	public function test_exportFixture() {
-		debug ($object);
-		debug ($object->getLabel());
-		$fixture = tx_div::makeInstance('tx_party_fixture');
-		$fixture->export(19);
+		$fixture = tx_div::makeInstance('tx_party_tests_fixture');
+		$fixture->export(13);
 	}
 */
 	

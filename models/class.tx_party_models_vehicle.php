@@ -73,7 +73,7 @@ class tx_party_models_vehicle extends tx_party_models_object {
 		$party = tx_party_models_party::getInstance($this->get('party'));
 		
 		// Assemble the label
-		if (!$party->isEmpty()) $label[] = $make->getLabel().':';
+		if (is_object($make) && !$make->isEmpty()) $label[] = $make->getLabel().':';
 		if ($licensePlate) $label[] = $licensePlate;
 		if (!$party->isEmpty()) $label[] = '('.$party->getLabel().')';
 

@@ -3243,7 +3243,10 @@ $TCA['tx_party_vehicles'] = array (
 			'exclude' => 1,		
 			'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_vehicles.make',		
 			'config' => Array (
-				'type' => 'select',	
+				'type' => 'select',
+				'items' => Array (
+					Array('',0),
+				),
 				'foreign_table' => 'tx_party_vehicle_manufacturers',	
 				'foreign_table_where' => 'AND tx_party_vehicle_manufacturers.pid=###STORAGE_PID### ORDER BY tx_party_vehicle_manufacturers.uid',	
 				'size' => 1,	

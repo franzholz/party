@@ -25,6 +25,7 @@
 
 t3lib_extMgm::isLoaded('impexp',1);
 require_once (t3lib_extMgm::extPath('impexp').'class.tx_impexp.php');
+require_once (PATH_t3lib.'class.t3lib_tcemain.php');
 
 
 
@@ -35,30 +36,18 @@ require_once (t3lib_extMgm::extPath('impexp').'class.tx_impexp.php');
 class tx_party_tests_fixture {
 
 	/**
-	 * Deletes _all_ data from all tables starting with tx_party*
-	 */
-	public function deleteAll() {
-		$file = file(t3lib_extMgm::extPath('party').'tests/fixture/empty_all_tables.sql');
-		foreach ($file as $query) {
-			$GLOBALS['TYPO3_DB']->sql_query($query);
-		}
-	}
-
-
-	/**
 	 * Creates a set of test data. The test data must be available in the extension directory
 	 * in party/tests/fixture in the form of T3D files.
 	 * 
 	 * Test datasets:
-	 * 1. Basic (Two persons and one organisation)
+	 * 1. Basic
 	 *
 	 * @param	integer		$dataset: ID of the test dataset
-	 * @param	integer		$pid: PID where to write the dataset to
-	 * @return	void		The fixture is written to the database/the filesystem
+	 * @return	integer		$pid: The PID where the data is written to
 	 */
-	public function create($dataset,$pid=1) {
+	public function create($dataset) {
 		$dataset = intval($dataset);
-		$pid = intval($pid);
+		$pid = $this->createPage();
 
 		// Determine which files to load for the specified dataset. If no dataset is provided, return.
 		switch ($dataset) {
@@ -71,6 +60,7 @@ class tx_party_tests_fixture {
 				$files[] = t3lib_extMgm::extPath('party').'tests/fixture/membership.t3d';
 				$files[] = t3lib_extMgm::extPath('party').'tests/fixture/occupation.t3d';
 				$files[] = t3lib_extMgm::extPath('party').'tests/fixture/relationship.t3d';
+				$files[] = t3lib_extMgm::extPath('party').'tests/fixture/vehicle.t3d';
 			break;
 			
 			default:
@@ -90,8 +80,10 @@ class tx_party_tests_fixture {
 		// Import the files
 		foreach ($files as $theFile) {
 			$import->loadFile($theFile,1);	// 1 = import all, including files etc.
-			$import->importData($pid);
+			$import->importData($pid);		// Import the data to the new test page
 		}
+		
+		return $pid;
 	}
 	
 
@@ -108,6 +100,7 @@ class tx_party_tests_fixture {
 		$this->export = t3lib_div::makeInstance('tx_impexp');
 		$this->export->init();
 		$this->export->relOnlyTables[]='_ALL';	// Allow all tables as relationships
+		$this->export->setCharset('utf-8');
 		
 		// Add record
 		$rec = t3lib_BEfunc::getRecord('tx_party_parties',$uid);
@@ -133,6 +126,75 @@ class tx_party_tests_fixture {
 		t3lib_div::writeFile(t3lib_extMgm::extPath('party').'tests/fixture/'.$uid.$type.'.t3d',$out);
 		#debug(strlen($out));
 	}
+	
+	/**
+	 * Creates a new Page on PID 0
+	 * 
+	 * @return	integer		PID of the page created
+	 */
+	private function createPage() {
+		$tempId = uniqid('NEW');
+		$data = array();		
+		$data['pages'][$tempId] = array(
+			'title' => '### Party Information Framework - Unit Tests ###',
+			'hidden' => 0,
+			'pid' => 0,
+			'doktype' => 254,	// SysFolder
+		);
+		
+		$tce = t3lib_div::makeInstance('t3lib_TCEmain');
+		$tce->stripslashes_values = 0;
+		$tce->start($data, array());
+		$tce->process_datamap();
+		$pid = $tce->substNEWwithIDs[$tempId];
+		
+		return $pid;
+	}
+	
+	/**
+	 * Deletes a page and all the tx_party records inside.
+	 * 
+	 * @param	integer		$pid: PID of the page to be deleted
+	 * @return	void
+	 */
+	public function deletePage($pid) {
+		$pid = intval($pid);
+		$allTables = $this->getAllTables();
+		foreach ($allTables as $table) {
+			$GLOBALS['TYPO3_DB']->exec_DELETEquery($table,'pid='.$pid);
+		}
+		$GLOBALS['TYPO3_DB']->exec_DELETEquery('pages','uid='.$pid);
+	}
+	
+	/**
+	 * Deletes _all_ data from all tables starting with tx_party*
+	 * 
+	 * @return	void
+	 */
+	public function deleteAll() {
+		$allTables = $this->getAllTables();
+		foreach ($allTables as $table) {
+			$GLOBALS['TYPO3_DB']->sql_query('TRUNCATE '.$table);
+		}
+	}
+	
+	/**
+	 * Gets all tables starting with tx_party*
+	 * 
+	 * @return	array	All tables starting with tx_party*
+	 */
+	private function getAllTables() {
+		$out = array();
+		$allTables = $GLOBALS['TYPO3_DB']->admin_get_tables(TYPO3_db);
+		foreach ($allTables as $table) {
+			if (substr($table,0,8) == 'tx_party') {
+				$out[] = $table;
+			}
+		}
+		return $out;
+	}
+	
+	
 
 }
 
