@@ -1,3 +1,4 @@
+test
 Description
 -----------
 Management of party-related data, such as persons, organisations, names, addresses, etc. Based on the OASIS-Standard xPIL (Extensible Party Information Language).
