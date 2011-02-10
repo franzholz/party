@@ -2,7 +2,7 @@
 /***************************************************************
 *  Copyright notice
 *
-*  (c) 2007 David Bruehlmeier (typo3@bruehlmeier.com)
+*  (c) 2011 David Bruehlmeier (typo3@bruehlmeier.com)
 *  All rights reserved
 *
 *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -23,22 +23,22 @@
 ***************************************************************/
 
 
-/** 
+/**
  * Model for the class Disability
- * 
- * Depends on: liv/div 
+ *
+ * Depends on: div2007
  *
  * @author David Brühlmeier <typo3@bruehlmeier.com>
  * @package TYPO3
  * @subpackage tx_party
  */
 
-require_once(t3lib_extMgm::extPath('div').'class.tx_div.php');
-tx_div::load('tx_party_models_object');
+require_once(t3lib_extMgm::extPath('div2007') . 'class.tx_div2007.php');
+tx_div2007::load('tx_party_models_object');
 
 class tx_party_models_disability extends tx_party_models_object {
 	protected $table = 'tx_party_disabilities';
-	
+
 	/**
 	 * Returns the label of the Disability in the following format:
 	 * "[disability] ([party])"
@@ -51,10 +51,10 @@ class tx_party_models_disability extends tx_party_models_object {
 		if ($this->isEmpty()) return false;		// Data must be loaded
 		$label = array();
 		$out = '';
-		
+
 		// Get all relevant parts
 		$party = tx_party_models_party::getInstance($this->get('party'));
-		
+
 		// Assemble the label
 		$label[0] = $this->get('disability');
 		if (!$party->isEmpty()) $label[1] = '('.$party->getLabel().')';

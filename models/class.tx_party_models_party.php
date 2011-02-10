@@ -2,7 +2,7 @@
 /***************************************************************
 *  Copyright notice
 *
-*  (c) 2007 David Bruehlmeier (typo3@bruehlmeier.com)
+*  (c) 2011 David Bruehlmeier (typo3@bruehlmeier.com)
 *  All rights reserved
 *
 *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -23,29 +23,29 @@
 ***************************************************************/
 
 
-/** 
+/**
  * Abstract base class for the Party model. This class is
  * extended by the class tx_party_models_person and
  * tx_party_models_organisation.
- * 
- * Depends on: liv/div 
+ *
+ * Depends on: div2007
  *
  * @author David Brühlmeier <typo3@bruehlmeier.com>
  * @package TYPO3
  * @subpackage tx_party
  */
 
-require_once(t3lib_extMgm::extPath('div').'class.tx_div.php');
-tx_div::load('tx_party_models_object');
-tx_div::load('tx_party_models_names');
-tx_div::load('tx_party_models_addresses');
-tx_div::load('tx_party_models_electronicaddressidentifiers');
+require_once(t3lib_extMgm::extPath('div2007') . 'class.tx_div2007.php');
+tx_div2007::load('tx_party_models_object');
+tx_div2007::load('tx_party_models_names');
+tx_div2007::load('tx_party_models_addresses');
+tx_div2007::load('tx_party_models_electronicaddressidentifiers');
 
 
 abstract class tx_party_models_party extends tx_party_models_object {
 
 	protected $table = 'tx_party_parties';
-	
+
 	/**
 	 * Returns the loaded instance of the party. Depending on the type of the party, this function
 	 * returns an instance of tx_party_models_person or tx_party_models_organisation.
@@ -55,10 +55,10 @@ abstract class tx_party_models_party extends tx_party_models_object {
 	 */
 	public static function getInstance($uid) {
 		$uid = intval($uid);
-		
+
 		// Get the type of the party
 		$rec = t3lib_BEfunc::getRecord('tx_party_parties',$uid,'type');
-		
+
 		// Depending on the type, create the proper instance and load the data
 		switch (intval($rec['type'])) {
 			case 0:
@@ -73,14 +73,14 @@ abstract class tx_party_models_party extends tx_party_models_object {
 				$party = null;
 			break;
 		}
-		
-		return $party;		
+
+		return $party;
 	}
-	
-	
+
+
 	/**
 	 * Loads the party.
-	 * 
+	 *
 	 * @param	integer		$uid: UID of the party
 	 * @param	string		$fields: Comma-separated list of field names to load (determined by the derived classes)
 	 * @return	void		The data is loaded into the object
@@ -89,7 +89,7 @@ abstract class tx_party_models_party extends tx_party_models_object {
 		$uid = intval($uid);
 		$groupBy = '';
 		$orderBy = '';
-		
+
 		// Load the party from the database and build the object
 		$query = $GLOBALS['TYPO3_DB']->SELECTquery($fields, $this->table, $this->table.'.uid='.$uid, $groupBy, $orderBy);
 		$result = $GLOBALS['TYPO3_DB']->sql_query($query);
@@ -97,7 +97,7 @@ abstract class tx_party_models_party extends tx_party_models_object {
 			$row = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($result);
 			$this->overwriteArray($row);
 		}
-		
+
 		// Names
 		if ($this->get('names')) {
 
@@ -105,7 +105,7 @@ abstract class tx_party_models_party extends tx_party_models_object {
 			$names = t3lib_div::makeInstance('tx_party_models_names');
 			$names->loadByParty($uid);
 			$this->set('names',$names);
-			
+
 			// Include the values of the standard name as parameters of the party
 			$standardName = $names->get('standard');
 			if (is_object($standardName)) {
@@ -115,7 +115,7 @@ abstract class tx_party_models_party extends tx_party_models_object {
 				}
 			}
 		}
-		
+
 		// Addresses
 		if ($this->get('addresses')) {
 
@@ -123,7 +123,7 @@ abstract class tx_party_models_party extends tx_party_models_object {
 			$addresses = t3lib_div::makeInstance('tx_party_models_addresses');
 			$addresses->loadByParty($uid);
 			$this->set('addresses',$addresses);
-			
+
 			// Include the values of the standard address as parameters of the party
 			$standardAddress = $addresses->get('standard');
 			if (is_object($standardAddress)) {
@@ -133,7 +133,7 @@ abstract class tx_party_models_party extends tx_party_models_object {
 				}
 			}
 		}
-		
+
 		// ElectronicAddressIdentifiers
 		if ($this->get('electronic_address_identifiers')) {
 
@@ -141,7 +141,7 @@ abstract class tx_party_models_party extends tx_party_models_object {
 			$electronicAddressIdentifiers = t3lib_div::makeInstance('tx_party_models_electronicaddressidentifiers');
 			$electronicAddressIdentifiers->loadByParty($uid);
 			$this->set('electronic_address_identifiers',$electronicAddressIdentifiers);
-			
+
 			// Include the values of the standard electronic address identifier as parameters of the party
 			$standardElectronicAddressIdentifier = $electronicAddressIdentifiers->get('standard');
 			if (is_object($standardElectronicAddressIdentifier)) {
@@ -152,29 +152,29 @@ abstract class tx_party_models_party extends tx_party_models_object {
 			}
 		}
 	}
-	
+
 	/**
 	 * Returns the label of the party in the following format:
 	 * "[label_name], [locality]"
-	 * 
+	 *
 	 * The data must be loaded before, by calling $this->load();
-	 * 
+	 *
 	 * @return	string		Label of the party
 	 */
 	public function getLabel() {
 		if ($this->isEmpty()) return false;		// Data must be loaded
 		$label = array();
 		$out = '';
-		
+
 		// Get all relevant parts
 		$names = $this->get('names');
 		$locality = $this->get('locality');
-		
+
 		// Assemble the label
 		if (is_object($names) && is_object($names->get('standard'))) $label[] = $names->get('standard')->getLabel();
 		if ($locality) $label[] = $locality;
-		
-		$out = implode(' - ',$label);		
+
+		$out = implode(' - ',$label);
 		return $out;
 	}
 }

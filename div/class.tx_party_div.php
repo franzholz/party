@@ -2,7 +2,7 @@
 /***************************************************************
 *  Copyright notice
 *
-*  (c) 2007 David Bruehlmeier (typo3@bruehlmeier.com)
+*  (c) 2011 David Bruehlmeier (typo3@bruehlmeier.com)
 *  All rights reserved
 *
 *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -23,12 +23,12 @@
 ***************************************************************/
 
 
-/** 
+/**
  * Static utility functions for the People Management Framework.
- * 
+ *
  * The functions can only be used se non-instantiated, e.g.
- * tx_party_div::getAllTypeFields()
- * 
+ * tx_party_div2007::getAllTypeFields()
+ *
  *
  * @author David Brühlmeier <typo3@bruehlmeier.com>
  * @package TYPO3
@@ -37,29 +37,29 @@
 
 
 class tx_party_div {
-	
+
 	/**
 	 * Returns a comma-separated list with all relevant fields for the table, according to the
 	 * 'type' of the record.
-	 * 
+	 *
 	 * Based on t3lib_BEfunc::getTCAtypes(). Problems with the core-function:
 	 * - Doesn't account for the fields in palettes
 	 * - Doesn't account for the common fields, i.e. uid, pid, etc.
 	 * - Also returns 'special' fields, i.e. --div-- and --palette--
-	 * 
+	 *
 	 * @param	string		$table: The name of the table for which to get the fields
 	 * @param	array		$rec: The record which contains the type
 	 * @return	string		Comma-separated list with all type fields for the record
 	 */
 	public static function getAllTypeFields($table,$rec) {
 		global $TCA;
-	
+
 		// Add 'common fields'
 		$out = 'uid,pid,tstamp,crdate,cruser_id,deleted,';
-		
+
 		// Get all type fields with the core function.
 		$typeFields = t3lib_BEfunc::getTCAtypes($table,$rec,true);
-		
+
 		// Add all fields from palettes and exclude 'special fields'
 		foreach ($typeFields as $k=>$theTypeField) {
 			if ($k == '--div--' || $k == '--palette--') continue;	// Exclude 'special' fields
@@ -69,7 +69,7 @@ class tx_party_div {
 				$out.= $paletteFields.',';
 			}
 		}
-		
+
 		// Return result
 		$out = t3lib_div::rm_endcomma($out);
 		return $out;

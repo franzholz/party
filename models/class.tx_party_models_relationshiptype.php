@@ -2,7 +2,7 @@
 /***************************************************************
 *  Copyright notice
 *
-*  (c) 2007 David Bruehlmeier (typo3@bruehlmeier.com)
+*  (c) 2011 David Bruehlmeier (typo3@bruehlmeier.com)
 *  All rights reserved
 *
 *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -23,23 +23,23 @@
 ***************************************************************/
 
 
-/** 
+/**
  * Model for the class RelationshipType
- * 
- * Depends on: liv/div 
+ *
+ * Depends on: div2007
  *
  * @author David Brühlmeier <typo3@bruehlmeier.com>
  * @package TYPO3
  * @subpackage tx_party
  */
 
-require_once(t3lib_extMgm::extPath('div').'class.tx_div.php');
-tx_div::load('tx_party_models_object');
+require_once(t3lib_extMgm::extPath('div2007') . 'class.tx_div2007.php');
+tx_div2007::load('tx_party_models_object');
 
 class tx_party_models_relationshiptype extends tx_party_models_object {
 	protected $table = 'tx_party_relationship_types';
-	
-	
+
+
 	/**
 	 * Determines if a relationship is allowed, according to the rules of the
 	 * relationship type.
@@ -55,9 +55,9 @@ class tx_party_models_relationshiptype extends tx_party_models_object {
 		if ($typeOfPrimaryParty == 1 && $this->get('organisation_allowed_as_primary')) $primaryOk = true;
 		if ($typeOfSecondaryParty == 0 && $this->get('person_allowed_as_secondary')) $secondaryOk = true;
 		if ($typeOfSecondaryParty == 1 && $this->get('organisation_allowed_as_secondary')) $secondaryOk = true;
-		
+
 		$out = ($primaryOk && $secondaryOk) ? true : false;
-		return $out;		
+		return $out;
 	}
 }
 

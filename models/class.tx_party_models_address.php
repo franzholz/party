@@ -2,7 +2,7 @@
 /***************************************************************
 *  Copyright notice
 *
-*  (c) 2007 David Bruehlmeier (typo3@bruehlmeier.com)
+*  (c) 2011 David Bruehlmeier (typo3@bruehlmeier.com)
 *  All rights reserved
 *
 *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -23,49 +23,49 @@
 ***************************************************************/
 
 
-/** 
+/**
  * Model for the class Address
- * 
- * Depends on: liv/div 
+ *
+ * Depends on: div2007
  *
  * @author David Brühlmeier <typo3@bruehlmeier.com>
  * @package TYPO3
  * @subpackage tx_party
  */
 
-require_once(t3lib_extMgm::extPath('div').'class.tx_div.php');
-tx_div::load('tx_party_models_object');
+require_once(t3lib_extMgm::extPath('div2007').'class.tx_div2007.php');
+tx_div2007::load('tx_party_models_object');
 
 class tx_party_models_address extends tx_party_models_object {
 
 	protected $table = 'tx_party_addresses';
-	
+
 	/**
 	 * Returns the label of the address in the following format:
 	 * "[thoroughfare] [thoroughfare_number], [post_code] [locality] ([administrative_area])"
-	 * 
+	 *
 	 * The data must be loaded before, by calling $this->load();
-	 * 
+	 *
 	 * @return	string		Label of the address
 	 */
 	public function getLabel() {
 		if ($this->isEmpty()) return false;		// Data must be loaded
 		$label = array();
 		$out = '';
-		
+
 		// Get all relevant parts
 		$thoroughfare = $this->get('thoroughfare');
 		$thoroughfareNumber = $this->get('thoroughfare_number');
 		$postCode = $this->get('post_code');
 		$locality = $this->get('locality');
 		$administrativeArea = $this->get('administrative_area');
-		
+
 		// Replace the administrativeArea code through the (language-neutral) code
 		if ($administrativeArea) {
 			$rec = t3lib_BEfunc::getRecord('static_country_zones',$administrativeArea,'zn_code');
 			$administrativeArea = $rec['zn_code'];
 		}
-		
+
 		// Assemble the label
 		if ($thoroughfare && !$thoroughfareNumber) $label[0] = $thoroughfare;
 		if ($thoroughfare && $thoroughfareNumber) $label[0] = $thoroughfare.' '.$thoroughfareNumber;

@@ -2,7 +2,7 @@
 /***************************************************************
 *  Copyright notice
 *
-*  (c) 2007 David Bruehlmeier (typo3@bruehlmeier.com)
+*  (c) 2011 David Bruehlmeier (typo3@bruehlmeier.com)
 *  All rights reserved
 *
 *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -23,22 +23,22 @@
 ***************************************************************/
 
 
-/** 
+/**
  * Model for the class Vehicle
- * 
- * Depends on: liv/div 
+ *
+ * Depends on: div2007
  *
  * @author David Brühlmeier <typo3@bruehlmeier.com>
  * @package TYPO3
  * @subpackage tx_party
  */
 
-require_once(t3lib_extMgm::extPath('div').'class.tx_div.php');
-tx_div::load('tx_party_models_object');
+require_once(t3lib_extMgm::extPath('div2007') . 'class.tx_div2007.php');
+tx_div2007::load('tx_party_models_object');
 
 class tx_party_models_vehicle extends tx_party_models_object {
 	protected $table = 'tx_party_vehicles';
-	
+
 	/**
 	 * Loads the Vehicle.
 	 *
@@ -48,12 +48,12 @@ class tx_party_models_vehicle extends tx_party_models_object {
 	public function load($uid) {
 		parent::load($uid);
 		if ($this->get('make')) {
-			$make = tx_div::makeInstance('tx_party_models_vehiclemanufacturer');
+			$make = tx_div2007::makeInstance('tx_party_models_vehiclemanufacturer');
 			$make->load($this->get('make'));
 			$this->set('make', $make);
 		}
 	}
-	
+
 	/**
 	 * Returns the label of the Vehicle in the following format:
 	 * "[make]: [license_plate] ([party])"
@@ -66,12 +66,12 @@ class tx_party_models_vehicle extends tx_party_models_object {
 		if ($this->isEmpty()) return false;		// Data must be loaded
 		$label = array();
 		$out = '';
-		
+
 		// Get all relevant parts
 		$make = $this->get('make');
 		$licensePlate = $this->get('license_plate');
 		$party = tx_party_models_party::getInstance($this->get('party'));
-		
+
 		// Assemble the label
 		if (is_object($make) && !$make->isEmpty()) $label[] = $make->getLabel().':';
 		if ($licensePlate) $label[] = $licensePlate;

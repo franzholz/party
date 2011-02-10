@@ -2,7 +2,7 @@
 /***************************************************************
 *  Copyright notice
 *
-*  (c) 2007 David Bruehlmeier (typo3@bruehlmeier.com)
+*  (c) 2011 David Bruehlmeier (typo3@bruehlmeier.com)
 *  All rights reserved
 *
 *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -23,23 +23,23 @@
 ***************************************************************/
 
 
-/** 
+/**
  * Model for the class CountryOfResidence
- * 
- * Depends on: liv/div 
+ *
+ * Depends on: div2007
  *
  * @author David Brühlmeier <typo3@bruehlmeier.com>
  * @package TYPO3
  * @subpackage tx_party
  */
 
-require_once(t3lib_extMgm::extPath('div').'class.tx_div.php');
-tx_div::load('tx_party_models_object');
-tx_div::load('tx_party_models_party');
+require_once(t3lib_extMgm::extPath('div2007').'class.tx_div2007.php');
+tx_div2007::load('tx_party_models_object');
+tx_div2007::load('tx_party_models_party');
 
 class tx_party_models_countryofresidence extends tx_party_models_object {
 	protected $table = 'tx_party_countries_of_residence';
-	
+
 	/**
 	 * Returns the label of the CountryOfResidence in the following format:
 	 * "[country] ([party])"
@@ -52,11 +52,11 @@ class tx_party_models_countryofresidence extends tx_party_models_object {
 		if ($this->isEmpty()) return false;		// Data must be loaded
 		$label = array();
 		$out = '';
-		
+
 		// Get all relevant parts
 		$party = tx_party_models_party::getInstance($this->get('party'));
 		$country = reset(t3lib_BEfunc::getRecord('static_countries',$this->get('country'),'cn_short_en'));
-		
+
 		// Assemble the label
 		$label[0] = $country;
 		if (!$party->isEmpty()) $label[1] = '('.$party->getLabel().')';

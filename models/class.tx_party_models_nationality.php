@@ -2,7 +2,7 @@
 /***************************************************************
 *  Copyright notice
 *
-*  (c) 2007 David Bruehlmeier (typo3@bruehlmeier.com)
+*  (c) 2011 David Bruehlmeier (typo3@bruehlmeier.com)
 *  All rights reserved
 *
 *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -23,24 +23,24 @@
 ***************************************************************/
 
 
-/** 
+/**
  * Model for the class Nationality
- * 
- * Depends on: liv/div 
+ *
+ * Depends on: div2007
  *
  * @author David Brühlmeier <typo3@bruehlmeier.com>
  * @package TYPO3
  * @subpackage tx_party
  */
 
-require_once(t3lib_extMgm::extPath('div').'class.tx_div.php');
-tx_div::load('tx_party_models_object');
-tx_div::load('tx_party_models_type');
-tx_div::load('tx_party_models_party');
+require_once(t3lib_extMgm::extPath('div2007') . 'class.tx_div2007.php');
+tx_div2007::load('tx_party_models_object');
+tx_div2007::load('tx_party_models_type');
+tx_div2007::load('tx_party_models_party');
 
 class tx_party_models_nationality extends tx_party_models_object {
 	protected $table = 'tx_party_nationalities';
-	
+
 	/**
 	 * Returns the label of the Nationality in the following format:
 	 * "[nationality_type]: [country] ([party])"
@@ -53,7 +53,7 @@ class tx_party_models_nationality extends tx_party_models_object {
 		if ($this->isEmpty()) return false;		// Data must be loaded
 		$label = array();
 		$out = '';
-		
+
 		// Get all relevant parts
 		$nationalityType = t3lib_div::makeInstance('tx_party_models_type');
 		$nationalityType->load($this->get('nationality_type'));

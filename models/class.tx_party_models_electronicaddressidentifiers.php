@@ -2,7 +2,7 @@
 /***************************************************************
 *  Copyright notice
 *
-*  (c) 2007 David Bruehlmeier (typo3@bruehlmeier.com)
+*  (c) 2011 David Bruehlmeier (typo3@bruehlmeier.com)
 *  All rights reserved
 *
 *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -22,25 +22,25 @@
 *  This copyright notice MUST APPEAR in all copies of the script!
 ***************************************************************/
 
-require_once(t3lib_extMgm::extPath('div').'class.tx_div.php');
-tx_div::load('tx_party_models_electronicaddressidentifier');
+require_once(t3lib_extMgm::extPath('div2007') . 'class.tx_div2007.php');
+tx_div2007::load('tx_party_models_electronicaddressidentifier');
 
-/** 
+/**
  * Model for a collection of ElectronicAddressIdentifier
- * 
- * Depends on: liv/div 
+ *
+ * Depends on: div2007
  *
  * @author David Brühlmeier <typo3@bruehlmeier.com>
  * @package TYPO3
  * @subpackage tx_party
  */
-class tx_party_models_electronicaddressidentifiers extends tx_lib_object {
+class tx_party_models_electronicaddressidentifiers extends tx_div2007_object {
 
 	protected $table = 'tx_party_electronic_address_identifier_usages';
-	
+
 	/**
 	 * Loads all electronic address identifiers which are assigned to a specific party.
-	 * 
+	 *
 	 * @param	integer		$uid: UID of the party
 	 * @return	void		The data is loaded into the object
 	 */
@@ -48,11 +48,11 @@ class tx_party_models_electronicaddressidentifiers extends tx_lib_object {
 		$partyUid = intval($partyUid);
 		$groupBy = '';
 		$orderBy = '';
-		
+
 		// Load all addresses from the database and build the object
 		$query = $GLOBALS['TYPO3_DB']->SELECTquery('electronic_address_identifier,standard', $this->table, $this->table.'.party='.$partyUid, $groupBy, $orderBy);
 		$result = $GLOBALS['TYPO3_DB']->sql_query($query);
-		$list = tx_div::makeInstance('tx_lib_object');
+		$list = tx_div2007::makeInstance('tx_div2007_object');
 		if($result) {
 			while($row = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($result)) {
 				$item = t3lib_div::makeInstance('tx_party_models_electronicaddressidentifier');
@@ -64,7 +64,7 @@ class tx_party_models_electronicaddressidentifiers extends tx_lib_object {
 		}
 		$this->set('list',$list);
 	}
-	
+
 }
 
 if (defined('TYPO3_MODE') && $TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/party/models/class.tx_party_models_electronicaddressidentifiers.php']) {

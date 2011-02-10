@@ -2,7 +2,7 @@
 /***************************************************************
 *  Copyright notice
 *
-*  (c) 2007 David Bruehlmeier (typo3@bruehlmeier.com)
+*  (c) 2011 David Bruehlmeier (typo3@bruehlmeier.com)
 *  All rights reserved
 *
 *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -23,27 +23,27 @@
 ***************************************************************/
 
 
-/** 
+/**
  * Abstract base class for all models.
- * 
- * Depends on: liv/div 
+ *
+ * Depends on: div2007
  *
  * @author David Brühlmeier <typo3@bruehlmeier.com>
  * @package TYPO3
  * @subpackage tx_party
  */
 
-require_once(t3lib_extMgm::extPath('div').'class.tx_div.php');
-tx_div::load('tx_lib_object');
+require_once(t3lib_extMgm::extPath('div2007') . 'class.tx_div2007.php');
+tx_div2007::load('tx_div2007_object');
 
-abstract class tx_party_models_object extends tx_lib_object {
+abstract class tx_party_models_object extends tx_div2007_object {
 
 	protected $table;		// Table which the concrete model is based on.
-	
+
 	/**
 	 * Loads the object from the table defined in $this->table.
 	 * Only used for 'simple' models, more complex model overwrite this function.
-	 * 
+	 *
 	 * @param	integer		$uid: UID of the object
 	 * @return	void		The data is loaded into the object
 	 */
@@ -52,7 +52,7 @@ abstract class tx_party_models_object extends tx_lib_object {
 		$deleteClause = t3lib_BEfunc::deleteClause($this->table);
 		$groupBy = '';
 		$orderBy = '';
-		
+
 		// Load the data from the database and build the object
 		$query = $GLOBALS['TYPO3_DB']->SELECTquery('*', $this->table, $this->table.'.uid='.$uid.$deleteClause, $groupBy, $orderBy);
 		$result = $GLOBALS['TYPO3_DB']->sql_query($query);
@@ -61,13 +61,13 @@ abstract class tx_party_models_object extends tx_lib_object {
 			$this->overwriteArray($row);
 		}
 	}
-	
+
 	/**
 	 * Builds a label from the 'label'-field according to $TCA. This function is usually overwritten for
 	 * more complex models.
-	 * 
+	 *
 	 * The data must be loaded before, by calling $this->load();
-	 * 
+	 *
 	 * @return	string		Label of the object
 	 */
 	public function getLabel() {
@@ -75,7 +75,7 @@ abstract class tx_party_models_object extends tx_lib_object {
 			return false;
 		} else {
 			return $this->get($GLOBALS['TCA'][$this->table]['ctrl']['label']);
-		}		
+		}
 	}
 }
 

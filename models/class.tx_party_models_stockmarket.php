@@ -2,7 +2,7 @@
 /***************************************************************
 *  Copyright notice
 *
-*  (c) 2007 David Bruehlmeier (typo3@bruehlmeier.com)
+*  (c) 2011 David Bruehlmeier (typo3@bruehlmeier.com)
 *  All rights reserved
 *
 *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -23,22 +23,22 @@
 ***************************************************************/
 
 
-/** 
+/**
  * Model for the class StockMarket
- * 
- * Depends on: liv/div 
+ *
+ * Depends on: div2007
  *
  * @author David Brühlmeier <typo3@bruehlmeier.com>
  * @package TYPO3
  * @subpackage tx_party
  */
 
-require_once(t3lib_extMgm::extPath('div').'class.tx_div.php');
-tx_div::load('tx_party_models_object');
+require_once(t3lib_extMgm::extPath('div2007') . 'class.tx_div2007.php');
+tx_div2007::load('tx_party_models_object');
 
 class tx_party_models_stockmarket extends tx_party_models_object {
 	protected $table = 'tx_party_stock_markets';
-	
+
 	/**
 	 * Returns the label of the StockMarket in the following format:
 	 * "[listed_code]: [market] ([party])"
@@ -51,12 +51,12 @@ class tx_party_models_stockmarket extends tx_party_models_object {
 		if ($this->isEmpty()) return false;		// Data must be loaded
 		$label = array();
 		$out = '';
-		
+
 		// Get all relevant parts
 		$listedCode = $this->get('listed_code');
 		$market = reset(t3lib_BEfunc::getRecord('static_markets',$this->get('market'),'institution_description'));
 		$party = tx_party_models_party::getInstance($this->get('party'));
-		
+
 		// Assemble the label
 		if ($listedCode) $label[] = $listedCode.':';
 		if ($market) $label[] = $market;

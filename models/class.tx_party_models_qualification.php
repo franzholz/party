@@ -2,7 +2,7 @@
 /***************************************************************
 *  Copyright notice
 *
-*  (c) 2007 David Bruehlmeier (typo3@bruehlmeier.com)
+*  (c) 2011 David Bruehlmeier (typo3@bruehlmeier.com)
 *  All rights reserved
 *
 *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -23,23 +23,23 @@
 ***************************************************************/
 
 
-/** 
+/**
  * Model for the class Qualification
- * 
- * Depends on: liv/div 
+ *
+ * Depends on: div2007
  *
  * @author David Brühlmeier <typo3@bruehlmeier.com>
  * @package TYPO3
  * @subpackage tx_party
  */
 
-require_once(t3lib_extMgm::extPath('div').'class.tx_div.php');
-tx_div::load('tx_party_models_object');
-tx_div::load('tx_party_models_type');
+require_once(t3lib_extMgm::extPath('div2007') . 'class.tx_div2007.php');
+tx_div2007::load('tx_party_models_object');
+tx_div2007::load('tx_party_models_type');
 
 class tx_party_models_qualification extends tx_party_models_object {
 	protected $table = 'tx_party_qualifications';
-	
+
 	/**
 	 * Returns the label of the Qualification in the following format:
 	 * "[qualification] ([party])"
@@ -52,11 +52,11 @@ class tx_party_models_qualification extends tx_party_models_object {
 		if ($this->isEmpty()) return false;		// Data must be loaded
 		$label = array();
 		$out = '';
-		
+
 		// Get all relevant parts
 		$qualificationName = $this->get('qualification_name');
 		$party = tx_party_models_party::getInstance($this->get('party'));
-		
+
 		// Assemble the label
 		if ($qualificationName) $label[0] = $qualificationName;
 		if (!$party->isEmpty()) $label[1] = '('.$party->getLabel().')';

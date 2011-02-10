@@ -2,7 +2,7 @@
 /***************************************************************
 *  Copyright notice
 *
-*  (c) 2007 David Bruehlmeier (typo3@bruehlmeier.com)
+*  (c) 2011 David Bruehlmeier (typo3@bruehlmeier.com)
 *  All rights reserved
 *
 *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -23,10 +23,10 @@
 ***************************************************************/
 
 
-/** 
+/**
  * Model for the class OrganisationName
- * 
- * Depends on: liv/div 
+ *
+ * Depends on: div2007
  *
  * @author David Brühlmeier <typo3@bruehlmeier.com>
  * @package TYPO3
@@ -34,44 +34,44 @@
  */
 
 require_once(t3lib_extMgm::extPath('party').'div/class.tx_party_div.php');
-require_once(t3lib_extMgm::extPath('div').'class.tx_div.php');
-tx_div::load('tx_party_models_name');
+require_once(t3lib_extMgm::extPath('div2007').'class.tx_div2007.php');
+tx_div2007::load('tx_party_models_name');
 
 class tx_party_models_organisationname extends tx_party_models_name {
 
 	/**
 	 * Loads the organisation name.
-	 * 
+	 *
 	 * @param	integer		$uid: UID of the organisation name
 	 * @return	void		The data is loaded into the object
 	 */
 	public function load($uid) {
 		global $TCA;
 		$uid = intval($uid);
-		
+
 		// Check that the name is an organisation name
 		$rec = t3lib_BEfunc::getRecord($this->table,$uid,'type');
 		if (!$rec['type'] == 1) return false;
-				
-		
+
+
 		// Get all fields belonging to the type 'organisation name' and load the object
 		$typeFields = tx_party_div::getAllTypeFields($this->table,$rec);
 		parent::load($uid,$typeFields);
 	}
-	
+
 	/**
 	 * Returns the label of the organisation name in the following format:
 	 * "[organisation_name]"
-	 * 
+	 *
 	 * The data must be loaded before, by calling $this->load();
-	 * 
+	 *
 	 * @return	string		Label of the organisation name
 	 */
 	public function getLabel() {
 		if ($this->isEmpty()) return false;		// Data must be loaded
-		$out = $this->get('organisation_name');	
+		$out = $this->get('organisation_name');
 		return $out;
-	}	
+	}
 }
 
 if (defined('TYPO3_MODE') && $TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/party/models/class.tx_party_models_organisationname.php']) {

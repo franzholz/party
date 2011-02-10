@@ -2,7 +2,7 @@
 /***************************************************************
 *  Copyright notice
 *
-*  (c) 2007 David Bruehlmeier (typo3@bruehlmeier.com)
+*  (c) 2011 David Bruehlmeier (typo3@bruehlmeier.com)
 *  All rights reserved
 *
 *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -23,23 +23,23 @@
 ***************************************************************/
 
 
-/** 
+/**
  * Model for the class Occupation
- * 
- * Depends on: liv/div 
+ *
+ * Depends on: div2007
  *
  * @author David Brühlmeier <typo3@bruehlmeier.com>
  * @package TYPO3
  * @subpackage tx_party
  */
 
-require_once(t3lib_extMgm::extPath('div').'class.tx_div.php');
-tx_div::load('tx_party_models_object');
-tx_div::load('tx_party_models_occupationrole');
+require_once(t3lib_extMgm::extPath('div2007') . 'class.tx_div2007.php');
+tx_div2007::load('tx_party_models_object');
+tx_div2007::load('tx_party_models_occupationrole');
 
 class tx_party_models_occupation extends tx_party_models_object {
 	protected $table = 'tx_party_occupations';
-	
+
 	/**
 	 * Returns the label of the Occupation in the following format:
 	 * "[role]: [position_title] ([party])"
@@ -52,13 +52,13 @@ class tx_party_models_occupation extends tx_party_models_object {
 		if ($this->isEmpty()) return false;		// Data must be loaded
 		$label = array();
 		$out = '';
-		
+
 		// Get all relevant parts
 		$role = t3lib_div::makeInstance('tx_party_models_occupationrole');
 		$role->load($this->get('role'));
 		$positionTitle = $this->get('position_title');
 		$party = tx_party_models_party::getInstance($this->get('party'));
-		
+
 		// Assemble the label
 		if (!$role->isEmpty()) $label[0] = $role->getLabel().':';
 		if ($positionTitle) $label[1] = $positionTitle;

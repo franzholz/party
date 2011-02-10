@@ -2,7 +2,7 @@
 /***************************************************************
 *  Copyright notice
 *
-*  (c) 2007 David Bruehlmeier (typo3@bruehlmeier.com)
+*  (c) 2011 David Bruehlmeier (typo3@bruehlmeier.com)
 *  All rights reserved
 *
 *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -23,22 +23,22 @@
 ***************************************************************/
 
 
-/** 
+/**
  * Model for the class Type
- * 
- * Depends on: liv/div 
+ *
+ * Depends on: div2007
  *
  * @author David Brühlmeier <typo3@bruehlmeier.com>
  * @package TYPO3
  * @subpackage tx_party
  */
 
-require_once(t3lib_extMgm::extPath('div').'class.tx_div.php');
-tx_div::load('tx_party_models_object');
+require_once(t3lib_extMgm::extPath('div2007') . 'class.tx_div2007.php');
+tx_div2007::load('tx_party_models_object');
 
 class tx_party_models_type extends tx_party_models_object {
 	protected $table = 'tx_party_types';
-	
+
 	/**
 	 * Checks if the type is allowed for a certain party type.
 	 *
@@ -54,8 +54,8 @@ class tx_party_models_type extends tx_party_models_object {
 		switch ($this->get('allowed_for_party_type')) {
 			case 'ALL':
 				$out = true;
-				break;			
-			case 'PERSONS':				
+				break;
+			case 'PERSONS':
 				$out = ($partyType == 0) ? true : false;
 				break;
 			case 'ORGANISATIONS':
@@ -65,10 +65,10 @@ class tx_party_models_type extends tx_party_models_object {
 				return false;
 				break;
 		}
-		
+
 		return $out;
 	}
-	
+
 	/**
 	 * Checks if the type is allowed for a certain field.
 	 *
@@ -80,10 +80,10 @@ class tx_party_models_type extends tx_party_models_object {
 	public function isAllowedForField($field) {
 		if ($this->isEmpty()) return false;		// Data must be loaded
 		$out = false;
-		
+
 		$allowedForField = explode(',',$this->get('allowed_for_field'));
 		$out = in_array($field, $allowedForField);
-		
+
 		return $out;
 	}
 }

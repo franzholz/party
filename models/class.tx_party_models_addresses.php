@@ -2,7 +2,7 @@
 /***************************************************************
 *  Copyright notice
 *
-*  (c) 2007 David Bruehlmeier (typo3@bruehlmeier.com)
+*  (c) 2011 David Bruehlmeier (typo3@bruehlmeier.com)
 *  All rights reserved
 *
 *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -23,26 +23,26 @@
 ***************************************************************/
 
 
-/** 
+/**
  * Model for a collection of Addresses
- * 
- * Depends on: liv/div 
+ *
+ * Depends on: div2007
  *
  * @author David Brühlmeier <typo3@bruehlmeier.com>
  * @package TYPO3
  * @subpackage tx_party
  */
 
-require_once(t3lib_extMgm::extPath('div').'class.tx_div.php');
-tx_div::load('tx_party_models_address');
+require_once(t3lib_extMgm::extPath('div2007') . 'class.tx_div2007.php');
+tx_div2007::load('tx_party_models_address');
 
 class tx_party_models_addresses extends tx_party_models_object {
 
 	protected $table = 'tx_party_address_usages';
-	
+
 	/**
 	 * Loads all addresses which are assigned to a specific party.
-	 * 
+	 *
 	 * @param	integer		$partyUid: UID of the party
 	 * @return	void		The data is loaded into the object
 	 */
@@ -50,11 +50,11 @@ class tx_party_models_addresses extends tx_party_models_object {
 		$partyUid = intval($partyUid);
 		$groupBy = '';
 		$orderBy = '';
-		
+
 		// Load all addresses from the database and build the object
 		$query = $GLOBALS['TYPO3_DB']->SELECTquery('address,standard', $this->table, $this->table.'.party='.$partyUid, $groupBy, $orderBy);
 		$result = $GLOBALS['TYPO3_DB']->sql_query($query);
-		$list = tx_div::makeInstance('tx_lib_object');
+		$list = tx_div2007::makeInstance('tx_div2007_object');
 		if($result) {
 			while($row = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($result)) {
 				$item = t3lib_div::makeInstance('tx_party_models_address');
@@ -66,8 +66,8 @@ class tx_party_models_addresses extends tx_party_models_object {
 		}
 		$this->set('list',$list);
 	}
-	
-	
+
+
 	/**
 	 * Returns the label of the Address Usage in the following format:
 	 *
@@ -79,11 +79,11 @@ class tx_party_models_addresses extends tx_party_models_object {
 		if ($this->isEmpty()) return false;		// Data must be loaded
 		$label = array();
 		$out = '';
-		
+
 		// Get all relevant parts
 		$usage = reset(t3lib_BEfunc::getRecord('tx_party_usages',$this->get('address_usage'),'short_title'));
 		$party = tx_party_models_party::getInstance($this->get('party'));
-		
+
 		// Assemble the label
 		if ($usage) $label[] = $usage;
 		if (!$party->isEmpty()) $label[] = '('.$party->getLabel().')';

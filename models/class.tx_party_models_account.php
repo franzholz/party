@@ -2,7 +2,7 @@
 /***************************************************************
 *  Copyright notice
 *
-*  (c) 2007 David Bruehlmeier (typo3@bruehlmeier.com)
+*  (c) 2011 David Bruehlmeier (typo3@bruehlmeier.com)
 *  All rights reserved
 *
 *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -23,40 +23,40 @@
 ***************************************************************/
 
 
-/** 
+/**
  * Model for the class Account
- * 
- * Depends on: liv/div 
+ *
+ * Depends on: div2007
  *
  * @author David Brühlmeier <typo3@bruehlmeier.com>
  * @package TYPO3
  * @subpackage tx_party
  */
 
-require_once(t3lib_extMgm::extPath('div').'class.tx_div.php');
-tx_div::load('tx_party_models_object');
+require_once(t3lib_extMgm::extPath('div2007') . 'class.tx_div2007.php');
+tx_div2007::load('tx_party_models_object');
 
 class tx_party_models_account extends tx_party_models_object {
 	protected $table = 'tx_party_accounts';
-	
+
 	/**
 	 * Returns the label of the account in the following format:
 	 * "[account_id] ([organisation])"
-	 * 
+	 *
 	 * The data must be loaded before, by calling $this->load();
-	 * 
+	 *
 	 * @return	string		Label of the account
 	 */
 	public function getLabel() {
 		if ($this->isEmpty()) return false;		// Data must be loaded
 		$label = array();
 		$out = '';
-		
+
 		// Get all relevant parts
 		$accountId = $this->get('account_id');
 		$org = t3lib_div::makeInstance('tx_party_models_organisation');
 		$org->load($this->get('organisation'));
-		
+
 		// Assemble the label
 		$label[0] = $accountId;
 		if ($org) $label[1] = '('.$org->getLabel().')';

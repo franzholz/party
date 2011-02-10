@@ -2,7 +2,7 @@
 /***************************************************************
 *  Copyright notice
 *
-*  (c) 2007 David Bruehlmeier (typo3@bruehlmeier.com)
+*  (c) 2011 David Bruehlmeier (typo3@bruehlmeier.com)
 *  All rights reserved
 *
 *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -23,36 +23,36 @@
 ***************************************************************/
 
 
-/** 
+/**
  * Model for the class Organisation
- * 
- * Depends on: liv/div 
+ *
+ * Depends on: div2007
  *
  * @author David Brühlmeier <typo3@bruehlmeier.com>
  * @package TYPO3
  * @subpackage tx_party
  */
 
-require_once(t3lib_extMgm::extPath('div').'class.tx_div.php');
-tx_div::load('tx_party_models_party');
+require_once(t3lib_extMgm::extPath('div2007') . 'class.tx_div2007.php');
+tx_div2007::load('tx_party_models_party');
 
 class tx_party_models_organisation extends tx_party_models_party {
-		
+
 
 	/**
 	 * Loads the organisation.
-	 * 
+	 *
 	 * @param	integer		$uid: UID of the organisation
 	 * @return	void		The data is loaded into the object
 	 */
 	public function load($uid) {
 		global $TCA;
 		$uid = intval($uid);
-		
+
 		// Check that the party is an organisation
 		$rec = t3lib_BEfunc::getRecord($this->table,$uid,'type');
 		if (!$rec['type'] == 1) return false;
-		
+
 		// Get all fields belonging to the type 'organisation' and load the object
 		$typeFields = tx_party_div::getAllTypeFields($this->table,$rec);
 		parent::load($uid,$typeFields);

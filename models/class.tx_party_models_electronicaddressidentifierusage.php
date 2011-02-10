@@ -2,7 +2,7 @@
 /***************************************************************
 *  Copyright notice
 *
-*  (c) 2007 David Bruehlmeier (typo3@bruehlmeier.com)
+*  (c) 2011 David Bruehlmeier (typo3@bruehlmeier.com)
 *  All rights reserved
 *
 *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -23,38 +23,38 @@
 ***************************************************************/
 
 
-/** 
+/**
  * Model for the class ElectronicAddressIdentifierUsage
- * 
- * Depends on: liv/div 
+ *
+ * Depends on: div2007
  *
  * @author David Brühlmeier <typo3@bruehlmeier.com>
  * @package TYPO3
  * @subpackage tx_party
  */
 
-require_once(t3lib_extMgm::extPath('div').'class.tx_div.php');
-tx_div::load('tx_party_models_object');
+require_once(t3lib_extMgm::extPath('div2007').'class.tx_div2007.php');
+tx_div2007::load('tx_party_models_object');
 
 class tx_party_models_electronicaddressidentifierusage extends tx_party_models_object {
 
 	protected $table = 'tx_party_electronic_address_identifier_usages';
-	
+
 	/**
-	 * 
+	 *
 	 * The data must be loaded before, by calling $this->load();
-	 * 
+	 *
 	 * @return	string		Label of the electronic address identifier
 	 */
 	public function getLabel() {
 		if ($this->isEmpty()) return false;		// Data must be loaded
 		$label = array();
 		$out = '';
-		
+
 		// Get all relevant parts
 		$usage = reset(t3lib_BEfunc::getRecord('tx_party_usages',$this->get('electronic_address_identifier_usage'),'short_title'));
 		$party = tx_party_models_party::getInstance($this->get('party'));
-		
+
 		// Assemble the label
 		if ($usage) $label[] = $usage;
 		if (!$party->isEmpty()) $label[] = '('.$party->getLabel().')';
