@@ -30,6 +30,8 @@
  * tx_party_div2007::getAllTypeFields()
  *
  *
+ * $Id$
+ *
  * @author David Brühlmeier <typo3@bruehlmeier.com>
  * @package TYPO3
  * @subpackage tx_party

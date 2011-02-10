@@ -45,6 +45,8 @@ tx_div2007::load('tx_party_models_relationship');
 /**
  * Building (backend) labels, using label_userFunc.
  *
+ * $Id$
+ *
  * @author David Bruehlmeier <typo3@bruehlmeier.com>
  */
 class tx_party_labels {

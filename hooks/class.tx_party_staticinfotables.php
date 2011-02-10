@@ -25,6 +25,8 @@
  * Updating hotlists for static_info_tables
  *
  *
+ * $Id$
+ *
  * @author	David Brühlmeier <typo3@bruehlmeier.com>
  * @package TYPO3
  */
@@ -41,7 +43,7 @@ class tx_party_staticinfotables {
 
 	function processDatamap_postProcessFieldArray($status, $table, $id, $fieldArray, $pObj) {
 		global $TCA;
-		
+
 		// Check if the current table contains a field with a hotlist to update
 		foreach ($TCA[$table]['columns'] as $fieldName => $field) {
 			if ($field['config']['itemsProcFunc_config']['hotlistApp'] == 'tx_party') {
@@ -52,7 +54,7 @@ class tx_party_staticinfotables {
 				}
 			}
 		}
-		
+
 	}
 }
 

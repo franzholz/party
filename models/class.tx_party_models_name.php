@@ -30,6 +30,8 @@
  *
  * Depends on: div2007
  *
+ * $Id$
+ *
  * @author David Brühlmeier <typo3@bruehlmeier.com>
  * @package TYPO3
  * @subpackage tx_party

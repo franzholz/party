@@ -32,13 +32,15 @@ require_once (PATH_t3lib.'class.t3lib_tcemain.php');
 /**
  * Generate fixture for the Unit-Tests of the People Management Framework.
  *
+ * $Id$
+ *
  */
 class tx_party_tests_fixture {
 
 	/**
 	 * Creates a set of test data. The test data must be available in the extension directory
 	 * in party/tests/fixture in the form of T3D files.
-	 * 
+	 *
 	 * Test datasets:
 	 * 1. Basic
 	 *
@@ -62,12 +64,12 @@ class tx_party_tests_fixture {
 				$files[] = t3lib_extMgm::extPath('party').'tests/fixture/relationship.t3d';
 				$files[] = t3lib_extMgm::extPath('party').'tests/fixture/vehicle.t3d';
 			break;
-			
+
 			default:
 				return false;
 			break;
 		}
-		
+
 		// Get and configure a new instance of the import/export system extension
 		$import = t3lib_div::makeInstance('tx_impexp');
 		$import->init(1,'import');			// Use compressed files
@@ -82,14 +84,14 @@ class tx_party_tests_fixture {
 			$import->loadFile($theFile,1);	// 1 = import all, including files etc.
 			$import->importData($pid);		// Import the data to the new test page
 		}
-		
+
 		return $pid;
 	}
-	
+
 
 	/**
 	 * Creates a T3D file for a party in the directory party/tests/fixture.
-	 * 
+	 *
 	 *
 	 * @param	integer		$uid: UID of the party to export
 	 * @return	void		The T3D file is written to the filesystem
@@ -101,24 +103,24 @@ class tx_party_tests_fixture {
 		$this->export->init();
 		$this->export->relOnlyTables[]='_ALL';	// Allow all tables as relationships
 		$this->export->setCharset('utf-8');
-		
+
 		// Add record
 		$rec = t3lib_BEfunc::getRecord('tx_party_parties',$uid);
 		$this->export->export_addRecord('tx_party_parties',$rec);
 
-		
+
 		// Add all relations (recursively in 5 levels so relations has THEIR relations registered as well)
 		for($a=0;$a<5;$a++)	{
 			$addR = $this->export->export_addDBRelations($a);
 			if (!count($addR)) break;
 		}
-		
+
 		// Finally load all the files
 		$this->export->export_addFilesFromRelations();	// MUST be after the DBrelations are set so that file from ALL added records are included!
-		
+
 		// Now the internal DAT array is ready to export
 		#debug($this->export->dat);
-		
+
 		// Write export
 		if ($rec['type'] == 0) $type = '_p';
 		if ($rec['type'] == 1) $type = '_o';
@@ -126,34 +128,34 @@ class tx_party_tests_fixture {
 		t3lib_div::writeFile(t3lib_extMgm::extPath('party').'tests/fixture/'.$uid.$type.'.t3d',$out);
 		#debug(strlen($out));
 	}
-	
+
 	/**
 	 * Creates a new Page on PID 0
-	 * 
+	 *
 	 * @return	integer		PID of the page created
 	 */
 	private function createPage() {
 		$tempId = uniqid('NEW');
-		$data = array();		
+		$data = array();
 		$data['pages'][$tempId] = array(
 			'title' => '### People Management Framework - Unit Tests ###',
 			'hidden' => 0,
 			'pid' => 0,
 			'doktype' => 254,	// SysFolder
 		);
-		
+
 		$tce = t3lib_div::makeInstance('t3lib_TCEmain');
 		$tce->stripslashes_values = 0;
 		$tce->start($data, array());
 		$tce->process_datamap();
 		$pid = $tce->substNEWwithIDs[$tempId];
-		
+
 		return $pid;
 	}
-	
+
 	/**
 	 * Deletes a page and all the tx_party records inside.
-	 * 
+	 *
 	 * @param	integer		$pid: PID of the page to be deleted
 	 * @return	void
 	 */
@@ -165,10 +167,10 @@ class tx_party_tests_fixture {
 		}
 		$GLOBALS['TYPO3_DB']->exec_DELETEquery('pages','uid='.$pid);
 	}
-	
+
 	/**
 	 * Deletes _all_ data from all tables starting with tx_party*
-	 * 
+	 *
 	 * @return	void
 	 */
 	public function deleteAll() {
@@ -177,10 +179,10 @@ class tx_party_tests_fixture {
 			$GLOBALS['TYPO3_DB']->sql_query('TRUNCATE '.$table);
 		}
 	}
-	
+
 	/**
 	 * Gets all tables starting with tx_party*
-	 * 
+	 *
 	 * @return	array	All tables starting with tx_party*
 	 */
 	private function getAllTables() {
@@ -193,8 +195,8 @@ class tx_party_tests_fixture {
 		}
 		return $out;
 	}
-	
-	
+
+
 
 }
 

@@ -31,6 +31,8 @@ require_once(t3lib_extMgm::extPath('div2007').'class.tx_div2007.php');
  * WARNING!!: DELETES _ALL_ party data from the database!!
  *
  *
+ * $Id$
+ *
  * @author	David Bruehlmeier <typo3@bruehlmeier.com>
  */
 class tx_party_model_basic_testcase extends tx_t3unit_testcase {
