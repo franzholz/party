@@ -51,8 +51,10 @@ class tx_party_models_nationality extends tx_party_models_object {
 	 *
 	 * @return	string		Label of the Nationality
 	 */
-	public function getLabel() {
-		if ($this->isEmpty()) return false;		// Data must be loaded
+	public function getLabel () {
+		if ($this->isEmpty()) {
+			return FALSE;		// Data must be loaded
+		}
 		$label = array();
 		$out = '';
 
@@ -60,14 +62,17 @@ class tx_party_models_nationality extends tx_party_models_object {
 		$nationalityType = t3lib_div::makeInstance('tx_party_models_type');
 		$nationalityType->load($this->get('nationality_type'));
 		$party = tx_party_models_party::getInstance($this->get('party'));
-		$country = reset(t3lib_BEfunc::getRecord('static_countries',$this->get('country'),'cn_short_en'));
+		$country = reset(t3lib_BEfunc::getRecord('static_countries', $this->get('country'), 'cn_short_en'));
 
 		// Assemble the label
-		if (!$nationalityType->isEmpty()) $label[0] = $nationalityType->getLabel().':';
+		if (!$nationalityType->isEmpty()) {
+			$label[0] = $nationalityType->getLabel() . ':';
+		}
 		$label[1] = $country;
-		if (!$party->isEmpty()) $label[2] = '('.$party->getLabel().')';
-
-		$out = implode(' ',$label);
+		if (!$party->isEmpty()) {
+			$label[2] = '(' . $party->getLabel() . ')';
+		}
+		$out = implode(' ', $label);
 		return $out;
 	}
 }

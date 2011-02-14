@@ -66,7 +66,9 @@ class tx_party_labels {
 	public function getLabel(&$params, $pObj)	{
 
 		// Only get labels for tx_party* tables
-		if (!substr($params['table'],0,8) == 'tx_party') return '';
+		if (!substr($params['table'],0,8) == 'tx_party') {
+			return '';
+		}
 
 		// Init
 		$label = '';
@@ -75,13 +77,21 @@ class tx_party_labels {
 		// Get the className of the model
 		switch ($params['table']) {
 			case 'tx_party_names':
-				if ($params['row']['type'] == 0) $className = 'tx_party_models_personname';
-				if ($params['row']['type'] == 1) $className = 'tx_party_models_organisationname';
+				if ($params['row']['type'] == 0) {
+					$className = 'tx_party_models_personname';
+				}
+				if ($params['row']['type'] == 1) {
+					$className = 'tx_party_models_organisationname';
+				}
 				break;
 
 			case 'tx_party_parties':
-				if ($params['row']['type'] == 0) $className = 'tx_party_models_person';
-				if ($params['row']['type'] == 1) $className = 'tx_party_models_organisation';
+				if ($params['row']['type'] == 0) {
+					$className = 'tx_party_models_person';
+				}
+				if ($params['row']['type'] == 1) {
+					$className = 'tx_party_models_organisation';
+				}
 				break;
 
 			case 'tx_party_addresses':
@@ -145,7 +155,9 @@ class tx_party_labels {
 		}
 
 		// Write new label back to the params-array (passed by reference)
-		if ($label != '') $params['title'] = $label;
+		if ($label != '') {
+			$params['title'] = $label;
+		}
 	}
 
 }

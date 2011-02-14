@@ -50,8 +50,10 @@ class tx_party_models_electronicaddressidentifier extends tx_party_models_object
 	 *
 	 * @return	string		Label of the electronic address identifier
 	 */
-	public function getLabel() {
-		if ($this->isEmpty()) return false;		// Data must be loaded
+	public function getLabel () {
+		if ($this->isEmpty()) {
+			return FALSE;		// Data must be loaded
+		}
 
 		$out = $this->get('electronic_address_identifier');
 		return $out;

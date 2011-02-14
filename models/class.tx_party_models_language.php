@@ -49,20 +49,24 @@ class tx_party_models_language extends tx_party_models_object {
 	 *
 	 * @return	string		Label of the Language
 	 */
-	public function getLabel() {
-		if ($this->isEmpty()) return false;		// Data must be loaded
+	public function getLabel () {
+		if ($this->isEmpty()) {
+			return FALSE;		// Data must be loaded
+		}
 		$label = array();
 		$out = '';
 
 		// Get all relevant parts
 		$party = tx_party_models_party::getInstance($this->get('party'));
-		$language = reset(t3lib_BEfunc::getRecord('static_languages',$this->get('language'),'lg_name_en'));
+		$language = reset(t3lib_BEfunc::getRecord('static_languages', $this->get('language'), 'lg_name_en'));
 
 		// Assemble the label
 		$label[0] = $language;
-		if (!$party->isEmpty()) $label[1] = '('.$party->getLabel().')';
+		if (!$party->isEmpty()) {
+			$label[1] = '(' . $party->getLabel() . ')';
+		}
 
-		$out = implode(' ',$label);
+		$out = implode(' ', $label);
 		return $out;
 	}
 }

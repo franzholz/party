@@ -49,20 +49,26 @@ class tx_party_models_contactnumberusage extends tx_party_models_object {
 	 *
 	 * @return	string		Label of the Document
 	 */
-	public function getLabel() {
-		if ($this->isEmpty()) return false;		// Data must be loaded
+	public function getLabel () {
+		if ($this->isEmpty()) {
+			return FALSE;		// Data must be loaded
+		}
 		$label = array();
 		$out = '';
 
 		// Get all relevant parts
-		$usage = reset(t3lib_BEfunc::getRecord('tx_party_usages',$this->get('contact_number_usage'),'short_title'));
+		$usage = reset(t3lib_BEfunc::getRecord('tx_party_usages', $this->get('contact_number_usage'), 'short_title'));
 		$party = tx_party_models_party::getInstance($this->get('party'));
 
 		// Assemble the label
-		if ($usage) $label[] = $usage;
-		if (!$party->isEmpty()) $label[] = '('.$party->getLabel().')';
+		if ($usage) {
+			$label[] = $usage;
+		}
+		if (!$party->isEmpty()) {
+			$label[] = '(' . $party->getLabel() . ')';
+		}
 
-		$out = implode(' ',$label);
+		$out = implode(' ', $label);
 		return $out;
 	}
 }

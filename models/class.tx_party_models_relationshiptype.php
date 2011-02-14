@@ -50,15 +50,23 @@ class tx_party_models_relationshiptype extends tx_party_models_object {
 	 * @param	integer		$typeOfSecondaryParty: UID of the party with the secondary role in the relationship
 	 * @return	boolean		True if the relationship is allowed
 	 */
-	public function isRelationshipAllowed($typeOfPrimaryParty, $typeOfSecondaryParty) {
-		$primaryOk == false;
-		$secondaryOk = false;
-		if ($typeOfPrimaryParty == 0 && $this->get('person_allowed_as_primary')) $primaryOk = true;
-		if ($typeOfPrimaryParty == 1 && $this->get('organisation_allowed_as_primary')) $primaryOk = true;
-		if ($typeOfSecondaryParty == 0 && $this->get('person_allowed_as_secondary')) $secondaryOk = true;
-		if ($typeOfSecondaryParty == 1 && $this->get('organisation_allowed_as_secondary')) $secondaryOk = true;
+	public function isRelationshipAllowed ($typeOfPrimaryParty, $typeOfSecondaryParty) {
+		$primaryOk == FALSE;
+		$secondaryOk = FALSE;
+		if ($typeOfPrimaryParty == 0 && $this->get('person_allowed_as_primary')) {
+			$primaryOk = TRUE;
+		}
+		if ($typeOfPrimaryParty == 1 && $this->get('organisation_allowed_as_primary')) {
+			$primaryOk = TRUE;
+		}
+		if ($typeOfSecondaryParty == 0 && $this->get('person_allowed_as_secondary')) {
+			$secondaryOk = TRUE;
+		}
+		if ($typeOfSecondaryParty == 1 && $this->get('organisation_allowed_as_secondary')) {
+			$secondaryOk = TRUE;
+		}
 
-		$out = ($primaryOk && $secondaryOk) ? true : false;
+		$out = ($primaryOk && $secondaryOk) ? TRUE : FALSE;
 		return $out;
 	}
 }

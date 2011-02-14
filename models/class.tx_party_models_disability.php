@@ -49,8 +49,10 @@ class tx_party_models_disability extends tx_party_models_object {
 	 *
 	 * @return	string		Label of the Disability
 	 */
-	public function getLabel() {
-		if ($this->isEmpty()) return false;		// Data must be loaded
+	public function getLabel () {
+		if ($this->isEmpty()) {
+			return FALSE;		// Data must be loaded
+		}
 		$label = array();
 		$out = '';
 
@@ -59,9 +61,11 @@ class tx_party_models_disability extends tx_party_models_object {
 
 		// Assemble the label
 		$label[0] = $this->get('disability');
-		if (!$party->isEmpty()) $label[1] = '('.$party->getLabel().')';
+		if (!$party->isEmpty()) {
+			$label[1] = '(' . $party->getLabel() . ')';
+		}
 
-		$out = implode(' ',$label);
+		$out = implode(' ', $label);
 		return $out;
 	}
 }

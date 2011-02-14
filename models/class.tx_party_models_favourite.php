@@ -49,8 +49,10 @@ class tx_party_models_favourite extends tx_party_models_object {
 	 *
 	 * @return	string		Label of the Favourite
 	 */
-	public function getLabel() {
-		if ($this->isEmpty()) return false;		// Data must be loaded
+	public function getLabel () {
+		if ($this->isEmpty()) {
+			return FALSE;		// Data must be loaded
+		}
 		$label = array();
 		$out = '';
 
@@ -59,10 +61,14 @@ class tx_party_models_favourite extends tx_party_models_object {
 		$party = tx_party_models_party::getInstance($this->get('party'));
 
 		// Assemble the label
-		if ($favourite) $label[0] = $favourite;
-		if (!$party->isEmpty()) $label[1] = '('.$party->getLabel().')';
+		if ($favourite) {
+			$label[0] = $favourite;
+		}
+		if (!$party->isEmpty()) {
+			$label[1] = '(' . $party->getLabel() . ')';
+		}
 
-		$out = implode(' ',$label);
+		$out = implode(' ', $label);
 		return $out;
 	}
 }

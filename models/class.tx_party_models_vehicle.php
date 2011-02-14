@@ -47,7 +47,7 @@ class tx_party_models_vehicle extends tx_party_models_object {
 	 * @param	integer		$uid: UID of the Vehicle
 	 * @return	void		The data is loaded into the Vehicle
 	 */
-	public function load($uid) {
+	public function load ($uid) {
 		parent::load($uid);
 		if ($this->get('make')) {
 			$make = tx_div2007::makeInstance('tx_party_models_vehiclemanufacturer');
@@ -64,8 +64,10 @@ class tx_party_models_vehicle extends tx_party_models_object {
 	 *
 	 * @return	string		Label of the Vehicle
 	 */
-	public function getLabel() {
-		if ($this->isEmpty()) return false;		// Data must be loaded
+	public function getLabel () {
+		if ($this->isEmpty()) {
+			return FALSE;		// Data must be loaded
+		}
 		$label = array();
 		$out = '';
 
@@ -75,11 +77,18 @@ class tx_party_models_vehicle extends tx_party_models_object {
 		$party = tx_party_models_party::getInstance($this->get('party'));
 
 		// Assemble the label
-		if (is_object($make) && !$make->isEmpty()) $label[] = $make->getLabel().':';
-		if ($licensePlate) $label[] = $licensePlate;
-		if (!$party->isEmpty()) $label[] = '('.$party->getLabel().')';
+		if (is_object($make) && !$make->isEmpty()) {
+			$label[] = $make->getLabel() . ':';
+		}
+		if ($licensePlate) {
+			$label[] = $licensePlate;
+		}
 
-		$out = implode(' ',$label);
+		if (!$party->isEmpty()) {
+			$label[] = '(' . $party->getLabel() . ')';
+		}
+
+		$out = implode(' ', $label);
 		return $out;
 	}
 }

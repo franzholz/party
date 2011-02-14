@@ -49,22 +49,24 @@ class tx_party_models_type extends tx_party_models_object {
 	 * @param	integer		$partyType: Type of the party (0 for person, 1 for organisation)
 	 * @return	boolean		True if the current type is allowed for the specified party type
 	 */
-	public function isAllowedForPartyType($partyType) {
-		if ($this->isEmpty()) return false;		// Data must be loaded
-		$out = false;
+	public function isAllowedForPartyType ($partyType) {
+		if ($this->isEmpty()) {
+			return FALSE;		// Data must be loaded
+		}
+		$out = FALSE;
 
 		switch ($this->get('allowed_for_party_type')) {
 			case 'ALL':
-				$out = true;
+				$out = TRUE;
 				break;
 			case 'PERSONS':
-				$out = ($partyType == 0) ? true : false;
+				$out = ($partyType == 0) ? TRUE : FALSE;
 				break;
 			case 'ORGANISATIONS':
-				$out = ($partyType == 1) ? true : false;
+				$out = ($partyType == 1) ? TRUE : FALSE;
 				break;
 			default:
-				return false;
+				return FALSE;
 				break;
 		}
 
@@ -79,11 +81,13 @@ class tx_party_models_type extends tx_party_models_object {
 	 * @param	string		$field: Name of the field (e.g. tx_party_EVENTS-TYPE)
 	 * @return	boolean		True if the current type is allowed for the specified field
 	 */
-	public function isAllowedForField($field) {
-		if ($this->isEmpty()) return false;		// Data must be loaded
-		$out = false;
+	public function isAllowedForField ($field) {
+		if ($this->isEmpty()) {
+			return FALSE;		// Data must be loaded
+		}
+		$out = FALSE;
 
-		$allowedForField = explode(',',$this->get('allowed_for_field'));
+		$allowedForField = explode(',', $this->get('allowed_for_field'));
 		$out = in_array($field, $allowedForField);
 
 		return $out;

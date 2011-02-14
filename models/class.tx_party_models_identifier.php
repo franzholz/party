@@ -49,8 +49,10 @@ class tx_party_models_identifier extends tx_party_models_object {
 	 *
 	 * @return	string		Label of the Identifier
 	 */
-	public function getLabel() {
-		if ($this->isEmpty()) return false;		// Data must be loaded
+	public function getLabel () {
+		if ($this->isEmpty()) {
+			return FALSE;		// Data must be loaded
+		}
 		$label = array();
 		$out = '';
 
@@ -61,11 +63,16 @@ class tx_party_models_identifier extends tx_party_models_object {
 		$party = tx_party_models_party::getInstance($this->get('party'));
 
 		// Assemble the label
-		if (!$type->isEmpty()) $label[0] = $type->getLabel().':';
-		if ($identifier) $label[1] = $identifier;
-		if (!$party->isEmpty) $label[2] = '('.$party->getLabel().')';
-
-		$out = implode(' ',$label);
+		if (!$type->isEmpty()) {
+			$label[0] = $type->getLabel() . ':';
+		}
+		if ($identifier) {
+			$label[1] = $identifier;
+		}
+		if (!$party->isEmpty) {
+			$label[2] = '(' . $party->getLabel() . ')';
+		}
+		$out = implode(' ', $label);
 		return $out;
 	}
 }

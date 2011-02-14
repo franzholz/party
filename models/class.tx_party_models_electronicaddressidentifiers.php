@@ -46,7 +46,7 @@ class tx_party_models_electronicaddressidentifiers extends tx_div2007_object {
 	 * @param	integer		$uid: UID of the party
 	 * @return	void		The data is loaded into the object
 	 */
-	public function loadByParty($partyUid) {
+	public function loadByParty ($partyUid) {
 		$partyUid = intval($partyUid);
 		$groupBy = '';
 		$orderBy = '';
@@ -60,7 +60,9 @@ class tx_party_models_electronicaddressidentifiers extends tx_div2007_object {
 				$item = t3lib_div::makeInstance('tx_party_models_electronicaddressidentifier');
 				$item->load($row['electronic_address_identifier']);
 				$item->set('standard',$row['standard']);	// Include the value from the mm-table
-				if ($item->get('standard') == 1) $this->set('standard',$item);
+				if ($item->get('standard') == 1) {
+					$this->set('standard',$item);
+				}
 				$list->append($item);
 			}
 		}

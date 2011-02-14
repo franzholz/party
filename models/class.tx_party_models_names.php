@@ -49,13 +49,13 @@ class tx_party_models_names extends tx_div2007_object {
 	 * @param	integer		$uid: UID of the party
 	 * @return	void		The data is loaded into the object
 	 */
-	public function loadByParty($partyUid) {
+	public function loadByParty ($partyUid) {
 		$partyUid = intval($partyUid);
 		$groupBy = '';
 		$orderBy = '';
 
 		// Load all names from the database and build the object
-		$query = $GLOBALS['TYPO3_DB']->SELECTquery('uid,type', $this->table, $this->table.'.party='.$partyUid, $groupBy, $orderBy);
+		$query = $GLOBALS['TYPO3_DB']->SELECTquery('uid,type', $this->table, $this->table . '.party=' . $partyUid, $groupBy, $orderBy);
 		$result = $GLOBALS['TYPO3_DB']->sql_query($query);
 		$list = tx_div2007::makeInstance('tx_div2007_object');
 		if($result) {
@@ -69,11 +69,13 @@ class tx_party_models_names extends tx_div2007_object {
 					$item = t3lib_div::makeInstance('tx_party_models_organisationname');
 					$item->load($row['uid']);
 				}
-				if ($item->get('standard') == 1) $this->set('standard',$item);
+				if ($item->get('standard') == 1) {
+					$this->set('standard', $item);
+				}
 				$list->append($item);
 			}
 		}
-		$this->set('list',$list);
+		$this->set('list', $list);
 	}
 
 }

@@ -50,8 +50,10 @@ class tx_party_models_address extends tx_party_models_object {
 	 *
 	 * @return	string		Label of the address
 	 */
-	public function getLabel() {
-		if ($this->isEmpty()) return false;		// Data must be loaded
+	public function getLabel () {
+		if ($this->isEmpty()) {
+			return FALSE;		// Data must be loaded
+		}
 		$label = array();
 		$out = '';
 
@@ -69,12 +71,24 @@ class tx_party_models_address extends tx_party_models_object {
 		}
 
 		// Assemble the label
-		if ($thoroughfare && !$thoroughfareNumber) $label[0] = $thoroughfare;
-		if ($thoroughfare && $thoroughfareNumber) $label[0] = $thoroughfare.' '.$thoroughfareNumber;
-		if ($locality && $administrativeArea) $locality = $locality.' ('.$administrativeArea.')';
-		if ($postCode) $label[1] = $postCode;
-		if ($locality) $label[1] = $locality;
-		if ($postCode && $locality) $label[1] = $postCode.' '.$locality;
+		if ($thoroughfare && !$thoroughfareNumber) {
+			$label[0] = $thoroughfare;
+		}
+		if ($thoroughfare && $thoroughfareNumber) {
+			$label[0] = $thoroughfare.' '.$thoroughfareNumber;
+		}
+		if ($locality && $administrativeArea) {
+			$locality = $locality.' ('.$administrativeArea.')';
+		}
+		if ($postCode) {
+			$label[1] = $postCode;
+		}
+		if ($locality) {
+			$label[1] = $locality;
+		}
+		if ($postCode && $locality) {
+			$label[1] = $postCode.' '.$locality;
+		}
 
 		$out = implode(', ',$label);
 		return $out;

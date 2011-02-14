@@ -50,8 +50,10 @@ class tx_party_models_preference extends tx_party_models_object {
 	 *
 	 * @return	string		Label of the Preference
 	 */
-	public function getLabel() {
-		if ($this->isEmpty()) return false;		// Data must be loaded
+	public function getLabel () {
+		if ($this->isEmpty()) {
+			return FALSE;		// Data must be loaded
+		}
 		$label = array();
 		$out = '';
 
@@ -62,11 +64,17 @@ class tx_party_models_preference extends tx_party_models_object {
 		$party = tx_party_models_party::getInstance($this->get('party'));
 
 		// Assemble the label
-		if (!$type->isEmpty()) $label[0] = $type->getLabel().':';
-		if ($preference) $label[1] = $preference;
-		if (!$party->isEmpty()) $label[2] = '('.$party->getLabel().')';
+		if (!$type->isEmpty()) {
+			$label[0] = $type->getLabel() . ':';
+		}
+		if ($preference) {
+			$label[1] = $preference;
+		}
+		if (!$party->isEmpty()) {
+			$label[2] = '(' . $party->getLabel() . ')';
+		}
 
-		$out = implode(' ',$label);
+		$out = implode(' ', $label);
 		return $out;
 	}
 }

@@ -47,15 +47,15 @@ class tx_party_models_parties extends tx_div2007_object {
 	 * @param	integer		$pid: PID (Page ID) to select parties from
 	 * @return	void		The data is loaded into the object
 	 */
-	public function loadByPid($pid) {
+	public function loadByPid ($pid) {
 		$pid = intval($pid);
 
 		$select = 'uid,type';
 		$from = 'tx_party_parties';
-		$where = 'tx_party_parties.pid='.$pid;
+		$where = 'tx_party_parties.pid=' . $pid;
 
-		$list = $this->selectFromDatabase($select,$from,$where);
-		$this->set('list',$list);
+		$list = $this->selectFromDatabase($select, $from, $where);
+		$this->set('list', $list);
 	}
 
 	/**
@@ -73,8 +73,8 @@ class tx_party_models_parties extends tx_div2007_object {
 		$where = 'a.party=b.parties AND a.party=c.uid AND b.country='.$countryUid;
 		$where.= $onlyStandard ? ' AND a.standard' : '';
 
-		$list = $this->selectFromDatabase($select,$from,$where);
-		$this->set('list',$list);
+		$list = $this->selectFromDatabase($select, $from, $where);
+		$this->set('list', $list);
 	}
 
 	/**
@@ -88,15 +88,19 @@ class tx_party_models_parties extends tx_div2007_object {
 	 * @param	string		$limit: The LIMIT clause (optional)
 	 * @return	object		A tx_div2007_object instance with the selected persons/organisations
 	 */
-	private function selectFromDatabase($select,$from,$where,$groupBy='',$orderBy='',$limit='') {
-		$where = $where.t3lib_BEfunc::deleteClause($from);
-		$query = $GLOBALS['TYPO3_DB']->SELECTquery($select,$from,$where,$groupBy,$orderBy,$limit);
+	private function selectFromDatabase($select, $from, $where, $groupBy='', $orderBy='', $limit='') {
+		$where = $where . t3lib_BEfunc::deleteClause($from);
+		$query = $GLOBALS['TYPO3_DB']->SELECTquery($select, $from, $where, $groupBy, $orderBy, $limit);
 		$result = $GLOBALS['TYPO3_DB']->sql_query($query);
 		$list = tx_div2007::makeInstance('tx_div2007_object');
 		if($result) {
 			while($row = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($result)) {
-				if ($row['type'] == 0) $item = t3lib_div::makeInstance('tx_party_models_person');
-				if ($row['type'] == 1) $item = t3lib_div::makeInstance('tx_party_models_organisation');
+				if ($row['type'] == 0) {
+					$item = t3lib_div::makeInstance('tx_party_models_person');
+				}
+				if ($row['type'] == 1) {
+					$item = t3lib_div::makeInstance('tx_party_models_organisation');
+				}
 				$item->load($row['uid']);
 				$list->append($item);
 			}

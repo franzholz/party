@@ -47,13 +47,15 @@ class tx_party_models_organisation extends tx_party_models_party {
 	 * @param	integer		$uid: UID of the organisation
 	 * @return	void		The data is loaded into the object
 	 */
-	public function load($uid) {
+	public function load ($uid) {
 		global $TCA;
 		$uid = intval($uid);
 
 		// Check that the party is an organisation
 		$rec = t3lib_BEfunc::getRecord($this->table,$uid,'type');
-		if (!$rec['type'] == 1) return false;
+		if (!$rec['type'] == 1) {
+			return FALSE;
+		}
 
 		// Get all fields belonging to the type 'organisation' and load the object
 		$typeFields = tx_party_div::getAllTypeFields($this->table,$rec);

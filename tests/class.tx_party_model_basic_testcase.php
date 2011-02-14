@@ -31,14 +31,12 @@ require_once(t3lib_extMgm::extPath('div2007').'class.tx_div2007.php');
  * WARNING!!: DELETES _ALL_ party data from the database!!
  *
  *
- * $Id$
- *
  * @author	David Bruehlmeier <typo3@bruehlmeier.com>
  */
 class tx_party_model_basic_testcase extends tx_t3unit_testcase {
 
 	private $fixture;				// Instance of the fixture class
-	private $useFixture = false;	// If false, the fixture will _not_ be loaded. Much faster, but the consitency of the test data is not assured.
+	private $useFixture = FALSE;	// If FALSE, the fixture will _not_ be loaded. Much faster, but the consitency of the test data is not assured.
 	private $testPage;				// PID of the test page with the fixture
 
 	public function __construct($name) {
@@ -131,7 +129,7 @@ class tx_party_model_basic_testcase extends tx_t3unit_testcase {
 
 		// Get current PID
 		if ($this->testPage) {
-			$pid = $this->testPage;	// Only available if useFixture is true
+			$pid = $this->testPage;	// Only available if useFixture is TRUE
 		} else {
 			$rec = t3lib_BEfunc::getRecord('tx_party_parties',1,'pid');
 			$pid = $rec['pid'];
@@ -143,11 +141,11 @@ class tx_party_model_basic_testcase extends tx_t3unit_testcase {
 
 	public function test_readCollectionParties_byCountry() {
 		$object = tx_div2007::makeInstance('tx_party_models_parties');
-		$object->loadByCountry(41,TRUE);
+		$object->loadByCountry(41, TRUE);
 		self::assertSame($object->get('list')->count(),3);
 
 		$object = tx_div2007::makeInstance('tx_party_models_parties');
-		$object->loadByCountry(41,FALSE);
+		$object->loadByCountry(41, FALSE);
 		self::assertSame($object->get('list')->count(),5);
 	}
 
@@ -168,8 +166,8 @@ class tx_party_model_basic_testcase extends tx_t3unit_testcase {
 	public function test_readBirthSign_basic() {
 		$object = tx_div2007::makeInstance('tx_party_models_birthsign');
 		$object->load(1);
-		self::assertSame($object->get('short_title'),'Aries');
-		self::assertSame($object->getLabel(),'Aries');
+		self::assertSame($object->get('short_title'), 'Aries');
+		self::assertSame($object->getLabel(), 'Aries');
 	}
 
 	public function test_readContact_basic() {
@@ -210,29 +208,29 @@ class tx_party_model_basic_testcase extends tx_t3unit_testcase {
 	public function test_type_isAllowedForAnyPartyType() {
 		$object = tx_div2007::makeInstance('tx_party_models_type');
 		$object->load(42);
-		self::assertSame($object->isAllowedForPartyType(0),true);
-		self::assertSame($object->isAllowedForPartyType(1),true);
+		self::assertSame($object->isAllowedForPartyType(0),TRUE);
+		self::assertSame($object->isAllowedForPartyType(1),TRUE);
 	}
 
 	public function test_type_isAllowedOnlyForPersons() {
 		$object = tx_div2007::makeInstance('tx_party_models_type');
 		$object->load(37);
-		self::assertSame($object->isAllowedForPartyType(1),false);
-		self::assertSame($object->isAllowedForPartyType(0),true);
+		self::assertSame($object->isAllowedForPartyType(1),FALSE);
+		self::assertSame($object->isAllowedForPartyType(0),TRUE);
 	}
 
 	public function test_type_isAllowedOnlyForOrganisations() {
 		$object = tx_div2007::makeInstance('tx_party_models_type');
 		$object->load(57);
-		self::assertSame($object->isAllowedForPartyType(0),false);
-		self::assertSame($object->isAllowedForPartyType(1),true);
+		self::assertSame($object->isAllowedForPartyType(0),FALSE);
+		self::assertSame($object->isAllowedForPartyType(1),TRUE);
 	}
 
 	public function test_type_isAllowedForField() {
 		$object = tx_div2007::makeInstance('tx_party_models_type');
 		$object->load(1);
-		self::assertSame($object->isAllowedForField('tx_party_ACCOUNTS-ACCOUNT_TYPE'),true);
-		self::assertSame($object->isAllowedForField('tx_party_CONTACTS-TYPE'),false);
+		self::assertSame($object->isAllowedForField('tx_party_ACCOUNTS-ACCOUNT_TYPE'),TRUE);
+		self::assertSame($object->isAllowedForField('tx_party_CONTACTS-TYPE'),FALSE);
 	}
 
 	public function test_readEthnicity_basic() {
@@ -381,10 +379,10 @@ class tx_party_model_basic_testcase extends tx_t3unit_testcase {
 		$object->load(1);
 		self::assertSame($object->get('description_as_primary'),'Has wife');
 		self::assertSame($object->getLabel(),'Marriage');
-		self::assertSame($object->isRelationshipAllowed(0,0),true);
-		self::assertSame($object->isRelationshipAllowed(0,1),false);
-		self::assertSame($object->isRelationshipAllowed(1,0),false);
-		self::assertSame($object->isRelationshipAllowed(1,1),false);
+		self::assertSame($object->isRelationshipAllowed(0,0),TRUE);
+		self::assertSame($object->isRelationshipAllowed(0,1),FALSE);
+		self::assertSame($object->isRelationshipAllowed(1,0),FALSE);
+		self::assertSame($object->isRelationshipAllowed(1,1),FALSE);
 	}
 
 	public function test_readRelationship_basic() {

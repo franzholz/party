@@ -47,18 +47,19 @@ class tx_party_models_organisationname extends tx_party_models_name {
 	 * @param	integer		$uid: UID of the organisation name
 	 * @return	void		The data is loaded into the object
 	 */
-	public function load($uid) {
+	public function load ($uid) {
 		global $TCA;
 		$uid = intval($uid);
 
 		// Check that the name is an organisation name
-		$rec = t3lib_BEfunc::getRecord($this->table,$uid,'type');
-		if (!$rec['type'] == 1) return false;
-
+		$rec = t3lib_BEfunc::getRecord($this->table, $uid, 'type');
+		if (!$rec['type'] == 1) {
+			return FALSE;
+		}
 
 		// Get all fields belonging to the type 'organisation name' and load the object
-		$typeFields = tx_party_div::getAllTypeFields($this->table,$rec);
-		parent::load($uid,$typeFields);
+		$typeFields = tx_party_div::getAllTypeFields($this->table, $rec);
+		parent::load($uid, $typeFields);
 	}
 
 	/**
@@ -70,7 +71,9 @@ class tx_party_models_organisationname extends tx_party_models_name {
 	 * @return	string		Label of the organisation name
 	 */
 	public function getLabel() {
-		if ($this->isEmpty()) return false;		// Data must be loaded
+		if ($this->isEmpty()) {
+			return FALSE;		// Data must be loaded
+		}
 		$out = $this->get('organisation_name');
 		return $out;
 	}

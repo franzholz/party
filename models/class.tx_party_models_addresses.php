@@ -48,7 +48,7 @@ class tx_party_models_addresses extends tx_party_models_object {
 	 * @param	integer		$partyUid: UID of the party
 	 * @return	void		The data is loaded into the object
 	 */
-	public function loadByParty($partyUid) {
+	public function loadByParty ($partyUid) {
 		$partyUid = intval($partyUid);
 		$groupBy = '';
 		$orderBy = '';
@@ -77,8 +77,10 @@ class tx_party_models_addresses extends tx_party_models_object {
 	 *
 	 * @return	string		Label of the Visa
 	 */
-	public function getLabel() {
-		if ($this->isEmpty()) return false;		// Data must be loaded
+	public function getLabel () {
+		if ($this->isEmpty()) {
+			return FALSE;		// Data must be loaded
+		}
 		$label = array();
 		$out = '';
 
@@ -88,7 +90,9 @@ class tx_party_models_addresses extends tx_party_models_object {
 
 		// Assemble the label
 		if ($usage) $label[] = $usage;
-		if (!$party->isEmpty()) $label[] = '('.$party->getLabel().')';
+		if (!$party->isEmpty()) {
+			$label[] = '('.$party->getLabel().')';
+		}
 
 		$out = implode(' ',$label);
 		return $out;

@@ -49,20 +49,22 @@ class tx_party_models_visa extends tx_party_models_object {
 	 *
 	 * @return	string		Label of the Visa
 	 */
-	public function getLabel() {
-		if ($this->isEmpty()) return false;		// Data must be loaded
+	public function getLabel () {
+		if ($this->isEmpty()) return FALSE;		// Data must be loaded
 		$label = array();
 		$out = '';
 
 		// Get all relevant parts
-		$country = reset(t3lib_BEfunc::getRecord('static_countries',$this->get('country'),'cn_short_en'));
+		$country = reset(t3lib_BEfunc::getRecord('static_countries', $this->get('country'), 'cn_short_en'));
 		$party = tx_party_models_party::getInstance($this->get('party'));
 
 		// Assemble the label
 		if ($country) $label[] = $country;
-		if (!$party->isEmpty()) $label[] = '('.$party->getLabel().')';
+		if (!$party->isEmpty()) {
+			$label[] = '(' . $party->getLabel() . ')';
+		}
 
-		$out = implode(' ',$label);
+		$out = implode(' ', $label);
 		return $out;
 	}
 }

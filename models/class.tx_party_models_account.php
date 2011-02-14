@@ -49,8 +49,10 @@ class tx_party_models_account extends tx_party_models_object {
 	 *
 	 * @return	string		Label of the account
 	 */
-	public function getLabel() {
-		if ($this->isEmpty()) return false;		// Data must be loaded
+	public function getLabel () {
+		if ($this->isEmpty()) {
+			return FALSE;		// Data must be loaded
+		}
 		$label = array();
 		$out = '';
 
@@ -61,7 +63,9 @@ class tx_party_models_account extends tx_party_models_object {
 
 		// Assemble the label
 		$label[0] = $accountId;
-		if ($org) $label[1] = '('.$org->getLabel().')';
+		if ($org) {
+			$label[1] = '('.$org->getLabel().')';
+		}
 
 		$out = implode(' ',$label);
 		return $out;

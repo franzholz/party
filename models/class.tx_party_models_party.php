@@ -55,7 +55,7 @@ abstract class tx_party_models_party extends tx_party_models_object {
 	 * @param	integer		$uid: UID of the party
 	 * @return	object		Instance of tx_party_models_person or tx_party_models_organisation
 	 */
-	public static function getInstance($uid) {
+	public static function getInstance ($uid) {
 		$uid = intval($uid);
 
 		// Get the type of the party
@@ -87,7 +87,7 @@ abstract class tx_party_models_party extends tx_party_models_object {
 	 * @param	string		$fields: Comma-separated list of field names to load (determined by the derived classes)
 	 * @return	void		The data is loaded into the object
 	 */
-	public function load($uid,$fields) {
+	public function load ($uid, $fields) {
 		$uid = intval($uid);
 		$groupBy = '';
 		$orderBy = '';
@@ -111,9 +111,11 @@ abstract class tx_party_models_party extends tx_party_models_object {
 			// Include the values of the standard name as parameters of the party
 			$standardName = $names->get('standard');
 			if (is_object($standardName)) {
-				for ($standardName->rewind();$standardName->valid();$standardName->next()) {
-					if ($standardName->key() == 'remarks') continue;	// Don't overwrite the remarks of the party
-					$this->set($standardName->key(),$standardName->current());
+				for ($standardName->rewind(); $standardName->valid(); $standardName->next()) {
+					if ($standardName->key() == 'remarks') {
+						continue;	// Don't overwrite the remarks of the party
+					}
+					$this->set($standardName->key(), $standardName->current());
 				}
 			}
 		}
@@ -124,14 +126,16 @@ abstract class tx_party_models_party extends tx_party_models_object {
 			// Load the addresses
 			$addresses = t3lib_div::makeInstance('tx_party_models_addresses');
 			$addresses->loadByParty($uid);
-			$this->set('addresses',$addresses);
+			$this->set('addresses', $addresses);
 
 			// Include the values of the standard address as parameters of the party
 			$standardAddress = $addresses->get('standard');
 			if (is_object($standardAddress)) {
-				for ($standardAddress->rewind();$standardAddress->valid();$standardAddress->next()) {
-					if ($standardAddress->key() == 'remarks') continue;	// Don't overwrite the remarks of the party
-					$this->set($standardAddress->key(),$standardAddress->current());
+				for ($standardAddress->rewind(); $standardAddress->valid(); $standardAddress->next()) {
+					if ($standardAddress->key() == 'remarks') {
+						continue;	// Don't overwrite the remarks of the party
+					}
+					$this->set($standardAddress->key(), $standardAddress->current());
 				}
 			}
 		}
@@ -142,14 +146,16 @@ abstract class tx_party_models_party extends tx_party_models_object {
 			// Load the electronic address identifiers
 			$electronicAddressIdentifiers = t3lib_div::makeInstance('tx_party_models_electronicaddressidentifiers');
 			$electronicAddressIdentifiers->loadByParty($uid);
-			$this->set('electronic_address_identifiers',$electronicAddressIdentifiers);
+			$this->set('electronic_address_identifiers', $electronicAddressIdentifiers);
 
 			// Include the values of the standard electronic address identifier as parameters of the party
 			$standardElectronicAddressIdentifier = $electronicAddressIdentifiers->get('standard');
 			if (is_object($standardElectronicAddressIdentifier)) {
-				for ($standardElectronicAddressIdentifier->rewind();$standardElectronicAddressIdentifier->valid();$standardElectronicAddressIdentifier->next()) {
-					if ($standardElectronicAddressIdentifier->key() == 'remarks') continue;	// Don't overwrite the remarks of the party
-					$this->set($standardElectronicAddressIdentifier->key(),$standardElectronicAddressIdentifier->current());
+				for ($standardElectronicAddressIdentifier->rewind(); $standardElectronicAddressIdentifier->valid(); $standardElectronicAddressIdentifier->next()) {
+					if ($standardElectronicAddressIdentifier->key() == 'remarks') {
+						continue;	// Don't overwrite the remarks of the party
+					}
+					$this->set($standardElectronicAddressIdentifier->key(), $standardElectronicAddressIdentifier->current());
 				}
 			}
 		}
@@ -163,8 +169,10 @@ abstract class tx_party_models_party extends tx_party_models_object {
 	 *
 	 * @return	string		Label of the party
 	 */
-	public function getLabel() {
-		if ($this->isEmpty()) return false;		// Data must be loaded
+	public function getLabel () {
+		if ($this->isEmpty()) {
+			return FALSE;		// Data must be loaded
+		}
 		$label = array();
 		$out = '';
 
@@ -173,9 +181,12 @@ abstract class tx_party_models_party extends tx_party_models_object {
 		$locality = $this->get('locality');
 
 		// Assemble the label
-		if (is_object($names) && is_object($names->get('standard'))) $label[] = $names->get('standard')->getLabel();
-		if ($locality) $label[] = $locality;
-
+		if (is_object($names) && is_object($names->get('standard'))) {
+			$label[] = $names->get('standard')->getLabel();
+		}
+		if ($locality) {
+			$label[] = $locality;
+		}
 		$out = implode(' - ',$label);
 		return $out;
 	}

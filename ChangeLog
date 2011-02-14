@@ -1,3 +1,6 @@
+2011-02-14 Franz Holzinger <franz@ttproducts.de>
+	* PHP code restructuring
+
 2011-02-10 Franz Holzinger <franz@ttproducts.de>
 	* add dependancy on extension div2007 instead of lib and div
 

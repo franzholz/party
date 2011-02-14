@@ -53,7 +53,7 @@ class tx_party_div {
 	 * @param	array		$rec: The record which contains the type
 	 * @return	string		Comma-separated list with all type fields for the record
 	 */
-	public static function getAllTypeFields($table,$rec) {
+	public static function getAllTypeFields ($table,$rec) {
 		global $TCA;
 
 		// Add 'common fields'
@@ -64,7 +64,9 @@ class tx_party_div {
 
 		// Add all fields from palettes and exclude 'special fields'
 		foreach ($typeFields as $k=>$theTypeField) {
-			if ($k == '--div--' || $k == '--palette--') continue;	// Exclude 'special' fields
+			if ($k == '--div--' || $k == '--palette--') {
+				continue;	// Exclude 'special' fields
+			}
 			$out.= $k.',';
 			if ($theTypeField['palette']) {
 				$paletteFields = t3lib_div::rm_endcomma($TCA[$table]['palettes'][$theTypeField['palette']]['showitem']);

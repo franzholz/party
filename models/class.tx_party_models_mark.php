@@ -50,8 +50,10 @@ class tx_party_models_mark extends tx_party_models_object {
 	 *
 	 * @return	string		Label of the Mark
 	 */
-	public function getLabel() {
-		if ($this->isEmpty()) return false;		// Data must be loaded
+	public function getLabel () {
+		if ($this->isEmpty()) {
+			return FALSE;		// Data must be loaded
+		}
 		$label = array();
 		$out = '';
 
@@ -61,11 +63,17 @@ class tx_party_models_mark extends tx_party_models_object {
 		$party = tx_party_models_party::getInstance($this->get('party'));
 
 		// Assemble the label
-		if ($bodyPart) $label[0] = $bodyPart.':';
-		if ($mark) $label[1] = $mark;
-		if (!$party->isEmpty()) $label[2] = '('.$party->getLabel().')';
+		if ($bodyPart) {
+			$label[0] = $bodyPart . ':';
+		}
+		if ($mark) {
+			$label[1] = $mark;
+		}
+		if (!$party->isEmpty()) {
+			$label[2] = '(' . $party->getLabel() . ')';
+		}
 
-		$out = implode(' ',$label);
+		$out = implode(' ', $label);
 		return $out;
 	}
 }

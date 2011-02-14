@@ -47,17 +47,19 @@ class tx_party_models_person extends tx_party_models_party {
 	 * @param	integer		$uid: UID of the person
 	 * @return	void		The data is loaded into the object
 	 */
-	public function load($uid) {
+	public function load ($uid) {
 		global $TCA;
 		$uid = intval($uid);
 
 		// Check that the party is a person
-		$rec = t3lib_BEfunc::getRecord($this->table,$uid,'type');
-		if (!$rec['type'] == 0) return false;
+		$rec = t3lib_BEfunc::getRecord($this->table, $uid, 'type');
+		if (!$rec['type'] == 0) {
+			return FALSE;
+		}
 
 		// Get all fields belonging to the type 'person' and load the object
-		$typeFields = tx_party_div::getAllTypeFields($this->table,$rec);
-		parent::load($uid,$typeFields);
+		$typeFields = tx_party_div::getAllTypeFields($this->table, $rec);
+		parent::load($uid, $typeFields);
 	}
 
 }

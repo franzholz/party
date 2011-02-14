@@ -49,22 +49,30 @@ class tx_party_models_stockmarket extends tx_party_models_object {
 	 *
 	 * @return	string		Label of the StockMarket
 	 */
-	public function getLabel() {
-		if ($this->isEmpty()) return false;		// Data must be loaded
+	public function getLabel () {
+		if ($this->isEmpty()) {
+			return FALSE;		// Data must be loaded
+		}
 		$label = array();
 		$out = '';
 
 		// Get all relevant parts
 		$listedCode = $this->get('listed_code');
-		$market = reset(t3lib_BEfunc::getRecord('static_markets',$this->get('market'),'institution_description'));
+		$market = reset(t3lib_BEfunc::getRecord('static_markets', $this->get('market'), 'institution_description'));
 		$party = tx_party_models_party::getInstance($this->get('party'));
 
 		// Assemble the label
-		if ($listedCode) $label[] = $listedCode.':';
-		if ($market) $label[] = $market;
-		if (!$party->isEmpty()) $label[] = '('.$party->getLabel().')';
+		if ($listedCode) {
+			$label[] = $listedCode . ':';
+		}
+		if ($market) {
+			$label[] = $market;
+		}
+		if (!$party->isEmpty()) {
+			$label[] = '(' . $party->getLabel() . ')';
+		}
 
-		$out = implode(' ',$label);
+		$out = implode(' ', $label);
 		return $out;
 	}
 }

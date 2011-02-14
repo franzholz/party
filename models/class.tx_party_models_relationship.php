@@ -47,7 +47,7 @@ class tx_party_models_relationship extends tx_party_models_object {
 	 * @param	integer		$uid: UID of the relationship
 	 * @return	void		The data is loaded into the object
 	 */
-	public function load($uid) {
+	public function load ($uid) {
 		parent::load($uid);
 
 		if ($this->get('primary_party')) {
@@ -71,8 +71,10 @@ class tx_party_models_relationship extends tx_party_models_object {
 	 *
 	 * @return	string		Label of the Relationship
 	 */
-	public function getLabel() {
-		if ($this->isEmpty()) return false;		// Data must be loaded
+	public function getLabel () {
+		if ($this->isEmpty()) {
+			return FALSE;		// Data must be loaded
+		}
 		$label = array();
 		$out = '';
 
@@ -82,11 +84,17 @@ class tx_party_models_relationship extends tx_party_models_object {
 		$secondaryParty = $this->get('secondary_party');
 
 		// Assemble the label
-		if (is_object($primaryParty) && !$primaryParty->isEmpty()) $label[] = $primaryParty->getLabel();
-		if (is_object($relationshipType) && !$relationshipType->isEmpty()) $label[] = $relationshipType->get('description_as_primary').':';
-		if (is_object($secondaryParty) && !$secondaryParty->isEmpty()) $label[] = $secondaryParty->getLabel();
+		if (is_object($primaryParty) && !$primaryParty->isEmpty()) {
+			$label[] = $primaryParty->getLabel();
+		}
+		if (is_object($relationshipType) && !$relationshipType->isEmpty()) {
+			$label[] = $relationshipType->get('description_as_primary') . ':';
+		}
+		if (is_object($secondaryParty) && !$secondaryParty->isEmpty()) {
+			$label[] = $secondaryParty->getLabel();
+		}
 
-		$out = implode(' ',$label);
+		$out = implode(' ', $label);
 		return $out;
 	}
 }

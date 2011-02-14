@@ -49,7 +49,7 @@ abstract class tx_party_models_object extends tx_div2007_object {
 	 * @param	integer		$uid: UID of the object
 	 * @return	void		The data is loaded into the object
 	 */
-	public function load($uid) {
+	public function load ($uid) {
 		$uid = intval($uid);
 		$deleteClause = t3lib_BEfunc::deleteClause($this->table);
 		$groupBy = '';
@@ -72,9 +72,9 @@ abstract class tx_party_models_object extends tx_div2007_object {
 	 *
 	 * @return	string		Label of the object
 	 */
-	public function getLabel() {
+	public function getLabel () {
 		if ($this->isEmpty()) {
-			return false;
+			return FALSE;
 		} else {
 			return $this->get($GLOBALS['TCA'][$this->table]['ctrl']['label']);
 		}

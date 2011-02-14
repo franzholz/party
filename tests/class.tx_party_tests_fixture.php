@@ -32,8 +32,6 @@ require_once (PATH_t3lib.'class.t3lib_tcemain.php');
 /**
  * Generate fixture for the Unit-Tests of the People Management Framework.
  *
- * $Id$
- *
  */
 class tx_party_tests_fixture {
 
@@ -66,7 +64,7 @@ class tx_party_tests_fixture {
 			break;
 
 			default:
-				return false;
+				return FALSE;
 			break;
 		}
 

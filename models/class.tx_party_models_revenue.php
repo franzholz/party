@@ -50,25 +50,35 @@ class tx_party_models_revenue extends tx_party_models_object {
 	 *
 	 * @return	string		Label of the Revenue
 	 */
-	public function getLabel() {
-		if ($this->isEmpty()) return false;		// Data must be loaded
+	public function getLabel () {
+		if ($this->isEmpty()) {
+			return FALSE;		// Data must be loaded
+		}
 		$label = array();
 		$out = '';
 
 		// Get all relevant parts
 		$type = t3lib_div::makeInstance('tx_party_models_type');
 		$type->load($this->get('type'));
-		$currency = reset(t3lib_BEfunc::getRecord('static_currencies',$this->get('currency'),'cu_iso_3'));
+		$currency = reset(t3lib_BEfunc::getRecord('static_currencies', $this->get('currency'), 'cu_iso_3'));
 		$amount = $this->get('amount');
 		$party = tx_party_models_party::getInstance($this->get('party'));
 
 		// Assemble the label
-		if (!$type->isEmpty()) $label[0] = $type->getLabel().':';
-		if ($currency) $label[1] = $currency;
-		if ($amount) $label[2] = $amount;
-		if (!$party->isEmpty()) $label[3] = '('.$party->getLabel().')';
+		if (!$type->isEmpty()) {
+			$label[0] = $type->getLabel() . ':';
+		}
+		if ($currency) {
+			$label[1] = $currency;
+		}
+		if ($amount) {
+			$label[2] = $amount;
+		}
+		if (!$party->isEmpty()) {
+			$label[3] = '(' . $party->getLabel() . ')';
+		}
 
-		$out = implode(' ',$label);
+		$out = implode(' ', $label);
 		return $out;
 	}
 }
