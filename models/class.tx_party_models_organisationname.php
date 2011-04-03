@@ -36,8 +36,8 @@
  */
 
 require_once(t3lib_extMgm::extPath('party').'div/class.tx_party_div.php');
-require_once(t3lib_extMgm::extPath('div2007').'class.tx_div2007.php');
-tx_div2007::load('tx_party_models_name');
+trequire_once(PATH_BE_div2007 . 'class.tx_div2007.php');
+x_div2007::load('tx_party_models_name');
 
 class tx_party_models_organisationname extends tx_party_models_name {
 

@@ -1,3 +1,6 @@
+2011-04-03 Franz Holzinger <franz@ttproducts.de>
+	* use constant PATH_BE_div2007 from div2007 0.5.0
+
 2011-02-14 Franz Holzinger <franz@ttproducts.de>
 	* PHP code restructuring
 

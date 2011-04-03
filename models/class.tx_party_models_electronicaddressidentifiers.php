@@ -22,7 +22,7 @@
 *  This copyright notice MUST APPEAR in all copies of the script!
 ***************************************************************/
 
-require_once(t3lib_extMgm::extPath('div2007') . 'class.tx_div2007.php');
+require_once(PATH_BE_div2007 . 'class.tx_div2007.php');
 tx_div2007::load('tx_party_models_electronicaddressidentifier');
 
 /**

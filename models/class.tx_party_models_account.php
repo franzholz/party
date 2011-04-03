@@ -35,7 +35,8 @@
  * @subpackage tx_party
  */
 
-require_once(t3lib_extMgm::extPath('div2007') . 'class.tx_div2007.php');
+require_once(PATH_BE_div2007 . 'class.tx_div2007.php');
+
 tx_div2007::load('tx_party_models_object');
 
 class tx_party_models_account extends tx_party_models_object {

@@ -11,7 +11,7 @@
 ########################################################################
 
 $EM_CONF[$_EXTKEY] = array(
-	'title' => 'party Management Framework',
+	'title' => 'Party Management Framework',
 	'description' => 'Management of party-related data, such as persons, organisations, names, addresses, etc. Based on the OASIS-Standard xPIL (Extensible Party Information Language).',
 	'category' => 'be',
 	'author' => 'David Bruehlmeier',
@@ -33,8 +33,8 @@ $EM_CONF[$_EXTKEY] = array(
 	'constraints' => array(
 		'depends' => array(
 			'typo3' => '4.1-0.0.0',
-			'php' => '5.0.0-0.0.0',
-			'div2007' => '0.4.0-',
+			'php' => '5.2.0-0.0.0',
+			'div2007' => '0.5.0-',
 			'static_info_tables' => '2.0.1-',
 		),
 		'conflicts' => array(
