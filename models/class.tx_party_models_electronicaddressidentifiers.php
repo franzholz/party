@@ -52,21 +52,23 @@ class tx_party_models_electronicaddressidentifiers extends tx_div2007_object {
 		$orderBy = '';
 
 		// Load all addresses from the database and build the object
-		$query = $GLOBALS['TYPO3_DB']->SELECTquery('electronic_address_identifier,standard', $this->table, $this->table.'.party='.$partyUid, $groupBy, $orderBy);
+		$query = $GLOBALS['TYPO3_DB']->SELECTquery('electronic_address_identifier,standard', $this->table, $this->table . '.party=' . $partyUid, $groupBy, $orderBy);
 		$result = $GLOBALS['TYPO3_DB']->sql_query($query);
 		$list = tx_div2007::makeInstance('tx_div2007_object');
+
 		if($result) {
 			while($row = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($result)) {
 				$item = t3lib_div::makeInstance('tx_party_models_electronicaddressidentifier');
 				$item->load($row['electronic_address_identifier']);
-				$item->set('standard',$row['standard']);	// Include the value from the mm-table
+				$item->set('standard', $row['standard']);	// Include the value from the mm-table
 				if ($item->get('standard') == 1) {
-					$this->set('standard',$item);
+					$this->set('standard', $item);
 				}
 				$list->append($item);
 			}
+			$GLOBALS['TYPO3_DB']->sql_free_result($result);
 		}
-		$this->set('list',$list);
+		$this->set('list', $list);
 	}
 
 }

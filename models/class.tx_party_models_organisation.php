@@ -52,14 +52,15 @@ class tx_party_models_organisation extends tx_party_models_party {
 		$uid = intval($uid);
 
 		// Check that the party is an organisation
-		$rec = t3lib_BEfunc::getRecord($this->table,$uid,'type');
-		if (!$rec['type'] == 1) {
+		$rec = t3lib_BEfunc::getRecord($this->table, $uid, 'type');
+
+		if ($rec['type'] != 1) {
 			return FALSE;
 		}
 
 		// Get all fields belonging to the type 'organisation' and load the object
-		$typeFields = tx_party_div::getAllTypeFields($this->table,$rec);
-		parent::load($uid,$typeFields);
+		$typeFields = tx_party_div::getAllTypeFields($this->table, $rec);
+		parent::load($uid, $typeFields);
 	}
 }
 

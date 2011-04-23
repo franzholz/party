@@ -70,7 +70,7 @@ class tx_party_models_parties extends tx_div2007_object {
 
 		$select = 'a.party, c.type';
 		$from = 'tx_party_address_usages a, tx_party_addresses b, tx_party_parties c';
-		$where = 'a.party=b.parties AND a.party=c.uid AND b.country='.$countryUid;
+		$where = 'a.party=b.parties AND a.party=c.uid AND b.country=' . $countryUid;
 		$where.= $onlyStandard ? ' AND a.standard' : '';
 
 		$list = $this->selectFromDatabase($select, $from, $where);
@@ -104,6 +104,7 @@ class tx_party_models_parties extends tx_div2007_object {
 				$item->load($row['uid']);
 				$list->append($item);
 			}
+			$GLOBALS['TYPO3_DB']->sql_free_result($result);
 		}
 		return $list;
 	}

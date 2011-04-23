@@ -60,7 +60,7 @@ abstract class tx_party_models_party extends tx_party_models_object {
 		$uid = intval($uid);
 
 		// Get the type of the party
-		$rec = t3lib_BEfunc::getRecord('tx_party_parties',$uid,'type');
+		$rec = t3lib_BEfunc::getRecord('tx_party_parties', $uid, 'type');
 
 		// Depending on the type, create the proper instance and load the data
 		switch (intval($rec['type'])) {
@@ -94,11 +94,19 @@ abstract class tx_party_models_party extends tx_party_models_object {
 		$orderBy = '';
 
 		// Load the party from the database and build the object
-		$query = $GLOBALS['TYPO3_DB']->SELECTquery($fields, $this->table, $this->table.'.uid='.$uid, $groupBy, $orderBy);
+		$query = $GLOBALS['TYPO3_DB']->SELECTquery(
+			$fields,
+			$this->table,
+			$this->table . '.uid=' . $uid,
+			$groupBy,
+			$orderBy
+		);
 		$result = $GLOBALS['TYPO3_DB']->sql_query($query);
+
 		if($result) {
 			$row = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($result);
 			$this->overwriteArray($row);
+			$GLOBALS['TYPO3_DB']->sql_free_result($result);
 		}
 
 		// Names
@@ -107,7 +115,7 @@ abstract class tx_party_models_party extends tx_party_models_object {
 			// Load the names
 			$names = t3lib_div::makeInstance('tx_party_models_names');
 			$names->loadByParty($uid);
-			$this->set('names',$names);
+			$this->set('names', $names);
 
 			// Include the values of the standard name as parameters of the party
 			$standardName = $names->get('standard');
@@ -171,6 +179,7 @@ abstract class tx_party_models_party extends tx_party_models_object {
 	 * @return	string		Label of the party
 	 */
 	public function getLabel () {
+
 		if ($this->isEmpty()) {
 			return FALSE;		// Data must be loaded
 		}
@@ -182,13 +191,24 @@ abstract class tx_party_models_party extends tx_party_models_object {
 		$locality = $this->get('locality');
 
 		// Assemble the label
-		if (is_object($names) && is_object($names->get('standard'))) {
+		if (
+			is_object($names)
+			&& is_object($names->get('standard'))
+		) {
 			$label[] = $names->get('standard')->getLabel();
 		}
 		if ($locality) {
 			$label[] = $locality;
 		}
-		$out = implode(' - ',$label);
+
+		if (!count($label)) {
+			$firstName = $names->getFirstName();
+			if ($firstName != '') {
+				$label[] = $firstName;
+			}
+		}
+
+		$out = implode(' - ', $label);
 		return $out;
 	}
 }

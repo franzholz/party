@@ -174,7 +174,8 @@ class tx_party_tests_fixture {
 	public function deleteAll() {
 		$allTables = $this->getAllTables();
 		foreach ($allTables as $table) {
-			$GLOBALS['TYPO3_DB']->sql_query('TRUNCATE '.$table);
+			$result = $GLOBALS['TYPO3_DB']->sql_query('TRUNCATE ' . $table);
+			$GLOBALS['TYPO3_DB']->sql_free_result($result);
 		}
 	}
 

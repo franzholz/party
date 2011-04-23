@@ -41,7 +41,7 @@
  */
 class tx_party_staticinfotables {
 
-	function processDatamap_postProcessFieldArray($status, $table, $id, $fieldArray, $pObj) {
+	public function processDatamap_postProcessFieldArray($status, $table, $id, $fieldArray, $pObj) {
 		global $TCA;
 
 		// Check if the current table contains a field with a hotlist to update
@@ -54,7 +54,6 @@ class tx_party_staticinfotables {
 				}
 			}
 		}
-
 	}
 }
 

@@ -57,8 +57,8 @@ class tx_party_models_personname extends tx_party_models_name {
 		}
 
 		// Get all fields belonging to the type 'person name' and load the object
-		$typeFields = tx_party_div::getAllTypeFields($this->table,$rec);
-		parent::load($uid,$typeFields);
+		$typeFields = tx_party_div::getAllTypeFields($this->table, $rec);
+		parent::load($uid, $typeFields);
 	}
 
 	/**

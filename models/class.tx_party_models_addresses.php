@@ -62,11 +62,14 @@ class tx_party_models_addresses extends tx_party_models_object {
 				$item = t3lib_div::makeInstance('tx_party_models_address');
 				$item->load($row['address']);
 				$item->set('standard',$row['standard']);	// Include the value from the mm-table
-				if ($item->get('standard') == 1) $this->set('standard',$item);
+				if ($item->get('standard') == 1) {
+					$this->set('standard', $item);
+				}
 				$list->append($item);
 			}
+			$GLOBALS['TYPO3_DB']->sql_free_result($result);
 		}
-		$this->set('list',$list);
+		$this->set('list', $list);
 	}
 
 
@@ -85,16 +88,24 @@ class tx_party_models_addresses extends tx_party_models_object {
 		$out = '';
 
 		// Get all relevant parts
-		$usage = reset(t3lib_BEfunc::getRecord('tx_party_usages',$this->get('address_usage'),'short_title'));
+		$usage = reset(
+			t3lib_BEfunc::getRecord(
+				'tx_party_usages',
+				$this->get('address_usage'),
+				'short_title'
+			)
+		);
 		$party = tx_party_models_party::getInstance($this->get('party'));
 
 		// Assemble the label
-		if ($usage) $label[] = $usage;
+		if ($usage) {
+			$label[] = $usage;
+		}
 		if (!$party->isEmpty()) {
-			$label[] = '('.$party->getLabel().')';
+			$label[] = '(' . $party->getLabel() . ')';
 		}
 
-		$out = implode(' ',$label);
+		$out = implode(' ', $label);
 		return $out;
 	}
 }

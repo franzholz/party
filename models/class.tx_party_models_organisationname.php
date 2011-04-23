@@ -36,8 +36,8 @@
  */
 
 require_once(t3lib_extMgm::extPath('party').'div/class.tx_party_div.php');
-trequire_once(PATH_BE_div2007 . 'class.tx_div2007.php');
-x_div2007::load('tx_party_models_name');
+require_once(PATH_BE_div2007 . 'class.tx_div2007.php');
+tx_div2007::load('tx_party_models_name');
 
 class tx_party_models_organisationname extends tx_party_models_name {
 
@@ -53,7 +53,8 @@ class tx_party_models_organisationname extends tx_party_models_name {
 
 		// Check that the name is an organisation name
 		$rec = t3lib_BEfunc::getRecord($this->table, $uid, 'type');
-		if (!$rec['type'] == 1) {
+
+		if (!($rec['type'] == 1)) {
 			return FALSE;
 		}
 
@@ -74,8 +75,8 @@ class tx_party_models_organisationname extends tx_party_models_name {
 		if ($this->isEmpty()) {
 			return FALSE;		// Data must be loaded
 		}
-		$out = $this->get('organisation_name');
-		return $out;
+		$result = $this->get('organisation_name');
+		return $result;
 	}
 }
 

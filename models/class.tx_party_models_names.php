@@ -36,12 +36,28 @@
  */
 
 require_once(PATH_BE_div2007 . 'class.tx_div2007.php');
-require_once(t3lib_extMgm::extPath('party').'div/class.tx_party_div.php');
+require_once(t3lib_extMgm::extPath('party') . 'div/class.tx_party_div.php');
 tx_div2007::load('tx_party_models_name');
 
 class tx_party_models_names extends tx_div2007_object {
 
-	protected $table = 'tx_party_names';
+	public $table = 'tx_party_names';
+
+
+	public function getFirstName () {
+		$result = '';
+
+		$itemIterator = $this->getIterator();
+		$list = $itemIterator->seek('list');
+
+		if (is_object($list)) {
+			$list->rewind();
+			$item = $list->current();
+			$result = $item->getLabel();
+		}
+		return $result;
+	}
+
 
 	/**
 	 * Loads all names which are assigned to a specific party.
@@ -74,6 +90,7 @@ class tx_party_models_names extends tx_div2007_object {
 				}
 				$list->append($item);
 			}
+			$GLOBALS['TYPO3_DB']->sql_free_result($result);
 		}
 		$this->set('list', $list);
 	}

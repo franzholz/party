@@ -23,7 +23,7 @@
 ***************************************************************/
 
 
-require_once(t3lib_extMgm::extPath('div2007').'class.tx_div2007.php');
+require_once(PATH_BE_div2007 . 'class.tx_div2007.php');
 
 tx_div2007::load('tx_party_models_person');
 tx_div2007::load('tx_party_models_organisation');
@@ -63,10 +63,10 @@ class tx_party_labels {
 	 * @param	object		$pObj: Parent object from the calling function, not used.
 	 * @return	void		The result is directly written to $params['title']
 	 */
-	public function getLabel(&$params, $pObj)	{
+	public function getLabel (&$params, $pObj) {
 
 		// Only get labels for tx_party* tables
-		if (!substr($params['table'],0,8) == 'tx_party') {
+		if (!substr($params['table'], 0, 8) == 'tx_party') {
 			return '';
 		}
 
@@ -76,6 +76,18 @@ class tx_party_labels {
 
 		// Get the className of the model
 		switch ($params['table']) {
+			case 'tx_party_addresses':
+				$className = 'tx_party_models_address';
+				break;
+
+			case 'tx_party_languages':
+				$className = 'tx_party_models_language';
+				break;
+
+			case 'tx_party_nationalities':
+				$className = 'tx_party_models_nationality';
+				break;
+
 			case 'tx_party_names':
 				if ($params['row']['type'] == 0) {
 					$className = 'tx_party_models_personname';
@@ -92,18 +104,7 @@ class tx_party_labels {
 				if ($params['row']['type'] == 1) {
 					$className = 'tx_party_models_organisation';
 				}
-				break;
-
-			case 'tx_party_addresses':
-				$className = 'tx_party_models_address';
-				break;
-
-			case 'tx_party_languages':
-				$className = 'tx_party_models_language';
-				break;
-
-			case 'tx_party_nationalities':
-				$className = 'tx_party_models_nationality';
+debug ($className, '$className +++');
 				break;
 
 			case 'tx_party_visas':
@@ -143,7 +144,7 @@ class tx_party_labels {
 				break;
 
 			default:
-				debug ('No model className found for table '.$params['table'].'. (hooks/tx_party_labels)');
+				debug ('No model className found for table ' . $params['table'] . '. (hooks/tx_party_labels)');
 				break;
 		}
 
@@ -159,7 +160,6 @@ class tx_party_labels {
 			$params['title'] = $label;
 		}
 	}
-
 }
 
 if (defined('TYPO3_MODE') && $TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/party/hooks/class.tx_party_labels.php']) {

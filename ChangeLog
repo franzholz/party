@@ -1,3 +1,8 @@
+2011-04-23 Franz Holzinger <franz@ttproducts.de>
+	* use the first organization name as the party label if no default organization has been set
+	* add API to fetch a list of all table names
+	* add a manual
+
 2011-04-03 Franz Holzinger <franz@ttproducts.de>
 	* use constant PATH_BE_div2007 from div2007 0.5.0
 

@@ -58,7 +58,9 @@ class tx_party_models_language extends tx_party_models_object {
 
 		// Get all relevant parts
 		$party = tx_party_models_party::getInstance($this->get('party'));
-		$language = reset(t3lib_BEfunc::getRecord('static_languages', $this->get('language'), 'lg_name_en'));
+		$language = reset(
+			t3lib_BEfunc::getRecord('static_languages', $this->get('language'), 'lg_name_en')
+		);
 
 		// Assemble the label
 		$label[0] = $language;

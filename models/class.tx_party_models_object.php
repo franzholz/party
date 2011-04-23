@@ -56,11 +56,18 @@ abstract class tx_party_models_object extends tx_div2007_object {
 		$orderBy = '';
 
 		// Load the data from the database and build the object
-		$query = $GLOBALS['TYPO3_DB']->SELECTquery('*', $this->table, $this->table.'.uid='.$uid.$deleteClause, $groupBy, $orderBy);
+		$query = $GLOBALS['TYPO3_DB']->SELECTquery(
+			'*',
+			$this->table,
+			$this->table . '.uid=' . $uid . $deleteClause,
+			$groupBy,
+			$orderBy
+		);
 		$result = $GLOBALS['TYPO3_DB']->sql_query($query);
 		if($result) {
 			$row = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($result);
 			$this->overwriteArray($row);
+			$GLOBALS['TYPO3_DB']->sql_free_result($result);
 		}
 	}
 
@@ -74,10 +81,11 @@ abstract class tx_party_models_object extends tx_div2007_object {
 	 */
 	public function getLabel () {
 		if ($this->isEmpty()) {
-			return FALSE;
+			$result = FALSE;
 		} else {
-			return $this->get($GLOBALS['TCA'][$this->table]['ctrl']['label']);
+			$result = $this->get($GLOBALS['TCA'][$this->table]['ctrl']['label']);
 		}
+		return $result;
 	}
 }
 
