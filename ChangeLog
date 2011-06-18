@@ -1,3 +1,6 @@
+2011-06-18 Franz Holzinger <franz@ttproducts.de>
+	* move the tests into the extension party_tests
+
 2011-04-23 Franz Holzinger <franz@ttproducts.de>
 	* use the first organization name as the party label if no default organization has been set
 	* add API to fetch a list of all table names
