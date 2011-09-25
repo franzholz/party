@@ -54,9 +54,9 @@ class tx_party_models_electronicaddressidentifierusage extends tx_party_models_o
 		}
 		$label = array();
 		$out = '';
+		$usage = t3lib_BEfunc::getRecord('tx_party_usages', $this->get('electronic_address_identifier_usage'), 'short_title');
 
 		// Get all relevant parts
-		$usage = reset(t3lib_BEfunc::getRecord('tx_party_usages', $this->get('electronic_address_identifier_usage'), 'short_title'));
 		$party = tx_party_models_party::getInstance($this->get('party'));
 
 		// Assemble the label

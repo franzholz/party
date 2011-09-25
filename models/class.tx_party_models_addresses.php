@@ -54,7 +54,7 @@ class tx_party_models_addresses extends tx_party_models_object {
 		$orderBy = '';
 
 		// Load all addresses from the database and build the object
-		$query = $GLOBALS['TYPO3_DB']->SELECTquery('address,standard', $this->table, $this->table.'.party='.$partyUid, $groupBy, $orderBy);
+		$query = $GLOBALS['TYPO3_DB']->SELECTquery('address,standard', $this->table, $this->table . '.party=' . $partyUid, $groupBy, $orderBy);
 		$result = $GLOBALS['TYPO3_DB']->sql_query($query);
 		$list = tx_div2007::makeInstance('tx_div2007_object');
 		if($result) {
@@ -86,15 +86,12 @@ class tx_party_models_addresses extends tx_party_models_object {
 		}
 		$label = array();
 		$out = '';
-
-		// Get all relevant parts
-		$usage = reset(
-			t3lib_BEfunc::getRecord(
+		$usage = t3lib_BEfunc::getRecord(
 				'tx_party_usages',
 				$this->get('address_usage'),
 				'short_title'
-			)
-		);
+			);
+
 		$party = tx_party_models_party::getInstance($this->get('party'));
 
 		// Assemble the label

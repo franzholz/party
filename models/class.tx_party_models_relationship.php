@@ -87,9 +87,11 @@ class tx_party_models_relationship extends tx_party_models_object {
 		if (is_object($primaryParty) && !$primaryParty->isEmpty()) {
 			$label[] = $primaryParty->getLabel();
 		}
+
 		if (is_object($relationshipType) && !$relationshipType->isEmpty()) {
 			$label[] = $relationshipType->get('description_as_primary') . ':';
 		}
+
 		if (is_object($secondaryParty) && !$secondaryParty->isEmpty()) {
 			$label[] = $secondaryParty->getLabel();
 		}

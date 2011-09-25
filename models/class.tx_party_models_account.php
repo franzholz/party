@@ -65,10 +65,10 @@ class tx_party_models_account extends tx_party_models_object {
 		// Assemble the label
 		$label[0] = $accountId;
 		if ($org) {
-			$label[1] = '('.$org->getLabel().')';
+			$label[1] = '(' . $org->getLabel() . ')';
 		}
 
-		$out = implode(' ',$label);
+		$out = implode(' ', $label);
 		return $out;
 	}
 }

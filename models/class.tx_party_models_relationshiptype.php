@@ -53,15 +53,19 @@ class tx_party_models_relationshiptype extends tx_party_models_object {
 	public function isRelationshipAllowed ($typeOfPrimaryParty, $typeOfSecondaryParty) {
 		$primaryOk == FALSE;
 		$secondaryOk = FALSE;
+
 		if ($typeOfPrimaryParty == 0 && $this->get('person_allowed_as_primary')) {
 			$primaryOk = TRUE;
 		}
+
 		if ($typeOfPrimaryParty == 1 && $this->get('organisation_allowed_as_primary')) {
 			$primaryOk = TRUE;
 		}
+
 		if ($typeOfSecondaryParty == 0 && $this->get('person_allowed_as_secondary')) {
 			$secondaryOk = TRUE;
 		}
+
 		if ($typeOfSecondaryParty == 1 && $this->get('organisation_allowed_as_secondary')) {
 			$secondaryOk = TRUE;
 		}

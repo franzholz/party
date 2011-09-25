@@ -65,9 +65,11 @@ class tx_party_models_stockmarket extends tx_party_models_object {
 		if ($listedCode) {
 			$label[] = $listedCode . ':';
 		}
+
 		if ($market) {
 			$label[] = $market;
 		}
+
 		if (!$party->isEmpty()) {
 			$label[] = '(' . $party->getLabel() . ')';
 		}

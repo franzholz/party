@@ -64,6 +64,7 @@ abstract class tx_party_models_object extends tx_div2007_object {
 			$orderBy
 		);
 		$result = $GLOBALS['TYPO3_DB']->sql_query($query);
+
 		if($result) {
 			$row = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($result);
 			$this->overwriteArray($row);

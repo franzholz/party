@@ -57,7 +57,7 @@ class tx_party_models_contactnumberusage extends tx_party_models_object {
 		$out = '';
 
 		// Get all relevant parts
-		$usage = reset(t3lib_BEfunc::getRecord('tx_party_usages', $this->get('contact_number_usage'), 'short_title'));
+		$usage = t3lib_BEfunc::getRecord('tx_party_usages', $this->get('contact_number_usage'), 'short_title');
 		$party = tx_party_models_party::getInstance($this->get('party'));
 
 		// Assemble the label

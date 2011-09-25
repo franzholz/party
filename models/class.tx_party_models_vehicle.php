@@ -80,6 +80,7 @@ class tx_party_models_vehicle extends tx_party_models_object {
 		if (is_object($make) && !$make->isEmpty()) {
 			$label[] = $make->getLabel() . ':';
 		}
+
 		if ($licensePlate) {
 			$label[] = $licensePlate;
 		}

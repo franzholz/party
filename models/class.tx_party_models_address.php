@@ -66,7 +66,7 @@ class tx_party_models_address extends tx_party_models_object {
 
 		// Replace the administrativeArea code through the (language-neutral) code
 		if ($administrativeArea) {
-			$rec = t3lib_BEfunc::getRecord('static_country_zones',$administrativeArea,'zn_code');
+			$rec = t3lib_BEfunc::getRecord('static_country_zones', $administrativeArea, 'zn_code');
 			$administrativeArea = $rec['zn_code'];
 		}
 
@@ -75,10 +75,10 @@ class tx_party_models_address extends tx_party_models_object {
 			$label[0] = $thoroughfare;
 		}
 		if ($thoroughfare && $thoroughfareNumber) {
-			$label[0] = $thoroughfare.' '.$thoroughfareNumber;
+			$label[0] = $thoroughfare . ' ' . $thoroughfareNumber;
 		}
 		if ($locality && $administrativeArea) {
-			$locality = $locality.' ('.$administrativeArea.')';
+			$locality = $locality . ' (' . $administrativeArea . ')';
 		}
 		if ($postCode) {
 			$label[1] = $postCode;
@@ -87,10 +87,10 @@ class tx_party_models_address extends tx_party_models_object {
 			$label[1] = $locality;
 		}
 		if ($postCode && $locality) {
-			$label[1] = $postCode.' '.$locality;
+			$label[1] = $postCode . ' ' . $locality;
 		}
 
-		$out = implode(', ',$label);
+		$out = implode(', ', $label);
 		return $out;
 	}
 }
