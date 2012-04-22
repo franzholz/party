@@ -2,7 +2,7 @@
 /***************************************************************
 *  Copyright notice
 *
-*  (c) 2011 David Bruehlmeier (typo3@bruehlmeier.com)
+*  (c) 2012 David Bruehlmeier (typo3@bruehlmeier.com)
 *  All rights reserved
 *
 *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -28,8 +28,6 @@
  * extended by the class tx_party_models_person_name and
  * tx_party_models_organisation_name.
  *
- * Depends on: div2007
- *
  * $Id$
  *
  * @author David Brühlmeier <typo3@bruehlmeier.com>
@@ -37,8 +35,6 @@
  * @subpackage tx_party
  */
 
-require_once(PATH_BE_div2007 . 'class.tx_div2007.php');
-tx_div2007::load('tx_party_models_object');
 
 abstract class tx_party_models_name extends tx_party_models_object {
 	protected $table = 'tx_party_names';

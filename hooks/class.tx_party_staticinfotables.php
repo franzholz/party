@@ -2,7 +2,7 @@
 /***************************************************************
 *  Copyright notice
 *
-*  (c) 2007 David Brühlmeier (typo3@bruehlmeier.com)
+*  (c) 2012 David Brühlmeier (typo3@bruehlmeier.com)
 *  All rights reserved
 *
 *  This script is part of the Typo3 project. The Typo3 project is
@@ -41,7 +41,13 @@
  */
 class tx_party_staticinfotables {
 
-	public function processDatamap_postProcessFieldArray($status, $table, $id, $fieldArray, $pObj) {
+	public function processDatamap_postProcessFieldArray(
+		$status,
+		$table,
+		$id,
+		$fieldArray,
+		$pObj
+	) {
 		global $TCA;
 
 		// Check if the current table contains a field with a hotlist to update
@@ -50,7 +56,12 @@ class tx_party_staticinfotables {
 				if ($fieldArray[$fieldName]) {
 
 					// The hotlist will be updated only if the field changed, because only then it's in the $fieldArray
-					tx_staticinfotables_div::updateHotlist($field['config']['itemsProcFunc_config']['table'], $fieldArray[$fieldName], 'uid', 'tx_party');
+					tx_staticinfotables_div::updateHotlist(
+						$field['config']['itemsProcFunc_config']['table'],
+						$fieldArray[$fieldName],
+						'uid',
+						'tx_party'
+					);
 				}
 			}
 		}
@@ -61,4 +72,5 @@ class tx_party_staticinfotables {
 if (defined('TYPO3_MODE') && $TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/party/hooks/class.tx_party_staticinfotables.php'])    {
 	include_once($TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/party/hooks/class.tx_party_staticinfotables.php']);
 }
+
 ?>

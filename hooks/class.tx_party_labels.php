@@ -2,7 +2,7 @@
 /***************************************************************
 *  Copyright notice
 *
-*  (c) 2011 David Bruehlmeier (typo3@bruehlmeier.com)
+*  (c) 2012 David Bruehlmeier (typo3@bruehlmeier.com)
 *  All rights reserved
 *
 *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -23,24 +23,6 @@
 ***************************************************************/
 
 
-require_once(PATH_BE_div2007 . 'class.tx_div2007.php');
-
-tx_div2007::load('tx_party_models_person');
-tx_div2007::load('tx_party_models_organisation');
-tx_div2007::load('tx_party_models_personname');
-tx_div2007::load('tx_party_models_language');
-tx_div2007::load('tx_party_models_nationality');
-tx_div2007::load('tx_party_models_visa');
-tx_div2007::load('tx_party_models_countryofresidence');
-tx_div2007::load('tx_party_models_organisationname');
-tx_div2007::load('tx_party_models_address');
-tx_div2007::load('tx_party_models_occupation');
-tx_div2007::load('tx_party_models_addresses');
-tx_div2007::load('tx_party_models_event');
-tx_div2007::load('tx_party_models_membership');
-tx_div2007::load('tx_party_models_contactnumberusage');
-tx_div2007::load('tx_party_models_electronicaddressidentifierusage');
-tx_div2007::load('tx_party_models_relationship');
 
 /**
  * Building (backend) labels, using label_userFunc.
@@ -51,8 +33,6 @@ tx_div2007::load('tx_party_models_relationship');
  */
 class tx_party_labels {
 
-
-
 	/**
 	 * Factory function which is called by label_userFunc. The function decides how to build the label.
 	 * The result is directly written to $params['title'], since this parameter is passed by reference.
@@ -61,10 +41,11 @@ class tx_party_labels {
 	 *
 	 * @param	array		$params: Parameters, passed by reference!
 	 * @param	object		$pObj: Parent object from the calling function, not used.
-	 * @return	void		The result is directly written to $params['title']
+	 * @return	string		The result is also written into $params['title']
 	 */
 	public function getLabel (&$params, $pObj) {
 
+debugBegin();
 		// Only get labels for tx_party* tables
 		if (!substr($params['table'], 0, 8) == 'tx_party') {
 			return '';
@@ -104,7 +85,6 @@ class tx_party_labels {
 				if ($params['row']['type'] == 1) {
 					$className = 'tx_party_models_organisation';
 				}
-debug ($className, '$className +++');
 				break;
 
 			case 'tx_party_visas':
@@ -150,6 +130,11 @@ debug ($className, '$className +++');
 
 		// Get the label from the model
 		if ($className) {
+
+debug ($className, '$className');
+// 			$bLoaded = tx_div2007::load($className);
+// debug ($bLoaded, '$bLoaded');
+
 			$model = t3lib_div::makeInstance($className);
 			$model->load($params['row']['uid']);
 			$label = $model->getLabel();
@@ -159,6 +144,10 @@ debug ($className, '$className +++');
 		if ($label != '') {
 			$params['title'] = $label;
 		}
+
+debugEnd();
+
+		return $label;
 	}
 }
 

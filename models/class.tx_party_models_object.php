@@ -2,7 +2,7 @@
 /***************************************************************
 *  Copyright notice
 *
-*  (c) 2011 David Bruehlmeier (typo3@bruehlmeier.com)
+*  (c) 2012 David Bruehlmeier (typo3@bruehlmeier.com)
 *  All rights reserved
 *
 *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -26,8 +26,6 @@
 /**
  * Abstract base class for all models.
  *
- * Depends on: div2007
- *
  * $Id$
  *
  * @author David Brühlmeier <typo3@bruehlmeier.com>
@@ -35,8 +33,6 @@
  * @subpackage tx_party
  */
 
-require_once(PATH_BE_div2007 . 'class.tx_div2007.php');
-tx_div2007::load('tx_div2007_object');
 
 abstract class tx_party_models_object extends tx_div2007_object {
 

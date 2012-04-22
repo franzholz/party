@@ -2,7 +2,7 @@
 /***************************************************************
 *  Copyright notice
 *
-*  (c) 2011 David Bruehlmeier (typo3@bruehlmeier.com)
+*  (c) 2012 David Bruehlmeier (typo3@bruehlmeier.com)
 *  All rights reserved
 *
 *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -27,7 +27,7 @@
  * Static utility functions for the People Management Framework.
  *
  * The functions can only be used se non-instantiated, e.g.
- * tx_party_div2007::getAllTypeFields()
+ * tx_party_div::getAllTypeFields()
  *
  *
  * $Id$
@@ -53,24 +53,24 @@ class tx_party_div {
 	 * @param	array		$rec: The record which contains the type
 	 * @return	string		Comma-separated list with all type fields for the record
 	 */
-	public static function getAllTypeFields ($table,$rec) {
+	static public function getAllTypeFields ($table, $rec) {
 		global $TCA;
 
 		// Add 'common fields'
 		$out = 'uid,pid,tstamp,crdate,cruser_id,deleted,';
 
 		// Get all type fields with the core function.
-		$typeFields = t3lib_BEfunc::getTCAtypes($table,$rec,true);
+		$typeFields = t3lib_BEfunc::getTCAtypes($table, $rec, TRUE);
 
 		// Add all fields from palettes and exclude 'special fields'
-		foreach ($typeFields as $k=>$theTypeField) {
+		foreach ($typeFields as $k => $theTypeField) {
 			if ($k == '--div--' || $k == '--palette--') {
 				continue;	// Exclude 'special' fields
 			}
-			$out.= $k.',';
+			$out .= $k . ',';
 			if ($theTypeField['palette']) {
 				$paletteFields = t3lib_div::rm_endcomma($TCA[$table]['palettes'][$theTypeField['palette']]['showitem']);
-				$out.= $paletteFields.',';
+				$out .= $paletteFields . ',';
 			}
 		}
 

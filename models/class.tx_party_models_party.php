@@ -2,7 +2,7 @@
 /***************************************************************
 *  Copyright notice
 *
-*  (c) 2011 David Bruehlmeier (typo3@bruehlmeier.com)
+*  (c) 2012 David Bruehlmeier (typo3@bruehlmeier.com)
 *  All rights reserved
 *
 *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -28,21 +28,12 @@
  * extended by the class tx_party_models_person and
  * tx_party_models_organisation.
  *
- * Depends on: div2007
- *
  * $Id$
  *
  * @author David Brühlmeier <typo3@bruehlmeier.com>
  * @package TYPO3
  * @subpackage tx_party
  */
-
-require_once(PATH_BE_div2007 . 'class.tx_div2007.php');
-
-tx_div2007::load('tx_party_models_object');
-tx_div2007::load('tx_party_models_names');
-tx_div2007::load('tx_party_models_addresses');
-tx_div2007::load('tx_party_models_electronicaddressidentifiers');
 
 
 abstract class tx_party_models_party extends tx_party_models_object {
@@ -65,11 +56,13 @@ abstract class tx_party_models_party extends tx_party_models_object {
 		// Depending on the type, create the proper instance and load the data
 		switch (intval($rec['type'])) {
 			case 0:
-				$party = t3lib_div::makeInstance('tx_party_models_person');
+				$className = 'tx_party_models_person';
+				$party = t3lib_div::makeInstance($className);
 				$party->load($uid);
 			break;
 			case 1:
-				$party = t3lib_div::makeInstance('tx_party_models_organisation');
+				$className = 'tx_party_models_organisation';
+				$party = t3lib_div::makeInstance($className);
 				$party->load($uid);
 			break;
 			default:

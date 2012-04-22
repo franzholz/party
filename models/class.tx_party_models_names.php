@@ -2,7 +2,7 @@
 /***************************************************************
 *  Copyright notice
 *
-*  (c) 2011 David Bruehlmeier (typo3@bruehlmeier.com)
+*  (c) 2012 David Bruehlmeier (typo3@bruehlmeier.com)
 *  All rights reserved
 *
 *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -26,18 +26,12 @@
 /**
  * Model for a collection of Names (both PersonName and OrganisationName)
  *
- * Depends on: div2007
- *
  * $Id$
  *
  * @author David Brühlmeier <typo3@bruehlmeier.com>
  * @package TYPO3
  * @subpackage tx_party
  */
-
-require_once(PATH_BE_div2007 . 'class.tx_div2007.php');
-require_once(t3lib_extMgm::extPath('party') . 'div/class.tx_party_div.php');
-tx_div2007::load('tx_party_models_name');
 
 class tx_party_models_names extends tx_div2007_object {
 
@@ -71,7 +65,14 @@ class tx_party_models_names extends tx_div2007_object {
 		$orderBy = '';
 
 		// Load all names from the database and build the object
-		$query = $GLOBALS['TYPO3_DB']->SELECTquery('uid,type', $this->table, $this->table . '.party=' . $partyUid, $groupBy, $orderBy);
+		$query =
+			$GLOBALS['TYPO3_DB']->SELECTquery(
+				'uid,type',
+				$this->table,
+				$this->table . '.party=' . $partyUid,
+				$groupBy,
+				$orderBy
+			);
 		$result = $GLOBALS['TYPO3_DB']->sql_query($query);
 		$list = tx_div2007::makeInstance('tx_div2007_object');
 		if($result) {

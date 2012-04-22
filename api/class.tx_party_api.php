@@ -2,7 +2,7 @@
 /***************************************************************
 *  Copyright notice
 *
-*  (c) 2011 Franz Holzinger (franz@ttproducts.de)
+*  (c) 2012 Franz Holzinger (franz@ttproducts.de)
 *  All rights reserved
 *
 *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -40,7 +40,7 @@
 
 
 class tx_party_api {
-	private static $tableArray = array(
+	static private $tableArray = array(
 		'tx_party_accounts',
 		'tx_party_address_usages',
 		'tx_party_addresses',
@@ -91,9 +91,21 @@ class tx_party_api {
 		'tx_party_visas'
 	);
 
+	static private $mmTableArray = array(
+		'tx_party_parties_hobbies_mm',
+		'tx_party_parties_habits_mm',
+		'tx_party_parties_allergies_mm'
+	);
 
-	public static function getTableArray () {
-		return self::$tableArray;
+	static public function getTableArray ($bMM = FALSE) {
+		$result = FALSE;
+
+		if ($bMM) {
+			$result = self::$tableArray;
+		} else {
+			$result = self::$mmTableArray;
+		}
+		return $result;
 	}
 }
 

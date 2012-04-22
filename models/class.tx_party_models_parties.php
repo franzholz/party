@@ -2,7 +2,7 @@
 /***************************************************************
 *  Copyright notice
 *
-*  (c) 2011 David Bruehlmeier (typo3@bruehlmeier.com)
+*  (c) 2012 David Bruehlmeier (typo3@bruehlmeier.com)
 *  All rights reserved
 *
 *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -26,18 +26,12 @@
 /**
  * Model for a collection of Parties
  *
- * Depends on: div2007
- *
  * $Id$
  *
  * @author David Brühlmeier <typo3@bruehlmeier.com>
  * @package TYPO3
  * @subpackage tx_party
  */
-
-require_once(PATH_BE_div2007 . 'class.tx_div2007.php');
-tx_div2007::load('tx_party_models_person');
-tx_div2007::load('tx_party_models_organisation');
 
 class tx_party_models_parties extends tx_div2007_object {
 
@@ -65,7 +59,10 @@ class tx_party_models_parties extends tx_div2007_object {
 	 * @param	boolean		$onlyStandard: If set to TRUE, only the standard address of the party is relevant, else all addresses. Optional, default = TRUE
 	 * @return	void		The data is loaded into the object
 	 */
-	public function loadByCountry($countryUid,$onlyStandard=TRUE) {
+	public function loadByCountry (
+		$countryUid,
+		$onlyStandard = TRUE
+	) {
 		$countryUid = intval($countryUid);
 
 		$select = 'a.party, c.type';
@@ -88,9 +85,24 @@ class tx_party_models_parties extends tx_div2007_object {
 	 * @param	string		$limit: The LIMIT clause (optional)
 	 * @return	object		A tx_div2007_object instance with the selected persons/organisations
 	 */
-	private function selectFromDatabase($select, $from, $where, $groupBy='', $orderBy='', $limit='') {
+	private function selectFromDatabase (
+		$select,
+		$from,
+		$where,
+		$groupBy = '',
+		$orderBy = '',
+		$limit = ''
+	) {
 		$where = $where . t3lib_BEfunc::deleteClause($from);
-		$query = $GLOBALS['TYPO3_DB']->SELECTquery($select, $from, $where, $groupBy, $orderBy, $limit);
+		$query =
+			$GLOBALS['TYPO3_DB']->SELECTquery(
+				$select,
+				$from,
+				$where,
+				$groupBy,
+				$orderBy,
+				$limit
+			);
 		$result = $GLOBALS['TYPO3_DB']->sql_query($query);
 		$list = tx_div2007::makeInstance('tx_div2007_object');
 		if($result) {

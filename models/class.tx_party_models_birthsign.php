@@ -2,7 +2,7 @@
 /***************************************************************
 *  Copyright notice
 *
-*  (c) 2011 David Bruehlmeier (typo3@bruehlmeier.com)
+*  (c) 2012 David Bruehlmeier (typo3@bruehlmeier.com)
 *  All rights reserved
 *
 *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -26,17 +26,12 @@
 /**
  * Model for the class BirthSign
  *
- * Depends on: div2007
- *
  * $Id$
  *
  * @author David Brühlmeier <typo3@bruehlmeier.com>
  * @package TYPO3
  * @subpackage tx_party
  */
-
-require_once(PATH_BE_div2007 . 'class.tx_div2007.php');
-tx_div2007::load('tx_party_models_object');
 
 
 class tx_party_models_birthsign extends tx_party_models_object {

@@ -1,5 +1,8 @@
 <?php
-if (!defined ('TYPO3_MODE')) 	die ('Access denied.');
+
+if (!defined ('TYPO3_MODE')) {
+	die ('Access denied.');
+}
 
 // Include the class for getting own lables
 include_once(t3lib_extMgm::extPath('party') . 'hooks/class.tx_party_labels.php');
@@ -190,7 +193,7 @@ $TCA['tx_party_parties'] = array (
 		'type' => 'type',
 		'default_sortby' => 'ORDER BY crdate',
 		'delete' => 'deleted',
-		'dividers2tabs' => true,
+		'dividers2tabs' => TRUE,
 		'dynamicConfigFile' => t3lib_extMgm::extPath($_EXTKEY) . 'tca.php',
 		'iconfile'          => t3lib_extMgm::extRelPath($_EXTKEY) . 'icons/icon_tx_party_parties.gif',
 		'typeicon_column' => 'type',
@@ -341,7 +344,6 @@ $TCA['tx_party_accounts'] = array (
 		'fe_admin_fieldList' => 'party, ownership_type, account_id, issuing_authority, account_type, remarks, organisation',
 	)
 );
-
 
 $TCA['tx_party_contacts'] = array (
 	'ctrl' => array (
@@ -657,7 +659,6 @@ $TCA['tx_party_visas'] = array (
 	)
 );
 
-
 $TCA['tx_party_events'] = array (
 	'ctrl' => array (
 		'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_events',
@@ -850,4 +851,58 @@ $TCA['tx_party_relationships'] = array (
 		'fe_admin_fieldList' => 'primary_party, secondary_party, relationship_type, date_established, date_lapsed, reason_lapsed, remarks',
 	)
 );
+
+$tableArray = array(
+	'tx_party_accounts',
+	'tx_party_address_usages',
+	'tx_party_addresses',
+	'tx_party_allergies',
+	'tx_party_birth_signs',
+	'tx_party_contact_number_usages',
+	'tx_party_contact_numbers',
+	'tx_party_contacts',
+	'tx_party_countries_of_residence',
+	'tx_party_disabilities',
+	'tx_party_documents',
+	'tx_party_electronic_address_identifier_usages',
+	'tx_party_electronic_address_identifiers',
+	'tx_party_ethnicities',
+	'tx_party_events',
+	'tx_party_favourites',
+	'tx_party_habits',
+	'tx_party_hobbies',
+	'tx_party_identifiers',
+	'tx_party_images',
+	'tx_party_languages',
+	'tx_party_marks',
+	'tx_party_memberships',
+	'tx_party_names',
+	'tx_party_nationalities',
+	'tx_party_occupation_ranks',
+	'tx_party_occupation_roles',
+	'tx_party_occupations',
+	'tx_party_organisation_natures',
+	'tx_party_parties',
+	'tx_party_person_name_titles',
+	'tx_party_physical_status',
+	'tx_party_preferences',
+	'tx_party_qualification_status',
+	'tx_party_qualifications',
+	'tx_party_relationship_types',
+	'tx_party_relationships',
+	'tx_party_religions',
+	'tx_party_revenues',
+	'tx_party_stock_markets',
+	'tx_party_types',
+	'tx_party_usages',
+	'tx_party_vehicle_manufacturers',
+	'tx_party_vehicles',
+	'tx_party_visas',
+);
+
+foreach ($tableArray as $theTable) {
+	t3lib_extMgm::addToInsertRecords($theTable);
+	t3lib_extMgm::allowTableOnStandardPages($theTable);
+}
+
 ?>

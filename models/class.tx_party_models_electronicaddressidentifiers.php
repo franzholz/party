@@ -2,7 +2,7 @@
 /***************************************************************
 *  Copyright notice
 *
-*  (c) 2011 David Bruehlmeier (typo3@bruehlmeier.com)
+*  (c) 2012 David Bruehlmeier (typo3@bruehlmeier.com)
 *  All rights reserved
 *
 *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -22,13 +22,9 @@
 *  This copyright notice MUST APPEAR in all copies of the script!
 ***************************************************************/
 
-require_once(PATH_BE_div2007 . 'class.tx_div2007.php');
-tx_div2007::load('tx_party_models_electronicaddressidentifier');
 
 /**
  * Model for a collection of ElectronicAddressIdentifier
- *
- * Depends on: div2007
  *
  * $Id$
  *
@@ -36,6 +32,8 @@ tx_div2007::load('tx_party_models_electronicaddressidentifier');
  * @package TYPO3
  * @subpackage tx_party
  */
+
+
 class tx_party_models_electronicaddressidentifiers extends tx_div2007_object {
 
 	protected $table = 'tx_party_electronic_address_identifier_usages';

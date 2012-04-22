@@ -1,134 +1,50 @@
 <?php
 if (!defined ('TYPO3_MODE')) 	die ('Access denied.');
 
+if (!defined ('PARTY_EXT')) {
+	define('PARTY_EXT', $_EXTKEY);
+}
+
+
 // Activate Hooks in TCE-Main for the hotlist updates of static_info_tables
 $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_tcemain.php']['processDatamapClass'][] = 'EXT:party/hooks/class.tx_party_staticinfotables.php:tx_party_staticinfotables';
 
+require_once(t3lib_extMgm::extPath($_EXTKEY) . 'api/class.tx_party_api.php');
 
-t3lib_extMgm::addUserTSConfig('
-	options.saveDocNew.tx_party_birth_signs=1
-');
-t3lib_extMgm::addUserTSConfig('
-	options.saveDocNew.tx_party_ethnicities=1
-');
-t3lib_extMgm::addUserTSConfig('
-	options.saveDocNew.tx_party_habits=1
-');
-t3lib_extMgm::addUserTSConfig('
-	options.saveDocNew.tx_party_hobbies=1
-');
-t3lib_extMgm::addUserTSConfig('
-	options.saveDocNew.tx_party_occupation_ranks=1
-');
-t3lib_extMgm::addUserTSConfig('
-	options.saveDocNew.tx_party_occupation_roles=1
-');
-t3lib_extMgm::addUserTSConfig('
-	options.saveDocNew.tx_party_organisation_natures=1
-');
-t3lib_extMgm::addUserTSConfig('
-	options.saveDocNew.tx_party_person_name_titles=1
-');
-t3lib_extMgm::addUserTSConfig('
-	options.saveDocNew.tx_party_physical_status=1
-');
-t3lib_extMgm::addUserTSConfig('
-	options.saveDocNew.tx_party_qualification_status=1
-');
-t3lib_extMgm::addUserTSConfig('
-	options.saveDocNew.tx_party_religions=1
-');
-t3lib_extMgm::addUserTSConfig('
-	options.saveDocNew.tx_party_types=1
-');
-t3lib_extMgm::addUserTSConfig('
-	options.saveDocNew.tx_party_vehicle_manufacturers=1
-');
-t3lib_extMgm::addUserTSConfig('
-	options.saveDocNew.tx_party_accounts=1
-');
-t3lib_extMgm::addUserTSConfig('
-	options.saveDocNew.tx_party_addresses=1
-');
-t3lib_extMgm::addUserTSConfig('
-	options.saveDocNew.tx_party_contacts=1
-');
-t3lib_extMgm::addUserTSConfig('
-	options.saveDocNew.tx_party_contact_numbers=1
-');
-t3lib_extMgm::addUserTSConfig('
-	options.saveDocNew.tx_party_countries_of_residence=1
-');
-t3lib_extMgm::addUserTSConfig('
-	options.saveDocNew.tx_party_disabilities=1
-');
-t3lib_extMgm::addUserTSConfig('
-	options.saveDocNew.tx_party_documents=1
-');
-t3lib_extMgm::addUserTSConfig('
-	options.saveDocNew.tx_party_electronic_address_identifiers=1
-');
-t3lib_extMgm::addUserTSConfig('
-	options.saveDocNew.tx_party_images=1
-');
-t3lib_extMgm::addUserTSConfig('
-	options.saveDocNew.tx_party_languages=1
-');
-t3lib_extMgm::addUserTSConfig('
-	options.saveDocNew.tx_party_marks=1
-');
-t3lib_extMgm::addUserTSConfig('
-	options.saveDocNew.tx_party_nationalities=1
-');
-t3lib_extMgm::addUserTSConfig('
-	options.saveDocNew.tx_party_occupations=1
-');
-t3lib_extMgm::addUserTSConfig('
-	options.saveDocNew.tx_party_names=1
-');
-t3lib_extMgm::addUserTSConfig('
-	options.saveDocNew.tx_party_qualifications=1
-');
-t3lib_extMgm::addUserTSConfig('
-	options.saveDocNew.tx_party_revenues=1
-');
-t3lib_extMgm::addUserTSConfig('
-	options.saveDocNew.tx_party_stock_markets=1
-');
-t3lib_extMgm::addUserTSConfig('
-	options.saveDocNew.tx_party_vehicles=1
-');
-t3lib_extMgm::addUserTSConfig('
-	options.saveDocNew.tx_party_visas=1
-');
-t3lib_extMgm::addUserTSConfig('
-	options.saveDocNew.tx_party_parties=1
-');
-t3lib_extMgm::addUserTSConfig('
-	options.saveDocNew.tx_party_events=1
-');
-t3lib_extMgm::addUserTSConfig('
-	options.saveDocNew.tx_party_identifiers=1
-');
-t3lib_extMgm::addUserTSConfig('
-	options.saveDocNew.tx_party_memberships=1
-');
-t3lib_extMgm::addUserTSConfig('
-	options.saveDocNew.tx_party_allergies=1
-');
-t3lib_extMgm::addUserTSConfig('
-	options.saveDocNew.tx_party_favourites=1
-');
-t3lib_extMgm::addUserTSConfig('
-	options.saveDocNew.tx_party_preferences=1
-');
-t3lib_extMgm::addUserTSConfig('
-	options.saveDocNew.tx_party_usages=1
-');
-t3lib_extMgm::addUserTSConfig('
-	options.saveDocNew.tx_party_relationships=1
-');
-t3lib_extMgm::addUserTSConfig('
-	options.saveDocNew.tx_party_relationship_types=1
-');
+$tableArray = tx_party_api::getTableArray();
+
+if (isset($tableArray) && is_array($tableArray)) {
+	foreach ($tableArray as $tablename) {
+		t3lib_extMgm::addUserTSConfig('
+			options.saveDocNew.' . $tablename . '=1
+		');
+	}
+}
+
+
+
+if (isset($GLOBALS['TYPO3_CONF_VARS']['SYS']['livesearch']) && is_array($GLOBALS['TYPO3_CONF_VARS']['SYS']['livesearch'])) {
+	// TYPO3 4.5 with livesearch
+	$GLOBALS['TYPO3_CONF_VARS']['SYS']['livesearch'] = array_merge(
+		$GLOBALS['TYPO3_CONF_VARS']['SYS']['livesearch'],
+		array(
+			'tx_party_addresses' => 'tx_party_addresses',
+			'tx_party_parties' => 'tx_party_parties',
+			'tx_party_names' => 'tx_party_names',
+			'tx_party_identifiers' => 'tx_party_identifiers'
+		)
+	);
+}
+
+
+
+// support for new Caching Framework
+
+// Register cache 'tt_products_cache'
+if (!is_array($TYPO3_CONF_VARS['SYS']['caching']['cacheConfigurations']['tx_party_cache'])) {
+    $TYPO3_CONF_VARS['SYS']['caching']['cacheConfigurations']['tx_party_cache'] = array();
+}
+
+
+
 ?>
