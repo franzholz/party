@@ -62,7 +62,7 @@ class tx_party_models_type extends tx_party_models_object {
 				$out = ($partyType == 1) ? TRUE : FALSE;
 				break;
 			default:
-				return FALSE;
+				$out = FALSE;
 				break;
 		}
 

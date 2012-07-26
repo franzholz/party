@@ -181,7 +181,6 @@ $TCA['tx_party_organisation_natures'] = array (
 	)
 );
 
-
 $TCA['tx_party_parties'] = array (
 	'ctrl' => array (
 		'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_parties',
@@ -206,7 +205,6 @@ $TCA['tx_party_parties'] = array (
 		'fe_admin_fieldList' => 'type, marital_status, religion, birth_place, birth_date_time, birth_date_time_precision, birth_sign, birth_star, weight, height, breast, waist, hip, hair_colour, eye_colour, skin_colour, blood_group, physical_status, ethnicity, gender, hobbies, habits, organisation_type, organisation_nature, company_registration_id, company_registration_date, number_of_employees, remarks, names, addresses, accounts, contact_numbers, countries_of_residence, documents, images, nationalities, relationships, revenues, vehicles, visas, disabilities, languages, marks, occupations, qualifications, stock_markets, events, identifiers, memberships, allergies, favourites, preferences',
 	)
 );
-
 
 $TCA['tx_party_person_name_titles'] = array (
 	'ctrl' => array (

@@ -1,3 +1,8 @@
+
+2012-07-26 Franz Holzinger <franz@ttproducts.de>
+	* fix bug: the label of tx_party_models_addresses must not be an array
+	* change the types in TCA to lower case letters.
+
 2012-04-22 Franz Holzinger <franz@ttproducts.de>
 	* add $TCA for wec_map only if that extension has been installed
 	* fix bug: do not reset empty usage variable

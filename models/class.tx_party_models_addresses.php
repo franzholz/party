@@ -49,9 +49,17 @@ class tx_party_models_addresses extends tx_party_models_object {
 		$orderBy = '';
 
 		// Load all addresses from the database and build the object
-		$query = $GLOBALS['TYPO3_DB']->SELECTquery('address,standard', $this->table, $this->table . '.party=' . $partyUid, $groupBy, $orderBy);
+		$query =
+			$GLOBALS['TYPO3_DB']->SELECTquery(
+				'address,standard',
+				$this->table,
+				$this->table . '.party=' . $partyUid,
+				$groupBy,
+				$orderBy
+			);
 		$result = $GLOBALS['TYPO3_DB']->sql_query($query);
 		$list = tx_div2007::makeInstance('tx_div2007_object');
+
 		if($result) {
 			while($row = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($result)) {
 				$item = t3lib_div::makeInstance('tx_party_models_address');
@@ -81,18 +89,24 @@ class tx_party_models_addresses extends tx_party_models_object {
 		}
 		$label = array();
 		$out = '';
+		$fieldname = 'short_title';
 		$usage = t3lib_BEfunc::getRecord(
-				'tx_party_usages',
-				$this->get('address_usage'),
-				'short_title'
-			);
+			'tx_party_usages',
+			$this->get('address_usage'),
+			$fieldname
+		);
 
 		$party = tx_party_models_party::getInstance($this->get('party'));
 
 		// Assemble the label
-		if ($usage) {
-			$label[] = $usage;
+		if (
+			isset($usage) &&
+			is_array($usage) &&
+			isset($usage[$fieldname])
+		) {
+			$label[] = $usage[$fieldname];
 		}
+
 		if (!$party->isEmpty()) {
 			$label[] = '(' . $party->getLabel() . ')';
 		}

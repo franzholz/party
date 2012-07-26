@@ -185,8 +185,8 @@ abstract class tx_party_models_party extends tx_party_models_object {
 
 		// Assemble the label
 		if (
-			is_object($names)
-			&& is_object($names->get('standard'))
+			is_object($names) &&
+			is_object($names->get('standard'))
 		) {
 			$label[] = $names->get('standard')->getLabel();
 		}

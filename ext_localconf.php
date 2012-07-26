@@ -1,5 +1,8 @@
 <?php
-if (!defined ('TYPO3_MODE')) 	die ('Access denied.');
+
+if (!defined ('TYPO3_MODE')) {
+	die ('Access denied.');
+}
 
 if (!defined ('PARTY_EXT')) {
 	define('PARTY_EXT', $_EXTKEY);
@@ -22,8 +25,10 @@ if (isset($tableArray) && is_array($tableArray)) {
 }
 
 
-
-if (isset($GLOBALS['TYPO3_CONF_VARS']['SYS']['livesearch']) && is_array($GLOBALS['TYPO3_CONF_VARS']['SYS']['livesearch'])) {
+if (
+	isset($GLOBALS['TYPO3_CONF_VARS']['SYS']['livesearch']) &&
+	is_array($GLOBALS['TYPO3_CONF_VARS']['SYS']['livesearch'])
+) {
 	// TYPO3 4.5 with livesearch
 	$GLOBALS['TYPO3_CONF_VARS']['SYS']['livesearch'] = array_merge(
 		$GLOBALS['TYPO3_CONF_VARS']['SYS']['livesearch'],
@@ -37,14 +42,17 @@ if (isset($GLOBALS['TYPO3_CONF_VARS']['SYS']['livesearch']) && is_array($GLOBALS
 }
 
 
-
 // support for new Caching Framework
 
-// Register cache 'tt_products_cache'
-if (!is_array($TYPO3_CONF_VARS['SYS']['caching']['cacheConfigurations']['tx_party_cache'])) {
-    $TYPO3_CONF_VARS['SYS']['caching']['cacheConfigurations']['tx_party_cache'] = array();
+// Register cache 'tx_party_cache'
+if (!is_array($GLOBALS['TYPO3_CONF_VARS']['SYS']['caching']['cacheConfigurations']['tx_party_cache'])) {
+    $GLOBALS['TYPO3_CONF_VARS']['SYS']['caching']['cacheConfigurations']['tx_party_cache'] = array();
 }
 
-
+	// Hook for extending the tt_products classes
+$GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['tt_products']['fieldClass']['address'][$_EXTKEY] =
+	array (
+		'addresses' => 'tx_party_models_addresses'
+	);
 
 ?>

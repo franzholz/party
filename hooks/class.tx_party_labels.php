@@ -43,9 +43,10 @@ class tx_party_labels {
 	 * @param	object		$pObj: Parent object from the calling function, not used.
 	 * @return	string		The result is also written into $params['title']
 	 */
-	public function getLabel (&$params, $pObj) {
-
-debugBegin();
+	public function getLabel (
+		&$params,
+		$pObj
+	) {
 		// Only get labels for tx_party* tables
 		if (!substr($params['table'], 0, 8) == 'tx_party') {
 			return '';
@@ -130,11 +131,6 @@ debugBegin();
 
 		// Get the label from the model
 		if ($className) {
-
-debug ($className, '$className');
-// 			$bLoaded = tx_div2007::load($className);
-// debug ($bLoaded, '$bLoaded');
-
 			$model = t3lib_div::makeInstance($className);
 			$model->load($params['row']['uid']);
 			$label = $model->getLabel();
@@ -144,8 +140,6 @@ debug ($className, '$className');
 		if ($label != '') {
 			$params['title'] = $label;
 		}
-
-debugEnd();
 
 		return $label;
 	}
