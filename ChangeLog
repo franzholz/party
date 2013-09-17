@@ -1,4 +1,8 @@
 
+2013-09-17 Franz Holzinger <franz@ttproducts.de>
+	* ready for TYPO3 4.7.4
+	* fix deprecation: replace t3lib_div::rm_endcomma($str) with rtrim($str, ',')
+
 2012-07-26 Franz Holzinger <franz@ttproducts.de>
 	* fix bug: the label of tx_party_models_addresses must not be an array
 	* change the types in TCA to lower case letters.

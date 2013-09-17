@@ -69,13 +69,14 @@ class tx_party_div {
 			}
 			$out .= $k . ',';
 			if ($theTypeField['palette']) {
-				$paletteFields = t3lib_div::rm_endcomma($TCA[$table]['palettes'][$theTypeField['palette']]['showitem']);
+				$str = $TCA[$table]['palettes'][$theTypeField['palette']]['showitem'];
+				$paletteFields = rtrim($str, ',');
 				$out .= $paletteFields . ',';
 			}
 		}
 
 		// Return result
-		$out = t3lib_div::rm_endcomma($out);
+		$out = rtrim($out, ',');
 		return $out;
 	}
 }
