@@ -1,8 +1,11 @@
 <?php
+
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+
 /***************************************************************
 *  Copyright notice
 *
-*  (c) 2012 David Bruehlmeier (typo3@bruehlmeier.com)
+*  (c) 2013 David Bruehlmeier (typo3@bruehlmeier.com)
 *  All rights reserved
 *
 *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -53,7 +56,7 @@ class tx_party_models_account extends tx_party_models_object {
 
 		// Get all relevant parts
 		$accountId = $this->get('account_id');
-		$org = t3lib_div::makeInstance('tx_party_models_organisation');
+		$org = GeneralUtility::makeInstance('tx_party_models_organisation');
 		$org->load($this->get('organisation'));
 
 		// Assemble the label

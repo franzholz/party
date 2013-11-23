@@ -2,7 +2,7 @@
 /***************************************************************
 *  Copyright notice
 *
-*  (c) 2012 David Bruehlmeier (typo3@bruehlmeier.com)
+*  (c) 2013 David Bruehlmeier (typo3@bruehlmeier.com)
 *  All rights reserved
 *
 *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -50,17 +50,27 @@ class tx_party_models_electronicaddressidentifierusage extends tx_party_models_o
 		}
 		$label = array();
 		$out = '';
-		$usage = t3lib_BEfunc::getRecord('tx_party_usages', $this->get('electronic_address_identifier_usage'), 'short_title');
+		$identifierUsage = $this->get('electronic_address_identifier_usage');
 
-		// Get all relevant parts
-		$party = tx_party_models_party::getInstance($this->get('party'));
+		if ($identifierUsage) {
+			$usage = tx_div2007_core::getRecord('tx_party_usages', $identifierUsage, 'short_title');
 
-		// Assemble the label
-		if ($usage) {
-			$label[] = $usage;
+			// Assemble the label
+			if (is_array($usage)) {
+				$label[] = $usage['short_title'];
+			}
 		}
-		if (!$party->isEmpty()) {
-			$label[] = '(' . $party->getLabel() . ')';
+		$party = $this->get('party');
+
+		if ($party) {
+			// Get all relevant parts
+			$partyObject = tx_party_models_party::getInstance($party);
+
+			if (is_object($partyObject)) {
+				if (!$partyObject->isEmpty()) {
+					$label[] = '(' . $partyObject->getLabel() . ')';
+				}
+			}
 		}
 
 		$out = implode(' ', $label);

@@ -2,7 +2,7 @@
 /***************************************************************
 *  Copyright notice
 *
-*  (c) 2012 David Brühlmeier (typo3@bruehlmeier.com)
+*  (c) 2013 David Brühlmeier (typo3@bruehlmeier.com)
 *  All rights reserved
 *
 *  This script is part of the Typo3 project. The Typo3 project is

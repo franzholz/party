@@ -1,8 +1,11 @@
 <?php
+
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+
 /***************************************************************
 *  Copyright notice
 *
-*  (c) 2012 David Bruehlmeier (typo3@bruehlmeier.com)
+*  (c) 2013 David Bruehlmeier (typo3@bruehlmeier.com)
 *  All rights reserved
 *
 *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -52,7 +55,7 @@ class tx_party_models_relationship extends tx_party_models_object {
 			$this->set('secondary_party', tx_party_models_party::getInstance($this->get('secondary_party')));
 		}
 		if ($this->get('relationship_type')) {
-			$relationshipType = tx_div2007::makeInstance('tx_party_models_relationshiptype');
+			$relationshipType = GeneralUtility::makeInstance('tx_party_models_relationshiptype');
 			$relationshipType->load($this->get('relationship_type'));
 			$this->set('relationship_type', $relationshipType);
 		}

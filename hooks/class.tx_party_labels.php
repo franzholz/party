@@ -1,8 +1,12 @@
 <?php
+
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+
+
 /***************************************************************
 *  Copyright notice
 *
-*  (c) 2012 David Bruehlmeier (typo3@bruehlmeier.com)
+*  (c) 2013 David Bruehlmeier (typo3@bruehlmeier.com)
 *  All rights reserved
 *
 *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -125,13 +129,13 @@ class tx_party_labels {
 				break;
 
 			default:
-				debug ('No model className found for table ' . $params['table'] . '. (hooks/tx_party_labels)');
+				debug ('No model className found for table ' . $params['table'] . '. (hooks/tx_party_labels)'); // keep this
 				break;
 		}
 
 		// Get the label from the model
 		if ($className) {
-			$model = t3lib_div::makeInstance($className);
+			$model = GeneralUtility::makeInstance($className);
 			$model->load($params['row']['uid']);
 			$label = $model->getLabel();
 		}

@@ -369,9 +369,9 @@ if(t3lib_extMgm::isLoaded('wec_map')) {
 			),
 		),
 	);
-	t3lib_extMgm::addTCAcolumns('tx_party_addresses', $mapTCA, 1);
+	tx_div2007_core::addTCAcolumns('tx_party_addresses', $mapTCA, 1);
 	$TCA['tx_party_addresses']['interface']['showRecordFieldList'] .= ',tx_wecmap_map';
-	t3lib_extMgm::addToAllTCAtypes('tx_party_addresses', 'tx_wecmap_map');
+	tx_div2007_core::addToAllTCAtypes('tx_party_addresses', 'tx_wecmap_map');
 }
 
 
@@ -941,8 +941,8 @@ $TCA['tx_party_parties'] = array (
 			'config' => Array (
 				'type' => 'select',
 				'items' => Array (
-					Array('LLL:EXT:party/locallang_db.xml:tx_party_parties.type.I.0', '0', t3lib_extMgm::extRelPath('party').'icons/selicon_tx_party_parties_type_0.gif'),
-					Array('LLL:EXT:party/locallang_db.xml:tx_party_parties.type.I.1', '1', t3lib_extMgm::extRelPath('party').'icons/selicon_tx_party_parties_type_1.gif'),
+					Array('LLL:EXT:party/locallang_db.xml:tx_party_parties.type.I.0', '0', PATH_BE_PARTY_REL . 'icons/selicon_tx_party_parties_type_0.gif'),
+					Array('LLL:EXT:party/locallang_db.xml:tx_party_parties.type.I.1', '1', PATH_BE_PARTY_REL . 'icons/selicon_tx_party_parties_type_1.gif'),
 				),
 				'size' => 1,
 				'maxitems' => 1,
@@ -4977,7 +4977,7 @@ $TCA['tx_party_electronic_address_identifier_usages'] = array (
 			'config' => Array (
 				'type' => 'select',
 				'items' => Array (
-					Array('',0),
+					Array('', 0),
 				),
 				'foreign_table' => 'tx_party_usages',
 				'foreign_table_where' => 'AND tx_party_usages.pid=###STORAGE_PID### ORDER BY tx_party_usages.title',

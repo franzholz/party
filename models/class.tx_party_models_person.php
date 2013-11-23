@@ -2,7 +2,7 @@
 /***************************************************************
 *  Copyright notice
 *
-*  (c) 2012 David Bruehlmeier (typo3@bruehlmeier.com)
+*  (c) 2013 David Bruehlmeier (typo3@bruehlmeier.com)
 *  All rights reserved
 *
 *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -47,7 +47,7 @@ class tx_party_models_person extends tx_party_models_party {
 		$uid = intval($uid);
 
 		// Check that the party is a person
-		$rec = t3lib_BEfunc::getRecord($this->table, $uid, 'type');
+		$rec = tx_div2007_core::getRecord($this->table, $uid, 'type');
 		if (!$rec['type'] == 0) {
 			return FALSE;
 		}

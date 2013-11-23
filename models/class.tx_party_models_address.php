@@ -2,7 +2,7 @@
 /***************************************************************
 *  Copyright notice
 *
-*  (c) 2012 David Bruehlmeier (typo3@bruehlmeier.com)
+*  (c) 2013 David Bruehlmeier (typo3@bruehlmeier.com)
 *  All rights reserved
 *
 *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -62,7 +62,7 @@ class tx_party_models_address extends tx_party_models_object {
 
 		// Replace the administrativeArea code through the (language-neutral) code
 		if ($administrativeArea) {
-			$rec = t3lib_BEfunc::getRecord('static_country_zones', $administrativeArea, 'zn_code');
+			$rec = tx_div2007_core::getRecord('static_country_zones', $administrativeArea, 'zn_code');
 			$administrativeArea = $rec['zn_code'];
 		}
 

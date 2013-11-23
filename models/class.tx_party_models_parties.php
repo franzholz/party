@@ -1,8 +1,11 @@
 <?php
+
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+
 /***************************************************************
 *  Copyright notice
 *
-*  (c) 2012 David Bruehlmeier (typo3@bruehlmeier.com)
+*  (c) 2013 David Bruehlmeier (typo3@bruehlmeier.com)
 *  All rights reserved
 *
 *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -93,7 +96,7 @@ class tx_party_models_parties extends tx_div2007_object {
 		$orderBy = '',
 		$limit = ''
 	) {
-		$where = $where . t3lib_BEfunc::deleteClause($from);
+		$where = $where . tx_div2007_core::deleteClause($from);
 		$query =
 			$GLOBALS['TYPO3_DB']->SELECTquery(
 				$select,
@@ -104,14 +107,14 @@ class tx_party_models_parties extends tx_div2007_object {
 				$limit
 			);
 		$result = $GLOBALS['TYPO3_DB']->sql_query($query);
-		$list = tx_div2007::makeInstance('tx_div2007_object');
+		$list = GeneralUtility::makeInstance('tx_div2007_object');
 		if($result) {
 			while($row = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($result)) {
 				if ($row['type'] == 0) {
-					$item = t3lib_div::makeInstance('tx_party_models_person');
+					$item = GeneralUtility::makeInstance('tx_party_models_person');
 				}
 				if ($row['type'] == 1) {
-					$item = t3lib_div::makeInstance('tx_party_models_organisation');
+					$item = GeneralUtility::makeInstance('tx_party_models_organisation');
 				}
 				$item->load($row['uid']);
 				$list->append($item);

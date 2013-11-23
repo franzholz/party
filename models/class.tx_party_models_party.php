@@ -1,8 +1,11 @@
 <?php
+
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+
 /***************************************************************
 *  Copyright notice
 *
-*  (c) 2012 David Bruehlmeier (typo3@bruehlmeier.com)
+*  (c) 2013 David Bruehlmeier (typo3@bruehlmeier.com)
 *  All rights reserved
 *
 *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -49,25 +52,28 @@ abstract class tx_party_models_party extends tx_party_models_object {
 	 */
 	public static function getInstance ($uid) {
 		$uid = intval($uid);
+		$party = null;
 
-		// Get the type of the party
-		$rec = t3lib_BEfunc::getRecord('tx_party_parties', $uid, 'type');
+		if ($uid) {
+			// Get the type of the party
+			$rec = tx_div2007_core::getRecord('tx_party_parties', $uid, 'type');
 
-		// Depending on the type, create the proper instance and load the data
-		switch (intval($rec['type'])) {
-			case 0:
-				$className = 'tx_party_models_person';
-				$party = t3lib_div::makeInstance($className);
-				$party->load($uid);
-			break;
-			case 1:
-				$className = 'tx_party_models_organisation';
-				$party = t3lib_div::makeInstance($className);
-				$party->load($uid);
-			break;
-			default:
-				$party = null;
-			break;
+			// Depending on the type, create the proper instance and load the data
+			switch (intval($rec['type'])) {
+				case 0:
+					$className = 'tx_party_models_person';
+					$party = GeneralUtility::makeInstance($className);
+					$party->load($uid);
+				break;
+				case 1:
+					$className = 'tx_party_models_organisation';
+					$party = GeneralUtility::makeInstance($className);
+					$party->load($uid);
+				break;
+				default:
+					// nothing
+				break;
+			}
 		}
 
 		return $party;
@@ -86,78 +92,80 @@ abstract class tx_party_models_party extends tx_party_models_object {
 		$groupBy = '';
 		$orderBy = '';
 
-		// Load the party from the database and build the object
-		$query = $GLOBALS['TYPO3_DB']->SELECTquery(
-			$fields,
-			$this->table,
-			$this->table . '.uid=' . $uid,
-			$groupBy,
-			$orderBy
-		);
-		$result = $GLOBALS['TYPO3_DB']->sql_query($query);
+		if ($uid) {
 
-		if($result) {
-			$row = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($result);
-			$this->overwriteArray($row);
-			$GLOBALS['TYPO3_DB']->sql_free_result($result);
-		}
+			// Load the party from the database and build the object
+			$query = $GLOBALS['TYPO3_DB']->SELECTquery(
+				$fields,
+				$this->table,
+				$this->table . '.uid=' . $uid,
+				$groupBy,
+				$orderBy
+			);
+			$result = $GLOBALS['TYPO3_DB']->sql_query($query);
 
-		// Names
-		if ($this->get('names')) {
+			if($result) {
+				$row = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($result);
+				$this->overwriteArray($row);
+				$GLOBALS['TYPO3_DB']->sql_free_result($result);
+			}
 
-			// Load the names
-			$names = t3lib_div::makeInstance('tx_party_models_names');
-			$names->loadByParty($uid);
-			$this->set('names', $names);
+			// Names
+			if ($this->get('names')) {
+				// Load the names
+				$names = GeneralUtility::makeInstance('tx_party_models_names');
+				$names->loadByParty($uid);
+				$this->set('names', $names);
 
-			// Include the values of the standard name as parameters of the party
-			$standardName = $names->get('standard');
-			if (is_object($standardName)) {
-				for ($standardName->rewind(); $standardName->valid(); $standardName->next()) {
-					if ($standardName->key() == 'remarks') {
-						continue;	// Don't overwrite the remarks of the party
+				// Include the values of the standard name as parameters of the party
+				$standardName = $names->get('standard');
+				if (is_object($standardName)) {
+					for ($standardName->rewind(); $standardName->valid(); $standardName->next()) {
+						if ($standardName->key() == 'remarks') {
+							continue;	// Don't overwrite the remarks of the party
+						}
+						$this->set($standardName->key(), $standardName->current());
 					}
-					$this->set($standardName->key(), $standardName->current());
 				}
 			}
-		}
 
-		// Addresses
-		if ($this->get('addresses')) {
+			// Addresses
+			if ($this->get('addresses')) {
 
-			// Load the addresses
-			$addresses = t3lib_div::makeInstance('tx_party_models_addresses');
-			$addresses->loadByParty($uid);
-			$this->set('addresses', $addresses);
+				// Load the addresses
+				$addresses = GeneralUtility::makeInstance('tx_party_models_addresses');
+				$addresses->loadByParty($uid);
+				$this->set('addresses', $addresses);
 
-			// Include the values of the standard address as parameters of the party
-			$standardAddress = $addresses->get('standard');
-			if (is_object($standardAddress)) {
-				for ($standardAddress->rewind(); $standardAddress->valid(); $standardAddress->next()) {
-					if ($standardAddress->key() == 'remarks') {
-						continue;	// Don't overwrite the remarks of the party
+				// Include the values of the standard address as parameters of the party
+				$standardAddress = $addresses->get('standard');
+				if (is_object($standardAddress)) {
+					for ($standardAddress->rewind(); $standardAddress->valid(); $standardAddress->next()) {
+						if ($standardAddress->key() == 'remarks') {
+							continue;	// Don't overwrite the remarks of the party
+						}
+						$this->set($standardAddress->key(), $standardAddress->current());
 					}
-					$this->set($standardAddress->key(), $standardAddress->current());
 				}
 			}
-		}
 
-		// ElectronicAddressIdentifiers
-		if ($this->get('electronic_address_identifiers')) {
+			// ElectronicAddressIdentifiers
+			if ($this->get('electronic_address_identifiers')) {
 
-			// Load the electronic address identifiers
-			$electronicAddressIdentifiers = t3lib_div::makeInstance('tx_party_models_electronicaddressidentifiers');
-			$electronicAddressIdentifiers->loadByParty($uid);
-			$this->set('electronic_address_identifiers', $electronicAddressIdentifiers);
+				// Load the electronic address identifiers
+				$electronicAddressIdentifiers = GeneralUtility::makeInstance('tx_party_models_electronicaddressidentifiers');
+				$electronicAddressIdentifiers->loadByParty($uid);
+				$this->set('electronic_address_identifiers', $electronicAddressIdentifiers);
 
-			// Include the values of the standard electronic address identifier as parameters of the party
-			$standardElectronicAddressIdentifier = $electronicAddressIdentifiers->get('standard');
-			if (is_object($standardElectronicAddressIdentifier)) {
-				for ($standardElectronicAddressIdentifier->rewind(); $standardElectronicAddressIdentifier->valid(); $standardElectronicAddressIdentifier->next()) {
-					if ($standardElectronicAddressIdentifier->key() == 'remarks') {
-						continue;	// Don't overwrite the remarks of the party
+				// Include the values of the standard electronic address identifier as parameters of the party
+				$standardElectronicAddressIdentifier = $electronicAddressIdentifiers->get('standard');
+				if (is_object($standardElectronicAddressIdentifier)) {
+					for ($standardElectronicAddressIdentifier->rewind(); $standardElectronicAddressIdentifier->valid(); $standardElectronicAddressIdentifier->next()) {
+						if ($standardElectronicAddressIdentifier->key() == 'remarks') {
+							continue;	// Don't overwrite the remarks of the party
+						}
+						$this->set($standardElectronicAddressIdentifier->key(), $standardElectronicAddressIdentifier->current());
 					}
-					$this->set($standardElectronicAddressIdentifier->key(), $standardElectronicAddressIdentifier->current());
 				}
 			}
 		}
@@ -194,7 +202,10 @@ abstract class tx_party_models_party extends tx_party_models_object {
 			$label[] = $locality;
 		}
 
-		if (!count($label)) {
+		if (
+			!count($label) &&
+			is_object($names)
+		) {
 			$firstName = $names->getFirstName();
 			if ($firstName != '') {
 				$label[] = $firstName;
@@ -209,6 +220,5 @@ abstract class tx_party_models_party extends tx_party_models_object {
 if (defined('TYPO3_MODE') && $TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/party/models/class.tx_party_models_party.php']) {
 	include_once($TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/party/models/class.tx_party_models_party.php']);
 }
-
 
 ?>

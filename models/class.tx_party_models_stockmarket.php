@@ -2,7 +2,7 @@
 /***************************************************************
 *  Copyright notice
 *
-*  (c) 2012 David Bruehlmeier (typo3@bruehlmeier.com)
+*  (c) 2013 David Bruehlmeier (typo3@bruehlmeier.com)
 *  All rights reserved
 *
 *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -54,7 +54,7 @@ class tx_party_models_stockmarket extends tx_party_models_object {
 
 		// Get all relevant parts
 		$listedCode = $this->get('listed_code');
-		$market = reset(t3lib_BEfunc::getRecord('static_markets', $this->get('market'), 'institution_description'));
+		$market = reset(tx_div2007_core::getRecord('static_markets', $this->get('market'), 'institution_description'));
 		$party = tx_party_models_party::getInstance($this->get('party'));
 
 		// Assemble the label

@@ -1,8 +1,11 @@
 <?php
+
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+
 /***************************************************************
 *  Copyright notice
 *
-*  (c) 2012 David Bruehlmeier (typo3@bruehlmeier.com)
+*  (c) 2013 David Bruehlmeier (typo3@bruehlmeier.com)
 *  All rights reserved
 *
 *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -45,7 +48,7 @@ class tx_party_models_vehicle extends tx_party_models_object {
 	public function load ($uid) {
 		parent::load($uid);
 		if ($this->get('make')) {
-			$make = tx_div2007::makeInstance('tx_party_models_vehiclemanufacturer');
+			$make = GeneralUtility::makeInstance('tx_party_models_vehiclemanufacturer');
 			$make->load($this->get('make'));
 			$this->set('make', $make);
 		}

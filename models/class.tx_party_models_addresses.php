@@ -1,8 +1,11 @@
 <?php
+
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+
 /***************************************************************
 *  Copyright notice
 *
-*  (c) 2012 David Bruehlmeier (typo3@bruehlmeier.com)
+*  (c) 2013 David Bruehlmeier (typo3@bruehlmeier.com)
 *  All rights reserved
 *
 *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -58,11 +61,11 @@ class tx_party_models_addresses extends tx_party_models_object {
 				$orderBy
 			);
 		$result = $GLOBALS['TYPO3_DB']->sql_query($query);
-		$list = tx_div2007::makeInstance('tx_div2007_object');
+		$list = GeneralUtility::makeInstance('tx_div2007_object');
 
 		if($result) {
 			while($row = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($result)) {
-				$item = t3lib_div::makeInstance('tx_party_models_address');
+				$item = GeneralUtility::makeInstance('tx_party_models_address');
 				$item->load($row['address']);
 				$item->set('standard',$row['standard']);	// Include the value from the mm-table
 				if ($item->get('standard') == 1) {
@@ -90,7 +93,7 @@ class tx_party_models_addresses extends tx_party_models_object {
 		$label = array();
 		$out = '';
 		$fieldname = 'short_title';
-		$usage = t3lib_BEfunc::getRecord(
+		$usage = tx_div2007_core::getRecord(
 			'tx_party_usages',
 			$this->get('address_usage'),
 			$fieldname

@@ -2,7 +2,7 @@
 /***************************************************************
 *  Copyright notice
 *
-*  (c) 2012 David Bruehlmeier (typo3@bruehlmeier.com)
+*  (c) 2013 David Bruehlmeier (typo3@bruehlmeier.com)
 *  All rights reserved
 *
 *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -47,7 +47,7 @@ abstract class tx_party_models_object extends tx_div2007_object {
 	 */
 	public function load ($uid) {
 		$uid = intval($uid);
-		$deleteClause = t3lib_BEfunc::deleteClause($this->table);
+		$deleteClause = tx_div2007_core::deleteClause($this->table);
 		$groupBy = '';
 		$orderBy = '';
 

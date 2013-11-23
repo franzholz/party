@@ -1,8 +1,11 @@
 <?php
+
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+
 /***************************************************************
 *  Copyright notice
 *
-*  (c) 2012 David Bruehlmeier (typo3@bruehlmeier.com)
+*  (c) 2013 David Bruehlmeier (typo3@bruehlmeier.com)
 *  All rights reserved
 *
 *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -74,16 +77,16 @@ class tx_party_models_names extends tx_div2007_object {
 				$orderBy
 			);
 		$result = $GLOBALS['TYPO3_DB']->sql_query($query);
-		$list = tx_div2007::makeInstance('tx_div2007_object');
+		$list = GeneralUtility::makeInstance('tx_div2007_object');
 		if($result) {
 			while($row = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($result)) {
 				$item = null;
 				if ($row['type'] == 0) {	// Person Name
-					$item = t3lib_div::makeInstance('tx_party_models_personname');
+					$item = GeneralUtility::makeInstance('tx_party_models_personname');
 					$item->load($row['uid']);
 				}
 				if ($row['type'] == 1) {	// Organisation Name
-					$item = t3lib_div::makeInstance('tx_party_models_organisationname');
+					$item = GeneralUtility::makeInstance('tx_party_models_organisationname');
 					$item->load($row['uid']);
 				}
 				if ($item->get('standard') == 1) {

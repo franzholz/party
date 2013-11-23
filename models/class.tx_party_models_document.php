@@ -1,8 +1,11 @@
 <?php
+
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+
 /***************************************************************
 *  Copyright notice
 *
-*  (c) 2012 David Bruehlmeier (typo3@bruehlmeier.com)
+*  (c) 2013 David Bruehlmeier (typo3@bruehlmeier.com)
 *  All rights reserved
 *
 *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -54,7 +57,7 @@ class tx_party_models_document extends tx_party_models_object {
 		$out = '';
 
 		// Get all relevant parts
-		$documentType = t3lib_div::makeInstance('tx_party_models_type');
+		$documentType = GeneralUtility::makeInstance('tx_party_models_type');
 		$documentType->load($this->get('document_type'));
 		$documentId = $this->get('document_id');
 		$party = tx_party_models_party::getInstance($this->get('party'));

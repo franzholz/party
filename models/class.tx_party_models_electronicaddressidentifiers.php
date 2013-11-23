@@ -1,8 +1,11 @@
 <?php
+
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+
 /***************************************************************
 *  Copyright notice
 *
-*  (c) 2012 David Bruehlmeier (typo3@bruehlmeier.com)
+*  (c) 2013 David Bruehlmeier (typo3@bruehlmeier.com)
 *  All rights reserved
 *
 *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -52,11 +55,11 @@ class tx_party_models_electronicaddressidentifiers extends tx_div2007_object {
 		// Load all addresses from the database and build the object
 		$query = $GLOBALS['TYPO3_DB']->SELECTquery('electronic_address_identifier,standard', $this->table, $this->table . '.party=' . $partyUid, $groupBy, $orderBy);
 		$result = $GLOBALS['TYPO3_DB']->sql_query($query);
-		$list = tx_div2007::makeInstance('tx_div2007_object');
+		$list = GeneralUtility::makeInstance('tx_div2007_object');
 
 		if($result) {
 			while($row = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($result)) {
-				$item = t3lib_div::makeInstance('tx_party_models_electronicaddressidentifier');
+				$item = GeneralUtility::makeInstance('tx_party_models_electronicaddressidentifier');
 				$item->load($row['electronic_address_identifier']);
 				$item->set('standard', $row['standard']);	// Include the value from the mm-table
 				if ($item->get('standard') == 1) {

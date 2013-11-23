@@ -8,11 +8,19 @@ if (!defined ('PARTY_EXT')) {
 	define('PARTY_EXT', $_EXTKEY);
 }
 
+if (!defined ('PATH_BE_PARTY')) {
+	define('PATH_BE_PARTY', t3lib_extMgm::extPath($_EXTKEY));
+}
+
+if (!defined ('PATH_BE_PARTY_REL')) {
+	define('PATH_BE_PARTY_REL', t3lib_extMgm::extRelPath($_EXTKEY));
+}
+
 
 // Activate Hooks in TCE-Main for the hotlist updates of static_info_tables
 $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_tcemain.php']['processDatamapClass'][] = 'EXT:party/hooks/class.tx_party_staticinfotables.php:tx_party_staticinfotables';
 
-require_once(t3lib_extMgm::extPath($_EXTKEY) . 'api/class.tx_party_api.php');
+require_once(PATH_BE_PARTY . 'api/class.tx_party_api.php');
 
 $tableArray = tx_party_api::getTableArray();
 

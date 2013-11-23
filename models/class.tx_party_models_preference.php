@@ -1,8 +1,11 @@
 <?php
+
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+
 /***************************************************************
 *  Copyright notice
 *
-*  (c) 2012 David Bruehlmeier (typo3@bruehlmeier.com)
+*  (c) 2013 David Bruehlmeier (typo3@bruehlmeier.com)
 *  All rights reserved
 *
 *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -53,7 +56,7 @@ class tx_party_models_preference extends tx_party_models_object {
 		$out = '';
 
 		// Get all relevant parts
-		$type = t3lib_div::makeInstance('tx_party_models_type');
+		$type = GeneralUtility::makeInstance('tx_party_models_type');
 		$type->load($this->get('type'));
 		$preference = $this->get('preference');
 		$party = tx_party_models_party::getInstance($this->get('party'));

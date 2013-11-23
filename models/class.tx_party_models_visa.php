@@ -2,7 +2,7 @@
 /***************************************************************
 *  Copyright notice
 *
-*  (c) 2012 David Bruehlmeier (typo3@bruehlmeier.com)
+*  (c) 2013 David Bruehlmeier (typo3@bruehlmeier.com)
 *  All rights reserved
 *
 *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -51,7 +51,7 @@ class tx_party_models_visa extends tx_party_models_object {
 
 		// Get all relevant parts
 		$country = reset(
-			t3lib_BEfunc::getRecord(
+			tx_div2007_core::getRecord(
 				'static_countries',
 				$this->get('country'),
 				'cn_short_en'

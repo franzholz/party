@@ -2,7 +2,7 @@
 /***************************************************************
 *  Copyright notice
 *
-*  (c) 2012 David Bruehlmeier (typo3@bruehlmeier.com)
+*  (c) 2013 David Bruehlmeier (typo3@bruehlmeier.com)
 *  All rights reserved
 *
 *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -53,7 +53,7 @@ class tx_party_models_contactnumberusage extends tx_party_models_object {
 		$out = '';
 
 		// Get all relevant parts
-		$usage = t3lib_BEfunc::getRecord('tx_party_usages', $this->get('contact_number_usage'), 'short_title');
+		$usage = tx_div2007_core::getRecord('tx_party_usages', $this->get('contact_number_usage'), 'short_title');
 		$party = tx_party_models_party::getInstance($this->get('party'));
 
 		// Assemble the label
