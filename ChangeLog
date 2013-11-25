@@ -1,3 +1,6 @@
+2013-11-25 Franz Holzinger <franz@ttproducts.de>
+	* replace deprecated tx_staticinfotables_div::selectItemsTCA by the suggest wizard
+
 2013-11-23 Franz Holzinger <franz@ttproducts.de>
 	* ready for TYPO3 6.2.0
 

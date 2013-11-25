@@ -165,7 +165,7 @@ CREATE TABLE tx_party_contact_numbers (
 	deleted tinyint(4) DEFAULT '0' NOT NULL,
 	parties tinytext NOT NULL,
 	media_type varchar(9) DEFAULT '' NOT NULL,
-	country_code int(11) DEFAULT '0' NOT NULL,
+	country int(11) DEFAULT '0' NOT NULL,
 	area_code varchar(90) DEFAULT '' NOT NULL,
 	local_number varchar(90) DEFAULT '' NOT NULL,
 	extension varchar(90) DEFAULT '' NOT NULL,

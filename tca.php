@@ -90,7 +90,7 @@ $TCA['tx_party_addresses'] = array (
 			'config' => Array (
 				'type' => 'select',
 				'items' => Array (
-					Array('',0),
+					Array('', 0),
 				),
 				'foreign_table' => 'tx_party_types',
 				'foreign_table_where' => "AND tx_party_types.allowed_for_field LIKE '%tx_party_ADDRESSES-PREMISE_TYPE%' AND tx_party_types.pid=###STORAGE_PID### ORDER BY tx_party_types.uid",
@@ -273,19 +273,18 @@ $TCA['tx_party_addresses'] = array (
 			'config' => Array (
 				'type' => 'select',
 				'items' => Array (
-					Array('',0),
+					Array('', 0),
 				),
-				'itemsProcFunc' => 'tx_staticinfotables_div->selectItemsTCA',
-				'itemsProcFunc_config' => array (
-					'table' => 'static_country_zones',
-					'indexField' => 'uid',
-					'prependHotlist' => 1,
-					'hotlistLimit' => 5,
-					'hotlistApp' => 'tx_party',
-				),
+				'foreign_table' => 'static_country_zones',
+				'foreign_table_where' => 'ORDER BY static_country_zones.zn_name_local',
 				'size' => 1,
 				'minitems' => 0,
 				'maxitems' => 1,
+				'wizards' => array(
+					'suggest' => array(
+						'type' => 'suggest',
+					)
+				),
 			)
 		),
 		'country' => Array (
@@ -293,20 +292,19 @@ $TCA['tx_party_addresses'] = array (
 			'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_addresses.country',
 			'config' => Array (
 				'type' => 'select',
+				'foreign_table' => 'static_countries',
+				'foreign_table_where' => 'ORDER BY static_countries.cn_official_name_en',
 				'items' => Array (
-					Array('',0),
-				),
-				'itemsProcFunc' => 'tx_staticinfotables_div->selectItemsTCA',
-				'itemsProcFunc_config' => array (
-					'table' => 'static_countries',
-					'indexField' => 'uid',
-					'prependHotlist' => 1,
-					'hotlistLimit' => 5,
-					'hotlistApp' => 'tx_party',
+					Array('', 0),
 				),
 				'size' => 1,
 				'minitems' => 0,
 				'maxitems' => 1,
+				'wizards' => array(
+					'suggest' => array(
+						'type' => 'suggest',
+					)
+				),
 			)
 		),
 		'images' => Array (
@@ -357,7 +355,6 @@ if(t3lib_extMgm::isLoaded('wec_map')) {
 		),
 	);
 
-	include_once(t3lib_extMgm::extPath('wec_map') . 'class.tx_wecmap_backend.php');
 	$mapTCA = array (
 		'tx_wecmap_map' => array (
 			'exclude' => 1,
@@ -369,9 +366,9 @@ if(t3lib_extMgm::isLoaded('wec_map')) {
 			),
 		),
 	);
-	tx_div2007_core::addTCAcolumns('tx_party_addresses', $mapTCA, 1);
+	t3lib_extMgm::addTCAcolumns('tx_party_addresses', $mapTCA, 1);
 	$TCA['tx_party_addresses']['interface']['showRecordFieldList'] .= ',tx_wecmap_map';
-	tx_div2007_core::addToAllTCAtypes('tx_party_addresses', 'tx_wecmap_map');
+	t3lib_extMgm::addToAllTCAtypes('tx_party_addresses', 'tx_wecmap_map');
 }
 
 
@@ -972,7 +969,7 @@ $TCA['tx_party_parties'] = array (
 			'config' => Array (
 				'type' => 'select',
 				'items' => Array (
-					Array('',0),
+					Array('', 0),
 				),
 				'foreign_table' => 'tx_party_religions',
 				'foreign_table_where' => 'AND tx_party_religions.pid=###STORAGE_PID### ORDER BY tx_party_religions.uid',
@@ -1019,7 +1016,7 @@ $TCA['tx_party_parties'] = array (
 			'config' => Array (
 				'type' => 'select',
 				'items' => Array (
-					Array('',0),
+					Array('', 0),
 				),
 				'foreign_table' => 'tx_party_birth_signs',
 				'foreign_table_where' => 'AND tx_party_birth_signs.pid=###SITEROOT### ORDER BY tx_party_birth_signs.uid',
@@ -1170,7 +1167,7 @@ $TCA['tx_party_parties'] = array (
 			'config' => Array (
 				'type' => 'select',
 				'items' => Array (
-					Array('',0),
+					Array('', 0),
 				),
 				'foreign_table' => 'tx_party_physical_status',
 				'foreign_table_where' => 'AND tx_party_physical_status.pid=###STORAGE_PID### ORDER BY tx_party_physical_status.uid',
@@ -1185,7 +1182,7 @@ $TCA['tx_party_parties'] = array (
 			'config' => Array (
 				'type' => 'select',
 				'items' => Array (
-					Array('',0),
+					Array('', 0),
 				),
 				'foreign_table' => 'tx_party_ethnicities',
 				'foreign_table_where' => 'AND tx_party_ethnicities.pid=###STORAGE_PID### ORDER BY tx_party_ethnicities.uid',
@@ -1243,7 +1240,7 @@ $TCA['tx_party_parties'] = array (
 			'config' => Array (
 				'type' => 'select',
 				'items' => Array (
-					Array('',0),
+					Array('', 0),
 				),
 				'foreign_table' => 'tx_party_types',
 				'foreign_table_where' => "AND tx_party_types.allowed_for_field LIKE '%tx_party_ORGANISATIONS-ORGANISATION_TYPE%' AND tx_party_types.pid=###STORAGE_PID### ORDER BY tx_party_types.uid",
@@ -1258,7 +1255,7 @@ $TCA['tx_party_parties'] = array (
 			'config' => Array (
 				'type' => 'select',
 				'items' => Array (
-					Array('',0),
+					Array('', 0),
 				),
 				'foreign_table' => 'tx_party_organisation_natures',
 				'foreign_table_where' => 'AND tx_party_organisation_natures.pid=###STORAGE_PID### ORDER BY tx_party_organisation_natures.uid',
@@ -2276,7 +2273,7 @@ $TCA['tx_party_accounts'] = array (
 			'config' => Array (
 				'type' => 'select',
 				'items' => Array (
-					Array('',0),
+					Array('', 0),
 				),
 				'foreign_table' => 'tx_party_parties',
 				'foreign_table_where' => 'AND tx_party_parties.pid=###STORAGE_PID### ORDER BY tx_party_parties.uid',
@@ -2303,7 +2300,7 @@ $TCA['tx_party_accounts'] = array (
 			'config' => Array (
 				'type' => 'select',
 				'items' => Array (
-					Array('',0),
+					Array('', 0),
 				),
 				'foreign_table' => 'tx_party_types',
 				'foreign_table_where' => "AND tx_party_types.allowed_for_field LIKE '%tx_party_ACCOUNTS-OWNERSHIP_TYPE%' AND tx_party_types.pid=###STORAGE_PID### ORDER BY tx_party_types.uid",
@@ -2338,7 +2335,7 @@ $TCA['tx_party_accounts'] = array (
 			'config' => Array (
 				'type' => 'select',
 				'items' => Array (
-					Array('',0),
+					Array('', 0),
 				),
 				'foreign_table' => 'tx_party_types',
 				'foreign_table_where' => "AND tx_party_types.allowed_for_field LIKE '%tx_party_ACCOUNTS-ACCOUNT_TYPE%' AND tx_party_types.pid=###STORAGE_PID### ORDER BY tx_party_types.uid",
@@ -2380,7 +2377,7 @@ $TCA['tx_party_contacts'] = array (
 			'config' => Array (
 				'type' => 'select',
 				'items' => Array (
-					Array('',0),
+					Array('', 0),
 				),
 				'foreign_table' => 'tx_party_parties',
 				'foreign_table_where' => 'AND tx_party_parties.pid=###STORAGE_PID### ORDER BY tx_party_parties.uid',
@@ -2395,7 +2392,7 @@ $TCA['tx_party_contacts'] = array (
 			'config' => Array (
 				'type' => 'select',
 				'items' => Array (
-					Array('',0),
+					Array('', 0),
 				),
 				'foreign_table' => 'tx_party_types',
 				'foreign_table_where' => "AND tx_party_types.allowed_for_field LIKE '%tx_party_contacts-type%' AND tx_party_types.pid=###STORAGE_PID### ORDER BY tx_party_types.uid",
@@ -2437,7 +2434,7 @@ $TCA['tx_party_contacts'] = array (
 $TCA['tx_party_contact_numbers'] = array (
 	'ctrl' => $TCA['tx_party_contact_numbers']['ctrl'],
 	'interface' => array (
-		'showRecordFieldList' => 'parties,media_type,country_code,area_code,local_number,extension,pin,contact_hours,remarks'
+		'showRecordFieldList' => 'parties,media_type,country,area_code,local_number,extension,pin,contact_hours,remarks'
 	),
 	'feInterface' => $TCA['tx_party_contact_numbers']['feInterface'],
 	'columns' => array (
@@ -2469,25 +2466,24 @@ $TCA['tx_party_contact_numbers'] = array (
 				'maxitems' => 1,
 			)
 		),
-		'country_code' => Array (
+		'country' => Array (
 			'exclude' => 1,
-			'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_contact_numbers.country_code',
+			'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_contact_numbers.country',
 			'config' => Array (
 				'type' => 'select',
+				'foreign_table' => 'static_countries',
+				'foreign_table_where' => 'ORDER BY static_countries.cn_official_name_en',
 				'items' => Array (
-					Array('',0),
-				),
-				'itemsProcFunc' => 'tx_staticinfotables_div->selectItemsTCA',
-				'itemsProcFunc_config' => array (
-					'table' => 'static_countries',
-					'indexField' => 'uid',
-					'prependHotlist' => 1,
-					'hotlistLimit' => 5,
-					'hotlistApp' => 'tx_party',
+					Array('', 0),
 				),
 				'size' => 1,
 				'minitems' => 0,
 				'maxitems' => 1,
+				'wizards' => array(
+					'suggest' => array(
+						'type' => 'suggest',
+					)
+				),
 			)
 		),
 		'area_code' => Array (
@@ -2550,7 +2546,7 @@ $TCA['tx_party_contact_numbers'] = array (
 		),
 	),
 	'types' => array (
-		'0' => array('showitem' => 'parties;;;;1-1-1, media_type, country_code, area_code, local_number;;1, contact_hours;;;;1-1-1, remarks;;;;1-1-1')
+		'0' => array('showitem' => 'parties;;;;1-1-1, media_type, country, area_code, local_number;;1, contact_hours;;;;1-1-1, remarks;;;;1-1-1')
 	),
 	'palettes' => array (
 		'1' => array('showitem' => 'extension, pin')
@@ -2572,7 +2568,7 @@ $TCA['tx_party_countries_of_residence'] = array (
 			'config' => Array (
 				'type' => 'select',
 				'items' => Array (
-					Array('',0),
+					Array('', 0),
 				),
 				'foreign_table' => 'tx_party_parties',
 				'foreign_table_where' => 'AND tx_party_parties.pid=###STORAGE_PID### ORDER BY tx_party_parties.uid',
@@ -2586,20 +2582,19 @@ $TCA['tx_party_countries_of_residence'] = array (
 			'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_countries_of_residence.country',
 			'config' => Array (
 				'type' => 'select',
+				'foreign_table' => 'static_countries',
+				'foreign_table_where' => 'ORDER BY static_countries.cn_official_name_en',
 				'items' => Array (
-					Array('',0),
-				),
-				'itemsProcFunc' => 'tx_staticinfotables_div->selectItemsTCA',
-				'itemsProcFunc_config' => array (
-					'table' => 'static_countries',
-					'indexField' => 'uid',
-					'prependHotlist' => 1,
-					'hotlistLimit' => 5,
-					'hotlistApp' => 'tx_party',
+					Array('', 0),
 				),
 				'size' => 1,
 				'minitems' => 0,
 				'maxitems' => 1,
+				'wizards' => array(
+					'suggest' => array(
+						'type' => 'suggest',
+					)
+				),
 			)
 		),
 		'residency_type' => Array (
@@ -2608,7 +2603,7 @@ $TCA['tx_party_countries_of_residence'] = array (
 			'config' => Array (
 				'type' => 'select',
 				'items' => Array (
-					Array('',0),
+					Array('', 0),
 				),
 				'foreign_table' => 'tx_party_types',
 				'foreign_table_where' => "AND tx_party_types.allowed_for_field LIKE '%tx_party_COUNTRIES_OF_RESIDENCE-RESIDENCY_TYPE%' AND tx_party_types.pid=###STORAGE_PID### ORDER BY tx_party_types.uid",
@@ -2650,7 +2645,7 @@ $TCA['tx_party_disabilities'] = array (
 			'config' => Array (
 				'type' => 'select',
 				'items' => Array (
-					Array('',0),
+					Array('', 0),
 				),
 				'foreign_table' => 'tx_party_parties',
 				'foreign_table_where' => 'AND tx_party_parties.pid=###STORAGE_PID### ORDER BY tx_party_parties.uid',
@@ -2712,7 +2707,7 @@ $TCA['tx_party_documents'] = array (
 			'config' => Array (
 				'type' => 'select',
 				'items' => Array (
-					Array('',0),
+					Array('', 0),
 				),
 				'foreign_table' => 'tx_party_parties',
 				'foreign_table_where' => 'AND tx_party_parties.pid=###STORAGE_PID### ORDER BY tx_party_parties.uid',
@@ -2727,7 +2722,7 @@ $TCA['tx_party_documents'] = array (
 			'config' => Array (
 				'type' => 'select',
 				'items' => Array (
-					Array('',0),
+					Array('', 0),
 				),
 				'foreign_table' => 'tx_party_types',
 				'foreign_table_where' => "AND tx_party_types.allowed_for_field LIKE '%tx_party_DOCUMENTS-DOCUMENT_TYPE%' AND tx_party_types.pid=###STORAGE_PID### ORDER BY tx_party_types.uid",
@@ -2854,7 +2849,7 @@ $TCA['tx_party_electronic_address_identifiers'] = array (
 			'config' => Array (
 				'type' => 'select',
 				'items' => Array (
-					Array('',0),
+					Array('', 0),
 				),
 				'foreign_table' => 'tx_party_types',
 				'foreign_table_where' => "AND tx_party_types.allowed_for_field LIKE '%tx_party_electronic_address_identifiers-type%' AND tx_party_types.pid=###STORAGE_PID### ORDER BY tx_party_types.uid",
@@ -3003,7 +2998,7 @@ $TCA['tx_party_languages'] = array (
 			'config' => Array (
 				'type' => 'select',
 				'items' => Array (
-					Array('',0),
+					Array('', 0),
 				),
 				'foreign_table' => 'tx_party_parties',
 				'foreign_table_where' => 'AND tx_party_parties.pid=###STORAGE_PID### ORDER BY tx_party_parties.uid',
@@ -3017,20 +3012,18 @@ $TCA['tx_party_languages'] = array (
 			'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_languages.language',
 			'config' => Array (
 				'type' => 'select',
+				'foreign_table' => 'static_languages',
 				'items' => Array (
-					Array('',0),
-				),
-				'itemsProcFunc' => 'tx_staticinfotables_div->selectItemsTCA',
-				'itemsProcFunc_config' => array (
-					'table' => 'static_languages',
-					'indexField' => 'uid',
-					'prependHotlist' => 1,
-					'hotlistLimit' => 5,
-					'hotlistApp' => 'tx_party',
+					Array('', 0),
 				),
 				'size' => 1,
 				'minitems' => 0,
 				'maxitems' => 1,
+				'wizards' => array(
+					'suggest' => array(
+						'type' => 'suggest',
+					)
+				),
 			)
 		),
 		'type' => Array (
@@ -3039,7 +3032,7 @@ $TCA['tx_party_languages'] = array (
 			'config' => Array (
 				'type' => 'select',
 				'items' => Array (
-					Array('',0),
+					Array('', 0),
 				),
 				'foreign_table' => 'tx_party_types',
 				'foreign_table_where' => "AND tx_party_types.allowed_for_field LIKE '%tx_party_languages-type%' AND tx_party_types.pid=###STORAGE_PID### ORDER BY tx_party_types.uid",
@@ -3054,7 +3047,7 @@ $TCA['tx_party_languages'] = array (
 			'config' => Array (
 				'type' => 'select',
 				'items' => Array (
-					Array('',0),
+					Array('', 0),
 					Array('LLL:EXT:party/locallang_db.xml:tx_party_languages.read_skills.I.0', 'YES'),
 					Array('LLL:EXT:party/locallang_db.xml:tx_party_languages.read_skills.I.1', 'NO'),
 					Array('LLL:EXT:party/locallang_db.xml:tx_party_languages.read_skills.I.2', 'POOR'),
@@ -3069,7 +3062,7 @@ $TCA['tx_party_languages'] = array (
 			'config' => Array (
 				'type' => 'select',
 				'items' => Array (
-					Array('',0),
+					Array('', 0),
 					Array('LLL:EXT:party/locallang_db.xml:tx_party_languages.write_skills.I.0', 'YES'),
 					Array('LLL:EXT:party/locallang_db.xml:tx_party_languages.write_skills.I.1', 'NO'),
 					Array('LLL:EXT:party/locallang_db.xml:tx_party_languages.write_skills.I.2', 'POOR'),
@@ -3084,7 +3077,7 @@ $TCA['tx_party_languages'] = array (
 			'config' => Array (
 				'type' => 'select',
 				'items' => Array (
-					Array('',0),
+					Array('', 0),
 					Array('LLL:EXT:party/locallang_db.xml:tx_party_languages.listen_skills.I.0', 'YES'),
 					Array('LLL:EXT:party/locallang_db.xml:tx_party_languages.listen_skills.I.1', 'NO'),
 					Array('LLL:EXT:party/locallang_db.xml:tx_party_languages.listen_skills.I.2', 'POOR'),
@@ -3099,7 +3092,7 @@ $TCA['tx_party_languages'] = array (
 			'config' => Array (
 				'type' => 'select',
 				'items' => Array (
-					Array('',0),
+					Array('', 0),
 					Array('LLL:EXT:party/locallang_db.xml:tx_party_languages.speak_skills.I.0', 'YES'),
 					Array('LLL:EXT:party/locallang_db.xml:tx_party_languages.speak_skills.I.1', 'NO'),
 					Array('LLL:EXT:party/locallang_db.xml:tx_party_languages.speak_skills.I.2', 'POOR'),
@@ -3148,7 +3141,7 @@ $TCA['tx_party_marks'] = array (
 			'config' => Array (
 				'type' => 'select',
 				'items' => Array (
-					Array('',0),
+					Array('', 0),
 				),
 				'foreign_table' => 'tx_party_parties',
 				'foreign_table_where' => 'AND tx_party_parties.pid=###STORAGE_PID### ORDER BY tx_party_parties.uid',
@@ -3220,7 +3213,7 @@ $TCA['tx_party_nationalities'] = array (
 			'config' => Array (
 				'type' => 'select',
 				'items' => Array (
-					Array('',0),
+					Array('', 0),
 				),
 				'foreign_table' => 'tx_party_parties',
 				'foreign_table_where' => 'AND tx_party_parties.pid=###STORAGE_PID### ORDER BY tx_party_parties.uid',
@@ -3234,20 +3227,19 @@ $TCA['tx_party_nationalities'] = array (
 			'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_nationalities.country',
 			'config' => Array (
 				'type' => 'select',
+				'foreign_table' => 'static_countries',
+				'foreign_table_where' => 'ORDER BY static_countries.cn_official_name_en',
 				'items' => Array (
-					Array('',0),
-				),
-				'itemsProcFunc' => 'tx_staticinfotables_div->selectItemsTCA',
-				'itemsProcFunc_config' => array (
-					'table' => 'static_countries',
-					'indexField' => 'uid',
-					'prependHotlist' => 1,
-					'hotlistLimit' => 5,
-					'hotlistApp' => 'tx_party',
+					Array('', 0),
 				),
 				'size' => 1,
 				'minitems' => 0,
 				'maxitems' => 1,
+				'wizards' => array(
+					'suggest' => array(
+						'type' => 'suggest',
+					)
+				),
 			)
 		),
 		'nationality_type' => Array (
@@ -3256,7 +3248,7 @@ $TCA['tx_party_nationalities'] = array (
 			'config' => Array (
 				'type' => 'select',
 				'items' => Array (
-					Array('',0),
+					Array('', 0),
 				),
 				'foreign_table' => 'tx_party_types',
 				'foreign_table_where' => "AND tx_party_types.allowed_for_field LIKE '%tx_party_NATIONALITIES-NATIONALITY_TYPE%' AND tx_party_types.pid=###STORAGE_PID### ORDER BY tx_party_types.uid",
@@ -3298,7 +3290,7 @@ $TCA['tx_party_occupations'] = array (
 			'config' => Array (
 				'type' => 'select',
 				'items' => Array (
-					Array('',0),
+					Array('', 0),
 				),
 				'foreign_table' => 'tx_party_parties',
 				'foreign_table_where' => 'AND tx_party_parties.pid=###STORAGE_PID### ORDER BY tx_party_parties.uid',
@@ -3313,7 +3305,7 @@ $TCA['tx_party_occupations'] = array (
 			'config' => Array (
 				'type' => 'select',
 				'items' => Array (
-					Array('',0),
+					Array('', 0),
 				),
 				'foreign_table' => 'tx_party_occupation_roles',
 				'foreign_table_where' => 'AND tx_party_occupation_roles.pid=###STORAGE_PID### ORDER BY tx_party_occupation_roles.uid',
@@ -3328,7 +3320,7 @@ $TCA['tx_party_occupations'] = array (
 			'config' => Array (
 				'type' => 'select',
 				'items' => Array (
-					Array('',0),
+					Array('', 0),
 				),
 				'foreign_table' => 'tx_party_occupation_ranks',
 				'foreign_table_where' => 'AND tx_party_occupation_ranks.pid=###STORAGE_PID### ORDER BY tx_party_occupation_ranks.uid',
@@ -3343,7 +3335,7 @@ $TCA['tx_party_occupations'] = array (
 			'config' => Array (
 				'type' => 'select',
 				'items' => Array (
-					Array('',0),
+					Array('', 0),
 				),
 				'foreign_table' => 'tx_party_types',
 				'foreign_table_where' => "AND tx_party_types.allowed_for_field LIKE '%tx_party_OCCUPATIONS-EMPLOYMENT_TYPE%' AND tx_party_types.pid=###STORAGE_PID### ORDER BY tx_party_types.uid",
@@ -3448,7 +3440,7 @@ $TCA['tx_party_names'] = array (
 			'config' => Array (
 				'type' => 'select',
 				'items' => Array (
-					Array('',0),
+					Array('', 0),
 				),
 				'foreign_table' => 'tx_party_person_name_titles',
 				'foreign_table_where' => 'AND tx_party_person_name_titles.pid=###STORAGE_PID### ORDER BY tx_party_person_name_titles.uid',
@@ -3617,7 +3609,7 @@ $TCA['tx_party_qualifications'] = array (
 			'config' => Array (
 				'type' => 'select',
 				'items' => Array (
-					Array('',0),
+					Array('', 0),
 				),
 				'foreign_table' => 'tx_party_parties',
 				'foreign_table_where' => 'AND tx_party_parties.pid=###STORAGE_PID### ORDER BY tx_party_parties.uid',
@@ -3874,7 +3866,7 @@ $TCA['tx_party_revenues'] = array (
 			'config' => Array (
 				'type' => 'select',
 				'items' => Array (
-					Array('',0),
+					Array('', 0),
 				),
 				'foreign_table' => 'tx_party_parties',
 				'foreign_table_where' => 'AND tx_party_parties.pid=###STORAGE_PID### ORDER BY tx_party_parties.uid',
@@ -3888,20 +3880,18 @@ $TCA['tx_party_revenues'] = array (
 			'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_revenues.currency',
 			'config' => Array (
 				'type' => 'select',
+				'foreign_table' => 'static_currencies',
 				'items' => Array (
-					Array('',0),
-				),
-				'itemsProcFunc' => 'tx_staticinfotables_div->selectItemsTCA',
-				'itemsProcFunc_config' => array (
-					'table' => 'static_currencies',
-					'indexField' => 'uid',
-					'prependHotlist' => 1,
-					'hotlistLimit' => 5,
-					'hotlistApp' => 'tx_party',
+					Array('', 0),
 				),
 				'size' => 1,
 				'minitems' => 0,
 				'maxitems' => 1,
+				'wizards' => array(
+					'suggest' => array(
+						'type' => 'suggest',
+					)
+				),
 			)
 		),
 		'amount' => Array (
@@ -3937,7 +3927,7 @@ $TCA['tx_party_revenues'] = array (
 			'config' => Array (
 				'type' => 'select',
 				'items' => Array (
-					Array('',0),
+					Array('', 0),
 				),
 				'foreign_table' => 'tx_party_types',
 				'foreign_table_where' => "AND tx_party_types.allowed_for_field LIKE '%tx_party_revenues-type%' aND tx_party_types.pid=###STORAGE_PID### ORDER BY tx_party_types.uid",
@@ -4013,7 +4003,7 @@ $TCA['tx_party_stock_markets'] = array (
 			'config' => Array (
 				'type' => 'select',
 				'items' => Array (
-					Array('',0),
+					Array('', 0),
 				),
 				'foreign_table' => 'tx_party_parties',
 				'foreign_table_where' => 'AND tx_party_parties.pid=###STORAGE_PID### ORDER BY tx_party_parties.uid',
@@ -4029,7 +4019,7 @@ $TCA['tx_party_stock_markets'] = array (
 			'config' => Array (
 				'type' => 'select',
 				'items' => Array (
-					Array('',0),
+					Array('', 0),
 				),
 				'foreign_table' => 'static_markets',
 				'foreign_table_where' => 'AND static_markets.pid=###SITEROOT### ORDER BY static_markets.uid',
@@ -4081,7 +4071,7 @@ $TCA['tx_party_vehicles'] = array (
 			'config' => Array (
 				'type' => 'select',
 				'items' => Array (
-					Array('',0),
+					Array('', 0),
 				),
 				'foreign_table' => 'tx_party_parties',
 				'foreign_table_where' => 'AND tx_party_parties.pid=###STORAGE_PID### ORDER BY tx_party_parties.uid',
@@ -4096,7 +4086,7 @@ $TCA['tx_party_vehicles'] = array (
 			'config' => Array (
 				'type' => 'select',
 				'items' => Array (
-					Array('',0),
+					Array('', 0),
 				),
 				'foreign_table' => 'tx_party_vehicle_manufacturers',
 				'foreign_table_where' => 'AND tx_party_vehicle_manufacturers.pid=###STORAGE_PID### ORDER BY tx_party_vehicle_manufacturers.uid',
@@ -4111,7 +4101,7 @@ $TCA['tx_party_vehicles'] = array (
 			'config' => Array (
 				'type' => 'select',
 				'items' => Array (
-					Array('',0),
+					Array('', 0),
 				),
 				'foreign_table' => 'tx_party_types',
 				'foreign_table_where' => "AND tx_party_types.allowed_for_field LIKE '%tx_party_vehicles-type%' AND tx_party_types.pid=###STORAGE_PID### ORDER BY tx_party_types.uid",
@@ -4213,7 +4203,7 @@ $TCA['tx_party_visas'] = array (
 			'config' => Array (
 				'type' => 'select',
 				'items' => Array (
-					Array('',0),
+					Array('', 0),
 				),
 				'foreign_table' => 'tx_party_parties',
 				'foreign_table_where' => 'AND tx_party_parties.pid=###STORAGE_PID### ORDER BY tx_party_parties.uid',
@@ -4227,20 +4217,19 @@ $TCA['tx_party_visas'] = array (
 			'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_visas.country',
 			'config' => Array (
 				'type' => 'select',
+				'foreign_table' => 'static_countries',
+				'foreign_table_where' => 'ORDER BY static_countries.cn_official_name_en',
 				'items' => Array (
-					Array('',0),
-				),
-				'itemsProcFunc' => 'tx_staticinfotables_div->selectItemsTCA',
-				'itemsProcFunc_config' => array (
-					'table' => 'static_countries',
-					'indexField' => 'uid',
-					'prependHotlist' => 1,
-					'hotlistLimit' => 5,
-					'hotlistApp' => 'tx_party',
+					Array('', 0),
 				),
 				'size' => 1,
 				'minitems' => 0,
 				'maxitems' => 1,
+				'wizards' => array(
+					'suggest' => array(
+						'type' => 'suggest',
+					)
+				),
 			)
 		),
 		'number' => Array (
@@ -4359,7 +4348,7 @@ $TCA['tx_party_events'] = array (
 			'config' => Array (
 				'type' => 'select',
 				'items' => Array (
-					Array('',0),
+					Array('', 0),
 				),
 				'foreign_table' => 'tx_party_parties',
 				'foreign_table_where' => 'AND tx_party_parties.pid=###STORAGE_PID### ORDER BY tx_party_parties.uid',
@@ -4374,7 +4363,7 @@ $TCA['tx_party_events'] = array (
 			'config' => Array (
 				'type' => 'select',
 				'items' => Array (
-					Array('',0),
+					Array('', 0),
 				),
 				'foreign_table' => 'tx_party_types',
 				'foreign_table_where' => "AND tx_party_types.allowed_for_field LIKE '%tx_party_events-type%' AND tx_party_types.pid=###STORAGE_PID### ORDER BY tx_party_types.uid",
@@ -4452,7 +4441,7 @@ $TCA['tx_party_identifiers'] = array (
 			'config' => Array (
 				'type' => 'select',
 				'items' => Array (
-					Array('',0),
+					Array('', 0),
 				),
 				'foreign_table' => 'tx_party_parties',
 				'foreign_table_where' => 'AND tx_party_parties.pid=###STORAGE_PID### ORDER BY tx_party_parties.uid',
@@ -4467,7 +4456,7 @@ $TCA['tx_party_identifiers'] = array (
 			'config' => Array (
 				'type' => 'select',
 				'items' => Array (
-					Array('',0),
+					Array('', 0),
 				),
 				'foreign_table' => 'tx_party_types',
 				'foreign_table_where' => "AND tx_party_types.allowed_for_field LIKE '%tx_party_identifiers-type%' AND tx_party_types.pid=###STORAGE_PID### ORDER BY tx_party_types.uid",
@@ -4543,7 +4532,7 @@ $TCA['tx_party_memberships'] = array (
 			'config' => Array (
 				'type' => 'select',
 				'items' => Array (
-					Array('',0),
+					Array('', 0),
 				),
 				'foreign_table' => 'tx_party_parties',
 				'foreign_table_where' => 'AND tx_party_parties.pid=###STORAGE_PID### ORDER BY tx_party_parties.uid',
@@ -4558,7 +4547,7 @@ $TCA['tx_party_memberships'] = array (
 			'config' => Array (
 				'type' => 'select',
 				'items' => Array (
-					Array('',0),
+					Array('', 0),
 				),
 				'foreign_table' => 'tx_party_types',
 				'foreign_table_where' => "AND tx_party_types.allowed_for_field LIKE '%tx_party_memberships-type%' AND tx_party_types.pid=###STORAGE_PID### ORDER BY tx_party_types.uid",
@@ -4684,7 +4673,7 @@ $TCA['tx_party_favourites'] = array (
 			'config' => Array (
 				'type' => 'select',
 				'items' => Array (
-					Array('',0),
+					Array('', 0),
 				),
 				'foreign_table' => 'tx_party_parties',
 				'foreign_table_where' => 'AND tx_party_parties.pid=###STORAGE_PID### ORDER BY tx_party_parties.uid',
@@ -4699,7 +4688,7 @@ $TCA['tx_party_favourites'] = array (
 			'config' => Array (
 				'type' => 'select',
 				'items' => Array (
-					Array('',0),
+					Array('', 0),
 				),
 				'foreign_table' => 'tx_party_types',
 				'foreign_table_where' => "AND tx_party_types.allowed_for_field LIKE '%tx_party_favourites-type%' AND tx_party_types.pid=###STORAGE_PID### ORDER BY tx_party_types.uid",
@@ -4751,7 +4740,7 @@ $TCA['tx_party_preferences'] = array (
 			'config' => Array (
 				'type' => 'select',
 				'items' => Array (
-					Array('',0),
+					Array('', 0),
 				),
 				'foreign_table' => 'tx_party_parties',
 				'foreign_table_where' => 'AND tx_party_parties.pid=###STORAGE_PID### ORDER BY tx_party_parties.uid',
@@ -4766,7 +4755,7 @@ $TCA['tx_party_preferences'] = array (
 			'config' => Array (
 				'type' => 'select',
 				'items' => Array (
-					Array('',0),
+					Array('', 0),
 				),
 				'foreign_table' => 'tx_party_types',
 				'foreign_table_where' => "AND tx_party_types.allowed_for_field LIKE '%tx_party_preferences-type%' AND tx_party_types.pid=###STORAGE_PID### ORDER BY tx_party_types.uid",
@@ -4849,7 +4838,7 @@ $TCA['tx_party_address_usages'] = array (
 			'config' => Array (
 				'type' => 'select',
 				'items' => Array (
-					Array('',0),
+					Array('', 0),
 				),
 				'foreign_table' => 'tx_party_usages',
 				'foreign_table_where' => 'AND tx_party_usages.pid=###STORAGE_PID### ORDER BY tx_party_usages.title',
@@ -4913,7 +4902,7 @@ $TCA['tx_party_contact_number_usages'] = array (
 			'config' => Array (
 				'type' => 'select',
 				'items' => Array (
-					Array('',0),
+					Array('', 0),
 				),
 				'foreign_table' => 'tx_party_usages',
 				'foreign_table_where' => 'AND tx_party_usages.pid=###STORAGE_PID### ORDER BY tx_party_usages.title',
@@ -5065,7 +5054,7 @@ $TCA['tx_party_relationships'] = array (
 			'config' => Array (
 				'type' => 'select',
 				'items' => Array (
-					Array('',0),
+					Array('', 0),
 				),
 				'foreign_table' => 'tx_party_parties',
 				'foreign_table_where' => 'AND tx_party_parties.pid=###STORAGE_PID### ORDER BY tx_party_parties.uid',
@@ -5080,7 +5069,7 @@ $TCA['tx_party_relationships'] = array (
 			'config' => Array (
 				'type' => 'select',
 				'items' => Array (
-					Array('',0),
+					Array('', 0),
 				),
 				'foreign_table' => 'tx_party_parties',
 				'foreign_table_where' => 'AND tx_party_parties.pid=###STORAGE_PID### ORDER BY tx_party_parties.uid',

@@ -373,7 +373,7 @@ $TCA['tx_party_contact_numbers'] = array (
 		'iconfile'          => PATH_BE_PARTY_REL . 'icons/icon_tx_party_contact_numbers.gif',
 	),
 	'feInterface' => array (
-		'fe_admin_fieldList' => 'media_type, country_code, area_code, local_number, extension, pin, contact_hours, remarks',
+		'fe_admin_fieldList' => 'media_type, country, area_code, local_number, extension, pin, contact_hours, remarks',
 	)
 );
 

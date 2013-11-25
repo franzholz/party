@@ -135,7 +135,7 @@
 			<label index="tx_party_contact_numbers.media_type.I.2">Fax</label>
 			<label index="tx_party_contact_numbers.media_type.I.3">Modem</label>
 			<label index="tx_party_contact_numbers.media_type">Media type</label>
-			<label index="tx_party_contact_numbers.country_code">Country code</label>
+			<label index="tx_party_contact_numbers.country">Country</label>
 			<label index="tx_party_contact_numbers.area_code">Area code</label>
 			<label index="tx_party_contact_numbers.local_number">Local number</label>
 			<label index="tx_party_contact_numbers.extension">Extension</label>
