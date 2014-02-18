@@ -1,0 +1,41 @@
+2014-02-18 Franz Holzinger <franz@ttproducts.de>
+	* compatibility break for TYPO3 6.2 and simplemvc for TYPO3: renaming of multiple table field names
+
+2013-11-25 Franz Holzinger <franz@ttproducts.de>
+	* replace deprecated tx_staticinfotables_div::selectItemsTCA by the suggest wizard
+
+2013-11-23 Franz Holzinger <franz@ttproducts.de>
+	* ready for TYPO3 6.2.0
+
+2013-09-17 Franz Holzinger <franz@ttproducts.de>
+	* ready for TYPO3 4.7.4
+	* fix deprecation: replace t3lib_div::rm_endcomma($str) with rtrim($str, ',')
+
+2012-07-26 Franz Holzinger <franz@ttproducts.de>
+	* fix bug: the label of tx_party_models_addresses must not be an array
+	* change the types in TCA to lower case letters.
+
+2012-04-22 Franz Holzinger <franz@ttproducts.de>
+	* add $TCA for wec_map only if that extension has been installed
+	* fix bug: do not reset empty usage variable
+	* use the autoloader for party and div2007
+
+2011-06-18 Franz Holzinger <franz@ttproducts.de>
+	* move the tests into the extension party_tests
+
+2011-04-23 Franz Holzinger <franz@ttproducts.de>
+	* use the first organization name as the party label if no default organization has been set
+	* add API to fetch a list of all table names
+	* add a manual
+
+2011-04-03 Franz Holzinger <franz@ttproducts.de>
+	* use constant PATH_BE_div2007 from div2007 0.5.0
+
+2011-02-14 Franz Holzinger <franz@ttproducts.de>
+	* PHP code restructuring
+
+2011-02-10 Franz Holzinger <franz@ttproducts.de>
+	* add dependancy on extension div2007 instead of lib and div
+
+2010-09-30 Franz Holzinger <franz@ttproducts.de>
+	* initial release

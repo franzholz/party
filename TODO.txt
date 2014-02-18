@@ -1,0 +1,74 @@
+Description
+-----------
+Management of party-related data, such as persons, organisations, names, addresses, etc. Based on the OASIS-Standard xPIL (Extensible Party Information Language).
+
+Todo
+----
+Prio 1
+* add a hook for TCE: When the tx_party_address_usages for tx_oarty are stored, then the field parties in tx_party_addresses must be filled in and vice versa.
+* Create patch for static_info_tables (div->selectItemsTCA)
+* Create label_user_func for all tables which do not have a clear label field
+* Show only the possible 'name types' and 'image types' according to the party/address type
+* ISO-Standard for West/East/North/South? http://en.wikipedia.org/wiki/ISO_6709 uses positive/negative values
+* Add new 'suggest' type for input fields (see below)
+* When merging 'standard'-records into tx_party_models_party, are uid,pid... overwritten?
+* Is tx_party_usages not language-dependant?
+
+Prio 2
+* Update stock_markets to use hotlist once it's included in static_info_tables
+* All date and date/time fields: Extend beyond UNIX time range (e.g. tx_party_persons: birth_date_time)
+* 'Optimize' the use of the generated xml-labels (e.g. define a label for "party" only once)
+* Events: Extend type-definition (is is a single point in time or a time span?, is it allowed for persons and/or organisations?), perhaps as a general concept for types?
+* Check all SQL definitions and remove unnecessary blob fields
+
+
+
+New 'suggest' type for input fields
+-----------------------------------
+* See: http://lists.netfielders.de/pipermail/typo3-project-irre/2007-March/000098.html
+* General: Concept which allows it to either use an existing record or define a free text (e.g. issuingAuthority of an Account)
+
+I found a page describing a way of using suggest using prototype:
+http://www.ajaxon.com/michael/?p=8
+http://www.ajaxon.com/michael/?p=10
+
+script.aculo.us has "autocomplete" fields, maybe this could be better?
+http://wiki.script.aculo.us/scriptaculous/show/Demos
+http://demo.script.aculo.us/ajax/autocompleter
+
+The prototype framework is described here:
+http://www.sergiopereira.com/articles/prototype.js.html
+
+
+
+Wishlist
+--------
+* Link to Google Maps for an address (either directly with lat/long or trying to resolve the address)
+* "Normalize/verify" addresses using the Google API Geocoder (Feedback from Christoph Koehler)
+
+
+
+To discuss
+----------
+* Where should the dependant records be stored? Same page, storage page, ...?
+* Which tables shall be "manually sortable"?
+* tx_party_contact_numbers: Should contact_hours be an RTE field?
+* Should Eye Colour and Skin Colour also be select fields?
+* Label of addresses: Make dependant of the country-specific address format?
+* Is it ok to use t3lib_BEfunc::getRecord() in the model?
+* label_userFunc is nice, but there's no way records can be sorted by this 'virtual' label. Store it redundantly?
+
+Suggestions for IRRE
+* newRecordLinkAddTitle option: Optionally, this can be an LLL reference which will be used instead of the label of the table
+
+
+Design decisions
+----------------
+* Inherited classes (e.g. person/organisation from party) are built as one database table, with the name of the base class.
+** Advantages
+*** Simple data access, no joins or views necessary
+*** TYPO3 standard mechanisms (the "type-field") can be used to limit the available fields according to the inherited class
+** Disadvantages
+*** There are unused database fields in every record
+*** No direct representation of the class model with the physical database model
+
