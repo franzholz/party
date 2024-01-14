@@ -1,0 +1,37 @@
+{
+  "name": "jambagecom/party",
+  "type": "typo3-cms-extension",
+  "description": "Management of party-related data, such as persons, organisations, names, addresses, etc. based on the OASIS-Standard.",
+  "keywords": [
+    "TYPO3",
+    "extension",
+    "address"
+  ],
+  "support": {
+    "issues": "https://github.com/franzholz/party/issues"
+  },
+  "homepage": "https://jambage.com",
+  "authors": [
+    {
+      "name": "Franz Holzinger",
+      "role": "Developer",
+      "homepage": "https://ttproducts.de"
+    }
+  ],
+  "license": [
+    "GPL-2.0-or-later"
+  ],
+  "require": {
+    "typo3/cms-core": "^11.5 || ^12",
+    "jambagecom/div2007": "^2.0",
+    "sjbr/static-info-tables": "^11.5 || ^12.4"
+  },
+  "autoload": {
+    "psr-4": {
+      "JambageCom\\Party\\": "Classes"
+    }
+  },
+  "replace": {
+    "typo3-ter/party": "self.version"
+  }
+}
