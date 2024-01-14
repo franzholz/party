@@ -52,10 +52,8 @@ class StaticInfoTables {
 		$fieldArray,
 		$pObj
 	) {
-		global $TCA;
-
 		// Check if the current table contains a field with a hotlist to update
-		foreach ($TCA[$table]['columns'] as $fieldName => $field) {
+		foreach ($GLOBALS['TCA'][$table]['columns'] as $fieldName => $field) {
 			if ($field['config']['itemsProcFunc_config']['hotlistApp'] == 'tx_party') {
 				if ($fieldArray[$fieldName]) {
 

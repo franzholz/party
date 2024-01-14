@@ -5,12 +5,12 @@ defined('TYPO3') || die('Access denied.');
 
 
 
-$TCA['tx_party_types'] = array (
-    'ctrl' => $TCA['tx_party_types']['ctrl'],
+$GLOBALS['TCA']['tx_party_types'] = array (
+    'ctrl' => $GLOBALS['TCA']['tx_party_types']['ctrl'],
     'interface' => array (
         'showRecordFieldList' => 'sys_language_uid,l18n_parent,l18n_diffsource,short_title,title,long_title,allowed_for_field,allowed_for_party_type'
     ),
-    'feInterface' => $TCA['tx_party_types']['feInterface'],
+    'feInterface' => $GLOBALS['TCA']['tx_party_types']['feInterface'],
     'columns' => array (
         'sys_language_uid' => array (
             'exclude' => 1,

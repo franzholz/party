@@ -24,7 +24,7 @@ namespace JambageCom\Party\Model;
  * @subpackage tx_party
  */
 
-class tx_party_models_occupationrole extends tx_party_models_object {
+class OccupationRole extends Object {
 	protected $table = 'tx_party_occupation_roles';
 }
 

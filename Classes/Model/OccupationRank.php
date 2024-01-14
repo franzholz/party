@@ -26,7 +26,7 @@ namespace JambageCom\Party\Model;
  */
 
 
-class tx_party_models_occupationrank extends tx_party_models_object {
+class OccupationRank extends Object {
 	protected $table = 'tx_party_occupation_ranks';
 }
 

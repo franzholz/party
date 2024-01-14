@@ -2,12 +2,12 @@
 
 defined('TYPO3') || die('Access denied.');
 
-$TCA['tx_party_addresses'] = array (
-    'ctrl' => $TCA['tx_party_addresses']['ctrl'],
+$GLOBALS['TCA']['tx_party_addresses'] = array (
+    'ctrl' => $GLOBALS['TCA']['tx_party_addresses']['ctrl'],
     'interface' => array (
         'showRecordFieldList' => 'parties,locality,thoroughfare,thoroughfare_number,building_name,location,lot,premise_type,internal_thoroughfare,reference_location,post_code,rural_delivery,latitude_degrees_measure,latitude_minutes_measure,latitude_seconds_measure,latitude_direction_code,longitude_degrees_measure,longitude_minutes_measure,longitude_seconds_measure,longitude_direction_code,postal_delivery_point,post_office,post_town,administrative_area,country,images,remarks'
     ),
-    'feInterface' => $TCA['tx_party_addresses']['feInterface'],
+    'feInterface' => $GLOBALS['TCA']['tx_party_addresses']['feInterface'],
     'columns' => array (
         'parties' => Array (
             'exclude' => 1,
@@ -342,7 +342,7 @@ $TCA['tx_party_addresses'] = array (
 
 
 if(t3lib_extMgm::isLoaded('wec_map')) {
-    $TCA['tx_party_addresses']['ctrl']['EXT']['wec_map'] = array (
+    $GLOBALS['TCA']['tx_party_addresses']['ctrl']['EXT']['wec_map'] = array (
         'isMappable' => 1,
         'addressFields' => array (
             'street' => 'thoroughfare',
@@ -365,6 +365,6 @@ if(t3lib_extMgm::isLoaded('wec_map')) {
         ),
     );
     t3lib_extMgm::addTCAcolumns('tx_party_addresses', $mapTCA, 1);
-    $TCA['tx_party_addresses']['interface']['showRecordFieldList'] .= ',tx_wecmap_map';
+    $GLOBALS['TCA']['tx_party_addresses']['interface']['showRecordFieldList'] .= ',tx_wecmap_map';
     ib_extMgm::addToAllTCAtypes('tx_party_addresses', 'tx_wecmap_map');
 }

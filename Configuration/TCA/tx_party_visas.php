@@ -3,12 +3,12 @@
 defined('TYPO3') || die('Access denied.');
 
 
-$TCA['tx_party_visas'] = array (
-    'ctrl' => $TCA['tx_party_visas']['ctrl'],
+$GLOBALS['TCA']['tx_party_visas'] = array (
+    'ctrl' => $GLOBALS['TCA']['tx_party_visas']['ctrl'],
     'interface' => array (
         'showRecordFieldList' => 'party,country,number,code,issue_date,issue_place,maximum_stay,restriction,privilege,special_condition,remarks'
     ),
-    'feInterface' => $TCA['tx_party_visas']['feInterface'],
+    'feInterface' => $GLOBALS['TCA']['tx_party_visas']['feInterface'],
     'columns' => array (
         'party' => Array (
             'exclude' => 1,

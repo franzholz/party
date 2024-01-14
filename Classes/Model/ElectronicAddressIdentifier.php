@@ -24,8 +24,7 @@ namespace JambageCom\Party\Model;
  */
 
 
-class tx_party_models_electronicaddressidentifier extends tx_party_models_object {
-
+class ElectronicAddressIdentifier extends Object {
 	protected $table = 'tx_party_electronic_address_identifiers';
 
 	/**

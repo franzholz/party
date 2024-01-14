@@ -5,12 +5,12 @@ defined('TYPO3') || die('Access denied.');
 
 
 
-$TCA['tx_party_qualifications'] = array (
-    'ctrl' => $TCA['tx_party_qualifications']['ctrl'],
+$GLOBALS['TCA']['tx_party_qualifications'] = array (
+    'ctrl' => $GLOBALS['TCA']['tx_party_qualifications']['ctrl'],
     'interface' => array (
         'showRecordFieldList' => 'party,qualification_name,status,institution,start_date,completion_date,way_of_study,major_subject,minor_subject,mark,course_duration,award,restriction,registration,remarks'
     ),
-    'feInterface' => $TCA['tx_party_qualifications']['feInterface'],
+    'feInterface' => $GLOBALS['TCA']['tx_party_qualifications']['feInterface'],
     'columns' => array (
         'party' => Array (
             'exclude' => 1,

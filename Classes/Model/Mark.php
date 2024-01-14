@@ -25,7 +25,7 @@ namespace JambageCom\Party\Model;
  * @subpackage tx_party
  */
 
-class tx_party_models_mark extends tx_party_models_object {
+class Mark extends Object {
 	protected $table = 'tx_party_marks';
 
 	/**

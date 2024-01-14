@@ -25,7 +25,7 @@ namespace JambageCom\Party\Model;
  */
 
 
-class tx_party_models_stockmarket extends tx_party_models_object {
+class Stockmarket extends tx_party_models_object {
 	protected $table = 'tx_party_stock_markets';
 
 	/**

@@ -26,7 +26,7 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
  */
 
 
-class tx_party_models_nationality extends tx_party_models_object {
+class Nationality extends Object {
 	protected $table = 'tx_party_nationalities';
 
 	/**

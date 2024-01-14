@@ -5,12 +5,12 @@ defined('TYPO3') || die('Access denied.');
 
 
 
-$TCA['tx_party_vehicles'] = array (
-    'ctrl' => $TCA['tx_party_vehicles']['ctrl'],
+$GLOBALS['TCA']['tx_party_vehicles'] = array (
+    'ctrl' => $GLOBALS['TCA']['tx_party_vehicles']['ctrl'],
     'interface' => array (
         'showRecordFieldList' => 'party,make,type,model,license_plate,manufacture_date,engine_number,chassis_number,body_number,remarks'
     ),
-    'feInterface' => $TCA['tx_party_vehicles']['feInterface'],
+    'feInterface' => $GLOBALS['TCA']['tx_party_vehicles']['feInterface'],
     'columns' => array (
         'party' => Array (
             'exclude' => 1,

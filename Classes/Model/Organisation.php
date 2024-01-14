@@ -27,7 +27,6 @@ namespace JambageCom\Party\Model;
 
 class Organisation extends Party {
 
-
 	/**
 	 * Loads the organisation.
 	 *
@@ -35,7 +34,6 @@ class Organisation extends Party {
 	 * @return	void		The data is loaded into the object
 	 */
 	public function load ($uid) {
-		global $TCA;
 		$uid = intval($uid);
 
 		// Check that the party is an organisation

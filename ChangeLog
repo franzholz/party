@@ -16,7 +16,7 @@
 	* change the types in TCA to lower case letters.
 
 2012-04-22 Franz Holzinger <franz@ttproducts.de>
-	* add $TCA for wec_map only if that extension has been installed
+	* add $GLOBALS['TCA'] for wec_map only if that extension has been installed
 	* fix bug: do not reset empty usage variable
 	* use the autoloader for party and div2007
 

@@ -26,7 +26,7 @@ namespace JambageCom\Party\Model;
  */
 
 
-class tx_party_models_physicalstatus extends tx_party_models_object {
+class PhysicalStatus extends Object {
 	protected $table = 'tx_party_physical_status';
 }
 

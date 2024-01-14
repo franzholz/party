@@ -27,8 +27,7 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
  */
 
 
-class tx_party_models_electronicaddressidentifiers extends tx_div2007_object {
-
+class ElectronicAddressIdentifiers extends Object {
 	protected $table = 'tx_party_electronic_address_identifier_usages';
 
 	/**

@@ -27,7 +27,7 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
  */
 
 
-class tx_party_models_revenue extends tx_party_models_object {
+class Revenue extends Object {
 	protected $table = 'tx_party_revenues';
 
 	/**

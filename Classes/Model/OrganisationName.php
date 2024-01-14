@@ -24,7 +24,7 @@ namespace JambageCom\Party\Model;
  * @subpackage tx_party
  */
 
-class tx_party_models_organisationname extends tx_party_models_name {
+class OrganisationName extends Name {
 
 	/**
 	 * Loads the organisation name.
@@ -33,7 +33,6 @@ class tx_party_models_organisationname extends tx_party_models_name {
 	 * @return	void		The data is loaded into the object
 	 */
 	public function load ($uid) {
-		global $TCA;
 		$uid = intval($uid);
 
 		// Check that the name is an organisation name

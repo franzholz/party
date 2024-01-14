@@ -27,7 +27,7 @@ namespace JambageCom\Party\Model;
  */
 
 
-abstract class tx_party_models_name extends tx_party_models_object {
+abstract class Name extends Object {
 	protected $table = 'tx_party_names';
 }
 

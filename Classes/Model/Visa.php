@@ -24,7 +24,7 @@ namespace JambageCom\Party\Model;
  * @subpackage tx_party
  */
 
-class tx_party_models_visa extends tx_party_models_object {
+class Visa extends Object {
 	protected $table = 'tx_party_visas';
 
 	/**

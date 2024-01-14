@@ -12,6 +12,6 @@ namespace JambageCom\Party\Model;
  */
 
 
-class tx_party_models_usage extends tx_party_models_object {
+class Usage extends Object {
 	protected $table = 'tx_party_usages';
 }

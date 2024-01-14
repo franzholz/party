@@ -25,7 +25,7 @@ namespace JambageCom\Party\Model;
  */
 
 
-class tx_party_models_religion extends tx_party_models_object {
+class Religion extends Object {
 	protected $table = 'tx_party_religions';
 }
 

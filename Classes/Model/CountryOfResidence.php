@@ -24,7 +24,7 @@ namespace JambageCom\Party\Model;
  * @subpackage tx_party
  */
 
-class tx_party_models_countryofresidence extends tx_party_models_object {
+class CountryOfResidence extends Object {
 	protected $table = 'tx_party_countries_of_residence';
 
 	/**

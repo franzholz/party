@@ -29,8 +29,7 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
  */
 
 
-abstract class tx_party_models_party extends tx_party_models_object {
-
+abstract class Party extends Object {
 	protected $table = 'tx_party_parties';
 
 	/**

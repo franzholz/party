@@ -25,7 +25,7 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
  * @subpackage tx_party
  */
 
-class tx_party_models_account extends tx_party_models_object {
+class Account extends Object {
 	protected $table = 'tx_party_accounts';
 
 	/**

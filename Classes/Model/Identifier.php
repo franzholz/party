@@ -26,7 +26,7 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
  */
 
 
-class tx_party_models_identifier extends tx_party_models_object {
+class Identifier extends Object {
 	protected $table = 'tx_party_identifiers';
 
 	/**

@@ -26,9 +26,8 @@ namespace JambageCom\Party\Model;
  */
 
 
-abstract class tx_party_models_object extends tx_div2007_object {
-
-	protected $table;		// Table which the concrete model is based on.
+abstract Object {
+	protected $table = '';		// Table which the concrete model is based on.
 
 	/**
 	 * Loads the object from the table defined in $this->table.
@@ -61,7 +60,7 @@ abstract class tx_party_models_object extends tx_div2007_object {
 	}
 
 	/**
-	 * Builds a label from the 'label'-field according to $TCA. This function is usually overwritten for
+	 * Builds a label from the 'label'-field according to $GLOBALS['TCA']. This function is usually overwritten for
 	 * more complex models.
 	 *
 	 * The data must be loaded before, by calling $this->load();

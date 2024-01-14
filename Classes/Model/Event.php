@@ -26,7 +26,7 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
  * @subpackage tx_party
  */
 
-class tx_party_models_event extends tx_party_models_object {
+class Event extends Object {
 	protected $table = 'tx_party_events';
 
 	/**

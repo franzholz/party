@@ -25,7 +25,7 @@ namespace JambageCom\Party\Model;
  */
 
 
-class tx_party_models_personname extends tx_party_models_name {
+class PersonName extends Name {
 
 	/**
 	 * Loads the person name.

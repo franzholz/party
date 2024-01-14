@@ -26,7 +26,7 @@ namespace JambageCom\Party\Model;
 
 
 
-class tx_party_models_organisationnature extends tx_party_models_object {
+class OrganisationNature extends Object {
 	protected $table = 'tx_party_organisation_natures';
 }
 

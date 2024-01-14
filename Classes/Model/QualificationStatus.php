@@ -26,7 +26,7 @@ namespace JambageCom\Party\Model;
  */
 
 
-class tx_party_models_qualificationstatus extends tx_party_models_object {
+class QualificationStatus extends Object {
 	protected $table = 'tx_party_qualification_status';
 }
 

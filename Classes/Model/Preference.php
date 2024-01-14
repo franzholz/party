@@ -27,7 +27,7 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
  */
 
 
-class tx_party_models_preference extends tx_party_models_object {
+class Preference extends Object {
 	protected $table = 'tx_party_preferences';
 
 	/**

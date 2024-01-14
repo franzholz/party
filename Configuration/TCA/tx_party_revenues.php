@@ -5,12 +5,12 @@ defined('TYPO3') || die('Access denied.');
 
 
 
-$TCA['tx_party_revenues'] = array (
-    'ctrl' => $TCA['tx_party_revenues']['ctrl'],
+$GLOBALS['TCA']['tx_party_revenues'] = array (
+    'ctrl' => $GLOBALS['TCA']['tx_party_revenues']['ctrl'],
     'interface' => array (
         'showRecordFieldList' => 'party,currency,amount,amount_precision,after_tax,type,period_from,period_to,source,remarks'
     ),
-    'feInterface' => $TCA['tx_party_revenues']['feInterface'],
+    'feInterface' => $GLOBALS['TCA']['tx_party_revenues']['feInterface'],
     'columns' => array (
         'party' => Array (
             'exclude' => 1,

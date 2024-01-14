@@ -24,7 +24,7 @@ namespace JambageCom\Party\Model;
  */
 
 
-class tx_party_models_relationshiptype extends tx_party_models_object {
+class RelationshipType extends Object {
 	protected $table = 'tx_party_relationship_types';
 
 

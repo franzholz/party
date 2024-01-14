@@ -23,7 +23,7 @@ $GLOBALS['TYPO3_CONF_VARS']['extconf']['party']['inline_appearance']['combined']
 );
 
 
-$TCA['tx_party_addresses'] = array (
+$GLOBALS['TCA']['tx_party_addresses'] = array (
 	'ctrl' => array (
 		'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_addresses',
 		'label'     => 'locality',
@@ -41,7 +41,7 @@ $TCA['tx_party_addresses'] = array (
 	)
 );
 
-$TCA['tx_party_birth_signs'] = array (
+$GLOBALS['TCA']['tx_party_birth_signs'] = array (
 	'ctrl' => array (
 		'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_birth_signs',
 		'label'     => 'title',
@@ -61,7 +61,7 @@ $TCA['tx_party_birth_signs'] = array (
 	)
 );
 
-$TCA['tx_party_ethnicities'] = array (
+$GLOBALS['TCA']['tx_party_ethnicities'] = array (
 	'ctrl' => array (
 		'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_ethnicities',
 		'label'     => 'title',
@@ -81,7 +81,7 @@ $TCA['tx_party_ethnicities'] = array (
 	)
 );
 
-$TCA['tx_party_habits'] = array (
+$GLOBALS['TCA']['tx_party_habits'] = array (
 	'ctrl' => array (
 		'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_habits',
 		'label'     => 'title',
@@ -101,7 +101,7 @@ $TCA['tx_party_habits'] = array (
 	)
 );
 
-$TCA['tx_party_hobbies'] = array (
+$GLOBALS['TCA']['tx_party_hobbies'] = array (
 	'ctrl' => array (
 		'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_hobbies',
 		'label'     => 'title',
@@ -121,7 +121,7 @@ $TCA['tx_party_hobbies'] = array (
 	)
 );
 
-$TCA['tx_party_occupation_ranks'] = array (
+$GLOBALS['TCA']['tx_party_occupation_ranks'] = array (
 	'ctrl' => array (
 		'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_occupation_ranks',
 		'label'     => 'title',
@@ -141,7 +141,7 @@ $TCA['tx_party_occupation_ranks'] = array (
 	)
 );
 
-$TCA['tx_party_occupation_roles'] = array (
+$GLOBALS['TCA']['tx_party_occupation_roles'] = array (
 	'ctrl' => array (
 		'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_occupation_roles',
 		'label'     => 'title',
@@ -161,7 +161,7 @@ $TCA['tx_party_occupation_roles'] = array (
 	)
 );
 
-$TCA['tx_party_organisation_natures'] = array (
+$GLOBALS['TCA']['tx_party_organisation_natures'] = array (
 	'ctrl' => array (
 		'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_organisation_natures',
 		'label'     => 'title',
@@ -181,7 +181,7 @@ $TCA['tx_party_organisation_natures'] = array (
 	)
 );
 
-$TCA['tx_party_parties'] = array (
+$GLOBALS['TCA']['tx_party_parties'] = array (
 	'ctrl' => array (
 		'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_parties',
 		'label'     => 'uid',
@@ -206,7 +206,7 @@ $TCA['tx_party_parties'] = array (
 	)
 );
 
-$TCA['tx_party_person_name_titles'] = array (
+$GLOBALS['TCA']['tx_party_person_name_titles'] = array (
 	'ctrl' => array (
 		'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_person_name_titles',
 		'label'     => 'title',
@@ -226,7 +226,7 @@ $TCA['tx_party_person_name_titles'] = array (
 	)
 );
 
-$TCA['tx_party_physical_status'] = array (
+$GLOBALS['TCA']['tx_party_physical_status'] = array (
 	'ctrl' => array (
 		'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_physical_status',
 		'label'     => 'title',
@@ -246,7 +246,7 @@ $TCA['tx_party_physical_status'] = array (
 	)
 );
 
-$TCA['tx_party_qualification_status'] = array (
+$GLOBALS['TCA']['tx_party_qualification_status'] = array (
 	'ctrl' => array (
 		'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_qualification_status',
 		'label'     => 'title',
@@ -266,7 +266,7 @@ $TCA['tx_party_qualification_status'] = array (
 	)
 );
 
-$TCA['tx_party_religions'] = array (
+$GLOBALS['TCA']['tx_party_religions'] = array (
 	'ctrl' => array (
 		'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_religions',
 		'label'     => 'title',
@@ -286,7 +286,7 @@ $TCA['tx_party_religions'] = array (
 	)
 );
 
-$TCA['tx_party_types'] = array (
+$GLOBALS['TCA']['tx_party_types'] = array (
 	'ctrl' => array (
 		'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_types',
 		'label'     => 'title',
@@ -306,7 +306,7 @@ $TCA['tx_party_types'] = array (
 	)
 );
 
-$TCA['tx_party_vehicle_manufacturers'] = array (
+$GLOBALS['TCA']['tx_party_vehicle_manufacturers'] = array (
 	'ctrl' => array (
 		'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_vehicle_manufacturers',
 		'label'     => 'title',
@@ -326,7 +326,7 @@ $TCA['tx_party_vehicle_manufacturers'] = array (
 	)
 );
 
-$TCA['tx_party_accounts'] = array (
+$GLOBALS['TCA']['tx_party_accounts'] = array (
 	'ctrl' => array (
 		'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_accounts',
 		'label'     => 'account_id',
@@ -343,7 +343,7 @@ $TCA['tx_party_accounts'] = array (
 	)
 );
 
-$TCA['tx_party_contacts'] = array (
+$GLOBALS['TCA']['tx_party_contacts'] = array (
 	'ctrl' => array (
 		'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_contacts',
 		'label'     => 'contact',
@@ -360,7 +360,7 @@ $TCA['tx_party_contacts'] = array (
 	)
 );
 
-$TCA['tx_party_contact_numbers'] = array (
+$GLOBALS['TCA']['tx_party_contact_numbers'] = array (
 	'ctrl' => array (
 		'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_contact_numbers',
 		'label'     => 'local_number',
@@ -377,7 +377,7 @@ $TCA['tx_party_contact_numbers'] = array (
 	)
 );
 
-$TCA['tx_party_countries_of_residence'] = array (
+$GLOBALS['TCA']['tx_party_countries_of_residence'] = array (
 	'ctrl' => array (
 		'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_countries_of_residence',
 		'label'     => 'country',
@@ -395,7 +395,7 @@ $TCA['tx_party_countries_of_residence'] = array (
 	)
 );
 
-$TCA['tx_party_disabilities'] = array (
+$GLOBALS['TCA']['tx_party_disabilities'] = array (
 	'ctrl' => array (
 		'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_disabilities',
 		'label'     => 'disability',
@@ -412,7 +412,7 @@ $TCA['tx_party_disabilities'] = array (
 	)
 );
 
-$TCA['tx_party_documents'] = array (
+$GLOBALS['TCA']['tx_party_documents'] = array (
 	'ctrl' => array (
 		'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_documents',
 		'label'     => 'document_id',
@@ -429,7 +429,7 @@ $TCA['tx_party_documents'] = array (
 	)
 );
 
-$TCA['tx_party_electronic_address_identifiers'] = array (
+$GLOBALS['TCA']['tx_party_electronic_address_identifiers'] = array (
 	'ctrl' => array (
 		'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_electronic_address_identifiers',
 		'label'     => 'electronic_address_identifier',
@@ -446,7 +446,7 @@ $TCA['tx_party_electronic_address_identifiers'] = array (
 	)
 );
 
-$TCA['tx_party_images'] = array (
+$GLOBALS['TCA']['tx_party_images'] = array (
 	'ctrl' => array (
 		'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_images',
 		'label'     => 'title',
@@ -464,7 +464,7 @@ $TCA['tx_party_images'] = array (
 	)
 );
 
-$TCA['tx_party_languages'] = array (
+$GLOBALS['TCA']['tx_party_languages'] = array (
 	'ctrl' => array (
 		'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_languages',
 		'label'     => 'uid',
@@ -482,7 +482,7 @@ $TCA['tx_party_languages'] = array (
 	)
 );
 
-$TCA['tx_party_marks'] = array (
+$GLOBALS['TCA']['tx_party_marks'] = array (
 	'ctrl' => array (
 		'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_marks',
 		'label'     => 'mark',
@@ -499,7 +499,7 @@ $TCA['tx_party_marks'] = array (
 	)
 );
 
-$TCA['tx_party_nationalities'] = array (
+$GLOBALS['TCA']['tx_party_nationalities'] = array (
 	'ctrl' => array (
 		'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_nationalities',
 		'label'     => 'country',
@@ -517,7 +517,7 @@ $TCA['tx_party_nationalities'] = array (
 	)
 );
 
-$TCA['tx_party_occupations'] = array (
+$GLOBALS['TCA']['tx_party_occupations'] = array (
 	'ctrl' => array (
 		'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_occupations',
 		'label'     => 'role',
@@ -535,7 +535,7 @@ $TCA['tx_party_occupations'] = array (
 	)
 );
 
-$TCA['tx_party_names'] = array (
+$GLOBALS['TCA']['tx_party_names'] = array (
 	'ctrl' => array (
 		'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_names',
 		'label'     => 'last_name',
@@ -554,7 +554,7 @@ $TCA['tx_party_names'] = array (
 	)
 );
 
-$TCA['tx_party_qualifications'] = array (
+$GLOBALS['TCA']['tx_party_qualifications'] = array (
 	'ctrl' => array (
 		'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_qualifications',
 		'label'     => 'qualification_name',
@@ -571,7 +571,7 @@ $TCA['tx_party_qualifications'] = array (
 	)
 );
 
-$TCA['tx_party_relationship_types'] = array (
+$GLOBALS['TCA']['tx_party_relationship_types'] = array (
 	'ctrl' => array (
 		'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_relationship_types',
 		'label'     => 'relationship_type',
@@ -588,7 +588,7 @@ $TCA['tx_party_relationship_types'] = array (
 	)
 );
 
-$TCA['tx_party_revenues'] = array (
+$GLOBALS['TCA']['tx_party_revenues'] = array (
 	'ctrl' => array (
 		'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_revenues',
 		'label'     => 'amount',
@@ -605,7 +605,7 @@ $TCA['tx_party_revenues'] = array (
 	)
 );
 
-$TCA['tx_party_stock_markets'] = array (
+$GLOBALS['TCA']['tx_party_stock_markets'] = array (
 	'ctrl' => array (
 		'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_stock_markets',
 		'label'     => 'listed_code',
@@ -622,7 +622,7 @@ $TCA['tx_party_stock_markets'] = array (
 	)
 );
 
-$TCA['tx_party_vehicles'] = array (
+$GLOBALS['TCA']['tx_party_vehicles'] = array (
 	'ctrl' => array (
 		'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_vehicles',
 		'label'     => 'license_plate',
@@ -639,7 +639,7 @@ $TCA['tx_party_vehicles'] = array (
 	)
 );
 
-$TCA['tx_party_visas'] = array (
+$GLOBALS['TCA']['tx_party_visas'] = array (
 	'ctrl' => array (
 		'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_visas',
 		'label'     => 'country',
@@ -657,7 +657,7 @@ $TCA['tx_party_visas'] = array (
 	)
 );
 
-$TCA['tx_party_events'] = array (
+$GLOBALS['TCA']['tx_party_events'] = array (
 	'ctrl' => array (
 		'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_events',
 		'label'     => 'type',
@@ -675,7 +675,7 @@ $TCA['tx_party_events'] = array (
 	)
 );
 
-$TCA['tx_party_identifiers'] = array (
+$GLOBALS['TCA']['tx_party_identifiers'] = array (
 	'ctrl' => array (
 		'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_identifiers',
 		'label'     => 'identifier',
@@ -692,7 +692,7 @@ $TCA['tx_party_identifiers'] = array (
 	)
 );
 
-$TCA['tx_party_memberships'] = array (
+$GLOBALS['TCA']['tx_party_memberships'] = array (
 	'ctrl' => array (
 		'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_memberships',
 		'label'     => 'uid',
@@ -710,7 +710,7 @@ $TCA['tx_party_memberships'] = array (
 	)
 );
 
-$TCA['tx_party_allergies'] = array (
+$GLOBALS['TCA']['tx_party_allergies'] = array (
 	'ctrl' => array (
 		'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_allergies',
 		'label'     => 'title',
@@ -727,7 +727,7 @@ $TCA['tx_party_allergies'] = array (
 	)
 );
 
-$TCA['tx_party_favourites'] = array (
+$GLOBALS['TCA']['tx_party_favourites'] = array (
 	'ctrl' => array (
 		'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_favourites',
 		'label'     => 'favourite',
@@ -744,7 +744,7 @@ $TCA['tx_party_favourites'] = array (
 	)
 );
 
-$TCA['tx_party_preferences'] = array (
+$GLOBALS['TCA']['tx_party_preferences'] = array (
 	'ctrl' => array (
 		'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_preferences',
 		'label'     => 'preference',
@@ -761,7 +761,7 @@ $TCA['tx_party_preferences'] = array (
 	)
 );
 
-$TCA['tx_party_address_usages'] = array (
+$GLOBALS['TCA']['tx_party_address_usages'] = array (
 	'ctrl' => array (
 		'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_address_usages',
 		'label'     => 'uid',
@@ -779,7 +779,7 @@ $TCA['tx_party_address_usages'] = array (
 	)
 );
 
-$TCA['tx_party_contact_number_usages'] = array (
+$GLOBALS['TCA']['tx_party_contact_number_usages'] = array (
 	'ctrl' => array (
 		'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_contact_number_usages',
 		'label'     => 'uid',
@@ -797,7 +797,7 @@ $TCA['tx_party_contact_number_usages'] = array (
 	)
 );
 
-$TCA['tx_party_electronic_address_identifier_usages'] = array (
+$GLOBALS['TCA']['tx_party_electronic_address_identifier_usages'] = array (
 	'ctrl' => array (
 		'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_electronic_address_identifier_usages',
 		'label'     => 'uid',
@@ -815,7 +815,7 @@ $TCA['tx_party_electronic_address_identifier_usages'] = array (
 	)
 );
 
-$TCA['tx_party_usages'] = array (
+$GLOBALS['TCA']['tx_party_usages'] = array (
 	'ctrl' => array (
 		'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_usages',
 		'label'     => 'title',
@@ -832,7 +832,7 @@ $TCA['tx_party_usages'] = array (
 	)
 );
 
-$TCA['tx_party_relationships'] = array (
+$GLOBALS['TCA']['tx_party_relationships'] = array (
 	'ctrl' => array (
 		'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_relationships',
 		'label'     => 'uid',

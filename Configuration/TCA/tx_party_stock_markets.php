@@ -6,12 +6,12 @@ defined('TYPO3') || die('Access denied.');
 
 
 
-$TCA['tx_party_stock_markets'] = array (
-    'ctrl' => $TCA['tx_party_stock_markets']['ctrl'],
+$GLOBALS['TCA']['tx_party_stock_markets'] = array (
+    'ctrl' => $GLOBALS['TCA']['tx_party_stock_markets']['ctrl'],
     'interface' => array (
         'showRecordFieldList' => 'party,market,listed_code,remarks'
     ),
-    'feInterface' => $TCA['tx_party_stock_markets']['feInterface'],
+    'feInterface' => $GLOBALS['TCA']['tx_party_stock_markets']['feInterface'],
     'columns' => array (
         'party' => Array (
             'exclude' => 1,

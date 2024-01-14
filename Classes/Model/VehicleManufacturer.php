@@ -26,7 +26,7 @@ namespace JambageCom\Party\Model;
  */
 
 
-class tx_party_models_vehiclemanufacturer extends tx_party_models_object {
+class VehicleManufacturer extends Object {
 	protected $table = 'tx_party_vehicle_manufacturers';
 }
 

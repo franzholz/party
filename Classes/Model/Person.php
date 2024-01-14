@@ -25,8 +25,7 @@ namespace JambageCom\Party\Model;
  */
 
 
-class tx_party_models_person extends tx_party_models_party {
-
+class Person extends Party {
 	/**
 	 * Loads the person.
 	 *
@@ -34,7 +33,6 @@ class tx_party_models_person extends tx_party_models_party {
 	 * @return	void		The data is loaded into the object
 	 */
 	public function load ($uid) {
-		global $TCA;
 		$uid = intval($uid);
 
 		// Check that the party is a person
@@ -47,6 +45,5 @@ class tx_party_models_person extends tx_party_models_party {
 		$typeFields = tx_party_div::getAllTypeFields($this->table, $rec);
 		parent::load($uid, $typeFields);
 	}
-
 }
 

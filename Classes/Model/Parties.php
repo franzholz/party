@@ -25,7 +25,7 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
  * @subpackage tx_party
  */
 
-class tx_party_models_parties extends tx_div2007_object {
+class Parties {
 
 	/**
 	 * Loads all parties which belong to a certain PID.
@@ -112,6 +112,5 @@ class tx_party_models_parties extends tx_div2007_object {
 		}
 		return $list;
 	}
-
 }
 

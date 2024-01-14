@@ -5,12 +5,12 @@ defined('TYPO3') || die('Access denied.');
 
 
 
-$TCA['tx_party_countries_of_residence'] = array (
-    'ctrl' => $TCA['tx_party_countries_of_residence']['ctrl'],
+$GLOBALS['TCA']['tx_party_countries_of_residence'] = array (
+    'ctrl' => $GLOBALS['TCA']['tx_party_countries_of_residence']['ctrl'],
     'interface' => array (
         'showRecordFieldList' => 'party,country,residency_type,remarks'
     ),
-    'feInterface' => $TCA['tx_party_countries_of_residence']['feInterface'],
+    'feInterface' => $GLOBALS['TCA']['tx_party_countries_of_residence']['feInterface'],
     'columns' => array (
         'party' => Array (
             'exclude' => 1,

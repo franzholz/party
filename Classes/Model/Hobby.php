@@ -25,7 +25,7 @@ namespace JambageCom\Party\Model;
  */
 
 
-class tx_party_models_hobby extends tx_party_models_object {
+class Hobby extends Object {
 	protected $table = 'tx_party_hobbies';
 }
 

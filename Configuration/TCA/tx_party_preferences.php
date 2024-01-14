@@ -5,12 +5,12 @@ defined('TYPO3') || die('Access denied.');
 
 
 
-$TCA['tx_party_preferences'] = array (
-    'ctrl' => $TCA['tx_party_preferences']['ctrl'],
+$GLOBALS['TCA']['tx_party_preferences'] = array (
+    'ctrl' => $GLOBALS['TCA']['tx_party_preferences']['ctrl'],
     'interface' => array (
         'showRecordFieldList' => 'party,type,preference,remarks'
     ),
-    'feInterface' => $TCA['tx_party_preferences']['feInterface'],
+    'feInterface' => $GLOBALS['TCA']['tx_party_preferences']['feInterface'],
     'columns' => array (
         'party' => Array (
             'exclude' => 1,

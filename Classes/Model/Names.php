@@ -25,8 +25,7 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
  * @subpackage tx_party
  */
 
-class tx_party_models_names extends tx_div2007_object {
-
+class Names extends Object {
 	public $table = 'tx_party_names';
 
 
@@ -87,7 +86,6 @@ class tx_party_models_names extends tx_div2007_object {
 		}
 		$this->set('list', $list);
 	}
-
 }
 
 
