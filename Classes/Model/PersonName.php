@@ -39,7 +39,7 @@ class PersonName extends Name {
 		// Check that the name is a person name
 		$rec = tx_div2007_core::getRecord($this->table, $uid, 'type');
 		if (!$rec['type'] == 0) {
-			return FALSE;
+			return false;
 		}
 
 		// Get all fields belonging to the type 'person name' and load the object
@@ -58,7 +58,7 @@ class PersonName extends Name {
 	 */
 	public function getLabel () {
 		if ($this->isEmpty()) {
-			return FALSE;		// Data must be loaded
+			return false;		// Data must be loaded
 		}
 		$label = array();
 		$out = '';

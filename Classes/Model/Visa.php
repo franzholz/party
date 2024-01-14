@@ -36,7 +36,7 @@ class Visa extends Object {
 	 * @return	string		Label of the Visa
 	 */
 	public function getLabel () {
-		if ($this->isEmpty()) return FALSE;		// Data must be loaded
+		if ($this->isEmpty()) return false;		// Data must be loaded
 		$label = array();
 		$out = '';
 

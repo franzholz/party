@@ -69,7 +69,7 @@ abstract Object {
 	 */
 	public function getLabel () {
 		if ($this->isEmpty()) {
-			$result = FALSE;
+			$result = false;
 		} else {
 			$result = $this->get($GLOBALS['TCA'][$this->table]['ctrl']['label']);
 		}

@@ -38,7 +38,7 @@ class Stockmarket extends tx_party_models_object {
 	 */
 	public function getLabel () {
 		if ($this->isEmpty()) {
-			return FALSE;		// Data must be loaded
+			return false;		// Data must be loaded
 		}
 		$label = array();
 		$out = '';

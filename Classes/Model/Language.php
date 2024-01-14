@@ -37,7 +37,7 @@ class Language extends Object {
 	 */
 	public function getLabel () {
 		if ($this->isEmpty()) {
-			return FALSE;		// Data must be loaded
+			return false;		// Data must be loaded
 		}
 		$label = array();
 		$out = '';

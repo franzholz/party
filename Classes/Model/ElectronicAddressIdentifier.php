@@ -37,7 +37,7 @@ class ElectronicAddressIdentifier extends Object {
 	 */
 	public function getLabel () {
 		if ($this->isEmpty()) {
-			return FALSE;		// Data must be loaded
+			return false;		// Data must be loaded
 		}
 
 		$out = $this->get('electronic_address_identifier');

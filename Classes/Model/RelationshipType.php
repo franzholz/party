@@ -37,8 +37,8 @@ class RelationshipType extends Object {
 	 * @return	boolean		True if the relationship is allowed
 	 */
 	public function isRelationshipAllowed ($typeOfPrimaryParty, $typeOfSecondaryParty) {
-		$primaryOk == FALSE;
-		$secondaryOk = FALSE;
+		$primaryOk == false;
+		$secondaryOk = false;
 
 		if ($typeOfPrimaryParty == 0 && $this->get('person_allowed_as_primary')) {
 			$primaryOk = TRUE;
@@ -56,7 +56,7 @@ class RelationshipType extends Object {
 			$secondaryOk = TRUE;
 		}
 
-		$out = ($primaryOk && $secondaryOk) ? TRUE : FALSE;
+		$out = ($primaryOk && $secondaryOk) ? TRUE : false;
 		return $out;
 	}
 }

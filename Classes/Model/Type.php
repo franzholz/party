@@ -38,22 +38,22 @@ class Type extends Object {
 	 */
 	public function isAllowedForPartyType ($partyType) {
 		if ($this->isEmpty()) {
-			return FALSE;		// Data must be loaded
+			return false;		// Data must be loaded
 		}
-		$out = FALSE;
+		$out = false;
 
 		switch ($this->get('allowed_for_party_type')) {
 			case 'ALL':
 				$out = TRUE;
 				break;
 			case 'PERSONS':
-				$out = ($partyType == 0) ? TRUE : FALSE;
+				$out = ($partyType == 0) ? TRUE : false;
 				break;
 			case 'ORGANISATIONS':
-				$out = ($partyType == 1) ? TRUE : FALSE;
+				$out = ($partyType == 1) ? TRUE : false;
 				break;
 			default:
-				$out = FALSE;
+				$out = false;
 				break;
 		}
 
@@ -70,9 +70,9 @@ class Type extends Object {
 	 */
 	public function isAllowedForField ($field) {
 		if ($this->isEmpty()) {
-			return FALSE;		// Data must be loaded
+			return false;		// Data must be loaded
 		}
-		$out = FALSE;
+		$out = false;
 
 		$allowedForField = explode(',', $this->get('allowed_for_field'));
 		$out = in_array($field, $allowedForField);

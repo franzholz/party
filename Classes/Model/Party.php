@@ -34,7 +34,7 @@ abstract class Party extends Object {
 
 	/**
 	 * Returns the loaded instance of the party. Depending on the type of the party, this function
-	 * returns an instance of tx_party_models_person or tx_party_models_organisation.
+	 * returns an instance of Person or Organisation.
 	 *
 	 * @param	integer		$uid: UID of the party
 	 * @return	object		Instance of tx_party_models_person or tx_party_models_organisation
@@ -171,7 +171,7 @@ abstract class Party extends Object {
 	public function getLabel () {
 
 		if ($this->isEmpty()) {
-			return FALSE;		// Data must be loaded
+			return false;		// Data must be loaded
 		}
 		$label = array();
 		$out = '';

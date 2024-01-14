@@ -38,7 +38,7 @@ class Person extends Party {
 		// Check that the party is a person
 		$rec = tx_div2007_core::getRecord($this->table, $uid, 'type');
 		if (!$rec['type'] == 0) {
-			return FALSE;
+			return false;
 		}
 
 		// Get all fields belonging to the type 'person' and load the object

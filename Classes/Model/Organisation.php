@@ -40,7 +40,7 @@ class Organisation extends Party {
 		$rec = tx_div2007_core::getRecord($this->table, $uid, 'type');
 
 		if ($rec['type'] != 1) {
-			return FALSE;
+			return false;
 		}
 
 		// Get all fields belonging to the type 'organisation' and load the object

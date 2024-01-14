@@ -87,8 +87,8 @@ class Api {
 		'tx_party_parties_allergies_mm'
 	);
 
-	static public function getTableArray ($bMM = FALSE) {
-		$result = FALSE;
+	static public function getTableArray ($bMM = false) {
+		$result = false;
 
 		if ($bMM) {
 			$result = self::$tableArray;

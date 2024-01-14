@@ -39,7 +39,7 @@ class OrganisationName extends Name {
 		$rec = tx_div2007_core::getRecord($this->table, $uid, 'type');
 
 		if (!($rec['type'] == 1)) {
-			return FALSE;
+			return false;
 		}
 
 		// Get all fields belonging to the type 'organisation name' and load the object
@@ -57,7 +57,7 @@ class OrganisationName extends Name {
 	 */
 	public function getLabel() {
 		if ($this->isEmpty()) {
-			return FALSE;		// Data must be loaded
+			return false;		// Data must be loaded
 		}
 		$result = $this->get('organisation_name');
 		return $result;
