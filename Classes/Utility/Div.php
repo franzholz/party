@@ -29,16 +29,13 @@
  * The functions can only be used se non-instantiated, e.g.
  * tx_party_div::getAllTypeFields()
  *
- *
- * $Id$
- *
  * @author David Brühlmeier <typo3@bruehlmeier.com>
  * @package TYPO3
  * @subpackage tx_party
  */
 
 
-class tx_party_div {
+class Div {
 
 	/**
 	 * Returns a comma-separated list with all relevant fields for the table, according to the
@@ -57,7 +54,7 @@ class tx_party_div {
 		global $TCA;
 
 		// Add 'common fields'
-		$out = 'uid,pid,tstamp,crdate,cruser_id,deleted,';
+		$out = 'uid,pid,tstamp,crdate,deleted,';
 
 		// Get all type fields with the core function.
 		$typeFields = tx_div2007_core::getTCAtypes($table, $rec, TRUE);
@@ -83,9 +80,3 @@ class tx_party_div {
 	}
 }
 
-if (defined('TYPO3_MODE') && $TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/party/div/class.tx_party_div.php']) {
-	include_once($TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/party/div/class.tx_party_div.php']);
-}
-
-
-?>
