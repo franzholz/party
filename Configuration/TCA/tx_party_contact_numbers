@@ -1,0 +1,128 @@
+<?php
+
+defined('TYPO3') || die('Access denied.');
+
+
+
+$TCA['tx_party_contact_numbers'] = array (
+	'ctrl' => $TCA['tx_party_contact_numbers']['ctrl'],
+	'interface' => array (
+		'showRecordFieldList' => 'parties,media_type,country,area_code,local_number,extension,pin,contact_hours,remarks'
+	),
+	'feInterface' => $TCA['tx_party_contact_numbers']['feInterface'],
+	'columns' => array (
+		'parties' => Array (
+			'exclude' => 1,
+			'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_contact_numbers.parties',
+			'config' => Array (
+				'type' => 'inline',
+				'foreign_table' => 'tx_party_contact_number_usages',
+				'foreign_field' => 'contact_number',
+				'foreign_label' => 'party',
+				'foreign_selector' => 'party',
+				'maxitems' => 99,
+				'appearance' => $GLOBALS['TYPO3_CONF_VARS']['extconf']['party']['inline_appearance']['combined'],
+			)
+		),
+		'media_type' => Array (
+			'exclude' => 1,
+			'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_contact_numbers.media_type',
+			'config' => Array (
+				'type' => 'select',
+				'items' => Array (
+					Array('LLL:EXT:party/locallang_db.xml:tx_party_contact_numbers.media_type.I.0', 'TELEPHONE'),
+					Array('LLL:EXT:party/locallang_db.xml:tx_party_contact_numbers.media_type.I.1', 'MOBILE'),
+					Array('LLL:EXT:party/locallang_db.xml:tx_party_contact_numbers.media_type.I.2', 'FAX'),
+					Array('LLL:EXT:party/locallang_db.xml:tx_party_contact_numbers.media_type.I.3', 'MODEM'),
+				),
+				'size' => 1,
+				'maxitems' => 1,
+			)
+		),
+		'country' => Array (
+			'exclude' => 1,
+			'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_contact_numbers.country',
+			'config' => Array (
+				'type' => 'select',
+				'foreign_table' => 'static_countries',
+				'foreign_table_where' => 'ORDER BY static_countries.cn_official_name_en',
+				'items' => Array (
+					Array('', 0),
+				),
+				'size' => 1,
+				'minitems' => 0,
+				'maxitems' => 1,
+				'wizards' => array(
+					'suggest' => array(
+						'type' => 'suggest',
+					)
+				),
+			)
+		),
+		'area_code' => Array (
+			'exclude' => 1,
+			'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_contact_numbers.area_code',
+			'config' => Array (
+				'type' => 'input',
+				'size' => '30',
+				'max' => '90',
+				'eval' => 'trim',
+			)
+		),
+		'local_number' => Array (
+			'exclude' => 1,
+			'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_contact_numbers.local_number',
+			'config' => Array (
+				'type' => 'input',
+				'size' => '30',
+				'max' => '90',
+				'eval' => 'trim',
+			)
+		),
+		'extension' => Array (
+			'exclude' => 1,
+			'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_contact_numbers.extension',
+			'config' => Array (
+				'type' => 'input',
+				'size' => '10',
+				'max' => '90',
+				'eval' => 'trim',
+			)
+		),
+		'pin' => Array (
+			'exclude' => 1,
+			'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_contact_numbers.pin',
+			'config' => Array (
+				'type' => 'input',
+				'size' => '10',
+				'max' => '90',
+				'eval' => 'trim',
+			)
+		),
+		'contact_hours' => Array (
+			'exclude' => 1,
+			'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_contact_numbers.contact_hours',
+			'config' => Array (
+				'type' => 'text',
+				'cols' => '30',
+				'rows' => '5',
+			)
+		),
+		'remarks' => Array (
+			'exclude' => 1,
+			'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_contact_numbers.remarks',
+			'config' => Array (
+				'type' => 'text',
+				'cols' => '30',
+				'rows' => '5',
+			)
+		),
+	),
+	'types' => array (
+		'0' => array('showitem' => 'parties;;;;1-1-1, media_type, country, area_code, local_number;;1, contact_hours;;;;1-1-1, remarks;;;;1-1-1')
+	),
+	'palettes' => array (
+		'1' => array('showitem' => 'extension, pin')
+	)
+);
+
