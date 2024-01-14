@@ -1,5 +1,7 @@
 <?php
 
+namespace JambageCom\Party\Model;
+
 
 /*
  * This file is part of the TYPO3 CMS project.
@@ -76,9 +78,3 @@ abstract class tx_party_models_object extends tx_div2007_object {
 	}
 }
 
-if (defined('TYPO3_MODE') && $TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/party/models/class.tx_party_models_object.php']) {
-	include_once($TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/party/models/class.tx_party_models_object.php']);
-}
-
-
-?>

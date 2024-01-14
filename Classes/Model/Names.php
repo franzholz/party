@@ -1,5 +1,7 @@
 <?php
 
+namespace JambageCom\Party\Model;
+
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /*
@@ -88,9 +90,4 @@ class tx_party_models_names extends tx_div2007_object {
 
 }
 
-if (defined('TYPO3_MODE') && $TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/party/models/class.tx_party_models_names.php']) {
-	include_once($TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/party/models/class.tx_party_models_names.php']);
-}
 
-
-?>

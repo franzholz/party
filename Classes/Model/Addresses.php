@@ -1,5 +1,7 @@
 <?php
 
+namespace JambageCom\Party\Model;
+
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /*
@@ -106,9 +108,3 @@ class tx_party_models_addresses extends tx_party_models_object {
 	}
 }
 
-if (defined('TYPO3_MODE') && $TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/party/models/class.tx_party_models_addresses.php']) {
-	include_once($TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/party/models/class.tx_party_models_addresses.php']);
-}
-
-
-?>

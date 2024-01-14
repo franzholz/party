@@ -1,5 +1,7 @@
 <?php
 
+namespace JambageCom\Party\Model;
+
 
 /*
  * This file is part of the TYPO3 CMS project.
@@ -27,9 +29,3 @@ class tx_party_models_personnametitle extends tx_party_models_object {
 	protected $table = 'tx_party_person_name_titles';
 }
 
-if (defined('TYPO3_MODE') && $TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/party/models/class.tx_party_models_personnametitle.php']) {
-	include_once($TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/party/models/class.tx_party_models_personnametitle.php']);
-}
-
-
-?>

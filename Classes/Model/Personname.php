@@ -1,5 +1,7 @@
 <?php
 
+namespace JambageCom\Party\Model;
+
 /*
  * This file is part of the TYPO3 CMS project.
  *
@@ -82,9 +84,3 @@ class tx_party_models_personname extends tx_party_models_name {
 
 }
 
-if (defined('TYPO3_MODE') && $TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/party/models/class.tx_party_models_personname.php']) {
-	include_once($TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/party/models/class.tx_party_models_personname.php']);
-}
-
-
-?>

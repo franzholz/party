@@ -1,5 +1,7 @@
 <?php
 
+namespace JambageCom\Party\Model;
+
 
 /**
  * Model for the class Usage
@@ -13,10 +15,3 @@
 class tx_party_models_usage extends tx_party_models_object {
 	protected $table = 'tx_party_usages';
 }
-
-if (defined('TYPO3_MODE') && $TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/party/models/class.tx_party_models_usage.php']) {
-	include_once($TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/party/models/class.tx_party_models_usage.php']);
-}
-
-
-?>
