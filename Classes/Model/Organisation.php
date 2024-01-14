@@ -19,15 +19,13 @@ namespace JambageCom\Party\Model;
 /**
  * Model for the class Organisation
  *
- * $Id$
- *
  * @author David Brühlmeier <typo3@bruehlmeier.com>
  * @package TYPO3
  * @subpackage tx_party
  */
 
 
-class tx_party_models_organisation extends tx_party_models_party {
+class Organisation extends Party {
 
 
 	/**

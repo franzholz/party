@@ -1,5 +1,7 @@
 <?php
 
+namespace JambageCom\Party\Hook;
+
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 
@@ -31,11 +33,9 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 /**
  * Building (backend) labels, using label_userFunc.
  *
- * $Id$
- *
  * @author David Bruehlmeier <typo3@bruehlmeier.com>
  */
-class tx_party_labels {
+class Labels {
 
 	/**
 	 * Factory function which is called by label_userFunc. The function decides how to build the label.
@@ -149,9 +149,3 @@ class tx_party_labels {
 	}
 }
 
-if (defined('TYPO3_MODE') && $TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/party/hooks/class.tx_party_labels.php']) {
-	include_once($TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/party/hooks/class.tx_party_labels.php']);
-}
-
-
-?>

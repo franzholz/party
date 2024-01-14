@@ -1,4 +1,8 @@
 <?php
+
+namespace JambageCom\Party\Hook;
+
+
 /***************************************************************
 *  Copyright notice
 *
@@ -39,7 +43,7 @@
  * @author	David Brühlmeier <typo3@bruehlmeier.com>
  * @package TYPO3
  */
-class tx_party_staticinfotables {
+class StaticInfoTables {
 
 	public function processDatamap_postProcessFieldArray(
 		$status,
