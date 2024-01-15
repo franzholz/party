@@ -2,8 +2,8 @@
 
 defined('TYPO3') || die('Access denied.');
 
-$GLOBALS['TCA']['tx_party_accounts'] = array (
-    'ctrl' => array (
+$GLOBALS['TCA']['tx_party_accounts'] = array(
+    'ctrl' => array(
         'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_accounts',
         'label'     => 'account_id',
         'tstamp'    => 'tstamp',
@@ -13,17 +13,17 @@ $GLOBALS['TCA']['tx_party_accounts'] = array (
         'delete' => 'deleted',
         'iconfile'          => PATH_BE_PARTY_REL . 'icons/icon_tx_party_accounts.gif',
     ),
-    'interface' => array (
+    'interface' => array(
         'showRecordFieldList' => 'party,organisation,ownership_type,account_id,issuing_authority,account_type,remarks'
     ),
-    'columns' => array (
-        'party' => Array (
+    'columns' => array(
+        'party' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_accounts.party',
-            'config' => Array (
+            'config' => array(
                 'type' => 'select',
-                'items' => Array (
-                    Array('', 0),
+                'items' => array(
+                    array('', 0),
                 ),
                 'foreign_table' => 'tx_party_parties',
                 'foreign_table_where' => 'AND tx_party_parties.pid=###STORAGE_PID### ORDER BY tx_party_parties.uid',
@@ -32,10 +32,10 @@ $GLOBALS['TCA']['tx_party_accounts'] = array (
                 'maxitems' => 1,
             )
         ),
-        'organisation' => Array (
+        'organisation' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_accounts.organisation',
-            'config' => Array (
+            'config' => array(
                 'type' => 'select',
                 'foreign_table' => 'tx_party_parties',
                 'foreign_table_where' => 'AND tx_party_parties.pid=###STORAGE_PID### AND tx_party_parties.type=1 ORDER BY tx_party_parties.uid',
@@ -44,13 +44,13 @@ $GLOBALS['TCA']['tx_party_accounts'] = array (
                 'maxitems' => 1,
             )
         ),
-        'ownership_type' => Array (
+        'ownership_type' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_accounts.ownership_type',
-            'config' => Array (
+            'config' => array(
                 'type' => 'select',
-                'items' => Array (
-                    Array('', 0),
+                'items' => array(
+                    array('', 0),
                 ),
                 'foreign_table' => 'tx_party_types',
                 'foreign_table_where' => "AND tx_party_types.allowed_for_field LIKE '%tx_party_ACCOUNTS-OWNERSHIP_TYPE%' AND tx_party_types.pid=###STORAGE_PID### ORDER BY tx_party_types.uid",
@@ -59,33 +59,33 @@ $GLOBALS['TCA']['tx_party_accounts'] = array (
                 'maxitems' => 1,
             )
         ),
-        'account_id' => Array (
+        'account_id' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_accounts.account_id',
-            'config' => Array (
+            'config' => array(
                 'type' => 'input',
                 'size' => '30',
                 'max' => '30',
                 'eval' => 'trim',
             )
         ),
-        'issuing_authority' => Array (
+        'issuing_authority' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_accounts.issuing_authority',
-            'config' => Array (
+            'config' => array(
                 'type' => 'input',
                 'size' => '30',
                 'max' => '30',
                 'eval' => 'trim',
             )
         ),
-        'account_type' => Array (
+        'account_type' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_accounts.account_type',
-            'config' => Array (
+            'config' => array(
                 'type' => 'select',
-                'items' => Array (
-                    Array('', 0),
+                'items' => array(
+                    array('', 0),
                 ),
                 'foreign_table' => 'tx_party_types',
                 'foreign_table_where' => "AND tx_party_types.allowed_for_field LIKE '%tx_party_ACCOUNTS-ACCOUNT_TYPE%' AND tx_party_types.pid=###STORAGE_PID### ORDER BY tx_party_types.uid",
@@ -94,21 +94,20 @@ $GLOBALS['TCA']['tx_party_accounts'] = array (
                 'maxitems' => 1,
             )
         ),
-        'remarks' => Array (
+        'remarks' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_accounts.remarks',
-            'config' => Array (
+            'config' => array(
                 'type' => 'text',
                 'cols' => '30',
                 'rows' => '5',
             )
         ),
     ),
-    'types' => array (
+    'types' => array(
         '0' => array('showitem' => 'party;;;;1-1-1, account_id, organisation, ownership_type, issuing_authority;;;;1-1-1, account_type, remarks;;;;1-1-1')
     ),
-    'palettes' => array (
+    'palettes' => array(
         '1' => array('showitem' => '')
     )
 );
-

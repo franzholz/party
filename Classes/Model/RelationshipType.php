@@ -24,39 +24,41 @@ namespace JambageCom\Party\Model;
  */
 
 
-class RelationshipType extends Object {
-	protected $table = 'tx_party_relationship_types';
+class RelationshipType extends BaseModel
+{
+    protected $table = 'tx_party_relationship_types';
 
 
-	/**
-	 * Determines if a relationship is allowed, according to the rules of the
-	 * relationship type.
-	 *
-	 * @param	integer		$typeOfPrimaryParty: UID of the party with the primary role in the relationship
-	 * @param	integer		$typeOfSecondaryParty: UID of the party with the secondary role in the relationship
-	 * @return	boolean		True if the relationship is allowed
-	 */
-	public function isRelationshipAllowed ($typeOfPrimaryParty, $typeOfSecondaryParty) {
-		$primaryOk == false;
-		$secondaryOk = false;
+    /**
+     * Determines if a relationship is allowed, according to the rules of the
+     * relationship type.
+     *
+     * @param	integer		$typeOfPrimaryParty: UID of the party with the primary role in the relationship
+     * @param	integer		$typeOfSecondaryParty: UID of the party with the secondary role in the relationship
+     * @return	boolean		True if the relationship is allowed
+     */
+    public function isRelationshipAllowed($typeOfPrimaryParty, $typeOfSecondaryParty)
+    {
+        $primaryOk == false;
+        $secondaryOk = false;
 
-		if ($typeOfPrimaryParty == 0 && $this->get('person_allowed_as_primary')) {
-			$primaryOk = TRUE;
-		}
+        if ($typeOfPrimaryParty == 0 && $this->get('person_allowed_as_primary')) {
+            $primaryOk = true;
+        }
 
-		if ($typeOfPrimaryParty == 1 && $this->get('organisation_allowed_as_primary')) {
-			$primaryOk = TRUE;
-		}
+        if ($typeOfPrimaryParty == 1 && $this->get('organisation_allowed_as_primary')) {
+            $primaryOk = true;
+        }
 
-		if ($typeOfSecondaryParty == 0 && $this->get('person_allowed_as_secondary')) {
-			$secondaryOk = TRUE;
-		}
+        if ($typeOfSecondaryParty == 0 && $this->get('person_allowed_as_secondary')) {
+            $secondaryOk = true;
+        }
 
-		if ($typeOfSecondaryParty == 1 && $this->get('organisation_allowed_as_secondary')) {
-			$secondaryOk = TRUE;
-		}
+        if ($typeOfSecondaryParty == 1 && $this->get('organisation_allowed_as_secondary')) {
+            $secondaryOk = true;
+        }
 
-		$out = ($primaryOk && $secondaryOk) ? TRUE : false;
-		return $out;
-	}
+        $out = ($primaryOk && $secondaryOk) ? true : false;
+        return $out;
+    }
 }

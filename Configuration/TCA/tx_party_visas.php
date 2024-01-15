@@ -3,8 +3,8 @@
 defined('TYPO3') || die('Access denied.');
 
 
-$GLOBALS['TCA']['tx_party_visas'] = array (
-    'ctrl' => array (
+$GLOBALS['TCA']['tx_party_visas'] = array(
+    'ctrl' => array(
         'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_visas',
         'label'     => 'country',
         'label_userFunc' => 'tx_party_labels->getLabel',
@@ -15,17 +15,17 @@ $GLOBALS['TCA']['tx_party_visas'] = array (
         'delete' => 'deleted',
         'iconfile'          => PATH_BE_PARTY_REL . 'icons/icon_tx_party_visas.gif',
     ),
-    'interface' => array (
+    'interface' => array(
         'showRecordFieldList' => 'party,country,number,code,issue_date,issue_place,maximum_stay,restriction,privilege,special_condition,remarks'
     ),
-    'columns' => array (
-        'party' => Array (
+    'columns' => array(
+        'party' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_visas.party',
-            'config' => Array (
+            'config' => array(
                 'type' => 'select',
-                'items' => Array (
-                    Array('', 0),
+                'items' => array(
+                    array('', 0),
                 ),
                 'foreign_table' => 'tx_party_parties',
                 'foreign_table_where' => 'AND tx_party_parties.pid=###STORAGE_PID### ORDER BY tx_party_parties.uid',
@@ -34,15 +34,15 @@ $GLOBALS['TCA']['tx_party_visas'] = array (
                 'maxitems' => 1,
             )
         ),
-        'country' => Array (
+        'country' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_visas.country',
-            'config' => Array (
+            'config' => array(
                 'type' => 'select',
                 'foreign_table' => 'static_countries',
                 'foreign_table_where' => 'ORDER BY static_countries.cn_official_name_en',
-                'items' => Array (
-                    Array('', 0),
+                'items' => array(
+                    array('', 0),
                 ),
                 'size' => 1,
                 'minitems' => 0,
@@ -54,30 +54,30 @@ $GLOBALS['TCA']['tx_party_visas'] = array (
                 ),
             )
         ),
-        'number' => Array (
+        'number' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_visas.number',
-            'config' => Array (
+            'config' => array(
                 'type' => 'input',
                 'size' => '30',
                 'max' => '90',
                 'eval' => 'trim',
             )
         ),
-        'code' => Array (
+        'code' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_visas.code',
-            'config' => Array (
+            'config' => array(
                 'type' => 'input',
                 'size' => '30',
                 'max' => '90',
                 'eval' => 'trim',
             )
         ),
-        'issue_date' => Array (
+        'issue_date' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_visas.issue_date',
-            'config' => Array (
+            'config' => array(
                 'type'     => 'input',
                 'size'     => '8',
                 'max'      => '20',
@@ -86,71 +86,70 @@ $GLOBALS['TCA']['tx_party_visas'] = array (
                 'default'  => '0'
             )
         ),
-        'issue_place' => Array (
+        'issue_place' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_visas.issue_place',
-            'config' => Array (
+            'config' => array(
                 'type' => 'input',
                 'size' => '30',
                 'max' => '90',
                 'eval' => 'trim',
             )
         ),
-        'maximum_stay' => Array (
+        'maximum_stay' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_visas.maximum_stay',
-            'config' => Array (
+            'config' => array(
                 'type' => 'input',
                 'size' => '30',
                 'max' => '90',
                 'eval' => 'trim',
             )
         ),
-        'restriction' => Array (
+        'restriction' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_visas.restriction',
-            'config' => Array (
+            'config' => array(
                 'type' => 'input',
                 'size' => '30',
                 'max' => '90',
                 'eval' => 'trim',
             )
         ),
-        'privilege' => Array (
+        'privilege' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_visas.privilege',
-            'config' => Array (
+            'config' => array(
                 'type' => 'input',
                 'size' => '30',
                 'max' => '90',
                 'eval' => 'trim',
             )
         ),
-        'special_condition' => Array (
+        'special_condition' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_visas.special_condition',
-            'config' => Array (
+            'config' => array(
                 'type' => 'input',
                 'size' => '30',
                 'max' => '90',
                 'eval' => 'trim',
             )
         ),
-        'remarks' => Array (
+        'remarks' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_visas.remarks',
-            'config' => Array (
+            'config' => array(
                 'type' => 'text',
                 'cols' => '30',
                 'rows' => '5',
             )
         ),
     ),
-    'types' => array (
+    'types' => array(
         '0' => array('showitem' => 'party;;;;1-1-1, country, number, code, issue_date;;;;1-1-1, issue_place, maximum_stay;;;;1-1-1, restriction, privilege, special_condition, remarks;;;;1-1-1')
     ),
-    'palettes' => array (
+    'palettes' => array(
         '1' => array('showitem' => '')
     )
 );
-

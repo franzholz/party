@@ -2,8 +2,8 @@
 
 defined('TYPO3') || die('Access denied.');
 
-$GLOBALS['TCA']['tx_party_usages'] = array (
-    'ctrl' => array (
+$GLOBALS['TCA']['tx_party_usages'] = array(
+    'ctrl' => array(
         'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_usages',
         'label'     => 'title',
         'tstamp'    => 'tstamp',
@@ -13,34 +13,34 @@ $GLOBALS['TCA']['tx_party_usages'] = array (
         'delete' => 'deleted',
         'iconfile'          => PATH_BE_PARTY_REL . 'icons/icon_tx_party_usages.gif',
     ),
-    'interface' => array (
+    'interface' => array(
         'showRecordFieldList' => 'short_title,title,long_title'
     ),
-    'columns' => array (
-        'short_title' => Array (
+    'columns' => array(
+        'short_title' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_usages.short_title',
-            'config' => Array (
+            'config' => array(
                 'type' => 'input',
                 'size' => '30',
                 'max' => '30',
                 'eval' => 'trim',
             )
         ),
-        'title' => Array (
+        'title' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_usages.title',
-            'config' => Array (
+            'config' => array(
                 'type' => 'input',
                 'size' => '48',
                 'max' => '60',
                 'eval' => 'trim',
             )
         ),
-        'long_title' => Array (
+        'long_title' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_usages.long_title',
-            'config' => Array (
+            'config' => array(
                 'type' => 'input',
                 'size' => '48',
                 'max' => '90',
@@ -48,11 +48,10 @@ $GLOBALS['TCA']['tx_party_usages'] = array (
             )
         ),
     ),
-    'types' => array (
+    'types' => array(
         '0' => array('showitem' => 'short_title;;;;1-1-1, title;;;;2-2-2, long_title;;;;3-3-3')
     ),
-    'palettes' => array (
+    'palettes' => array(
         '1' => array('showitem' => '')
     )
 );
-

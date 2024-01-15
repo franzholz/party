@@ -25,37 +25,38 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
  * @subpackage tx_party
  */
 
-class Account extends Object {
-	protected $table = 'tx_party_accounts';
+class Account extends BaseModel
+{
+    protected $table = 'tx_party_accounts';
 
-	/**
-	 * Returns the label of the account in the following format:
-	 * "[account_id] ([organisation])"
-	 *
-	 * The data must be loaded before, by calling $this->load();
-	 *
-	 * @return	string		Label of the account
-	 */
-	public function getLabel () {
-		if ($this->isEmpty()) {
-			return false;		// Data must be loaded
-		}
-		$label = array();
-		$out = '';
+    /**
+     * Returns the label of the account in the following format:
+     * "[account_id] ([organisation])"
+     *
+     * The data must be loaded before, by calling $this->load();
+     *
+     * @return	string		Label of the account
+     */
+    public function getLabel()
+    {
+        if ($this->isEmpty()) {
+            return false;		// Data must be loaded
+        }
+        $label = array();
+        $out = '';
 
-		// Get all relevant parts
-		$accountId = $this->get('account_id');
-		$org = GeneralUtility::makeInstance('tx_party_models_organisation');
-		$org->load($this->get('organisation'));
+        // Get all relevant parts
+        $accountId = $this->get('account_id');
+        $org = GeneralUtility::makeInstance('tx_party_models_organisation');
+        $org->load($this->get('organisation'));
 
-		// Assemble the label
-		$label[0] = $accountId;
-		if ($org) {
-			$label[1] = '(' . $org->getLabel() . ')';
-		}
+        // Assemble the label
+        $label[0] = $accountId;
+        if ($org) {
+            $label[1] = '(' . $org->getLabel() . ')';
+        }
 
-		$out = implode(' ', $label);
-		return $out;
-	}
+        $out = implode(' ', $label);
+        return $out;
+    }
 }
-

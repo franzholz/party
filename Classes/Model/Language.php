@@ -24,39 +24,39 @@ namespace JambageCom\Party\Model;
  */
 
 
-class Language extends Object {
-	protected $table = 'tx_party_languages';
+class Language extends BaseModel
+{
+    protected $table = 'tx_party_languages';
 
-	/**
-	 * Returns the label of the Language in the following format:
-	 * "[language] ([party])"
-	 *
-	 * The data must be loaded before, by calling $this->load();
-	 *
-	 * @return	string		Label of the Language
-	 */
-	public function getLabel () {
-		if ($this->isEmpty()) {
-			return false;		// Data must be loaded
-		}
-		$label = array();
-		$out = '';
+    /**
+     * Returns the label of the Language in the following format:
+     * "[language] ([party])"
+     *
+     * The data must be loaded before, by calling $this->load();
+     *
+     * @return	string		Label of the Language
+     */
+    public function getLabel()
+    {
+        if ($this->isEmpty()) {
+            return false;		// Data must be loaded
+        }
+        $label = array();
+        $out = '';
 
-		// Get all relevant parts
-		$party = tx_party_models_party::getInstance($this->get('party'));
-		$language = reset(
-			tx_div2007_core::getRecord('static_languages', $this->get('language'), 'lg_name_en')
-		);
+        // Get all relevant parts
+        $party = tx_party_models_party::getInstance($this->get('party'));
+        $language = reset(
+            tx_div2007_core::getRecord('static_languages', $this->get('language'), 'lg_name_en')
+        );
 
-		// Assemble the label
-		$label[0] = $language;
-		if (!$party->isEmpty()) {
-			$label[1] = '(' . $party->getLabel() . ')';
-		}
+        // Assemble the label
+        $label[0] = $language;
+        if (!$party->isEmpty()) {
+            $label[1] = '(' . $party->getLabel() . ')';
+        }
 
-		$out = implode(' ', $label);
-		return $out;
-	}
+        $out = implode(' ', $label);
+        return $out;
+    }
 }
-
-

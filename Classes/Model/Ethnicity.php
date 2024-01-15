@@ -24,7 +24,7 @@ namespace JambageCom\Party\Model;
  * @subpackage tx_party
  */
 
-class Ethnicity extends Object {
-	protected $table = 'tx_party_ethnicities';
+class Ethnicity extends BaseModel
+{
+    protected $table = 'tx_party_ethnicities';
 }
-

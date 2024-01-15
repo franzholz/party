@@ -4,8 +4,8 @@ defined('TYPO3') || die('Access denied.');
 
 
 
-$GLOBALS['TCA']['tx_party_parties'] = array (
-    'ctrl' => array (
+$GLOBALS['TCA']['tx_party_parties'] = array(
+    'ctrl' => array(
         'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_parties',
         'label'     => 'uid',
         'label_userFunc' => 'tx_party_labels->getLabel',
@@ -15,56 +15,56 @@ $GLOBALS['TCA']['tx_party_parties'] = array (
         'type' => 'type',
         'default_sortby' => 'ORDER BY crdate',
         'delete' => 'deleted',
-        'dividers2tabs' => TRUE,
+        'dividers2tabs' => true,
         'iconfile'          => PATH_BE_PARTY_REL . 'icons/icon_tx_party_parties.gif',
         'typeicon_column' => 'type',
-        'typeicons' => Array (
+        'typeicons' => array(
             '0' => PATH_BE_PARTY_REL . 'icons/icon_tx_party_parties_person.gif',
             '1' => PATH_BE_PARTY_REL . 'icons/icon_tx_party_parties_organisation.gif',
         ),
     ),
-    'interface' => array (
+    'interface' => array(
         'showRecordFieldList' => 'type,marital_status,religion,birth_place,birth_date_time,birth_date_time_precision,birth_sign,birth_star,weight,height,breast,waist,hip,hair_colour,eye_colour,skin_colour,blood_group,physical_status,ethnicity,gender,hobbies,habits,organisation_type,organisation_nature,company_registration_id,company_registration_date,number_of_employees,remarks,names,addresses,accounts,contact_numbers,countries_of_residence,documents,electronic_address_identifiers,images,nationalities,relationships,revenues,vehicles,contacts,visas,disabilities,languages,marks,occupations,qualifications,stock_markets,events,identifiers,memberships,allergies,favourites,preferences'
     ),
-    'columns' => array (
-        'type' => Array (
+    'columns' => array(
+        'type' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.type',
-            'config' => Array (
+            'config' => array(
                 'type' => 'select',
-                'items' => Array (
-                    Array('LLL:EXT:party/locallang_db.xml:tx_party_parties.type.I.0', '0', PATH_BE_PARTY_REL . 'icons/selicon_tx_party_parties_type_0.gif'),
-                                  Array('LLL:EXT:party/locallang_db.xml:tx_party_parties.type.I.1', '1', PATH_BE_PARTY_REL . 'icons/selicon_tx_party_parties_type_1.gif'),
+                'items' => array(
+                    array('LLL:EXT:party/locallang_db.xml:tx_party_parties.type.I.0', '0', PATH_BE_PARTY_REL . 'icons/selicon_tx_party_parties_type_0.gif'),
+                                  array('LLL:EXT:party/locallang_db.xml:tx_party_parties.type.I.1', '1', PATH_BE_PARTY_REL . 'icons/selicon_tx_party_parties_type_1.gif'),
                 ),
                 'size' => 1,
                 'maxitems' => 1,
             )
         ),
-        'marital_status' => Array (
+        'marital_status' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.marital_status',
-            'config' => Array (
+            'config' => array(
                 'type' => 'select',
-                'items' => Array (
-                    Array('', ''),
-                                  Array('LLL:EXT:party/locallang_db.xml:tx_party_parties.marital_status.I.0', 'SINGLE'),
-                                  Array('LLL:EXT:party/locallang_db.xml:tx_party_parties.marital_status.I.1', 'ENGAGED'),
-                                  Array('LLL:EXT:party/locallang_db.xml:tx_party_parties.marital_status.I.2', 'MARRIED'),
-                                  Array('LLL:EXT:party/locallang_db.xml:tx_party_parties.marital_status.I.3', 'SEPARATED'),
-                                  Array('LLL:EXT:party/locallang_db.xml:tx_party_parties.marital_status.I.4', 'DIVORCED'),
-                                  Array('LLL:EXT:party/locallang_db.xml:tx_party_parties.marital_status.I.5', 'WIDOWED'),
+                'items' => array(
+                    array('', ''),
+                                  array('LLL:EXT:party/locallang_db.xml:tx_party_parties.marital_status.I.0', 'SINGLE'),
+                                  array('LLL:EXT:party/locallang_db.xml:tx_party_parties.marital_status.I.1', 'ENGAGED'),
+                                  array('LLL:EXT:party/locallang_db.xml:tx_party_parties.marital_status.I.2', 'MARRIED'),
+                                  array('LLL:EXT:party/locallang_db.xml:tx_party_parties.marital_status.I.3', 'SEPARATED'),
+                                  array('LLL:EXT:party/locallang_db.xml:tx_party_parties.marital_status.I.4', 'DIVORCED'),
+                                  array('LLL:EXT:party/locallang_db.xml:tx_party_parties.marital_status.I.5', 'WIDOWED'),
                 ),
                 'size' => 1,
                 'maxitems' => 1,
             )
         ),
-        'religion' => Array (
+        'religion' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.religion',
-            'config' => Array (
+            'config' => array(
                 'type' => 'select',
-                'items' => Array (
-                    Array('', 0),
+                'items' => array(
+                    array('', 0),
                 ),
                 'foreign_table' => 'tx_party_religions',
                 'foreign_table_where' => 'AND tx_party_religions.pid=###STORAGE_PID### ORDER BY tx_party_religions.uid',
@@ -73,20 +73,20 @@ $GLOBALS['TCA']['tx_party_parties'] = array (
                 'maxitems' => 1,
             )
         ),
-        'birth_place' => Array (
+        'birth_place' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.birth_place',
-            'config' => Array (
+            'config' => array(
                 'type' => 'input',
                 'size' => '30',
                 'max' => '90',
                 'eval' => 'trim',
             )
         ),
-        'birth_date_time' => Array (
+        'birth_date_time' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.birth_date_time',
-            'config' => Array (
+            'config' => array(
                 'type'     => 'input',
                 'size'     => '12',
                 'max'      => '20',
@@ -95,23 +95,23 @@ $GLOBALS['TCA']['tx_party_parties'] = array (
                 'default'  => '0'
             )
         ),
-        'birth_date_time_precision' => Array (
+        'birth_date_time_precision' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.birth_date_time_precision',
-            'config' => Array (
+            'config' => array(
                 'type' => 'input',
                 'size' => '10',
                 'max' => '90',
                 'eval' => 'trim',
             )
         ),
-        'birth_sign' => Array (
+        'birth_sign' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.birth_sign',
-            'config' => Array (
+            'config' => array(
                 'type' => 'select',
-                'items' => Array (
-                    Array('', 0),
+                'items' => array(
+                    array('', 0),
                 ),
                 'foreign_table' => 'tx_party_birth_signs',
                 'foreign_table_where' => 'AND tx_party_birth_signs.pid=###SITEROOT### ORDER BY tx_party_birth_signs.uid',
@@ -120,20 +120,20 @@ $GLOBALS['TCA']['tx_party_parties'] = array (
                 'maxitems' => 1,
             )
         ),
-        'birth_star' => Array (
+        'birth_star' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.birth_star',
-            'config' => Array (
+            'config' => array(
                 'type' => 'input',
                 'size' => '30',
                 'max' => '90',
                 'eval' => 'trim',
             )
         ),
-        'weight' => Array (
+        'weight' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.weight',
-            'config' => Array (
+            'config' => array(
                 'type' => 'input',
                 'size' => '30',
                 'max' => '90',
@@ -141,10 +141,10 @@ $GLOBALS['TCA']['tx_party_parties'] = array (
                 'eval' => 'int,nospace',
             )
         ),
-        'height' => Array (
+        'height' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.height',
-            'config' => Array (
+            'config' => array(
                 'type' => 'input',
                 'size' => '30',
                 'max' => '90',
@@ -152,10 +152,10 @@ $GLOBALS['TCA']['tx_party_parties'] = array (
                 'eval' => 'int,nospace',
             )
         ),
-        'breast' => Array (
+        'breast' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.breast',
-            'config' => Array (
+            'config' => array(
                 'type' => 'input',
                 'size' => '30',
                 'max' => '90',
@@ -163,10 +163,10 @@ $GLOBALS['TCA']['tx_party_parties'] = array (
                 'eval' => 'int,nospace',
             )
         ),
-        'waist' => Array (
+        'waist' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.waist',
-            'config' => Array (
+            'config' => array(
                 'type' => 'input',
                 'size' => '30',
                 'max' => '90',
@@ -174,10 +174,10 @@ $GLOBALS['TCA']['tx_party_parties'] = array (
                 'eval' => 'int,nospace',
             )
         ),
-        'hip' => Array (
+        'hip' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.hip',
-            'config' => Array (
+            'config' => array(
                 'type' => 'input',
                 'size' => '30',
                 'max' => '90',
@@ -185,84 +185,84 @@ $GLOBALS['TCA']['tx_party_parties'] = array (
                 'eval' => 'int,nospace',
             )
         ),
-        'hair_colour' => Array (
+        'hair_colour' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.hair_colour',
-            'config' => Array (
+            'config' => array(
                 'type' => 'select',
-                'items' => Array (
-                    Array('', ''),
-                                  Array('LLL:EXT:party/locallang_db.xml:tx_party_parties.hair_colour.I.0', 'BROWN'),
-                                  Array('LLL:EXT:party/locallang_db.xml:tx_party_parties.hair_colour.I.1', 'BLACK'),
-                                  Array('LLL:EXT:party/locallang_db.xml:tx_party_parties.hair_colour.I.2', 'BLONDE'),
-                                  Array('LLL:EXT:party/locallang_db.xml:tx_party_parties.hair_colour.I.3', 'RED'),
-                                  Array('LLL:EXT:party/locallang_db.xml:tx_party_parties.hair_colour.I.4', 'GREY'),
-                                  Array('LLL:EXT:party/locallang_db.xml:tx_party_parties.hair_colour.I.5', 'WHITE'),
-                                  Array('LLL:EXT:party/locallang_db.xml:tx_party_parties.hair_colour.I.6', 'GINGER'),
-                                  Array('LLL:EXT:party/locallang_db.xml:tx_party_parties.hair_colour.I.7', 'PURPLE'),
-                                  Array('LLL:EXT:party/locallang_db.xml:tx_party_parties.hair_colour.I.8', 'BLUE'),
-                                  Array('LLL:EXT:party/locallang_db.xml:tx_party_parties.hair_colour.I.9', 'GREEN'),
-                                  Array('LLL:EXT:party/locallang_db.xml:tx_party_parties.hair_colour.I.10', 'PINK'),
+                'items' => array(
+                    array('', ''),
+                                  array('LLL:EXT:party/locallang_db.xml:tx_party_parties.hair_colour.I.0', 'BROWN'),
+                                  array('LLL:EXT:party/locallang_db.xml:tx_party_parties.hair_colour.I.1', 'BLACK'),
+                                  array('LLL:EXT:party/locallang_db.xml:tx_party_parties.hair_colour.I.2', 'BLONDE'),
+                                  array('LLL:EXT:party/locallang_db.xml:tx_party_parties.hair_colour.I.3', 'RED'),
+                                  array('LLL:EXT:party/locallang_db.xml:tx_party_parties.hair_colour.I.4', 'GREY'),
+                                  array('LLL:EXT:party/locallang_db.xml:tx_party_parties.hair_colour.I.5', 'WHITE'),
+                                  array('LLL:EXT:party/locallang_db.xml:tx_party_parties.hair_colour.I.6', 'GINGER'),
+                                  array('LLL:EXT:party/locallang_db.xml:tx_party_parties.hair_colour.I.7', 'PURPLE'),
+                                  array('LLL:EXT:party/locallang_db.xml:tx_party_parties.hair_colour.I.8', 'BLUE'),
+                                  array('LLL:EXT:party/locallang_db.xml:tx_party_parties.hair_colour.I.9', 'GREEN'),
+                                  array('LLL:EXT:party/locallang_db.xml:tx_party_parties.hair_colour.I.10', 'PINK'),
                 ),
                 'size' => 1,
                 'maxitems' => 1,
             )
         ),
-        'eye_colour' => Array (
+        'eye_colour' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.eye_colour',
-            'config' => Array (
+            'config' => array(
                 'type' => 'select',
-                'items' => Array (
-                    Array('', ''),
-                                  Array('LLL:EXT:party/locallang_db.xml:tx_party_parties.eye_colour.I.0', 'AMBER'),
-                                  Array('LLL:EXT:party/locallang_db.xml:tx_party_parties.eye_colour.I.1', 'BLUE'),
-                                  Array('LLL:EXT:party/locallang_db.xml:tx_party_parties.eye_colour.I.2', 'BROWN'),
-                                  Array('LLL:EXT:party/locallang_db.xml:tx_party_parties.eye_colour.I.3', 'GRAY'),
-                                  Array('LLL:EXT:party/locallang_db.xml:tx_party_parties.eye_colour.I.4', 'GREEN'),
-                                  Array('LLL:EXT:party/locallang_db.xml:tx_party_parties.eye_colour.I.5', 'HAZEL'),
+                'items' => array(
+                    array('', ''),
+                                  array('LLL:EXT:party/locallang_db.xml:tx_party_parties.eye_colour.I.0', 'AMBER'),
+                                  array('LLL:EXT:party/locallang_db.xml:tx_party_parties.eye_colour.I.1', 'BLUE'),
+                                  array('LLL:EXT:party/locallang_db.xml:tx_party_parties.eye_colour.I.2', 'BROWN'),
+                                  array('LLL:EXT:party/locallang_db.xml:tx_party_parties.eye_colour.I.3', 'GRAY'),
+                                  array('LLL:EXT:party/locallang_db.xml:tx_party_parties.eye_colour.I.4', 'GREEN'),
+                                  array('LLL:EXT:party/locallang_db.xml:tx_party_parties.eye_colour.I.5', 'HAZEL'),
                 ),
                 'size' => 1,
                 'maxitems' => 1,
             )
         ),
-        'skin_colour' => Array (
+        'skin_colour' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.skin_colour',
-            'config' => Array (
+            'config' => array(
                 'type' => 'input',
                 'size' => '30',
                 'max' => '90',
                 'eval' => 'trim',
             )
         ),
-        'blood_group' => Array (
+        'blood_group' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.blood_group',
-            'config' => Array (
+            'config' => array(
                 'type' => 'select',
-                'items' => Array (
-                    Array('', ''),
-                                  Array('LLL:EXT:party/locallang_db.xml:tx_party_parties.blood_group.I.0', 'O_NEGATIVE'),
-                                  Array('LLL:EXT:party/locallang_db.xml:tx_party_parties.blood_group.I.1', 'O_POSITIVE'),
-                                  Array('LLL:EXT:party/locallang_db.xml:tx_party_parties.blood_group.I.2', 'A_NEGATIVE'),
-                                  Array('LLL:EXT:party/locallang_db.xml:tx_party_parties.blood_group.I.3', 'A_POSITIVE'),
-                                  Array('LLL:EXT:party/locallang_db.xml:tx_party_parties.blood_group.I.4', 'B_NEGATIVE'),
-                                  Array('LLL:EXT:party/locallang_db.xml:tx_party_parties.blood_group.I.5', 'B_POSITIVE'),
-                                  Array('LLL:EXT:party/locallang_db.xml:tx_party_parties.blood_group.I.6', 'AB_NEGATIVE'),
-                                  Array('LLL:EXT:party/locallang_db.xml:tx_party_parties.blood_group.I.7', 'AB_POSITIVE'),
+                'items' => array(
+                    array('', ''),
+                                  array('LLL:EXT:party/locallang_db.xml:tx_party_parties.blood_group.I.0', 'O_NEGATIVE'),
+                                  array('LLL:EXT:party/locallang_db.xml:tx_party_parties.blood_group.I.1', 'O_POSITIVE'),
+                                  array('LLL:EXT:party/locallang_db.xml:tx_party_parties.blood_group.I.2', 'A_NEGATIVE'),
+                                  array('LLL:EXT:party/locallang_db.xml:tx_party_parties.blood_group.I.3', 'A_POSITIVE'),
+                                  array('LLL:EXT:party/locallang_db.xml:tx_party_parties.blood_group.I.4', 'B_NEGATIVE'),
+                                  array('LLL:EXT:party/locallang_db.xml:tx_party_parties.blood_group.I.5', 'B_POSITIVE'),
+                                  array('LLL:EXT:party/locallang_db.xml:tx_party_parties.blood_group.I.6', 'AB_NEGATIVE'),
+                                  array('LLL:EXT:party/locallang_db.xml:tx_party_parties.blood_group.I.7', 'AB_POSITIVE'),
                 ),
                 'size' => 1,
                 'maxitems' => 1,
             )
         ),
-        'physical_status' => Array (
+        'physical_status' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.physical_status',
-            'config' => Array (
+            'config' => array(
                 'type' => 'select',
-                'items' => Array (
-                    Array('', 0),
+                'items' => array(
+                    array('', 0),
                 ),
                 'foreign_table' => 'tx_party_physical_status',
                 'foreign_table_where' => 'AND tx_party_physical_status.pid=###STORAGE_PID### ORDER BY tx_party_physical_status.uid',
@@ -271,13 +271,13 @@ $GLOBALS['TCA']['tx_party_parties'] = array (
                 'maxitems' => 1,
             )
         ),
-        'ethnicity' => Array (
+        'ethnicity' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.ethnicity',
-            'config' => Array (
+            'config' => array(
                 'type' => 'select',
-                'items' => Array (
-                    Array('', 0),
+                'items' => array(
+                    array('', 0),
                 ),
                 'foreign_table' => 'tx_party_ethnicities',
                 'foreign_table_where' => 'AND tx_party_ethnicities.pid=###STORAGE_PID### ORDER BY tx_party_ethnicities.uid',
@@ -286,25 +286,25 @@ $GLOBALS['TCA']['tx_party_parties'] = array (
                 'maxitems' => 1,
             )
         ),
-        'gender' => Array (
+        'gender' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.gender',
-            'config' => Array (
+            'config' => array(
                 'type' => 'select',
-                'items' => Array (
-                    Array('LLL:EXT:party/locallang_db.xml:tx_party_parties.gender.I.0', '0'),
-                                  Array('LLL:EXT:party/locallang_db.xml:tx_party_parties.gender.I.1', '1'),
-                                  Array('LLL:EXT:party/locallang_db.xml:tx_party_parties.gender.I.2', '2'),
-                                  Array('LLL:EXT:party/locallang_db.xml:tx_party_parties.gender.I.3', '9'),
+                'items' => array(
+                    array('LLL:EXT:party/locallang_db.xml:tx_party_parties.gender.I.0', '0'),
+                                  array('LLL:EXT:party/locallang_db.xml:tx_party_parties.gender.I.1', '1'),
+                                  array('LLL:EXT:party/locallang_db.xml:tx_party_parties.gender.I.2', '2'),
+                                  array('LLL:EXT:party/locallang_db.xml:tx_party_parties.gender.I.3', '9'),
                 ),
                 'size' => 1,
                 'maxitems' => 1,
             )
         ),
-        'hobbies' => Array (
+        'hobbies' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.hobbies',
-            'config' => Array (
+            'config' => array(
                 'type' => 'select',
                 'foreign_table' => 'tx_party_hobbies',
                 'foreign_table_where' => 'AND tx_party_hobbies.pid=###STORAGE_PID### ORDER BY tx_party_hobbies.uid',
@@ -315,10 +315,10 @@ $GLOBALS['TCA']['tx_party_parties'] = array (
                 'MM' => 'tx_party_parties_hobbies_mm',
             )
         ),
-        'habits' => Array (
+        'habits' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.habits',
-            'config' => Array (
+            'config' => array(
                 'type' => 'select',
                 'foreign_table' => 'tx_party_habits',
                 'foreign_table_where' => 'AND tx_party_habits.pid=###STORAGE_PID### ORDER BY tx_party_habits.uid',
@@ -329,13 +329,13 @@ $GLOBALS['TCA']['tx_party_parties'] = array (
                 'MM' => 'tx_party_parties_habits_mm',
             )
         ),
-        'organisation_type' => Array (
+        'organisation_type' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.organisation_type',
-            'config' => Array (
+            'config' => array(
                 'type' => 'select',
-                'items' => Array (
-                    Array('', 0),
+                'items' => array(
+                    array('', 0),
                 ),
                 'foreign_table' => 'tx_party_types',
                 'foreign_table_where' => "AND tx_party_types.allowed_for_field LIKE '%tx_party_ORGANISATIONS-ORGANISATION_TYPE%' AND tx_party_types.pid=###STORAGE_PID### ORDER BY tx_party_types.uid",
@@ -344,13 +344,13 @@ $GLOBALS['TCA']['tx_party_parties'] = array (
                 'maxitems' => 1,
             )
         ),
-        'organisation_nature' => Array (
+        'organisation_nature' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.organisation_nature',
-            'config' => Array (
+            'config' => array(
                 'type' => 'select',
-                'items' => Array (
-                    Array('', 0),
+                'items' => array(
+                    array('', 0),
                 ),
                 'foreign_table' => 'tx_party_organisation_natures',
                 'foreign_table_where' => 'AND tx_party_organisation_natures.pid=###STORAGE_PID### ORDER BY tx_party_organisation_natures.uid',
@@ -359,20 +359,20 @@ $GLOBALS['TCA']['tx_party_parties'] = array (
                 'maxitems' => 1,
             )
         ),
-        'company_registration_id' => Array (
+        'company_registration_id' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.company_registration_id',
-            'config' => Array (
+            'config' => array(
                 'type' => 'input',
                 'size' => '30',
                 'max' => '90',
                 'eval' => 'trim',
             )
         ),
-        'company_registration_date' => Array (
+        'company_registration_date' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.company_registration_date',
-            'config' => Array (
+            'config' => array(
                 'type'     => 'input',
                 'size'     => '8',
                 'max'      => '20',
@@ -381,10 +381,10 @@ $GLOBALS['TCA']['tx_party_parties'] = array (
                 'default'  => '0'
             )
         ),
-        'number_of_employees' => Array (
+        'number_of_employees' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.number_of_employees',
-            'config' => Array (
+            'config' => array(
                 'type' => 'input',
                 'size' => '30',
                 'max' => '90',
@@ -392,19 +392,19 @@ $GLOBALS['TCA']['tx_party_parties'] = array (
                 'eval' => 'int,nospace',
             )
         ),
-        'remarks' => Array (
+        'remarks' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.remarks',
-            'config' => Array (
+            'config' => array(
                 'type' => 'text',
                 'cols' => '30',
                 'rows' => '5',
             )
         ),
-        'names' => Array (
+        'names' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.names',
-            'config' => Array (
+            'config' => array(
                 'type' => 'inline',
                 'foreign_table' => 'tx_party_names',
                 'foreign_field' => 'party',
@@ -416,10 +416,10 @@ $GLOBALS['TCA']['tx_party_parties'] = array (
                 'appearance' => $GLOBALS['TYPO3_CONF_VARS']['extconf']['party']['inline_appearance']['default'],
             )
         ),
-        'addresses' => Array (
+        'addresses' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.addresses',
-            'config' => Array (
+            'config' => array(
                 'type' => 'inline',
                 'foreign_table' => 'tx_party_address_usages',
                 'foreign_field' => 'party',
@@ -429,10 +429,10 @@ $GLOBALS['TCA']['tx_party_parties'] = array (
                 'appearance' => $GLOBALS['TYPO3_CONF_VARS']['extconf']['party']['inline_appearance']['combined'],
             )
         ),
-        'accounts' => Array (
+        'accounts' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.accounts',
-            'config' => Array (
+            'config' => array(
                 'type' => 'inline',
                 'foreign_table' => 'tx_party_accounts',
                 'foreign_field' => 'party',
@@ -440,10 +440,10 @@ $GLOBALS['TCA']['tx_party_parties'] = array (
                 'appearance' => $GLOBALS['TYPO3_CONF_VARS']['extconf']['party']['inline_appearance']['default'],
             )
         ),
-        'contact_numbers' => Array (
+        'contact_numbers' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.contact_numbers',
-            'config' => Array (
+            'config' => array(
                 'type' => 'inline',
                 'foreign_table' => 'tx_party_contact_number_usages',
                 'foreign_field' => 'party',
@@ -453,10 +453,10 @@ $GLOBALS['TCA']['tx_party_parties'] = array (
                 'appearance' => $GLOBALS['TYPO3_CONF_VARS']['extconf']['party']['inline_appearance']['combined'],
             )
         ),
-        'countries_of_residence' => Array (
+        'countries_of_residence' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.countries_of_residence',
-            'config' => Array (
+            'config' => array(
                 'type' => 'inline',
                 'foreign_table' => 'tx_party_countries_of_residence',
                 'foreign_field' => 'party',
@@ -464,10 +464,10 @@ $GLOBALS['TCA']['tx_party_parties'] = array (
                 'appearance' => $GLOBALS['TYPO3_CONF_VARS']['extconf']['party']['inline_appearance']['default'],
             )
         ),
-        'documents' => Array (
+        'documents' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.documents',
-            'config' => Array (
+            'config' => array(
                 'type' => 'inline',
                 'foreign_table' => 'tx_party_documents',
                 'foreign_field' => 'party',
@@ -475,10 +475,10 @@ $GLOBALS['TCA']['tx_party_parties'] = array (
                 'appearance' => $GLOBALS['TYPO3_CONF_VARS']['extconf']['party']['inline_appearance']['default'],
             )
         ),
-        'electronic_address_identifiers' => Array (
+        'electronic_address_identifiers' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.electronic_address_identifiers',
-            'config' => Array (
+            'config' => array(
                 'type' => 'inline',
                 'foreign_table' => 'tx_party_electronic_address_identifier_usages',
                 'foreign_field' => 'party',
@@ -488,10 +488,10 @@ $GLOBALS['TCA']['tx_party_parties'] = array (
                 'appearance' => $GLOBALS['TYPO3_CONF_VARS']['extconf']['party']['inline_appearance']['combined'],
             )
         ),
-        'images' => Array (
+        'images' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.images',
-            'config' => Array (
+            'config' => array(
                 'type' => 'inline',
                 'foreign_table' => 'tx_party_images',
                 'foreign_field' => 'party',
@@ -500,10 +500,10 @@ $GLOBALS['TCA']['tx_party_parties'] = array (
             'appearance' => $GLOBALS['TYPO3_CONF_VARS']['extconf']['party']['inline_appearance']['default'],
             )
         ),
-        'nationalities' => Array (
+        'nationalities' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.nationalities',
-            'config' => Array (
+            'config' => array(
                 'type' => 'inline',
                 'foreign_table' => 'tx_party_nationalities',
                 'foreign_field' => 'party',
@@ -511,10 +511,10 @@ $GLOBALS['TCA']['tx_party_parties'] = array (
                 'appearance' => $GLOBALS['TYPO3_CONF_VARS']['extconf']['party']['inline_appearance']['default'],
             )
         ),
-        'relationships' => Array (
+        'relationships' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.relationships',
-            'config' => Array (
+            'config' => array(
                 'type' => 'inline',
                 'foreign_table' => 'tx_party_relationships',
                 'foreign_field' => 'primary_party',
@@ -522,10 +522,10 @@ $GLOBALS['TCA']['tx_party_parties'] = array (
                 'appearance' => $GLOBALS['TYPO3_CONF_VARS']['extconf']['party']['inline_appearance']['default'],
             )
         ),
-        'revenues' => Array (
+        'revenues' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.revenues',
-            'config' => Array (
+            'config' => array(
                 'type' => 'inline',
                 'foreign_table' => 'tx_party_revenues',
                 'foreign_field' => 'party',
@@ -533,10 +533,10 @@ $GLOBALS['TCA']['tx_party_parties'] = array (
                 'appearance' => $GLOBALS['TYPO3_CONF_VARS']['extconf']['party']['inline_appearance']['default'],
             )
         ),
-        'vehicles' => Array (
+        'vehicles' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.vehicles',
-            'config' => Array (
+            'config' => array(
                 'type' => 'inline',
                 'foreign_table' => 'tx_party_vehicles',
                 'foreign_field' => 'party',
@@ -544,10 +544,10 @@ $GLOBALS['TCA']['tx_party_parties'] = array (
                 'appearance' => $GLOBALS['TYPO3_CONF_VARS']['extconf']['party']['inline_appearance']['default'],
             )
         ),
-        'contacts' => Array (
+        'contacts' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.contacts',
-            'config' => Array (
+            'config' => array(
                 'type' => 'inline',
                 'foreign_table' => 'tx_party_contacts',
                 'foreign_field' => 'party',
@@ -555,10 +555,10 @@ $GLOBALS['TCA']['tx_party_parties'] = array (
                 'appearance' => $GLOBALS['TYPO3_CONF_VARS']['extconf']['party']['inline_appearance']['default'],
             )
         ),
-        'visas' => Array (
+        'visas' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.visas',
-            'config' => Array (
+            'config' => array(
                 'type' => 'inline',
                 'foreign_table' => 'tx_party_visas',
                 'foreign_field' => 'party',
@@ -566,10 +566,10 @@ $GLOBALS['TCA']['tx_party_parties'] = array (
                 'appearance' => $GLOBALS['TYPO3_CONF_VARS']['extconf']['party']['inline_appearance']['default'],
             )
         ),
-        'disabilities' => Array (
+        'disabilities' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.disabilities',
-            'config' => Array (
+            'config' => array(
                 'type' => 'inline',
                 'foreign_table' => 'tx_party_disabilities',
                 'foreign_field' => 'party',
@@ -577,10 +577,10 @@ $GLOBALS['TCA']['tx_party_parties'] = array (
                 'appearance' => $GLOBALS['TYPO3_CONF_VARS']['extconf']['party']['inline_appearance']['default'],
             )
         ),
-        'languages' => Array (
+        'languages' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.languages',
-            'config' => Array (
+            'config' => array(
                 'type' => 'inline',
                 'foreign_table' => 'tx_party_languages',
                 'foreign_field' => 'party',
@@ -588,10 +588,10 @@ $GLOBALS['TCA']['tx_party_parties'] = array (
                 'appearance' => $GLOBALS['TYPO3_CONF_VARS']['extconf']['party']['inline_appearance']['default'],
             )
         ),
-        'marks' => Array (
+        'marks' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.marks',
-            'config' => Array (
+            'config' => array(
                 'type' => 'inline',
                 'foreign_table' => 'tx_party_marks',
                 'foreign_field' => 'party',
@@ -599,10 +599,10 @@ $GLOBALS['TCA']['tx_party_parties'] = array (
                 'appearance' => $GLOBALS['TYPO3_CONF_VARS']['extconf']['party']['inline_appearance']['default'],
             )
         ),
-        'occupations' => Array (
+        'occupations' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.occupations',
-            'config' => Array (
+            'config' => array(
                 'type' => 'inline',
                 'foreign_table' => 'tx_party_occupations',
                 'foreign_field' => 'party',
@@ -610,10 +610,10 @@ $GLOBALS['TCA']['tx_party_parties'] = array (
                 'appearance' => $GLOBALS['TYPO3_CONF_VARS']['extconf']['party']['inline_appearance']['default'],
             )
         ),
-        'qualifications' => Array (
+        'qualifications' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.qualifications',
-            'config' => Array (
+            'config' => array(
                 'type' => 'inline',
                 'foreign_table' => 'tx_party_qualifications',
                 'foreign_field' => 'party',
@@ -621,10 +621,10 @@ $GLOBALS['TCA']['tx_party_parties'] = array (
                 'appearance' => $GLOBALS['TYPO3_CONF_VARS']['extconf']['party']['inline_appearance']['default'],
             )
         ),
-        'stock_markets' => Array (
+        'stock_markets' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.stock_markets',
-            'config' => Array (
+            'config' => array(
                 'type' => 'inline',
                 'foreign_table' => 'tx_party_stock_markets',
                 'foreign_field' => 'party',
@@ -632,10 +632,10 @@ $GLOBALS['TCA']['tx_party_parties'] = array (
                 'appearance' => $GLOBALS['TYPO3_CONF_VARS']['extconf']['party']['inline_appearance']['default'],
             )
         ),
-        'events' => Array (
+        'events' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.events',
-            'config' => Array (
+            'config' => array(
                 'type' => 'inline',
                 'foreign_table' => 'tx_party_events',
                 'foreign_field' => 'party',
@@ -643,10 +643,10 @@ $GLOBALS['TCA']['tx_party_parties'] = array (
                 'appearance' => $GLOBALS['TYPO3_CONF_VARS']['extconf']['party']['inline_appearance']['default'],
             )
         ),
-        'identifiers' => Array (
+        'identifiers' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.identifiers',
-            'config' => Array (
+            'config' => array(
                 'type' => 'inline',
                 'foreign_table' => 'tx_party_identifiers',
                 'foreign_field' => 'party',
@@ -654,10 +654,10 @@ $GLOBALS['TCA']['tx_party_parties'] = array (
                 'appearance' => $GLOBALS['TYPO3_CONF_VARS']['extconf']['party']['inline_appearance']['default'],
             )
         ),
-        'memberships' => Array (
+        'memberships' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.memberships',
-            'config' => Array (
+            'config' => array(
                 'type' => 'inline',
                 'foreign_table' => 'tx_party_memberships',
                 'foreign_field' => 'party',
@@ -665,10 +665,10 @@ $GLOBALS['TCA']['tx_party_parties'] = array (
                 'appearance' => $GLOBALS['TYPO3_CONF_VARS']['extconf']['party']['inline_appearance']['default'],
             )
         ),
-        'allergies' => Array (
+        'allergies' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.allergies',
-            'config' => Array (
+            'config' => array(
                 'type' => 'select',
                 'foreign_table' => 'tx_party_allergies',
                 'foreign_table_where' => 'AND tx_party_allergies.pid=###STORAGE_PID### ORDER BY tx_party_allergies.uid',
@@ -679,10 +679,10 @@ $GLOBALS['TCA']['tx_party_parties'] = array (
                 'MM' => 'tx_party_parties_allergies_mm',
             )
         ),
-        'favourites' => Array (
+        'favourites' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.favourites',
-            'config' => Array (
+            'config' => array(
                 'type' => 'inline',
                 'foreign_table' => 'tx_party_favourites',
                 'foreign_field' => 'party',
@@ -690,10 +690,10 @@ $GLOBALS['TCA']['tx_party_parties'] = array (
                 'appearance' => $GLOBALS['TYPO3_CONF_VARS']['extconf']['party']['inline_appearance']['default'],
             )
         ),
-        'preferences' => Array (
+        'preferences' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.preferences',
-            'config' => Array (
+            'config' => array(
                 'type' => 'inline',
                 'foreign_table' => 'tx_party_preferences',
                 'foreign_field' => 'party',
@@ -702,7 +702,7 @@ $GLOBALS['TCA']['tx_party_parties'] = array (
             )
         ),
     ),
-    'types' => array (
+    'types' => array(
         '0' => array('showitem' => '
         type,
         
@@ -780,57 +780,8 @@ $GLOBALS['TCA']['tx_party_parties'] = array (
         revenues;;;;1-1-1,
         
         vehicles;;;;1-1-1
-        
-         => array('showitem' => '
-         type,
-         
-         names;;;;1-1-1,
-         addresses,
-         contact_numbers,
-         electronic_address_identifiers,
-         
-         images;;;;1-1-1,
-         
-         relationships;;;;1-1-1,
-         
-         identifiers;;;;1-1-1,
-         
-         remarks;;;;1-1-1,
-         
-         --div--;LLL:EXT:party/locallang_db.xml:tx_party_parties.organisation,
-         
-         organisation_type,
-         organisation_nature;;;;1-1-1,
-         
-         company_registration_id;;;;1-1-1,
-         
-         number_of_employees;;;;1-1-1,
-         
-         stock_markets;;;;1-1-1,
-         
-         --div--;LLL:EXT:party/locallang_db.xml:tx_party_parties.events,
-         
-         company_registration_date,
-         
-         contacts;;;;1-1-1,
-         events,
-         
-         --div--;LLL:EXT:party/locallang_db.xml:tx_party_parties.ownership,
-         
-         nationalities,
-         countries_of_residence,
-         
-         accounts;;;;1-1-1,
-         memberships,
-         
-         documents;;;;1-1-1,
-         
-         revenues;;;;1-1-1,
-         
-         vehicles;;;;1-1-1
-         
-        ),
-        'palettes' => array (
+        '),
+        'palettes' => array(
             '1' => array('showitem' => 'birth_date_time_precision'),
                              '2' => array('showitem' => 'birth_sign, birth_star'),
         ),

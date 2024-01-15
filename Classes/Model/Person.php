@@ -25,25 +25,26 @@ namespace JambageCom\Party\Model;
  */
 
 
-class Person extends Party {
-	/**
-	 * Loads the person.
-	 *
-	 * @param	integer		$uid: UID of the person
-	 * @return	void		The data is loaded into the object
-	 */
-	public function load ($uid) {
-		$uid = intval($uid);
+class Person extends Party
+{
+    /**
+     * Loads the person.
+     *
+     * @param	integer		$uid: UID of the person
+     * @return	void		The data is loaded into the object
+     */
+    public function load($uid)
+    {
+        $uid = intval($uid);
 
-		// Check that the party is a person
-		$rec = tx_div2007_core::getRecord($this->table, $uid, 'type');
-		if (!$rec['type'] == 0) {
-			return false;
-		}
+        // Check that the party is a person
+        $rec = tx_div2007_core::getRecord($this->table, $uid, 'type');
+        if (!$rec['type'] == 0) {
+            return false;
+        }
 
-		// Get all fields belonging to the type 'person' and load the object
-		$typeFields = tx_party_div::getAllTypeFields($this->table, $rec);
-		parent::load($uid, $typeFields);
-	}
+        // Get all fields belonging to the type 'person' and load the object
+        $typeFields = tx_party_div::getAllTypeFields($this->table, $rec);
+        parent::load($uid, $typeFields);
+    }
 }
-

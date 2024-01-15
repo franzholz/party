@@ -25,46 +25,47 @@ namespace JambageCom\Party\Model;
  */
 
 
-class ElectronicAddressIdentifierUsage extends Object {
-	protected $table = 'tx_party_electronic_address_identifier_usages';
+class ElectronicAddressIdentifierUsage extends BaseModel
+{
+    protected $table = 'tx_party_electronic_address_identifier_usages';
 
-	/**
-	 *
-	 * The data must be loaded before, by calling $this->load();
-	 *
-	 * @return	string		Label of the electronic address identifier
-	 */
-	public function getLabel () {
-		if ($this->isEmpty()) {
-			return false;		// Data must be loaded
-		}
-		$label = array();
-		$out = '';
-		$identifierUsage = $this->get('electronic_address_identifier_usage');
+    /**
+     *
+     * The data must be loaded before, by calling $this->load();
+     *
+     * @return	string		Label of the electronic address identifier
+     */
+    public function getLabel()
+    {
+        if ($this->isEmpty()) {
+            return false;		// Data must be loaded
+        }
+        $label = array();
+        $out = '';
+        $identifierUsage = $this->get('electronic_address_identifier_usage');
 
-		if ($identifierUsage) {
-			$usage = tx_div2007_core::getRecord('tx_party_usages', $identifierUsage, 'short_title');
+        if ($identifierUsage) {
+            $usage = tx_div2007_core::getRecord('tx_party_usages', $identifierUsage, 'short_title');
 
-			// Assemble the label
-			if (is_array($usage)) {
-				$label[] = $usage['short_title'];
-			}
-		}
-		$party = $this->get('party');
+            // Assemble the label
+            if (is_array($usage)) {
+                $label[] = $usage['short_title'];
+            }
+        }
+        $party = $this->get('party');
 
-		if ($party) {
-			// Get all relevant parts
-			$partyObject = tx_party_models_party::getInstance($party);
+        if ($party) {
+            // Get all relevant parts
+            $partyBaseModel = tx_party_models_party::getInstance($party);
 
-			if (is_object($partyObject)) {
-				if (!$partyObject->isEmpty()) {
-					$label[] = '(' . $partyObject->getLabel() . ')';
-				}
-			}
-		}
+            if (is_object($partyBaseModel)) {
+                if (!$partyBaseModel->isEmpty()) {
+                    $label[] = '(' . $partyBaseModel->getLabel() . ')';
+                }
+            }
+        }
 
-		$out = implode(' ', $label);
-		return $out;
-	}
+        $out = implode(' ', $label);
+        return $out;
+    }
 }
-

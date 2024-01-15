@@ -24,24 +24,25 @@ namespace JambageCom\Party\Model;
  */
 
 
-class ElectronicAddressIdentifier extends Object {
-	protected $table = 'tx_party_electronic_address_identifiers';
+class ElectronicAddressIdentifier extends BaseModel
+{
+    protected $table = 'tx_party_electronic_address_identifiers';
 
-	/**
-	 * Returns the label of the electronic address identifier in the following format:
-	 * "[electronic_address_identifier]"
-	 *
-	 * The data must be loaded before, by calling $this->load();
-	 *
-	 * @return	string		Label of the electronic address identifier
-	 */
-	public function getLabel () {
-		if ($this->isEmpty()) {
-			return false;		// Data must be loaded
-		}
+    /**
+     * Returns the label of the electronic address identifier in the following format:
+     * "[electronic_address_identifier]"
+     *
+     * The data must be loaded before, by calling $this->load();
+     *
+     * @return	string		Label of the electronic address identifier
+     */
+    public function getLabel()
+    {
+        if ($this->isEmpty()) {
+            return false;		// Data must be loaded
+        }
 
-		$out = $this->get('electronic_address_identifier');
-		return $out;
-	}
+        $out = $this->get('electronic_address_identifier');
+        return $out;
+    }
 }
-

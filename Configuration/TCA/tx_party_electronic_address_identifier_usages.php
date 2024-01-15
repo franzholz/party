@@ -2,8 +2,8 @@
 
 defined('TYPO3') || die('Access denied.');
 
-$GLOBALS['TCA']['tx_party_electronic_address_identifier_usages'] = array (
-    'ctrl' => array (
+$GLOBALS['TCA']['tx_party_electronic_address_identifier_usages'] = array(
+    'ctrl' => array(
         'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_electronic_address_identifier_usages',
         'label'     => 'uid',
         'label_userFunc' => 'tx_party_labels->getLabel',
@@ -14,14 +14,14 @@ $GLOBALS['TCA']['tx_party_electronic_address_identifier_usages'] = array (
         'delete' => 'deleted',
         'iconfile'          => PATH_BE_PARTY_REL . 'icons/icon_tx_party_electronic_address_identifier_usages.gif',
     ),
-    'interface' => array (
+    'interface' => array(
         'showRecordFieldList' => 'party,electronic_address_identifier,electronic_address_identifier_usage,standard'
     ),
-    'columns' => array (
-        'party' => Array (
+    'columns' => array(
+        'party' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_electronic_address_identifier_usages.party',
-            'config' => Array (
+            'config' => array(
                 'type' => 'group',
                 'internal_type' => 'db',
                 'allowed' => 'tx_party_parties',
@@ -30,10 +30,10 @@ $GLOBALS['TCA']['tx_party_electronic_address_identifier_usages'] = array (
                 'maxitems' => 1,
             )
         ),
-        'electronic_address_identifier' => Array (
+        'electronic_address_identifier' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_electronic_address_identifier_usages.electronic_address_identifier',
-            'config' => Array (
+            'config' => array(
                 'type' => 'group',
                 'internal_type' => 'db',
                 'allowed' => 'tx_party_electronic_address_identifiers',
@@ -42,13 +42,13 @@ $GLOBALS['TCA']['tx_party_electronic_address_identifier_usages'] = array (
                 'maxitems' => 1,
             )
         ),
-        'electronic_address_identifier_usage' => Array (
+        'electronic_address_identifier_usage' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_electronic_address_identifier_usages.electronic_address_identifier_usage',
-            'config' => Array (
+            'config' => array(
                 'type' => 'select',
-                'items' => Array (
-                    Array('', 0),
+                'items' => array(
+                    array('', 0),
                 ),
                 'foreign_table' => 'tx_party_usages',
                 'foreign_table_where' => 'AND tx_party_usages.pid=###STORAGE_PID### ORDER BY tx_party_usages.title',
@@ -57,20 +57,18 @@ $GLOBALS['TCA']['tx_party_electronic_address_identifier_usages'] = array (
                 'maxitems' => 1,
             )
         ),
-        'standard' => Array (
+        'standard' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_electronic_address_identifier_usages.standard',
-            'config' => Array (
+            'config' => array(
                 'type' => 'check',
             )
         ),
     ),
-    'types' => array (
+    'types' => array(
         '0' => array('showitem' => 'party;;;;1-1-1, electronic_address_identifier, electronic_address_identifier_usage, standard')
     ),
-    'palettes' => array (
+    'palettes' => array(
         '1' => array('showitem' => '')
     )
 );
-
-

@@ -26,42 +26,43 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
  */
 
 
-class Occupation extends Object {
-	protected $table = 'tx_party_occupations';
+class Occupation extends BaseModel
+{
+    protected $table = 'tx_party_occupations';
 
-	/**
-	 * Returns the label of the Occupation in the following format:
-	 * "[role]: [position_title] ([party])"
-	 *
-	 * The data must be loaded before, by calling $this->load();
-	 *
-	 * @return	string		Label of the Occupation
-	 */
-	public function getLabel () {
-		if ($this->isEmpty()) {
-			return false;		// Data must be loaded
-		}
-		$label = array();
-		$out = '';
+    /**
+     * Returns the label of the Occupation in the following format:
+     * "[role]: [position_title] ([party])"
+     *
+     * The data must be loaded before, by calling $this->load();
+     *
+     * @return	string		Label of the Occupation
+     */
+    public function getLabel()
+    {
+        if ($this->isEmpty()) {
+            return false;		// Data must be loaded
+        }
+        $label = array();
+        $out = '';
 
-		// Get all relevant parts
-		$role = GeneralUtility::makeInstance('tx_party_models_occupationrole');
-		$role->load($this->get('role'));
-		$positionTitle = $this->get('position_title');
-		$party = tx_party_models_party::getInstance($this->get('party'));
+        // Get all relevant parts
+        $role = GeneralUtility::makeInstance('tx_party_models_occupationrole');
+        $role->load($this->get('role'));
+        $positionTitle = $this->get('position_title');
+        $party = tx_party_models_party::getInstance($this->get('party'));
 
-		// Assemble the label
-		if (!$role->isEmpty()) {
-			$label[0] = $role->getLabel() . ':';
-		}
-		if ($positionTitle) {
-			$label[1] = $positionTitle;
-		}
-		if (!$party->isEmpty()) {
-			$label[2] = '(' . $party->getLabel() . ')';
-		}
-		$out = implode(' ', $label);
-		return $out;
-	}
+        // Assemble the label
+        if (!$role->isEmpty()) {
+            $label[0] = $role->getLabel() . ':';
+        }
+        if ($positionTitle) {
+            $label[1] = $positionTitle;
+        }
+        if (!$party->isEmpty()) {
+            $label[2] = '(' . $party->getLabel() . ')';
+        }
+        $out = implode(' ', $label);
+        return $out;
+    }
 }
-

@@ -24,8 +24,7 @@ namespace JambageCom\Party\Model;
  */
 
 
-class BirthSign extends Object {
-	protected $table = 'tx_party_birth_signs';
+class BirthSign extends BaseModel
+{
+    protected $table = 'tx_party_birth_signs';
 }
-
-

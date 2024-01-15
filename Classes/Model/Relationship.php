@@ -25,66 +25,68 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
  * @subpackage tx_party
  */
 
-class Relationship extends Object {
-	protected $table = 'tx_party_relationships';
+class Relationship extends BaseModel
+{
+    protected $table = 'tx_party_relationships';
 
-	/**
-	 * Loads the relationship.
-	 *
-	 * @param	integer		$uid: UID of the relationship
-	 * @return	void		The data is loaded into the object
-	 */
-	public function load ($uid) {
-		parent::load($uid);
+    /**
+     * Loads the relationship.
+     *
+     * @param	integer		$uid: UID of the relationship
+     * @return	void		The data is loaded into the object
+     */
+    public function load($uid)
+    {
+        parent::load($uid);
 
-		if ($this->get('primary_party')) {
-			$this->set('primary_party', tx_party_models_party::getInstance($this->get('primary_party')));
-		}
-		if ($this->get('secondary_party')) {
-			$this->set('secondary_party', tx_party_models_party::getInstance($this->get('secondary_party')));
-		}
-		if ($this->get('relationship_type')) {
-			$relationshipType = GeneralUtility::makeInstance('tx_party_models_relationshiptype');
-			$relationshipType->load($this->get('relationship_type'));
-			$this->set('relationship_type', $relationshipType);
-		}
-	}
+        if ($this->get('primary_party')) {
+            $this->set('primary_party', tx_party_models_party::getInstance($this->get('primary_party')));
+        }
+        if ($this->get('secondary_party')) {
+            $this->set('secondary_party', tx_party_models_party::getInstance($this->get('secondary_party')));
+        }
+        if ($this->get('relationship_type')) {
+            $relationshipType = GeneralUtility::makeInstance('tx_party_models_relationshiptype');
+            $relationshipType->load($this->get('relationship_type'));
+            $this->set('relationship_type', $relationshipType);
+        }
+    }
 
-	/**
-	 * Returns the label of the Relationship in the following format:
-	 * "[primary_party] [description_as_primary]: [secondary_party]"
-	 *
-	 * The data must be loaded before, by calling $this->load();
-	 *
-	 * @return	string		Label of the Relationship
-	 */
-	public function getLabel () {
-		if ($this->isEmpty()) {
-			return false;		// Data must be loaded
-		}
-		$label = array();
-		$out = '';
+    /**
+     * Returns the label of the Relationship in the following format:
+     * "[primary_party] [description_as_primary]: [secondary_party]"
+     *
+     * The data must be loaded before, by calling $this->load();
+     *
+     * @return	string		Label of the Relationship
+     */
+    public function getLabel()
+    {
+        if ($this->isEmpty()) {
+            return false;		// Data must be loaded
+        }
+        $label = array();
+        $out = '';
 
-		// Get all relevant parts
-		$primaryParty = $this->get('primary_party');
-		$relationshipType = $this->get('relationship_type');
-		$secondaryParty = $this->get('secondary_party');
+        // Get all relevant parts
+        $primaryParty = $this->get('primary_party');
+        $relationshipType = $this->get('relationship_type');
+        $secondaryParty = $this->get('secondary_party');
 
-		// Assemble the label
-		if (is_object($primaryParty) && !$primaryParty->isEmpty()) {
-			$label[] = $primaryParty->getLabel();
-		}
+        // Assemble the label
+        if (is_object($primaryParty) && !$primaryParty->isEmpty()) {
+            $label[] = $primaryParty->getLabel();
+        }
 
-		if (is_object($relationshipType) && !$relationshipType->isEmpty()) {
-			$label[] = $relationshipType->get('description_as_primary') . ':';
-		}
+        if (is_object($relationshipType) && !$relationshipType->isEmpty()) {
+            $label[] = $relationshipType->get('description_as_primary') . ':';
+        }
 
-		if (is_object($secondaryParty) && !$secondaryParty->isEmpty()) {
-			$label[] = $secondaryParty->getLabel();
-		}
+        if (is_object($secondaryParty) && !$secondaryParty->isEmpty()) {
+            $label[] = $secondaryParty->getLabel();
+        }
 
-		$out = implode(' ', $label);
-		return $out;
-	}
+        $out = implode(' ', $label);
+        return $out;
+    }
 }
-

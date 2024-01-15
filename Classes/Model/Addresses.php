@@ -25,86 +25,87 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
  * @subpackage tx_party
  */
 
-class Addresses extends Object {
+class Addresses extends BaseModel
+{
+    protected $table = 'tx_party_address_usages';
 
-	protected $table = 'tx_party_address_usages';
+    /**
+     * Loads all addresses which are assigned to a specific party.
+     *
+     * @param	integer		$partyUid: UID of the party
+     * @return	void		The data is loaded into the object
+     */
+    public function loadByParty($partyUid)
+    {
+        $partyUid = intval($partyUid);
+        $groupBy = '';
+        $orderBy = '';
 
-	/**
-	 * Loads all addresses which are assigned to a specific party.
-	 *
-	 * @param	integer		$partyUid: UID of the party
-	 * @return	void		The data is loaded into the object
-	 */
-	public function loadByParty ($partyUid) {
-		$partyUid = intval($partyUid);
-		$groupBy = '';
-		$orderBy = '';
+        // Load all addresses from the database and build the object
+        $query =
+            $GLOBALS['TYPO3_DB']->SELECTquery(
+                'address,standard',
+                $this->table,
+                $this->table . '.party=' . $partyUid,
+                $groupBy,
+                $orderBy
+            );
+        $result = $GLOBALS['TYPO3_DB']->sql_query($query);
+        $list = GeneralUtility::makeInstance('tx_div2007_object');
 
-		// Load all addresses from the database and build the object
-		$query =
-			$GLOBALS['TYPO3_DB']->SELECTquery(
-				'address,standard',
-				$this->table,
-				$this->table . '.party=' . $partyUid,
-				$groupBy,
-				$orderBy
-			);
-		$result = $GLOBALS['TYPO3_DB']->sql_query($query);
-		$list = GeneralUtility::makeInstance('tx_div2007_object');
-
-		if($result) {
-			while($row = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($result)) {
-				$item = GeneralUtility::makeInstance('tx_party_models_address');
-				$item->load($row['address']);
-				$item->set('standard',$row['standard']);	// Include the value from the mm-table
-				if ($item->get('standard') == 1) {
-					$this->set('standard', $item);
-				}
-				$list->append($item);
-			}
-			$GLOBALS['TYPO3_DB']->sql_free_result($result);
-		}
-		$this->set('list', $list);
-	}
+        if($result) {
+            while($row = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($result)) {
+                $item = GeneralUtility::makeInstance('tx_party_models_address');
+                $item->load($row['address']);
+                $item->set('standard', $row['standard']);	// Include the value from the mm-table
+                if ($item->get('standard') == 1) {
+                    $this->set('standard', $item);
+                }
+                $list->append($item);
+            }
+            $GLOBALS['TYPO3_DB']->sql_free_result($result);
+        }
+        $this->set('list', $list);
+    }
 
 
-	/**
-	 * Returns the label of the Address Usage in the following format:
-	 *
-	 * The data must be loaded before, by calling $this->load();
-	 *
-	 * @return	string		Label of the Visa
-	 */
-	public function getLabel () {
-		if ($this->isEmpty()) {
-			return false;		// Data must be loaded
-		}
-		$label = array();
-		$out = '';
-		$fieldname = 'short_title';
-		$usage = tx_div2007_core::getRecord(
-			'tx_party_usages',
-			$this->get('address_usage'),
-			$fieldname
-		);
+    /**
+     * Returns the label of the Address Usage in the following format:
+     *
+     * The data must be loaded before, by calling $this->load();
+     *
+     * @return	string		Label of the Visa
+     */
+    public function getLabel()
+    {
+        if ($this->isEmpty()) {
+            return false;		// Data must be loaded
+        }
+        $label = array();
+        $out = '';
+        $fieldname = 'short_title';
+        $usage = tx_div2007_core::getRecord(
+            'tx_party_usages',
+            $this->get('address_usage'),
+            $fieldname
+        );
 
-		$party = tx_party_models_party::getInstance($this->get('party'));
+        $party = tx_party_models_party::getInstance($this->get('party'));
 
-		// Assemble the label
-		if (
-			isset($usage) &&
-			is_array($usage) &&
-			isset($usage[$fieldname])
-		) {
-			$label[] = $usage[$fieldname];
-		}
+        // Assemble the label
+        if (
+            isset($usage) &&
+            is_array($usage) &&
+            isset($usage[$fieldname])
+        ) {
+            $label[] = $usage[$fieldname];
+        }
 
-		if (!$party->isEmpty()) {
-			$label[] = '(' . $party->getLabel() . ')';
-		}
+        if (!$party->isEmpty()) {
+            $label[] = '(' . $party->getLabel() . ')';
+        }
 
-		$out = implode(' ', $label);
-		return $out;
-	}
+        $out = implode(' ', $label);
+        return $out;
+    }
 }
-

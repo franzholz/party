@@ -4,8 +4,8 @@ defined('TYPO3') || die('Access denied.');
 
 
 
-$GLOBALS['TCA']['tx_party_relationship_types'] = array (
-    'ctrl' => array (
+$GLOBALS['TCA']['tx_party_relationship_types'] = array(
+    'ctrl' => array(
         'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_relationship_types',
         'label'     => 'relationship_type',
         'tstamp'    => 'tstamp',
@@ -15,73 +15,73 @@ $GLOBALS['TCA']['tx_party_relationship_types'] = array (
         'delete' => 'deleted',
         'iconfile'          => PATH_BE_PARTY_REL . 'icons/icon_tx_party_relationship_types.gif',
     ),
-    'interface' => array (
+    'interface' => array(
         'showRecordFieldList' => 'relationship_type,description_as_primary,description_as_secondary,organisation_allowed_as_primary,organisation_allowed_as_secondary,person_allowed_as_primary,person_allowed_as_secondary'
     ),
-    'columns' => array (
-        'relationship_type' => Array (
+    'columns' => array(
+        'relationship_type' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_relationship_types.relationship_type',
-            'config' => Array (
+            'config' => array(
                 'type' => 'input',
                 'size' => '30',
                 'max' => '90',
                 'eval' => 'trim',
             )
         ),
-        'description_as_primary' => Array (
+        'description_as_primary' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_relationship_types.description_as_primary',
-            'config' => Array (
+            'config' => array(
                 'type' => 'input',
                 'size' => '30',
                 'max' => '90',
                 'eval' => 'trim',
             )
         ),
-        'description_as_secondary' => Array (
+        'description_as_secondary' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_relationship_types.description_as_secondary',
-            'config' => Array (
+            'config' => array(
                 'type' => 'input',
                 'size' => '30',
                 'max' => '90',
                 'eval' => 'trim',
             )
         ),
-        'organisation_allowed_as_primary' => Array (
+        'organisation_allowed_as_primary' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_relationship_types.organisation_allowed_as_primary',
-            'config' => Array (
+            'config' => array(
                 'type' => 'check',
             )
         ),
-        'organisation_allowed_as_secondary' => Array (
+        'organisation_allowed_as_secondary' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_relationship_types.organisation_allowed_as_secondary',
-            'config' => Array (
+            'config' => array(
                 'type' => 'check',
             )
         ),
-        'person_allowed_as_primary' => Array (
+        'person_allowed_as_primary' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_relationship_types.person_allowed_as_primary',
-            'config' => Array (
+            'config' => array(
                 'type' => 'check',
             )
         ),
-        'person_allowed_as_secondary' => Array (
+        'person_allowed_as_secondary' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_relationship_types.person_allowed_as_secondary',
-            'config' => Array (
+            'config' => array(
                 'type' => 'check',
             )
         ),
     ),
-    'types' => array (
+    'types' => array(
         '0' => array('showitem' => 'relationship_type;;;;1-1-1, description_as_primary, description_as_secondary, organisation_allowed_as_primary, organisation_allowed_as_secondary, person_allowed_as_primary, person_allowed_as_secondary')
     ),
-    'palettes' => array (
+    'palettes' => array(
         '1' => array('showitem' => '')
     )
 );

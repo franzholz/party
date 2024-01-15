@@ -25,7 +25,7 @@ namespace JambageCom\Party\Model;
  */
 
 
-class Allergy extends Object {
-	protected $table = 'tx_party_allergies';
+class Allergy extends BaseModel
+{
+    protected $table = 'tx_party_allergies';
 }
-

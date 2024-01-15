@@ -5,8 +5,8 @@ defined('TYPO3') || die('Access denied.');
 
 
 
-$GLOBALS['TCA']['tx_party_vehicles'] = array (
-    'ctrl' => array (
+$GLOBALS['TCA']['tx_party_vehicles'] = array(
+    'ctrl' => array(
         'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_vehicles',
         'label'     => 'license_plate',
         'tstamp'    => 'tstamp',
@@ -16,17 +16,17 @@ $GLOBALS['TCA']['tx_party_vehicles'] = array (
         'delete' => 'deleted',
         'iconfile'          => PATH_BE_PARTY_REL . 'icons/icon_tx_party_vehicles.gif',
     ),
-    'interface' => array (
+    'interface' => array(
         'showRecordFieldList' => 'party,make,type,model,license_plate,manufacture_date,engine_number,chassis_number,body_number,remarks'
     ),
-    'columns' => array (
-        'party' => Array (
+    'columns' => array(
+        'party' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_vehicles.party',
-            'config' => Array (
+            'config' => array(
                 'type' => 'select',
-                'items' => Array (
-                    Array('', 0),
+                'items' => array(
+                    array('', 0),
                 ),
                 'foreign_table' => 'tx_party_parties',
                 'foreign_table_where' => 'AND tx_party_parties.pid=###STORAGE_PID### ORDER BY tx_party_parties.uid',
@@ -35,13 +35,13 @@ $GLOBALS['TCA']['tx_party_vehicles'] = array (
                 'maxitems' => 1,
             )
         ),
-        'make' => Array (
+        'make' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_vehicles.make',
-            'config' => Array (
+            'config' => array(
                 'type' => 'select',
-                'items' => Array (
-                    Array('', 0),
+                'items' => array(
+                    array('', 0),
                 ),
                 'foreign_table' => 'tx_party_vehicle_manufacturers',
                 'foreign_table_where' => 'AND tx_party_vehicle_manufacturers.pid=###STORAGE_PID### ORDER BY tx_party_vehicle_manufacturers.uid',
@@ -50,13 +50,13 @@ $GLOBALS['TCA']['tx_party_vehicles'] = array (
                 'maxitems' => 1,
             )
         ),
-        'type' => Array (
+        'type' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_vehicles.type',
-            'config' => Array (
+            'config' => array(
                 'type' => 'select',
-                'items' => Array (
-                    Array('', 0),
+                'items' => array(
+                    array('', 0),
                 ),
                 'foreign_table' => 'tx_party_types',
                 'foreign_table_where' => "AND tx_party_types.allowed_for_field LIKE '%tx_party_vehicles-type%' AND tx_party_types.pid=###STORAGE_PID### ORDER BY tx_party_types.uid",
@@ -65,80 +65,80 @@ $GLOBALS['TCA']['tx_party_vehicles'] = array (
                 'maxitems' => 1,
             )
         ),
-        'model' => Array (
+        'model' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_vehicles.model',
-            'config' => Array (
+            'config' => array(
                 'type' => 'input',
                 'size' => '30',
                 'max' => '90',
                 'eval' => 'trim',
             )
         ),
-        'license_plate' => Array (
+        'license_plate' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_vehicles.license_plate',
-            'config' => Array (
+            'config' => array(
                 'type' => 'input',
                 'size' => '30',
                 'max' => '90',
                 'eval' => 'trim',
             )
         ),
-        'manufacture_date' => Array (
+        'manufacture_date' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_vehicles.manufacture_date',
-            'config' => Array (
+            'config' => array(
                 'type' => 'input',
                 'size' => '30',
                 'max' => '90',
                 'eval' => 'trim',
             )
         ),
-        'engine_number' => Array (
+        'engine_number' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_vehicles.engine_number',
-            'config' => Array (
+            'config' => array(
                 'type' => 'input',
                 'size' => '30',
                 'max' => '90',
                 'eval' => 'trim',
             )
         ),
-        'chassis_number' => Array (
+        'chassis_number' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_vehicles.chassis_number',
-            'config' => Array (
+            'config' => array(
                 'type' => 'input',
                 'size' => '30',
                 'max' => '90',
                 'eval' => 'trim',
             )
         ),
-        'body_number' => Array (
+        'body_number' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_vehicles.body_number',
-            'config' => Array (
+            'config' => array(
                 'type' => 'input',
                 'size' => '30',
                 'max' => '90',
                 'eval' => 'trim',
             )
         ),
-        'remarks' => Array (
+        'remarks' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_vehicles.remarks',
-            'config' => Array (
+            'config' => array(
                 'type' => 'text',
                 'cols' => '30',
                 'rows' => '5',
             )
         ),
     ),
-    'types' => array (
+    'types' => array(
         '0' => array('showitem' => 'party;;;;1-1-1, type, make, model, license_plate;;;;1-1-1, manufacture_date, engine_number, chassis_number, body_number, remarks;;;;1-1-1')
     ),
-    'palettes' => array (
+    'palettes' => array(
         '1' => array('showitem' => '')
     )
 );

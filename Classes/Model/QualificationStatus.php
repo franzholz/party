@@ -2,7 +2,6 @@
 
 namespace JambageCom\Party\Model;
 
-
 /*
  * This file is part of the TYPO3 CMS project.
  *
@@ -26,7 +25,7 @@ namespace JambageCom\Party\Model;
  */
 
 
-class QualificationStatus extends Object {
-	protected $table = 'tx_party_qualification_status';
+class QualificationStatus extends BaseModel
+{
+    protected $table = 'tx_party_qualification_status';
 }
-

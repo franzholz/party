@@ -24,38 +24,39 @@ namespace JambageCom\Party\Model;
  * @subpackage tx_party
  */
 
-class CountryOfResidence extends Object {
-	protected $table = 'tx_party_countries_of_residence';
+class CountryOfResidence extends BaseModel
+{
+    protected $table = 'tx_party_countries_of_residence';
 
-	/**
-	 * Returns the label of the CountryOfResidence in the following format:
-	 * "[country] ([party])"
-	 *
-	 * The data must be loaded before, by calling $this->load();
-	 *
-	 * @return	string		Label of the CountryOfResidence
-	 */
-	public function getLabel () {
-		if ($this->isEmpty()) {
-			return false;		// Data must be loaded
-		}
-		$label = array();
-		$out = '';
+    /**
+     * Returns the label of the CountryOfResidence in the following format:
+     * "[country] ([party])"
+     *
+     * The data must be loaded before, by calling $this->load();
+     *
+     * @return	string		Label of the CountryOfResidence
+     */
+    public function getLabel()
+    {
+        if ($this->isEmpty()) {
+            return false;		// Data must be loaded
+        }
+        $label = array();
+        $out = '';
 
-		// Get all relevant parts
-		$party = tx_party_models_party::getInstance($this->get('party'));
-		$country = reset(
-			tx_div2007_core::getRecord('static_countries', $this->get('country'), 'cn_short_en')
-		);
+        // Get all relevant parts
+        $party = tx_party_models_party::getInstance($this->get('party'));
+        $country = reset(
+            tx_div2007_core::getRecord('static_countries', $this->get('country'), 'cn_short_en')
+        );
 
-		// Assemble the label
-		$label[0] = $country;
-		if (!$party->isEmpty()) {
-			$label[1] = '(' . $party->getLabel() . ')';
-		}
+        // Assemble the label
+        $label[0] = $country;
+        if (!$party->isEmpty()) {
+            $label[1] = '(' . $party->getLabel() . ')';
+        }
 
-		$out = implode(' ', $label);
-		return $out;
-	}
+        $out = implode(' ', $label);
+        return $out;
+    }
 }
-

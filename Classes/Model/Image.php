@@ -25,8 +25,7 @@ namespace JambageCom\Party\Model;
  */
 
 
-class Image extends Object {
-	protected $table = 'tx_party_images';
+class Image extends BaseModel
+{
+    protected $table = 'tx_party_images';
 }
-
-

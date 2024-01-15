@@ -2,7 +2,6 @@
 
 namespace JambageCom\Party\Model;
 
-
 /*
  * This file is part of the TYPO3 CMS project.
  *
@@ -26,7 +25,7 @@ namespace JambageCom\Party\Model;
  */
 
 
-class PhysicalStatus extends Object {
-	protected $table = 'tx_party_physical_status';
+class PhysicalStatus extends BaseModel
+{
+    protected $table = 'tx_party_physical_status';
 }
-

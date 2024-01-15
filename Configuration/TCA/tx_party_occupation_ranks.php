@@ -3,8 +3,8 @@
 defined('TYPO3') || die('Access denied.');
 
 
-$GLOBALS['TCA']['tx_party_occupation_ranks'] = array (
-    'ctrl' => array (
+$GLOBALS['TCA']['tx_party_occupation_ranks'] = array(
+    'ctrl' => array(
         'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_occupation_ranks',
         'label'     => 'title',
         'tstamp'    => 'tstamp',
@@ -17,14 +17,14 @@ $GLOBALS['TCA']['tx_party_occupation_ranks'] = array (
         'delete' => 'deleted',
         'iconfile'          => PATH_BE_PARTY_REL . 'icons/icon_tx_party_occupation_ranks.gif',
     ),
-    'interface' => array (
+    'interface' => array(
         'showRecordFieldList' => 'sys_language_uid,l18n_parent,l18n_diffsource,short_title,title,long_title'
     ),
-    'columns' => array (
-        'sys_language_uid' => array (
+    'columns' => array(
+        'sys_language_uid' => array(
             'exclude' => 1,
             'label'  => 'LLL:EXT:lang/locallang_general.xml:LGL.language',
-            'config' => array (
+            'config' => array(
                 'type'                => 'select',
                 'foreign_table'       => 'sys_language',
                 'foreign_table_where' => 'ORDER BY sys_language.title',
@@ -34,48 +34,48 @@ $GLOBALS['TCA']['tx_party_occupation_ranks'] = array (
                 )
             )
         ),
-        'l18n_parent' => array (
+        'l18n_parent' => array(
             'displayCond' => 'FIELD:sys_language_uid:>:0',
             'exclude'     => 1,
             'label'       => 'LLL:EXT:lang/locallang_general.xml:LGL.l18n_parent',
-            'config'      => array (
+            'config'      => array(
                 'type'  => 'select',
-                'items' => array (
+                'items' => array(
                     array('', 0),
                 ),
                 'foreign_table'       => 'tx_party_occupation_ranks',
                 'foreign_table_where' => 'AND tx_party_occupation_ranks.pid=###CURRENT_PID### AND tx_party_occupation_ranks.sys_language_uid IN (-1,0)',
             )
         ),
-        'l18n_diffsource' => array (
-            'config' => array (
+        'l18n_diffsource' => array(
+            'config' => array(
                 'type' => 'passthrough'
             )
         ),
-        'short_title' => Array (
+        'short_title' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_occupation_ranks.short_title',
-            'config' => Array (
+            'config' => array(
                 'type' => 'input',
                 'size' => '30',
                 'max' => '30',
                 'eval' => 'trim',
             )
         ),
-        'title' => Array (
+        'title' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_occupation_ranks.title',
-            'config' => Array (
+            'config' => array(
                 'type' => 'input',
                 'size' => '48',
                 'max' => '60',
                 'eval' => 'trim',
             )
         ),
-        'long_title' => Array (
+        'long_title' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_occupation_ranks.long_title',
-            'config' => Array (
+            'config' => array(
                 'type' => 'input',
                 'size' => '48',
                 'max' => '90',
@@ -83,11 +83,10 @@ $GLOBALS['TCA']['tx_party_occupation_ranks'] = array (
             )
         ),
     ),
-    'types' => array (
+    'types' => array(
         '0' => array('showitem' => 'sys_language_uid;;;;1-1-1, l18n_parent, l18n_diffsource, short_title, title;;;;2-2-2, long_title;;;;3-3-3')
     ),
-    'palettes' => array (
+    'palettes' => array(
         '1' => array('showitem' => '')
     )
 );
-

@@ -2,7 +2,6 @@
 
 namespace JambageCom\Party\Model;
 
-
 /*
  * This file is part of the TYPO3 CMS project.
  *
@@ -25,7 +24,7 @@ namespace JambageCom\Party\Model;
  * @subpackage tx_party
  */
 
-class PersonNameTitle extends Object {
-	protected $table = 'tx_party_person_name_titles';
+class PersonNameTitle extends BaseModel
+{
+    protected $table = 'tx_party_person_name_titles';
 }
-

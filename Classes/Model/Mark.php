@@ -2,7 +2,6 @@
 
 namespace JambageCom\Party\Model;
 
-
 /*
  * This file is part of the TYPO3 CMS project.
  *
@@ -25,41 +24,43 @@ namespace JambageCom\Party\Model;
  * @subpackage tx_party
  */
 
-class Mark extends Object {
-	protected $table = 'tx_party_marks';
+class Mark extends BaseModel
+{
+    protected $table = 'tx_party_marks';
 
-	/**
-	 * Returns the label of the Mark in the following format:
-	 * "[body_part]: [mark] ([party])"
-	 *
-	 * The data must be loaded before, by calling $this->load();
-	 *
-	 * @return	string		Label of the Mark
-	 */
-	public function getLabel () {
-		if ($this->isEmpty()) {
-			return false;		// Data must be loaded
-		}
-		$label = array();
-		$out = '';
+    /**
+     * Returns the label of the Mark in the following format:
+     * "[body_part]: [mark] ([party])"
+     *
+     * The data must be loaded before, by calling $this->load();
+     *
+     * @return	string		Label of the Mark
+     */
+    public function getLabel()
+    {
+        if ($this->isEmpty()) {
+            return false;		// Data must be loaded
+        }
+        $label = array();
+        $out = '';
 
-		// Get all relevant parts
-		$bodyPart = $this->get('body_part');
-		$mark = $this->get('mark');
-		$party = tx_party_models_party::getInstance($this->get('party'));
+        // Get all relevant parts
+        $bodyPart = $this->get('body_part');
+        $mark = $this->get('mark');
+        $party = tx_party_models_party::getInstance($this->get('party'));
 
-		// Assemble the label
-		if ($bodyPart) {
-			$label[0] = $bodyPart . ':';
-		}
-		if ($mark) {
-			$label[1] = $mark;
-		}
-		if (!$party->isEmpty()) {
-			$label[2] = '(' . $party->getLabel() . ')';
-		}
+        // Assemble the label
+        if ($bodyPart) {
+            $label[0] = $bodyPart . ':';
+        }
+        if ($mark) {
+            $label[1] = $mark;
+        }
+        if (!$party->isEmpty()) {
+            $label[2] = '(' . $party->getLabel() . ')';
+        }
 
-		$out = implode(' ', $label);
-		return $out;
-	}
+        $out = implode(' ', $label);
+        return $out;
+    }
 }

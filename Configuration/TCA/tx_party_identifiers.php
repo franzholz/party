@@ -2,8 +2,8 @@
 
 defined('TYPO3') || die('Access denied.');
 
-$GLOBALS['TCA']['tx_party_identifiers'] = array (
-    'ctrl' => array (
+$GLOBALS['TCA']['tx_party_identifiers'] = array(
+    'ctrl' => array(
         'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_identifiers',
         'label'     => 'identifier',
         'tstamp'    => 'tstamp',
@@ -13,17 +13,17 @@ $GLOBALS['TCA']['tx_party_identifiers'] = array (
         'delete' => 'deleted',
         'iconfile'          => PATH_BE_PARTY_REL . 'icons/icon_tx_party_identifiers.gif',
     ),
-    'interface' => array (
+    'interface' => array(
         'showRecordFieldList' => 'party,type,identifier,issue_date,expiry_date,remarks'
     ),
-    'columns' => array (
-        'party' => Array (
+    'columns' => array(
+        'party' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_identifiers.party',
-            'config' => Array (
+            'config' => array(
                 'type' => 'select',
-                'items' => Array (
-                    Array('', 0),
+                'items' => array(
+                    array('', 0),
                 ),
                 'foreign_table' => 'tx_party_parties',
                 'foreign_table_where' => 'AND tx_party_parties.pid=###STORAGE_PID### ORDER BY tx_party_parties.uid',
@@ -32,13 +32,13 @@ $GLOBALS['TCA']['tx_party_identifiers'] = array (
                 'maxitems' => 1,
             )
         ),
-        'type' => Array (
+        'type' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_identifiers.type',
-            'config' => Array (
+            'config' => array(
                 'type' => 'select',
-                'items' => Array (
-                    Array('', 0),
+                'items' => array(
+                    array('', 0),
                 ),
                 'foreign_table' => 'tx_party_types',
                 'foreign_table_where' => "AND tx_party_types.allowed_for_field LIKE '%tx_party_identifiers-type%' AND tx_party_types.pid=###STORAGE_PID### ORDER BY tx_party_types.uid",
@@ -47,20 +47,20 @@ $GLOBALS['TCA']['tx_party_identifiers'] = array (
                 'maxitems' => 1,
             )
         ),
-        'identifier' => Array (
+        'identifier' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_identifiers.identifier',
-            'config' => Array (
+            'config' => array(
                 'type' => 'input',
                 'size' => '30',
                 'max' => '90',
                 'eval' => 'trim',
             )
         ),
-        'issue_date' => Array (
+        'issue_date' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_identifiers.issue_date',
-            'config' => Array (
+            'config' => array(
                 'type'     => 'input',
                 'size'     => '8',
                 'max'      => '20',
@@ -69,10 +69,10 @@ $GLOBALS['TCA']['tx_party_identifiers'] = array (
                 'default'  => '0'
             )
         ),
-        'expiry_date' => Array (
+        'expiry_date' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_identifiers.expiry_date',
-            'config' => Array (
+            'config' => array(
                 'type'     => 'input',
                 'size'     => '8',
                 'max'      => '20',
@@ -81,20 +81,20 @@ $GLOBALS['TCA']['tx_party_identifiers'] = array (
                 'default'  => '0'
             )
         ),
-        'remarks' => Array (
+        'remarks' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_identifiers.remarks',
-            'config' => Array (
+            'config' => array(
                 'type' => 'text',
                 'cols' => '30',
                 'rows' => '5',
             )
         ),
     ),
-    'types' => array (
+    'types' => array(
         '0' => array('showitem' => 'party;;;;1-1-1, type, identifier, issue_date;;;;1-1-1, expiry_date, remarks;;;;1-1-1')
     ),
-    'palettes' => array (
+    'palettes' => array(
         '1' => array('showitem' => '')
     )
 );

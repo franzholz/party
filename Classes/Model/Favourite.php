@@ -25,39 +25,39 @@ namespace JambageCom\Party\Model;
  */
 
 
-class Favourite extends Object {
-	protected $table = 'tx_party_favourites';
+class Favourite extends BaseModel
+{
+    protected $table = 'tx_party_favourites';
 
-	/**
-	 * Returns the label of the Favourite in the following format:
-	 * "[favourite] ([party])"
-	 *
-	 * The data must be loaded before, by calling $this->load();
-	 *
-	 * @return	string		Label of the Favourite
-	 */
-	public function getLabel () {
-		if ($this->isEmpty()) {
-			return false;		// Data must be loaded
-		}
-		$label = array();
-		$out = '';
+    /**
+     * Returns the label of the Favourite in the following format:
+     * "[favourite] ([party])"
+     *
+     * The data must be loaded before, by calling $this->load();
+     *
+     * @return	string		Label of the Favourite
+     */
+    public function getLabel()
+    {
+        if ($this->isEmpty()) {
+            return false;		// Data must be loaded
+        }
+        $label = array();
+        $out = '';
 
-		// Get all relevant parts
-		$favourite = $this->get('favourite');
-		$party = tx_party_models_party::getInstance($this->get('party'));
+        // Get all relevant parts
+        $favourite = $this->get('favourite');
+        $party = tx_party_models_party::getInstance($this->get('party'));
 
-		// Assemble the label
-		if ($favourite) {
-			$label[0] = $favourite;
-		}
-		if (!$party->isEmpty()) {
-			$label[1] = '(' . $party->getLabel() . ')';
-		}
+        // Assemble the label
+        if ($favourite) {
+            $label[0] = $favourite;
+        }
+        if (!$party->isEmpty()) {
+            $label[1] = '(' . $party->getLabel() . ')';
+        }
 
-		$out = implode(' ', $label);
-		return $out;
-	}
+        $out = implode(' ', $label);
+        return $out;
+    }
 }
-
-

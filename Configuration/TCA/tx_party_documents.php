@@ -5,8 +5,8 @@ defined('TYPO3') || die('Access denied.');
 
 
 
-$GLOBALS['TCA']['tx_party_documents'] = array (
-    'ctrl' => array (
+$GLOBALS['TCA']['tx_party_documents'] = array(
+    'ctrl' => array(
         'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_documents',
         'label'     => 'document_id',
         'tstamp'    => 'tstamp',
@@ -16,17 +16,17 @@ $GLOBALS['TCA']['tx_party_documents'] = array (
         'delete' => 'deleted',
         'iconfile'          => PATH_BE_PARTY_REL . 'icons/icon_tx_party_documents.gif',
     ),
-    'interface' => array (
+    'interface' => array(
         'showRecordFieldList' => 'party,document_type,document_id,issued_by,issue_place,privilege,restriction,group_name,name_on_document,remarks'
     ),
-    'columns' => array (
-        'party' => Array (
+    'columns' => array(
+        'party' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_documents.party',
-            'config' => Array (
+            'config' => array(
                 'type' => 'select',
-                'items' => Array (
-                    Array('', 0),
+                'items' => array(
+                    array('', 0),
                 ),
                 'foreign_table' => 'tx_party_parties',
                 'foreign_table_where' => 'AND tx_party_parties.pid=###STORAGE_PID### ORDER BY tx_party_parties.uid',
@@ -35,13 +35,13 @@ $GLOBALS['TCA']['tx_party_documents'] = array (
                 'maxitems' => 1,
             )
         ),
-        'document_type' => Array (
+        'document_type' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_documents.document_type',
-            'config' => Array (
+            'config' => array(
                 'type' => 'select',
-                'items' => Array (
-                    Array('', 0),
+                'items' => array(
+                    array('', 0),
                 ),
                 'foreign_table' => 'tx_party_types',
                 'foreign_table_where' => "AND tx_party_types.allowed_for_field LIKE '%tx_party_DOCUMENTS-DOCUMENT_TYPE%' AND tx_party_types.pid=###STORAGE_PID### ORDER BY tx_party_types.uid",
@@ -50,20 +50,20 @@ $GLOBALS['TCA']['tx_party_documents'] = array (
                 'maxitems' => 1,
             )
         ),
-        'document_id' => Array (
+        'document_id' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_documents.document_id',
-            'config' => Array (
+            'config' => array(
                 'type' => 'input',
                 'size' => '30',
                 'max' => '90',
                 'eval' => 'trim',
             )
         ),
-        'issued_by' => Array (
+        'issued_by' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_documents.issued_by',
-            'config' => Array (
+            'config' => array(
                 'type' => 'select',
                 'foreign_table' => 'tx_party_parties',
                 'foreign_table_where' => 'AND tx_party_parties.pid=###STORAGE_PID### ORDER BY tx_party_parties.uid',
@@ -72,71 +72,70 @@ $GLOBALS['TCA']['tx_party_documents'] = array (
                 'maxitems' => 1,
             )
         ),
-        'issue_place' => Array (
+        'issue_place' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_documents.issue_place',
-            'config' => Array (
+            'config' => array(
                 'type' => 'input',
                 'size' => '30',
                 'max' => '90',
                 'eval' => 'trim',
             )
         ),
-        'privilege' => Array (
+        'privilege' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_documents.privilege',
-            'config' => Array (
+            'config' => array(
                 'type' => 'input',
                 'size' => '10',
                 'max' => '90',
                 'eval' => 'trim',
             )
         ),
-        'restriction' => Array (
+        'restriction' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_documents.restriction',
-            'config' => Array (
+            'config' => array(
                 'type' => 'input',
                 'size' => '10',
                 'max' => '90',
                 'eval' => 'trim',
             )
         ),
-        'group_name' => Array (
+        'group_name' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_documents.group_name',
-            'config' => Array (
+            'config' => array(
                 'type' => 'input',
                 'size' => '10',
                 'max' => '90',
                 'eval' => 'trim',
             )
         ),
-        'name_on_document' => Array (
+        'name_on_document' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_documents.name_on_document',
-            'config' => Array (
+            'config' => array(
                 'type' => 'input',
                 'size' => '30',
                 'max' => '90',
                 'eval' => 'trim',
             )
         ),
-        'remarks' => Array (
+        'remarks' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_documents.remarks',
-            'config' => Array (
+            'config' => array(
                 'type' => 'text',
                 'cols' => '30',
                 'rows' => '5',
             )
         ),
     ),
-    'types' => array (
+    'types' => array(
         '0' => array('showitem' => 'party;;;;1-1-1, document_type, document_id, issued_by;;;;1-1-1, issue_place, name_on_document;;1;;1-1-1, remarks;;;;1-1-1')
     ),
-    'palettes' => array (
+    'palettes' => array(
         '1' => array('showitem' => 'privilege, restriction, group_name'),
     )
 );
-

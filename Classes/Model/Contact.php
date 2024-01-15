@@ -25,7 +25,7 @@ namespace JambageCom\Party\Model;
  */
 
 
-class Contact extends Object {
-	protected $table = 'tx_party_contacts';
+class Contact extends BaseModel
+{
+    protected $table = 'tx_party_contacts';
 }
-

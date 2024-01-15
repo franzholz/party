@@ -24,38 +24,39 @@ namespace JambageCom\Party\Model;
  */
 
 
-class ContactNumberUsage extends Object {
-	protected $table = 'tx_party_contact_number_usages';
+class ContactNumberUsage extends BaseModel
+{
+    protected $table = 'tx_party_contact_number_usages';
 
-	/**
-	 * Returns the label of the Document in the following format:
-	 * "[type]: [document_id] ([party])"
-	 *
-	 * The data must be loaded before, by calling $this->load();
-	 *
-	 * @return	string		Label of the Document
-	 */
-	public function getLabel () {
-		if ($this->isEmpty()) {
-			return false;		// Data must be loaded
-		}
-		$label = array();
-		$out = '';
+    /**
+     * Returns the label of the Document in the following format:
+     * "[type]: [document_id] ([party])"
+     *
+     * The data must be loaded before, by calling $this->load();
+     *
+     * @return	string		Label of the Document
+     */
+    public function getLabel()
+    {
+        if ($this->isEmpty()) {
+            return false;		// Data must be loaded
+        }
+        $label = array();
+        $out = '';
 
-		// Get all relevant parts
-		$usage = tx_div2007_core::getRecord('tx_party_usages', $this->get('contact_number_usage'), 'short_title');
-		$party = tx_party_models_party::getInstance($this->get('party'));
+        // Get all relevant parts
+        $usage = tx_div2007_core::getRecord('tx_party_usages', $this->get('contact_number_usage'), 'short_title');
+        $party = tx_party_models_party::getInstance($this->get('party'));
 
-		// Assemble the label
-		if ($usage) {
-			$label[] = $usage;
-		}
-		if (!$party->isEmpty()) {
-			$label[] = '(' . $party->getLabel() . ')';
-		}
+        // Assemble the label
+        if ($usage) {
+            $label[] = $usage;
+        }
+        if (!$party->isEmpty()) {
+            $label[] = '(' . $party->getLabel() . ')';
+        }
 
-		$out = implode(' ', $label);
-		return $out;
-	}
+        $out = implode(' ', $label);
+        return $out;
+    }
 }
-

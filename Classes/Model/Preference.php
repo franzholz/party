@@ -27,43 +27,44 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
  */
 
 
-class Preference extends Object {
-	protected $table = 'tx_party_preferences';
+class Preference extends BaseModel
+{
+    protected $table = 'tx_party_preferences';
 
-	/**
-	 * Returns the label of the Preference in the following format:
-	 * "[type]: [favourite] ([party])"
-	 *
-	 * The data must be loaded before, by calling $this->load();
-	 *
-	 * @return	string		Label of the Preference
-	 */
-	public function getLabel () {
-		if ($this->isEmpty()) {
-			return false;		// Data must be loaded
-		}
-		$label = array();
-		$out = '';
+    /**
+     * Returns the label of the Preference in the following format:
+     * "[type]: [favourite] ([party])"
+     *
+     * The data must be loaded before, by calling $this->load();
+     *
+     * @return	string		Label of the Preference
+     */
+    public function getLabel()
+    {
+        if ($this->isEmpty()) {
+            return false;		// Data must be loaded
+        }
+        $label = array();
+        $out = '';
 
-		// Get all relevant parts
-		$type = GeneralUtility::makeInstance('tx_party_models_type');
-		$type->load($this->get('type'));
-		$preference = $this->get('preference');
-		$party = tx_party_models_party::getInstance($this->get('party'));
+        // Get all relevant parts
+        $type = GeneralUtility::makeInstance('tx_party_models_type');
+        $type->load($this->get('type'));
+        $preference = $this->get('preference');
+        $party = tx_party_models_party::getInstance($this->get('party'));
 
-		// Assemble the label
-		if (!$type->isEmpty()) {
-			$label[0] = $type->getLabel() . ':';
-		}
-		if ($preference) {
-			$label[1] = $preference;
-		}
-		if (!$party->isEmpty()) {
-			$label[2] = '(' . $party->getLabel() . ')';
-		}
+        // Assemble the label
+        if (!$type->isEmpty()) {
+            $label[0] = $type->getLabel() . ':';
+        }
+        if ($preference) {
+            $label[1] = $preference;
+        }
+        if (!$party->isEmpty()) {
+            $label[2] = '(' . $party->getLabel() . ')';
+        }
 
-		$out = implode(' ', $label);
-		return $out;
-	}
+        $out = implode(' ', $label);
+        return $out;
+    }
 }
-

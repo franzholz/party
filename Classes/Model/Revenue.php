@@ -27,54 +27,57 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
  */
 
 
-class Revenue extends Object {
-	protected $table = 'tx_party_revenues';
+class Revenue extends BaseModel
+{
+    protected $table = 'tx_party_revenues';
 
-	/**
-	 * Returns the label of the Revenue in the following format:
-	 * "[type]: [currency] [revenue] ([party])"
-	 *
-	 * The data must be loaded before, by calling $this->load();
-	 *
-	 * @return	string		Label of the Revenue
-	 */
-	public function getLabel () {
-		if ($this->isEmpty()) {
-			return false;		// Data must be loaded
-		}
-		$label = array();
-		$out = '';
+    /**
+     * Returns the label of the Revenue in the following format:
+     * "[type]: [currency] [revenue] ([party])"
+     *
+     * The data must be loaded before, by calling $this->load();
+     *
+     * @return	string		Label of the Revenue
+     */
+    public function getLabel()
+    {
+        if ($this->isEmpty()) {
+            return false;		// Data must be loaded
+        }
+        $label = array();
+        $out = '';
 
-		// Get all relevant parts
-		$type = GeneralUtility::makeInstance('tx_party_models_type');
-		$type->load($this->get('type'));
-		$currency = reset(
-			tx_div2007_core::getRecord(
-				'static_currencies',
-				$this->get('currency'), 'cu_iso_3')
-			);
-		$amount = $this->get('amount');
-		$party = tx_party_models_party::getInstance($this->get('party'));
+        // Get all relevant parts
+        $type = GeneralUtility::makeInstance('tx_party_models_type');
+        $type->load($this->get('type'));
+        $currency = reset(
+            tx_div2007_core::getRecord(
+                'static_currencies',
+                $this->get('currency'),
+                'cu_iso_3'
+            )
+        );
+        $amount = $this->get('amount');
+        $party = tx_party_models_party::getInstance($this->get('party'));
 
-		// Assemble the label
-		if (!$type->isEmpty()) {
-			$label[0] = $type->getLabel() . ':';
-		}
+        // Assemble the label
+        if (!$type->isEmpty()) {
+            $label[0] = $type->getLabel() . ':';
+        }
 
-		if ($currency) {
-			$label[1] = $currency;
-		}
+        if ($currency) {
+            $label[1] = $currency;
+        }
 
-		if ($amount) {
-			$label[2] = $amount;
-		}
+        if ($amount) {
+            $label[2] = $amount;
+        }
 
-		if (!$party->isEmpty()) {
-			$label[3] = '(' . $party->getLabel() . ')';
-		}
+        if (!$party->isEmpty()) {
+            $label[3] = '(' . $party->getLabel() . ')';
+        }
 
-		$out = implode(' ', $label);
-		return $out;
-	}
+        $out = implode(' ', $label);
+        return $out;
+    }
 }
-

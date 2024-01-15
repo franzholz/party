@@ -25,37 +25,39 @@ namespace JambageCom\Party\Model;
  */
 
 
-class Qualification extends Object {
-	protected $table = 'tx_party_qualifications';
+class Qualification extends BaseModel
+{
+    protected $table = 'tx_party_qualifications';
 
-	/**
-	 * Returns the label of the Qualification in the following format:
-	 * "[qualification] ([party])"
-	 *
-	 * The data must be loaded before, by calling $this->load();
-	 *
-	 * @return	string		Label of the Qualification
-	 */
-	public function getLabel () {
-		if ($this->isEmpty()) {
-			return false;		// Data must be loaded
-		}
-		$label = array();
-		$out = '';
+    /**
+     * Returns the label of the Qualification in the following format:
+     * "[qualification] ([party])"
+     *
+     * The data must be loaded before, by calling $this->load();
+     *
+     * @return	string		Label of the Qualification
+     */
+    public function getLabel()
+    {
+        if ($this->isEmpty()) {
+            return false;		// Data must be loaded
+        }
+        $label = array();
+        $out = '';
 
-		// Get all relevant parts
-		$qualificationName = $this->get('qualification_name');
-		$party = tx_party_models_party::getInstance($this->get('party'));
+        // Get all relevant parts
+        $qualificationName = $this->get('qualification_name');
+        $party = tx_party_models_party::getInstance($this->get('party'));
 
-		// Assemble the label
-		if ($qualificationName) {
-			$label[0] = $qualificationName;
-		}
-		if (!$party->isEmpty()) {
-			$label[1] = '(' . $party->getLabel() . ')';
-		}
+        // Assemble the label
+        if ($qualificationName) {
+            $label[0] = $qualificationName;
+        }
+        if (!$party->isEmpty()) {
+            $label[1] = '(' . $party->getLabel() . ')';
+        }
 
-		$out = implode(' ', $label);
-		return $out;
-	}
+        $out = implode(' ', $label);
+        return $out;
+    }
 }

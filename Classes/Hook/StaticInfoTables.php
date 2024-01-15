@@ -2,7 +2,6 @@
 
 namespace JambageCom\Party\Hook;
 
-
 /***************************************************************
 *  Copyright notice
 *
@@ -40,31 +39,29 @@ namespace JambageCom\Party\Hook;
  * @author	David Brühlmeier <typo3@bruehlmeier.com>
  * @package TYPO3
  */
-class StaticInfoTables {
+class StaticInfoTables
+{
+    public function processDatamap_postProcessFieldArray(
+        $status,
+        $table,
+        $id,
+        $fieldArray,
+        $pObj
+    ) {
+        // Check if the current table contains a field with a hotlist to update
+        foreach ($GLOBALS['TCA'][$table]['columns'] as $fieldName => $field) {
+            if ($field['config']['itemsProcFunc_config']['hotlistApp'] == 'tx_party') {
+                if ($fieldArray[$fieldName]) {
 
-	public function processDatamap_postProcessFieldArray(
-		$status,
-		$table,
-		$id,
-		$fieldArray,
-		$pObj
-	) {
-		// Check if the current table contains a field with a hotlist to update
-		foreach ($GLOBALS['TCA'][$table]['columns'] as $fieldName => $field) {
-			if ($field['config']['itemsProcFunc_config']['hotlistApp'] == 'tx_party') {
-				if ($fieldArray[$fieldName]) {
-
-					// The hotlist will be updated only if the field changed, because only then it's in the $fieldArray
-					tx_staticinfotables_div::updateHotlist(
-						$field['config']['itemsProcFunc_config']['table'],
-						$fieldArray[$fieldName],
-						'uid',
-						'tx_party'
-					);
-				}
-			}
-		}
-	}
+                    // The hotlist will be updated only if the field changed, because only then it's in the $fieldArray
+                    tx_staticinfotables_div::updateHotlist(
+                        $field['config']['itemsProcFunc_config']['table'],
+                        $fieldArray[$fieldName],
+                        'uid',
+                        'tx_party'
+                    );
+                }
+            }
+        }
+    }
 }
-
-

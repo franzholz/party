@@ -25,58 +25,61 @@ namespace JambageCom\Party\Model;
  */
 
 
-class Type extends Object {
-	protected $table = 'tx_party_types';
+class Type extends BaseModel
+{
+    protected $table = 'tx_party_types';
 
-	/**
-	 * Checks if the type is allowed for a certain party type.
-	 *
-	 * The data must be loaded before, by calling $this->load();
-	 *
-	 * @param	integer		$partyType: Type of the party (0 for person, 1 for organisation)
-	 * @return	boolean		True if the current type is allowed for the specified party type
-	 */
-	public function isAllowedForPartyType ($partyType) {
-		if ($this->isEmpty()) {
-			return false;		// Data must be loaded
-		}
-		$out = false;
+    /**
+     * Checks if the type is allowed for a certain party type.
+     *
+     * The data must be loaded before, by calling $this->load();
+     *
+     * @param	integer		$partyType: Type of the party (0 for person, 1 for organisation)
+     * @return	boolean		True if the current type is allowed for the specified party type
+     */
+    public function isAllowedForPartyType($partyType)
+    {
+        if ($this->isEmpty()) {
+            return false;		// Data must be loaded
+        }
+        $out = false;
 
-		switch ($this->get('allowed_for_party_type')) {
-			case 'ALL':
-				$out = TRUE;
-				break;
-			case 'PERSONS':
-				$out = ($partyType == 0) ? TRUE : false;
-				break;
-			case 'ORGANISATIONS':
-				$out = ($partyType == 1) ? TRUE : false;
-				break;
-			default:
-				$out = false;
-				break;
-		}
+        switch ($this->get('allowed_for_party_type')) {
+            case 'ALL':
+                $out = true;
+                break;
+            case 'PERSONS':
+                $out = ($partyType == 0) ? true : false;
+                break;
+            case 'ORGANISATIONS':
+                $out = ($partyType == 1) ? true : false;
+                break;
+            default:
+                $out = false;
+                break;
+        }
 
-		return $out;
-	}
+        return $out;
+    }
 
-	/**
-	 * Checks if the type is allowed for a certain field.
-	 *
-	 * The data must be loaded before, by calling $this->load();
-	 *
-	 * @param	string		$field: Name of the field (e.g. tx_party_EVENTS-TYPE)
-	 * @return	boolean		True if the current type is allowed for the specified field
-	 */
-	public function isAllowedForField ($field) {
-		if ($this->isEmpty()) {
-			return false;		// Data must be loaded
-		}
-		$out = false;
+    /**
+     * Checks if the type is allowed for a certain field.
+     *
+     * The data must be loaded before, by calling $this->load();
+     *
+     * @param	string		$field: Name of the field (e.g. tx_party_EVENTS-TYPE)
+     * @return	boolean		True if the current type is allowed for the specified field
+     */
+    public function isAllowedForField($field)
+    {
+        if ($this->isEmpty()) {
+            return false;		// Data must be loaded
+        }
+        $out = false;
 
-		$allowedForField = explode(',', $this->get('allowed_for_field'));
-		$out = in_array($field, $allowedForField);
+        $allowedForField = explode(',', $this->get('allowed_for_field'));
+        $out = in_array($field, $allowedForField);
 
-		return $out;
-	}
+        return $out;
+    }
 }

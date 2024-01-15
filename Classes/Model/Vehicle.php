@@ -26,58 +26,61 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
  * @subpackage tx_party
  */
 
-class Vehicle extends Object {
-	protected $table = 'tx_party_vehicles';
+class Vehicle extends BaseModel
+{
+    protected $table = 'tx_party_vehicles';
 
-	/**
-	 * Loads the Vehicle.
-	 *
-	 * @param	integer		$uid: UID of the Vehicle
-	 * @return	void		The data is loaded into the Vehicle
-	 */
-	public function load ($uid) {
-		parent::load($uid);
-		if ($this->get('make')) {
-			$make = GeneralUtility::makeInstance('tx_party_models_vehiclemanufacturer');
-			$make->load($this->get('make'));
-			$this->set('make', $make);
-		}
-	}
+    /**
+     * Loads the Vehicle.
+     *
+     * @param	integer		$uid: UID of the Vehicle
+     * @return	void		The data is loaded into the Vehicle
+     */
+    public function load($uid)
+    {
+        parent::load($uid);
+        if ($this->get('make')) {
+            $make = GeneralUtility::makeInstance('tx_party_models_vehiclemanufacturer');
+            $make->load($this->get('make'));
+            $this->set('make', $make);
+        }
+    }
 
-	/**
-	 * Returns the label of the Vehicle in the following format:
-	 * "[make]: [license_plate] ([party])"
-	 *
-	 * The data must be loaded before, by calling $this->load();
-	 *
-	 * @return	string		Label of the Vehicle
-	 */
-	public function getLabel () {
-		if ($this->isEmpty()) {
-			return false;		// Data must be loaded
-		}
-		$label = array();
-		$out = '';
+    /**
+     * Returns the label of the Vehicle in the following format:
+     * "[make]: [license_plate] ([party])"
+     *
+     * The data must be loaded before, by calling $this->load();
+     *
+     * @return	string		Label of the Vehicle
+     */
+    public function getLabel()
+    {
+        if ($this->isEmpty()) {
+            return false;		// Data must be loaded
+        }
+        $label = array();
+        $out = '';
 
-		// Get all relevant parts
-		$make = $this->get('make');
-		$licensePlate = $this->get('license_plate');
-		$party = tx_party_models_party::getInstance($this->get('party'));
+        // Get all relevant parts
+        $make = $this->get('make');
+        $licensePlate = $this->get('license_plate');
+        $party = tx_party_models_party::getInstance($this->get('party'));
 
-		// Assemble the label
-		if (is_object($make) && !$make->isEmpty()) {
-			$label[] = $make->getLabel() . ':';
-		}
+        // Assemble the label
+        if (is_object($make) && !$make->isEmpty()) {
+            $label[] = $make->getLabel() . ':';
+        }
 
-		if ($licensePlate) {
-			$label[] = $licensePlate;
-		}
+        if ($licensePlate) {
+            $label[] = $licensePlate;
+        }
 
-		if (!$party->isEmpty()) {
-			$label[] = '(' . $party->getLabel() . ')';
-		}
+        if (!$party->isEmpty()) {
+            $label[] = '(' . $party->getLabel() . ')';
+        }
 
-		$out = implode(' ', $label);
-		return $out;
-	}
+        $out = implode(' ', $label);
+        return $out;
+    }
 }

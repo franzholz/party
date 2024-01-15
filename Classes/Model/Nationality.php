@@ -26,43 +26,43 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
  */
 
 
-class Nationality extends Object {
-	protected $table = 'tx_party_nationalities';
+class Nationality extends BaseModel
+{
+    protected $table = 'tx_party_nationalities';
 
-	/**
-	 * Returns the label of the Nationality in the following format:
-	 * "[nationality_type]: [country] ([party])"
-	 *
-	 * The data must be loaded before, by calling $this->load();
-	 *
-	 * @return	string		Label of the Nationality
-	 */
-	public function getLabel () {
-		if ($this->isEmpty()) {
-			return false;		// Data must be loaded
-		}
-		$label = array();
-		$out = '';
+    /**
+     * Returns the label of the Nationality in the following format:
+     * "[nationality_type]: [country] ([party])"
+     *
+     * The data must be loaded before, by calling $this->load();
+     *
+     * @return	string		Label of the Nationality
+     */
+    public function getLabel()
+    {
+        if ($this->isEmpty()) {
+            return false;		// Data must be loaded
+        }
+        $label = array();
+        $out = '';
 
-		// Get all relevant parts
-		$nationalityType = GeneralUtility::makeInstance('tx_party_models_type');
-		$nationalityType->load($this->get('nationality_type'));
-		$party = tx_party_models_party::getInstance($this->get('party'));
-		$country = reset(
-			tx_div2007_core::getRecord('static_countries', $this->get('country'), 'cn_short_en')
-		);
+        // Get all relevant parts
+        $nationalityType = GeneralUtility::makeInstance('tx_party_models_type');
+        $nationalityType->load($this->get('nationality_type'));
+        $party = tx_party_models_party::getInstance($this->get('party'));
+        $country = reset(
+            tx_div2007_core::getRecord('static_countries', $this->get('country'), 'cn_short_en')
+        );
 
-		// Assemble the label
-		if (!$nationalityType->isEmpty()) {
-			$label[0] = $nationalityType->getLabel() . ':';
-		}
-		$label[1] = $country;
-		if (!$party->isEmpty()) {
-			$label[2] = '(' . $party->getLabel() . ')';
-		}
-		$out = implode(' ', $label);
-		return $out;
-	}
+        // Assemble the label
+        if (!$nationalityType->isEmpty()) {
+            $label[0] = $nationalityType->getLabel() . ':';
+        }
+        $label[1] = $country;
+        if (!$party->isEmpty()) {
+            $label[2] = '(' . $party->getLabel() . ')';
+        }
+        $out = implode(' ', $label);
+        return $out;
+    }
 }
-
-

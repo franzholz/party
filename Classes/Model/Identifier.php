@@ -26,42 +26,43 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
  */
 
 
-class Identifier extends Object {
-	protected $table = 'tx_party_identifiers';
+class Identifier extends BaseModel
+{
+    protected $table = 'tx_party_identifiers';
 
-	/**
-	 * Returns the label of the Identifier in the following format:
-	 * "[type]: [identifier] ([party])"
-	 *
-	 * The data must be loaded before, by calling $this->load();
-	 *
-	 * @return	string		Label of the Identifier
-	 */
-	public function getLabel () {
-		if ($this->isEmpty()) {
-			return false;		// Data must be loaded
-		}
-		$label = array();
-		$out = '';
+    /**
+     * Returns the label of the Identifier in the following format:
+     * "[type]: [identifier] ([party])"
+     *
+     * The data must be loaded before, by calling $this->load();
+     *
+     * @return	string		Label of the Identifier
+     */
+    public function getLabel()
+    {
+        if ($this->isEmpty()) {
+            return false;		// Data must be loaded
+        }
+        $label = array();
+        $out = '';
 
-		// Get all relevant parts
-		$type = GeneralUtility::makeInstance('tx_party_models_type');
-		$type->load($this->get('type'));
-		$identifier = $this->get('identifier');
-		$party = tx_party_models_party::getInstance($this->get('party'));
+        // Get all relevant parts
+        $type = GeneralUtility::makeInstance('tx_party_models_type');
+        $type->load($this->get('type'));
+        $identifier = $this->get('identifier');
+        $party = tx_party_models_party::getInstance($this->get('party'));
 
-		// Assemble the label
-		if (!$type->isEmpty()) {
-			$label[0] = $type->getLabel() . ':';
-		}
-		if ($identifier) {
-			$label[1] = $identifier;
-		}
-		if (!$party->isEmpty) {
-			$label[2] = '(' . $party->getLabel() . ')';
-		}
-		$out = implode(' ', $label);
-		return $out;
-	}
+        // Assemble the label
+        if (!$type->isEmpty()) {
+            $label[0] = $type->getLabel() . ':';
+        }
+        if ($identifier) {
+            $label[1] = $identifier;
+        }
+        if (!$party->isEmpty) {
+            $label[2] = '(' . $party->getLabel() . ')';
+        }
+        $out = implode(' ', $label);
+        return $out;
+    }
 }
-

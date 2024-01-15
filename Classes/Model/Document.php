@@ -28,43 +28,44 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 
 
-class Document extends Object {
-	protected $table = 'tx_party_documents';
+class Document extends BaseModel
+{
+    protected $table = 'tx_party_documents';
 
-	/**
-	 * Returns the label of the Document in the following format:
-	 * "[type]: [document_id] ([party])"
-	 *
-	 * The data must be loaded before, by calling $this->load();
-	 *
-	 * @return	string		Label of the Document
-	 */
-	public function getLabel () {
-		if ($this->isEmpty()) {
-			return false;		// Data must be loaded
-		}
-		$label = array();
-		$out = '';
+    /**
+     * Returns the label of the Document in the following format:
+     * "[type]: [document_id] ([party])"
+     *
+     * The data must be loaded before, by calling $this->load();
+     *
+     * @return	string		Label of the Document
+     */
+    public function getLabel()
+    {
+        if ($this->isEmpty()) {
+            return false;		// Data must be loaded
+        }
+        $label = array();
+        $out = '';
 
-		// Get all relevant parts
-		$documentType = GeneralUtility::makeInstance('tx_party_models_type');
-		$documentType->load($this->get('document_type'));
-		$documentId = $this->get('document_id');
-		$party = tx_party_models_party::getInstance($this->get('party'));
+        // Get all relevant parts
+        $documentType = GeneralUtility::makeInstance('tx_party_models_type');
+        $documentType->load($this->get('document_type'));
+        $documentId = $this->get('document_id');
+        $party = tx_party_models_party::getInstance($this->get('party'));
 
-		// Assemble the label
-		if (!$documentType->isEmpty()) {
-			$label[0] = $documentType->getLabel() . ':';
-		}
-		if ($documentId) {
-			$label[1] = $documentId;
-		}
-		if (!$party->isEmpty()) {
-			$label[2] = '(' . $party->getLabel() . ')';
-		}
+        // Assemble the label
+        if (!$documentType->isEmpty()) {
+            $label[0] = $documentType->getLabel() . ':';
+        }
+        if ($documentId) {
+            $label[1] = $documentId;
+        }
+        if (!$party->isEmpty()) {
+            $label[2] = '(' . $party->getLabel() . ')';
+        }
 
-		$out = implode(' ', $label);
-		return $out;
-	}
+        $out = implode(' ', $label);
+        return $out;
+    }
 }
-

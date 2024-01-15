@@ -25,8 +25,7 @@ namespace JambageCom\Party\Model;
  */
 
 
-class Habit extends Object {
-	protected $table = 'tx_party_habits';
+class Habit extends BaseModel
+{
+    protected $table = 'tx_party_habits';
 }
-
-

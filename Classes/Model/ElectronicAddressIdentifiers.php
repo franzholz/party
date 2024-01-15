@@ -27,39 +27,40 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
  */
 
 
-class ElectronicAddressIdentifiers extends Object {
-	protected $table = 'tx_party_electronic_address_identifier_usages';
+class ElectronicAddressIdentifiers extends BaseModel
+{
+    protected $table = 'tx_party_electronic_address_identifier_usages';
 
-	/**
-	 * Loads all electronic address identifiers which are assigned to a specific party.
-	 *
-	 * @param	integer		$uid: UID of the party
-	 * @return	void		The data is loaded into the object
-	 */
-	public function loadByParty ($partyUid) {
-		$partyUid = intval($partyUid);
-		$groupBy = '';
-		$orderBy = '';
+    /**
+     * Loads all electronic address identifiers which are assigned to a specific party.
+     *
+     * @param	integer		$uid: UID of the party
+     * @return	void		The data is loaded into the object
+     */
+    public function loadByParty($partyUid)
+    {
+        $partyUid = intval($partyUid);
+        $groupBy = '';
+        $orderBy = '';
 
-		// Load all addresses from the database and build the object
-		$query = $GLOBALS['TYPO3_DB']->SELECTquery('electronic_address_identifier,standard', $this->table, $this->table . '.party=' . $partyUid, $groupBy, $orderBy);
-		$result = $GLOBALS['TYPO3_DB']->sql_query($query);
-		$list = GeneralUtility::makeInstance('tx_div2007_object');
+        // Load all addresses from the database and build the object
+        $query = $GLOBALS['TYPO3_DB']->SELECTquery('electronic_address_identifier,standard', $this->table, $this->table . '.party=' . $partyUid, $groupBy, $orderBy);
+        $result = $GLOBALS['TYPO3_DB']->sql_query($query);
+        $list = GeneralUtility::makeInstance('tx_div2007_object');
 
-		if($result) {
-			while($row = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($result)) {
-				$item = GeneralUtility::makeInstance('tx_party_models_electronicaddressidentifier');
-				$item->load($row['electronic_address_identifier']);
-				$item->set('standard', $row['standard']);	// Include the value from the mm-table
-				if ($item->get('standard') == 1) {
-					$this->set('standard', $item);
-				}
-				$list->append($item);
-			}
-			$GLOBALS['TYPO3_DB']->sql_free_result($result);
-		}
-		$this->set('list', $list);
-	}
+        if($result) {
+            while($row = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($result)) {
+                $item = GeneralUtility::makeInstance('tx_party_models_electronicaddressidentifier');
+                $item->load($row['electronic_address_identifier']);
+                $item->set('standard', $row['standard']);	// Include the value from the mm-table
+                if ($item->get('standard') == 1) {
+                    $this->set('standard', $item);
+                }
+                $list->append($item);
+            }
+            $GLOBALS['TYPO3_DB']->sql_free_result($result);
+        }
+        $this->set('list', $list);
+    }
 
 }
-
