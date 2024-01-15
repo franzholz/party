@@ -16,7 +16,6 @@ $GLOBALS['TCA']['tx_party_ethnicities'] = array (
         'transOrigDiffSourceField' => 'l18n_diffsource',
         'sortby' => 'sorting',
         'delete' => 'deleted',
-        'dynamicConfigFile' => PATH_BE_PARTY . 'tca.php',
         'iconfile'          => PATH_BE_PARTY_REL . 'icons/icon_tx_party_ethnicities.gif',
     ),
     'columns' => array (

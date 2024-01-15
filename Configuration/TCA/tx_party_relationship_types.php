@@ -13,7 +13,6 @@ $GLOBALS['TCA']['tx_party_relationship_types'] = array (
         'cruser_id' => 'cruser_id',
         'default_sortby' => 'ORDER BY relationship_type',
         'delete' => 'deleted',
-        'dynamicConfigFile' => PATH_BE_PARTY . 'tca.php',
         'iconfile'          => PATH_BE_PARTY_REL . 'icons/icon_tx_party_relationship_types.gif',
     ),
     'interface' => array (

@@ -12,7 +12,6 @@ $GLOBALS['TCA']['tx_party_addresses'] = array (
         'cruser_id' => 'cruser_id',
         'default_sortby' => 'ORDER BY locality',
         'delete' => 'deleted',
-        'dynamicConfigFile' => PATH_BE_PARTY . 'tca.php',
         'iconfile'          => PATH_BE_PARTY_REL . 'icons/icon_tx_party_addresses.gif',
     ),
     'interface' => array (

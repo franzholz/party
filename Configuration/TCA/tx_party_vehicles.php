@@ -14,7 +14,6 @@ $GLOBALS['TCA']['tx_party_vehicles'] = array (
         'cruser_id' => 'cruser_id',
         'default_sortby' => 'ORDER BY license_plate',
         'delete' => 'deleted',
-        'dynamicConfigFile' => PATH_BE_PARTY . 'tca.php',
         'iconfile'          => PATH_BE_PARTY_REL . 'icons/icon_tx_party_vehicles.gif',
     ),
     'interface' => array (

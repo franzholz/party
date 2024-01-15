@@ -14,7 +14,6 @@ $GLOBALS['TCA']['tx_party_names'] = array (
         'type' => 'type',
         'default_sortby' => 'ORDER BY last_name',
         'delete' => 'deleted',
-        'dynamicConfigFile' => PATH_BE_PARTY . 'tca.php',
         'iconfile'          => PATH_BE_PARTY_REL . 'icons/icon_tx_party_names.gif',
     ),
     'interface' => array (
