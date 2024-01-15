@@ -3,11 +3,20 @@
 defined('TYPO3') || die('Access denied.');
 
 $GLOBALS['TCA']['tx_party_habits'] = array (
-    'ctrl' => $GLOBALS['TCA']['tx_party_habits']['ctrl'],
-    'interface' => array (
-        'showRecordFieldList' => 'sys_language_uid,l18n_parent,l18n_diffsource,short_title,title,long_title'
+    'ctrl' => array (
+        'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_habits',
+        'label'     => 'title',
+        'tstamp'    => 'tstamp',
+        'crdate'    => 'crdate',
+        'cruser_id' => 'cruser_id',
+        'languageField'            => 'sys_language_uid',
+        'transOrigPointerField'    => 'l18n_parent',
+        'transOrigDiffSourceField' => 'l18n_diffsource',
+        'sortby' => 'sorting',
+        'delete' => 'deleted',
+        'dynamicConfigFile' => PATH_BE_PARTY . 'tca.php',
+        'iconfile'          => PATH_BE_PARTY_REL . 'icons/icon_tx_party_habits.gif',
     ),
-    'feInterface' => $GLOBALS['TCA']['tx_party_habits']['feInterface'],
     'columns' => array (
         'sys_language_uid' => array (
             'exclude' => 1,

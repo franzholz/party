@@ -6,11 +6,20 @@ defined('TYPO3') || die('Access denied.');
 
 
 $GLOBALS['TCA']['tx_party_qualifications'] = array (
-    'ctrl' => $GLOBALS['TCA']['tx_party_qualifications']['ctrl'],
+    'ctrl' => array (
+        'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_qualifications',
+        'label'     => 'qualification_name',
+        'tstamp'    => 'tstamp',
+        'crdate'    => 'crdate',
+        'cruser_id' => 'cruser_id',
+        'default_sortby' => 'ORDER BY qualification_name',
+        'delete' => 'deleted',
+        'dynamicConfigFile' => PATH_BE_PARTY . 'tca.php',
+        'iconfile'          => PATH_BE_PARTY_REL . 'icons/icon_tx_party_qualifications.gif',
+    ),
     'interface' => array (
         'showRecordFieldList' => 'party,qualification_name,status,institution,start_date,completion_date,way_of_study,major_subject,minor_subject,mark,course_duration,award,restriction,registration,remarks'
     ),
-    'feInterface' => $GLOBALS['TCA']['tx_party_qualifications']['feInterface'],
     'columns' => array (
         'party' => Array (
             'exclude' => 1,

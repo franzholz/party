@@ -3,11 +3,20 @@
 defined('TYPO3') || die('Access denied.');
 
 $GLOBALS['TCA']['tx_party_allergies'] = array (
-    'ctrl' => $GLOBALS['TCA']['tx_party_allergies']['ctrl'],
+    'ctrl' => array (
+        'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_allergies',
+        'label'     => 'title',
+        'tstamp'    => 'tstamp',
+        'crdate'    => 'crdate',
+        'cruser_id' => 'cruser_id',
+        'sortby' => 'sorting',
+        'delete' => 'deleted',
+        'dynamicConfigFile' => PATH_BE_PARTY . 'tca.php',
+        'iconfile'          => PATH_BE_PARTY_REL . 'icons/icon_tx_party_allergies.gif',
+    ),
     'interface' => array (
         'showRecordFieldList' => 'short_title,title,long_title'
     ),
-    'feInterface' => $GLOBALS['TCA']['tx_party_allergies']['feInterface'],
     'columns' => array (
         'short_title' => Array (
             'exclude' => 1,

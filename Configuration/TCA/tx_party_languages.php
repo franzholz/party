@@ -6,11 +6,21 @@ defined('TYPO3') || die('Access denied.');
 
 
 $GLOBALS['TCA']['tx_party_languages'] = array (
-    'ctrl' => $GLOBALS['TCA']['tx_party_languages']['ctrl'],
+    'ctrl' => array (
+        'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_languages',
+        'label'     => 'uid',
+        'label_userFunc' => 'tx_party_labels->getLabel',
+        'tstamp'    => 'tstamp',
+        'crdate'    => 'crdate',
+        'cruser_id' => 'cruser_id',
+        'default_sortby' => 'ORDER BY language',
+        'delete' => 'deleted',
+        'dynamicConfigFile' => PATH_BE_PARTY . 'tca.php',
+        'iconfile'          => PATH_BE_PARTY_REL . 'icons/icon_tx_party_languages.gif',
+    ),
     'interface' => array (
         'showRecordFieldList' => 'party,language,type,read_skills,write_skills,listen_skills,speak_skills,preference,remarks'
     ),
-    'feInterface' => $GLOBALS['TCA']['tx_party_languages']['feInterface'],
     'columns' => array (
         'party' => Array (
             'exclude' => 1,

@@ -5,11 +5,20 @@ defined('TYPO3') || die('Access denied.');
 
 
 $GLOBALS['TCA']['tx_party_contacts'] = array (
-    'ctrl' => $GLOBALS['TCA']['tx_party_contacts']['ctrl'],
+    'ctrl' => array (
+        'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_contacts',
+        'label'     => 'contact',
+        'tstamp'    => 'tstamp',
+        'crdate'    => 'crdate',
+        'cruser_id' => 'cruser_id',
+        'default_sortby' => 'ORDER BY contact',
+        'delete' => 'deleted',
+        'dynamicConfigFile' => PATH_BE_PARTY . 'tca.php',
+        'iconfile'          => PATH_BE_PARTY_REL . 'icons/icon_tx_party_contacts.gif',
+    ),
     'interface' => array (
         'showRecordFieldList' => 'party,type,contact,remarks'
     ),
-    'feInterface' => $GLOBALS['TCA']['tx_party_contacts']['feInterface'],
     'columns' => array (
         'party' => Array (
             'exclude' => 1,

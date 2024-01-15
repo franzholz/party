@@ -3,11 +3,21 @@
 defined('TYPO3') || die('Access denied.');
 
 $GLOBALS['TCA']['tx_party_addresses'] = array (
-    'ctrl' => $GLOBALS['TCA']['tx_party_addresses']['ctrl'],
+    'ctrl' => array (
+        'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_addresses',
+        'label'     => 'locality',
+        'label_userFunc' => 'tx_party_labels->getLabel',
+        'tstamp'    => 'tstamp',
+        'crdate'    => 'crdate',
+        'cruser_id' => 'cruser_id',
+        'default_sortby' => 'ORDER BY locality',
+        'delete' => 'deleted',
+        'dynamicConfigFile' => PATH_BE_PARTY . 'tca.php',
+        'iconfile'          => PATH_BE_PARTY_REL . 'icons/icon_tx_party_addresses.gif',
+    ),
     'interface' => array (
         'showRecordFieldList' => 'parties,locality,thoroughfare,thoroughfare_number,building_name,location,lot,premise_type,internal_thoroughfare,reference_location,post_code,rural_delivery,latitude_degrees_measure,latitude_minutes_measure,latitude_seconds_measure,latitude_direction_code,longitude_degrees_measure,longitude_minutes_measure,longitude_seconds_measure,longitude_direction_code,postal_delivery_point,post_office,post_town,administrative_area,country,images,remarks'
-    ),
-    'feInterface' => $GLOBALS['TCA']['tx_party_addresses']['feInterface'],
+    ),    
     'columns' => array (
         'parties' => Array (
             'exclude' => 1,

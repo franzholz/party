@@ -4,11 +4,22 @@ defined('TYPO3') || die('Access denied.');
 
 
 $GLOBALS['TCA']['tx_party_names'] = array (
-    'ctrl' => $GLOBALS['TCA']['tx_party_names']['ctrl'],
+    'ctrl' => array (
+        'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_names',
+        'label'     => 'last_name',
+        'label_userFunc' => 'tx_party_labels->getLabel',
+        'tstamp'    => 'tstamp',
+        'crdate'    => 'crdate',
+        'cruser_id' => 'cruser_id',
+        'type' => 'type',
+        'default_sortby' => 'ORDER BY last_name',
+        'delete' => 'deleted',
+        'dynamicConfigFile' => PATH_BE_PARTY . 'tca.php',
+        'iconfile'          => PATH_BE_PARTY_REL . 'icons/icon_tx_party_names.gif',
+    ),
     'interface' => array (
         'showRecordFieldList' => 'party,type,standard,person_name_title,first_name,middle_name,ancestor_name,last_name,other_name,preceding_title,alias,generation_identifier,place_name,organisation_name_type,organisation_name,abbreviation,remarks'
     ),
-    'feInterface' => $GLOBALS['TCA']['tx_party_names']['feInterface'],
     'columns' => array (
         'party' => Array (
             'exclude' => 1,

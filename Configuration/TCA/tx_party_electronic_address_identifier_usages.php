@@ -3,11 +3,21 @@
 defined('TYPO3') || die('Access denied.');
 
 $GLOBALS['TCA']['tx_party_electronic_address_identifier_usages'] = array (
-    'ctrl' => $GLOBALS['TCA']['tx_party_electronic_address_identifier_usages']['ctrl'],
+    'ctrl' => array (
+        'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_electronic_address_identifier_usages',
+        'label'     => 'uid',
+        'label_userFunc' => 'tx_party_labels->getLabel',
+        'tstamp'    => 'tstamp',
+        'crdate'    => 'crdate',
+        'cruser_id' => 'cruser_id',
+        'default_sortby' => 'ORDER BY crdate',
+        'delete' => 'deleted',
+        'dynamicConfigFile' => PATH_BE_PARTY . 'tca.php',
+        'iconfile'          => PATH_BE_PARTY_REL . 'icons/icon_tx_party_electronic_address_identifier_usages.gif',
+    ),
     'interface' => array (
         'showRecordFieldList' => 'party,electronic_address_identifier,electronic_address_identifier_usage,standard'
     ),
-    'feInterface' => $GLOBALS['TCA']['tx_party_electronic_address_identifier_usages']['feInterface'],
     'columns' => array (
         'party' => Array (
             'exclude' => 1,

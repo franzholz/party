@@ -5,11 +5,28 @@ defined('TYPO3') || die('Access denied.');
 
 
 $GLOBALS['TCA']['tx_party_parties'] = array (
-    'ctrl' => $GLOBALS['TCA']['tx_party_parties']['ctrl'],
+    'ctrl' => array (
+        'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_parties',
+        'label'     => 'uid',
+        'label_userFunc' => 'tx_party_labels->getLabel',
+        'tstamp'    => 'tstamp',
+        'crdate'    => 'crdate',
+        'cruser_id' => 'cruser_id',
+        'type' => 'type',
+        'default_sortby' => 'ORDER BY crdate',
+        'delete' => 'deleted',
+        'dividers2tabs' => TRUE,
+        'dynamicConfigFile' => PATH_BE_PARTY . 'tca.php',
+        'iconfile'          => PATH_BE_PARTY_REL . 'icons/icon_tx_party_parties.gif',
+        'typeicon_column' => 'type',
+        'typeicons' => Array (
+            '0' => PATH_BE_PARTY_REL . 'icons/icon_tx_party_parties_person.gif',
+            '1' => PATH_BE_PARTY_REL . 'icons/icon_tx_party_parties_organisation.gif',
+        ),
+    ),
     'interface' => array (
         'showRecordFieldList' => 'type,marital_status,religion,birth_place,birth_date_time,birth_date_time_precision,birth_sign,birth_star,weight,height,breast,waist,hip,hair_colour,eye_colour,skin_colour,blood_group,physical_status,ethnicity,gender,hobbies,habits,organisation_type,organisation_nature,company_registration_id,company_registration_date,number_of_employees,remarks,names,addresses,accounts,contact_numbers,countries_of_residence,documents,electronic_address_identifiers,images,nationalities,relationships,revenues,vehicles,contacts,visas,disabilities,languages,marks,occupations,qualifications,stock_markets,events,identifiers,memberships,allergies,favourites,preferences'
     ),
-    'feInterface' => $GLOBALS['TCA']['tx_party_parties']['feInterface'],
     'columns' => array (
         'type' => Array (
             'exclude' => 1,

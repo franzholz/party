@@ -6,11 +6,20 @@ defined('TYPO3') || die('Access denied.');
 
 
 $GLOBALS['TCA']['tx_party_vehicles'] = array (
-    'ctrl' => $GLOBALS['TCA']['tx_party_vehicles']['ctrl'],
+    'ctrl' => array (
+        'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_vehicles',
+        'label'     => 'license_plate',
+        'tstamp'    => 'tstamp',
+        'crdate'    => 'crdate',
+        'cruser_id' => 'cruser_id',
+        'default_sortby' => 'ORDER BY license_plate',
+        'delete' => 'deleted',
+        'dynamicConfigFile' => PATH_BE_PARTY . 'tca.php',
+        'iconfile'          => PATH_BE_PARTY_REL . 'icons/icon_tx_party_vehicles.gif',
+    ),
     'interface' => array (
         'showRecordFieldList' => 'party,make,type,model,license_plate,manufacture_date,engine_number,chassis_number,body_number,remarks'
     ),
-    'feInterface' => $GLOBALS['TCA']['tx_party_vehicles']['feInterface'],
     'columns' => array (
         'party' => Array (
             'exclude' => 1,

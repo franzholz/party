@@ -4,11 +4,20 @@ defined('TYPO3') || die('Access denied.');
 
 
 $GLOBALS['TCA']['tx_party_disabilities'] = array (
-    'ctrl' => $GLOBALS['TCA']['tx_party_disabilities']['ctrl'],
+    'ctrl' => array (
+        'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_disabilities',
+        'label'     => 'disability',
+        'tstamp'    => 'tstamp',
+        'crdate'    => 'crdate',
+        'cruser_id' => 'cruser_id',
+        'default_sortby' => 'ORDER BY disability',
+        'delete' => 'deleted',
+        'dynamicConfigFile' => PATH_BE_PARTY . 'tca.php',
+        'iconfile'          => PATH_BE_PARTY_REL . 'icons/icon_tx_party_disabilities.gif',
+    ),
     'interface' => array (
         'showRecordFieldList' => 'party,disability,cause,remarks'
     ),
-    'feInterface' => $GLOBALS['TCA']['tx_party_disabilities']['feInterface'],
     'columns' => array (
         'party' => Array (
             'exclude' => 1,

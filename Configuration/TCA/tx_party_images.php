@@ -5,11 +5,21 @@ defined('TYPO3') || die('Access denied.');
 
 
 $GLOBALS['TCA']['tx_party_images'] = array (
-    'ctrl' => $GLOBALS['TCA']['tx_party_images']['ctrl'],
+    'ctrl' => array (
+        'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_images',
+        'label'     => 'title',
+        'tstamp'    => 'tstamp',
+        'crdate'    => 'crdate',
+        'cruser_id' => 'cruser_id',
+        'default_sortby' => 'ORDER BY title',
+        'delete' => 'deleted',
+        'type' => 'type',
+        'dynamicConfigFile' => PATH_BE_PARTY . 'tca.php',
+        'iconfile'          => PATH_BE_PARTY_REL . 'icons/icon_tx_party_images.gif',
+    ),
     'interface' => array (
         'showRecordFieldList' => 'type,party,address,image,title,description,remarks'
     ),
-    'feInterface' => $GLOBALS['TCA']['tx_party_images']['feInterface'],
     'columns' => array (
         'type' => Array (
             'exclude' => 1,

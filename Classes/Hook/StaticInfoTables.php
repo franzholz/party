@@ -28,9 +28,6 @@ namespace JambageCom\Party\Hook;
 /**
  * Updating hotlists for static_info_tables
  *
- *
- * $Id$
- *
  * @author	David Brühlmeier <typo3@bruehlmeier.com>
  * @package TYPO3
  */
@@ -71,8 +68,3 @@ class StaticInfoTables {
 }
 
 
-if (defined('TYPO3_MODE') && $TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/party/hooks/class.tx_party_staticinfotables.php']) {
-	include_once($TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/party/hooks/class.tx_party_staticinfotables.php']);
-}
-
-?>
