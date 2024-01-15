@@ -33,12 +33,12 @@ class OrganisationName extends Name
      */
     public function load($uid)
     {
-        $uid = intval($uid);
+        $uid = (int) $uid;
 
         // Check that the name is an organisation name
         $rec = tx_div2007_core::getRecord($this->table, $uid, 'type');
 
-        if (!($rec['type'] == 1)) {
+        if ($rec['type'] != 1) {
             return false;
         }
 
@@ -60,7 +60,6 @@ class OrganisationName extends Name
         if ($this->isEmpty()) {
             return false;		// Data must be loaded
         }
-        $result = $this->get('organisation_name');
-        return $result;
+        return $this->get('organisation_name');
     }
 }

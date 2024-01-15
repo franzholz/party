@@ -41,8 +41,6 @@ class ElectronicAddressIdentifier extends BaseModel
         if ($this->isEmpty()) {
             return false;		// Data must be loaded
         }
-
-        $out = $this->get('electronic_address_identifier');
-        return $out;
+        return $this->get('electronic_address_identifier');
     }
 }

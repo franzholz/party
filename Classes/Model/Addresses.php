@@ -37,7 +37,7 @@ class Addresses extends BaseModel
      */
     public function loadByParty($partyUid)
     {
-        $partyUid = intval($partyUid);
+        $partyUid = (int) $partyUid;
         $groupBy = '';
         $orderBy = '';
 
@@ -81,7 +81,7 @@ class Addresses extends BaseModel
         if ($this->isEmpty()) {
             return false;		// Data must be loaded
         }
-        $label = array();
+        $label = [];
         $out = '';
         $fieldname = 'short_title';
         $usage = tx_div2007_core::getRecord(
@@ -104,8 +104,6 @@ class Addresses extends BaseModel
         if (!$party->isEmpty()) {
             $label[] = '(' . $party->getLabel() . ')';
         }
-
-        $out = implode(' ', $label);
-        return $out;
+        return implode(' ', $label);
     }
 }

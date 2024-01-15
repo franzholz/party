@@ -41,7 +41,7 @@ class Address extends BaseModel
         if ($this->isEmpty()) {
             return false;		// Data must be loaded
         }
-        $label = array();
+        $label = [];
         $out = '';
 
         // Get all relevant parts
@@ -76,8 +76,6 @@ class Address extends BaseModel
         if ($postCode && $locality) {
             $label[1] = $postCode . ' ' . $locality;
         }
-
-        $out = implode(', ', $label);
-        return $out;
+        return implode(', ', $label);
     }
 }

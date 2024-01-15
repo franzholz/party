@@ -57,8 +57,6 @@ class RelationshipType extends BaseModel
         if ($typeOfSecondaryParty == 1 && $this->get('organisation_allowed_as_secondary')) {
             $secondaryOk = true;
         }
-
-        $out = ($primaryOk && $secondaryOk) ? true : false;
-        return $out;
+        return $primaryOk && $secondaryOk;
     }
 }

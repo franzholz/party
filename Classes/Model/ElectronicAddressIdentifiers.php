@@ -39,7 +39,7 @@ class ElectronicAddressIdentifiers extends BaseModel
      */
     public function loadByParty($partyUid)
     {
-        $partyUid = intval($partyUid);
+        $partyUid = (int) $partyUid;
         $groupBy = '';
         $orderBy = '';
 

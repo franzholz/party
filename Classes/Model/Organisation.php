@@ -35,7 +35,7 @@ class Organisation extends Party
      */
     public function load($uid)
     {
-        $uid = intval($uid);
+        $uid = (int) $uid;
 
         // Check that the party is an organisation
         $rec = tx_div2007_core::getRecord($this->table, $uid, 'type');

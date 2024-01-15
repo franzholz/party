@@ -35,7 +35,7 @@ class PersonName extends Name
      */
     public function load($uid)
     {
-        $uid = intval($uid);
+        $uid = (int) $uid;
 
         // Check that the name is a person name
         $rec = tx_div2007_core::getRecord($this->table, $uid, 'type');
@@ -62,7 +62,7 @@ class PersonName extends Name
         if ($this->isEmpty()) {
             return false;		// Data must be loaded
         }
-        $label = array();
+        $label = [];
         $out = '';
 
         // Get all relevant parts
@@ -80,8 +80,7 @@ class PersonName extends Name
         if ($firstName && $middleName) {
             $label[1] = $firstName . ' ' . strtoupper(substr($middleName, 0, 1)) . '.';
         }
-        $out = implode(', ', $label);
-        return $out;
+        return implode(', ', $label);
     }
 
 }

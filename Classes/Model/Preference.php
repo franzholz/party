@@ -44,7 +44,7 @@ class Preference extends BaseModel
         if ($this->isEmpty()) {
             return false;		// Data must be loaded
         }
-        $label = array();
+        $label = [];
         $out = '';
 
         // Get all relevant parts
@@ -63,8 +63,6 @@ class Preference extends BaseModel
         if (!$party->isEmpty()) {
             $label[2] = '(' . $party->getLabel() . ')';
         }
-
-        $out = implode(' ', $label);
-        return $out;
+        return implode(' ', $label);
     }
 }

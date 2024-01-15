@@ -133,7 +133,7 @@ class Labels
         }
 
         // Get the label from the model
-        if ($className) {
+        if ($className !== '' && $className !== '0') {
             $model = GeneralUtility::makeInstance($className);
             $model->load($params['row']['uid']);
             $label = $model->getLabel();

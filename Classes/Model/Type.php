@@ -49,10 +49,10 @@ class Type extends BaseModel
                 $out = true;
                 break;
             case 'PERSONS':
-                $out = ($partyType == 0) ? true : false;
+                $out = $partyType == 0;
                 break;
             case 'ORGANISATIONS':
-                $out = ($partyType == 1) ? true : false;
+                $out = $partyType == 1;
                 break;
             default:
                 $out = false;
@@ -78,8 +78,7 @@ class Type extends BaseModel
         $out = false;
 
         $allowedForField = explode(',', $this->get('allowed_for_field'));
-        $out = in_array($field, $allowedForField);
 
-        return $out;
+        return in_array($field, $allowedForField);
     }
 }

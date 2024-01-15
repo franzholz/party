@@ -42,15 +42,15 @@ abstract class Party extends BaseModel
      */
     public static function getInstance($uid)
     {
-        $uid = intval($uid);
+        $uid = (int) $uid;
         $party = null;
 
-        if ($uid) {
+        if ($uid !== 0) {
             // Get the type of the party
             $rec = tx_div2007_core::getRecord('tx_party_parties', $uid, 'type');
 
             // Depending on the type, create the proper instance and load the data
-            switch (intval($rec['type'])) {
+            switch ((int) $rec['type']) {
                 case 0:
                     $className = 'tx_party_models_person';
                     $party = GeneralUtility::makeInstance($className);
@@ -80,11 +80,11 @@ abstract class Party extends BaseModel
      */
     public function load($uid, $fields)
     {
-        $uid = intval($uid);
+        $uid = (int) $uid;
         $groupBy = '';
         $orderBy = '';
 
-        if ($uid) {
+        if ($uid !== 0) {
 
             // Load the party from the database and build the object
             $query = $GLOBALS['TYPO3_DB']->SELECTquery(
@@ -177,7 +177,7 @@ abstract class Party extends BaseModel
         if ($this->isEmpty()) {
             return false;		// Data must be loaded
         }
-        $label = array();
+        $label = [];
         $out = '';
 
         // Get all relevant parts
@@ -196,7 +196,7 @@ abstract class Party extends BaseModel
         }
 
         if (
-            !count($label) &&
+            $label === [] &&
             is_object($names)
         ) {
             $firstName = $names->getFirstName();
@@ -204,8 +204,6 @@ abstract class Party extends BaseModel
                 $label[] = $firstName;
             }
         }
-
-        $out = implode(' - ', $label);
-        return $out;
+        return implode(' - ', $label);
     }
 }

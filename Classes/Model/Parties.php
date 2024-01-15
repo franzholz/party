@@ -35,7 +35,7 @@ class Parties
      */
     public function loadByPid($pid)
     {
-        $pid = intval($pid);
+        $pid = (int) $pid;
 
         $select = 'uid,type';
         $from = 'tx_party_parties';
@@ -56,7 +56,7 @@ class Parties
         $countryUid,
         $onlyStandard = true
     ) {
-        $countryUid = intval($countryUid);
+        $countryUid = (int) $countryUid;
 
         $select = 'a.party, c.type';
         $from = 'tx_party_address_usages a, tx_party_addresses b, tx_party_parties c';
@@ -86,7 +86,7 @@ class Parties
         $orderBy = '',
         $limit = ''
     ) {
-        $where = $where . tx_div2007_core::deleteClause($from);
+        $where .= tx_div2007_core::deleteClause($from);
         $query =
             $GLOBALS['TYPO3_DB']->SELECTquery(
                 $select,

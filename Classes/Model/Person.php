@@ -35,7 +35,7 @@ class Person extends Party
      */
     public function load($uid)
     {
-        $uid = intval($uid);
+        $uid = (int) $uid;
 
         // Check that the party is a person
         $rec = tx_div2007_core::getRecord($this->table, $uid, 'type');

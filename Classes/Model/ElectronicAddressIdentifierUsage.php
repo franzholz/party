@@ -40,7 +40,7 @@ class ElectronicAddressIdentifierUsage extends BaseModel
         if ($this->isEmpty()) {
             return false;		// Data must be loaded
         }
-        $label = array();
+        $label = [];
         $out = '';
         $identifierUsage = $this->get('electronic_address_identifier_usage');
 
@@ -58,14 +58,10 @@ class ElectronicAddressIdentifierUsage extends BaseModel
             // Get all relevant parts
             $partyBaseModel = tx_party_models_party::getInstance($party);
 
-            if (is_object($partyBaseModel)) {
-                if (!$partyBaseModel->isEmpty()) {
-                    $label[] = '(' . $partyBaseModel->getLabel() . ')';
-                }
+            if (is_object($partyBaseModel) && !$partyBaseModel->isEmpty()) {
+                $label[] = '(' . $partyBaseModel->getLabel() . ')';
             }
         }
-
-        $out = implode(' ', $label);
-        return $out;
+        return implode(' ', $label);
     }
 }

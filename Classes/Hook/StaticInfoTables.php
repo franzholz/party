@@ -50,17 +50,14 @@ class StaticInfoTables
     ) {
         // Check if the current table contains a field with a hotlist to update
         foreach ($GLOBALS['TCA'][$table]['columns'] as $fieldName => $field) {
-            if ($field['config']['itemsProcFunc_config']['hotlistApp'] == 'tx_party') {
-                if ($fieldArray[$fieldName]) {
-
-                    // The hotlist will be updated only if the field changed, because only then it's in the $fieldArray
-                    tx_staticinfotables_div::updateHotlist(
-                        $field['config']['itemsProcFunc_config']['table'],
-                        $fieldArray[$fieldName],
-                        'uid',
-                        'tx_party'
-                    );
-                }
+            if ($field['config']['itemsProcFunc_config']['hotlistApp'] == 'tx_party' && $fieldArray[$fieldName]) {
+                // The hotlist will be updated only if the field changed, because only then it's in the $fieldArray
+                tx_staticinfotables_div::updateHotlist(
+                    $field['config']['itemsProcFunc_config']['table'],
+                    $fieldArray[$fieldName],
+                    'uid',
+                    'tx_party'
+                );
             }
         }
     }

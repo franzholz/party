@@ -42,7 +42,7 @@ class Account extends BaseModel
         if ($this->isEmpty()) {
             return false;		// Data must be loaded
         }
-        $label = array();
+        $label = [];
         $out = '';
 
         // Get all relevant parts
@@ -55,8 +55,6 @@ class Account extends BaseModel
         if ($org) {
             $label[1] = '(' . $org->getLabel() . ')';
         }
-
-        $out = implode(' ', $label);
-        return $out;
+        return implode(' ', $label);
     }
 }
