@@ -44,20 +44,12 @@ class Type extends BaseModel
         }
         $out = false;
 
-        switch ($this->get('allowed_for_party_type')) {
-            case 'ALL':
-                $out = true;
-                break;
-            case 'PERSONS':
-                $out = $partyType == 0;
-                break;
-            case 'ORGANISATIONS':
-                $out = $partyType == 1;
-                break;
-            default:
-                $out = false;
-                break;
-        }
+        $out = match ($this->get('allowed_for_party_type')) {
+            'ALL' => true,
+            'PERSONS' => $partyType == 0,
+            'ORGANISATIONS' => $partyType == 1,
+            default => false,
+        };
 
         return $out;
     }

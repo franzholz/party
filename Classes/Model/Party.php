@@ -78,7 +78,7 @@ abstract class Party extends BaseModel
      * @param	string		$fields: Comma-separated list of field names to load (determined by the derived classes)
      * @return	void		The data is loaded into the object
      */
-    public function load($uid, $fields)
+    public function load($uid, $fields = null)
     {
         $uid = (int) $uid;
         $groupBy = '';

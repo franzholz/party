@@ -33,7 +33,7 @@ class Person extends Party
      * @param	integer		$uid: UID of the person
      * @return	void		The data is loaded into the object
      */
-    public function load($uid)
+    public function load($uid, $fields)
     {
         $uid = (int) $uid;
 
