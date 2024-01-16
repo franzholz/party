@@ -31,7 +31,7 @@ class Api
 {
     final public const BASE_FIELDS = 'uid,pid,tstamp,crdate,deleted';
 
-    private static $tableArray = [
+    private static array $tableArray = [
         'tx_party_accounts',
         'tx_party_address_usages',
         'tx_party_addresses',
@@ -82,7 +82,7 @@ class Api
         'tx_party_visas',
     ];
 
-    private static $mmTableArray = [
+    private static array $mmTableArray = [
         'tx_party_parties_hobbies_mm',
         'tx_party_parties_habits_mm',
         'tx_party_parties_allergies_mm',

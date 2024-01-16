@@ -24,7 +24,6 @@ $GLOBALS['TCA']['tx_party_address_usages'] = [
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_address_usages.party',
             'config' => [
                 'type' => 'group',
-                'internal_type' => 'db',
                 'allowed' => 'tx_party_parties',
                 'size' => 1,
                 'minitems' => 0,
@@ -43,7 +42,6 @@ $GLOBALS['TCA']['tx_party_address_usages'] = [
             // )
             'config' => [
                 'type' => 'group',
-                'internal_type' => 'db',
                 'allowed' => 'tx_party_addresses',
                 'size' => 1,
                 'minitems' => 0,
