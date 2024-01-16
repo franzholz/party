@@ -69,7 +69,7 @@ class Type extends BaseModel
         }
         $out = false;
 
-        $allowedForField = explode(',', $this->get('allowed_for_field'));
+        $allowedForField = explode(',', (string) $this->get('allowed_for_field'));
 
         return in_array($field, $allowedForField);
     }

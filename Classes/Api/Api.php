@@ -29,7 +29,7 @@ namespace JambageCom\Party\Api;
 
 class Api
 {
-    public const BASE_FIELDS = 'uid,pid,tstamp,crdate,deleted';
+    final public const BASE_FIELDS = 'uid,pid,tstamp,crdate,deleted';
 
     private static $tableArray = [
         'tx_party_accounts',

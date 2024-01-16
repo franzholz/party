@@ -78,7 +78,7 @@ class PersonName extends Name
             $label[1] = $firstName;
         }
         if ($firstName && $middleName) {
-            $label[1] = $firstName . ' ' . strtoupper(substr($middleName, 0, 1)) . '.';
+            $label[1] = $firstName . ' ' . strtoupper(substr((string) $middleName, 0, 1)) . '.';
         }
         return implode(', ', $label);
     }

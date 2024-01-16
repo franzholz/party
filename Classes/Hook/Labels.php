@@ -51,7 +51,7 @@ class Labels
         $pObj
     ) {
         // Only get labels for tx_party* tables
-        if (!substr($params['table'], 0, 8) == 'tx_party') {
+        if (!substr((string) $params['table'], 0, 8) == 'tx_party') {
             return '';
         }
 
