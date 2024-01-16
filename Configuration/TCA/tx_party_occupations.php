@@ -26,7 +26,7 @@ $GLOBALS['TCA']['tx_party_occupations'] = [
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
-                'items' => [['', 0]],
+                'items' => [['label' => '', 'value' => 0]],
                 'foreign_table' => 'tx_party_parties',
                 'foreign_table_where' => 'AND tx_party_parties.pid=###STORAGE_PID### ORDER BY tx_party_parties.uid',
                 'size' => 1,
@@ -40,7 +40,7 @@ $GLOBALS['TCA']['tx_party_occupations'] = [
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
-                'items' => [['', 0]],
+                'items' => [['label' => '', 'value' => 0]],
                 'foreign_table' => 'tx_party_occupation_roles',
                 'foreign_table_where' => 'AND tx_party_occupation_roles.pid=###STORAGE_PID### ORDER BY tx_party_occupation_roles.uid',
                 'size' => 1,
@@ -54,7 +54,7 @@ $GLOBALS['TCA']['tx_party_occupations'] = [
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
-                'items' => [['', 0]],
+                'items' => [['label' => '', 'value' => 0]],
                 'foreign_table' => 'tx_party_occupation_ranks',
                 'foreign_table_where' => 'AND tx_party_occupation_ranks.pid=###STORAGE_PID### ORDER BY tx_party_occupation_ranks.uid',
                 'size' => 1,
@@ -68,7 +68,7 @@ $GLOBALS['TCA']['tx_party_occupations'] = [
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
-                'items' => [['', 0]],
+                'items' => [['label' => '', 'value' => 0]],
                 'foreign_table' => 'tx_party_types',
                 'foreign_table_where' => "AND tx_party_types.allowed_for_field LIKE '%tx_party_OCCUPATIONS-EMPLOYMENT_TYPE%' AND tx_party_types.pid=###STORAGE_PID### ORDER BY tx_party_types.uid",
                 'size' => 1,

@@ -25,7 +25,7 @@ $GLOBALS['TCA']['tx_party_visas'] = [
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
-                'items' => [['', 0]],
+                'items' => [['label' => '', 'value' => 0]],
                 'foreign_table' => 'tx_party_parties',
                 'foreign_table_where' => 'AND tx_party_parties.pid=###STORAGE_PID### ORDER BY tx_party_parties.uid',
                 'size' => 1,
@@ -41,7 +41,7 @@ $GLOBALS['TCA']['tx_party_visas'] = [
                 'renderType' => 'selectSingle',
                 'foreign_table' => 'static_countries',
                 'foreign_table_where' => 'ORDER BY static_countries.cn_official_name_en',
-                'items' => [['', 0]],
+                'items' => [['label' => '', 'value' => 0]],
                 'size' => 1,
                 'minitems' => 0,
                 'maxitems' => 1,

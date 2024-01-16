@@ -27,7 +27,7 @@ $GLOBALS['TCA']['tx_party_languages'] = [
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
-                'items' => [['', 0]],
+                'items' => [['label' => '', 'value' => 0]],
                 'foreign_table' => 'tx_party_parties',
                 'foreign_table_where' => 'AND tx_party_parties.pid=###STORAGE_PID### ORDER BY tx_party_parties.uid',
                 'size' => 1,
@@ -42,7 +42,7 @@ $GLOBALS['TCA']['tx_party_languages'] = [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
                 'foreign_table' => 'static_languages',
-                'items' => [['', 0]],
+                'items' => [['label' => '', 'value' => 0]],
                 'size' => 1,
                 'minitems' => 0,
                 'maxitems' => 1,
@@ -59,7 +59,7 @@ $GLOBALS['TCA']['tx_party_languages'] = [
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
-                'items' => [['', 0]],
+                'items' => [['label' => '', 'value' => 0]],
                 'foreign_table' => 'tx_party_types',
                 'foreign_table_where' => "AND tx_party_types.allowed_for_field LIKE '%tx_party_languages-type%' AND tx_party_types.pid=###STORAGE_PID### ORDER BY tx_party_types.uid",
                 'size' => 1,
@@ -73,7 +73,7 @@ $GLOBALS['TCA']['tx_party_languages'] = [
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
-                'items' => [['', 0], ['LLL:EXT:party/locallang_db.xml:tx_party_languages.read_skills.I.0', 'YES'], ['LLL:EXT:party/locallang_db.xml:tx_party_languages.read_skills.I.1', 'NO'], ['LLL:EXT:party/locallang_db.xml:tx_party_languages.read_skills.I.2', 'POOR']],
+                'items' => [['label' => '', 'value' => 0], ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_languages.read_skills.I.0', 'value' => 'YES'], ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_languages.read_skills.I.1', 'value' => 'NO'], ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_languages.read_skills.I.2', 'value' => 'POOR']],
                 'size' => 1,
                 'maxitems' => 1,
             ],
@@ -84,7 +84,7 @@ $GLOBALS['TCA']['tx_party_languages'] = [
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
-                'items' => [['', 0], ['LLL:EXT:party/locallang_db.xml:tx_party_languages.write_skills.I.0', 'YES'], ['LLL:EXT:party/locallang_db.xml:tx_party_languages.write_skills.I.1', 'NO'], ['LLL:EXT:party/locallang_db.xml:tx_party_languages.write_skills.I.2', 'POOR']],
+                'items' => [['label' => '', 'value' => 0], ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_languages.write_skills.I.0', 'value' => 'YES'], ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_languages.write_skills.I.1', 'value' => 'NO'], ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_languages.write_skills.I.2', 'value' => 'POOR']],
                 'size' => 1,
                 'maxitems' => 1,
             ],
@@ -95,7 +95,7 @@ $GLOBALS['TCA']['tx_party_languages'] = [
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
-                'items' => [['', 0], ['LLL:EXT:party/locallang_db.xml:tx_party_languages.listen_skills.I.0', 'YES'], ['LLL:EXT:party/locallang_db.xml:tx_party_languages.listen_skills.I.1', 'NO'], ['LLL:EXT:party/locallang_db.xml:tx_party_languages.listen_skills.I.2', 'POOR']],
+                'items' => [['label' => '', 'value' => 0], ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_languages.listen_skills.I.0', 'value' => 'YES'], ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_languages.listen_skills.I.1', 'value' => 'NO'], ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_languages.listen_skills.I.2', 'value' => 'POOR']],
                 'size' => 1,
                 'maxitems' => 1,
             ],
@@ -106,7 +106,7 @@ $GLOBALS['TCA']['tx_party_languages'] = [
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
-                'items' => [['', 0], ['LLL:EXT:party/locallang_db.xml:tx_party_languages.speak_skills.I.0', 'YES'], ['LLL:EXT:party/locallang_db.xml:tx_party_languages.speak_skills.I.1', 'NO'], ['LLL:EXT:party/locallang_db.xml:tx_party_languages.speak_skills.I.2', 'POOR']],
+                'items' => [['label' => '', 'value' => 0], ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_languages.speak_skills.I.0', 'value' => 'YES'], ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_languages.speak_skills.I.1', 'value' => 'NO'], ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_languages.speak_skills.I.2', 'value' => 'POOR']],
                 'size' => 1,
                 'maxitems' => 1,
             ],

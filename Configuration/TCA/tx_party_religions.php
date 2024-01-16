@@ -35,7 +35,7 @@ $GLOBALS['TCA']['tx_party_religions'] = [
             'config'      => [
                 'type'  => 'select',
                 'renderType' => 'selectSingle',
-                'items' => [['', 0]],
+                'items' => [['label' => '', 'value' => 0]],
                 'foreign_table'       => 'tx_party_religions',
                 'foreign_table_where' => 'AND tx_party_religions.pid=###CURRENT_PID### AND tx_party_religions.sys_language_uid IN (-1,0)',
             ],

@@ -33,7 +33,7 @@ $GLOBALS['TCA']['tx_party_hobbies'] = [
             'config'      => [
                 'type'  => 'select',
                 'renderType' => 'selectSingle',
-                'items' => [['', 0]],
+                'items' => [['label' => '', 'value' => 0]],
                 'foreign_table'       => 'tx_party_hobbies',
                 'foreign_table_where' => 'AND tx_party_hobbies.pid=###CURRENT_PID### AND tx_party_hobbies.sys_language_uid IN (-1,0)',
             ],

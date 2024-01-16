@@ -97,7 +97,7 @@ $GLOBALS['TCA']['tx_party_addresses'] = [
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
-                'items' => [['', 0]],
+                'items' => [['label' => '', 'value' => 0]],
                 'foreign_table' => 'tx_party_types',
                 'foreign_table_where' => "AND tx_party_types.allowed_for_field LIKE '%tx_party_ADDRESSES-PREMISE_TYPE%' AND tx_party_types.pid=###STORAGE_PID### ORDER BY tx_party_types.uid",
                 'size' => 1,
@@ -149,7 +149,7 @@ $GLOBALS['TCA']['tx_party_addresses'] = [
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_addresses.latitude_degrees_measure',
             'config' => [
-                'type' => 'input',
+                'type' => 'number',
                 'size' => '5',
                 'max' => '5',
                 'range' => [
@@ -157,14 +157,14 @@ $GLOBALS['TCA']['tx_party_addresses'] = [
                     'upper' => 90,
                 ],
                 'checkbox' => '0',
-                'eval' => 'int,nospace',
+                'eval' => 'nospace',
             ],
         ],
         'latitude_minutes_measure' => [
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_addresses.latitude_minutes_measure',
             'config' => [
-                'type' => 'input',
+                'type' => 'number',
                 'size' => '5',
                 'max' => '5',
                 'range' => [
@@ -172,14 +172,14 @@ $GLOBALS['TCA']['tx_party_addresses'] = [
                     'upper' => 60,
                 ],
                 'checkbox' => '0',
-                'eval' => 'int,nospace',
+                'eval' => 'nospace',
             ],
         ],
         'latitude_seconds_measure' => [
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_addresses.latitude_seconds_measure',
             'config' => [
-                'type' => 'input',
+                'type' => 'number',
                 'size' => '5',
                 'max' => '5',
                 'range' => [
@@ -187,7 +187,7 @@ $GLOBALS['TCA']['tx_party_addresses'] = [
                     'upper' => 60,
                 ],
                 'checkbox' => '0',
-                'eval' => 'int,nospace',
+                'eval' => 'nospace',
             ],
         ],
         'latitude_direction_code' => [
@@ -196,7 +196,7 @@ $GLOBALS['TCA']['tx_party_addresses'] = [
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
-                'items' => [['LLL:EXT:party/locallang_db.xml:tx_party_addresses.latitude_direction_code.I.0', 'N'], ['LLL:EXT:party/locallang_db.xml:tx_party_addresses.latitude_direction_code.I.1', 'S']],
+                'items' => [['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_addresses.latitude_direction_code.I.0', 'value' => 'N'], ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_addresses.latitude_direction_code.I.1', 'value' => 'S']],
                 'size' => 1,
                 'maxitems' => 1,
             ],
@@ -205,7 +205,7 @@ $GLOBALS['TCA']['tx_party_addresses'] = [
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_addresses.longitude_degrees_measure',
             'config' => [
-                'type' => 'input',
+                'type' => 'number',
                 'size' => '5',
                 'max' => '5',
                 'range' => [
@@ -213,14 +213,14 @@ $GLOBALS['TCA']['tx_party_addresses'] = [
                     'upper' => 180,
                 ],
                 'checkbox' => '0',
-                'eval' => 'int,nospace',
+                'eval' => 'nospace',
             ],
         ],
         'longitude_minutes_measure' => [
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_addresses.longitude_minutes_measure',
             'config' => [
-                'type' => 'input',
+                'type' => 'number',
                 'size' => '5',
                 'max' => '5',
                 'range' => [
@@ -228,14 +228,14 @@ $GLOBALS['TCA']['tx_party_addresses'] = [
                     'upper' => 60,
                 ],
                 'checkbox' => '0',
-                'eval' => 'int,nospace',
+                'eval' => 'nospace',
             ],
         ],
         'longitude_seconds_measure' => [
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_addresses.longitude_seconds_measure',
             'config' => [
-                'type' => 'input',
+                'type' => 'number',
                 'size' => '5',
                 'max' => '5',
                 'range' => [
@@ -243,7 +243,7 @@ $GLOBALS['TCA']['tx_party_addresses'] = [
                     'upper' => 60,
                 ],
                 'checkbox' => '0',
-                'eval' => 'int,nospace',
+                'eval' => 'nospace',
             ],
         ],
         'longitude_direction_code' => [
@@ -252,7 +252,7 @@ $GLOBALS['TCA']['tx_party_addresses'] = [
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
-                'items' => [['LLL:EXT:party/locallang_db.xml:tx_party_addresses.longitude_direction_code.I.0', 'W'], ['LLL:EXT:party/locallang_db.xml:tx_party_addresses.longitude_direction_code.I.1', 'E']],
+                'items' => [['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_addresses.longitude_direction_code.I.0', 'value' => 'W'], ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_addresses.longitude_direction_code.I.1', 'value' => 'E']],
                 'size' => 1,
                 'maxitems' => 1,
             ],
@@ -293,7 +293,7 @@ $GLOBALS['TCA']['tx_party_addresses'] = [
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
-                'items' => [['', 0]],
+                'items' => [['label' => '', 'value' => 0]],
                 'foreign_table' => 'static_country_zones',
                 'foreign_table_where' => 'ORDER BY static_country_zones.zn_name_local',
                 'size' => 1,
@@ -314,7 +314,7 @@ $GLOBALS['TCA']['tx_party_addresses'] = [
                 'renderType' => 'selectSingle',
                 'foreign_table' => 'static_countries',
                 'foreign_table_where' => 'ORDER BY static_countries.cn_official_name_en',
-                'items' => [['', 0]],
+                'items' => [['label' => '', 'value' => 0]],
                 'size' => 1,
                 'minitems' => 0,
                 'maxitems' => 1,

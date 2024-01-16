@@ -39,7 +39,7 @@ $GLOBALS['TCA']['tx_party_names'] = [
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
-                'items' => [['LLL:EXT:party/locallang_db.xml:tx_party_names.type.I.0', '0'], ['LLL:EXT:party/locallang_db.xml:tx_party_names.type.I.1', '1']],
+                'items' => [['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_names.type.I.0', 'value' => '0'], ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_names.type.I.1', 'value' => '1']],
                 'size' => 1,
                 'maxitems' => 1,
             ],
@@ -57,7 +57,7 @@ $GLOBALS['TCA']['tx_party_names'] = [
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
-                'items' => [['', 0]],
+                'items' => [['label' => '', 'value' => 0]],
                 'foreign_table' => 'tx_party_person_name_titles',
                 'foreign_table_where' => 'AND tx_party_person_name_titles.pid=###STORAGE_PID### ORDER BY tx_party_person_name_titles.uid',
                 'size' => 1,
@@ -161,7 +161,7 @@ $GLOBALS['TCA']['tx_party_names'] = [
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
-                'items' => [['LLL:EXT:party/locallang_db.xml:tx_party_names.organisation_name_type.I.0', 'NAME_ONLY'], ['LLL:EXT:party/locallang_db.xml:tx_party_names.organisation_name_type.I.1', 'ORGANISATION_TYPE'], ['LLL:EXT:party/locallang_db.xml:tx_party_names.organisation_name_type.I.2', 'NAME_AND_TYPE']],
+                'items' => [['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_names.organisation_name_type.I.0', 'value' => 'NAME_ONLY'], ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_names.organisation_name_type.I.1', 'value' => 'ORGANISATION_TYPE'], ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_names.organisation_name_type.I.2', 'value' => 'NAME_AND_TYPE']],
                 'size' => 1,
                 'maxitems' => 1,
             ],

@@ -34,7 +34,7 @@ $GLOBALS['TCA']['tx_party_qualification_status'] = [
             'config'      => [
                 'type'  => 'select',
                 'renderType' => 'selectSingle',
-                'items' => [['', 0]],
+                'items' => [['label' => '', 'value' => 0]],
                 'foreign_table'       => 'tx_party_qualification_status',
                 'foreign_table_where' => 'AND tx_party_qualification_status.pid=###CURRENT_PID### AND tx_party_qualification_status.sys_language_uid IN (-1,0)',
             ],

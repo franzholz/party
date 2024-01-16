@@ -26,7 +26,7 @@ $GLOBALS['TCA']['tx_party_revenues'] = [
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
-                'items' => [['', 0]],
+                'items' => [['label' => '', 'value' => 0]],
                 'foreign_table' => 'tx_party_parties',
                 'foreign_table_where' => 'AND tx_party_parties.pid=###STORAGE_PID### ORDER BY tx_party_parties.uid',
                 'size' => 1,
@@ -41,7 +41,7 @@ $GLOBALS['TCA']['tx_party_revenues'] = [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
                 'foreign_table' => 'static_currencies',
-                'items' => [['', 0]],
+                'items' => [['label' => '', 'value' => 0]],
                 'size' => 1,
                 'minitems' => 0,
                 'maxitems' => 1,
@@ -56,20 +56,22 @@ $GLOBALS['TCA']['tx_party_revenues'] = [
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_revenues.amount',
             'config' => [
-                'type' => 'input',
+                'type' => 'number',
                 'size' => '30',
                 'max' => '90',
-                'eval' => 'double2,nospace',
+                'eval' => 'nospace',
+                'format' => 'decimal',
             ],
         ],
         'amount_precision' => [
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_revenues.amount_precision',
             'config' => [
-                'type' => 'input',
+                'type' => 'number',
                 'size' => '10',
                 'max' => '90',
-                'eval' => 'double2,nospace',
+                'eval' => 'nospace',
+                'format' => 'decimal',
             ],
         ],
         'after_tax' => [
@@ -85,7 +87,7 @@ $GLOBALS['TCA']['tx_party_revenues'] = [
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
-                'items' => [['', 0]],
+                'items' => [['label' => '', 'value' => 0]],
                 'foreign_table' => 'tx_party_types',
                 'foreign_table_where' => "AND tx_party_types.allowed_for_field LIKE '%tx_party_revenues-type%' aND tx_party_types.pid=###STORAGE_PID### ORDER BY tx_party_types.uid",
                 'size' => 1,
