@@ -36,7 +36,7 @@ abstract class BaseModel
      * @param	integer		$uid: UID of the object
      * @return	void		The data is loaded into the object
      */
-    public function load($uid)
+    public function load($uid): void
     {
         $uid = (int) $uid;
         $deleteClause = tx_div2007_core::deleteClause($this->table);

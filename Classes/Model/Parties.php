@@ -33,7 +33,7 @@ class Parties
      * @param	integer		$pid: PID (Page ID) to select parties from
      * @return	void		The data is loaded into the object
      */
-    public function loadByPid($pid)
+    public function loadByPid($pid): void
     {
         $pid = (int) $pid;
 
@@ -55,7 +55,7 @@ class Parties
     public function loadByCountry(
         $countryUid,
         $onlyStandard = true
-    ) {
+    ): void {
         $countryUid = (int) $countryUid;
 
         $select = 'a.party, c.type';

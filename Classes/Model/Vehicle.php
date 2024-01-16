@@ -36,7 +36,7 @@ class Vehicle extends BaseModel
      * @param	integer		$uid: UID of the Vehicle
      * @return	void		The data is loaded into the Vehicle
      */
-    public function load($uid)
+    public function load($uid): void
     {
         parent::load($uid);
         if ($this->get('make')) {

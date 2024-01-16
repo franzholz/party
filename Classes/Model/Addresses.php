@@ -35,7 +35,7 @@ class Addresses extends BaseModel
      * @param	integer		$partyUid: UID of the party
      * @return	void		The data is loaded into the object
      */
-    public function loadByParty($partyUid)
+    public function loadByParty($partyUid): void
     {
         $partyUid = (int) $partyUid;
         $groupBy = '';

@@ -37,7 +37,7 @@ class ElectronicAddressIdentifiers extends BaseModel
      * @param	integer		$uid: UID of the party
      * @return	void		The data is loaded into the object
      */
-    public function loadByParty($partyUid)
+    public function loadByParty($partyUid): void
     {
         $partyUid = (int) $partyUid;
         $groupBy = '';

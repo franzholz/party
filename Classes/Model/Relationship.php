@@ -35,7 +35,7 @@ class Relationship extends BaseModel
      * @param	integer		$uid: UID of the relationship
      * @return	void		The data is loaded into the object
      */
-    public function load($uid)
+    public function load($uid): void
     {
         parent::load($uid);
 
