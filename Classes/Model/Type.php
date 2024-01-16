@@ -62,7 +62,7 @@ class Type extends BaseModel
      * @param	string		$field: Name of the field (e.g. tx_party_EVENTS-TYPE)
      * @return	boolean		True if the current type is allowed for the specified field
      */
-    public function isAllowedForField($field)
+    public function isAllowedForField($field): bool
     {
         if ($this->isEmpty()) {
             return false;		// Data must be loaded

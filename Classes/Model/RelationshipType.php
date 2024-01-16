@@ -37,7 +37,7 @@ class RelationshipType extends BaseModel
      * @param	integer		$typeOfSecondaryParty: UID of the party with the secondary role in the relationship
      * @return	boolean		True if the relationship is allowed
      */
-    public function isRelationshipAllowed($typeOfPrimaryParty, $typeOfSecondaryParty)
+    public function isRelationshipAllowed($typeOfPrimaryParty, $typeOfSecondaryParty): bool
     {
         $primaryOk == false;
         $secondaryOk = false;
