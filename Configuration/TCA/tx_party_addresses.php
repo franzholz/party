@@ -1,8 +1,10 @@
 <?php
 
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+
 defined('TYPO3') || die('Access denied.');
 
-$GLOBALS['TCA']['tx_party_addresses'] = [
+$result = [
     'ctrl' => [
         'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_addresses',
         'label'     => 'locality',
@@ -376,7 +378,7 @@ $GLOBALS['TCA']['tx_party_addresses'] = [
 ];
 
 
-if(t3lib_extMgm::isLoaded('wec_map')) {
+if(ExtensionManagementUtility::isLoaded('wec_map')) {
     $GLOBALS['TCA']['tx_party_addresses']['ctrl']['EXT']['wec_map'] = [
         'isMappable' => 1,
         'addressFields' => [
@@ -399,7 +401,10 @@ if(t3lib_extMgm::isLoaded('wec_map')) {
             ],
         ],
     ];
-    t3lib_extMgm::addTCAcolumns('tx_party_addresses', $mapTCA, 1);
+    ExtensionManagementUtility::addTCAcolumns('tx_party_addresses', $mapTCA, 1);
     $GLOBALS['TCA']['tx_party_addresses']['interface']['showRecordFieldList'] .= ',tx_wecmap_map';
     ib_extMgm::addToAllTCAtypes('tx_party_addresses', 'tx_wecmap_map');
 }
+
+
+return $result;

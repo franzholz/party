@@ -2,9 +2,7 @@
 
 defined('TYPO3') || die('Access denied.');
 
-
-
-$GLOBALS['TCA']['tx_party_parties'] = [
+$result = [
     'ctrl' => [
         'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_parties',
         'label'     => 'uid',
@@ -673,3 +671,5 @@ $GLOBALS['TCA']['tx_party_parties'] = [
         ],
     ],
 ];
+
+return $result;

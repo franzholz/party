@@ -1,5 +1,7 @@
 <?php
 
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+
 defined('TYPO3') || die('Access denied.');
 
 if (!defined('PARTY_EXT')) {
@@ -7,11 +9,11 @@ if (!defined('PARTY_EXT')) {
 }
 
 if (!defined('PATH_BE_PARTY')) {
-    define('PATH_BE_PARTY', t3lib_extMgm::extPath('party'));
+    define('PATH_BE_PARTY', ExtensionManagementUtility::extPath('party'));
 }
 
 if (!defined('PATH_BE_PARTY_REL')) {
-    define('PATH_BE_PARTY_REL', t3lib_extMgm::extRelPath('party'));
+    define('PATH_BE_PARTY_REL', ExtensionManagementUtility::extRelPath('party'));
 }
 
 
@@ -24,7 +26,7 @@ $tableArray = tx_party_api::getTableArray();
 
 if (isset($tableArray) && is_array($tableArray)) {
     foreach ($tableArray as $tablename) {
-        t3lib_extMgm::addUserTSConfig('
+        ExtensionManagementUtility::addUserTSConfig('
 			options.saveDocNew.' . $tablename . '=1
 		');
     }
