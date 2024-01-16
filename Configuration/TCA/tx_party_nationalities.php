@@ -5,8 +5,8 @@ defined('TYPO3') || die('Access denied.');
 
 
 
-$GLOBALS['TCA']['tx_party_nationalities'] = array(
-    'ctrl' => array(
+$GLOBALS['TCA']['tx_party_nationalities'] = [
+    'ctrl' => [
         'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_nationalities',
         'label'     => 'country',
         'label_userFunc' => 'tx_party_labels->getLabel',
@@ -16,75 +16,73 @@ $GLOBALS['TCA']['tx_party_nationalities'] = array(
         'default_sortby' => 'ORDER BY country',
         'delete' => 'deleted',
         'iconfile'          => PATH_BE_PARTY_REL . 'icons/icon_tx_party_nationalities.gif',
-    ),
-    'interface' => array(
-        'showRecordFieldList' => 'party,country,nationality_type,remarks'
-    ),
-    'columns' => array(
-        'party' => array(
+    ],
+    'interface' => [
+        'showRecordFieldList' => 'party,country,nationality_type,remarks',
+    ],
+    'columns' => [
+        'party' => [
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_nationalities.party',
-            'config' => array(
+            'config' => [
                 'type' => 'select',
-                'items' => array(
-                    array('', 0),
-                ),
+                'items' => [['', 0]],
                 'foreign_table' => 'tx_party_parties',
                 'foreign_table_where' => 'AND tx_party_parties.pid=###STORAGE_PID### ORDER BY tx_party_parties.uid',
                 'size' => 1,
                 'minitems' => 0,
                 'maxitems' => 1,
-            )
-        ),
-        'country' => array(
+            ],
+        ],
+        'country' => [
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_nationalities.country',
-            'config' => array(
+            'config' => [
                 'type' => 'select',
                 'foreign_table' => 'static_countries',
                 'foreign_table_where' => 'ORDER BY static_countries.cn_official_name_en',
-                'items' => array(
-                    array('', 0),
-                ),
+                'items' => [['', 0]],
                 'size' => 1,
                 'minitems' => 0,
                 'maxitems' => 1,
-                'wizards' => array(
-                    'suggest' => array(
+                'wizards' => [
+                    'suggest' => [
                         'type' => 'suggest',
-                    )
-                ),
-            )
-        ),
-        'nationality_type' => array(
+                    ],
+                ],
+            ],
+        ],
+        'nationality_type' => [
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_nationalities.nationality_type',
-            'config' => array(
+            'config' => [
                 'type' => 'select',
-                'items' => array(
-                    array('', 0),
-                ),
+                'items' => [['', 0]],
                 'foreign_table' => 'tx_party_types',
                 'foreign_table_where' => "AND tx_party_types.allowed_for_field LIKE '%tx_party_NATIONALITIES-NATIONALITY_TYPE%' AND tx_party_types.pid=###STORAGE_PID### ORDER BY tx_party_types.uid",
                 'size' => 1,
                 'minitems' => 0,
                 'maxitems' => 1,
-            )
-        ),
-        'remarks' => array(
+            ],
+        ],
+        'remarks' => [
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_nationalities.remarks',
-            'config' => array(
+            'config' => [
                 'type' => 'text',
                 'cols' => '30',
                 'rows' => '5',
-            )
-        ),
-    ),
-    'types' => array(
-        '0' => array('showitem' => 'party;;;;1-1-1, nationality_type, country, remarks;;;;1-1-1')
-    ),
-    'palettes' => array(
-        '1' => array('showitem' => '')
-    )
-);
+            ],
+        ],
+    ],
+    'types' => [
+        '0' => [
+            'showitem' => 'party;;;;1-1-1, nationality_type, country, remarks;;;;1-1-1',
+        ],
+    ],
+    'palettes' => [
+        '1' => [
+            'showitem' => '',
+        ],
+    ],
+];

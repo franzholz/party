@@ -3,8 +3,8 @@
 defined('TYPO3') || die('Access denied.');
 
 
-$GLOBALS['TCA']['tx_party_disabilities'] = array(
-    'ctrl' => array(
+$GLOBALS['TCA']['tx_party_disabilities'] = [
+    'ctrl' => [
         'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_disabilities',
         'label'     => 'disability',
         'tstamp'    => 'tstamp',
@@ -13,60 +13,62 @@ $GLOBALS['TCA']['tx_party_disabilities'] = array(
         'default_sortby' => 'ORDER BY disability',
         'delete' => 'deleted',
         'iconfile'          => PATH_BE_PARTY_REL . 'icons/icon_tx_party_disabilities.gif',
-    ),
-    'interface' => array(
-        'showRecordFieldList' => 'party,disability,cause,remarks'
-    ),
-    'columns' => array(
-        'party' => array(
+    ],
+    'interface' => [
+        'showRecordFieldList' => 'party,disability,cause,remarks',
+    ],
+    'columns' => [
+        'party' => [
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_disabilities.party',
-            'config' => array(
+            'config' => [
                 'type' => 'select',
-                'items' => array(
-                    array('', 0),
-                ),
+                'items' => [['', 0]],
                 'foreign_table' => 'tx_party_parties',
                 'foreign_table_where' => 'AND tx_party_parties.pid=###STORAGE_PID### ORDER BY tx_party_parties.uid',
                 'size' => 1,
                 'minitems' => 0,
                 'maxitems' => 1,
-            )
-        ),
-        'disability' => array(
+            ],
+        ],
+        'disability' => [
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_disabilities.disability',
-            'config' => array(
+            'config' => [
                 'type' => 'input',
                 'size' => '30',
                 'max' => '90',
                 'eval' => 'trim',
-            )
-        ),
-        'cause' => array(
+            ],
+        ],
+        'cause' => [
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_disabilities.cause',
-            'config' => array(
+            'config' => [
                 'type' => 'input',
                 'size' => '30',
                 'max' => '90',
                 'eval' => 'trim',
-            )
-        ),
-        'remarks' => array(
+            ],
+        ],
+        'remarks' => [
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_disabilities.remarks',
-            'config' => array(
+            'config' => [
                 'type' => 'text',
                 'cols' => '30',
                 'rows' => '5',
-            )
-        ),
-    ),
-    'types' => array(
-        '0' => array('showitem' => 'party;;;;1-1-1, disability, cause, remarks;;;;1-1-1')
-    ),
-    'palettes' => array(
-        '1' => array('showitem' => '')
-    )
-);
+            ],
+        ],
+    ],
+    'types' => [
+        '0' => [
+            'showitem' => 'party;;;;1-1-1, disability, cause, remarks;;;;1-1-1',
+        ],
+    ],
+    'palettes' => [
+        '1' => [
+            'showitem' => '',
+        ],
+    ],
+];

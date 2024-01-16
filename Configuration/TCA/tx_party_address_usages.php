@@ -3,8 +3,8 @@
 defined('TYPO3') || die('Access denied.');
 
 
-$GLOBALS['TCA']['tx_party_address_usages'] = array(
-    'ctrl' => array(
+$GLOBALS['TCA']['tx_party_address_usages'] = [
+    'ctrl' => [
         'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_address_usages',
         'label'     => 'uid',
         'label_userFunc' => 'tx_party_labels->getLabel',
@@ -14,24 +14,24 @@ $GLOBALS['TCA']['tx_party_address_usages'] = array(
         'default_sortby' => 'ORDER BY crdate',
         'delete' => 'deleted',
         'iconfile'          => PATH_BE_PARTY_REL . 'icons/icon_tx_party_address_usages.gif',
-    ),
-    'interface' => array(
-        'showRecordFieldList' => 'party,address,address_usage,standard'
-    ),
-    'columns' => array(
-        'party' => array(
+    ],
+    'interface' => [
+        'showRecordFieldList' => 'party,address,address_usage,standard',
+    ],
+    'columns' => [
+        'party' => [
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_address_usages.party',
-            'config' => array(
+            'config' => [
                 'type' => 'group',
                 'internal_type' => 'db',
                 'allowed' => 'tx_party_parties',
                 'size' => 1,
                 'minitems' => 0,
                 'maxitems' => 1,
-            )
-        ),
-        'address' => array(
+            ],
+        ],
+        'address' => [
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_address_usages.address',
             // 'config' => Array (
@@ -41,42 +41,44 @@ $GLOBALS['TCA']['tx_party_address_usages'] = array(
             // 	'maxitems' => 99,
             // 	'appearance' => $GLOBALS['TYPO3_CONF_VARS']['extconf']['party']['inline_appearance']['default'],
             // )
-            'config' => array(
+            'config' => [
                 'type' => 'group',
                 'internal_type' => 'db',
                 'allowed' => 'tx_party_addresses',
                 'size' => 1,
                 'minitems' => 0,
                 'maxitems' => 1,
-            )
-        ),
-        'address_usage' => array(
+            ],
+        ],
+        'address_usage' => [
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_address_usages.address_usage',
-            'config' => array(
+            'config' => [
                 'type' => 'select',
-                'items' => array(
-                    array('', 0),
-                ),
+                'items' => [['', 0]],
                 'foreign_table' => 'tx_party_usages',
                 'foreign_table_where' => 'AND tx_party_usages.pid=###STORAGE_PID### ORDER BY tx_party_usages.title',
                 'size' => 1,
                 'minitems' => 0,
                 'maxitems' => 1,
-            )
-        ),
-        'standard' => array(
+            ],
+        ],
+        'standard' => [
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_address_usages.standard',
-            'config' => array(
+            'config' => [
                 'type' => 'check',
-            )
-        ),
-    ),
-    'types' => array(
-        '0' => array('showitem' => 'party;;;;1-1-1, address, address_usage, standard')
-    ),
-    'palettes' => array(
-        '1' => array('showitem' => '')
-    )
-);
+            ],
+        ],
+    ],
+    'types' => [
+        '0' => [
+            'showitem' => 'party;;;;1-1-1, address, address_usage, standard',
+        ],
+    ],
+    'palettes' => [
+        '1' => [
+            'showitem' => '',
+        ],
+    ],
+];

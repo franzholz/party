@@ -2,8 +2,8 @@
 
 defined('TYPO3') || die('Access denied.');
 
-$GLOBALS['TCA']['tx_party_memberships'] = array(
-    'ctrl' => array(
+$GLOBALS['TCA']['tx_party_memberships'] = [
+    'ctrl' => [
         'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_memberships',
         'label'     => 'uid',
         'label_userFunc' => 'tx_party_labels->getLabel',
@@ -13,91 +13,91 @@ $GLOBALS['TCA']['tx_party_memberships'] = array(
         'default_sortby' => 'ORDER BY crdate',
         'delete' => 'deleted',
         'iconfile'          => PATH_BE_PARTY_REL . 'icons/icon_tx_party_memberships.gif',
-    ),
-    'interface' => array(
-        'showRecordFieldList' => 'party,type,organisation,issue_date,expiry_date,remarks'
-    ),
-    'columns' => array(
-        'party' => array(
+    ],
+    'interface' => [
+        'showRecordFieldList' => 'party,type,organisation,issue_date,expiry_date,remarks',
+    ],
+    'columns' => [
+        'party' => [
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_memberships.party',
-            'config' => array(
+            'config' => [
                 'type' => 'select',
-                'items' => array(
-                    array('', 0),
-                ),
+                'items' => [['', 0]],
                 'foreign_table' => 'tx_party_parties',
                 'foreign_table_where' => 'AND tx_party_parties.pid=###STORAGE_PID### ORDER BY tx_party_parties.uid',
                 'size' => 1,
                 'minitems' => 0,
                 'maxitems' => 1,
-            )
-        ),
-        'type' => array(
+            ],
+        ],
+        'type' => [
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_memberships.type',
-            'config' => array(
+            'config' => [
                 'type' => 'select',
-                'items' => array(
-                    array('', 0),
-                ),
+                'items' => [['', 0]],
                 'foreign_table' => 'tx_party_types',
                 'foreign_table_where' => "AND tx_party_types.allowed_for_field LIKE '%tx_party_memberships-type%' AND tx_party_types.pid=###STORAGE_PID### ORDER BY tx_party_types.uid",
                 'size' => 1,
                 'minitems' => 0,
                 'maxitems' => 1,
-            )
-        ),
-        'organisation' => array(
+            ],
+        ],
+        'organisation' => [
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_memberships.organisation',
-            'config' => array(
+            'config' => [
                 'type' => 'select',
                 'foreign_table' => 'tx_party_parties',
                 'foreign_table_where' => 'AND tx_party_parties.pid=###STORAGE_PID### ORDER BY tx_party_parties.uid',
                 'size' => 1,
                 'minitems' => 0,
                 'maxitems' => 1,
-            )
-        ),
-        'issue_date' => array(
+            ],
+        ],
+        'issue_date' => [
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_memberships.issue_date',
-            'config' => array(
+            'config' => [
                 'type'     => 'input',
                 'size'     => '8',
                 'max'      => '20',
                 'eval'     => 'date',
                 'checkbox' => '0',
-                'default'  => '0'
-            )
-        ),
-        'expiry_date' => array(
+                'default'  => '0',
+            ],
+        ],
+        'expiry_date' => [
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_memberships.expiry_date',
-            'config' => array(
+            'config' => [
                 'type'     => 'input',
                 'size'     => '8',
                 'max'      => '20',
                 'eval'     => 'date',
                 'checkbox' => '0',
-                'default'  => '0'
-            )
-        ),
-        'remarks' => array(
+                'default'  => '0',
+            ],
+        ],
+        'remarks' => [
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_memberships.remarks',
-            'config' => array(
+            'config' => [
                 'type' => 'text',
                 'cols' => '30',
                 'rows' => '5',
-            )
-        ),
-    ),
-    'types' => array(
-        '0' => array('showitem' => 'party;;;;1-1-1, type, organisation, issue_date;;;;1-1-1, expiry_date, remarks;;;;1-1-1')
-    ),
-    'palettes' => array(
-        '1' => array('showitem' => '')
-    )
-);
+            ],
+        ],
+    ],
+    'types' => [
+        '0' => [
+            'showitem' => 'party;;;;1-1-1, type, organisation, issue_date;;;;1-1-1, expiry_date, remarks;;;;1-1-1',
+        ],
+    ],
+    'palettes' => [
+        '1' => [
+            'showitem' => '',
+        ],
+    ],
+];

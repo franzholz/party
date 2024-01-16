@@ -3,8 +3,8 @@
 defined('TYPO3') || die('Access denied.');
 
 
-$GLOBALS['TCA']['tx_party_names'] = array(
-    'ctrl' => array(
+$GLOBALS['TCA']['tx_party_names'] = [
+    'ctrl' => [
         'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_names',
         'label'     => 'last_name',
         'label_userFunc' => 'tx_party_labels->getLabel',
@@ -15,199 +15,200 @@ $GLOBALS['TCA']['tx_party_names'] = array(
         'default_sortby' => 'ORDER BY last_name',
         'delete' => 'deleted',
         'iconfile'          => PATH_BE_PARTY_REL . 'icons/icon_tx_party_names.gif',
-    ),
-    'interface' => array(
-        'showRecordFieldList' => 'party,type,standard,person_name_title,first_name,middle_name,ancestor_name,last_name,other_name,preceding_title,alias,generation_identifier,place_name,organisation_name_type,organisation_name,abbreviation,remarks'
-    ),
-    'columns' => array(
-        'party' => array(
+    ],
+    'interface' => [
+        'showRecordFieldList' => 'party,type,standard,person_name_title,first_name,middle_name,ancestor_name,last_name,other_name,preceding_title,alias,generation_identifier,place_name,organisation_name_type,organisation_name,abbreviation,remarks',
+    ],
+    'columns' => [
+        'party' => [
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_names.party',
-            'config' => array(
+            'config' => [
                 'type' => 'select',
                 'foreign_table' => 'tx_party_parties',
                 'foreign_table_where' => 'AND tx_party_parties.pid=###STORAGE_PID### ORDER BY tx_party_parties.uid',
                 'size' => 1,
                 'minitems' => 0,
                 'maxitems' => 1,
-            )
-        ),
-        'type' => array(
+            ],
+        ],
+        'type' => [
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_names.type',
-            'config' => array(
+            'config' => [
                 'type' => 'select',
-                'items' => array(
-                    array('LLL:EXT:party/locallang_db.xml:tx_party_names.type.I.0', '0'),
-                                  array('LLL:EXT:party/locallang_db.xml:tx_party_names.type.I.1', '1'),
-                ),
+                'items' => [['LLL:EXT:party/locallang_db.xml:tx_party_names.type.I.0', '0'], ['LLL:EXT:party/locallang_db.xml:tx_party_names.type.I.1', '1']],
                 'size' => 1,
                 'maxitems' => 1,
-            )
-        ),
-        'standard' => array(
+            ],
+        ],
+        'standard' => [
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_names.standard',
-            'config' => array(
+            'config' => [
                 'type' => 'check',
-            )
-        ),
-        'person_name_title' => array(
+            ],
+        ],
+        'person_name_title' => [
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_names.person_name_title',
-            'config' => array(
+            'config' => [
                 'type' => 'select',
-                'items' => array(
-                    array('', 0),
-                ),
+                'items' => [['', 0]],
                 'foreign_table' => 'tx_party_person_name_titles',
                 'foreign_table_where' => 'AND tx_party_person_name_titles.pid=###STORAGE_PID### ORDER BY tx_party_person_name_titles.uid',
                 'size' => 1,
                 'minitems' => 0,
                 'maxitems' => 1,
-            )
-        ),
-        'first_name' => array(
+            ],
+        ],
+        'first_name' => [
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_names.first_name',
-            'config' => array(
+            'config' => [
                 'type' => 'input',
                 'size' => '30',
                 'max' => '90',
                 'eval' => 'trim',
-            )
-        ),
-        'middle_name' => array(
+            ],
+        ],
+        'middle_name' => [
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_names.middle_name',
-            'config' => array(
+            'config' => [
                 'type' => 'input',
                 'size' => '30',
                 'max' => '90',
                 'eval' => 'trim',
-            )
-        ),
-        'ancestor_name' => array(
+            ],
+        ],
+        'ancestor_name' => [
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_names.ancestor_name',
-            'config' => array(
+            'config' => [
                 'type' => 'input',
                 'size' => '30',
                 'max' => '90',
                 'eval' => 'trim',
-            )
-        ),
-        'last_name' => array(
+            ],
+        ],
+        'last_name' => [
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_names.last_name',
-            'config' => array(
+            'config' => [
                 'type' => 'input',
                 'size' => '30',
                 'max' => '90',
                 'eval' => 'trim',
-            )
-        ),
-        'other_name' => array(
+            ],
+        ],
+        'other_name' => [
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_names.other_name',
-            'config' => array(
+            'config' => [
                 'type' => 'input',
                 'size' => '10',
                 'max' => '90',
                 'eval' => 'trim',
-            )
-        ),
-        'preceding_title' => array(
+            ],
+        ],
+        'preceding_title' => [
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_names.preceding_title',
-            'config' => array(
+            'config' => [
                 'type' => 'input',
                 'size' => '30',
                 'max' => '90',
                 'eval' => 'trim',
-            )
-        ),
-        'alias' => array(
+            ],
+        ],
+        'alias' => [
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_names.alias',
-            'config' => array(
+            'config' => [
                 'type' => 'input',
                 'size' => '10',
                 'max' => '90',
                 'eval' => 'trim',
-            )
-        ),
-        'generation_identifier' => array(
+            ],
+        ],
+        'generation_identifier' => [
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_names.generation_identifier',
-            'config' => array(
+            'config' => [
                 'type' => 'input',
                 'size' => '10',
                 'max' => '90',
                 'eval' => 'trim',
-            )
-        ),
-        'place_name' => array(
+            ],
+        ],
+        'place_name' => [
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_names.place_name',
-            'config' => array(
+            'config' => [
                 'type' => 'input',
                 'size' => '10',
                 'max' => '90',
                 'eval' => 'trim',
-            )
-        ),
-        'organisation_name_type' => array(
+            ],
+        ],
+        'organisation_name_type' => [
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_names.organisation_name_type',
-            'config' => array(
+            'config' => [
                 'type' => 'select',
-                'items' => array(
-                    array('LLL:EXT:party/locallang_db.xml:tx_party_names.organisation_name_type.I.0', 'NAME_ONLY'),
-                                  array('LLL:EXT:party/locallang_db.xml:tx_party_names.organisation_name_type.I.1', 'ORGANISATION_TYPE'),
-                                  array('LLL:EXT:party/locallang_db.xml:tx_party_names.organisation_name_type.I.2', 'NAME_AND_TYPE'),
-                ),
+                'items' => [['LLL:EXT:party/locallang_db.xml:tx_party_names.organisation_name_type.I.0', 'NAME_ONLY'], ['LLL:EXT:party/locallang_db.xml:tx_party_names.organisation_name_type.I.1', 'ORGANISATION_TYPE'], ['LLL:EXT:party/locallang_db.xml:tx_party_names.organisation_name_type.I.2', 'NAME_AND_TYPE']],
                 'size' => 1,
                 'maxitems' => 1,
-            )
-        ),
-        'organisation_name' => array(
+            ],
+        ],
+        'organisation_name' => [
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_names.organisation_name',
-            'config' => array(
+            'config' => [
                 'type' => 'input',
                 'size' => '30',
                 'max' => '90',
                 'eval' => 'trim',
-            )
-        ),
-        'abbreviation' => array(
+            ],
+        ],
+        'abbreviation' => [
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_names.abbreviation',
-            'config' => array(
+            'config' => [
                 'type' => 'input',
                 'size' => '30',
                 'max' => '90',
                 'eval' => 'trim',
-            )
-        ),
-        'remarks' => array(
+            ],
+        ],
+        'remarks' => [
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_names.remarks',
-            'config' => array(
+            'config' => [
                 'type' => 'text',
                 'cols' => '30',
                 'rows' => '5',
-            )
-        ),
-    ),
-    'types' => array(
-        '0' => array('showitem' => 'party;;;;1-1-1, type, standard, person_name_title;;1, first_name;;2, last_name;;3, remarks;;;;1-1-1'),
-                      '1' => array('showitem' => 'party;;;;1-1-1, type, standard, organisation_name_type, organisation_name, abbreviation, remarks;;;;1-1-1')
-    ),
-    'palettes' => array(
-        '1' => array('showitem' => 'preceding_title'),
-                         '2' => array('showitem' => 'middle_name, ancestor_name'),
-                         '3' => array('showitem' => 'other_name, alias, generation_identifier, place_name'),
-    )
-);
+            ],
+        ],
+    ],
+    'types' => [
+        '0' => [
+            'showitem' => 'party;;;;1-1-1, type, standard, person_name_title;;1, first_name;;2, last_name;;3, remarks;;;;1-1-1',
+        ],
+        '1' => [
+            'showitem' => 'party;;;;1-1-1, type, standard, organisation_name_type, organisation_name, abbreviation, remarks;;;;1-1-1',
+        ],
+    ],
+    'palettes' => [
+        '1' => [
+            'showitem' => 'preceding_title',
+        ],
+        '2' => [
+            'showitem' => 'middle_name, ancestor_name',
+        ],
+        '3' => [
+            'showitem' => 'other_name, alias, generation_identifier, place_name',
+        ],
+    ],
+];

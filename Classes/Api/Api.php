@@ -31,7 +31,7 @@ class Api
 {
     public const BASE_FIELDS = 'uid,pid,tstamp,crdate,deleted';
 
-    private static $tableArray = array(
+    private static $tableArray = [
         'tx_party_accounts',
         'tx_party_address_usages',
         'tx_party_addresses',
@@ -79,14 +79,14 @@ class Api
         'tx_party_usages',
         'tx_party_vehicle_manufacturers',
         'tx_party_vehicles',
-        'tx_party_visas'
-    );
+        'tx_party_visas',
+    ];
 
-    private static $mmTableArray = array(
+    private static $mmTableArray = [
         'tx_party_parties_hobbies_mm',
         'tx_party_parties_habits_mm',
-        'tx_party_parties_allergies_mm'
-    );
+        'tx_party_parties_allergies_mm',
+    ];
 
     public static function getTableArray($bMM = false)
     {

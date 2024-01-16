@@ -5,8 +5,8 @@ defined('TYPO3') || die('Access denied.');
 
 
 
-$GLOBALS['TCA']['tx_party_contact_number_usages'] = array(
-    'ctrl' => array(
+$GLOBALS['TCA']['tx_party_contact_number_usages'] = [
+    'ctrl' => [
         'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_contact_number_usages',
         'label'     => 'uid',
         'label_userFunc' => 'tx_party_labels->getLabel',
@@ -16,62 +16,64 @@ $GLOBALS['TCA']['tx_party_contact_number_usages'] = array(
         'default_sortby' => 'ORDER BY crdate',
         'delete' => 'deleted',
         'iconfile'          => PATH_BE_PARTY_REL . 'icons/icon_tx_party_contact_number_usages.gif',
-    ),
-    'interface' => array(
-        'showRecordFieldList' => 'party,contact_number,contact_number_usage,standard'
-    ),
-    'columns' => array(
-        'party' => array(
+    ],
+    'interface' => [
+        'showRecordFieldList' => 'party,contact_number,contact_number_usage,standard',
+    ],
+    'columns' => [
+        'party' => [
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_contact_number_usages.party',
-            'config' => array(
+            'config' => [
                 'type' => 'group',
                 'internal_type' => 'db',
                 'allowed' => 'tx_party_parties',
                 'size' => 1,
                 'minitems' => 0,
                 'maxitems' => 1,
-            )
-        ),
-        'contact_number' => array(
+            ],
+        ],
+        'contact_number' => [
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_contact_number_usages.contact_number',
-            'config' => array(
+            'config' => [
                 'type' => 'group',
                 'internal_type' => 'db',
                 'allowed' => 'tx_party_contact_numbers',
                 'size' => 1,
                 'minitems' => 0,
                 'maxitems' => 1,
-            )
-        ),
-        'contact_number_usage' => array(
+            ],
+        ],
+        'contact_number_usage' => [
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_contact_number_usages.contact_number_usage',
-            'config' => array(
+            'config' => [
                 'type' => 'select',
-                'items' => array(
-                    array('', 0),
-                ),
+                'items' => [['', 0]],
                 'foreign_table' => 'tx_party_usages',
                 'foreign_table_where' => 'AND tx_party_usages.pid=###STORAGE_PID### ORDER BY tx_party_usages.title',
                 'size' => 1,
                 'minitems' => 0,
                 'maxitems' => 1,
-            )
-        ),
-        'standard' => array(
+            ],
+        ],
+        'standard' => [
             'exclude' => 1,
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_contact_number_usages.standard',
-            'config' => array(
+            'config' => [
                 'type' => 'check',
-            )
-        ),
-    ),
-    'types' => array(
-        '0' => array('showitem' => 'party;;;;1-1-1, contact_number, contact_number_usage, standard')
-    ),
-    'palettes' => array(
-        '1' => array('showitem' => '')
-    )
-);
+            ],
+        ],
+    ],
+    'types' => [
+        '0' => [
+            'showitem' => 'party;;;;1-1-1, contact_number, contact_number_usage, standard',
+        ],
+    ],
+    'palettes' => [
+        '1' => [
+            'showitem' => '',
+        ],
+    ],
+];
