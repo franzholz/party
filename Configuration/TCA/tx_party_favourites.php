@@ -70,7 +70,7 @@ $GLOBALS['TCA']['tx_party_favourites'] = [
     ],
     'types' => [
         '0' => [
-            'showitem' => 'party,--palette--;;,type,favourite,remarks,--palette--;;',
+            'showitem' => 'party,--palette--,type,favourite,remarks,--palette--',
         ],
     ],
     'palettes' => [

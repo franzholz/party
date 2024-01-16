@@ -69,7 +69,7 @@ $GLOBALS['TCA']['tx_party_electronic_address_identifiers'] = [
     ],
     'types' => [
         '0' => [
-            'showitem' => 'parties,--palette--;;,type,electronic_address_identifier,remarks',
+            'showitem' => 'parties,--palette--,type,electronic_address_identifier,remarks',
         ],
     ],
     'palettes' => [

@@ -146,7 +146,7 @@ $GLOBALS['TCA']['tx_party_visas'] = [
     ],
     'types' => [
         '0' => [
-            'showitem' => 'party,--palette--;;,country,number,code,issue_date,--palette--;;,issue_place,maximum_stay,--palette--;;,restriction,privilege,special_condition,remarks,--palette--;;',
+            'showitem' => 'party,--palette--,country,number,code,issue_date,--palette--,issue_place,maximum_stay,--palette--,restriction,privilege,special_condition,remarks,--palette--',
         ],
     ],
     'palettes' => [

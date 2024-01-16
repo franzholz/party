@@ -118,7 +118,7 @@ $GLOBALS['TCA']['tx_party_occupations'] = [
     ],
     'types' => [
         '0' => [
-            'showitem' => 'party,--palette--;;,role,--palette--;;1,position_title,--palette--;;2,remarks,--palette--;;',
+            'showitem' => 'party,--palette--,role,--palette--;;1,position_title,--palette--;;2,remarks,--palette--',
         ],
     ],
     'palettes' => [

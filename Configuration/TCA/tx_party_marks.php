@@ -75,7 +75,7 @@ $GLOBALS['TCA']['tx_party_marks'] = [
     ],
     'types' => [
         '0' => [
-            'showitem' => 'party,--palette--;;,mark,body_part,--palette--;;,body_part_mark_location,remarks,--palette--;;',
+            'showitem' => 'party,--palette--,mark,body_part,--palette--,body_part_mark_location,remarks,--palette--',
         ],
     ],
     'palettes' => [

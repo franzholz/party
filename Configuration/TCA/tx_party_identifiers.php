@@ -91,7 +91,7 @@ $GLOBALS['TCA']['tx_party_identifiers'] = [
     ],
     'types' => [
         '0' => [
-            'showitem' => 'party,--palette--;;,type,identifier,issue_date,--palette--;;,expiry_date,remarks,--palette--;;',
+            'showitem' => 'party,--palette--,type,identifier,issue_date,--palette--,expiry_date,remarks,--palette--',
         ],
     ],
     'palettes' => [

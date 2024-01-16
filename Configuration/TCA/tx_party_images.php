@@ -102,10 +102,10 @@ $GLOBALS['TCA']['tx_party_images'] = [
     ],
     'types' => [
         '0' => [
-            'showitem' => 'type,--palette--;;,party,image,title,--palette--;;,description,--palette--;;,remarks',
+            'showitem' => 'type,--palette--,party,image,title,--palette--,description,--palette--,remarks',
         ],
         '1' => [
-            'showitem' => 'type,--palette--;;,address,image,title,--palette--;;,description,--palette--;;,remarks',
+            'showitem' => 'type,--palette--,address,image,title,--palette--,description,--palette--,remarks',
         ],
     ],
 ];

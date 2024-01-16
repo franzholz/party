@@ -64,7 +64,7 @@ $GLOBALS['TCA']['tx_party_disabilities'] = [
     ],
     'types' => [
         '0' => [
-            'showitem' => 'party,--palette--;;,disability,cause,remarks,--palette--;;',
+            'showitem' => 'party,--palette--,disability,cause,remarks,--palette--',
         ],
     ],
     'palettes' => [

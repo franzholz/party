@@ -134,7 +134,7 @@ $GLOBALS['TCA']['tx_party_vehicles'] = [
     ],
     'types' => [
         '0' => [
-            'showitem' => 'party,--palette--;;,type,make,model,license_plate,--palette--;;,manufacture_date,engine_number,chassis_number,body_number,remarks,--palette--;;',
+            'showitem' => 'party,--palette--,type,make,model,license_plate,--palette--,manufacture_date,engine_number,chassis_number,body_number,remarks,--palette--',
         ],
     ],
     'palettes' => [

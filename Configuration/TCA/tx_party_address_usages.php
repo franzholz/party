@@ -74,7 +74,7 @@ $GLOBALS['TCA']['tx_party_address_usages'] = [
     ],
     'types' => [
         '0' => [
-            'showitem' => 'party,--palette--;;,address,address_usage,standard',
+            'showitem' => 'party,--palette--,address,address_usage,standard',
         ],
     ],
     'palettes' => [

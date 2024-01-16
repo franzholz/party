@@ -105,7 +105,7 @@ $GLOBALS['TCA']['tx_party_relationships'] = [
     ],
     'types' => [
         '0' => [
-            'showitem' => 'primary_party,--palette--;;,relationship_type,secondary_party,date_established,--palette--;;,date_lapsed,reason_lapsed,remarks,--palette--;;',
+            'showitem' => 'primary_party,--palette--,relationship_type,secondary_party,date_established,--palette--,date_lapsed,reason_lapsed,remarks,--palette--',
         ],
     ],
     'palettes' => [

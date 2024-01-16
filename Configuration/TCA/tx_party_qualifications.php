@@ -186,7 +186,7 @@ $GLOBALS['TCA']['tx_party_qualifications'] = [
     ],
     'types' => [
         '0' => [
-            'showitem' => 'party,--palette--;;,qualification_name,institution,status,start_date,--palette--;;,completion_date,--palette--;;1,major_subject,--palette--;;,minor_subject,mark,--palette--;;2,remarks,--palette--;;',
+            'showitem' => 'party,--palette--,qualification_name,institution,status,start_date,--palette--,completion_date,--palette--;;1,major_subject,--palette--,minor_subject,mark,--palette--;;2,remarks,--palette--',
         ],
     ],
     'palettes' => [

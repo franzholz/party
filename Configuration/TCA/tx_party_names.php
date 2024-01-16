@@ -198,10 +198,10 @@ $GLOBALS['TCA']['tx_party_names'] = [
     ],
     'types' => [
         '0' => [
-            'showitem' => 'party,--palette--;;,type,standard,person_name_title,--palette--;;1,first_name,--palette--;;2,last_name,--palette--;;3,remarks,--palette--;;',
+            'showitem' => 'party,--palette--,type,standard,person_name_title,--palette--;;1,first_name,--palette--;;2,last_name,--palette--;;3,remarks,--palette--',
         ],
         '1' => [
-            'showitem' => 'party,--palette--;;,type,standard,organisation_name_type,organisation_name,abbreviation,remarks,--palette--;;',
+            'showitem' => 'party,--palette--,type,standard,organisation_name_type,organisation_name,abbreviation,remarks,--palette--',
         ],
     ],
     'palettes' => [

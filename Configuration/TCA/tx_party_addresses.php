@@ -350,7 +350,7 @@ $GLOBALS['TCA']['tx_party_addresses'] = [
     ],
     'types' => [
         '0' => [
-            'showitem' => 'parties,--palette--;;,thoroughfare,--palette--;;1,post_code,--palette--;;2,locality,--palette--;;3,administrative_area,--palette--;;4,country,--palette--;LLL:EXT:party/locallang_db.xml:tx_party_addresses.latitude;5;;1-1-1,--palette--;LLL:EXT:party/locallang_db.xml:tx_party_addresses.longitude;6,images,remarks,--palette--;;',
+            'showitem' => 'parties,--palette--,thoroughfare,--palette--;;1,post_code,--palette--;;2,locality,--palette--;;3,administrative_area,--palette--;;4,country,--palette--;LLL:EXT:party/locallang_db.xml:tx_party_addresses.latitude;5,--palette--;LLL:EXT:party/locallang_db.xml:tx_party_addresses.longitude;6,images,remarks,--palette--',
         ],
     ],
     'palettes' => [

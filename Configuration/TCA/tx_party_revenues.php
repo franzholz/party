@@ -139,7 +139,7 @@ $GLOBALS['TCA']['tx_party_revenues'] = [
     ],
     'types' => [
         '0' => [
-            'showitem' => 'party,--palette--;;,type,currency,amount,--palette--;;1,period_from,--palette--;;,period_to,source,--palette--;;,remarks,--palette--;;',
+            'showitem' => 'party,--palette--,type,currency,amount,--palette--;;1,period_from,--palette--,period_to,source,--palette--,remarks,--palette--',
         ],
     ],
     'palettes' => [

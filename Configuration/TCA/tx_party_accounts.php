@@ -104,7 +104,7 @@ $GLOBALS['TCA']['tx_party_accounts'] = [
     ],
     'types' => [
         '0' => [
-            'showitem' => 'party,--palette--;;,account_id,organisation,ownership_type,issuing_authority,--palette--;;,account_type,remarks,--palette--;;',
+            'showitem' => 'party,--palette--,account_id,organisation,ownership_type,issuing_authority,--palette--,account_type,remarks,--palette--',
         ],
     ],
     'palettes' => [

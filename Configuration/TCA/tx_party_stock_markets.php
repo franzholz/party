@@ -72,7 +72,7 @@ $GLOBALS['TCA']['tx_party_stock_markets'] = [
     ],
     'types' => [
         '0' => [
-            'showitem' => 'party,--palette--;;,market,listed_code,remarks,--palette--;;',
+            'showitem' => 'party,--palette--,market,listed_code,remarks,--palette--',
         ],
     ],
     'palettes' => [

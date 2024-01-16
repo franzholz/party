@@ -69,7 +69,7 @@ $GLOBALS['TCA']['tx_party_contacts'] = [
     ],
     'types' => [
         '0' => [
-            'showitem' => 'party,--palette--;;,type,contact,remarks,--palette--;;',
+            'showitem' => 'party,--palette--,type,contact,remarks,--palette--',
         ],
     ],
     'palettes' => [

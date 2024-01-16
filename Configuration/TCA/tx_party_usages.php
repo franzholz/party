@@ -50,7 +50,7 @@ $GLOBALS['TCA']['tx_party_usages'] = [
     ],
     'types' => [
         '0' => [
-            'showitem' => 'short_title,--palette--;;,title,--palette--;;,long_title,--palette--;;',
+            'showitem' => 'short_title,--palette--,title,--palette--,long_title,--palette--',
         ],
     ],
     'palettes' => [

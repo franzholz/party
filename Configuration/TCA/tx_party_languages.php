@@ -130,7 +130,7 @@ $GLOBALS['TCA']['tx_party_languages'] = [
     ],
     'types' => [
         '0' => [
-            'showitem' => 'party,--palette--;;,type,language,preference,read_skills,--palette--;;,write_skills,listen_skills,speak_skills,remarks,--palette--;;',
+            'showitem' => 'party,--palette--,type,language,preference,read_skills,--palette--,write_skills,listen_skills,speak_skills,remarks,--palette--',
         ],
     ],
     'palettes' => [

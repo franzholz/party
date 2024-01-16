@@ -80,7 +80,7 @@ $GLOBALS['TCA']['tx_party_countries_of_residence'] = [
     ],
     'types' => [
         '0' => [
-            'showitem' => 'party,--palette--;;,residency_type,country,remarks,--palette--;;',
+            'showitem' => 'party,--palette--,residency_type,country,remarks,--palette--',
         ],
     ],
     'palettes' => [

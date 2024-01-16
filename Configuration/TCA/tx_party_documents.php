@@ -133,7 +133,7 @@ $GLOBALS['TCA']['tx_party_documents'] = [
     ],
     'types' => [
         '0' => [
-            'showitem' => 'party,--palette--;;,document_type,document_id,issued_by,--palette--;;,issue_place,name_on_document,--palette--;;1,remarks,--palette--;;',
+            'showitem' => 'party,--palette--,document_type,document_id,issued_by,--palette--,issue_place,name_on_document,--palette--;;1,remarks,--palette--',
         ],
     ],
     'palettes' => [
