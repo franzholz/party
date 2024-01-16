@@ -3,15 +3,15 @@
 defined('TYPO3') || die('Access denied.');
 
 if (!defined('PARTY_EXT')) {
-    define('PARTY_EXT', $_EXTKEY);
+    define('PARTY_EXT', 'party');
 }
 
 if (!defined('PATH_BE_PARTY')) {
-    define('PATH_BE_PARTY', t3lib_extMgm::extPath($_EXTKEY));
+    define('PATH_BE_PARTY', t3lib_extMgm::extPath('party'));
 }
 
 if (!defined('PATH_BE_PARTY_REL')) {
-    define('PATH_BE_PARTY_REL', t3lib_extMgm::extRelPath($_EXTKEY));
+    define('PATH_BE_PARTY_REL', t3lib_extMgm::extRelPath('party'));
 }
 
 
@@ -56,7 +56,7 @@ if (!is_array($GLOBALS['TYPO3_CONF_VARS']['SYS']['caching']['cacheConfigurations
 }
 
 // Hook for extending the tt_products classes
-$GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['tt_products']['fieldClass']['address'][$_EXTKEY] =
+$GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['tt_products']['fieldClass']['address']['party'] =
     [
         'addresses' => 'tx_party_models_addresses',
     ];
