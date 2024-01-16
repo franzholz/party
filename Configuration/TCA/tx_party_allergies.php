@@ -50,7 +50,7 @@ $GLOBALS['TCA']['tx_party_allergies'] = [
     ],
     'types' => [
         '0' => [
-            'showitem' => 'short_title;;;;1-1-1, title;;;;2-2-2, long_title;;;;3-3-3',
+            'showitem' => 'short_title,--palette--;;,title,--palette--;;,long_title,--palette--;;',
         ],
     ],
     'palettes' => [

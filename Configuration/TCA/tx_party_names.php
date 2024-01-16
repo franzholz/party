@@ -25,6 +25,7 @@ $GLOBALS['TCA']['tx_party_names'] = [
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_names.party',
             'config' => [
                 'type' => 'select',
+                'renderType' => 'selectSingle',
                 'foreign_table' => 'tx_party_parties',
                 'foreign_table_where' => 'AND tx_party_parties.pid=###STORAGE_PID### ORDER BY tx_party_parties.uid',
                 'size' => 1,
@@ -37,6 +38,7 @@ $GLOBALS['TCA']['tx_party_names'] = [
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_names.type',
             'config' => [
                 'type' => 'select',
+                'renderType' => 'selectSingle',
                 'items' => [['LLL:EXT:party/locallang_db.xml:tx_party_names.type.I.0', '0'], ['LLL:EXT:party/locallang_db.xml:tx_party_names.type.I.1', '1']],
                 'size' => 1,
                 'maxitems' => 1,
@@ -54,6 +56,7 @@ $GLOBALS['TCA']['tx_party_names'] = [
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_names.person_name_title',
             'config' => [
                 'type' => 'select',
+                'renderType' => 'selectSingle',
                 'items' => [['', 0]],
                 'foreign_table' => 'tx_party_person_name_titles',
                 'foreign_table_where' => 'AND tx_party_person_name_titles.pid=###STORAGE_PID### ORDER BY tx_party_person_name_titles.uid',
@@ -157,6 +160,7 @@ $GLOBALS['TCA']['tx_party_names'] = [
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_names.organisation_name_type',
             'config' => [
                 'type' => 'select',
+                'renderType' => 'selectSingle',
                 'items' => [['LLL:EXT:party/locallang_db.xml:tx_party_names.organisation_name_type.I.0', 'NAME_ONLY'], ['LLL:EXT:party/locallang_db.xml:tx_party_names.organisation_name_type.I.1', 'ORGANISATION_TYPE'], ['LLL:EXT:party/locallang_db.xml:tx_party_names.organisation_name_type.I.2', 'NAME_AND_TYPE']],
                 'size' => 1,
                 'maxitems' => 1,
@@ -194,10 +198,10 @@ $GLOBALS['TCA']['tx_party_names'] = [
     ],
     'types' => [
         '0' => [
-            'showitem' => 'party;;;;1-1-1, type, standard, person_name_title;;1, first_name;;2, last_name;;3, remarks;;;;1-1-1',
+            'showitem' => 'party,--palette--;;,type,standard,person_name_title,--palette--;;1,first_name,--palette--;;2,last_name,--palette--;;3,remarks,--palette--;;',
         ],
         '1' => [
-            'showitem' => 'party;;;;1-1-1, type, standard, organisation_name_type, organisation_name, abbreviation, remarks;;;;1-1-1',
+            'showitem' => 'party,--palette--;;,type,standard,organisation_name_type,organisation_name,abbreviation,remarks,--palette--;;',
         ],
     ],
     'palettes' => [

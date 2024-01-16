@@ -24,6 +24,7 @@ $GLOBALS['TCA']['tx_party_visas'] = [
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_visas.party',
             'config' => [
                 'type' => 'select',
+                'renderType' => 'selectSingle',
                 'items' => [['', 0]],
                 'foreign_table' => 'tx_party_parties',
                 'foreign_table_where' => 'AND tx_party_parties.pid=###STORAGE_PID### ORDER BY tx_party_parties.uid',
@@ -37,6 +38,7 @@ $GLOBALS['TCA']['tx_party_visas'] = [
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_visas.country',
             'config' => [
                 'type' => 'select',
+                'renderType' => 'selectSingle',
                 'foreign_table' => 'static_countries',
                 'foreign_table_where' => 'ORDER BY static_countries.cn_official_name_en',
                 'items' => [['', 0]],
@@ -144,7 +146,7 @@ $GLOBALS['TCA']['tx_party_visas'] = [
     ],
     'types' => [
         '0' => [
-            'showitem' => 'party;;;;1-1-1, country, number, code, issue_date;;;;1-1-1, issue_place, maximum_stay;;;;1-1-1, restriction, privilege, special_condition, remarks;;;;1-1-1',
+            'showitem' => 'party,--palette--;;,country,number,code,issue_date,--palette--;;,issue_place,maximum_stay,--palette--;;,restriction,privilege,special_condition,remarks,--palette--;;',
         ],
     ],
     'palettes' => [

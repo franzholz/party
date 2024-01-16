@@ -15,7 +15,6 @@ $GLOBALS['TCA']['tx_party_parties'] = [
         'type' => 'type',
         'default_sortby' => 'ORDER BY crdate',
         'delete' => 'deleted',
-        'dividers2tabs' => true,
         'iconfile'          => PATH_BE_PARTY_REL . 'icons/icon_tx_party_parties.gif',
         'typeicon_column' => 'type',
         'typeicons' => [
@@ -32,6 +31,7 @@ $GLOBALS['TCA']['tx_party_parties'] = [
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.type',
             'config' => [
                 'type' => 'select',
+                'renderType' => 'selectSingle',
                 'items' => [['LLL:EXT:party/locallang_db.xml:tx_party_parties.type.I.0', '0', PATH_BE_PARTY_REL . 'icons/selicon_tx_party_parties_type_0.gif'], ['LLL:EXT:party/locallang_db.xml:tx_party_parties.type.I.1', '1', PATH_BE_PARTY_REL . 'icons/selicon_tx_party_parties_type_1.gif']],
                 'size' => 1,
                 'maxitems' => 1,
@@ -42,6 +42,7 @@ $GLOBALS['TCA']['tx_party_parties'] = [
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.marital_status',
             'config' => [
                 'type' => 'select',
+                'renderType' => 'selectSingle',
                 'items' => [['', ''], ['LLL:EXT:party/locallang_db.xml:tx_party_parties.marital_status.I.0', 'SINGLE'], ['LLL:EXT:party/locallang_db.xml:tx_party_parties.marital_status.I.1', 'ENGAGED'], ['LLL:EXT:party/locallang_db.xml:tx_party_parties.marital_status.I.2', 'MARRIED'], ['LLL:EXT:party/locallang_db.xml:tx_party_parties.marital_status.I.3', 'SEPARATED'], ['LLL:EXT:party/locallang_db.xml:tx_party_parties.marital_status.I.4', 'DIVORCED'], ['LLL:EXT:party/locallang_db.xml:tx_party_parties.marital_status.I.5', 'WIDOWED']],
                 'size' => 1,
                 'maxitems' => 1,
@@ -52,6 +53,7 @@ $GLOBALS['TCA']['tx_party_parties'] = [
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.religion',
             'config' => [
                 'type' => 'select',
+                'renderType' => 'selectSingle',
                 'items' => [['', 0]],
                 'foreign_table' => 'tx_party_religions',
                 'foreign_table_where' => 'AND tx_party_religions.pid=###STORAGE_PID### ORDER BY tx_party_religions.uid',
@@ -97,6 +99,7 @@ $GLOBALS['TCA']['tx_party_parties'] = [
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.birth_sign',
             'config' => [
                 'type' => 'select',
+                'renderType' => 'selectSingle',
                 'items' => [['', 0]],
                 'foreign_table' => 'tx_party_birth_signs',
                 'foreign_table_where' => 'AND tx_party_birth_signs.pid=###SITEROOT### ORDER BY tx_party_birth_signs.uid',
@@ -175,6 +178,7 @@ $GLOBALS['TCA']['tx_party_parties'] = [
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.hair_colour',
             'config' => [
                 'type' => 'select',
+                'renderType' => 'selectSingle',
                 'items' => [['', ''], ['LLL:EXT:party/locallang_db.xml:tx_party_parties.hair_colour.I.0', 'BROWN'], ['LLL:EXT:party/locallang_db.xml:tx_party_parties.hair_colour.I.1', 'BLACK'], ['LLL:EXT:party/locallang_db.xml:tx_party_parties.hair_colour.I.2', 'BLONDE'], ['LLL:EXT:party/locallang_db.xml:tx_party_parties.hair_colour.I.3', 'RED'], ['LLL:EXT:party/locallang_db.xml:tx_party_parties.hair_colour.I.4', 'GREY'], ['LLL:EXT:party/locallang_db.xml:tx_party_parties.hair_colour.I.5', 'WHITE'], ['LLL:EXT:party/locallang_db.xml:tx_party_parties.hair_colour.I.6', 'GINGER'], ['LLL:EXT:party/locallang_db.xml:tx_party_parties.hair_colour.I.7', 'PURPLE'], ['LLL:EXT:party/locallang_db.xml:tx_party_parties.hair_colour.I.8', 'BLUE'], ['LLL:EXT:party/locallang_db.xml:tx_party_parties.hair_colour.I.9', 'GREEN'], ['LLL:EXT:party/locallang_db.xml:tx_party_parties.hair_colour.I.10', 'PINK']],
                 'size' => 1,
                 'maxitems' => 1,
@@ -185,6 +189,7 @@ $GLOBALS['TCA']['tx_party_parties'] = [
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.eye_colour',
             'config' => [
                 'type' => 'select',
+                'renderType' => 'selectSingle',
                 'items' => [['', ''], ['LLL:EXT:party/locallang_db.xml:tx_party_parties.eye_colour.I.0', 'AMBER'], ['LLL:EXT:party/locallang_db.xml:tx_party_parties.eye_colour.I.1', 'BLUE'], ['LLL:EXT:party/locallang_db.xml:tx_party_parties.eye_colour.I.2', 'BROWN'], ['LLL:EXT:party/locallang_db.xml:tx_party_parties.eye_colour.I.3', 'GRAY'], ['LLL:EXT:party/locallang_db.xml:tx_party_parties.eye_colour.I.4', 'GREEN'], ['LLL:EXT:party/locallang_db.xml:tx_party_parties.eye_colour.I.5', 'HAZEL']],
                 'size' => 1,
                 'maxitems' => 1,
@@ -205,6 +210,7 @@ $GLOBALS['TCA']['tx_party_parties'] = [
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.blood_group',
             'config' => [
                 'type' => 'select',
+                'renderType' => 'selectSingle',
                 'items' => [['', ''], ['LLL:EXT:party/locallang_db.xml:tx_party_parties.blood_group.I.0', 'O_NEGATIVE'], ['LLL:EXT:party/locallang_db.xml:tx_party_parties.blood_group.I.1', 'O_POSITIVE'], ['LLL:EXT:party/locallang_db.xml:tx_party_parties.blood_group.I.2', 'A_NEGATIVE'], ['LLL:EXT:party/locallang_db.xml:tx_party_parties.blood_group.I.3', 'A_POSITIVE'], ['LLL:EXT:party/locallang_db.xml:tx_party_parties.blood_group.I.4', 'B_NEGATIVE'], ['LLL:EXT:party/locallang_db.xml:tx_party_parties.blood_group.I.5', 'B_POSITIVE'], ['LLL:EXT:party/locallang_db.xml:tx_party_parties.blood_group.I.6', 'AB_NEGATIVE'], ['LLL:EXT:party/locallang_db.xml:tx_party_parties.blood_group.I.7', 'AB_POSITIVE']],
                 'size' => 1,
                 'maxitems' => 1,
@@ -215,6 +221,7 @@ $GLOBALS['TCA']['tx_party_parties'] = [
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.physical_status',
             'config' => [
                 'type' => 'select',
+                'renderType' => 'selectSingle',
                 'items' => [['', 0]],
                 'foreign_table' => 'tx_party_physical_status',
                 'foreign_table_where' => 'AND tx_party_physical_status.pid=###STORAGE_PID### ORDER BY tx_party_physical_status.uid',
@@ -228,6 +235,7 @@ $GLOBALS['TCA']['tx_party_parties'] = [
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.ethnicity',
             'config' => [
                 'type' => 'select',
+                'renderType' => 'selectSingle',
                 'items' => [['', 0]],
                 'foreign_table' => 'tx_party_ethnicities',
                 'foreign_table_where' => 'AND tx_party_ethnicities.pid=###STORAGE_PID### ORDER BY tx_party_ethnicities.uid',
@@ -241,6 +249,7 @@ $GLOBALS['TCA']['tx_party_parties'] = [
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.gender',
             'config' => [
                 'type' => 'select',
+                'renderType' => 'selectSingle',
                 'items' => [['LLL:EXT:party/locallang_db.xml:tx_party_parties.gender.I.0', '0'], ['LLL:EXT:party/locallang_db.xml:tx_party_parties.gender.I.1', '1'], ['LLL:EXT:party/locallang_db.xml:tx_party_parties.gender.I.2', '2'], ['LLL:EXT:party/locallang_db.xml:tx_party_parties.gender.I.3', '9']],
                 'size' => 1,
                 'maxitems' => 1,
@@ -251,6 +260,7 @@ $GLOBALS['TCA']['tx_party_parties'] = [
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.hobbies',
             'config' => [
                 'type' => 'select',
+                'renderType' => 'selectMultipleSideBySide',
                 'foreign_table' => 'tx_party_hobbies',
                 'foreign_table_where' => 'AND tx_party_hobbies.pid=###STORAGE_PID### ORDER BY tx_party_hobbies.uid',
                 'size' => 5,
@@ -265,6 +275,7 @@ $GLOBALS['TCA']['tx_party_parties'] = [
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.habits',
             'config' => [
                 'type' => 'select',
+                'renderType' => 'selectMultipleSideBySide',
                 'foreign_table' => 'tx_party_habits',
                 'foreign_table_where' => 'AND tx_party_habits.pid=###STORAGE_PID### ORDER BY tx_party_habits.uid',
                 'size' => 5,
@@ -279,6 +290,7 @@ $GLOBALS['TCA']['tx_party_parties'] = [
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.organisation_type',
             'config' => [
                 'type' => 'select',
+                'renderType' => 'selectSingle',
                 'items' => [['', 0]],
                 'foreign_table' => 'tx_party_types',
                 'foreign_table_where' => "AND tx_party_types.allowed_for_field LIKE '%tx_party_ORGANISATIONS-ORGANISATION_TYPE%' AND tx_party_types.pid=###STORAGE_PID### ORDER BY tx_party_types.uid",
@@ -292,6 +304,7 @@ $GLOBALS['TCA']['tx_party_parties'] = [
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.organisation_nature',
             'config' => [
                 'type' => 'select',
+                'renderType' => 'selectSingle',
                 'items' => [['', 0]],
                 'foreign_table' => 'tx_party_organisation_natures',
                 'foreign_table_where' => 'AND tx_party_organisation_natures.pid=###STORAGE_PID### ORDER BY tx_party_organisation_natures.uid',
@@ -613,6 +626,7 @@ $GLOBALS['TCA']['tx_party_parties'] = [
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.allergies',
             'config' => [
                 'type' => 'select',
+                'renderType' => 'selectMultipleSideBySide',
                 'foreign_table' => 'tx_party_allergies',
                 'foreign_table_where' => 'AND tx_party_allergies.pid=###STORAGE_PID### ORDER BY tx_party_allergies.uid',
                 'size' => 5,
@@ -647,84 +661,7 @@ $GLOBALS['TCA']['tx_party_parties'] = [
     ],
     'types' => [
         '0' => [
-            'showitem' => '
-        type,
-        
-        names;;;;1-1-1,
-        addresses,
-        contact_numbers,
-        electronic_address_identifiers,
-        
-        images;;;;1-1-1,
-        
-        relationships;;;;1-1-1,
-        
-        identifiers;;;;1-1-1,
-        
-        remarks;;;;1-1-1,
-        
-        --div--;LLL:EXT:party/locallang_db.xml:tx_party_parties.person,
-        
-        marital_status,
-        religion,
-        
-        hobbies;;;;1-1-1,
-        habits,
-        
-        favourites;;;;1-1-1,
-        preferences,
-        
-        languages;;;;1-1-1,
-        qualifications,
-        
-        occupations;;;;1-1-1,
-        
-        --div--;LLL:EXT:party/locallang_db.xml:tx_party_parties.events,
-        
-        birth_date_time;;1,
-        birth_place;;2,
-        
-        contacts;;;;1-1-1,
-        events,
-        
-        --div--;LLL:EXT:party/locallang_db.xml:tx_party_parties.physical,
-        
-        gender,
-        
-        weight;;;;1-1-1,
-        height,
-        breast,
-        waist,
-        hip,
-        
-        hair_colour;;;;1-1-1,
-        eye_colour,
-        skin_colour,
-        
-        blood_group;;;;1-1-1,
-        physical_status,
-        ethnicity,
-        
-        allergies;;;;1-1-1,
-        marks,
-        disabilities,
-        
-        --div--;LLL:EXT:party/locallang_db.xml:tx_party_parties.ownership,
-        
-        nationalities,
-        countries_of_residence,
-        
-        visas;;;;1-1-1,
-        
-        accounts;;;;1-1-1,
-        memberships,
-        
-        documents;;;;1-1-1,
-        
-        revenues;;;;1-1-1,
-        
-        vehicles;;;;1-1-1
-        ',
+            'showitem' => 'type,names,--palette--;;,addresses,contact_numbers,electronic_address_identifiers,images,--palette--;;,relationships,--palette--;;,identifiers,--palette--;;,remarks,--palette--;;,--div--;LLL:EXT:party/locallang_db.xml:tx_party_parties.person,marital_status,religion,hobbies,--palette--;;,habits,favourites,--palette--;;,preferences,languages,--palette--;;,qualifications,occupations,--palette--;;,--div--;LLL:EXT:party/locallang_db.xml:tx_party_parties.events,birth_date_time,--palette--;;1,birth_place,--palette--;;2,contacts,--palette--;;,events,--div--;LLL:EXT:party/locallang_db.xml:tx_party_parties.physical,gender,weight,--palette--;;,height,breast,waist,hip,hair_colour,--palette--;;,eye_colour,skin_colour,blood_group,--palette--;;,physical_status,ethnicity,allergies,--palette--;;,marks,disabilities,--div--;LLL:EXT:party/locallang_db.xml:tx_party_parties.ownership,nationalities,countries_of_residence,visas,--palette--;;,accounts,--palette--;;,memberships,documents,--palette--;;,revenues,--palette--;;,vehicles,--palette--;;',
         ],
         'palettes' => [
             '1' => [

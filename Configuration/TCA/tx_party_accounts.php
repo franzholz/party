@@ -22,6 +22,7 @@ $GLOBALS['TCA']['tx_party_accounts'] = [
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_accounts.party',
             'config' => [
                 'type' => 'select',
+                'renderType' => 'selectSingle',
                 'items' => [['', 0]],
                 'foreign_table' => 'tx_party_parties',
                 'foreign_table_where' => 'AND tx_party_parties.pid=###STORAGE_PID### ORDER BY tx_party_parties.uid',
@@ -35,6 +36,7 @@ $GLOBALS['TCA']['tx_party_accounts'] = [
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_accounts.organisation',
             'config' => [
                 'type' => 'select',
+                'renderType' => 'selectSingle',
                 'foreign_table' => 'tx_party_parties',
                 'foreign_table_where' => 'AND tx_party_parties.pid=###STORAGE_PID### AND tx_party_parties.type=1 ORDER BY tx_party_parties.uid',
                 'size' => 1,
@@ -47,6 +49,7 @@ $GLOBALS['TCA']['tx_party_accounts'] = [
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_accounts.ownership_type',
             'config' => [
                 'type' => 'select',
+                'renderType' => 'selectSingle',
                 'items' => [['', 0]],
                 'foreign_table' => 'tx_party_types',
                 'foreign_table_where' => "AND tx_party_types.allowed_for_field LIKE '%tx_party_ACCOUNTS-OWNERSHIP_TYPE%' AND tx_party_types.pid=###STORAGE_PID### ORDER BY tx_party_types.uid",
@@ -80,6 +83,7 @@ $GLOBALS['TCA']['tx_party_accounts'] = [
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_accounts.account_type',
             'config' => [
                 'type' => 'select',
+                'renderType' => 'selectSingle',
                 'items' => [['', 0]],
                 'foreign_table' => 'tx_party_types',
                 'foreign_table_where' => "AND tx_party_types.allowed_for_field LIKE '%tx_party_ACCOUNTS-ACCOUNT_TYPE%' AND tx_party_types.pid=###STORAGE_PID### ORDER BY tx_party_types.uid",
@@ -100,7 +104,7 @@ $GLOBALS['TCA']['tx_party_accounts'] = [
     ],
     'types' => [
         '0' => [
-            'showitem' => 'party;;;;1-1-1, account_id, organisation, ownership_type, issuing_authority;;;;1-1-1, account_type, remarks;;;;1-1-1',
+            'showitem' => 'party,--palette--;;,account_id,organisation,ownership_type,issuing_authority,--palette--;;,account_type,remarks,--palette--;;',
         ],
     ],
     'palettes' => [

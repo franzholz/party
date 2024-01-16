@@ -55,6 +55,7 @@ $GLOBALS['TCA']['tx_party_address_usages'] = [
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_address_usages.address_usage',
             'config' => [
                 'type' => 'select',
+                'renderType' => 'selectSingle',
                 'items' => [['', 0]],
                 'foreign_table' => 'tx_party_usages',
                 'foreign_table_where' => 'AND tx_party_usages.pid=###STORAGE_PID### ORDER BY tx_party_usages.title',
@@ -73,7 +74,7 @@ $GLOBALS['TCA']['tx_party_address_usages'] = [
     ],
     'types' => [
         '0' => [
-            'showitem' => 'party;;;;1-1-1, address, address_usage, standard',
+            'showitem' => 'party,--palette--;;,address,address_usage,standard',
         ],
     ],
     'palettes' => [

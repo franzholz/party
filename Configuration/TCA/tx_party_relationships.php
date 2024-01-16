@@ -24,6 +24,7 @@ $GLOBALS['TCA']['tx_party_relationships'] = [
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_relationships.primary_party',
             'config' => [
                 'type' => 'select',
+                'renderType' => 'selectSingle',
                 'items' => [['', 0]],
                 'foreign_table' => 'tx_party_parties',
                 'foreign_table_where' => 'AND tx_party_parties.pid=###STORAGE_PID### ORDER BY tx_party_parties.uid',
@@ -37,6 +38,7 @@ $GLOBALS['TCA']['tx_party_relationships'] = [
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_relationships.secondary_party',
             'config' => [
                 'type' => 'select',
+                'renderType' => 'selectSingle',
                 'items' => [['', 0]],
                 'foreign_table' => 'tx_party_parties',
                 'foreign_table_where' => 'AND tx_party_parties.pid=###STORAGE_PID### ORDER BY tx_party_parties.uid',
@@ -50,6 +52,7 @@ $GLOBALS['TCA']['tx_party_relationships'] = [
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_relationships.relationship_type',
             'config' => [
                 'type' => 'select',
+                'renderType' => 'selectSingle',
                 'foreign_table' => 'tx_party_relationship_types',
                 'foreign_table_where' => 'AND tx_party_relationship_types.pid=###STORAGE_PID### ORDER BY tx_party_relationship_types.uid',
                 'size' => 1,
@@ -102,7 +105,7 @@ $GLOBALS['TCA']['tx_party_relationships'] = [
     ],
     'types' => [
         '0' => [
-            'showitem' => 'primary_party;;;;1-1-1, relationship_type, secondary_party, date_established;;;;1-1-1, date_lapsed, reason_lapsed, remarks;;;;1-1-1',
+            'showitem' => 'primary_party,--palette--;;,relationship_type,secondary_party,date_established,--palette--;;,date_lapsed,reason_lapsed,remarks,--palette--;;',
         ],
     ],
     'palettes' => [

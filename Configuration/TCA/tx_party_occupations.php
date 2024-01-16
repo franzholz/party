@@ -25,6 +25,7 @@ $GLOBALS['TCA']['tx_party_occupations'] = [
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_occupations.party',
             'config' => [
                 'type' => 'select',
+                'renderType' => 'selectSingle',
                 'items' => [['', 0]],
                 'foreign_table' => 'tx_party_parties',
                 'foreign_table_where' => 'AND tx_party_parties.pid=###STORAGE_PID### ORDER BY tx_party_parties.uid',
@@ -38,6 +39,7 @@ $GLOBALS['TCA']['tx_party_occupations'] = [
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_occupations.role',
             'config' => [
                 'type' => 'select',
+                'renderType' => 'selectSingle',
                 'items' => [['', 0]],
                 'foreign_table' => 'tx_party_occupation_roles',
                 'foreign_table_where' => 'AND tx_party_occupation_roles.pid=###STORAGE_PID### ORDER BY tx_party_occupation_roles.uid',
@@ -51,6 +53,7 @@ $GLOBALS['TCA']['tx_party_occupations'] = [
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_occupations.rank',
             'config' => [
                 'type' => 'select',
+                'renderType' => 'selectSingle',
                 'items' => [['', 0]],
                 'foreign_table' => 'tx_party_occupation_ranks',
                 'foreign_table_where' => 'AND tx_party_occupation_ranks.pid=###STORAGE_PID### ORDER BY tx_party_occupation_ranks.uid',
@@ -64,6 +67,7 @@ $GLOBALS['TCA']['tx_party_occupations'] = [
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_occupations.employment_type',
             'config' => [
                 'type' => 'select',
+                'renderType' => 'selectSingle',
                 'items' => [['', 0]],
                 'foreign_table' => 'tx_party_types',
                 'foreign_table_where' => "AND tx_party_types.allowed_for_field LIKE '%tx_party_OCCUPATIONS-EMPLOYMENT_TYPE%' AND tx_party_types.pid=###STORAGE_PID### ORDER BY tx_party_types.uid",
@@ -114,7 +118,7 @@ $GLOBALS['TCA']['tx_party_occupations'] = [
     ],
     'types' => [
         '0' => [
-            'showitem' => 'party;;;;1-1-1, role;;1, position_title;;2, remarks;;;;1-1-1',
+            'showitem' => 'party,--palette--;;,role,--palette--;;1,position_title,--palette--;;2,remarks,--palette--;;',
         ],
     ],
     'palettes' => [

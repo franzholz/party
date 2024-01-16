@@ -23,6 +23,7 @@ $GLOBALS['TCA']['tx_party_disabilities'] = [
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_disabilities.party',
             'config' => [
                 'type' => 'select',
+                'renderType' => 'selectSingle',
                 'items' => [['', 0]],
                 'foreign_table' => 'tx_party_parties',
                 'foreign_table_where' => 'AND tx_party_parties.pid=###STORAGE_PID### ORDER BY tx_party_parties.uid',
@@ -63,7 +64,7 @@ $GLOBALS['TCA']['tx_party_disabilities'] = [
     ],
     'types' => [
         '0' => [
-            'showitem' => 'party;;;;1-1-1, disability, cause, remarks;;;;1-1-1',
+            'showitem' => 'party,--palette--;;,disability,cause,remarks,--palette--;;',
         ],
     ],
     'palettes' => [

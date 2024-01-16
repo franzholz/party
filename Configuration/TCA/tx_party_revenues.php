@@ -25,6 +25,7 @@ $GLOBALS['TCA']['tx_party_revenues'] = [
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_revenues.party',
             'config' => [
                 'type' => 'select',
+                'renderType' => 'selectSingle',
                 'items' => [['', 0]],
                 'foreign_table' => 'tx_party_parties',
                 'foreign_table_where' => 'AND tx_party_parties.pid=###STORAGE_PID### ORDER BY tx_party_parties.uid',
@@ -38,6 +39,7 @@ $GLOBALS['TCA']['tx_party_revenues'] = [
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_revenues.currency',
             'config' => [
                 'type' => 'select',
+                'renderType' => 'selectSingle',
                 'foreign_table' => 'static_currencies',
                 'items' => [['', 0]],
                 'size' => 1,
@@ -82,6 +84,7 @@ $GLOBALS['TCA']['tx_party_revenues'] = [
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_revenues.type',
             'config' => [
                 'type' => 'select',
+                'renderType' => 'selectSingle',
                 'items' => [['', 0]],
                 'foreign_table' => 'tx_party_types',
                 'foreign_table_where' => "AND tx_party_types.allowed_for_field LIKE '%tx_party_revenues-type%' aND tx_party_types.pid=###STORAGE_PID### ORDER BY tx_party_types.uid",
@@ -136,7 +139,7 @@ $GLOBALS['TCA']['tx_party_revenues'] = [
     ],
     'types' => [
         '0' => [
-            'showitem' => 'party;;;;1-1-1, type, currency, amount;;1, period_from;;;;1-1-1, period_to, source;;;;1-1-1, remarks;;;;1-1-1',
+            'showitem' => 'party,--palette--;;,type,currency,amount,--palette--;;1,period_from,--palette--;;,period_to,source,--palette--;;,remarks,--palette--;;',
         ],
     ],
     'palettes' => [

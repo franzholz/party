@@ -25,6 +25,7 @@ $GLOBALS['TCA']['tx_party_vehicles'] = [
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_vehicles.party',
             'config' => [
                 'type' => 'select',
+                'renderType' => 'selectSingle',
                 'items' => [['', 0]],
                 'foreign_table' => 'tx_party_parties',
                 'foreign_table_where' => 'AND tx_party_parties.pid=###STORAGE_PID### ORDER BY tx_party_parties.uid',
@@ -38,6 +39,7 @@ $GLOBALS['TCA']['tx_party_vehicles'] = [
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_vehicles.make',
             'config' => [
                 'type' => 'select',
+                'renderType' => 'selectSingle',
                 'items' => [['', 0]],
                 'foreign_table' => 'tx_party_vehicle_manufacturers',
                 'foreign_table_where' => 'AND tx_party_vehicle_manufacturers.pid=###STORAGE_PID### ORDER BY tx_party_vehicle_manufacturers.uid',
@@ -51,6 +53,7 @@ $GLOBALS['TCA']['tx_party_vehicles'] = [
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_vehicles.type',
             'config' => [
                 'type' => 'select',
+                'renderType' => 'selectSingle',
                 'items' => [['', 0]],
                 'foreign_table' => 'tx_party_types',
                 'foreign_table_where' => "AND tx_party_types.allowed_for_field LIKE '%tx_party_vehicles-type%' AND tx_party_types.pid=###STORAGE_PID### ORDER BY tx_party_types.uid",
@@ -131,7 +134,7 @@ $GLOBALS['TCA']['tx_party_vehicles'] = [
     ],
     'types' => [
         '0' => [
-            'showitem' => 'party;;;;1-1-1, type, make, model, license_plate;;;;1-1-1, manufacture_date, engine_number, chassis_number, body_number, remarks;;;;1-1-1',
+            'showitem' => 'party,--palette--;;,type,make,model,license_plate,--palette--;;,manufacture_date,engine_number,chassis_number,body_number,remarks,--palette--;;',
         ],
     ],
     'palettes' => [

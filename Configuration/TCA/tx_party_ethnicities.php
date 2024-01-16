@@ -24,6 +24,7 @@ $GLOBALS['TCA']['tx_party_ethnicities'] = [
             'label'  => 'LLL:EXT:lang/locallang_general.xml:LGL.language',
             'config' => [
                 'type'                => 'select',
+                'renderType' => 'selectSingle',
                 'foreign_table'       => 'sys_language',
                 'foreign_table_where' => 'ORDER BY sys_language.title',
                 'items' => [['LLL:EXT:lang/locallang_general.xml:LGL.allLanguages', -1], ['LLL:EXT:lang/locallang_general.xml:LGL.default_value', 0]],
@@ -35,6 +36,7 @@ $GLOBALS['TCA']['tx_party_ethnicities'] = [
             'label'       => 'LLL:EXT:lang/locallang_general.xml:LGL.l18n_parent',
             'config'      => [
                 'type'  => 'select',
+                'renderType' => 'selectSingle',
                 'items' => [['', 0]],
                 'foreign_table'       => 'tx_party_ethnicities',
                 'foreign_table_where' => 'AND tx_party_ethnicities.pid=###CURRENT_PID### AND tx_party_ethnicities.sys_language_uid IN (-1,0)',
@@ -78,7 +80,7 @@ $GLOBALS['TCA']['tx_party_ethnicities'] = [
     ],
     'types' => [
         '0' => [
-            'showitem' => 'sys_language_uid;;;;1-1-1, l18n_parent, l18n_diffsource, short_title, title;;;;2-2-2, long_title;;;;3-3-3',
+            'showitem' => 'sys_language_uid,--palette--;;,l18n_parent,l18n_diffsource,short_title,title,--palette--;;,long_title,--palette--;;',
         ],
     ],
     'palettes' => [

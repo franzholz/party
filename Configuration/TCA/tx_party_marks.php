@@ -24,6 +24,7 @@ $GLOBALS['TCA']['tx_party_marks'] = [
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_marks.party',
             'config' => [
                 'type' => 'select',
+                'renderType' => 'selectSingle',
                 'items' => [['', 0]],
                 'foreign_table' => 'tx_party_parties',
                 'foreign_table_where' => 'AND tx_party_parties.pid=###STORAGE_PID### ORDER BY tx_party_parties.uid',
@@ -74,7 +75,7 @@ $GLOBALS['TCA']['tx_party_marks'] = [
     ],
     'types' => [
         '0' => [
-            'showitem' => 'party;;;;1-1-1, mark, body_part;;;;1-1-1, body_part_mark_location, remarks;;;;1-1-1',
+            'showitem' => 'party,--palette--;;,mark,body_part,--palette--;;,body_part_mark_location,remarks,--palette--;;',
         ],
     ],
     'palettes' => [

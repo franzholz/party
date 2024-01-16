@@ -26,6 +26,7 @@ $GLOBALS['TCA']['tx_party_stock_markets'] = [
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_stock_markets.party',
             'config' => [
                 'type' => 'select',
+                'renderType' => 'selectSingle',
                 'items' => [['', 0]],
                 'foreign_table' => 'tx_party_parties',
                 'foreign_table_where' => 'AND tx_party_parties.pid=###STORAGE_PID### ORDER BY tx_party_parties.uid',
@@ -40,6 +41,7 @@ $GLOBALS['TCA']['tx_party_stock_markets'] = [
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_stock_markets.market',
             'config' => [
                 'type' => 'select',
+                'renderType' => 'selectSingle',
                 'items' => [['', 0]],
                 'foreign_table' => 'static_markets',
                 'foreign_table_where' => 'AND static_markets.pid=###SITEROOT### ORDER BY static_markets.uid',
@@ -70,7 +72,7 @@ $GLOBALS['TCA']['tx_party_stock_markets'] = [
     ],
     'types' => [
         '0' => [
-            'showitem' => 'party;;;;1-1-1, market, listed_code, remarks;;;;1-1-1',
+            'showitem' => 'party,--palette--;;,market,listed_code,remarks,--palette--;;',
         ],
     ],
     'palettes' => [

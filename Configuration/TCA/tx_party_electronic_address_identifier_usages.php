@@ -47,6 +47,7 @@ $GLOBALS['TCA']['tx_party_electronic_address_identifier_usages'] = [
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_electronic_address_identifier_usages.electronic_address_identifier_usage',
             'config' => [
                 'type' => 'select',
+                'renderType' => 'selectSingle',
                 'items' => [['', 0]],
                 'foreign_table' => 'tx_party_usages',
                 'foreign_table_where' => 'AND tx_party_usages.pid=###STORAGE_PID### ORDER BY tx_party_usages.title',
@@ -65,7 +66,7 @@ $GLOBALS['TCA']['tx_party_electronic_address_identifier_usages'] = [
     ],
     'types' => [
         '0' => [
-            'showitem' => 'party;;;;1-1-1, electronic_address_identifier, electronic_address_identifier_usage, standard',
+            'showitem' => 'party,--palette--;;,electronic_address_identifier,electronic_address_identifier_usage,standard',
         ],
     ],
     'palettes' => [

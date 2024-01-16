@@ -22,6 +22,7 @@ $GLOBALS['TCA']['tx_party_identifiers'] = [
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_identifiers.party',
             'config' => [
                 'type' => 'select',
+                'renderType' => 'selectSingle',
                 'items' => [['', 0]],
                 'foreign_table' => 'tx_party_parties',
                 'foreign_table_where' => 'AND tx_party_parties.pid=###STORAGE_PID### ORDER BY tx_party_parties.uid',
@@ -35,6 +36,7 @@ $GLOBALS['TCA']['tx_party_identifiers'] = [
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_identifiers.type',
             'config' => [
                 'type' => 'select',
+                'renderType' => 'selectSingle',
                 'items' => [['', 0]],
                 'foreign_table' => 'tx_party_types',
                 'foreign_table_where' => "AND tx_party_types.allowed_for_field LIKE '%tx_party_identifiers-type%' AND tx_party_types.pid=###STORAGE_PID### ORDER BY tx_party_types.uid",
@@ -89,7 +91,7 @@ $GLOBALS['TCA']['tx_party_identifiers'] = [
     ],
     'types' => [
         '0' => [
-            'showitem' => 'party;;;;1-1-1, type, identifier, issue_date;;;;1-1-1, expiry_date, remarks;;;;1-1-1',
+            'showitem' => 'party,--palette--;;,type,identifier,issue_date,--palette--;;,expiry_date,remarks,--palette--;;',
         ],
     ],
     'palettes' => [

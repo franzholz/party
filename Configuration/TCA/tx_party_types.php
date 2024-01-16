@@ -28,6 +28,7 @@ $GLOBALS['TCA']['tx_party_types'] = [
             'label'  => 'LLL:EXT:lang/locallang_general.xml:LGL.language',
             'config' => [
                 'type'                => 'select',
+                'renderType' => 'selectSingle',
                 'foreign_table'       => 'sys_language',
                 'foreign_table_where' => 'ORDER BY sys_language.title',
                 'items' => [['LLL:EXT:lang/locallang_general.xml:LGL.allLanguages', -1], ['LLL:EXT:lang/locallang_general.xml:LGL.default_value', 0]],
@@ -39,6 +40,7 @@ $GLOBALS['TCA']['tx_party_types'] = [
             'label'       => 'LLL:EXT:lang/locallang_general.xml:LGL.l18n_parent',
             'config'      => [
                 'type'  => 'select',
+                'renderType' => 'selectSingle',
                 'items' => [['', 0]],
                 'foreign_table'       => 'tx_party_types',
                 'foreign_table_where' => 'AND tx_party_types.pid=###CURRENT_PID### AND tx_party_types.sys_language_uid IN (-1,0)',
@@ -84,6 +86,7 @@ $GLOBALS['TCA']['tx_party_types'] = [
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_types.allowed_for_field',
             'config' => [
                 'type' => 'select',
+                'renderType' => 'selectSingle',
                 'items' => [['LLL:EXT:party/locallang_db.xml:tx_party_types.allowed_for_field.I.0', 'tx_party_addresses-premise_type'], ['LLL:EXT:party/locallang_db.xml:tx_party_types.allowed_for_field.I.1', 'tx_party_contacts-type'], ['LLL:EXT:party/locallang_db.xml:tx_party_types.allowed_for_field.I.2', 'tx_party_countries_of_residence-residency_type'], ['LLL:EXT:party/locallang_db.xml:tx_party_types.allowed_for_field.I.3', 'tx_party_documents-document_type'], ['LLL:EXT:party/locallang_db.xml:tx_party_types.allowed_for_field.I.4', 'tx_party_accounts-account_type'], ['LLL:EXT:party/locallang_db.xml:tx_party_types.allowed_for_field.I.5', 'tx_party_languages-type'], ['LLL:EXT:party/locallang_db.xml:tx_party_types.allowed_for_field.I.6', 'tx_party_accounts-ownership_type'], ['LLL:EXT:party/locallang_db.xml:tx_party_types.allowed_for_field.I.7', 'tx_party_nationalities-nationality_type'], ['LLL:EXT:party/locallang_db.xml:tx_party_types.allowed_for_field.I.8', 'tx_party_occupations-employment_type'], ['LLL:EXT:party/locallang_db.xml:tx_party_types.allowed_for_field.i.9', 'tx_party_organisations-organisation_type'], ['LLL:EXT:party/locallang_db.xml:tx_party_types.allowed_for_field.i.10', 'tx_party_revenues-type'], ['LLL:EXT:party/locallang_db.xml:tx_party_types.allowed_for_field.i.11', 'tx_party_vehicles-type'], ['LLL:EXT:party/locallang_db.xml:tx_party_types.allowed_for_field.I.12', 'tx_party_electronic_address_identifiers-typE'], ['LLL:EXT:party/locallang_db.xml:tx_party_types.allowed_for_field.I.13', 'tx_party_events-type'], ['LLL:EXT:party/locallang_db.xml:tx_party_types.allowed_for_field.I.14', 'tx_party_identifiers-type'], ['LLL:EXT:party/locallang_db.xml:tx_party_types.allowed_for_field.I.15', 'tx_party_memberships-type'], ['LLL:EXT:party/locallang_db.xml:tx_party_types.allowed_for_field.i.16', 'tx_party_favourites-type'], ['LLL:EXT:party/locallang_db.xml:tx_party_types.allowed_for_field.i.17', 'tx_party_preferences-type']],
                 'size' => 1,
                 'maxitems' => 1,
@@ -94,6 +97,7 @@ $GLOBALS['TCA']['tx_party_types'] = [
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_types.allowed_for_party_type',
             'config' => [
                 'type' => 'select',
+                'renderType' => 'selectSingle',
                 'items' => [['LLL:EXT:party/locallang_db.xml:tx_party_types.allowed_for_party_type.I.0', 'ALL'], ['LLL:EXT:party/locallang_db.xml:tx_party_types.allowed_for_party_type.I.1', 'PERSONS'], ['LLL:EXT:party/locallang_db.xml:tx_party_types.allowed_for_party_type.I.2', 'ORGANISATIONS']],
                 'size' => 1,
                 'maxitems' => 1,
@@ -102,7 +106,7 @@ $GLOBALS['TCA']['tx_party_types'] = [
     ],
     'types' => [
         '0' => [
-            'showitem' => 'sys_language_uid;;;;1-1-1, l18n_parent, l18n_diffsource, short_title, title;;;;2-2-2, long_title;;;;3-3-3, allowed_for_field, allowed_for_party_type',
+            'showitem' => 'sys_language_uid,--palette--;;,l18n_parent,l18n_diffsource,short_title,title,--palette--;;,long_title,--palette--;;,allowed_for_field,allowed_for_party_type',
         ],
     ],
     'palettes' => [

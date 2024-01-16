@@ -25,6 +25,7 @@ $GLOBALS['TCA']['tx_party_images'] = [
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_images.type',
             'config' => [
                 'type' => 'select',
+                'renderType' => 'selectSingle',
                 'items' => [['LLL:EXT:party/locallang_db.xml:tx_party_images.type.I.0', '0'], ['LLL:EXT:party/locallang_db.xml:tx_party_images.type.I.1', '1']],
                 'size' => 1,
                 'maxitems' => 1,
@@ -101,10 +102,10 @@ $GLOBALS['TCA']['tx_party_images'] = [
     ],
     'types' => [
         '0' => [
-            'showitem' => 'type;;;;1-1-1, party, image, title;;;;2-2-2, description;;;;3-3-3, remarks',
+            'showitem' => 'type,--palette--;;,party,image,title,--palette--;;,description,--palette--;;,remarks',
         ],
         '1' => [
-            'showitem' => 'type;;;;1-1-1, address, image, title;;;;2-2-2, description;;;;3-3-3, remarks',
+            'showitem' => 'type,--palette--;;,address,image,title,--palette--;;,description,--palette--;;,remarks',
         ],
     ],
 ];

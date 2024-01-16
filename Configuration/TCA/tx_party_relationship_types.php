@@ -80,7 +80,7 @@ $GLOBALS['TCA']['tx_party_relationship_types'] = [
     ],
     'types' => [
         '0' => [
-            'showitem' => 'relationship_type;;;;1-1-1, description_as_primary, description_as_secondary, organisation_allowed_as_primary, organisation_allowed_as_secondary, person_allowed_as_primary, person_allowed_as_secondary',
+            'showitem' => 'relationship_type,--palette--;;,description_as_primary,description_as_secondary,organisation_allowed_as_primary,organisation_allowed_as_secondary,person_allowed_as_primary,person_allowed_as_secondary',
         ],
     ],
     'palettes' => [

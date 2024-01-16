@@ -23,6 +23,7 @@ $GLOBALS['TCA']['tx_party_memberships'] = [
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_memberships.party',
             'config' => [
                 'type' => 'select',
+                'renderType' => 'selectSingle',
                 'items' => [['', 0]],
                 'foreign_table' => 'tx_party_parties',
                 'foreign_table_where' => 'AND tx_party_parties.pid=###STORAGE_PID### ORDER BY tx_party_parties.uid',
@@ -36,6 +37,7 @@ $GLOBALS['TCA']['tx_party_memberships'] = [
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_memberships.type',
             'config' => [
                 'type' => 'select',
+                'renderType' => 'selectSingle',
                 'items' => [['', 0]],
                 'foreign_table' => 'tx_party_types',
                 'foreign_table_where' => "AND tx_party_types.allowed_for_field LIKE '%tx_party_memberships-type%' AND tx_party_types.pid=###STORAGE_PID### ORDER BY tx_party_types.uid",
@@ -49,6 +51,7 @@ $GLOBALS['TCA']['tx_party_memberships'] = [
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_memberships.organisation',
             'config' => [
                 'type' => 'select',
+                'renderType' => 'selectSingle',
                 'foreign_table' => 'tx_party_parties',
                 'foreign_table_where' => 'AND tx_party_parties.pid=###STORAGE_PID### ORDER BY tx_party_parties.uid',
                 'size' => 1,
@@ -92,7 +95,7 @@ $GLOBALS['TCA']['tx_party_memberships'] = [
     ],
     'types' => [
         '0' => [
-            'showitem' => 'party;;;;1-1-1, type, organisation, issue_date;;;;1-1-1, expiry_date, remarks;;;;1-1-1',
+            'showitem' => 'party,--palette--;;,type,organisation,issue_date,--palette--;;,expiry_date,remarks,--palette--;;',
         ],
     ],
     'palettes' => [

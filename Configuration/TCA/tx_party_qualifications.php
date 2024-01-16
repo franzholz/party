@@ -25,6 +25,7 @@ $GLOBALS['TCA']['tx_party_qualifications'] = [
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_qualifications.party',
             'config' => [
                 'type' => 'select',
+                'renderType' => 'selectSingle',
                 'items' => [['', 0]],
                 'foreign_table' => 'tx_party_parties',
                 'foreign_table_where' => 'AND tx_party_parties.pid=###STORAGE_PID### ORDER BY tx_party_parties.uid',
@@ -48,6 +49,7 @@ $GLOBALS['TCA']['tx_party_qualifications'] = [
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_qualifications.status',
             'config' => [
                 'type' => 'select',
+                'renderType' => 'selectSingle',
                 'foreign_table' => 'tx_party_qualification_status',
                 'foreign_table_where' => 'AND tx_party_qualification_status.pid=###STORAGE_PID### ORDER BY tx_party_qualification_status.uid',
                 'size' => 1,
@@ -60,6 +62,7 @@ $GLOBALS['TCA']['tx_party_qualifications'] = [
             'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_qualifications.institution',
             'config' => [
                 'type' => 'select',
+                'renderType' => 'selectSingle',
                 'foreign_table' => 'tx_party_parties',
                 'foreign_table_where' => 'AND tx_party_parties.pid=###STORAGE_PID### AND tx_party_parties.type=1 ORDER BY tx_party_parties.uid',
                 'size' => 1,
@@ -183,7 +186,7 @@ $GLOBALS['TCA']['tx_party_qualifications'] = [
     ],
     'types' => [
         '0' => [
-            'showitem' => 'party;;;;1-1-1, qualification_name, institution, status, start_date;;;;1-1-1, completion_date;;1, major_subject;;;;1-1-1, minor_subject, mark;;2, remarks;;;;1-1-1',
+            'showitem' => 'party,--palette--;;,qualification_name,institution,status,start_date,--palette--;;,completion_date,--palette--;;1,major_subject,--palette--;;,minor_subject,mark,--palette--;;2,remarks,--palette--;;',
         ],
     ],
     'palettes' => [
