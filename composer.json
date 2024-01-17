@@ -25,6 +25,7 @@
     "php": "^8.1",
     "typo3/cms-core": "^11.5 || ^12",
     "jambagecom/div2007": "^2.0",
+    "friendsoftypo3/typo3db-legacy": "^1.1",
     "sjbr/static-info-tables": "^11.5 || ^12.4"
   },
   "autoload": {
