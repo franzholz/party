@@ -8,14 +8,10 @@ if (!defined('PARTY_EXT')) {
     define('PARTY_EXT', 'party');
 }
 
-if (!defined('PATH_BE_PARTY')) {
-    define('PATH_BE_PARTY', ExtensionManagementUtility::extPath('party'));
-}
-
 // Activate Hooks in TCE-Main for the hotlist updates of static_info_tables
 $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_tcemain.php']['processDatamapClass'][] = 'EXT:party/hooks/class.tx_party_staticinfotables.php:tx_party_staticinfotables';
 
-require_once(PATH_BE_PARTY . 'Classes/Api/Api.php');
+require_once(ExtensionManagementUtility::extPath('party') . 'Classes/Api/Api.php');
 
 $tableArray = \JambageCom\Party\Api\Api::getTableArray();
 
@@ -42,13 +38,5 @@ if (
             'tx_party_identifiers' => 'tx_party_identifiers',
         ]
     );
-}
-
-
-// support for new Caching Framework
-
-// Register cache 'tx_party_cache'
-if (!isset($GLOBALS['TYPO3_CONF_VARS']['SYS']['caching']['cacheConfigurations']['tx_party_cache'])) {
-    $GLOBALS['TYPO3_CONF_VARS']['SYS']['caching']['cacheConfigurations']['tx_party_cache'] = [];
 }
 
