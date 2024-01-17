@@ -48,12 +48,7 @@ if (
 // support for new Caching Framework
 
 // Register cache 'tx_party_cache'
-if (!is_array($GLOBALS['TYPO3_CONF_VARS']['SYS']['caching']['cacheConfigurations']['tx_party_cache'])) {
+if (!isset($GLOBALS['TYPO3_CONF_VARS']['SYS']['caching']['cacheConfigurations']['tx_party_cache'])) {
     $GLOBALS['TYPO3_CONF_VARS']['SYS']['caching']['cacheConfigurations']['tx_party_cache'] = [];
 }
 
-// Hook for extending the tt_products classes
-$GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['tt_products']['fieldClass']['address']['party'] =
-    [
-        'addresses' => 'tx_party_models_addresses',
-    ];
