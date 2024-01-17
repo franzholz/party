@@ -1,0 +1,1382 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file source-language="en" datatype="plaintext" original="EXT:party/Resources/Private/Language/locallang.xlf" date="2024-01-17T19:04:54Z" product-name="party">
+		<header/>
+		<body>
+			<trans-unit id="tx_party_birth_signs" resname="tx_party_birth_signs" >
+				<source>Birth Sign</source>
+			</trans-unit>
+			<trans-unit id="tx_party_birth_signs.short_title" resname="tx_party_birth_signs.short_title" >
+				<source>Short title</source>
+			</trans-unit>
+			<trans-unit id="tx_party_birth_signs.title" resname="tx_party_birth_signs.title" >
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_party_birth_signs.long_title" resname="tx_party_birth_signs.long_title" >
+				<source>Long title</source>
+			</trans-unit>
+			<trans-unit id="tx_party_ethnicities" resname="tx_party_ethnicities" >
+				<source>Ethnicity</source>
+			</trans-unit>
+			<trans-unit id="tx_party_ethnicities.short_title" resname="tx_party_ethnicities.short_title" >
+				<source>Short title</source>
+			</trans-unit>
+			<trans-unit id="tx_party_ethnicities.title" resname="tx_party_ethnicities.title" >
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_party_ethnicities.long_title" resname="tx_party_ethnicities.long_title" >
+				<source>Long title</source>
+			</trans-unit>
+			<trans-unit id="tx_party_habits" resname="tx_party_habits" >
+				<source>Habit</source>
+			</trans-unit>
+			<trans-unit id="tx_party_habits.short_title" resname="tx_party_habits.short_title" >
+				<source>Short title</source>
+			</trans-unit>
+			<trans-unit id="tx_party_habits.title" resname="tx_party_habits.title" >
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_party_habits.long_title" resname="tx_party_habits.long_title" >
+				<source>Long title</source>
+			</trans-unit>
+			<trans-unit id="tx_party_hobbies" resname="tx_party_hobbies" >
+				<source>Hobby</source>
+			</trans-unit>
+			<trans-unit id="tx_party_hobbies.short_title" resname="tx_party_hobbies.short_title" >
+				<source>Short title</source>
+			</trans-unit>
+			<trans-unit id="tx_party_hobbies.title" resname="tx_party_hobbies.title" >
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_party_hobbies.long_title" resname="tx_party_hobbies.long_title" >
+				<source>Long title</source>
+			</trans-unit>
+			<trans-unit id="tx_party_occupation_ranks" resname="tx_party_occupation_ranks" >
+				<source>Occupation Rank</source>
+			</trans-unit>
+			<trans-unit id="tx_party_occupation_ranks.short_title" resname="tx_party_occupation_ranks.short_title" >
+				<source>Short title</source>
+			</trans-unit>
+			<trans-unit id="tx_party_occupation_ranks.title" resname="tx_party_occupation_ranks.title" >
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_party_occupation_ranks.long_title" resname="tx_party_occupation_ranks.long_title" >
+				<source>Long title</source>
+			</trans-unit>
+			<trans-unit id="tx_party_occupation_roles" resname="tx_party_occupation_roles" >
+				<source>Occupation Role</source>
+			</trans-unit>
+			<trans-unit id="tx_party_occupation_roles.short_title" resname="tx_party_occupation_roles.short_title" >
+				<source>Short title</source>
+			</trans-unit>
+			<trans-unit id="tx_party_occupation_roles.title" resname="tx_party_occupation_roles.title" >
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_party_occupation_roles.long_title" resname="tx_party_occupation_roles.long_title" >
+				<source>Long title</source>
+			</trans-unit>
+			<trans-unit id="tx_party_organisation_natures" resname="tx_party_organisation_natures" >
+				<source>Organisation Nature</source>
+			</trans-unit>
+			<trans-unit id="tx_party_organisation_natures.short_title" resname="tx_party_organisation_natures.short_title" >
+				<source>Short title</source>
+			</trans-unit>
+			<trans-unit id="tx_party_organisation_natures.title" resname="tx_party_organisation_natures.title" >
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_party_organisation_natures.long_title" resname="tx_party_organisation_natures.long_title" >
+				<source>Long title</source>
+			</trans-unit>
+			<trans-unit id="tx_party_person_name_titles" resname="tx_party_person_name_titles" >
+				<source>Person Name Title</source>
+			</trans-unit>
+			<trans-unit id="tx_party_person_name_titles.short_title" resname="tx_party_person_name_titles.short_title" >
+				<source>Short title</source>
+			</trans-unit>
+			<trans-unit id="tx_party_person_name_titles.title" resname="tx_party_person_name_titles.title" >
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_party_person_name_titles.long_title" resname="tx_party_person_name_titles.long_title" >
+				<source>Long title</source>
+			</trans-unit>
+			<trans-unit id="tx_party_physical_status" resname="tx_party_physical_status" >
+				<source>Physical Status</source>
+			</trans-unit>
+			<trans-unit id="tx_party_physical_status.short_title" resname="tx_party_physical_status.short_title" >
+				<source>Short title</source>
+			</trans-unit>
+			<trans-unit id="tx_party_physical_status.title" resname="tx_party_physical_status.title" >
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_party_physical_status.long_title" resname="tx_party_physical_status.long_title" >
+				<source>Long title</source>
+			</trans-unit>
+			<trans-unit id="tx_party_qualification_status" resname="tx_party_qualification_status" >
+				<source>Qualification Status</source>
+			</trans-unit>
+			<trans-unit id="tx_party_qualification_status.short_title" resname="tx_party_qualification_status.short_title" >
+				<source>Short title</source>
+			</trans-unit>
+			<trans-unit id="tx_party_qualification_status.title" resname="tx_party_qualification_status.title" >
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_party_qualification_status.long_title" resname="tx_party_qualification_status.long_title" >
+				<source>Long title</source>
+			</trans-unit>
+			<trans-unit id="tx_party_religions" resname="tx_party_religions" >
+				<source>Religion</source>
+			</trans-unit>
+			<trans-unit id="tx_party_religions.short_title" resname="tx_party_religions.short_title" >
+				<source>Short title</source>
+			</trans-unit>
+			<trans-unit id="tx_party_religions.title" resname="tx_party_religions.title" >
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_party_religions.long_title" resname="tx_party_religions.long_title" >
+				<source>Long title</source>
+			</trans-unit>
+			<trans-unit id="tx_party_types" resname="tx_party_types" >
+				<source>Type</source>
+			</trans-unit>
+			<trans-unit id="tx_party_types.short_title" resname="tx_party_types.short_title" >
+				<source>Short title</source>
+			</trans-unit>
+			<trans-unit id="tx_party_types.title" resname="tx_party_types.title" >
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_party_types.long_title" resname="tx_party_types.long_title" >
+				<source>Long title</source>
+			</trans-unit>
+			<trans-unit id="tx_party_types.allowed_for_field.I.0" resname="tx_party_types.allowed_for_field.I.0" >
+				<source>Address - Premise Type</source>
+			</trans-unit>
+			<trans-unit id="tx_party_types.allowed_for_field.I.1" resname="tx_party_types.allowed_for_field.I.1" >
+				<source>Contact - Type</source>
+			</trans-unit>
+			<trans-unit id="tx_party_types.allowed_for_field.I.2" resname="tx_party_types.allowed_for_field.I.2" >
+				<source>Country of Residency - Residency Type</source>
+			</trans-unit>
+			<trans-unit id="tx_party_types.allowed_for_field.I.3" resname="tx_party_types.allowed_for_field.I.3" >
+				<source>Document - Document Type</source>
+			</trans-unit>
+			<trans-unit id="tx_party_types.allowed_for_field.I.4" resname="tx_party_types.allowed_for_field.I.4" >
+				<source>Account - Account Type</source>
+			</trans-unit>
+			<trans-unit id="tx_party_types.allowed_for_field.I.5" resname="tx_party_types.allowed_for_field.I.5" >
+				<source>Language - Type</source>
+			</trans-unit>
+			<trans-unit id="tx_party_types.allowed_for_field.I.6" resname="tx_party_types.allowed_for_field.I.6" >
+				<source>Account - Ownership Type</source>
+			</trans-unit>
+			<trans-unit id="tx_party_types.allowed_for_field.I.7" resname="tx_party_types.allowed_for_field.I.7" >
+				<source>Nationality - Nationality Type</source>
+			</trans-unit>
+			<trans-unit id="tx_party_types.allowed_for_field.I.8" resname="tx_party_types.allowed_for_field.I.8" >
+				<source>Occupation - Employment Type</source>
+			</trans-unit>
+			<trans-unit id="tx_party_types.allowed_for_field.I.9" resname="tx_party_types.allowed_for_field.I.9" >
+				<source>Organisation - Organisation Type</source>
+			</trans-unit>
+			<trans-unit id="tx_party_types.allowed_for_field.I.10" resname="tx_party_types.allowed_for_field.I.10" >
+				<source>Revenue - Type</source>
+			</trans-unit>
+			<trans-unit id="tx_party_types.allowed_for_field.I.11" resname="tx_party_types.allowed_for_field.I.11" >
+				<source>Vehicle - Type</source>
+			</trans-unit>
+			<trans-unit id="tx_party_types.allowed_for_field.I.12" resname="tx_party_types.allowed_for_field.I.12" >
+				<source>Electronic Address Identifier - Type</source>
+			</trans-unit>
+			<trans-unit id="tx_party_types.allowed_for_field.I.13" resname="tx_party_types.allowed_for_field.I.13" >
+				<source>Event - Type</source>
+			</trans-unit>
+			<trans-unit id="tx_party_types.allowed_for_field.I.14" resname="tx_party_types.allowed_for_field.I.14" >
+				<source>Identifier - Type</source>
+			</trans-unit>
+			<trans-unit id="tx_party_types.allowed_for_field.I.15" resname="tx_party_types.allowed_for_field.I.15" >
+				<source>Membership - Type</source>
+			</trans-unit>
+			<trans-unit id="tx_party_types.allowed_for_field.I.16" resname="tx_party_types.allowed_for_field.I.16" >
+				<source>Favourite - Type</source>
+			</trans-unit>
+			<trans-unit id="tx_party_types.allowed_for_field.I.17" resname="tx_party_types.allowed_for_field.I.17" >
+				<source>Preference - Type</source>
+			</trans-unit>
+			<trans-unit id="tx_party_types.allowed_for_field" resname="tx_party_types.allowed_for_field" >
+				<source>Allowed for field</source>
+			</trans-unit>
+			<trans-unit id="tx_party_types.allowed_for_party_type.I.0" resname="tx_party_types.allowed_for_party_type.I.0" >
+				<source>All</source>
+			</trans-unit>
+			<trans-unit id="tx_party_types.allowed_for_party_type.I.1" resname="tx_party_types.allowed_for_party_type.I.1" >
+				<source>Only Persons</source>
+			</trans-unit>
+			<trans-unit id="tx_party_types.allowed_for_party_type.I.2" resname="tx_party_types.allowed_for_party_type.I.2" >
+				<source>Only Organisations</source>
+			</trans-unit>
+			<trans-unit id="tx_party_types.allowed_for_party_type" resname="tx_party_types.allowed_for_party_type" >
+				<source>Allowed for party types</source>
+			</trans-unit>
+			<trans-unit id="tx_party_vehicle_manufacturers" resname="tx_party_vehicle_manufacturers" >
+				<source>Vehicle Manufacturer</source>
+			</trans-unit>
+			<trans-unit id="tx_party_vehicle_manufacturers.short_title" resname="tx_party_vehicle_manufacturers.short_title" >
+				<source>Short title</source>
+			</trans-unit>
+			<trans-unit id="tx_party_vehicle_manufacturers.title" resname="tx_party_vehicle_manufacturers.title" >
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_party_vehicle_manufacturers.long_title" resname="tx_party_vehicle_manufacturers.long_title" >
+				<source>Long title</source>
+			</trans-unit>
+			<trans-unit id="tx_party_accounts" resname="tx_party_accounts" >
+				<source>Account</source>
+			</trans-unit>
+			<trans-unit id="tx_party_accounts.party" resname="tx_party_accounts.party" >
+				<source>Party</source>
+			</trans-unit>
+			<trans-unit id="tx_party_accounts.organisation" resname="tx_party_accounts.organisation" >
+				<source>Organisation</source>
+			</trans-unit>
+			<trans-unit id="tx_party_accounts.ownership_type" resname="tx_party_accounts.ownership_type" >
+				<source>Ownership Type</source>
+			</trans-unit>
+			<trans-unit id="tx_party_accounts.account_id" resname="tx_party_accounts.account_id" >
+				<source>Account ID</source>
+			</trans-unit>
+			<trans-unit id="tx_party_accounts.issuing_authority" resname="tx_party_accounts.issuing_authority" >
+				<source>Issuing authority</source>
+			</trans-unit>
+			<trans-unit id="tx_party_accounts.account_type" resname="tx_party_accounts.account_type" >
+				<source>Account type</source>
+			</trans-unit>
+			<trans-unit id="tx_party_accounts.remarks" resname="tx_party_accounts.remarks" >
+				<source>Remarks</source>
+			</trans-unit>
+			<trans-unit id="tx_party_addresses" resname="tx_party_addresses" >
+				<source>Address</source>
+			</trans-unit>
+			<trans-unit id="tx_party_addresses.parties" resname="tx_party_addresses.parties" >
+				<source>Parties</source>
+			</trans-unit>
+			<trans-unit id="tx_party_addresses.locality" resname="tx_party_addresses.locality" >
+				<source>Locality</source>
+			</trans-unit>
+			<trans-unit id="tx_party_addresses.thoroughfare" resname="tx_party_addresses.thoroughfare" >
+				<source>Thoroughfare</source>
+			</trans-unit>
+			<trans-unit id="tx_party_addresses.thoroughfare_number" resname="tx_party_addresses.thoroughfare_number" >
+				<source>Thoroughfare number</source>
+			</trans-unit>
+			<trans-unit id="tx_party_addresses.building_name" resname="tx_party_addresses.building_name" >
+				<source>Building name</source>
+			</trans-unit>
+			<trans-unit id="tx_party_addresses.location" resname="tx_party_addresses.location" >
+				<source>Location</source>
+			</trans-unit>
+			<trans-unit id="tx_party_addresses.lot" resname="tx_party_addresses.lot" >
+				<source>Lot</source>
+			</trans-unit>
+			<trans-unit id="tx_party_addresses.premise_type" resname="tx_party_addresses.premise_type" >
+				<source>Premise type</source>
+			</trans-unit>
+			<trans-unit id="tx_party_addresses.internal_thoroughfare" resname="tx_party_addresses.internal_thoroughfare" >
+				<source>Internal thoroughfare</source>
+			</trans-unit>
+			<trans-unit id="tx_party_addresses.reference_location" resname="tx_party_addresses.reference_location" >
+				<source>Reference location</source>
+			</trans-unit>
+			<trans-unit id="tx_party_addresses.post_code" resname="tx_party_addresses.post_code" >
+				<source>Post code</source>
+			</trans-unit>
+			<trans-unit id="tx_party_addresses.rural_delivery" resname="tx_party_addresses.rural_delivery" >
+				<source>Rural delivery</source>
+			</trans-unit>
+			<trans-unit id="tx_party_addresses.latitude" resname="tx_party_addresses.latitude" >
+				<source>Latitude</source>
+			</trans-unit>
+			<trans-unit id="tx_party_addresses.latitude_degrees_measure" resname="tx_party_addresses.latitude_degrees_measure" >
+				<source>Degrees</source>
+			</trans-unit>
+			<trans-unit id="tx_party_addresses.latitude_minutes_measure" resname="tx_party_addresses.latitude_minutes_measure" >
+				<source>Minutes</source>
+			</trans-unit>
+			<trans-unit id="tx_party_addresses.latitude_seconds_measure" resname="tx_party_addresses.latitude_seconds_measure" >
+				<source>Seconds</source>
+			</trans-unit>
+			<trans-unit id="tx_party_addresses.latitude_direction_code.I.0" resname="tx_party_addresses.latitude_direction_code.I.0" >
+				<source>North</source>
+			</trans-unit>
+			<trans-unit id="tx_party_addresses.latitude_direction_code.I.1" resname="tx_party_addresses.latitude_direction_code.I.1" >
+				<source>South</source>
+			</trans-unit>
+			<trans-unit id="tx_party_addresses.latitude_direction_code" resname="tx_party_addresses.latitude_direction_code" >
+				<source>Direction</source>
+			</trans-unit>
+			<trans-unit id="tx_party_addresses.longitude" resname="tx_party_addresses.longitude" >
+				<source>Longitude</source>
+			</trans-unit>
+			<trans-unit id="tx_party_addresses.longitude_degrees_measure" resname="tx_party_addresses.longitude_degrees_measure" >
+				<source>Degrees</source>
+			</trans-unit>
+			<trans-unit id="tx_party_addresses.longitude_minutes_measure" resname="tx_party_addresses.longitude_minutes_measure" >
+				<source>Minutes</source>
+			</trans-unit>
+			<trans-unit id="tx_party_addresses.longitude_seconds_measure" resname="tx_party_addresses.longitude_seconds_measure" >
+				<source>Seconds</source>
+			</trans-unit>
+			<trans-unit id="tx_party_addresses.longitude_direction_code.I.0" resname="tx_party_addresses.longitude_direction_code.I.0" >
+				<source>West</source>
+			</trans-unit>
+			<trans-unit id="tx_party_addresses.longitude_direction_code.I.1" resname="tx_party_addresses.longitude_direction_code.I.1" >
+				<source>East</source>
+			</trans-unit>
+			<trans-unit id="tx_party_addresses.longitude_direction_code" resname="tx_party_addresses.longitude_direction_code" >
+				<source>Direction</source>
+			</trans-unit>
+			<trans-unit id="tx_party_addresses.postal_delivery_point" resname="tx_party_addresses.postal_delivery_point" >
+				<source>Postal delivery point</source>
+			</trans-unit>
+			<trans-unit id="tx_party_addresses.post_office" resname="tx_party_addresses.post_office" >
+				<source>Post office</source>
+			</trans-unit>
+			<trans-unit id="tx_party_addresses.post_town" resname="tx_party_addresses.post_town" >
+				<source>Post town</source>
+			</trans-unit>
+			<trans-unit id="tx_party_addresses.administrative_area" resname="tx_party_addresses.administrative_area" >
+				<source>Administrative area</source>
+			</trans-unit>
+			<trans-unit id="tx_party_addresses.country" resname="tx_party_addresses.country" >
+				<source>Country</source>
+			</trans-unit>
+			<trans-unit id="tx_party_addresses.images" resname="tx_party_addresses.images" >
+				<source>Images</source>
+			</trans-unit>
+			<trans-unit id="tx_party_addresses.remarks" resname="tx_party_addresses.remarks" >
+				<source>Remarks</source>
+			</trans-unit>
+			<trans-unit id="tx_party_contacts" resname="tx_party_contacts" >
+				<source>Contact</source>
+			</trans-unit>
+			<trans-unit id="tx_party_contacts.party" resname="tx_party_contacts.party" >
+				<source>Party</source>
+			</trans-unit>
+			<trans-unit id="tx_party_contacts.type" resname="tx_party_contacts.type" >
+				<source>Type</source>
+			</trans-unit>
+			<trans-unit id="tx_party_contacts.contact" resname="tx_party_contacts.contact" >
+				<source>Contact</source>
+			</trans-unit>
+			<trans-unit id="tx_party_contacts.remarks" resname="tx_party_contacts.remarks" >
+				<source>Remarks</source>
+			</trans-unit>
+			<trans-unit id="tx_party_contact_numbers" resname="tx_party_contact_numbers" >
+				<source>Contact Number</source>
+			</trans-unit>
+			<trans-unit id="tx_party_contact_numbers.parties" resname="tx_party_contact_numbers.parties" >
+				<source>Parties</source>
+			</trans-unit>
+			<trans-unit id="tx_party_contact_numbers.media_type.I.0" resname="tx_party_contact_numbers.media_type.I.0" >
+				<source>Telephone</source>
+			</trans-unit>
+			<trans-unit id="tx_party_contact_numbers.media_type.I.1" resname="tx_party_contact_numbers.media_type.I.1" >
+				<source>Mobile</source>
+			</trans-unit>
+			<trans-unit id="tx_party_contact_numbers.media_type.I.2" resname="tx_party_contact_numbers.media_type.I.2" >
+				<source>Fax</source>
+			</trans-unit>
+			<trans-unit id="tx_party_contact_numbers.media_type.I.3" resname="tx_party_contact_numbers.media_type.I.3" >
+				<source>Modem</source>
+			</trans-unit>
+			<trans-unit id="tx_party_contact_numbers.media_type" resname="tx_party_contact_numbers.media_type" >
+				<source>Media type</source>
+			</trans-unit>
+			<trans-unit id="tx_party_contact_numbers.country" resname="tx_party_contact_numbers.country" >
+				<source>Country</source>
+			</trans-unit>
+			<trans-unit id="tx_party_contact_numbers.area_code" resname="tx_party_contact_numbers.area_code" >
+				<source>Area code</source>
+			</trans-unit>
+			<trans-unit id="tx_party_contact_numbers.local_number" resname="tx_party_contact_numbers.local_number" >
+				<source>Local number</source>
+			</trans-unit>
+			<trans-unit id="tx_party_contact_numbers.extension" resname="tx_party_contact_numbers.extension" >
+				<source>Extension</source>
+			</trans-unit>
+			<trans-unit id="tx_party_contact_numbers.pin" resname="tx_party_contact_numbers.pin" >
+				<source>Pin</source>
+			</trans-unit>
+			<trans-unit id="tx_party_contact_numbers.contact_hours" resname="tx_party_contact_numbers.contact_hours" >
+				<source>Contact hours</source>
+			</trans-unit>
+			<trans-unit id="tx_party_contact_numbers.remarks" resname="tx_party_contact_numbers.remarks" >
+				<source>Remarks</source>
+			</trans-unit>
+			<trans-unit id="tx_party_countries_of_residence" resname="tx_party_countries_of_residence" >
+				<source>Country of Residence</source>
+			</trans-unit>
+			<trans-unit id="tx_party_countries_of_residence.party" resname="tx_party_countries_of_residence.party" >
+				<source>Party</source>
+			</trans-unit>
+			<trans-unit id="tx_party_countries_of_residence.country" resname="tx_party_countries_of_residence.country" >
+				<source>Country</source>
+			</trans-unit>
+			<trans-unit id="tx_party_countries_of_residence.residency_type" resname="tx_party_countries_of_residence.residency_type" >
+				<source>Residency type</source>
+			</trans-unit>
+			<trans-unit id="tx_party_countries_of_residence.remarks" resname="tx_party_countries_of_residence.remarks" >
+				<source>Remarks</source>
+			</trans-unit>
+			<trans-unit id="tx_party_disabilities" resname="tx_party_disabilities" >
+				<source>Disability</source>
+			</trans-unit>
+			<trans-unit id="tx_party_disabilities.party" resname="tx_party_disabilities.party" >
+				<source>Party</source>
+			</trans-unit>
+			<trans-unit id="tx_party_disabilities.disability" resname="tx_party_disabilities.disability" >
+				<source>Disability</source>
+			</trans-unit>
+			<trans-unit id="tx_party_disabilities.cause" resname="tx_party_disabilities.cause" >
+				<source>Cause</source>
+			</trans-unit>
+			<trans-unit id="tx_party_disabilities.remarks" resname="tx_party_disabilities.remarks" >
+				<source>Remarks</source>
+			</trans-unit>
+			<trans-unit id="tx_party_documents" resname="tx_party_documents" >
+				<source>Document</source>
+			</trans-unit>
+			<trans-unit id="tx_party_documents.party" resname="tx_party_documents.party" >
+				<source>Party</source>
+			</trans-unit>
+			<trans-unit id="tx_party_documents.document_type" resname="tx_party_documents.document_type" >
+				<source>Document type</source>
+			</trans-unit>
+			<trans-unit id="tx_party_documents.document_id" resname="tx_party_documents.document_id" >
+				<source>Document ID</source>
+			</trans-unit>
+			<trans-unit id="tx_party_documents.issued_by" resname="tx_party_documents.issued_by" >
+				<source>Issued by</source>
+			</trans-unit>
+			<trans-unit id="tx_party_documents.issue_place" resname="tx_party_documents.issue_place" >
+				<source>Issue place</source>
+			</trans-unit>
+			<trans-unit id="tx_party_documents.privilege" resname="tx_party_documents.privilege" >
+				<source>Privilege</source>
+			</trans-unit>
+			<trans-unit id="tx_party_documents.restriction" resname="tx_party_documents.restriction" >
+				<source>Restriction</source>
+			</trans-unit>
+			<trans-unit id="tx_party_documents.group_name" resname="tx_party_documents.group_name" >
+				<source>Group name</source>
+			</trans-unit>
+			<trans-unit id="tx_party_documents.name_on_document" resname="tx_party_documents.name_on_document" >
+				<source>Name on document</source>
+			</trans-unit>
+			<trans-unit id="tx_party_documents.remarks" resname="tx_party_documents.remarks" >
+				<source>Remarks</source>
+			</trans-unit>
+			<trans-unit id="tx_party_electronic_address_identifiers" resname="tx_party_electronic_address_identifiers" >
+				<source>Electronic Address Identifier</source>
+			</trans-unit>
+			<trans-unit id="tx_party_electronic_address_identifiers.parties" resname="tx_party_electronic_address_identifiers.parties" >
+				<source>Parties</source>
+			</trans-unit>
+			<trans-unit id="tx_party_electronic_address_identifiers.type" resname="tx_party_electronic_address_identifiers.type" >
+				<source>Type</source>
+			</trans-unit>
+			<trans-unit id="tx_party_electronic_address_identifiers.electronic_address_identifier" resname="tx_party_electronic_address_identifiers.electronic_address_identifier" >
+				<source>Electronic address identifier</source>
+			</trans-unit>
+			<trans-unit id="tx_party_electronic_address_identifiers.remarks" resname="tx_party_electronic_address_identifiers.remarks" >
+				<source>Remarks</source>
+			</trans-unit>
+			<trans-unit id="tx_party_images" resname="tx_party_images" >
+				<source>Image</source>
+			</trans-unit>
+			<trans-unit id="tx_party_images.type" resname="tx_party_images.type" >
+				<source>Type</source>
+			</trans-unit>
+			<trans-unit id="tx_party_images.type.I.0" resname="tx_party_images.type.I.0" >
+				<source>Party</source>
+			</trans-unit>
+			<trans-unit id="tx_party_images.type.I.1" resname="tx_party_images.type.I.1" >
+				<source>Address</source>
+			</trans-unit>
+			<trans-unit id="tx_party_images.party" resname="tx_party_images.party" >
+				<source>Party</source>
+			</trans-unit>
+			<trans-unit id="tx_party_images.address" resname="tx_party_images.address" >
+				<source>Address</source>
+			</trans-unit>
+			<trans-unit id="tx_party_images.image" resname="tx_party_images.image" >
+				<source>Image</source>
+			</trans-unit>
+			<trans-unit id="tx_party_images.title" resname="tx_party_images.title" >
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_party_images.description" resname="tx_party_images.description" >
+				<source>Description</source>
+			</trans-unit>
+			<trans-unit id="tx_party_images.remarks" resname="tx_party_images.remarks" >
+				<source>Remarks</source>
+			</trans-unit>
+			<trans-unit id="tx_party_languages" resname="tx_party_languages" >
+				<source>Language</source>
+			</trans-unit>
+			<trans-unit id="tx_party_languages.party" resname="tx_party_languages.party" >
+				<source>Party</source>
+			</trans-unit>
+			<trans-unit id="tx_party_languages.language" resname="tx_party_languages.language" >
+				<source>Language</source>
+			</trans-unit>
+			<trans-unit id="tx_party_languages.type" resname="tx_party_languages.type" >
+				<source>Type</source>
+			</trans-unit>
+			<trans-unit id="tx_party_languages.read_skills.I.0" resname="tx_party_languages.read_skills.I.0" >
+				<source>Yes</source>
+			</trans-unit>
+			<trans-unit id="tx_party_languages.read_skills.I.1" resname="tx_party_languages.read_skills.I.1" >
+				<source>No</source>
+			</trans-unit>
+			<trans-unit id="tx_party_languages.read_skills.I.2" resname="tx_party_languages.read_skills.I.2" >
+				<source>Poor</source>
+			</trans-unit>
+			<trans-unit id="tx_party_languages.read_skills" resname="tx_party_languages.read_skills" >
+				<source>Read</source>
+			</trans-unit>
+			<trans-unit id="tx_party_languages.write_skills.I.0" resname="tx_party_languages.write_skills.I.0" >
+				<source>Yes</source>
+			</trans-unit>
+			<trans-unit id="tx_party_languages.write_skills.I.1" resname="tx_party_languages.write_skills.I.1" >
+				<source>No</source>
+			</trans-unit>
+			<trans-unit id="tx_party_languages.write_skills.I.2" resname="tx_party_languages.write_skills.I.2" >
+				<source>Poor</source>
+			</trans-unit>
+			<trans-unit id="tx_party_languages.write_skills" resname="tx_party_languages.write_skills" >
+				<source>Write</source>
+			</trans-unit>
+			<trans-unit id="tx_party_languages.listen_skills.I.0" resname="tx_party_languages.listen_skills.I.0" >
+				<source>Yes</source>
+			</trans-unit>
+			<trans-unit id="tx_party_languages.listen_skills.I.1" resname="tx_party_languages.listen_skills.I.1" >
+				<source>No</source>
+			</trans-unit>
+			<trans-unit id="tx_party_languages.listen_skills.I.2" resname="tx_party_languages.listen_skills.I.2" >
+				<source>Poor</source>
+			</trans-unit>
+			<trans-unit id="tx_party_languages.listen_skills" resname="tx_party_languages.listen_skills" >
+				<source>Listen</source>
+			</trans-unit>
+			<trans-unit id="tx_party_languages.speak_skills.I.0" resname="tx_party_languages.speak_skills.I.0" >
+				<source>Yes</source>
+			</trans-unit>
+			<trans-unit id="tx_party_languages.speak_skills.I.1" resname="tx_party_languages.speak_skills.I.1" >
+				<source>No</source>
+			</trans-unit>
+			<trans-unit id="tx_party_languages.speak_skills.I.2" resname="tx_party_languages.speak_skills.I.2" >
+				<source>Poor</source>
+			</trans-unit>
+			<trans-unit id="tx_party_languages.speak_skills" resname="tx_party_languages.speak_skills" >
+				<source>Speak</source>
+			</trans-unit>
+			<trans-unit id="tx_party_languages.preference" resname="tx_party_languages.preference" >
+				<source>Preference</source>
+			</trans-unit>
+			<trans-unit id="tx_party_languages.remarks" resname="tx_party_languages.remarks" >
+				<source>Remarks</source>
+			</trans-unit>
+			<trans-unit id="tx_party_marks" resname="tx_party_marks" >
+				<source>Mark</source>
+			</trans-unit>
+			<trans-unit id="tx_party_marks.party" resname="tx_party_marks.party" >
+				<source>Party</source>
+			</trans-unit>
+			<trans-unit id="tx_party_marks.mark" resname="tx_party_marks.mark" >
+				<source>Mark</source>
+			</trans-unit>
+			<trans-unit id="tx_party_marks.body_part" resname="tx_party_marks.body_part" >
+				<source>Body part</source>
+			</trans-unit>
+			<trans-unit id="tx_party_marks.body_part_mark_location" resname="tx_party_marks.body_part_mark_location" >
+				<source>Body part mark location</source>
+			</trans-unit>
+			<trans-unit id="tx_party_marks.remarks" resname="tx_party_marks.remarks" >
+				<source>Remarks</source>
+			</trans-unit>
+			<trans-unit id="tx_party_nationalities" resname="tx_party_nationalities" >
+				<source>Nationality</source>
+			</trans-unit>
+			<trans-unit id="tx_party_nationalities.party" resname="tx_party_nationalities.party" >
+				<source>Party</source>
+			</trans-unit>
+			<trans-unit id="tx_party_nationalities.country" resname="tx_party_nationalities.country" >
+				<source>Country</source>
+			</trans-unit>
+			<trans-unit id="tx_party_nationalities.nationality_type" resname="tx_party_nationalities.nationality_type" >
+				<source>Nationality Type</source>
+			</trans-unit>
+			<trans-unit id="tx_party_nationalities.remarks" resname="tx_party_nationalities.remarks" >
+				<source>Remarks</source>
+			</trans-unit>
+			<trans-unit id="tx_party_occupations" resname="tx_party_occupations" >
+				<source>Occupation</source>
+			</trans-unit>
+			<trans-unit id="tx_party_occupations.party" resname="tx_party_occupations.party" >
+				<source>Party</source>
+			</trans-unit>
+			<trans-unit id="tx_party_occupations.role" resname="tx_party_occupations.role" >
+				<source>Role</source>
+			</trans-unit>
+			<trans-unit id="tx_party_occupations.rank" resname="tx_party_occupations.rank" >
+				<source>Rank</source>
+			</trans-unit>
+			<trans-unit id="tx_party_occupations.employment_type" resname="tx_party_occupations.employment_type" >
+				<source>Employment type</source>
+			</trans-unit>
+			<trans-unit id="tx_party_occupations.position_title" resname="tx_party_occupations.position_title" >
+				<source>Position title</source>
+			</trans-unit>
+			<trans-unit id="tx_party_occupations.cost_centre" resname="tx_party_occupations.cost_centre" >
+				<source>Cost centre</source>
+			</trans-unit>
+			<trans-unit id="tx_party_occupations.reports_to" resname="tx_party_occupations.reports_to" >
+				<source>Reports to</source>
+			</trans-unit>
+			<trans-unit id="tx_party_occupations.remarks" resname="tx_party_occupations.remarks" >
+				<source>Remarks</source>
+			</trans-unit>
+			<trans-unit id="tx_party_names" resname="tx_party_names" >
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="tx_party_names.party" resname="tx_party_names.party" >
+				<source>Party</source>
+			</trans-unit>
+			<trans-unit id="tx_party_names.type.I.0" resname="tx_party_names.type.I.0" >
+				<source>Person Name</source>
+			</trans-unit>
+			<trans-unit id="tx_party_names.type.I.1" resname="tx_party_names.type.I.1" >
+				<source>Organisation Name</source>
+			</trans-unit>
+			<trans-unit id="tx_party_names.type" resname="tx_party_names.type" >
+				<source>Type</source>
+			</trans-unit>
+			<trans-unit id="tx_party_names.standard" resname="tx_party_names.standard" >
+				<source>Default</source>
+			</trans-unit>
+			<trans-unit id="tx_party_names.person_name_title" resname="tx_party_names.person_name_title" >
+				<source>Person Name Title</source>
+			</trans-unit>
+			<trans-unit id="tx_party_names.first_name" resname="tx_party_names.first_name" >
+				<source>First name</source>
+			</trans-unit>
+			<trans-unit id="tx_party_names.middle_name" resname="tx_party_names.middle_name" >
+				<source>Middle name</source>
+			</trans-unit>
+			<trans-unit id="tx_party_names.ancestor_name" resname="tx_party_names.ancestor_name" >
+				<source>Ancestor name</source>
+			</trans-unit>
+			<trans-unit id="tx_party_names.last_name" resname="tx_party_names.last_name" >
+				<source>Last name</source>
+			</trans-unit>
+			<trans-unit id="tx_party_names.other_name" resname="tx_party_names.other_name" >
+				<source>Other name</source>
+			</trans-unit>
+			<trans-unit id="tx_party_names.preceding_title" resname="tx_party_names.preceding_title" >
+				<source>Preceding title</source>
+			</trans-unit>
+			<trans-unit id="tx_party_names.alias" resname="tx_party_names.alias" >
+				<source>Alias</source>
+			</trans-unit>
+			<trans-unit id="tx_party_names.generation_identifier" resname="tx_party_names.generation_identifier" >
+				<source>Generation identifier</source>
+			</trans-unit>
+			<trans-unit id="tx_party_names.place_name" resname="tx_party_names.place_name" >
+				<source>Place name</source>
+			</trans-unit>
+			<trans-unit id="tx_party_names.organisation_name_type.I.0" resname="tx_party_names.organisation_name_type.I.0" >
+				<source>Name only</source>
+			</trans-unit>
+			<trans-unit id="tx_party_names.organisation_name_type.I.1" resname="tx_party_names.organisation_name_type.I.1" >
+				<source>Organisation type</source>
+			</trans-unit>
+			<trans-unit id="tx_party_names.organisation_name_type.I.2" resname="tx_party_names.organisation_name_type.I.2" >
+				<source>Name and type</source>
+			</trans-unit>
+			<trans-unit id="tx_party_names.organisation_name_type" resname="tx_party_names.organisation_name_type" >
+				<source>Organisation name type</source>
+			</trans-unit>
+			<trans-unit id="tx_party_names.organisation_name" resname="tx_party_names.organisation_name" >
+				<source>Organisation name</source>
+			</trans-unit>
+			<trans-unit id="tx_party_names.abbreviation" resname="tx_party_names.abbreviation" >
+				<source>Abbreviation</source>
+			</trans-unit>
+			<trans-unit id="tx_party_names.remarks" resname="tx_party_names.remarks" >
+				<source>Remarks</source>
+			</trans-unit>
+			<trans-unit id="tx_party_qualifications" resname="tx_party_qualifications" >
+				<source>Qualification</source>
+			</trans-unit>
+			<trans-unit id="tx_party_qualifications.party" resname="tx_party_qualifications.party" >
+				<source>Party</source>
+			</trans-unit>
+			<trans-unit id="tx_party_qualifications.qualification_name" resname="tx_party_qualifications.qualification_name" >
+				<source>Qualification name</source>
+			</trans-unit>
+			<trans-unit id="tx_party_qualifications.status" resname="tx_party_qualifications.status" >
+				<source>Status</source>
+			</trans-unit>
+			<trans-unit id="tx_party_qualifications.institution" resname="tx_party_qualifications.institution" >
+				<source>Institution</source>
+			</trans-unit>
+			<trans-unit id="tx_party_qualifications.start_date" resname="tx_party_qualifications.start_date" >
+				<source>Start date</source>
+			</trans-unit>
+			<trans-unit id="tx_party_qualifications.completion_date" resname="tx_party_qualifications.completion_date" >
+				<source>Completion date</source>
+			</trans-unit>
+			<trans-unit id="tx_party_qualifications.way_of_study" resname="tx_party_qualifications.way_of_study" >
+				<source>Way of study</source>
+			</trans-unit>
+			<trans-unit id="tx_party_qualifications.major_subject" resname="tx_party_qualifications.major_subject" >
+				<source>Major subject</source>
+			</trans-unit>
+			<trans-unit id="tx_party_qualifications.minor_subject" resname="tx_party_qualifications.minor_subject" >
+				<source>Minor subject</source>
+			</trans-unit>
+			<trans-unit id="tx_party_qualifications.mark" resname="tx_party_qualifications.mark" >
+				<source>Mark</source>
+			</trans-unit>
+			<trans-unit id="tx_party_qualifications.course_duration" resname="tx_party_qualifications.course_duration" >
+				<source>Course duration</source>
+			</trans-unit>
+			<trans-unit id="tx_party_qualifications.award" resname="tx_party_qualifications.award" >
+				<source>Award</source>
+			</trans-unit>
+			<trans-unit id="tx_party_qualifications.restriction" resname="tx_party_qualifications.restriction" >
+				<source>Restriction</source>
+			</trans-unit>
+			<trans-unit id="tx_party_qualifications.registration" resname="tx_party_qualifications.registration" >
+				<source>Registration</source>
+			</trans-unit>
+			<trans-unit id="tx_party_qualifications.remarks" resname="tx_party_qualifications.remarks" >
+				<source>Remarks</source>
+			</trans-unit>
+			<trans-unit id="tx_party_relationship_types" resname="tx_party_relationship_types" >
+				<source>Relationship type</source>
+			</trans-unit>
+			<trans-unit id="tx_party_relationship_types.relationship_type" resname="tx_party_relationship_types.relationship_type" >
+				<source>Relationship type</source>
+			</trans-unit>
+			<trans-unit id="tx_party_relationship_types.description_as_primary" resname="tx_party_relationship_types.description_as_primary" >
+				<source>Description as primary</source>
+			</trans-unit>
+			<trans-unit id="tx_party_relationship_types.description_as_secondary" resname="tx_party_relationship_types.description_as_secondary" >
+				<source>Description as secondary</source>
+			</trans-unit>
+			<trans-unit id="tx_party_relationship_types.organisation_allowed_as_primary" resname="tx_party_relationship_types.organisation_allowed_as_primary" >
+				<source>Organisation allowed as primary</source>
+			</trans-unit>
+			<trans-unit id="tx_party_relationship_types.organisation_allowed_as_secondary" resname="tx_party_relationship_types.organisation_allowed_as_secondary" >
+				<source>Organisation allowed as secondary</source>
+			</trans-unit>
+			<trans-unit id="tx_party_relationship_types.person_allowed_as_primary" resname="tx_party_relationship_types.person_allowed_as_primary" >
+				<source>Person allowed as primary</source>
+			</trans-unit>
+			<trans-unit id="tx_party_relationship_types.person_allowed_as_secondary" resname="tx_party_relationship_types.person_allowed_as_secondary" >
+				<source>Person allowed as secondary</source>
+			</trans-unit>
+			<trans-unit id="tx_party_revenues" resname="tx_party_revenues" >
+				<source>Revenue</source>
+			</trans-unit>
+			<trans-unit id="tx_party_revenues.party" resname="tx_party_revenues.party" >
+				<source>Party</source>
+			</trans-unit>
+			<trans-unit id="tx_party_revenues.currency" resname="tx_party_revenues.currency" >
+				<source>Currency</source>
+			</trans-unit>
+			<trans-unit id="tx_party_revenues.amount" resname="tx_party_revenues.amount" >
+				<source>Amount</source>
+			</trans-unit>
+			<trans-unit id="tx_party_revenues.amount_precision" resname="tx_party_revenues.amount_precision" >
+				<source>Amount precision</source>
+			</trans-unit>
+			<trans-unit id="tx_party_revenues.after_tax" resname="tx_party_revenues.after_tax" >
+				<source>After tx</source>
+			</trans-unit>
+			<trans-unit id="tx_party_revenues.type" resname="tx_party_revenues.type" >
+				<source>Type</source>
+			</trans-unit>
+			<trans-unit id="tx_party_revenues.period_from" resname="tx_party_revenues.period_from" >
+				<source>Period from</source>
+			</trans-unit>
+			<trans-unit id="tx_party_revenues.period_to" resname="tx_party_revenues.period_to" >
+				<source>Period to</source>
+			</trans-unit>
+			<trans-unit id="tx_party_revenues.source" resname="tx_party_revenues.source" >
+				<source>Source</source>
+			</trans-unit>
+			<trans-unit id="tx_party_revenues.remarks" resname="tx_party_revenues.remarks" >
+				<source>Remarks</source>
+			</trans-unit>
+			<trans-unit id="tx_party_stock_markets" resname="tx_party_stock_markets" >
+				<source>Stock Market</source>
+			</trans-unit>
+			<trans-unit id="tx_party_stock_markets.party" resname="tx_party_stock_markets.party" >
+				<source>Party</source>
+			</trans-unit>
+			<trans-unit id="tx_party_stock_markets.market" resname="tx_party_stock_markets.market" >
+				<source>Market</source>
+			</trans-unit>
+			<trans-unit id="tx_party_stock_markets.listed_code" resname="tx_party_stock_markets.listed_code" >
+				<source>Listed code</source>
+			</trans-unit>
+			<trans-unit id="tx_party_stock_markets.remarks" resname="tx_party_stock_markets.remarks" >
+				<source>Remarks</source>
+			</trans-unit>
+			<trans-unit id="tx_party_vehicles" resname="tx_party_vehicles" >
+				<source>Vehicle</source>
+			</trans-unit>
+			<trans-unit id="tx_party_vehicles.party" resname="tx_party_vehicles.party" >
+				<source>Party</source>
+			</trans-unit>
+			<trans-unit id="tx_party_vehicles.make" resname="tx_party_vehicles.make" >
+				<source>Make</source>
+			</trans-unit>
+			<trans-unit id="tx_party_vehicles.type" resname="tx_party_vehicles.type" >
+				<source>Type</source>
+			</trans-unit>
+			<trans-unit id="tx_party_vehicles.model" resname="tx_party_vehicles.model" >
+				<source>Model</source>
+			</trans-unit>
+			<trans-unit id="tx_party_vehicles.license_plate" resname="tx_party_vehicles.license_plate" >
+				<source>License plate</source>
+			</trans-unit>
+			<trans-unit id="tx_party_vehicles.manufacture_date" resname="tx_party_vehicles.manufacture_date" >
+				<source>Manufacture date</source>
+			</trans-unit>
+			<trans-unit id="tx_party_vehicles.engine_number" resname="tx_party_vehicles.engine_number" >
+				<source>Engine Number</source>
+			</trans-unit>
+			<trans-unit id="tx_party_vehicles.chassis_number" resname="tx_party_vehicles.chassis_number" >
+				<source>Chassis number</source>
+			</trans-unit>
+			<trans-unit id="tx_party_vehicles.body_number" resname="tx_party_vehicles.body_number" >
+				<source>Body number</source>
+			</trans-unit>
+			<trans-unit id="tx_party_vehicles.remarks" resname="tx_party_vehicles.remarks" >
+				<source>Remarks</source>
+			</trans-unit>
+			<trans-unit id="tx_party_visas" resname="tx_party_visas" >
+				<source>Visa</source>
+			</trans-unit>
+			<trans-unit id="tx_party_visas.party" resname="tx_party_visas.party" >
+				<source>Party</source>
+			</trans-unit>
+			<trans-unit id="tx_party_visas.country" resname="tx_party_visas.country" >
+				<source>Country</source>
+			</trans-unit>
+			<trans-unit id="tx_party_visas.number" resname="tx_party_visas.number" >
+				<source>Number</source>
+			</trans-unit>
+			<trans-unit id="tx_party_visas.code" resname="tx_party_visas.code" >
+				<source>Code</source>
+			</trans-unit>
+			<trans-unit id="tx_party_visas.issue_date" resname="tx_party_visas.issue_date" >
+				<source>Issue date</source>
+			</trans-unit>
+			<trans-unit id="tx_party_visas.issue_place" resname="tx_party_visas.issue_place" >
+				<source>Issue place</source>
+			</trans-unit>
+			<trans-unit id="tx_party_visas.maximum_stay" resname="tx_party_visas.maximum_stay" >
+				<source>Maximum stay</source>
+			</trans-unit>
+			<trans-unit id="tx_party_visas.restriction" resname="tx_party_visas.restriction" >
+				<source>Restriction</source>
+			</trans-unit>
+			<trans-unit id="tx_party_visas.privilege" resname="tx_party_visas.privilege" >
+				<source>Privilege</source>
+			</trans-unit>
+			<trans-unit id="tx_party_visas.special_condition" resname="tx_party_visas.special_condition" >
+				<source>Special condition</source>
+			</trans-unit>
+			<trans-unit id="tx_party_visas.remarks" resname="tx_party_visas.remarks" >
+				<source>Remarks</source>
+			</trans-unit>
+			<trans-unit id="tx_party_parties" resname="tx_party_parties" >
+				<source>Party</source>
+			</trans-unit>
+			<trans-unit id="tx_party_parties.type.I.0" resname="tx_party_parties.type.I.0" >
+				<source>Person</source>
+			</trans-unit>
+			<trans-unit id="tx_party_parties.type.I.1" resname="tx_party_parties.type.I.1" >
+				<source>Organisation</source>
+			</trans-unit>
+			<trans-unit id="tx_party_parties.type" resname="tx_party_parties.type" >
+				<source>Type</source>
+			</trans-unit>
+			<trans-unit id="tx_party_parties.marital_status.I.0" resname="tx_party_parties.marital_status.I.0" >
+				<source>Single</source>
+			</trans-unit>
+			<trans-unit id="tx_party_parties.marital_status.I.1" resname="tx_party_parties.marital_status.I.1" >
+				<source>Engaged</source>
+			</trans-unit>
+			<trans-unit id="tx_party_parties.marital_status.I.2" resname="tx_party_parties.marital_status.I.2" >
+				<source>Married</source>
+			</trans-unit>
+			<trans-unit id="tx_party_parties.marital_status.I.3" resname="tx_party_parties.marital_status.I.3" >
+				<source>Separated</source>
+			</trans-unit>
+			<trans-unit id="tx_party_parties.marital_status.I.4" resname="tx_party_parties.marital_status.I.4" >
+				<source>Divorced</source>
+			</trans-unit>
+			<trans-unit id="tx_party_parties.marital_status.I.5" resname="tx_party_parties.marital_status.I.5" >
+				<source>Widowed</source>
+			</trans-unit>
+			<trans-unit id="tx_party_parties.marital_status" resname="tx_party_parties.marital_status" >
+				<source>Marital status</source>
+			</trans-unit>
+			<trans-unit id="tx_party_parties.religion" resname="tx_party_parties.religion" >
+				<source>Religion</source>
+			</trans-unit>
+			<trans-unit id="tx_party_parties.birth_place" resname="tx_party_parties.birth_place" >
+				<source>Birth place</source>
+			</trans-unit>
+			<trans-unit id="tx_party_parties.birth_date_time" resname="tx_party_parties.birth_date_time" >
+				<source>Birth date/time</source>
+			</trans-unit>
+			<trans-unit id="tx_party_parties.birth_date_time_precision" resname="tx_party_parties.birth_date_time_precision" >
+				<source>Birth date/time precision</source>
+			</trans-unit>
+			<trans-unit id="tx_party_parties.birth_sign" resname="tx_party_parties.birth_sign" >
+				<source>Birth sign</source>
+			</trans-unit>
+			<trans-unit id="tx_party_parties.birth_star" resname="tx_party_parties.birth_star" >
+				<source>Birth star</source>
+			</trans-unit>
+			<trans-unit id="tx_party_parties.weight" resname="tx_party_parties.weight" >
+				<source>Weight</source>
+			</trans-unit>
+			<trans-unit id="tx_party_parties.height" resname="tx_party_parties.height" >
+				<source>Height</source>
+			</trans-unit>
+			<trans-unit id="tx_party_parties.breast" resname="tx_party_parties.breast" >
+				<source>Breast</source>
+			</trans-unit>
+			<trans-unit id="tx_party_parties.waist" resname="tx_party_parties.waist" >
+				<source>Waist</source>
+			</trans-unit>
+			<trans-unit id="tx_party_parties.hip" resname="tx_party_parties.hip" >
+				<source>Hip</source>
+			</trans-unit>
+			<trans-unit id="tx_party_parties.hair_colour" resname="tx_party_parties.hair_colour" >
+				<source>Hair colour</source>
+			</trans-unit>
+			<trans-unit id="tx_party_parties.hair_colour.I.0" resname="tx_party_parties.hair_colour.I.0" >
+				<source>Brown</source>
+			</trans-unit>
+			<trans-unit id="tx_party_parties.hair_colour.I.1" resname="tx_party_parties.hair_colour.I.1" >
+				<source>Black</source>
+			</trans-unit>
+			<trans-unit id="tx_party_parties.hair_colour.I.2" resname="tx_party_parties.hair_colour.I.2" >
+				<source>Blonde</source>
+			</trans-unit>
+			<trans-unit id="tx_party_parties.hair_colour.I.3" resname="tx_party_parties.hair_colour.I.3" >
+				<source>Red</source>
+			</trans-unit>
+			<trans-unit id="tx_party_parties.hair_colour.I.4" resname="tx_party_parties.hair_colour.I.4" >
+				<source>Grey</source>
+			</trans-unit>
+			<trans-unit id="tx_party_parties.hair_colour.I.5" resname="tx_party_parties.hair_colour.I.5" >
+				<source>White</source>
+			</trans-unit>
+			<trans-unit id="tx_party_parties.hair_colour.I.6" resname="tx_party_parties.hair_colour.I.6" >
+				<source>Ginger</source>
+			</trans-unit>
+			<trans-unit id="tx_party_parties.hair_colour.I.7" resname="tx_party_parties.hair_colour.I.7" >
+				<source>Purple</source>
+			</trans-unit>
+			<trans-unit id="tx_party_parties.hair_colour.I.8" resname="tx_party_parties.hair_colour.I.8" >
+				<source>Blue</source>
+			</trans-unit>
+			<trans-unit id="tx_party_parties.hair_colour.I.9" resname="tx_party_parties.hair_colour.I.9" >
+				<source>Green</source>
+			</trans-unit>
+			<trans-unit id="tx_party_parties.hair_colour.I.10" resname="tx_party_parties.hair_colour.I.10" >
+				<source>Pink</source>
+			</trans-unit>
+			<trans-unit id="tx_party_parties.eye_colour.I.0" resname="tx_party_parties.eye_colour.I.0" >
+				<source>Amber</source>
+			</trans-unit>
+			<trans-unit id="tx_party_parties.eye_colour.I.1" resname="tx_party_parties.eye_colour.I.1" >
+				<source>Blue</source>
+			</trans-unit>
+			<trans-unit id="tx_party_parties.eye_colour.I.2" resname="tx_party_parties.eye_colour.I.2" >
+				<source>Brown</source>
+			</trans-unit>
+			<trans-unit id="tx_party_parties.eye_colour.I.3" resname="tx_party_parties.eye_colour.I.3" >
+				<source>Gray</source>
+			</trans-unit>
+			<trans-unit id="tx_party_parties.eye_colour.I.4" resname="tx_party_parties.eye_colour.I.4" >
+				<source>Green</source>
+			</trans-unit>
+			<trans-unit id="tx_party_parties.eye_colour.I.5" resname="tx_party_parties.eye_colour.I.5" >
+				<source>Hazel</source>
+			</trans-unit>
+			<trans-unit id="tx_party_parties.eye_colour" resname="tx_party_parties.eye_colour" >
+				<source>Eye colour</source>
+			</trans-unit>
+			<trans-unit id="tx_party_parties.skin_colour" resname="tx_party_parties.skin_colour" >
+				<source>Skin colour</source>
+			</trans-unit>
+			<trans-unit id="tx_party_parties.blood_group.I.0" resname="tx_party_parties.blood_group.I.0" >
+				<source>Group O, Rh D negative</source>
+			</trans-unit>
+			<trans-unit id="tx_party_parties.blood_group.I.1" resname="tx_party_parties.blood_group.I.1" >
+				<source>Group O, Rh D positive</source>
+			</trans-unit>
+			<trans-unit id="tx_party_parties.blood_group.I.2" resname="tx_party_parties.blood_group.I.2" >
+				<source>Group A, Rh D negative</source>
+			</trans-unit>
+			<trans-unit id="tx_party_parties.blood_group.I.3" resname="tx_party_parties.blood_group.I.3" >
+				<source>Group A, Rh D positive</source>
+			</trans-unit>
+			<trans-unit id="tx_party_parties.blood_group.I.4" resname="tx_party_parties.blood_group.I.4" >
+				<source>Group B, Rh D negative</source>
+			</trans-unit>
+			<trans-unit id="tx_party_parties.blood_group.I.5" resname="tx_party_parties.blood_group.I.5" >
+				<source>Group B, Rh D positive</source>
+			</trans-unit>
+			<trans-unit id="tx_party_parties.blood_group.I.6" resname="tx_party_parties.blood_group.I.6" >
+				<source>Group AB, Rh D negative</source>
+			</trans-unit>
+			<trans-unit id="tx_party_parties.blood_group.I.7" resname="tx_party_parties.blood_group.I.7" >
+				<source>Group AB, Rh D positive</source>
+			</trans-unit>
+			<trans-unit id="tx_party_parties.blood_group" resname="tx_party_parties.blood_group" >
+				<source>Blood group</source>
+			</trans-unit>
+			<trans-unit id="tx_party_parties.physical_status" resname="tx_party_parties.physical_status" >
+				<source>Physical status</source>
+			</trans-unit>
+			<trans-unit id="tx_party_parties.ethnicity" resname="tx_party_parties.ethnicity" >
+				<source>Ethnicity</source>
+			</trans-unit>
+			<trans-unit id="tx_party_parties.gender.I.0" resname="tx_party_parties.gender.I.0" >
+				<source>Not known</source>
+			</trans-unit>
+			<trans-unit id="tx_party_parties.gender.I.1" resname="tx_party_parties.gender.I.1" >
+				<source>Male</source>
+			</trans-unit>
+			<trans-unit id="tx_party_parties.gender.I.2" resname="tx_party_parties.gender.I.2" >
+				<source>Female</source>
+			</trans-unit>
+			<trans-unit id="tx_party_parties.gender.I.3" resname="tx_party_parties.gender.I.3" >
+				<source>Not specified</source>
+			</trans-unit>
+			<trans-unit id="tx_party_parties.gender" resname="tx_party_parties.gender" >
+				<source>Gender</source>
+			</trans-unit>
+			<trans-unit id="tx_party_parties.hobbies" resname="tx_party_parties.hobbies" >
+				<source>Hobbies</source>
+			</trans-unit>
+			<trans-unit id="tx_party_parties.habits" resname="tx_party_parties.habits" >
+				<source>Habits</source>
+			</trans-unit>
+			<trans-unit id="tx_party_parties.organisation_type" resname="tx_party_parties.organisation_type" >
+				<source>Organisation type</source>
+			</trans-unit>
+			<trans-unit id="tx_party_parties.organisation_nature" resname="tx_party_parties.organisation_nature" >
+				<source>Organisation nature</source>
+			</trans-unit>
+			<trans-unit id="tx_party_parties.company_registration_id" resname="tx_party_parties.company_registration_id" >
+				<source>Company registration ID</source>
+			</trans-unit>
+			<trans-unit id="tx_party_parties.company_registration_date" resname="tx_party_parties.company_registration_date" >
+				<source>Company registration date</source>
+			</trans-unit>
+			<trans-unit id="tx_party_parties.number_of_employees" resname="tx_party_parties.number_of_employees" >
+				<source>Number of employees</source>
+			</trans-unit>
+			<trans-unit id="tx_party_parties.remarks" resname="tx_party_parties.remarks" >
+				<source>Remarks</source>
+			</trans-unit>
+			<trans-unit id="tx_party_parties.names" resname="tx_party_parties.names" >
+				<source>Names</source>
+			</trans-unit>
+			<trans-unit id="tx_party_parties.addresses" resname="tx_party_parties.addresses" >
+				<source>Addresses</source>
+			</trans-unit>
+			<trans-unit id="tx_party_parties.accounts" resname="tx_party_parties.accounts" >
+				<source>Accounts</source>
+			</trans-unit>
+			<trans-unit id="tx_party_parties.contact_numbers" resname="tx_party_parties.contact_numbers" >
+				<source>Contact numbers</source>
+			</trans-unit>
+			<trans-unit id="tx_party_parties.countries_of_residence" resname="tx_party_parties.countries_of_residence" >
+				<source>Countries of residence</source>
+			</trans-unit>
+			<trans-unit id="tx_party_parties.documents" resname="tx_party_parties.documents" >
+				<source>Documents</source>
+			</trans-unit>
+			<trans-unit id="tx_party_parties.electronic_address_identifiers" resname="tx_party_parties.electronic_address_identifiers" >
+				<source>Electronic address identifiers</source>
+			</trans-unit>
+			<trans-unit id="tx_party_parties.images" resname="tx_party_parties.images" >
+				<source>Images</source>
+			</trans-unit>
+			<trans-unit id="tx_party_parties.nationalities" resname="tx_party_parties.nationalities" >
+				<source>Nationalities</source>
+			</trans-unit>
+			<trans-unit id="tx_party_parties.relationships" resname="tx_party_parties.relationships" >
+				<source>Relationships</source>
+			</trans-unit>
+			<trans-unit id="tx_party_parties.revenues" resname="tx_party_parties.revenues" >
+				<source>Revenues</source>
+			</trans-unit>
+			<trans-unit id="tx_party_parties.vehicles" resname="tx_party_parties.vehicles" >
+				<source>Vehicles</source>
+			</trans-unit>
+			<trans-unit id="tx_party_parties.contacts" resname="tx_party_parties.contacts" >
+				<source>Contacts</source>
+			</trans-unit>
+			<trans-unit id="tx_party_parties.visas" resname="tx_party_parties.visas" >
+				<source>Visas</source>
+			</trans-unit>
+			<trans-unit id="tx_party_parties.disabilities" resname="tx_party_parties.disabilities" >
+				<source>Disabilities</source>
+			</trans-unit>
+			<trans-unit id="tx_party_parties.languages" resname="tx_party_parties.languages" >
+				<source>Languages</source>
+			</trans-unit>
+			<trans-unit id="tx_party_parties.marks" resname="tx_party_parties.marks" >
+				<source>Marks</source>
+			</trans-unit>
+			<trans-unit id="tx_party_parties.occupations" resname="tx_party_parties.occupations" >
+				<source>Occupations</source>
+			</trans-unit>
+			<trans-unit id="tx_party_parties.qualifications" resname="tx_party_parties.qualifications" >
+				<source>Qualifications</source>
+			</trans-unit>
+			<trans-unit id="tx_party_parties.stock_markets" resname="tx_party_parties.stock_markets" >
+				<source>Stock markets</source>
+			</trans-unit>
+			<trans-unit id="tx_party_parties.events" resname="tx_party_parties.events" >
+				<source>Events</source>
+			</trans-unit>
+			<trans-unit id="tx_party_parties.identifiers" resname="tx_party_parties.identifiers" >
+				<source>Identifiers</source>
+			</trans-unit>
+			<trans-unit id="tx_party_parties.memberships" resname="tx_party_parties.memberships" >
+				<source>Memberships</source>
+			</trans-unit>
+			<trans-unit id="tx_party_parties.allergies" resname="tx_party_parties.allergies" >
+				<source>Allergies</source>
+			</trans-unit>
+			<trans-unit id="tx_party_parties.favourites" resname="tx_party_parties.favourites" >
+				<source>Favourites</source>
+			</trans-unit>
+			<trans-unit id="tx_party_parties.preferences" resname="tx_party_parties.preferences" >
+				<source>Preferences</source>
+			</trans-unit>
+			<trans-unit id="tx_party_parties.person" resname="tx_party_parties.person" >
+				<source>Person</source>
+			</trans-unit>
+			<trans-unit id="tx_party_parties.organisation" resname="tx_party_parties.organisation" >
+				<source>Organisation</source>
+			</trans-unit>
+			<trans-unit id="tx_party_parties.physical" resname="tx_party_parties.physical" >
+				<source>Physical</source>
+			</trans-unit>
+			<trans-unit id="tx_party_parties.ownership" resname="tx_party_parties.ownership" >
+				<source>Ownership</source>
+			</trans-unit>
+			<trans-unit id="tx_party_events" resname="tx_party_events" >
+				<source>Event</source>
+			</trans-unit>
+			<trans-unit id="tx_party_events.party" resname="tx_party_events.party" >
+				<source>Party</source>
+			</trans-unit>
+			<trans-unit id="tx_party_events.type" resname="tx_party_events.type" >
+				<source>Type</source>
+			</trans-unit>
+			<trans-unit id="tx_party_events.date" resname="tx_party_events.date" >
+				<source>Date</source>
+			</trans-unit>
+			<trans-unit id="tx_party_events.date_from" resname="tx_party_events.date_from" >
+				<source>Date from</source>
+			</trans-unit>
+			<trans-unit id="tx_party_events.date_to" resname="tx_party_events.date_to" >
+				<source>Date to</source>
+			</trans-unit>
+			<trans-unit id="tx_party_events.remarks" resname="tx_party_events.remarks" >
+				<source>Remarks</source>
+			</trans-unit>
+			<trans-unit id="tx_party_identifiers" resname="tx_party_identifiers" >
+				<source>Identifier</source>
+			</trans-unit>
+			<trans-unit id="tx_party_identifiers.party" resname="tx_party_identifiers.party" >
+				<source>Party</source>
+			</trans-unit>
+			<trans-unit id="tx_party_identifiers.type" resname="tx_party_identifiers.type" >
+				<source>Type</source>
+			</trans-unit>
+			<trans-unit id="tx_party_identifiers.identifier" resname="tx_party_identifiers.identifier" >
+				<source>Identifier</source>
+			</trans-unit>
+			<trans-unit id="tx_party_identifiers.issue_date" resname="tx_party_identifiers.issue_date" >
+				<source>Issue date</source>
+			</trans-unit>
+			<trans-unit id="tx_party_identifiers.expiry_date" resname="tx_party_identifiers.expiry_date" >
+				<source>Expiry date</source>
+			</trans-unit>
+			<trans-unit id="tx_party_identifiers.remarks" resname="tx_party_identifiers.remarks" >
+				<source>Remarks</source>
+			</trans-unit>
+			<trans-unit id="tx_party_memberships" resname="tx_party_memberships" >
+				<source>Membership</source>
+			</trans-unit>
+			<trans-unit id="tx_party_memberships.party" resname="tx_party_memberships.party" >
+				<source>Party</source>
+			</trans-unit>
+			<trans-unit id="tx_party_memberships.type" resname="tx_party_memberships.type" >
+				<source>Type</source>
+			</trans-unit>
+			<trans-unit id="tx_party_memberships.organisation" resname="tx_party_memberships.organisation" >
+				<source>Organisation</source>
+			</trans-unit>
+			<trans-unit id="tx_party_memberships.issue_date" resname="tx_party_memberships.issue_date" >
+				<source>Issue date</source>
+			</trans-unit>
+			<trans-unit id="tx_party_memberships.expiry_date" resname="tx_party_memberships.expiry_date" >
+				<source>Expiry date</source>
+			</trans-unit>
+			<trans-unit id="tx_party_memberships.remarks" resname="tx_party_memberships.remarks" >
+				<source>Remarks</source>
+			</trans-unit>
+			<trans-unit id="tx_party_allergies" resname="tx_party_allergies" >
+				<source>Allergy</source>
+			</trans-unit>
+			<trans-unit id="tx_party_allergies.short_title" resname="tx_party_allergies.short_title" >
+				<source>Short title</source>
+			</trans-unit>
+			<trans-unit id="tx_party_allergies.title" resname="tx_party_allergies.title" >
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_party_allergies.long_title" resname="tx_party_allergies.long_title" >
+				<source>Long title</source>
+			</trans-unit>
+			<trans-unit id="tx_party_favourites" resname="tx_party_favourites" >
+				<source>Favourite</source>
+			</trans-unit>
+			<trans-unit id="tx_party_favourites.party" resname="tx_party_favourites.party" >
+				<source>Party</source>
+			</trans-unit>
+			<trans-unit id="tx_party_favourites.type" resname="tx_party_favourites.type" >
+				<source>Type</source>
+			</trans-unit>
+			<trans-unit id="tx_party_favourites.favourite" resname="tx_party_favourites.favourite" >
+				<source>Favourite</source>
+			</trans-unit>
+			<trans-unit id="tx_party_favourites.remarks" resname="tx_party_favourites.remarks" >
+				<source>Remarks</source>
+			</trans-unit>
+			<trans-unit id="tx_party_preferences" resname="tx_party_preferences" >
+				<source>Preference</source>
+			</trans-unit>
+			<trans-unit id="tx_party_preferences.party" resname="tx_party_preferences.party" >
+				<source>Party</source>
+			</trans-unit>
+			<trans-unit id="tx_party_preferences.type" resname="tx_party_preferences.type" >
+				<source>Type</source>
+			</trans-unit>
+			<trans-unit id="tx_party_preferences.preference" resname="tx_party_preferences.preference" >
+				<source>Preference</source>
+			</trans-unit>
+			<trans-unit id="tx_party_preferences.remarks" resname="tx_party_preferences.remarks" >
+				<source>Remarks</source>
+			</trans-unit>
+			<trans-unit id="tx_party_address_usages" resname="tx_party_address_usages" >
+				<source>Address usage</source>
+			</trans-unit>
+			<trans-unit id="tx_party_address_usages.party" resname="tx_party_address_usages.party" >
+				<source>Party</source>
+			</trans-unit>
+			<trans-unit id="tx_party_address_usages.address" resname="tx_party_address_usages.address" >
+				<source>Address</source>
+			</trans-unit>
+			<trans-unit id="tx_party_address_usages.address_usage" resname="tx_party_address_usages.address_usage" >
+				<source>Usage</source>
+			</trans-unit>
+			<trans-unit id="tx_party_address_usages.standard" resname="tx_party_address_usages.standard" >
+				<source>Default</source>
+			</trans-unit>
+			<trans-unit id="tx_party_contact_number_usages" resname="tx_party_contact_number_usages" >
+				<source>Contact number usage</source>
+			</trans-unit>
+			<trans-unit id="tx_party_contact_number_usages.party" resname="tx_party_contact_number_usages.party" >
+				<source>Party</source>
+			</trans-unit>
+			<trans-unit id="tx_party_contact_number_usages.contact_number" resname="tx_party_contact_number_usages.contact_number" >
+				<source>Contact number</source>
+			</trans-unit>
+			<trans-unit id="tx_party_contact_number_usages.contact_number_usage" resname="tx_party_contact_number_usages.contact_number_usage" >
+				<source>Usage</source>
+			</trans-unit>
+			<trans-unit id="tx_party_contact_number_usages.standard" resname="tx_party_contact_number_usages.standard" >
+				<source>Default</source>
+			</trans-unit>
+			<trans-unit id="tx_party_electronic_address_identifier_usages" resname="tx_party_electronic_address_identifier_usages" >
+				<source>Electronic address identifier usage</source>
+			</trans-unit>
+			<trans-unit id="tx_party_electronic_address_identifier_usages.party" resname="tx_party_electronic_address_identifier_usages.party" >
+				<source>Party</source>
+			</trans-unit>
+			<trans-unit id="tx_party_electronic_address_identifier_usages.electronic_address_identifier" resname="tx_party_electronic_address_identifier_usages.electronic_address_identifier" >
+				<source>Electronic address identifier</source>
+			</trans-unit>
+			<trans-unit id="tx_party_electronic_address_identifier_usages.electronic_address_identifier_usage" resname="tx_party_electronic_address_identifier_usages.electronic_address_identifier_usage" >
+				<source>Usage</source>
+			</trans-unit>
+			<trans-unit id="tx_party_electronic_address_identifier_usages.standard" resname="tx_party_electronic_address_identifier_usages.standard" >
+				<source>Default</source>
+			</trans-unit>
+			<trans-unit id="tx_party_usages" resname="tx_party_usages" >
+				<source>Usage</source>
+			</trans-unit>
+			<trans-unit id="tx_party_usages.short_title" resname="tx_party_usages.short_title" >
+				<source>Short title</source>
+			</trans-unit>
+			<trans-unit id="tx_party_usages.title" resname="tx_party_usages.title" >
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_party_usages.long_title" resname="tx_party_usages.long_title" >
+				<source>Long title</source>
+			</trans-unit>
+			<trans-unit id="tx_party_relationships" resname="tx_party_relationships" >
+				<source>Relationship</source>
+			</trans-unit>
+			<trans-unit id="tx_party_relationships.primary_party" resname="tx_party_relationships.primary_party" >
+				<source>Primary party</source>
+			</trans-unit>
+			<trans-unit id="tx_party_relationships.secondary_party" resname="tx_party_relationships.secondary_party" >
+				<source>Secondary party</source>
+			</trans-unit>
+			<trans-unit id="tx_party_relationships.relationship_type" resname="tx_party_relationships.relationship_type" >
+				<source>Relationship type</source>
+			</trans-unit>
+			<trans-unit id="tx_party_relationships.date_established" resname="tx_party_relationships.date_established" >
+				<source>Date established</source>
+			</trans-unit>
+			<trans-unit id="tx_party_relationships.date_lapsed" resname="tx_party_relationships.date_lapsed" >
+				<source>Date lapsed</source>
+			</trans-unit>
+			<trans-unit id="tx_party_relationships.reason_lapsed" resname="tx_party_relationships.reason_lapsed" >
+				<source>Reason lapsed</source>
+			</trans-unit>
+			<trans-unit id="tx_party_relationships.remarks" resname="tx_party_relationships.remarks" >
+				<source>Remarks</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
