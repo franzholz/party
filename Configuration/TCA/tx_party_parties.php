@@ -16,8 +16,8 @@ $result = [
         'iconfile' => 'EXT:party/Resources/Public/Icons/icon_tx_party_parties.gif',
         'typeicon_column' => 'type',
         'typeicons' => [
-            '0' => EXT:party/Resources/Public/Icons/icon_tx_party_parties_person.gif',
-            '1' => EXT:party/Resources/Public/Icons/icon_tx_party_parties_organisation.gif',
+            '0' => 'EXT:party/Resources/Public/Icons/icon_tx_party_parties_person.gif',
+            '1' => 'EXT:party/Resources/Public/Icons/icon_tx_party_parties_organisation.gif',
         ],
         'searchFields' => 'th_place,th_star,names,addresses,electronic_address_identifiers',
     ],
