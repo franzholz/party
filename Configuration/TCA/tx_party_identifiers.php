@@ -12,6 +12,7 @@ $result = [
         'default_sortby' => 'ORDER BY crdate',
         'delete' => 'deleted',
         'iconfile' => 'EXT:party/Resources/Public/Icons/icon_tx_party_identifiers.gif',
+        'searchFields' => 'identifier,issue_date,expiry_date,',        
     ],
     'interface' => [
         'showRecordFieldList' => 'party,type,identifier,issue_date,expiry_date,remarks',

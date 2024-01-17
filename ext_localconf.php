@@ -23,20 +23,3 @@ if (isset($tableArray) && is_array($tableArray)) {
     }
 }
 
-
-if (
-    isset($GLOBALS['TYPO3_CONF_VARS']['SYS']['livesearch']) &&
-    is_array($GLOBALS['TYPO3_CONF_VARS']['SYS']['livesearch'])
-) {
-    // TYPO3 4.5 with livesearch
-    $GLOBALS['TYPO3_CONF_VARS']['SYS']['livesearch'] = array_merge(
-        $GLOBALS['TYPO3_CONF_VARS']['SYS']['livesearch'],
-        [
-            'tx_party_addresses' => 'tx_party_addresses',
-            'tx_party_parties' => 'tx_party_parties',
-            'tx_party_names' => 'tx_party_names',
-            'tx_party_identifiers' => 'tx_party_identifiers',
-        ]
-    );
-}
-

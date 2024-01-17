@@ -14,6 +14,8 @@ $result = [
         'default_sortby' => 'ORDER BY last_name',
         'delete' => 'deleted',
         'iconfile' => 'EXT:party/Resources/Public/Icons/icon_tx_party_names.gif',
+        'searchFields' => 'person_name_title,first_name,names,last_name,other_name,' .
+        'alias,organisation_name,abbreviation',
     ],
     'interface' => [
         'showRecordFieldList' => 'party,type,standard,person_name_title,first_name,middle_name,ancestor_name,last_name,other_name,preceding_title,alias,generation_identifier,place_name,organisation_name_type,organisation_name,abbreviation,remarks',

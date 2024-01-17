@@ -13,7 +13,10 @@ $result = [
         'default_sortby' => 'ORDER BY locality',
         'delete' => 'deleted',
         'iconfile' => 'EXT:party/Resources/Public/Icons/icon_tx_party_addresses.gif',
-    ],
+        'searchFields' => 'locality,thoroughfare,thoroughfare_number,building_name,location,' .
+        'lot,internal_thoroughfare,post_code,rural_delivery,postal_delivery_point,'.
+        'post_office,post_town',
+    ],    
     'interface' => [
         'showRecordFieldList' => 'parties,locality,thoroughfare,thoroughfare_number,building_name,location,lot,premise_type,internal_thoroughfare,reference_location,post_code,rural_delivery,latitude_degrees_measure,latitude_minutes_measure,latitude_seconds_measure,latitude_direction_code,longitude_degrees_measure,longitude_minutes_measure,longitude_seconds_measure,longitude_direction_code,postal_delivery_point,post_office,post_town,administrative_area,country,images,remarks',
     ],
