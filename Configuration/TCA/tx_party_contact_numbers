@@ -4,7 +4,7 @@ defined('TYPO3') || die('Access denied.');
 
 $result = [
 	'ctrl' => array (
-		'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_contact_numbers',
+		'title'     => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_contact_numbers',
 		'label'     => 'local_number',
 		'tstamp'    => 'tstamp',
 		'crdate'    => 'crdate',
@@ -19,7 +19,7 @@ $result = [
 	'columns' => array (
 		'parties' => Array (
 			'exclude' => 1,
-			'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_contact_numbers.parties',
+			'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_contact_numbers.parties',
 			'config' => Array (
 				'type' => 'inline',
 				'foreign_table' => 'tx_party_contact_number_usages',
@@ -32,14 +32,14 @@ $result = [
 		),
 		'media_type' => Array (
 			'exclude' => 1,
-			'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_contact_numbers.media_type',
+			'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_contact_numbers.media_type',
 			'config' => Array (
 				'type' => 'select',
 				'items' => Array (
-					Array('LLL:EXT:party/locallang_db.xml:tx_party_contact_numbers.media_type.I.0', 'TELEPHONE'),
-					Array('LLL:EXT:party/locallang_db.xml:tx_party_contact_numbers.media_type.I.1', 'MOBILE'),
-					Array('LLL:EXT:party/locallang_db.xml:tx_party_contact_numbers.media_type.I.2', 'FAX'),
-					Array('LLL:EXT:party/locallang_db.xml:tx_party_contact_numbers.media_type.I.3', 'MODEM'),
+					Array('LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_contact_numbers.media_type.I.0', 'TELEPHONE'),
+					Array('LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_contact_numbers.media_type.I.1', 'MOBILE'),
+					Array('LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_contact_numbers.media_type.I.2', 'FAX'),
+					Array('LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_contact_numbers.media_type.I.3', 'MODEM'),
 				),
 				'size' => 1,
 				'maxitems' => 1,
@@ -47,7 +47,7 @@ $result = [
 		),
 		'country' => Array (
 			'exclude' => 1,
-			'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_contact_numbers.country',
+			'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_contact_numbers.country',
 			'config' => Array (
 				'type' => 'select',
 				'foreign_table' => 'static_countries',
@@ -67,7 +67,7 @@ $result = [
 		),
 		'area_code' => Array (
 			'exclude' => 1,
-			'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_contact_numbers.area_code',
+			'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_contact_numbers.area_code',
 			'config' => Array (
 				'type' => 'input',
 				'size' => '30',
@@ -77,7 +77,7 @@ $result = [
 		),
 		'local_number' => Array (
 			'exclude' => 1,
-			'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_contact_numbers.local_number',
+			'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_contact_numbers.local_number',
 			'config' => Array (
 				'type' => 'input',
 				'size' => '30',
@@ -87,7 +87,7 @@ $result = [
 		),
 		'extension' => Array (
 			'exclude' => 1,
-			'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_contact_numbers.extension',
+			'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_contact_numbers.extension',
 			'config' => Array (
 				'type' => 'input',
 				'size' => '10',
@@ -97,7 +97,7 @@ $result = [
 		),
 		'pin' => Array (
 			'exclude' => 1,
-			'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_contact_numbers.pin',
+			'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_contact_numbers.pin',
 			'config' => Array (
 				'type' => 'input',
 				'size' => '10',
@@ -107,7 +107,7 @@ $result = [
 		),
 		'contact_hours' => Array (
 			'exclude' => 1,
-			'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_contact_numbers.contact_hours',
+			'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_contact_numbers.contact_hours',
 			'config' => Array (
 				'type' => 'text',
 				'cols' => '30',
@@ -116,7 +116,7 @@ $result = [
 		),
 		'remarks' => Array (
 			'exclude' => 1,
-			'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_contact_numbers.remarks',
+			'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_contact_numbers.remarks',
 			'config' => Array (
 				'type' => 'text',
 				'cols' => '30',

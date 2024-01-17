@@ -4,7 +4,7 @@ defined('TYPO3') || die('Access denied.');
 
 $result = [
     'ctrl' => [
-        'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_nationalities',
+        'title'     => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_nationalities',
         'label'     => 'country',
         'label_userFunc' => 'tx_party_labels->getLabel',
         'tstamp'    => 'tstamp',
@@ -20,7 +20,7 @@ $result = [
     'columns' => [
         'party' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_nationalities.party',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_nationalities.party',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
@@ -34,7 +34,7 @@ $result = [
         ],
         'country' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_nationalities.country',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_nationalities.country',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
@@ -53,7 +53,7 @@ $result = [
         ],
         'nationality_type' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_nationalities.nationality_type',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_nationalities.nationality_type',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
@@ -67,7 +67,7 @@ $result = [
         ],
         'remarks' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_nationalities.remarks',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_nationalities.remarks',
             'config' => [
                 'type' => 'text',
                 'cols' => '30',

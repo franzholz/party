@@ -4,7 +4,7 @@ defined('TYPO3') || die('Access denied.');
 
 $result = [
     'ctrl' => [
-        'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_languages',
+        'title'     => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_languages',
         'label'     => 'uid',
         'label_userFunc' => 'tx_party_labels->getLabel',
         'tstamp'    => 'tstamp',
@@ -20,7 +20,7 @@ $result = [
     'columns' => [
         'party' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_languages.party',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_languages.party',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
@@ -34,7 +34,7 @@ $result = [
         ],
         'language' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_languages.language',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_languages.language',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
@@ -52,7 +52,7 @@ $result = [
         ],
         'type' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_languages.type',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_languages.type',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
@@ -66,58 +66,58 @@ $result = [
         ],
         'read_skills' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_languages.read_skills',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_languages.read_skills',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
-                'items' => [['label' => '', 'value' => 0], ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_languages.read_skills.I.0', 'value' => 'YES'], ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_languages.read_skills.I.1', 'value' => 'NO'], ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_languages.read_skills.I.2', 'value' => 'POOR']],
+                'items' => [['label' => '', 'value' => 0], ['label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_languages.read_skills.I.0', 'value' => 'YES'], ['label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_languages.read_skills.I.1', 'value' => 'NO'], ['label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_languages.read_skills.I.2', 'value' => 'POOR']],
                 'size' => 1,
                 'maxitems' => 1,
             ],
         ],
         'write_skills' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_languages.write_skills',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_languages.write_skills',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
-                'items' => [['label' => '', 'value' => 0], ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_languages.write_skills.I.0', 'value' => 'YES'], ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_languages.write_skills.I.1', 'value' => 'NO'], ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_languages.write_skills.I.2', 'value' => 'POOR']],
+                'items' => [['label' => '', 'value' => 0], ['label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_languages.write_skills.I.0', 'value' => 'YES'], ['label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_languages.write_skills.I.1', 'value' => 'NO'], ['label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_languages.write_skills.I.2', 'value' => 'POOR']],
                 'size' => 1,
                 'maxitems' => 1,
             ],
         ],
         'listen_skills' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_languages.listen_skills',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_languages.listen_skills',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
-                'items' => [['label' => '', 'value' => 0], ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_languages.listen_skills.I.0', 'value' => 'YES'], ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_languages.listen_skills.I.1', 'value' => 'NO'], ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_languages.listen_skills.I.2', 'value' => 'POOR']],
+                'items' => [['label' => '', 'value' => 0], ['label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_languages.listen_skills.I.0', 'value' => 'YES'], ['label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_languages.listen_skills.I.1', 'value' => 'NO'], ['label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_languages.listen_skills.I.2', 'value' => 'POOR']],
                 'size' => 1,
                 'maxitems' => 1,
             ],
         ],
         'speak_skills' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_languages.speak_skills',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_languages.speak_skills',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
-                'items' => [['label' => '', 'value' => 0], ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_languages.speak_skills.I.0', 'value' => 'YES'], ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_languages.speak_skills.I.1', 'value' => 'NO'], ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_languages.speak_skills.I.2', 'value' => 'POOR']],
+                'items' => [['label' => '', 'value' => 0], ['label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_languages.speak_skills.I.0', 'value' => 'YES'], ['label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_languages.speak_skills.I.1', 'value' => 'NO'], ['label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_languages.speak_skills.I.2', 'value' => 'POOR']],
                 'size' => 1,
                 'maxitems' => 1,
             ],
         ],
         'preference' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_languages.preference',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_languages.preference',
             'config' => [
                 'type' => 'check',
             ],
         ],
         'remarks' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_languages.remarks',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_languages.remarks',
             'config' => [
                 'type' => 'text',
                 'cols' => '30',

@@ -4,7 +4,7 @@ defined('TYPO3') || die('Access denied.');
 
 $result = [
     'ctrl' => [
-        'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_organisation_natures',
+        'title'     => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_organisation_natures',
         'label'     => 'title',
         'tstamp'    => 'tstamp',
         'crdate'    => 'crdate',
@@ -41,7 +41,7 @@ $result = [
         ],
         'short_title' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_organisation_natures.short_title',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_organisation_natures.short_title',
             'config' => [
                 'type' => 'input',
                 'size' => '30',
@@ -51,7 +51,7 @@ $result = [
         ],
         'title' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_organisation_natures.title',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_organisation_natures.title',
             'config' => [
                 'type' => 'input',
                 'size' => '48',
@@ -61,7 +61,7 @@ $result = [
         ],
         'long_title' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_organisation_natures.long_title',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_organisation_natures.long_title',
             'config' => [
                 'type' => 'input',
                 'size' => '48',

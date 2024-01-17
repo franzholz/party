@@ -4,7 +4,7 @@ defined('TYPO3') || die('Access denied.');
 
 $result = [
     'ctrl' => [
-        'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_electronic_address_identifiers',
+        'title'     => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_electronic_address_identifiers',
         'label'     => 'electronic_address_identifier',
         'tstamp'    => 'tstamp',
         'crdate'    => 'crdate',
@@ -19,7 +19,7 @@ $result = [
     'columns' => [
         'parties' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_electronic_address_identifiers.parties',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_electronic_address_identifiers.parties',
             'config' => [
                 'type' => 'inline',
                 'foreign_table' => 'tx_party_electronic_address_identifier_usages',
@@ -32,7 +32,7 @@ $result = [
         ],
         'type' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_electronic_address_identifiers.type',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_electronic_address_identifiers.type',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
@@ -46,7 +46,7 @@ $result = [
         ],
         'electronic_address_identifier' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_electronic_address_identifiers.electronic_address_identifier',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_electronic_address_identifiers.electronic_address_identifier',
             'config' => [
                 'type' => 'input',
                 'size' => '30',
@@ -56,7 +56,7 @@ $result = [
         ],
         'remarks' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_electronic_address_identifiers.remarks',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_electronic_address_identifiers.remarks',
             'config' => [
                 'type' => 'text',
                 'cols' => '30',

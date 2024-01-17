@@ -4,7 +4,7 @@ defined('TYPO3') || die('Access denied.');
 
 $result = [
     'ctrl' => [
-        'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_electronic_address_identifier_usages',
+        'title'     => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_electronic_address_identifier_usages',
         'label'     => 'uid',
         'label_userFunc' => 'tx_party_labels->getLabel',
         'tstamp'    => 'tstamp',
@@ -20,7 +20,7 @@ $result = [
     'columns' => [
         'party' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_electronic_address_identifier_usages.party',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_electronic_address_identifier_usages.party',
             'config' => [
                 'type' => 'group',
                 'allowed' => 'tx_party_parties',
@@ -31,7 +31,7 @@ $result = [
         ],
         'electronic_address_identifier' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_electronic_address_identifier_usages.electronic_address_identifier',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_electronic_address_identifier_usages.electronic_address_identifier',
             'config' => [
                 'type' => 'group',
                 'allowed' => 'tx_party_electronic_address_identifiers',
@@ -42,7 +42,7 @@ $result = [
         ],
         'electronic_address_identifier_usage' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_electronic_address_identifier_usages.electronic_address_identifier_usage',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_electronic_address_identifier_usages.electronic_address_identifier_usage',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
@@ -56,7 +56,7 @@ $result = [
         ],
         'standard' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_electronic_address_identifier_usages.standard',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_electronic_address_identifier_usages.standard',
             'config' => [
                 'type' => 'check',
             ],

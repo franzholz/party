@@ -4,7 +4,7 @@ defined('TYPO3') || die('Access denied.');
 
 $result = [
     'ctrl' => [
-        'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_revenues',
+        'title'     => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_revenues',
         'label'     => 'amount',
         'tstamp'    => 'tstamp',
         'crdate'    => 'crdate',
@@ -19,7 +19,7 @@ $result = [
     'columns' => [
         'party' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_revenues.party',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_revenues.party',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
@@ -33,7 +33,7 @@ $result = [
         ],
         'currency' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_revenues.currency',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_revenues.currency',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
@@ -51,7 +51,7 @@ $result = [
         ],
         'amount' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_revenues.amount',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_revenues.amount',
             'config' => [
                 'type' => 'number',
                 'size' => '30',
@@ -62,7 +62,7 @@ $result = [
         ],
         'amount_precision' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_revenues.amount_precision',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_revenues.amount_precision',
             'config' => [
                 'type' => 'number',
                 'size' => '10',
@@ -73,14 +73,14 @@ $result = [
         ],
         'after_tax' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_revenues.after_tax',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_revenues.after_tax',
             'config' => [
                 'type' => 'check',
             ],
         ],
         'type' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_revenues.type',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_revenues.type',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
@@ -94,7 +94,7 @@ $result = [
         ],
         'period_from' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_revenues.period_from',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_revenues.period_from',
             'config' => [
                 'type'     => 'input',
                 'size'     => '8',
@@ -106,7 +106,7 @@ $result = [
         ],
         'period_to' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_revenues.period_to',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_revenues.period_to',
             'config' => [
                 'type'     => 'input',
                 'size'     => '8',
@@ -118,7 +118,7 @@ $result = [
         ],
         'source' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_revenues.source',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_revenues.source',
             'config' => [
                 'type' => 'input',
                 'size' => '30',
@@ -128,7 +128,7 @@ $result = [
         ],
         'remarks' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_revenues.remarks',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_revenues.remarks',
             'config' => [
                 'type' => 'text',
                 'cols' => '30',

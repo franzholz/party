@@ -4,7 +4,7 @@ defined('TYPO3') || die('Access denied.');
 
 $result = [
     'ctrl' => [
-        'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_events',
+        'title'     => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_events',
         'label'     => 'type',
         'label_userFunc' => 'tx_party_labels->getLabel',
         'tstamp'    => 'tstamp',
@@ -20,7 +20,7 @@ $result = [
     'columns' => [
         'party' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_events.party',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_events.party',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
@@ -34,7 +34,7 @@ $result = [
         ],
         'type' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_events.type',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_events.type',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
@@ -48,7 +48,7 @@ $result = [
         ],
         'date' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_events.date',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_events.date',
             'config' => [
                 'type'     => 'input',
                 'size'     => '8',
@@ -60,7 +60,7 @@ $result = [
         ],
         'date_from' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_events.date_from',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_events.date_from',
             'config' => [
                 'type'     => 'input',
                 'size'     => '8',
@@ -72,7 +72,7 @@ $result = [
         ],
         'date_to' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_events.date_to',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_events.date_to',
             'config' => [
                 'type'     => 'input',
                 'size'     => '8',
@@ -84,7 +84,7 @@ $result = [
         ],
         'remarks' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_events.remarks',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_events.remarks',
             'config' => [
                 'type' => 'text',
                 'cols' => '30',

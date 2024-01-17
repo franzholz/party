@@ -4,7 +4,7 @@ defined('TYPO3') || die('Access denied.');
 
 $result = [
     'ctrl' => [
-        'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_favourites',
+        'title'     => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_favourites',
         'label'     => 'favourite',
         'tstamp'    => 'tstamp',
         'crdate'    => 'crdate',
@@ -19,7 +19,7 @@ $result = [
     'columns' => [
         'party' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_favourites.party',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_favourites.party',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
@@ -33,7 +33,7 @@ $result = [
         ],
         'type' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_favourites.type',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_favourites.type',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
@@ -47,7 +47,7 @@ $result = [
         ],
         'favourite' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_favourites.favourite',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_favourites.favourite',
             'config' => [
                 'type' => 'input',
                 'size' => '30',
@@ -57,7 +57,7 @@ $result = [
         ],
         'remarks' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_favourites.remarks',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_favourites.remarks',
             'config' => [
                 'type' => 'text',
                 'cols' => '30',

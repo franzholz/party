@@ -4,7 +4,7 @@ defined('TYPO3') || die('Access denied.');
 
 $result = [
     'ctrl' => [
-        'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_accounts',
+        'title'     => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_accounts',
         'label'     => 'account_id',
         'tstamp'    => 'tstamp',
         'crdate'    => 'crdate',
@@ -19,7 +19,7 @@ $result = [
     'columns' => [
         'party' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_accounts.party',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_accounts.party',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
@@ -33,7 +33,7 @@ $result = [
         ],
         'organisation' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_accounts.organisation',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_accounts.organisation',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
@@ -46,7 +46,7 @@ $result = [
         ],
         'ownership_type' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_accounts.ownership_type',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_accounts.ownership_type',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
@@ -60,7 +60,7 @@ $result = [
         ],
         'account_id' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_accounts.account_id',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_accounts.account_id',
             'config' => [
                 'type' => 'input',
                 'size' => '30',
@@ -70,7 +70,7 @@ $result = [
         ],
         'issuing_authority' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_accounts.issuing_authority',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_accounts.issuing_authority',
             'config' => [
                 'type' => 'input',
                 'size' => '30',
@@ -80,7 +80,7 @@ $result = [
         ],
         'account_type' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_accounts.account_type',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_accounts.account_type',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
@@ -94,7 +94,7 @@ $result = [
         ],
         'remarks' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_accounts.remarks',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_accounts.remarks',
             'config' => [
                 'type' => 'text',
                 'cols' => '30',

@@ -4,7 +4,7 @@ defined('TYPO3') || die('Access denied.');
 
 $result = [
     'ctrl' => [
-        'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_disabilities',
+        'title'     => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_disabilities',
         'label'     => 'disability',
         'tstamp'    => 'tstamp',
         'crdate'    => 'crdate',
@@ -19,7 +19,7 @@ $result = [
     'columns' => [
         'party' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_disabilities.party',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_disabilities.party',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
@@ -33,7 +33,7 @@ $result = [
         ],
         'disability' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_disabilities.disability',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_disabilities.disability',
             'config' => [
                 'type' => 'input',
                 'size' => '30',
@@ -43,7 +43,7 @@ $result = [
         ],
         'cause' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_disabilities.cause',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_disabilities.cause',
             'config' => [
                 'type' => 'input',
                 'size' => '30',
@@ -53,7 +53,7 @@ $result = [
         ],
         'remarks' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_disabilities.remarks',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_disabilities.remarks',
             'config' => [
                 'type' => 'text',
                 'cols' => '30',

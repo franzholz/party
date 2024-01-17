@@ -4,7 +4,7 @@ defined('TYPO3') || die('Access denied.');
 
 $result = [
     'ctrl' => [
-        'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_relationships',
+        'title'     => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_relationships',
         'label'     => 'uid',
         'label_userFunc' => 'tx_party_labels->getLabel',
         'tstamp'    => 'tstamp',
@@ -20,7 +20,7 @@ $result = [
     'columns' => [
         'primary_party' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_relationships.primary_party',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_relationships.primary_party',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
@@ -34,7 +34,7 @@ $result = [
         ],
         'secondary_party' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_relationships.secondary_party',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_relationships.secondary_party',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
@@ -48,7 +48,7 @@ $result = [
         ],
         'relationship_type' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_relationships.relationship_type',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_relationships.relationship_type',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
@@ -61,7 +61,7 @@ $result = [
         ],
         'date_established' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_relationships.date_established',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_relationships.date_established',
             'config' => [
                 'type'     => 'input',
                 'size'     => '8',
@@ -73,7 +73,7 @@ $result = [
         ],
         'date_lapsed' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_relationships.date_lapsed',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_relationships.date_lapsed',
             'config' => [
                 'type'     => 'input',
                 'size'     => '8',
@@ -85,7 +85,7 @@ $result = [
         ],
         'reason_lapsed' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_relationships.reason_lapsed',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_relationships.reason_lapsed',
             'config' => [
                 'type' => 'text',
                 'cols' => '30',
@@ -94,7 +94,7 @@ $result = [
         ],
         'remarks' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_relationships.remarks',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_relationships.remarks',
             'config' => [
                 'type' => 'text',
                 'cols' => '30',

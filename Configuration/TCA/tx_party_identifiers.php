@@ -4,7 +4,7 @@ defined('TYPO3') || die('Access denied.');
 
 $result = [
     'ctrl' => [
-        'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_identifiers',
+        'title'     => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_identifiers',
         'label'     => 'identifier',
         'tstamp'    => 'tstamp',
         'crdate'    => 'crdate',
@@ -20,7 +20,7 @@ $result = [
     'columns' => [
         'party' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_identifiers.party',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_identifiers.party',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
@@ -34,7 +34,7 @@ $result = [
         ],
         'type' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_identifiers.type',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_identifiers.type',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
@@ -48,7 +48,7 @@ $result = [
         ],
         'identifier' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_identifiers.identifier',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_identifiers.identifier',
             'config' => [
                 'type' => 'input',
                 'size' => '30',
@@ -58,7 +58,7 @@ $result = [
         ],
         'issue_date' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_identifiers.issue_date',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_identifiers.issue_date',
             'config' => [
                 'type'     => 'input',
                 'size'     => '8',
@@ -70,7 +70,7 @@ $result = [
         ],
         'expiry_date' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_identifiers.expiry_date',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_identifiers.expiry_date',
             'config' => [
                 'type'     => 'input',
                 'size'     => '8',
@@ -82,7 +82,7 @@ $result = [
         ],
         'remarks' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_identifiers.remarks',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_identifiers.remarks',
             'config' => [
                 'type' => 'text',
                 'cols' => '30',

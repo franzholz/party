@@ -4,7 +4,7 @@ defined('TYPO3') || die('Access denied.');
 
 $result = [
     'ctrl' => [
-        'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_address_usages',
+        'title'     => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_address_usages',
         'label'     => 'uid',
         'label_userFunc' => 'tx_party_labels->getLabel',
         'tstamp'    => 'tstamp',
@@ -20,7 +20,7 @@ $result = [
     'columns' => [
         'party' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_address_usages.party',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_address_usages.party',
             'config' => [
                 'type' => 'group',
                 'allowed' => 'tx_party_parties',
@@ -31,7 +31,7 @@ $result = [
         ],
         'address' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_address_usages.address',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_address_usages.address',
             // 'config' => Array (
             // 	'type' => 'inline',
             // 	'foreign_table' => 'tx_party_addresses',
@@ -49,7 +49,7 @@ $result = [
         ],
         'address_usage' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_address_usages.address_usage',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_address_usages.address_usage',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
@@ -63,7 +63,7 @@ $result = [
         ],
         'standard' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_address_usages.standard',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_address_usages.standard',
             'config' => [
                 'type' => 'check',
             ],

@@ -4,7 +4,7 @@ defined('TYPO3') || die('Access denied.');
 
 $result = [
     'ctrl' => [
-        'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_addresses',
+        'title'     => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_addresses',
         'label'     => 'locality',
         'label_userFunc' => 'tx_party_labels->getLabel',
         'tstamp'    => 'tstamp',
@@ -23,7 +23,7 @@ $result = [
     'columns' => [
         'parties' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_addresses.parties',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_addresses.parties',
             'config' => [
                 'type' => 'inline',
                 'foreign_table' => 'tx_party_address_usages',
@@ -36,7 +36,7 @@ $result = [
         ],
         'locality' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_addresses.locality',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_addresses.locality',
             'config' => [
                 'type' => 'input',
                 'size' => '30',
@@ -46,7 +46,7 @@ $result = [
         ],
         'thoroughfare' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_addresses.thoroughfare',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_addresses.thoroughfare',
             'config' => [
                 'type' => 'input',
                 'size' => '30',
@@ -56,7 +56,7 @@ $result = [
         ],
         'thoroughfare_number' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_addresses.thoroughfare_number',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_addresses.thoroughfare_number',
             'config' => [
                 'type' => 'input',
                 'size' => '3',
@@ -66,7 +66,7 @@ $result = [
         ],
         'building_name' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_addresses.building_name',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_addresses.building_name',
             'config' => [
                 'type' => 'input',
                 'size' => '10',
@@ -76,7 +76,7 @@ $result = [
         ],
         'location' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_addresses.location',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_addresses.location',
             'config' => [
                 'type' => 'input',
                 'size' => '10',
@@ -86,7 +86,7 @@ $result = [
         ],
         'lot' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_addresses.lot',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_addresses.lot',
             'config' => [
                 'type' => 'input',
                 'size' => '10',
@@ -96,7 +96,7 @@ $result = [
         ],
         'premise_type' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_addresses.premise_type',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_addresses.premise_type',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
@@ -110,7 +110,7 @@ $result = [
         ],
         'internal_thoroughfare' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_addresses.internal_thoroughfare',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_addresses.internal_thoroughfare',
             'config' => [
                 'type' => 'input',
                 'size' => '10',
@@ -120,7 +120,7 @@ $result = [
         ],
         'reference_location' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_addresses.reference_location',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_addresses.reference_location',
             'config' => [
                 'type' => 'input',
                 'size' => '10',
@@ -130,7 +130,7 @@ $result = [
         ],
         'post_code' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_addresses.post_code',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_addresses.post_code',
             'config' => [
                 'type' => 'input',
                 'size' => '30',
@@ -140,7 +140,7 @@ $result = [
         ],
         'rural_delivery' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_addresses.rural_delivery',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_addresses.rural_delivery',
             'config' => [
                 'type' => 'input',
                 'size' => '10',
@@ -150,7 +150,7 @@ $result = [
         ],
         'latitude_degrees_measure' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_addresses.latitude_degrees_measure',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_addresses.latitude_degrees_measure',
             'config' => [
                 'type' => 'number',
                 'size' => '5',
@@ -165,7 +165,7 @@ $result = [
         ],
         'latitude_minutes_measure' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_addresses.latitude_minutes_measure',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_addresses.latitude_minutes_measure',
             'config' => [
                 'type' => 'number',
                 'size' => '5',
@@ -180,7 +180,7 @@ $result = [
         ],
         'latitude_seconds_measure' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_addresses.latitude_seconds_measure',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_addresses.latitude_seconds_measure',
             'config' => [
                 'type' => 'number',
                 'size' => '5',
@@ -195,18 +195,18 @@ $result = [
         ],
         'latitude_direction_code' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_addresses.latitude_direction_code',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_addresses.latitude_direction_code',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
-                'items' => [['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_addresses.latitude_direction_code.I.0', 'value' => 'N'], ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_addresses.latitude_direction_code.I.1', 'value' => 'S']],
+                'items' => [['label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_addresses.latitude_direction_code.I.0', 'value' => 'N'], ['label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_addresses.latitude_direction_code.I.1', 'value' => 'S']],
                 'size' => 1,
                 'maxitems' => 1,
             ],
         ],
         'longitude_degrees_measure' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_addresses.longitude_degrees_measure',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_addresses.longitude_degrees_measure',
             'config' => [
                 'type' => 'number',
                 'size' => '5',
@@ -221,7 +221,7 @@ $result = [
         ],
         'longitude_minutes_measure' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_addresses.longitude_minutes_measure',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_addresses.longitude_minutes_measure',
             'config' => [
                 'type' => 'number',
                 'size' => '5',
@@ -236,7 +236,7 @@ $result = [
         ],
         'longitude_seconds_measure' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_addresses.longitude_seconds_measure',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_addresses.longitude_seconds_measure',
             'config' => [
                 'type' => 'number',
                 'size' => '5',
@@ -251,18 +251,18 @@ $result = [
         ],
         'longitude_direction_code' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_addresses.longitude_direction_code',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_addresses.longitude_direction_code',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
-                'items' => [['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_addresses.longitude_direction_code.I.0', 'value' => 'W'], ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_addresses.longitude_direction_code.I.1', 'value' => 'E']],
+                'items' => [['label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_addresses.longitude_direction_code.I.0', 'value' => 'W'], ['label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_addresses.longitude_direction_code.I.1', 'value' => 'E']],
                 'size' => 1,
                 'maxitems' => 1,
             ],
         ],
         'postal_delivery_point' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_addresses.postal_delivery_point',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_addresses.postal_delivery_point',
             'config' => [
                 'type' => 'input',
                 'size' => '10',
@@ -272,7 +272,7 @@ $result = [
         ],
         'post_office' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_addresses.post_office',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_addresses.post_office',
             'config' => [
                 'type' => 'input',
                 'size' => '10',
@@ -282,7 +282,7 @@ $result = [
         ],
         'post_town' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_addresses.post_town',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_addresses.post_town',
             'config' => [
                 'type' => 'input',
                 'size' => '10',
@@ -292,7 +292,7 @@ $result = [
         ],
         'administrative_area' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_addresses.administrative_area',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_addresses.administrative_area',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
@@ -311,7 +311,7 @@ $result = [
         ],
         'country' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_addresses.country',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_addresses.country',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
@@ -330,7 +330,7 @@ $result = [
         ],
         'images' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_addresses.images',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_addresses.images',
             'config' => [
                 'type' => 'inline',
                 'foreign_table' => 'tx_party_images',
@@ -343,7 +343,7 @@ $result = [
         ],
         'remarks' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_addresses.remarks',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_addresses.remarks',
             'config' => [
                 'type' => 'text',
                 'cols' => '30',
@@ -353,7 +353,7 @@ $result = [
     ],
     'types' => [
         '0' => [
-            'showitem' => 'parties,--palette--,thoroughfare,--palette--;;1,post_code,--palette--;;2,locality,--palette--;;3,administrative_area,--palette--;;4,country,--palette--;LLL:EXT:party/locallang_db.xml:tx_party_addresses.latitude;5,--palette--;LLL:EXT:party/locallang_db.xml:tx_party_addresses.longitude;6,images,remarks,--palette--',
+            'showitem' => 'parties,--palette--,thoroughfare,--palette--;;1,post_code,--palette--;;2,locality,--palette--;;3,administrative_area,--palette--;;4,country,--palette--;LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_addresses.latitude;5,--palette--;LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_addresses.longitude;6,images,remarks,--palette--',
         ],
     ],
     'palettes' => [

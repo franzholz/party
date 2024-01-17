@@ -4,7 +4,7 @@ defined('TYPO3') || die('Access denied.');
 
 $result = [
     'ctrl' => [
-        'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_images',
+        'title'     => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_images',
         'label'     => 'title',
         'tstamp'    => 'tstamp',
         'crdate'    => 'crdate',
@@ -20,18 +20,18 @@ $result = [
     'columns' => [
         'type' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_images.type',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_images.type',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
-                'items' => [['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_images.type.I.0', 'value' => '0'], ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_images.type.I.1', 'value' => '1']],
+                'items' => [['label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_images.type.I.0', 'value' => '0'], ['label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_images.type.I.1', 'value' => '1']],
                 'size' => 1,
                 'maxitems' => 1,
             ],
         ],
         'party' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_images.party',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_images.party',
             'config' => [
                 'type' => 'group',
                 'allowed' => 'tx_party_parties',
@@ -42,7 +42,7 @@ $result = [
         ],
         'address' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_images.address',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_images.address',
             'config' => [
                 'type' => 'group',
                 'allowed' => 'tx_party_addresses',
@@ -53,7 +53,7 @@ $result = [
         ],
         'image' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_images.image',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_images.image',
             'config' => [
                 'type' => 'group',
                 'internal_type' => 'file',
@@ -68,7 +68,7 @@ $result = [
         ],
         'title' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_images.title',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_images.title',
             'config' => [
                 'type' => 'input',
                 'size' => '30',
@@ -78,7 +78,7 @@ $result = [
         ],
         'description' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_images.description',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_images.description',
             'config' => [
                 'type' => 'input',
                 'size' => '30',
@@ -88,7 +88,7 @@ $result = [
         ],
         'remarks' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_images.remarks',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_images.remarks',
             'config' => [
                 'type' => 'text',
                 'cols' => '30',

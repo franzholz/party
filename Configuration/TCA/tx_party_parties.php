@@ -4,7 +4,7 @@ defined('TYPO3') || die('Access denied.');
 
 $result = [
     'ctrl' => [
-        'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_parties',
+        'title'     => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_parties',
         'label'     => 'uid',
         'label_userFunc' => 'tx_party_labels->getLabel',
         'tstamp'    => 'tstamp',
@@ -27,18 +27,18 @@ $result = [
     'columns' => [
         'type' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.type',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_parties.type',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
                 'items' => [
                     [
-                        'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.type.I.0',
+                        'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_parties.type.I.0',
                         'value' => '0',
                         'icon' => 'EXT:party/Resources/Public/Icons/selicon_tx_party_parties_type_0.gif'
                     ], 
                     [
-                        'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.type.I.1', 
+                        'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_parties.type.I.1', 
                         'value' => '1',
                         'icon' => 'EXT:party/Resources/Public/Icons/selicon_tx_party_parties_type_1.gif'
                     ]
@@ -49,18 +49,18 @@ $result = [
         ],
         'marital_status' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.marital_status',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_parties.marital_status',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
                 'items' => [
                     ['label' => '', 'value' => ''],
-                    ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.marital_status.I.0', 'value' => 'SINGLE'],
-                    ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.marital_status.I.1', 'value' => 'ENGAGED'],
-                    ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.marital_status.I.2', 'value' => 'MARRIED'], 
-                    ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.marital_status.I.3', 'value' => 'SEPARATED'],
-                    ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.marital_status.I.4', 'value' => 'DIVORCED'], 
-                    ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.marital_status.I.5', 'value' => 'WIDOWED']
+                    ['label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_parties.marital_status.I.0', 'value' => 'SINGLE'],
+                    ['label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_parties.marital_status.I.1', 'value' => 'ENGAGED'],
+                    ['label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_parties.marital_status.I.2', 'value' => 'MARRIED'], 
+                    ['label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_parties.marital_status.I.3', 'value' => 'SEPARATED'],
+                    ['label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_parties.marital_status.I.4', 'value' => 'DIVORCED'], 
+                    ['label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_parties.marital_status.I.5', 'value' => 'WIDOWED']
                 ],
                 'size' => 1,
                 'maxitems' => 1,
@@ -68,7 +68,7 @@ $result = [
         ],
         'religion' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.religion',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_parties.religion',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
@@ -82,7 +82,7 @@ $result = [
         ],
         'birth_place' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.birth_place',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_parties.birth_place',
             'config' => [
                 'type' => 'input',
                 'size' => '30',
@@ -92,7 +92,7 @@ $result = [
         ],
         'birth_date_time' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.birth_date_time',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_parties.birth_date_time',
             'config' => [
                 'type'     => 'input',
                 'size'     => '12',
@@ -104,7 +104,7 @@ $result = [
         ],
         'birth_date_time_precision' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.birth_date_time_precision',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_parties.birth_date_time_precision',
             'config' => [
                 'type' => 'input',
                 'size' => '10',
@@ -114,7 +114,7 @@ $result = [
         ],
         'birth_sign' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.birth_sign',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_parties.birth_sign',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
@@ -128,7 +128,7 @@ $result = [
         ],
         'birth_star' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.birth_star',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_parties.birth_star',
             'config' => [
                 'type' => 'input',
                 'size' => '30',
@@ -138,7 +138,7 @@ $result = [
         ],
         'weight' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.weight',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_parties.weight',
             'config' => [
                 'type' => 'number',
                 'size' => '30',
@@ -149,7 +149,7 @@ $result = [
         ],
         'height' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.height',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_parties.height',
             'config' => [
                 'type' => 'number',
                 'size' => '30',
@@ -160,7 +160,7 @@ $result = [
         ],
         'breast' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.breast',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_parties.breast',
             'config' => [
                 'type' => 'number',
                 'size' => '30',
@@ -171,7 +171,7 @@ $result = [
         ],
         'waist' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.waist',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_parties.waist',
             'config' => [
                 'type' => 'number',
                 'size' => '30',
@@ -182,7 +182,7 @@ $result = [
         ],
         'hip' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.hip',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_parties.hip',
             'config' => [
                 'type' => 'number',
                 'size' => '30',
@@ -193,22 +193,22 @@ $result = [
         ],
         'hair_colour' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.hair_colour',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_parties.hair_colour',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
                 'items' => [
-                    ['label' => '', 'value' => ''], ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.hair_colour.I.0', 'value' => 'BROWN'], 
-                    ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.hair_colour.I.1', 'value' => 'BLACK'], 
-                    ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.hair_colour.I.2', 'value' => 'BLONDE'], 
-                    ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.hair_colour.I.3', 'value' => 'RED'], 
-                    ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.hair_colour.I.4', 'value' => 'GREY'], 
-                    ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.hair_colour.I.5', 'value' => 'WHITE'], 
-                    ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.hair_colour.I.6', 'value' => 'GINGER'], 
-                    ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.hair_colour.I.7', 'value' => 'PURPLE'], 
-                    ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.hair_colour.I.8', 'value' => 'BLUE'], 
-                    ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.hair_colour.I.9', 'value' => 'GREEN'], 
-                    ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.hair_colour.I.10', 'value' => 'PINK']
+                    ['label' => '', 'value' => ''], ['label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_parties.hair_colour.I.0', 'value' => 'BROWN'], 
+                    ['label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_parties.hair_colour.I.1', 'value' => 'BLACK'], 
+                    ['label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_parties.hair_colour.I.2', 'value' => 'BLONDE'], 
+                    ['label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_parties.hair_colour.I.3', 'value' => 'RED'], 
+                    ['label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_parties.hair_colour.I.4', 'value' => 'GREY'], 
+                    ['label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_parties.hair_colour.I.5', 'value' => 'WHITE'], 
+                    ['label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_parties.hair_colour.I.6', 'value' => 'GINGER'], 
+                    ['label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_parties.hair_colour.I.7', 'value' => 'PURPLE'], 
+                    ['label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_parties.hair_colour.I.8', 'value' => 'BLUE'], 
+                    ['label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_parties.hair_colour.I.9', 'value' => 'GREEN'], 
+                    ['label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_parties.hair_colour.I.10', 'value' => 'PINK']
                 ],
                 'size' => 1,
                 'maxitems' => 1,
@@ -216,17 +216,17 @@ $result = [
         ],
         'eye_colour' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.eye_colour',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_parties.eye_colour',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
                 'items' => [
-                    ['label' => '', 'value' => ''], ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.eye_colour.I.0', 'value' => 'AMBER'], 
-                    ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.eye_colour.I.1', 'value' => 'BLUE'], 
-                    ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.eye_colour.I.2', 'value' => 'BROWN'], 
-                    ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.eye_colour.I.3', 'value' => 'GRAY'], 
-                    ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.eye_colour.I.4', 'value' => 'GREEN'], 
-                    ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.eye_colour.I.5', 'value' => 'HAZEL']
+                    ['label' => '', 'value' => ''], ['label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_parties.eye_colour.I.0', 'value' => 'AMBER'], 
+                    ['label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_parties.eye_colour.I.1', 'value' => 'BLUE'], 
+                    ['label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_parties.eye_colour.I.2', 'value' => 'BROWN'], 
+                    ['label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_parties.eye_colour.I.3', 'value' => 'GRAY'], 
+                    ['label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_parties.eye_colour.I.4', 'value' => 'GREEN'], 
+                    ['label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_parties.eye_colour.I.5', 'value' => 'HAZEL']
                 ],
                 'size' => 1,
                 'maxitems' => 1,
@@ -234,7 +234,7 @@ $result = [
         ],
         'skin_colour' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.skin_colour',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_parties.skin_colour',
             'config' => [
                 'type' => 'input',
                 'size' => '30',
@@ -244,27 +244,27 @@ $result = [
         ],
         'blood_group' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.blood_group',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_parties.blood_group',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
                 'items' => [
                     ['label' => '', 'value' => ''], 
-                    ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.blood_group.I.0', 'value' => 'O_NEGATIVE'], 
-                    ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.blood_group.I.1', 'value' => 'O_POSITIVE'],
-                    ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.blood_group.I.2', 'value' => 'A_NEGATIVE'], 
-                    ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.blood_group.I.3', 'value' => 'A_POSITIVE'], 
-                    ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.blood_group.I.4', 'value' => 'B_NEGATIVE'], 
-                    ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.blood_group.I.5', 'value' => 'B_POSITIVE'],
-                    ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.blood_group.I.6', 'value' => 'AB_NEGATIVE'],
-                    ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.blood_group.I.7', 'value' => 'AB_POSITIVE']],
+                    ['label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_parties.blood_group.I.0', 'value' => 'O_NEGATIVE'], 
+                    ['label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_parties.blood_group.I.1', 'value' => 'O_POSITIVE'],
+                    ['label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_parties.blood_group.I.2', 'value' => 'A_NEGATIVE'], 
+                    ['label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_parties.blood_group.I.3', 'value' => 'A_POSITIVE'], 
+                    ['label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_parties.blood_group.I.4', 'value' => 'B_NEGATIVE'], 
+                    ['label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_parties.blood_group.I.5', 'value' => 'B_POSITIVE'],
+                    ['label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_parties.blood_group.I.6', 'value' => 'AB_NEGATIVE'],
+                    ['label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_parties.blood_group.I.7', 'value' => 'AB_POSITIVE']],
                 'size' => 1,
                 'maxitems' => 1,
             ],
         ],
         'physical_status' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.physical_status',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_parties.physical_status',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
@@ -278,7 +278,7 @@ $result = [
         ],
         'ethnicity' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.ethnicity',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_parties.ethnicity',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
@@ -292,18 +292,18 @@ $result = [
         ],
         'gender' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.gender',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_parties.gender',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
-                'items' => [['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.gender.I.0', 'value' => '0'], ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.gender.I.1', 'value' => '1'], ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.gender.I.2', 'value' => '2'], ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.gender.I.3', 'value' => '9']],
+                'items' => [['label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_parties.gender.I.0', 'value' => '0'], ['label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_parties.gender.I.1', 'value' => '1'], ['label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_parties.gender.I.2', 'value' => '2'], ['label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_parties.gender.I.3', 'value' => '9']],
                 'size' => 1,
                 'maxitems' => 1,
             ],
         ],
         'hobbies' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.hobbies',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_parties.hobbies',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectMultipleSideBySide',
@@ -318,7 +318,7 @@ $result = [
         ],
         'habits' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.habits',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_parties.habits',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectMultipleSideBySide',
@@ -333,7 +333,7 @@ $result = [
         ],
         'organisation_type' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.organisation_type',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_parties.organisation_type',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
@@ -347,7 +347,7 @@ $result = [
         ],
         'organisation_nature' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.organisation_nature',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_parties.organisation_nature',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
@@ -361,7 +361,7 @@ $result = [
         ],
         'company_registration_id' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.company_registration_id',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_parties.company_registration_id',
             'config' => [
                 'type' => 'input',
                 'size' => '30',
@@ -371,7 +371,7 @@ $result = [
         ],
         'company_registration_date' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.company_registration_date',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_parties.company_registration_date',
             'config' => [
                 'type'     => 'input',
                 'size'     => '8',
@@ -383,7 +383,7 @@ $result = [
         ],
         'number_of_employees' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.number_of_employees',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_parties.number_of_employees',
             'config' => [
                 'type' => 'number',
                 'size' => '30',
@@ -394,7 +394,7 @@ $result = [
         ],
         'remarks' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.remarks',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_parties.remarks',
             'config' => [
                 'type' => 'text',
                 'cols' => '30',
@@ -403,7 +403,7 @@ $result = [
         ],
         'names' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.names',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_parties.names',
             'config' => [
                 'type' => 'inline',
                 'foreign_table' => 'tx_party_names',
@@ -419,7 +419,7 @@ $result = [
         ],
         'addresses' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.addresses',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_parties.addresses',
             'config' => [
                 'type' => 'inline',
                 'foreign_table' => 'tx_party_address_usages',
@@ -432,7 +432,7 @@ $result = [
         ],
         'accounts' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.accounts',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_parties.accounts',
             'config' => [
                 'type' => 'inline',
                 'foreign_table' => 'tx_party_accounts',
@@ -443,7 +443,7 @@ $result = [
         ],
         'contact_numbers' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.contact_numbers',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_parties.contact_numbers',
             'config' => [
                 'type' => 'inline',
                 'foreign_table' => 'tx_party_contact_number_usages',
@@ -456,7 +456,7 @@ $result = [
         ],
         'countries_of_residence' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.countries_of_residence',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_parties.countries_of_residence',
             'config' => [
                 'type' => 'inline',
                 'foreign_table' => 'tx_party_countries_of_residence',
@@ -467,7 +467,7 @@ $result = [
         ],
         'documents' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.documents',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_parties.documents',
             'config' => [
                 'type' => 'inline',
                 'foreign_table' => 'tx_party_documents',
@@ -478,7 +478,7 @@ $result = [
         ],
         'electronic_address_identifiers' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.electronic_address_identifiers',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_parties.electronic_address_identifiers',
             'config' => [
                 'type' => 'inline',
                 'foreign_table' => 'tx_party_electronic_address_identifier_usages',
@@ -491,7 +491,7 @@ $result = [
         ],
         'images' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.images',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_parties.images',
             'config' => [
                 'type' => 'inline',
                 'foreign_table' => 'tx_party_images',
@@ -504,7 +504,7 @@ $result = [
         ],
         'nationalities' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.nationalities',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_parties.nationalities',
             'config' => [
                 'type' => 'inline',
                 'foreign_table' => 'tx_party_nationalities',
@@ -515,7 +515,7 @@ $result = [
         ],
         'relationships' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.relationships',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_parties.relationships',
             'config' => [
                 'type' => 'inline',
                 'foreign_table' => 'tx_party_relationships',
@@ -526,7 +526,7 @@ $result = [
         ],
         'revenues' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.revenues',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_parties.revenues',
             'config' => [
                 'type' => 'inline',
                 'foreign_table' => 'tx_party_revenues',
@@ -537,7 +537,7 @@ $result = [
         ],
         'vehicles' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.vehicles',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_parties.vehicles',
             'config' => [
                 'type' => 'inline',
                 'foreign_table' => 'tx_party_vehicles',
@@ -548,7 +548,7 @@ $result = [
         ],
         'contacts' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.contacts',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_parties.contacts',
             'config' => [
                 'type' => 'inline',
                 'foreign_table' => 'tx_party_contacts',
@@ -559,7 +559,7 @@ $result = [
         ],
         'visas' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.visas',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_parties.visas',
             'config' => [
                 'type' => 'inline',
                 'foreign_table' => 'tx_party_visas',
@@ -570,7 +570,7 @@ $result = [
         ],
         'disabilities' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.disabilities',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_parties.disabilities',
             'config' => [
                 'type' => 'inline',
                 'foreign_table' => 'tx_party_disabilities',
@@ -581,7 +581,7 @@ $result = [
         ],
         'languages' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.languages',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_parties.languages',
             'config' => [
                 'type' => 'inline',
                 'foreign_table' => 'tx_party_languages',
@@ -592,7 +592,7 @@ $result = [
         ],
         'marks' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.marks',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_parties.marks',
             'config' => [
                 'type' => 'inline',
                 'foreign_table' => 'tx_party_marks',
@@ -603,7 +603,7 @@ $result = [
         ],
         'occupations' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.occupations',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_parties.occupations',
             'config' => [
                 'type' => 'inline',
                 'foreign_table' => 'tx_party_occupations',
@@ -614,7 +614,7 @@ $result = [
         ],
         'qualifications' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.qualifications',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_parties.qualifications',
             'config' => [
                 'type' => 'inline',
                 'foreign_table' => 'tx_party_qualifications',
@@ -625,7 +625,7 @@ $result = [
         ],
         'stock_markets' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.stock_markets',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_parties.stock_markets',
             'config' => [
                 'type' => 'inline',
                 'foreign_table' => 'tx_party_stock_markets',
@@ -636,7 +636,7 @@ $result = [
         ],
         'events' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.events',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_parties.events',
             'config' => [
                 'type' => 'inline',
                 'foreign_table' => 'tx_party_events',
@@ -647,7 +647,7 @@ $result = [
         ],
         'identifiers' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.identifiers',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_parties.identifiers',
             'config' => [
                 'type' => 'inline',
                 'foreign_table' => 'tx_party_identifiers',
@@ -658,7 +658,7 @@ $result = [
         ],
         'memberships' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.memberships',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_parties.memberships',
             'config' => [
                 'type' => 'inline',
                 'foreign_table' => 'tx_party_memberships',
@@ -669,7 +669,7 @@ $result = [
         ],
         'allergies' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.allergies',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_parties.allergies',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectMultipleSideBySide',
@@ -684,7 +684,7 @@ $result = [
         ],
         'favourites' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.favourites',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_parties.favourites',
             'config' => [
                 'type' => 'inline',
                 'foreign_table' => 'tx_party_favourites',
@@ -695,7 +695,7 @@ $result = [
         ],
         'preferences' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.preferences',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_parties.preferences',
             'config' => [
                 'type' => 'inline',
                 'foreign_table' => 'tx_party_preferences',
@@ -707,7 +707,7 @@ $result = [
     ],
     'types' => [
         '0' => [
-            'showitem' => 'type,names,--palette--,addresses,contact_numbers,electronic_address_identifiers,images,--palette--,relationships,--palette--,identifiers,--palette--,remarks,--palette--,--div--;LLL:EXT:party/locallang_db.xml:tx_party_parties.person,marital_status,religion,hobbies,--palette--,habits,favourites,--palette--,preferences,languages,--palette--,qualifications,occupations,--palette--,--div--;LLL:EXT:party/locallang_db.xml:tx_party_parties.events,birth_date_time,--palette--;;1,birth_place,--palette--;;2,contacts,--palette--,events,--div--;LLL:EXT:party/locallang_db.xml:tx_party_parties.physical,gender,weight,--palette--,height,breast,waist,hip,hair_colour,--palette--,eye_colour,skin_colour,blood_group,--palette--,physical_status,ethnicity,allergies,--palette--,marks,disabilities,--div--;LLL:EXT:party/locallang_db.xml:tx_party_parties.ownership,nationalities,countries_of_residence,visas,--palette--,accounts,--palette--,memberships,documents,--palette--,revenues,--palette--,vehicles,--palette--',
+            'showitem' => 'type,names,--palette--,addresses,contact_numbers,electronic_address_identifiers,images,--palette--,relationships,--palette--,identifiers,--palette--,remarks,--palette--,--div--;LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_parties.person,marital_status,religion,hobbies,--palette--,habits,favourites,--palette--,preferences,languages,--palette--,qualifications,occupations,--palette--,--div--;LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_parties.events,birth_date_time,--palette--;;1,birth_place,--palette--;;2,contacts,--palette--,events,--div--;LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_parties.physical,gender,weight,--palette--,height,breast,waist,hip,hair_colour,--palette--,eye_colour,skin_colour,blood_group,--palette--,physical_status,ethnicity,allergies,--palette--,marks,disabilities,--div--;LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_parties.ownership,nationalities,countries_of_residence,visas,--palette--,accounts,--palette--,memberships,documents,--palette--,revenues,--palette--,vehicles,--palette--',
         ],
         'palettes' => [
             '1' => [

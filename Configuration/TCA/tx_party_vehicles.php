@@ -4,7 +4,7 @@ defined('TYPO3') || die('Access denied.');
 
 $result = [
     'ctrl' => [
-        'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_vehicles',
+        'title'     => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_vehicles',
         'label'     => 'license_plate',
         'tstamp'    => 'tstamp',
         'crdate'    => 'crdate',
@@ -19,7 +19,7 @@ $result = [
     'columns' => [
         'party' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_vehicles.party',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_vehicles.party',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
@@ -33,7 +33,7 @@ $result = [
         ],
         'make' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_vehicles.make',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_vehicles.make',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
@@ -47,7 +47,7 @@ $result = [
         ],
         'type' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_vehicles.type',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_vehicles.type',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
@@ -61,7 +61,7 @@ $result = [
         ],
         'model' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_vehicles.model',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_vehicles.model',
             'config' => [
                 'type' => 'input',
                 'size' => '30',
@@ -71,7 +71,7 @@ $result = [
         ],
         'license_plate' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_vehicles.license_plate',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_vehicles.license_plate',
             'config' => [
                 'type' => 'input',
                 'size' => '30',
@@ -81,7 +81,7 @@ $result = [
         ],
         'manufacture_date' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_vehicles.manufacture_date',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_vehicles.manufacture_date',
             'config' => [
                 'type' => 'input',
                 'size' => '30',
@@ -91,7 +91,7 @@ $result = [
         ],
         'engine_number' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_vehicles.engine_number',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_vehicles.engine_number',
             'config' => [
                 'type' => 'input',
                 'size' => '30',
@@ -101,7 +101,7 @@ $result = [
         ],
         'chassis_number' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_vehicles.chassis_number',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_vehicles.chassis_number',
             'config' => [
                 'type' => 'input',
                 'size' => '30',
@@ -111,7 +111,7 @@ $result = [
         ],
         'body_number' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_vehicles.body_number',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_vehicles.body_number',
             'config' => [
                 'type' => 'input',
                 'size' => '30',
@@ -121,7 +121,7 @@ $result = [
         ],
         'remarks' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_vehicles.remarks',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_vehicles.remarks',
             'config' => [
                 'type' => 'text',
                 'cols' => '30',

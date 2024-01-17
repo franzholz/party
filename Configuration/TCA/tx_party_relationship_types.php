@@ -4,7 +4,7 @@ defined('TYPO3') || die('Access denied.');
 
 $result = [
     'ctrl' => [
-        'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_relationship_types',
+        'title'     => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_relationship_types',
         'label'     => 'relationship_type',
         'tstamp'    => 'tstamp',
         'crdate'    => 'crdate',
@@ -19,7 +19,7 @@ $result = [
     'columns' => [
         'relationship_type' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_relationship_types.relationship_type',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_relationship_types.relationship_type',
             'config' => [
                 'type' => 'input',
                 'size' => '30',
@@ -29,7 +29,7 @@ $result = [
         ],
         'description_as_primary' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_relationship_types.description_as_primary',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_relationship_types.description_as_primary',
             'config' => [
                 'type' => 'input',
                 'size' => '30',
@@ -39,7 +39,7 @@ $result = [
         ],
         'description_as_secondary' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_relationship_types.description_as_secondary',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_relationship_types.description_as_secondary',
             'config' => [
                 'type' => 'input',
                 'size' => '30',
@@ -49,28 +49,28 @@ $result = [
         ],
         'organisation_allowed_as_primary' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_relationship_types.organisation_allowed_as_primary',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_relationship_types.organisation_allowed_as_primary',
             'config' => [
                 'type' => 'check',
             ],
         ],
         'organisation_allowed_as_secondary' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_relationship_types.organisation_allowed_as_secondary',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_relationship_types.organisation_allowed_as_secondary',
             'config' => [
                 'type' => 'check',
             ],
         ],
         'person_allowed_as_primary' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_relationship_types.person_allowed_as_primary',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_relationship_types.person_allowed_as_primary',
             'config' => [
                 'type' => 'check',
             ],
         ],
         'person_allowed_as_secondary' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_relationship_types.person_allowed_as_secondary',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_relationship_types.person_allowed_as_secondary',
             'config' => [
                 'type' => 'check',
             ],

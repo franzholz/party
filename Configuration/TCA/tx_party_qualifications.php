@@ -4,7 +4,7 @@ defined('TYPO3') || die('Access denied.');
 
 $result = [
     'ctrl' => [
-        'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_qualifications',
+        'title'     => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_qualifications',
         'label'     => 'qualification_name',
         'tstamp'    => 'tstamp',
         'crdate'    => 'crdate',
@@ -19,7 +19,7 @@ $result = [
     'columns' => [
         'party' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_qualifications.party',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_qualifications.party',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
@@ -33,7 +33,7 @@ $result = [
         ],
         'qualification_name' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_qualifications.qualification_name',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_qualifications.qualification_name',
             'config' => [
                 'type' => 'input',
                 'size' => '30',
@@ -43,7 +43,7 @@ $result = [
         ],
         'status' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_qualifications.status',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_qualifications.status',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
@@ -56,7 +56,7 @@ $result = [
         ],
         'institution' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_qualifications.institution',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_qualifications.institution',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
@@ -69,7 +69,7 @@ $result = [
         ],
         'start_date' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_qualifications.start_date',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_qualifications.start_date',
             'config' => [
                 'type'     => 'input',
                 'size'     => '8',
@@ -81,7 +81,7 @@ $result = [
         ],
         'completion_date' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_qualifications.completion_date',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_qualifications.completion_date',
             'config' => [
                 'type'     => 'input',
                 'size'     => '8',
@@ -93,7 +93,7 @@ $result = [
         ],
         'way_of_study' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_qualifications.way_of_study',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_qualifications.way_of_study',
             'config' => [
                 'type' => 'input',
                 'size' => '10',
@@ -103,7 +103,7 @@ $result = [
         ],
         'major_subject' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_qualifications.major_subject',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_qualifications.major_subject',
             'config' => [
                 'type' => 'input',
                 'size' => '30',
@@ -113,7 +113,7 @@ $result = [
         ],
         'minor_subject' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_qualifications.minor_subject',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_qualifications.minor_subject',
             'config' => [
                 'type' => 'input',
                 'size' => '30',
@@ -123,7 +123,7 @@ $result = [
         ],
         'mark' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_qualifications.mark',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_qualifications.mark',
             'config' => [
                 'type' => 'input',
                 'size' => '30',
@@ -133,7 +133,7 @@ $result = [
         ],
         'course_duration' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_qualifications.course_duration',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_qualifications.course_duration',
             'config' => [
                 'type' => 'input',
                 'size' => '10',
@@ -143,7 +143,7 @@ $result = [
         ],
         'award' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_qualifications.award',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_qualifications.award',
             'config' => [
                 'type' => 'input',
                 'size' => '10',
@@ -153,7 +153,7 @@ $result = [
         ],
         'restriction' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_qualifications.restriction',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_qualifications.restriction',
             'config' => [
                 'type' => 'input',
                 'size' => '10',
@@ -163,7 +163,7 @@ $result = [
         ],
         'registration' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_qualifications.registration',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_qualifications.registration',
             'config' => [
                 'type' => 'input',
                 'size' => '10',
@@ -173,7 +173,7 @@ $result = [
         ],
         'remarks' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_qualifications.remarks',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_qualifications.remarks',
             'config' => [
                 'type' => 'text',
                 'cols' => '30',

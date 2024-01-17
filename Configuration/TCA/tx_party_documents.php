@@ -4,7 +4,7 @@ defined('TYPO3') || die('Access denied.');
 
 $result = [
     'ctrl' => [
-        'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_documents',
+        'title'     => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_documents',
         'label'     => 'document_id',
         'tstamp'    => 'tstamp',
         'crdate'    => 'crdate',
@@ -19,7 +19,7 @@ $result = [
     'columns' => [
         'party' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_documents.party',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_documents.party',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
@@ -33,7 +33,7 @@ $result = [
         ],
         'document_type' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_documents.document_type',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_documents.document_type',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
@@ -47,7 +47,7 @@ $result = [
         ],
         'document_id' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_documents.document_id',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_documents.document_id',
             'config' => [
                 'type' => 'input',
                 'size' => '30',
@@ -57,7 +57,7 @@ $result = [
         ],
         'issued_by' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_documents.issued_by',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_documents.issued_by',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
@@ -70,7 +70,7 @@ $result = [
         ],
         'issue_place' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_documents.issue_place',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_documents.issue_place',
             'config' => [
                 'type' => 'input',
                 'size' => '30',
@@ -80,7 +80,7 @@ $result = [
         ],
         'privilege' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_documents.privilege',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_documents.privilege',
             'config' => [
                 'type' => 'input',
                 'size' => '10',
@@ -90,7 +90,7 @@ $result = [
         ],
         'restriction' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_documents.restriction',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_documents.restriction',
             'config' => [
                 'type' => 'input',
                 'size' => '10',
@@ -100,7 +100,7 @@ $result = [
         ],
         'group_name' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_documents.group_name',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_documents.group_name',
             'config' => [
                 'type' => 'input',
                 'size' => '10',
@@ -110,7 +110,7 @@ $result = [
         ],
         'name_on_document' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_documents.name_on_document',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_documents.name_on_document',
             'config' => [
                 'type' => 'input',
                 'size' => '30',
@@ -120,7 +120,7 @@ $result = [
         ],
         'remarks' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_documents.remarks',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_documents.remarks',
             'config' => [
                 'type' => 'text',
                 'cols' => '30',

@@ -4,7 +4,7 @@ defined('TYPO3') || die('Access denied.');
 
 $result = [
     'ctrl' => [
-        'title'     => 'LLL:EXT:party/locallang_db.xml:tx_party_visas',
+        'title'     => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_visas',
         'label'     => 'country',
         'label_userFunc' => 'tx_party_labels->getLabel',
         'tstamp'    => 'tstamp',
@@ -20,7 +20,7 @@ $result = [
     'columns' => [
         'party' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_visas.party',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_visas.party',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
@@ -34,7 +34,7 @@ $result = [
         ],
         'country' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_visas.country',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_visas.country',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
@@ -53,7 +53,7 @@ $result = [
         ],
         'number' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_visas.number',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_visas.number',
             'config' => [
                 'type' => 'input',
                 'size' => '30',
@@ -63,7 +63,7 @@ $result = [
         ],
         'code' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_visas.code',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_visas.code',
             'config' => [
                 'type' => 'input',
                 'size' => '30',
@@ -73,7 +73,7 @@ $result = [
         ],
         'issue_date' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_visas.issue_date',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_visas.issue_date',
             'config' => [
                 'type'     => 'input',
                 'size'     => '8',
@@ -85,7 +85,7 @@ $result = [
         ],
         'issue_place' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_visas.issue_place',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_visas.issue_place',
             'config' => [
                 'type' => 'input',
                 'size' => '30',
@@ -95,7 +95,7 @@ $result = [
         ],
         'maximum_stay' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_visas.maximum_stay',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_visas.maximum_stay',
             'config' => [
                 'type' => 'input',
                 'size' => '30',
@@ -105,7 +105,7 @@ $result = [
         ],
         'restriction' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_visas.restriction',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_visas.restriction',
             'config' => [
                 'type' => 'input',
                 'size' => '30',
@@ -115,7 +115,7 @@ $result = [
         ],
         'privilege' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_visas.privilege',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_visas.privilege',
             'config' => [
                 'type' => 'input',
                 'size' => '30',
@@ -125,7 +125,7 @@ $result = [
         ],
         'special_condition' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_visas.special_condition',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_visas.special_condition',
             'config' => [
                 'type' => 'input',
                 'size' => '30',
@@ -135,7 +135,7 @@ $result = [
         ],
         'remarks' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_visas.remarks',
+            'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_visas.remarks',
             'config' => [
                 'type' => 'text',
                 'cols' => '30',
