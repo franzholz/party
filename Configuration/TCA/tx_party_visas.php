@@ -12,7 +12,7 @@ $result = [
         'cruser_id' => 'cruser_id',
         'default_sortby' => 'ORDER BY country',
         'delete' => 'deleted',
-        'iconfile'          => PATH_BE_PARTY_REL . 'icons/icon_tx_party_visas.gif',
+        'iconfile' => 'EXT:party/Resources/Public/Icons/icon_tx_party_visas.gif',
     ],
     'interface' => [
         'showRecordFieldList' => 'party,country,number,code,issue_date,issue_place,maximum_stay,restriction,privilege,special_condition,remarks',

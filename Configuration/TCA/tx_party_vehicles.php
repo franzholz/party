@@ -11,7 +11,7 @@ $result = [
         'cruser_id' => 'cruser_id',
         'default_sortby' => 'ORDER BY license_plate',
         'delete' => 'deleted',
-        'iconfile'          => PATH_BE_PARTY_REL . 'icons/icon_tx_party_vehicles.gif',
+        'iconfile' => 'EXT:party/Resources/Public/Icons/icon_tx_party_vehicles.gif',
     ],
     'interface' => [
         'showRecordFieldList' => 'party,make,type,model,license_plate,manufacture_date,engine_number,chassis_number,body_number,remarks',

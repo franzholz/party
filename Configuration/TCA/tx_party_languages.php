@@ -12,7 +12,7 @@ $result = [
         'cruser_id' => 'cruser_id',
         'default_sortby' => 'ORDER BY language',
         'delete' => 'deleted',
-        'iconfile'          => PATH_BE_PARTY_REL . 'icons/icon_tx_party_languages.gif',
+        'iconfile' => 'EXT:party/Resources/Public/Icons/icon_tx_party_languages.gif',
     ],
     'interface' => [
         'showRecordFieldList' => 'party,language,type,read_skills,write_skills,listen_skills,speak_skills,preference,remarks',

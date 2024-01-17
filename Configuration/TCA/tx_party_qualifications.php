@@ -11,7 +11,7 @@ $result = [
         'cruser_id' => 'cruser_id',
         'default_sortby' => 'ORDER BY qualification_name',
         'delete' => 'deleted',
-        'iconfile'          => PATH_BE_PARTY_REL . 'icons/icon_tx_party_qualifications.gif',
+        'iconfile' => 'EXT:party/Resources/Public/Icons/icon_tx_party_qualifications.gif',
     ],
     'interface' => [
         'showRecordFieldList' => 'party,qualification_name,status,institution,start_date,completion_date,way_of_study,major_subject,minor_subject,mark,course_duration,award,restriction,registration,remarks',

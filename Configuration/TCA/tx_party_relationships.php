@@ -12,7 +12,7 @@ $result = [
         'cruser_id' => 'cruser_id',
         'default_sortby' => 'ORDER BY crdate',
         'delete' => 'deleted',
-        'iconfile'          => PATH_BE_PARTY_REL . 'icons/icon_tx_party_relationships.gif',
+        'iconfile' => 'EXT:party/Resources/Public/Icons/icon_tx_party_relationships.gif',
     ],
     'interface' => [
         'showRecordFieldList' => 'primary_party,secondary_party,relationship_type,date_established,date_lapsed,reason_lapsed,remarks',

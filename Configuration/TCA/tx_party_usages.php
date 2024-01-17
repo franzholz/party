@@ -11,7 +11,7 @@ $result = [
         'cruser_id' => 'cruser_id',
         'sortby' => 'sorting',
         'delete' => 'deleted',
-        'iconfile'          => PATH_BE_PARTY_REL . 'icons/icon_tx_party_usages.gif',
+        'iconfile' => 'EXT:party/Resources/Public/Icons/icon_tx_party_usages.gif',
     ],
     'interface' => [
         'showRecordFieldList' => 'short_title,title,long_title',

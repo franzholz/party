@@ -4,9 +4,6 @@ use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 
 defined('TYPO3') || die('Access denied.');
 
-// Include the class for getting own lables
-include_once(PATH_BE_PARTY . 'hooks/class.tx_party_labels.php');
-
 $GLOBALS['TYPO3_CONF_VARS']['extconf']['party']['inline_appearance']['default'] = [
     'collapseAll' => 1,
     'expandSingle' => 1,

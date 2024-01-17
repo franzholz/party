@@ -12,7 +12,7 @@ $result = [
         'default_sortby' => 'ORDER BY title',
         'delete' => 'deleted',
         'type' => 'type',
-        'iconfile'          => PATH_BE_PARTY_REL . 'icons/icon_tx_party_images.gif',
+        'iconfile' => 'EXT:party/Resources/Public/Icons/icon_tx_party_images.gif',
     ],
     'interface' => [
         'showRecordFieldList' => 'type,party,address,image,title,description,remarks',

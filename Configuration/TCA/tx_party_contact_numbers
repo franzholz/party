@@ -11,7 +11,7 @@ $result = [
 		'cruser_id' => 'cruser_id',
 		'default_sortby' => 'ORDER BY local_number',
 		'delete' => 'deleted',
-		'iconfile'          => PATH_BE_PARTY_REL . 'icons/icon_tx_party_contact_numbers.gif',
+		'iconfile' => 'EXT:party/Resources/Public/Icons/icon_tx_party_contact_numbers.gif',
 	),
 	'interface' => array (
 		'showRecordFieldList' => 'parties,media_type,country,area_code,local_number,extension,pin,contact_hours,remarks'

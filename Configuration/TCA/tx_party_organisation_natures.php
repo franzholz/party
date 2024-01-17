@@ -14,7 +14,7 @@ $result = [
         'transOrigDiffSourceField' => 'l18n_diffsource',
         'sortby' => 'sorting',
         'delete' => 'deleted',
-        'iconfile'          => PATH_BE_PARTY_REL . 'icons/icon_tx_party_organisation_natures.gif',
+        'iconfile' => 'EXT:party/Resources/Public/Icons/icon_tx_party_organisation_natures.gif',
     ],
     'columns' => [
         'sys_language_uid' => [

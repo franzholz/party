@@ -13,11 +13,11 @@ $result = [
         'type' => 'type',
         'default_sortby' => 'ORDER BY crdate',
         'delete' => 'deleted',
-        'iconfile'          => PATH_BE_PARTY_REL . 'icons/icon_tx_party_parties.gif',
+        'iconfile' => 'EXT:party/Resources/Public/Icons/icon_tx_party_parties.gif',
         'typeicon_column' => 'type',
         'typeicons' => [
-            '0' => PATH_BE_PARTY_REL . 'icons/icon_tx_party_parties_person.gif',
-            '1' => PATH_BE_PARTY_REL . 'icons/icon_tx_party_parties_organisation.gif',
+            '0' => EXT:party/Resources/Public/Icons/icon_tx_party_parties_person.gif',
+            '1' => EXT:party/Resources/Public/Icons/icon_tx_party_parties_organisation.gif',
         ],
     ],
     'interface' => [
@@ -30,7 +30,18 @@ $result = [
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
-                'items' => [['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.type.I.0', 'value' => '0', 'icon' => PATH_BE_PARTY_REL . 'icons/selicon_tx_party_parties_type_0.gif'], ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.type.I.1', 'value' => '1', 'icon' => PATH_BE_PARTY_REL . 'icons/selicon_tx_party_parties_type_1.gif']],
+                'items' => [
+                    [
+                        'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.type.I.0',
+                        'value' => '0',
+                        'icon' => 'EXT:party/Resources/Public/Icons/selicon_tx_party_parties_type_0.gif'
+                    ], 
+                    [
+                        'label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.type.I.1', 
+                        'value' => '1',
+                        'icon' => 'EXT:party/Resources/Public/Icons/selicon_tx_party_parties_type_1.gif'
+                    ]
+                ],
                 'size' => 1,
                 'maxitems' => 1,
             ],
@@ -41,7 +52,15 @@ $result = [
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
-                'items' => [['label' => '', 'value' => ''], ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.marital_status.I.0', 'value' => 'SINGLE'], ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.marital_status.I.1', 'value' => 'ENGAGED'], ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.marital_status.I.2', 'value' => 'MARRIED'], ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.marital_status.I.3', 'value' => 'SEPARATED'], ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.marital_status.I.4', 'value' => 'DIVORCED'], ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.marital_status.I.5', 'value' => 'WIDOWED']],
+                'items' => [
+                    ['label' => '', 'value' => ''],
+                    ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.marital_status.I.0', 'value' => 'SINGLE'],
+                    ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.marital_status.I.1', 'value' => 'ENGAGED'],
+                    ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.marital_status.I.2', 'value' => 'MARRIED'], 
+                    ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.marital_status.I.3', 'value' => 'SEPARATED'],
+                    ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.marital_status.I.4', 'value' => 'DIVORCED'], 
+                    ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.marital_status.I.5', 'value' => 'WIDOWED']
+                ],
                 'size' => 1,
                 'maxitems' => 1,
             ],
@@ -177,7 +196,19 @@ $result = [
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
-                'items' => [['label' => '', 'value' => ''], ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.hair_colour.I.0', 'value' => 'BROWN'], ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.hair_colour.I.1', 'value' => 'BLACK'], ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.hair_colour.I.2', 'value' => 'BLONDE'], ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.hair_colour.I.3', 'value' => 'RED'], ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.hair_colour.I.4', 'value' => 'GREY'], ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.hair_colour.I.5', 'value' => 'WHITE'], ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.hair_colour.I.6', 'value' => 'GINGER'], ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.hair_colour.I.7', 'value' => 'PURPLE'], ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.hair_colour.I.8', 'value' => 'BLUE'], ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.hair_colour.I.9', 'value' => 'GREEN'], ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.hair_colour.I.10', 'value' => 'PINK']],
+                'items' => [
+                    ['label' => '', 'value' => ''], ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.hair_colour.I.0', 'value' => 'BROWN'], 
+                    ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.hair_colour.I.1', 'value' => 'BLACK'], 
+                    ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.hair_colour.I.2', 'value' => 'BLONDE'], 
+                    ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.hair_colour.I.3', 'value' => 'RED'], 
+                    ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.hair_colour.I.4', 'value' => 'GREY'], 
+                    ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.hair_colour.I.5', 'value' => 'WHITE'], 
+                    ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.hair_colour.I.6', 'value' => 'GINGER'], 
+                    ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.hair_colour.I.7', 'value' => 'PURPLE'], 
+                    ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.hair_colour.I.8', 'value' => 'BLUE'], 
+                    ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.hair_colour.I.9', 'value' => 'GREEN'], 
+                    ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.hair_colour.I.10', 'value' => 'PINK']
+                ],
                 'size' => 1,
                 'maxitems' => 1,
             ],
@@ -188,7 +219,14 @@ $result = [
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
-                'items' => [['label' => '', 'value' => ''], ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.eye_colour.I.0', 'value' => 'AMBER'], ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.eye_colour.I.1', 'value' => 'BLUE'], ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.eye_colour.I.2', 'value' => 'BROWN'], ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.eye_colour.I.3', 'value' => 'GRAY'], ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.eye_colour.I.4', 'value' => 'GREEN'], ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.eye_colour.I.5', 'value' => 'HAZEL']],
+                'items' => [
+                    ['label' => '', 'value' => ''], ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.eye_colour.I.0', 'value' => 'AMBER'], 
+                    ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.eye_colour.I.1', 'value' => 'BLUE'], 
+                    ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.eye_colour.I.2', 'value' => 'BROWN'], 
+                    ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.eye_colour.I.3', 'value' => 'GRAY'], 
+                    ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.eye_colour.I.4', 'value' => 'GREEN'], 
+                    ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.eye_colour.I.5', 'value' => 'HAZEL']
+                ],
                 'size' => 1,
                 'maxitems' => 1,
             ],
@@ -209,7 +247,16 @@ $result = [
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
-                'items' => [['label' => '', 'value' => ''], ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.blood_group.I.0', 'value' => 'O_NEGATIVE'], ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.blood_group.I.1', 'value' => 'O_POSITIVE'], ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.blood_group.I.2', 'value' => 'A_NEGATIVE'], ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.blood_group.I.3', 'value' => 'A_POSITIVE'], ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.blood_group.I.4', 'value' => 'B_NEGATIVE'], ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.blood_group.I.5', 'value' => 'B_POSITIVE'], ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.blood_group.I.6', 'value' => 'AB_NEGATIVE'], ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.blood_group.I.7', 'value' => 'AB_POSITIVE']],
+                'items' => [
+                    ['label' => '', 'value' => ''], 
+                    ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.blood_group.I.0', 'value' => 'O_NEGATIVE'], 
+                    ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.blood_group.I.1', 'value' => 'O_POSITIVE'],
+                    ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.blood_group.I.2', 'value' => 'A_NEGATIVE'], 
+                    ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.blood_group.I.3', 'value' => 'A_POSITIVE'], 
+                    ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.blood_group.I.4', 'value' => 'B_NEGATIVE'], 
+                    ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.blood_group.I.5', 'value' => 'B_POSITIVE'],
+                    ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.blood_group.I.6', 'value' => 'AB_NEGATIVE'],
+                    ['label' => 'LLL:EXT:party/locallang_db.xml:tx_party_parties.blood_group.I.7', 'value' => 'AB_POSITIVE']],
                 'size' => 1,
                 'maxitems' => 1,
             ],

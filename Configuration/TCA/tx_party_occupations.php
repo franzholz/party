@@ -12,7 +12,7 @@ $result = [
         'cruser_id' => 'cruser_id',
         'default_sortby' => 'ORDER BY role',
         'delete' => 'deleted',
-        'iconfile'          => PATH_BE_PARTY_REL . 'icons/icon_tx_party_occupations.gif',
+        'iconfile' => 'EXT:party/Resources/Public/Icons/icon_tx_party_occupations.gif',
     ],
     'interface' => [
         'showRecordFieldList' => 'party,role,rank,employment_type,position_title,cost_centre,reports_to,remarks',

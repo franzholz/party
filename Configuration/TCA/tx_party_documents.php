@@ -11,7 +11,7 @@ $result = [
         'cruser_id' => 'cruser_id',
         'default_sortby' => 'ORDER BY document_id',
         'delete' => 'deleted',
-        'iconfile'          => PATH_BE_PARTY_REL . 'icons/icon_tx_party_documents.gif',
+        'iconfile' => 'EXT:party/Resources/Public/Icons/icon_tx_party_documents.gif',
     ],
     'interface' => [
         'showRecordFieldList' => 'party,document_type,document_id,issued_by,issue_place,privilege,restriction,group_name,name_on_document,remarks',

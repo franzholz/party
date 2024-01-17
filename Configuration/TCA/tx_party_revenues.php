@@ -11,7 +11,7 @@ $result = [
         'cruser_id' => 'cruser_id',
         'default_sortby' => 'ORDER BY amount',
         'delete' => 'deleted',
-        'iconfile'          => PATH_BE_PARTY_REL . 'icons/icon_tx_party_revenues.gif',
+        'iconfile' => 'EXT:party/Resources/Public/Icons/icon_tx_party_revenues.gif',
     ],
     'interface' => [
         'showRecordFieldList' => 'party,currency,amount,amount_precision,after_tax,type,period_from,period_to,source,remarks',

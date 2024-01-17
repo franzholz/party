@@ -12,7 +12,7 @@ $result = [
         'cruser_id' => 'cruser_id',
         'default_sortby' => 'ORDER BY crdate',
         'delete' => 'deleted',
-        'iconfile'          => PATH_BE_PARTY_REL . 'icons/icon_tx_party_electronic_address_identifier_usages.gif',
+        'iconfile' => 'EXT:party/Resources/Public/Icons/icon_tx_party_electronic_address_identifier_usages.gif',
     ],
     'interface' => [
         'showRecordFieldList' => 'party,electronic_address_identifier,electronic_address_identifier_usage,standard',

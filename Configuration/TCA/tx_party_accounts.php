@@ -11,7 +11,7 @@ $result = [
         'cruser_id' => 'cruser_id',
         'default_sortby' => 'ORDER BY account_id',
         'delete' => 'deleted',
-        'iconfile'          => PATH_BE_PARTY_REL . 'icons/icon_tx_party_accounts.gif',
+        'iconfile' => 'EXT:party/Resources/Public/Icons/icon_tx_party_accounts.gif',
     ],
     'interface' => [
         'showRecordFieldList' => 'party,organisation,ownership_type,account_id,issuing_authority,account_type,remarks',

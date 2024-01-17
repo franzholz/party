@@ -11,7 +11,7 @@ $result = [
         'cruser_id' => 'cruser_id',
         'default_sortby' => 'ORDER BY mark',
         'delete' => 'deleted',
-        'iconfile'          => PATH_BE_PARTY_REL . 'icons/icon_tx_party_marks.gif',
+        'iconfile' => 'EXT:party/Resources/Public/Icons/icon_tx_party_marks.gif',
     ],
     'interface' => [
         'showRecordFieldList' => 'party,mark,body_part,body_part_mark_location,remarks',
