@@ -53,7 +53,7 @@ class Address extends BaseModel
 
         // Replace the administrativeArea code through the (language-neutral) code
         if ($administrativeArea) {
-            $rec = tx_div2007_core::getRecord('static_country_zones', $administrativeArea, 'zn_code');
+            $rec = \TYPO3\CMS\Backend\Utility\BackendUtility::getRecord('static_country_zones', $administrativeArea, 'zn_code');
             $administrativeArea = $rec['zn_code'];
         }
 

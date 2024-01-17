@@ -46,7 +46,7 @@ class Visa extends BaseModel
 
         // Get all relevant parts
         $country = reset(
-            tx_div2007_core::getRecord(
+            \TYPO3\CMS\Backend\Utility\BackendUtility::getRecord(
                 'static_countries',
                 $this->get('country'),
                 'cn_short_en'

@@ -38,7 +38,7 @@ class Person extends Party
         $uid = (int) $uid;
 
         // Check that the party is a person
-        $rec = tx_div2007_core::getRecord($this->table, $uid, 'type');
+        $rec = \TYPO3\CMS\Backend\Utility\BackendUtility::getRecord($this->table, $uid, 'type');
         if (!$rec['type'] == 0) {
             return false;
         }

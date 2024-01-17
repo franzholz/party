@@ -51,7 +51,7 @@ class Revenue extends BaseModel
         $type = GeneralUtility::makeInstance('tx_party_models_type');
         $type->load($this->get('type'));
         $currency = reset(
-            tx_div2007_core::getRecord(
+            \TYPO3\CMS\Backend\Utility\BackendUtility::getRecord(
                 'static_currencies',
                 $this->get('currency'),
                 'cu_iso_3'

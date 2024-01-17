@@ -47,7 +47,7 @@ class CountryOfResidence extends BaseModel
         // Get all relevant parts
         $party = tx_party_models_party::getInstance($this->get('party'));
         $country = reset(
-            tx_div2007_core::getRecord('static_countries', $this->get('country'), 'cn_short_en')
+            \TYPO3\CMS\Backend\Utility\BackendUtility::getRecord('static_countries', $this->get('country'), 'cn_short_en')
         );
 
         // Assemble the label

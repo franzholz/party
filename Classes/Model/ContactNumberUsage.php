@@ -45,7 +45,7 @@ class ContactNumberUsage extends BaseModel
         $out = '';
 
         // Get all relevant parts
-        $usage = tx_div2007_core::getRecord('tx_party_usages', $this->get('contact_number_usage'), 'short_title');
+        $usage = \TYPO3\CMS\Backend\Utility\BackendUtility::getRecord('tx_party_usages', $this->get('contact_number_usage'), 'short_title');
         $party = tx_party_models_party::getInstance($this->get('party'));
 
         // Assemble the label

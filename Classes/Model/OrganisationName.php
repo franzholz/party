@@ -36,7 +36,7 @@ class OrganisationName extends Name
         $uid = (int) $uid;
 
         // Check that the name is an organisation name
-        $rec = tx_div2007_core::getRecord($this->table, $uid, 'type');
+        $rec = \TYPO3\CMS\Backend\Utility\BackendUtility::getRecord($this->table, $uid, 'type');
 
         if ($rec['type'] != 1) {
             return false;

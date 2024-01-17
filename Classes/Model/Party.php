@@ -47,7 +47,7 @@ abstract class Party extends BaseModel
 
         if ($uid !== 0) {
             // Get the type of the party
-            $rec = tx_div2007_core::getRecord('tx_party_parties', $uid, 'type');
+            $rec = \TYPO3\CMS\Backend\Utility\BackendUtility::getRecord('tx_party_parties', $uid, 'type');
 
             // Depending on the type, create the proper instance and load the data
             switch ((int) $rec['type']) {

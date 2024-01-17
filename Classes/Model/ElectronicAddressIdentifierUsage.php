@@ -45,7 +45,7 @@ class ElectronicAddressIdentifierUsage extends BaseModel
         $identifierUsage = $this->get('electronic_address_identifier_usage');
 
         if ($identifierUsage) {
-            $usage = tx_div2007_core::getRecord('tx_party_usages', $identifierUsage, 'short_title');
+            $usage = \TYPO3\CMS\Backend\Utility\BackendUtility::getRecord('tx_party_usages', $identifierUsage, 'short_title');
 
             // Assemble the label
             if (is_array($usage)) {

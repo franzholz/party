@@ -47,7 +47,7 @@ class Language extends BaseModel
         // Get all relevant parts
         $party = tx_party_models_party::getInstance($this->get('party'));
         $language = reset(
-            tx_div2007_core::getRecord('static_languages', $this->get('language'), 'lg_name_en')
+            \TYPO3\CMS\Backend\Utility\BackendUtility::getRecord('static_languages', $this->get('language'), 'lg_name_en')
         );
 
         // Assemble the label

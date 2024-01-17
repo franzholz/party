@@ -84,7 +84,7 @@ class Addresses extends BaseModel
         $label = [];
         $out = '';
         $fieldname = 'short_title';
-        $usage = tx_div2007_core::getRecord(
+        $usage = \TYPO3\CMS\Backend\Utility\BackendUtility::getRecord(
             'tx_party_usages',
             $this->get('address_usage'),
             $fieldname

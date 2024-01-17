@@ -47,7 +47,7 @@ class Stockmarket extends tx_party_models_object
 
         // Get all relevant parts
         $listedCode = $this->get('listed_code');
-        $market = reset(tx_div2007_core::getRecord('static_markets', $this->get('market'), 'institution_description'));
+        $market = reset(\TYPO3\CMS\Backend\Utility\BackendUtility::getRecord('static_markets', $this->get('market'), 'institution_description'));
         $party = tx_party_models_party::getInstance($this->get('party'));
 
         // Assemble the label

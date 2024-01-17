@@ -38,7 +38,7 @@ class PersonName extends Name
         $uid = (int) $uid;
 
         // Check that the name is a person name
-        $rec = tx_div2007_core::getRecord($this->table, $uid, 'type');
+        $rec = \TYPO3\CMS\Backend\Utility\BackendUtility::getRecord($this->table, $uid, 'type');
         if (!$rec['type'] == 0) {
             return false;
         }
