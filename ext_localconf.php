@@ -15,7 +15,7 @@ if (!defined('PATH_BE_PARTY')) {
 // Activate Hooks in TCE-Main for the hotlist updates of static_info_tables
 $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_tcemain.php']['processDatamapClass'][] = 'EXT:party/hooks/class.tx_party_staticinfotables.php:tx_party_staticinfotables';
 
-require_once(PATH_BE_PARTY . 'api/class.tx_party_api.php');
+require_once(PATH_BE_PARTY . 'Classes/Api/Api.php');
 
 $tableArray = tx_party_api::getTableArray();
 
