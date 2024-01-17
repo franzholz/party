@@ -1,5 +1,6 @@
 2024-01-17 Franz Holzinger <franz@ttproducts.de>
-	* Remove hotlist feature
+    * Remove hotlist feature
+    * use allowedNewTables TSConfig in the Configuration folder
 
 2024-01-14 Franz Holzinger <franz@ttproducts.de>
 	* Rewritten for TYPO3 11.5 and 12.4
