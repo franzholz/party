@@ -31,7 +31,7 @@ abstract class BaseModel
 
     /**
      * Loads the object from the table defined in $this->table.
-     * Only used for 'simple' models, more complex model overwrite this function.
+     * Only used for 'simple' models, more complex models overwrite this function.
      *
      * @param	integer		$uid: UID of the object
      * @return	void		The data is loaded into the object
@@ -72,4 +72,79 @@ abstract class BaseModel
     {
         return $this->isEmpty() ? false : $this->get($GLOBALS['TCA'][$this->table]['ctrl']['label']);
     }
+    
+
+	/**
+	 * Overwrite some of the internal array values
+	 *
+	 * Overwrite a selection of the internal values by providing new ones
+	 * in form of a data structure of the tx_div2007 hash family.
+	 *
+	 * @param	mixed		hash array, SPL object or2007 hash string ( i.e. "key1 : value1, key2 : valu2, ... ")
+	 * @param	string		possible split charaters in case the first parameter is a hash string
+	 * @return	void
+	 * @see		tx_div2007::toHashArray()
+	 */
+	public function overwriteArray ($hashData, $splitCharacters = ',;:\s') {
+        
+        // TDOO: +++ 
+        // 
+        // md5(serialize())
+		$array = tx_div2007::toHashArray($hashData, $splitCharacters); 
+		foreach((array) $array as $key => $value) {
+			$this->set($key, $value);
+		}
+	}
+
+	static public function toHashArray ($mixed, $splitCharacters = ',;:\s' ) {
+        if(is_string($mixed)) {
+            $array = self::explode($mixed, $splitCharacters); // TODO: Enable empty values by defining a better explode functions.
+            for($i = 0; $i < count($array); $i = $i + 2) {
+                $hashArray[$array[$i]] = $array[$i+1];
+            }
+        } elseif(is_array($mixed)) {
+            $hashArray = $mixed;
+        } elseif(is_object($mixed) && method_exists($mixed, 'getArrayCopy')) {
+            $hashArray = $mixed->getArrayCopy();
+        } else {
+            $hashArray = array();
+        }
+        return $hashArray;
+    }
+    
+	/**
+	 * Explode a list into an array
+	 *
+	 * Explodes a string by any number of the given charactrs.
+	 * By default it uses comma, semicolon, colon and whitespace.
+	 *
+	 * The returned values are trimmed.
+	 *
+	 * @param	string		string to split
+	 * @param	string		regular expression that defines the splitter
+	 * @return	array		with the results
+	 */
+	static public function explode ($value, $splitCharacters = ',;:\s') {
+		$pattern = '/[' . $splitCharacters . ']+/';
+		$results = preg_split($pattern, $value, -1, PREG_SPLIT_NO_EMPTY);
+		$return = array();
+		foreach($results as $result)
+		 $return[] = trim($result);
+		return (array) $return;
+	}
+	
+	/**
+	 * Assign a value to a key
+	 *
+	 * It's just a convenient way to use the offsetSet() function from _div2007_spl_arrayObject.
+	 *
+	 * @param	mixed		key
+	 * @param	mixed		value
+	 * @return	void
+	 * @see		div2007_spl_arrayObject::offsetSet()
+	 */
+	public function set ($key, $value) {
+		$this->offsetSet($key, $value);
+	}
+
 }
