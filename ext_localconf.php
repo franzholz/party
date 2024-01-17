@@ -17,7 +17,7 @@ $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_tcemain.php']['proc
 
 require_once(PATH_BE_PARTY . 'Classes/Api/Api.php');
 
-$tableArray = tx_party_api::getTableArray();
+$tableArray = \JambageCom\Party\Api\Api::getTableArray();
 
 if (isset($tableArray) && is_array($tableArray)) {
     foreach ($tableArray as $tablename) {
