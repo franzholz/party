@@ -62,73 +62,73 @@ class Labels
         // Get the className of the model
         switch ($params['table']) {
             case 'tx_party_addresses':
-                $className = 'tx_party_models_address';
+                $className = \JambageCom\Party\Model\Address::class;
                 break;
 
             case 'tx_party_languages':
-                $className = 'tx_party_models_language';
+                $className = \JambageCom\Party\Model\Language::class;
                 break;
 
             case 'tx_party_nationalities':
-                $className = 'tx_party_models_nationality';
+                $className = \JambageCom\Party\Model\Nationality::class;
                 break;
 
             case 'tx_party_names':
                 if ($params['row']['type'] == 0) {
-                    $className = 'tx_party_models_personname';
+                    $className = \JambageCom\Party\Model\PersonName::class;
                 }
                 if ($params['row']['type'] == 1) {
-                    $className = 'tx_party_models_organisationname';
+                    $className = \JambageCom\Party\Model\OrganisationName::class;
                 }
                 break;
 
             case 'tx_party_parties':
                 if ($params['row']['type'] == 0) {
-                    $className = 'tx_party_models_person';
+                    $className = \JambageCom\Party\Model\Person::class;
                 }
                 if ($params['row']['type'] == 1) {
-                    $className = 'tx_party_models_organisation';
+                    $className = \JambageCom\Party\Model\Organisation::class;
                 }
                 break;
 
             case 'tx_party_visas':
-                $className = 'tx_party_models_visa';
+                $className = \JambageCom\Party\Model\Visa::class;
                 break;
 
             case 'tx_party_events':
-                $className = 'tx_party_models_event';
+                $className = \JambageCom\Party\Model\Event::class;
                 break;
 
             case 'tx_party_memberships':
-                $className = 'tx_party_models_membership';
+                $className = \JambageCom\Party\Model\Membership::class;
                 break;
 
             case 'tx_party_countries_of_residence':
-                $className = 'tx_party_models_countryofresidence';
+                $className = \JambageCom\Party\Model\CountryOfResidence::class;
                 break;
 
             case 'tx_party_occupations':
-                $className = 'tx_party_models_occupation';
+                $className = \JambageCom\Party\Model\Occupation::class;
                 break;
 
             case 'tx_party_address_usages':
-                $className = 'tx_party_models_addresses';
+                $className = \JambageCom\Party\Model\Addresses::class;
                 break;
 
             case 'tx_party_contact_number_usages':
-                $className = 'tx_party_models_contactnumberusage';
+                $className = \JambageCom\Party\Model\ContactNumberUsage::class;
                 break;
 
             case 'tx_party_electronic_address_identifier_usages':
-                $className = 'tx_party_models_electronicaddressidentifierusage';
+                $className = \JambageCom\Party\Model\ElectronicAddressIdentifierUsage::class;
                 break;
 
             case 'tx_party_relationships':
-                $className = 'tx_party_models_relationship';
+                $className = \JambageCom\Party\Model\Relationship::class;
                 break;
 
             default:
-                debug('No model className found for table ' . $params['table'] . '. (hooks/tx_party_labels)'); // keep this
+                debug('No model className found for table ' . $params['table'] . '. (Hook/Labels)'); // keep this
                 break;
         }
 
