@@ -39,7 +39,7 @@ abstract class BaseModel
     public function load($uid): void
     {
         $uid = (int) $uid;
-        $deleteClause = tx_div2007_core::deleteClause($this->table);
+        $deleteClause = \JambageCom\Div2007\Utility\TableUtility::deleteClause($this->table);
         $groupBy = '';
         $orderBy = '';
 
