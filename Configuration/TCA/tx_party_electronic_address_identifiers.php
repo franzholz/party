@@ -27,7 +27,7 @@ $result = [
                 'foreign_label' => 'party',
                 'foreign_selector' => 'party',
                 'maxitems' => 99,
-                'appearance' => $GLOBALS['TYPO3_CONF_VARS']['extconf']['party']['inline_appearance']['combined'],
+                'appearance' => $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['party']['inline_appearance']['combined'],
             ],
         ],
         'type' => [

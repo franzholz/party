@@ -31,7 +31,7 @@ $result = [
                 'foreign_label' => 'party',
                 'foreign_selector' => 'party',
                 'maxitems' => 99,
-                'appearance' => $GLOBALS['TYPO3_CONF_VARS']['extconf']['party']['inline_appearance']['combined'],
+                'appearance' => $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['party']['inline_appearance']['combined'],
             ],
         ],
         'locality' => [
@@ -338,7 +338,7 @@ $result = [
                 'foreign_type' => 1,
                 // Image type = 1 (Address)
                 'maxitems' => 99,
-                'appearance' => $GLOBALS['TYPO3_CONF_VARS']['extconf']['party']['inline_appearance']['default'],
+                'appearance' => $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['party']['inline_appearance']['default'],
             ],
         ],
         'remarks' => [

@@ -37,7 +37,7 @@ $result = [
             // 	'foreign_table' => 'tx_party_addresses',
             // 	'foreign_field' => 'uid',
             // 	'maxitems' => 99,
-            // 	'appearance' => $GLOBALS['TYPO3_CONF_VARS']['extconf']['party']['inline_appearance']['default'],
+            // 	'appearance' => $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['party']['inline_appearance']['default'],
             // )
             'config' => [
                 'type' => 'group',
