@@ -4,6 +4,10 @@ namespace JambageCom\Party\Model;
 
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
+use JambageCom\Party\Model\Pary;
+use JambageCom\Party\Model\RelationshipType;
+
+
 /*
  * This file is part of the TYPO3 CMS project.
  *
@@ -40,13 +44,13 @@ class Relationship extends BaseModel
         parent::load($uid);
 
         if ($this->get('primary_party')) {
-            $this->set('primary_party', tx_party_models_party::getInstance($this->get('primary_party')));
+            $this->set('primary_party', Party::getInstance($this->get('primary_party')));
         }
         if ($this->get('secondary_party')) {
-            $this->set('secondary_party', tx_party_models_party::getInstance($this->get('secondary_party')));
+            $this->set('secondary_party', Party::getInstance($this->get('secondary_party')));
         }
         if ($this->get('relationship_type')) {
-            $relationshipType = GeneralUtility::makeInstance('tx_party_models_relationshiptype');
+            $relationshipType = GeneralUtility::makeInstance(RelationshipType::class);
             $relationshipType->load($this->get('relationship_type'));
             $this->set('relationship_type', $relationshipType);
         }

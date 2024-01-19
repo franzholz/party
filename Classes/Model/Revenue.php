@@ -4,6 +4,9 @@ namespace JambageCom\Party\Model;
 
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
+use JambageCom\Party\Model\Pary;
+use JambageCom\Party\Model\Type;
+
 /*
  * This file is part of the TYPO3 CMS project.
  *
@@ -48,7 +51,7 @@ class Revenue extends BaseModel
         $out = '';
 
         // Get all relevant parts
-        $type = GeneralUtility::makeInstance('tx_party_models_type');
+        $type = GeneralUtility::makeInstance(Type::class);
         $type->load($this->get('type'));
         $currency = reset(
             \TYPO3\CMS\Backend\Utility\BackendUtility::getRecord(
@@ -58,7 +61,7 @@ class Revenue extends BaseModel
             )
         );
         $amount = $this->get('amount');
-        $party = tx_party_models_party::getInstance($this->get('party'));
+        $party = Party::getInstance($this->get('party'));
 
         // Assemble the label
         if (!$type->isEmpty()) {

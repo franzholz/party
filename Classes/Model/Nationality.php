@@ -4,6 +4,10 @@ namespace JambageCom\Party\Model;
 
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
+use JambageCom\Party\Model\Pary;
+use JambageCom\Party\Model\Type;
+
+
 /*
  * This file is part of the TYPO3 CMS project.
  *
@@ -47,9 +51,9 @@ class Nationality extends BaseModel
         $out = '';
 
         // Get all relevant parts
-        $nationalityType = GeneralUtility::makeInstance('tx_party_models_type');
+        $nationalityType = GeneralUtility::makeInstance(Type::class);
         $nationalityType->load($this->get('nationality_type'));
-        $party = tx_party_models_party::getInstance($this->get('party'));
+        $party = Party::getInstance($this->get('party'));
         $country = reset(
             \TYPO3\CMS\Backend\Utility\BackendUtility::getRecord('static_countries', $this->get('country'), 'cn_short_en')
         );

@@ -3,6 +3,8 @@
 namespace JambageCom\Party\Model;
 
 use TYPO3\CMS\Core\Utility\GeneralUtility;
+use JambageCom\Party\Model\OrganisationName;
+use JambageCom\Party\Model\PersonName;
 
 /*
  * This file is part of the TYPO3 CMS project.
@@ -73,11 +75,11 @@ class Names extends BaseModel
             while($row = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($result)) {
                 $item = null;
                 if ($row['type'] == 0) {	// Person Name
-                    $item = GeneralUtility::makeInstance('tx_party_models_personname');
+                    $item = GeneralUtility::makeInstance(PersonName::class);
                     $item->load($row['uid']);
                 }
-                if ($row['type'] == 1) {	// Organisation Name
-                    $item = GeneralUtility::makeInstance('tx_party_models_organisationname');
+                if ($row['type'] == 1) {	// Organisation Name                    
+                    $item = GeneralUtility::makeInstance(OrganisationName::class);
                     $item->load($row['uid']);
                 }
                 if ($item->get('standard') == 1) {

@@ -2,6 +2,8 @@
 
 namespace JambageCom\Party\Model;
 
+use JambageCom\Party\Model\Pary;
+
 /*
  * This file is part of the TYPO3 CMS project.
  *
@@ -25,7 +27,7 @@ namespace JambageCom\Party\Model;
  */
 
 
-class Stockmarket extends tx_party_models_object
+class Stockmarket extends BaseModel
 {
     protected $table = 'tx_party_stock_markets';
 
@@ -48,7 +50,7 @@ class Stockmarket extends tx_party_models_object
         // Get all relevant parts
         $listedCode = $this->get('listed_code');
         $market = reset(\TYPO3\CMS\Backend\Utility\BackendUtility::getRecord('static_markets', $this->get('market'), 'institution_description'));
-        $party = tx_party_models_party::getInstance($this->get('party'));
+        $party = Party::getInstance($this->get('party'));
 
         // Assemble the label
         if ($listedCode) {

@@ -4,6 +4,8 @@ namespace JambageCom\Party\Model;
 
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
+use JambageCom\Party\Model\ElectronicAddressIdentifier;
+
 /*
  * This file is part of the TYPO3 CMS project.
  *
@@ -47,10 +49,10 @@ class ElectronicAddressIdentifiers extends BaseModel
         $query = $GLOBALS['TYPO3_DB']->SELECTquery('electronic_address_identifier,standard', $this->table, $this->table . '.party=' . $partyUid, $groupBy, $orderBy);
         $result = $GLOBALS['TYPO3_DB']->sql_query($query);
         $list = GeneralUtility::makeInstance('tx_div2007_object');
-
+        
         if($result) {
             while($row = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($result)) {
-                $item = GeneralUtility::makeInstance('tx_party_models_electronicaddressidentifier');
+                $item = GeneralUtility::makeInstance(ElectronicAddressIdentifier::class);
                 $item->load($row['electronic_address_identifier']);
                 $item->set('standard', $row['standard']);	// Include the value from the mm-table
                 if ($item->get('standard') == 1) {

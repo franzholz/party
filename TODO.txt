@@ -10,7 +10,8 @@ Prio 1
 * Show only the possible 'name types' and 'image types' according to the party/address type
 * ISO-Standard for West/East/North/South? http://en.wikipedia.org/wiki/ISO_6709 uses positive/negative values
 * Add new 'suggest' type for input fields (see below)
-* When merging 'standard'-records into tx_party_models_party, are uid,pid... overwritten?
+* When merging 'standard'-records into JambageCom\Party\Model\Pary;
+, are uid,pid... overwritten?
 * Is tx_party_usages not language-dependant?
 
 Prio 2

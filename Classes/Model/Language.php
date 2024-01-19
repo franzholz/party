@@ -2,6 +2,8 @@
 
 namespace JambageCom\Party\Model;
 
+use JambageCom\Party\Model\Pary;
+
 /*
  * This file is part of the TYPO3 CMS project.
  *
@@ -45,7 +47,7 @@ class Language extends BaseModel
         $out = '';
 
         // Get all relevant parts
-        $party = tx_party_models_party::getInstance($this->get('party'));
+        $party = Party::getInstance($this->get('party'));
         $language = reset(
             \TYPO3\CMS\Backend\Utility\BackendUtility::getRecord('static_languages', $this->get('language'), 'lg_name_en')
         );

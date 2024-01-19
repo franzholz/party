@@ -2,6 +2,8 @@
 
 namespace JambageCom\Party\Model;
 
+use JambageCom\Party\Model\Pary;
+
 /*
  * This file is part of the TYPO3 CMS project.
  *
@@ -56,7 +58,7 @@ class ElectronicAddressIdentifierUsage extends BaseModel
 
         if ($party) {
             // Get all relevant parts
-            $partyBaseModel = tx_party_models_party::getInstance($party);
+            $partyBaseModel = Party::getInstance($party);
 
             if (is_object($partyBaseModel) && !$partyBaseModel->isEmpty()) {
                 $label[] = '(' . $partyBaseModel->getLabel() . ')';

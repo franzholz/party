@@ -2,6 +2,9 @@
 
 namespace JambageCom\Party\Model;
 
+use JambageCom\Party\Model\Pary;
+
+
 /*
  * This file is part of the TYPO3 CMS project.
  *
@@ -45,7 +48,7 @@ class Disability extends BaseModel
         $out = '';
 
         // Get all relevant parts
-        $party = tx_party_models_party::getInstance($this->get('party'));
+        $party = Party::getInstance($this->get('party'));
 
         // Assemble the label
         $label[0] = $this->get('disability');

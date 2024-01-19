@@ -18,8 +18,9 @@ namespace JambageCom\Party\Model;
 
 /**
  * Abstract base class for the Name model. This class is
- * extended by the class tx_party_models_person_name and
- * tx_party_models_organisation_name.
+ * extended by the classes 
+ * JambageCom\Party\Model\PersonName and
+ * JambageCom\Party\Model\OrganisationName.
  *
  * @author David Brühlmeier <typo3@bruehlmeier.com>
  * @package TYPO3

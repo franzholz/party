@@ -4,6 +4,12 @@ namespace JambageCom\Party\Model;
 
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
+use JambageCom\Party\Model\Addresses;
+use JambageCom\Party\Model\ElectronicAddressIdentifiers;
+use JambageCom\Party\Model\Names;
+use JambageCom\Party\Model\Organisation;
+use JambageCom\Party\Model\Person;
+
 /*
  * This file is part of the TYPO3 CMS project.
  *
@@ -20,8 +26,9 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /**
  * Abstract base class for the Party model. This class is
- * extended by the class tx_party_models_person and
- * tx_party_models_organisation.
+ * extended by the classes 
+ * JambageCom\Party\Model\Person and
+ * JambageCom\Party\Model\Organisation and
  *
  * @author David Brühlmeier <typo3@bruehlmeier.com>
  * @package TYPO3
@@ -38,7 +45,8 @@ abstract class Party extends BaseModel
      * returns an instance of Person or Organisation.
      *
      * @param	integer		$uid: UID of the party
-     * @return	object		Instance of tx_party_models_person or tx_party_models_organisation
+     * @return	object		Instance of JambageCom\Party\Model\Person
+     * or JambageCom\Party\Model\Organisation
      */
     public static function getInstance($uid)
     {
@@ -52,12 +60,12 @@ abstract class Party extends BaseModel
             // Depending on the type, create the proper instance and load the data
             switch ((int) $rec['type']) {
                 case 0:
-                    $className = 'tx_party_models_person';
+                    $className = Person::class;
                     $party = GeneralUtility::makeInstance($className);
                     $party->load($uid);
                     break;
                 case 1:
-                    $className = 'tx_party_models_organisation';
+                    $className = Organisation::class;
                     $party = GeneralUtility::makeInstance($className);
                     $party->load($uid);
                     break;
@@ -105,7 +113,7 @@ abstract class Party extends BaseModel
             // Names
             if ($this->get('names')) {
                 // Load the names
-                $names = GeneralUtility::makeInstance('tx_party_models_names');
+                $names = GeneralUtility::makeInstance(Names::class);
                 $names->loadByParty($uid);
                 $this->set('names', $names);
 
@@ -125,7 +133,7 @@ abstract class Party extends BaseModel
             if ($this->get('addresses')) {
 
                 // Load the addresses
-                $addresses = GeneralUtility::makeInstance('tx_party_models_addresses');
+                $addresses = GeneralUtility::makeInstance(Addresses::class);
                 $addresses->loadByParty($uid);
                 $this->set('addresses', $addresses);
 
@@ -145,7 +153,7 @@ abstract class Party extends BaseModel
             if ($this->get('electronic_address_identifiers')) {
 
                 // Load the electronic address identifiers
-                $electronicAddressIdentifiers = GeneralUtility::makeInstance('tx_party_models_electronicaddressidentifiers');
+                $electronicAddressIdentifiers = GeneralUtility::makeInstance(ElectronicAddressIdentifiers::class);
                 $electronicAddressIdentifiers->loadByParty($uid);
                 $this->set('electronic_address_identifiers', $electronicAddressIdentifiers);
 

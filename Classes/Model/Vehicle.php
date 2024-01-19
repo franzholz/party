@@ -4,6 +4,9 @@ namespace JambageCom\Party\Model;
 
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
+use JambageCom\Party\Model\Pary;
+use JambageCom\Party\Model\VehicleManufacturer;
+
 /*
  * This file is part of the TYPO3 CMS project.
  *
@@ -40,7 +43,7 @@ class Vehicle extends BaseModel
     {
         parent::load($uid);
         if ($this->get('make')) {
-            $make = GeneralUtility::makeInstance('tx_party_models_vehiclemanufacturer');
+            $make = GeneralUtility::makeInstance(VehicleManufacturer::class);
             $make->load($this->get('make'));
             $this->set('make', $make);
         }
@@ -65,7 +68,7 @@ class Vehicle extends BaseModel
         // Get all relevant parts
         $make = $this->get('make');
         $licensePlate = $this->get('license_plate');
-        $party = tx_party_models_party::getInstance($this->get('party'));
+        $party = Party::getInstance($this->get('party'));
 
         // Assemble the label
         if (is_object($make) && !$make->isEmpty()) {

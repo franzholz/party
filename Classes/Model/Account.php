@@ -4,6 +4,8 @@ namespace JambageCom\Party\Model;
 
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
+use JambageCom\Party\Model\Organisation;
+
 /*
  * This file is part of the TYPO3 CMS project.
  *
@@ -47,9 +49,9 @@ class Account extends BaseModel
 
         // Get all relevant parts
         $accountId = $this->get('account_id');
-        $org = GeneralUtility::makeInstance('tx_party_models_organisation');
+        $org = GeneralUtility::makeInstance(Organisation::class);
         $org->load($this->get('organisation'));
-
+        
         // Assemble the label
         $label[0] = $accountId;
         if ($org) {

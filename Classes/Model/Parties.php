@@ -4,6 +4,10 @@ namespace JambageCom\Party\Model;
 
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
+use JambageCom\Party\Model\Organisation;
+use JambageCom\Party\Model\Person;
+
+
 /*
  * This file is part of the TYPO3 CMS project.
  *
@@ -86,7 +90,7 @@ class Parties
         $orderBy = '',
         $limit = ''
     ) {
-        $where .= tx_div2007_core::deleteClause($from);
+        $where .= \JambageCom\Div2007\Utility\TableUtility::deleteClause($from);
         $query =
             $GLOBALS['TYPO3_DB']->SELECTquery(
                 $select,
@@ -101,10 +105,10 @@ class Parties
         if($result) {
             while($row = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($result)) {
                 if ($row['type'] == 0) {
-                    $item = GeneralUtility::makeInstance('tx_party_models_person');
+                    $item = GeneralUtility::makeInstance(Person::class);
                 }
                 if ($row['type'] == 1) {
-                    $item = GeneralUtility::makeInstance('tx_party_models_organisation');
+                    $item = GeneralUtility::makeInstance(Organisation::class);
                 }
                 $item->load($row['uid']);
                 $list->append($item);

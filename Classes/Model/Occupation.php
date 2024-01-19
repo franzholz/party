@@ -4,6 +4,10 @@ namespace JambageCom\Party\Model;
 
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
+use JambageCom\Party\Model\Occupationrole;
+use JambageCom\Party\Model\Pary;
+
+
 /*
  * This file is part of the TYPO3 CMS project.
  *
@@ -47,10 +51,10 @@ class Occupation extends BaseModel
         $out = '';
 
         // Get all relevant parts
-        $role = GeneralUtility::makeInstance('tx_party_models_occupationrole');
+        $role = GeneralUtility::makeInstance(OccupationRole);
         $role->load($this->get('role'));
         $positionTitle = $this->get('position_title');
-        $party = tx_party_models_party::getInstance($this->get('party'));
+        $party = Party::getInstance($this->get('party'));
 
         // Assemble the label
         if (!$role->isEmpty()) {

@@ -2,6 +2,8 @@
 
 namespace JambageCom\Party\Model;
 
+use JambageCom\Party\Model\Pary;
+
 /*
  * This file is part of the TYPO3 CMS project.
  *
@@ -46,7 +48,7 @@ class ContactNumberUsage extends BaseModel
 
         // Get all relevant parts
         $usage = \TYPO3\CMS\Backend\Utility\BackendUtility::getRecord('tx_party_usages', $this->get('contact_number_usage'), 'short_title');
-        $party = tx_party_models_party::getInstance($this->get('party'));
+        $party = Party::getInstance($this->get('party'));
 
         // Assemble the label
         if ($usage) {
