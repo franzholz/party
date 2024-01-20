@@ -33,7 +33,7 @@ class Organisation extends Party
      * @param	integer		$uid: UID of the organisation
      * @return	void		The data is loaded into the object
      */
-    public function load($uid, $fields)
+    public function load($uid) : void
     {
         $uid = (int) $uid;
 
@@ -44,8 +44,6 @@ class Organisation extends Party
             return false;
         }
 
-        // Get all fields belonging to the type 'organisation' and load the object
-        $typeFields = tx_party_div::getAllTypeFields($this->table, $rec);
-        parent::load($uid, $typeFields);
+        parent::load($uid);
     }
 }

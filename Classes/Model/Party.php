@@ -83,10 +83,9 @@ abstract class Party extends BaseModel
      * Loads the party.
      *
      * @param	integer		$uid: UID of the party
-     * @param	string		$fields: Comma-separated list of field names to load (determined by the derived classes)
      * @return	void		The data is loaded into the object
      */
-    public function load($uid, $fields = null): void
+    public function load($uid): void
     {
         $uid = (int) $uid;
         $groupBy = '';
@@ -96,7 +95,7 @@ abstract class Party extends BaseModel
 
             // Load the party from the database and build the object
             $query = $GLOBALS['TYPO3_DB']->SELECTquery(
-                $fields,
+                '*',
                 $this->table,
                 $this->table . '.uid=' . $uid,
                 $groupBy,

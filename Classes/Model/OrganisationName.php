@@ -31,7 +31,7 @@ class OrganisationName extends Name
      * @param	integer		$uid: UID of the organisation name
      * @return	void		The data is loaded into the object
      */
-    public function load($uid)
+    public function load($uid): void
     {
         $uid = (int) $uid;
 
