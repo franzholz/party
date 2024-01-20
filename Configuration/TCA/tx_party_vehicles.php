@@ -29,6 +29,7 @@ $result = [
                 'size' => 1,
                 'minitems' => 0,
                 'maxitems' => 1,
+                'default' => 0,
             ],
         ],
         'make' => [
@@ -43,6 +44,7 @@ $result = [
                 'size' => 1,
                 'minitems' => 0,
                 'maxitems' => 1,
+                'default' => 0,
             ],
         ],
         'type' => [
@@ -57,6 +59,7 @@ $result = [
                 'size' => 1,
                 'minitems' => 0,
                 'maxitems' => 1,
+                'default' => 0,
             ],
         ],
         'model' => [
@@ -67,6 +70,7 @@ $result = [
                 'size' => '30',
                 'max' => '90',
                 'eval' => 'trim',
+                'default' => '',
             ],
         ],
         'license_plate' => [
@@ -77,6 +81,7 @@ $result = [
                 'size' => '30',
                 'max' => '90',
                 'eval' => 'trim',
+                'default' => '',
             ],
         ],
         'manufacture_date' => [
@@ -87,6 +92,7 @@ $result = [
                 'size' => '30',
                 'max' => '90',
                 'eval' => 'trim',
+                'default' => '',
             ],
         ],
         'engine_number' => [
@@ -97,6 +103,7 @@ $result = [
                 'size' => '30',
                 'max' => '90',
                 'eval' => 'trim',
+                'default' => '',
             ],
         ],
         'chassis_number' => [
@@ -107,6 +114,7 @@ $result = [
                 'size' => '30',
                 'max' => '90',
                 'eval' => 'trim',
+                'default' => '',
             ],
         ],
         'body_number' => [
@@ -117,6 +125,7 @@ $result = [
                 'size' => '30',
                 'max' => '90',
                 'eval' => 'trim',
+                'default' => '',
             ],
         ],
         'remarks' => [
@@ -126,6 +135,7 @@ $result = [
                 'type' => 'text',
                 'cols' => '30',
                 'rows' => '5',
+                'default' => '',
             ],
         ],
     ],

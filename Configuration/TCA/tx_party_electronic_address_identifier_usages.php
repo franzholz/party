@@ -27,6 +27,7 @@ $result = [
                 'size' => 1,
                 'minitems' => 0,
                 'maxitems' => 1,
+                'default' => 0,
             ],
         ],
         'electronic_address_identifier' => [
@@ -38,6 +39,7 @@ $result = [
                 'size' => 1,
                 'minitems' => 0,
                 'maxitems' => 1,
+                'default' => 0,
             ],
         ],
         'electronic_address_identifier_usage' => [
@@ -52,6 +54,7 @@ $result = [
                 'size' => 1,
                 'minitems' => 0,
                 'maxitems' => 1,
+                'default' => 0,
             ],
         ],
         'standard' => [

@@ -27,6 +27,7 @@ $result = [
                 'size' => 1,
                 'minitems' => 0,
                 'maxitems' => 1,
+                'default' => 0,
             ],
         ],
         'contact_number' => [
@@ -38,6 +39,7 @@ $result = [
                 'size' => 1,
                 'minitems' => 0,
                 'maxitems' => 1,
+                'default' => 0,
             ],
         ],
         'contact_number_usage' => [
@@ -52,6 +54,7 @@ $result = [
                 'size' => 1,
                 'minitems' => 0,
                 'maxitems' => 1,
+                'default' => 0,
             ],
         ],
         'standard' => [

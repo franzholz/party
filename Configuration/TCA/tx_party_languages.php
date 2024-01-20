@@ -30,6 +30,7 @@ $result = [
                 'size' => 1,
                 'minitems' => 0,
                 'maxitems' => 1,
+                'default' => 0,
             ],
         ],
         'language' => [
@@ -48,6 +49,7 @@ $result = [
                         'type' => 'suggest',
                     ],
                 ],
+                'default' => 0,
             ],
         ],
         'type' => [
@@ -62,6 +64,7 @@ $result = [
                 'size' => 1,
                 'minitems' => 0,
                 'maxitems' => 1,
+                'default' => 0,
             ],
         ],
         'read_skills' => [
@@ -73,6 +76,7 @@ $result = [
                 'items' => [['label' => '', 'value' => 0], ['label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_languages.read_skills.I.0', 'value' => 'YES'], ['label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_languages.read_skills.I.1', 'value' => 'NO'], ['label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_languages.read_skills.I.2', 'value' => 'POOR']],
                 'size' => 1,
                 'maxitems' => 1,
+                'default' => 0,
             ],
         ],
         'write_skills' => [
@@ -84,6 +88,7 @@ $result = [
                 'items' => [['label' => '', 'value' => 0], ['label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_languages.write_skills.I.0', 'value' => 'YES'], ['label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_languages.write_skills.I.1', 'value' => 'NO'], ['label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_languages.write_skills.I.2', 'value' => 'POOR']],
                 'size' => 1,
                 'maxitems' => 1,
+                'default' => 0,
             ],
         ],
         'listen_skills' => [
@@ -95,6 +100,7 @@ $result = [
                 'items' => [['label' => '', 'value' => 0], ['label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_languages.listen_skills.I.0', 'value' => 'YES'], ['label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_languages.listen_skills.I.1', 'value' => 'NO'], ['label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_languages.listen_skills.I.2', 'value' => 'POOR']],
                 'size' => 1,
                 'maxitems' => 1,
+                'default' => 0,
             ],
         ],
         'speak_skills' => [
@@ -106,6 +112,7 @@ $result = [
                 'items' => [['label' => '', 'value' => 0], ['label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_languages.speak_skills.I.0', 'value' => 'YES'], ['label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_languages.speak_skills.I.1', 'value' => 'NO'], ['label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_languages.speak_skills.I.2', 'value' => 'POOR']],
                 'size' => 1,
                 'maxitems' => 1,
+                'default' => 0,
             ],
         ],
         'preference' => [
@@ -122,6 +129,7 @@ $result = [
                 'type' => 'text',
                 'cols' => '30',
                 'rows' => '5',
+                'default' => '',
             ],
         ],
     ],

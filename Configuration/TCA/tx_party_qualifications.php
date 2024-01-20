@@ -29,6 +29,7 @@ $result = [
                 'size' => 1,
                 'minitems' => 0,
                 'maxitems' => 1,
+                'default' => 0,
             ],
         ],
         'qualification_name' => [
@@ -39,6 +40,7 @@ $result = [
                 'size' => '30',
                 'max' => '90',
                 'eval' => 'trim',
+                'default' => '',
             ],
         ],
         'status' => [
@@ -52,6 +54,7 @@ $result = [
                 'size' => 1,
                 'minitems' => 0,
                 'maxitems' => 1,
+                'default' => 0,
             ],
         ],
         'institution' => [
@@ -65,6 +68,7 @@ $result = [
                 'size' => 1,
                 'minitems' => 0,
                 'maxitems' => 1,
+                'default' => 0,
             ],
         ],
         'start_date' => [
@@ -99,6 +103,7 @@ $result = [
                 'size' => '10',
                 'max' => '90',
                 'eval' => 'trim',
+                'default' => '',
             ],
         ],
         'major_subject' => [
@@ -109,6 +114,8 @@ $result = [
                 'size' => '30',
                 'max' => '90',
                 'eval' => 'trim',
+                'default' => '',
+                'default' => '',
             ],
         ],
         'minor_subject' => [
@@ -129,6 +136,7 @@ $result = [
                 'size' => '30',
                 'max' => '90',
                 'eval' => 'trim',
+                'default' => '',
             ],
         ],
         'course_duration' => [
@@ -139,6 +147,7 @@ $result = [
                 'size' => '10',
                 'max' => '90',
                 'eval' => 'trim',
+                'default' => '',
             ],
         ],
         'award' => [
@@ -149,6 +158,7 @@ $result = [
                 'size' => '10',
                 'max' => '90',
                 'eval' => 'trim',
+                'default' => '',
             ],
         ],
         'restriction' => [
@@ -159,6 +169,7 @@ $result = [
                 'size' => '10',
                 'max' => '90',
                 'eval' => 'trim',
+                'default' => '',
             ],
         ],
         'registration' => [
@@ -169,6 +180,7 @@ $result = [
                 'size' => '10',
                 'max' => '90',
                 'eval' => 'trim',
+                'default' => '',
             ],
         ],
         'remarks' => [
@@ -178,6 +190,7 @@ $result = [
                 'type' => 'text',
                 'cols' => '30',
                 'rows' => '5',
+                'default' => '',
             ],
         ],
     ],

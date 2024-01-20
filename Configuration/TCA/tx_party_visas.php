@@ -30,6 +30,7 @@ $result = [
                 'size' => 1,
                 'minitems' => 0,
                 'maxitems' => 1,
+                'default' => 0,
             ],
         ],
         'country' => [
@@ -49,6 +50,7 @@ $result = [
                         'type' => 'suggest',
                     ],
                 ],
+                'default' => 0,
             ],
         ],
         'number' => [
@@ -59,6 +61,7 @@ $result = [
                 'size' => '30',
                 'max' => '90',
                 'eval' => 'trim',
+                'default' => '',
             ],
         ],
         'code' => [
@@ -69,6 +72,7 @@ $result = [
                 'size' => '30',
                 'max' => '90',
                 'eval' => 'trim',
+                'default' => '',
             ],
         ],
         'issue_date' => [
@@ -91,6 +95,7 @@ $result = [
                 'size' => '30',
                 'max' => '90',
                 'eval' => 'trim',
+                'default' => '',
             ],
         ],
         'maximum_stay' => [
@@ -101,6 +106,7 @@ $result = [
                 'size' => '30',
                 'max' => '90',
                 'eval' => 'trim',
+                'default' => '',
             ],
         ],
         'restriction' => [
@@ -111,6 +117,7 @@ $result = [
                 'size' => '30',
                 'max' => '90',
                 'eval' => 'trim',
+                'default' => '',
             ],
         ],
         'privilege' => [
@@ -121,6 +128,7 @@ $result = [
                 'size' => '30',
                 'max' => '90',
                 'eval' => 'trim',
+                'default' => '',
             ],
         ],
         'special_condition' => [
@@ -131,6 +139,7 @@ $result = [
                 'size' => '30',
                 'max' => '90',
                 'eval' => 'trim',
+                'default' => '',
             ],
         ],
         'remarks' => [
@@ -140,6 +149,7 @@ $result = [
                 'type' => 'text',
                 'cols' => '30',
                 'rows' => '5',
+                'default' => '',
             ],
         ],
     ],

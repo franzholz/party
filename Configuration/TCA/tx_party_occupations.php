@@ -30,6 +30,7 @@ $result = [
                 'size' => 1,
                 'minitems' => 0,
                 'maxitems' => 1,
+                'default' => 0,
             ],
         ],
         'role' => [
@@ -44,6 +45,7 @@ $result = [
                 'size' => 1,
                 'minitems' => 0,
                 'maxitems' => 1,
+                'default' => 0,
             ],
         ],
         'rank' => [
@@ -58,6 +60,7 @@ $result = [
                 'size' => 1,
                 'minitems' => 0,
                 'maxitems' => 1,
+                'default' => 0,
             ],
         ],
         'employment_type' => [
@@ -72,6 +75,7 @@ $result = [
                 'size' => 1,
                 'minitems' => 0,
                 'maxitems' => 1,
+                'default' => 0,
             ],
         ],
         'position_title' => [
@@ -82,6 +86,7 @@ $result = [
                 'size' => '30',
                 'max' => '90',
                 'eval' => 'trim',
+                'default' => '',
             ],
         ],
         'cost_centre' => [
@@ -92,6 +97,7 @@ $result = [
                 'size' => '10',
                 'max' => '90',
                 'eval' => 'trim',
+                'default' => '',
             ],
         ],
         'reports_to' => [
@@ -102,6 +108,7 @@ $result = [
                 'size' => '10',
                 'max' => '90',
                 'eval' => 'trim',
+                'default' => '',
             ],
         ],
         'remarks' => [
@@ -111,6 +118,7 @@ $result = [
                 'type' => 'text',
                 'cols' => '30',
                 'rows' => '5',
+                'default' => '',
             ],
         ],
     ],

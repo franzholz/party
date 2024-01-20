@@ -45,6 +45,7 @@ $result = [
                 ],
                 'size' => 1,
                 'maxitems' => 1,
+                'default' => 0,
             ],
         ],
         'marital_status' => [
@@ -64,6 +65,7 @@ $result = [
                 ],
                 'size' => 1,
                 'maxitems' => 1,
+                'default' => '',
             ],
         ],
         'religion' => [
@@ -78,6 +80,7 @@ $result = [
                 'size' => 1,
                 'minitems' => 0,
                 'maxitems' => 1,
+                'default' => 0,
             ],
         ],
         'birth_place' => [
@@ -88,6 +91,7 @@ $result = [
                 'size' => '30',
                 'max' => '90',
                 'eval' => 'trim',
+                'default' => '',
             ],
         ],
         'birth_date_time' => [
@@ -110,6 +114,7 @@ $result = [
                 'size' => '10',
                 'max' => '90',
                 'eval' => 'trim',
+                'default' => '',
             ],
         ],
         'birth_sign' => [
@@ -124,6 +129,7 @@ $result = [
                 'size' => 1,
                 'minitems' => 0,
                 'maxitems' => 1,
+                'default' => 0,
             ],
         ],
         'birth_star' => [
@@ -134,6 +140,7 @@ $result = [
                 'size' => '30',
                 'max' => '90',
                 'eval' => 'trim',
+                'default' => '',
             ],
         ],
         'weight' => [
@@ -212,6 +219,7 @@ $result = [
                 ],
                 'size' => 1,
                 'maxitems' => 1,
+                'default' => '',
             ],
         ],
         'eye_colour' => [
@@ -230,6 +238,7 @@ $result = [
                 ],
                 'size' => 1,
                 'maxitems' => 1,
+                'default' => '',
             ],
         ],
         'skin_colour' => [
@@ -240,6 +249,7 @@ $result = [
                 'size' => '30',
                 'max' => '90',
                 'eval' => 'trim',
+                'default' => '',
             ],
         ],
         'blood_group' => [
@@ -260,6 +270,7 @@ $result = [
                     ['label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_parties.blood_group.I.7', 'value' => 'AB_POSITIVE']],
                 'size' => 1,
                 'maxitems' => 1,
+                'default' => '',
             ],
         ],
         'physical_status' => [
@@ -274,6 +285,7 @@ $result = [
                 'size' => 1,
                 'minitems' => 0,
                 'maxitems' => 1,
+                'default' => 0,
             ],
         ],
         'ethnicity' => [
@@ -288,6 +300,7 @@ $result = [
                 'size' => 1,
                 'minitems' => 0,
                 'maxitems' => 1,
+                'default' => 0,
             ],
         ],
         'gender' => [
@@ -299,6 +312,7 @@ $result = [
                 'items' => [['label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_parties.gender.I.0', 'value' => '0'], ['label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_parties.gender.I.1', 'value' => '1'], ['label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_parties.gender.I.2', 'value' => '2'], ['label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_parties.gender.I.3', 'value' => '9']],
                 'size' => 1,
                 'maxitems' => 1,
+                'default' => 0,
             ],
         ],
         'hobbies' => [
@@ -314,6 +328,7 @@ $result = [
                 'minitems' => 0,
                 'maxitems' => 99,
                 'MM' => 'tx_party_parties_hobbies_mm',
+                'default' => 0,
             ],
         ],
         'habits' => [
@@ -329,6 +344,7 @@ $result = [
                 'minitems' => 0,
                 'maxitems' => 99,
                 'MM' => 'tx_party_parties_habits_mm',
+                'default' => 0,
             ],
         ],
         'organisation_type' => [
@@ -343,6 +359,7 @@ $result = [
                 'size' => 1,
                 'minitems' => 0,
                 'maxitems' => 1,
+                'default' => 0,
             ],
         ],
         'organisation_nature' => [
@@ -357,6 +374,7 @@ $result = [
                 'size' => 1,
                 'minitems' => 0,
                 'maxitems' => 1,
+                'default' => 0,
             ],
         ],
         'company_registration_id' => [
@@ -367,6 +385,7 @@ $result = [
                 'size' => '30',
                 'max' => '90',
                 'eval' => 'trim',
+                'default' => '',
             ],
         ],
         'company_registration_date' => [
@@ -399,6 +418,7 @@ $result = [
                 'type' => 'text',
                 'cols' => '30',
                 'rows' => '5',
+                'default' => '',
             ],
         ],
         'names' => [
@@ -703,6 +723,7 @@ $result = [
                 'minitems' => 0,
                 'maxitems' => 99,
                 'MM' => 'tx_party_parties_allergies_mm',
+                'default' => 0,
             ],
         ],
         'favourites' => [

@@ -27,6 +27,7 @@ $result = [
                 'items' => [['label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_images.type.I.0', 'value' => '0'], ['label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_images.type.I.1', 'value' => '1']],
                 'size' => 1,
                 'maxitems' => 1,
+                'default' => 0,
             ],
         ],
         'party' => [
@@ -38,6 +39,7 @@ $result = [
                 'size' => 1,
                 'minitems' => 0,
                 'maxitems' => 1,
+                'default' => 0,
             ],
         ],
         'address' => [
@@ -49,6 +51,7 @@ $result = [
                 'size' => 1,
                 'minitems' => 0,
                 'maxitems' => 1,
+                'default' => 0,
             ],
         ],
         'image' => [
@@ -64,6 +67,7 @@ $result = [
                 'size' => 1,
                 'minitems' => 0,
                 'maxitems' => 1,
+                'default' => 0,
             ],
         ],
         'title' => [
@@ -74,6 +78,7 @@ $result = [
                 'size' => '30',
                 'max' => '90',
                 'eval' => 'trim',
+                'default' => '',
             ],
         ],
         'description' => [
@@ -84,6 +89,7 @@ $result = [
                 'size' => '30',
                 'max' => '90',
                 'eval' => 'trim',
+                'default' => '',
             ],
         ],
         'remarks' => [
@@ -93,6 +99,7 @@ $result = [
                 'type' => 'text',
                 'cols' => '30',
                 'rows' => '5',
+                'default' => '',
             ],
         ],
     ],

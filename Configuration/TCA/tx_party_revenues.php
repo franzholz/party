@@ -29,6 +29,7 @@ $result = [
                 'size' => 1,
                 'minitems' => 0,
                 'maxitems' => 1,
+                'default' => 0,
             ],
         ],
         'currency' => [
@@ -47,6 +48,7 @@ $result = [
                         'type' => 'suggest',
                     ],
                 ],
+                'default' => 0,
             ],
         ],
         'amount' => [
@@ -90,6 +92,7 @@ $result = [
                 'size' => 1,
                 'minitems' => 0,
                 'maxitems' => 1,
+                'default' => 0,
             ],
         ],
         'period_from' => [
@@ -124,6 +127,7 @@ $result = [
                 'size' => '30',
                 'max' => '90',
                 'eval' => 'trim',
+                'default' => '',
             ],
         ],
         'remarks' => [
@@ -133,6 +137,7 @@ $result = [
                 'type' => 'text',
                 'cols' => '30',
                 'rows' => '5',
+                'default' => '',
             ],
         ],
     ],

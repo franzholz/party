@@ -32,6 +32,7 @@ $result = [
                 'size' => 1,
                 'minitems' => 0,
                 'maxitems' => 1,
+                'default' => 0,
             ],
         ],
         'type' => [
@@ -43,6 +44,7 @@ $result = [
                 'items' => [['label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_names.type.I.0', 'value' => '0'], ['label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_names.type.I.1', 'value' => '1']],
                 'size' => 1,
                 'maxitems' => 1,
+                'default' => 0,
             ],
         ],
         'standard' => [
@@ -64,6 +66,7 @@ $result = [
                 'size' => 1,
                 'minitems' => 0,
                 'maxitems' => 1,
+                'default' => 0,
             ],
         ],
         'first_name' => [
@@ -74,6 +77,7 @@ $result = [
                 'size' => '30',
                 'max' => '90',
                 'eval' => 'trim',
+                'default' => '',
             ],
         ],
         'middle_name' => [
@@ -84,6 +88,7 @@ $result = [
                 'size' => '30',
                 'max' => '90',
                 'eval' => 'trim',
+                'default' => '',
             ],
         ],
         'ancestor_name' => [
@@ -94,6 +99,7 @@ $result = [
                 'size' => '30',
                 'max' => '90',
                 'eval' => 'trim',
+                'default' => '',
             ],
         ],
         'last_name' => [
@@ -104,6 +110,7 @@ $result = [
                 'size' => '30',
                 'max' => '90',
                 'eval' => 'trim',
+                'default' => '',
             ],
         ],
         'other_name' => [
@@ -114,6 +121,7 @@ $result = [
                 'size' => '10',
                 'max' => '90',
                 'eval' => 'trim',
+                'default' => '',
             ],
         ],
         'preceding_title' => [
@@ -124,6 +132,7 @@ $result = [
                 'size' => '30',
                 'max' => '90',
                 'eval' => 'trim',
+                'default' => '',
             ],
         ],
         'alias' => [
@@ -134,6 +143,7 @@ $result = [
                 'size' => '10',
                 'max' => '90',
                 'eval' => 'trim',
+                'default' => '',
             ],
         ],
         'generation_identifier' => [
@@ -144,6 +154,7 @@ $result = [
                 'size' => '10',
                 'max' => '90',
                 'eval' => 'trim',
+                'default' => '',
             ],
         ],
         'place_name' => [
@@ -154,6 +165,7 @@ $result = [
                 'size' => '10',
                 'max' => '90',
                 'eval' => 'trim',
+                'default' => '',
             ],
         ],
         'organisation_name_type' => [
@@ -165,6 +177,7 @@ $result = [
                 'items' => [['label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_names.organisation_name_type.I.0', 'value' => 'NAME_ONLY'], ['label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_names.organisation_name_type.I.1', 'value' => 'ORGANISATION_TYPE'], ['label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_names.organisation_name_type.I.2', 'value' => 'NAME_AND_TYPE']],
                 'size' => 1,
                 'maxitems' => 1,
+                'default' => 0,
             ],
         ],
         'organisation_name' => [
@@ -175,6 +188,7 @@ $result = [
                 'size' => '30',
                 'max' => '90',
                 'eval' => 'trim',
+                'default' => '',
             ],
         ],
         'abbreviation' => [
@@ -185,6 +199,7 @@ $result = [
                 'size' => '30',
                 'max' => '90',
                 'eval' => 'trim',
+                'default' => '',
             ],
         ],
         'remarks' => [
@@ -194,6 +209,7 @@ $result = [
                 'type' => 'text',
                 'cols' => '30',
                 'rows' => '5',
+                'default' => '',
             ],
         ],
     ],

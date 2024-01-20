@@ -44,6 +44,7 @@ $result = [
 				),
 				'size' => 1,
 				'maxitems' => 1,
+				'default' => 0,
 			)
 		),
 		'country' => Array (
@@ -64,6 +65,7 @@ $result = [
 						'type' => 'suggest',
 					)
 				),
+				'default' => 0,
 			)
 		),
 		'area_code' => Array (
@@ -74,6 +76,7 @@ $result = [
 				'size' => '30',
 				'max' => '90',
 				'eval' => 'trim',
+				'default' => '',
 			)
 		),
 		'local_number' => Array (
@@ -84,6 +87,7 @@ $result = [
 				'size' => '30',
 				'max' => '90',
 				'eval' => 'trim',
+				'default' => '',
 			)
 		),
 		'extension' => Array (
@@ -94,6 +98,7 @@ $result = [
 				'size' => '10',
 				'max' => '90',
 				'eval' => 'trim',
+				'default' => '',
 			)
 		),
 		'pin' => Array (
@@ -104,6 +109,7 @@ $result = [
 				'size' => '10',
 				'max' => '90',
 				'eval' => 'trim',
+				'default' => '',
 			)
 		),
 		'contact_hours' => Array (
@@ -113,6 +119,7 @@ $result = [
 				'type' => 'text',
 				'cols' => '30',
 				'rows' => '5',
+				'default' => '',
 			)
 		),
 		'remarks' => Array (
@@ -122,6 +129,7 @@ $result = [
 				'type' => 'text',
 				'cols' => '30',
 				'rows' => '5',
+				'default' => '',
 			)
 		),
 	),

@@ -43,6 +43,7 @@ $result = [
                 'size' => '30',
                 'max' => '90',
                 'eval' => 'trim',
+                'default' => '',
             ],
         ],
         'thoroughfare' => [
@@ -53,6 +54,7 @@ $result = [
                 'size' => '30',
                 'max' => '90',
                 'eval' => 'trim',
+                'default' => '',
             ],
         ],
         'thoroughfare_number' => [
@@ -63,6 +65,7 @@ $result = [
                 'size' => '3',
                 'max' => '90',
                 'eval' => 'trim',
+                'default' => '',
             ],
         ],
         'building_name' => [
@@ -73,6 +76,7 @@ $result = [
                 'size' => '10',
                 'max' => '90',
                 'eval' => 'trim',
+                'default' => '',
             ],
         ],
         'location' => [
@@ -83,6 +87,7 @@ $result = [
                 'size' => '10',
                 'max' => '90',
                 'eval' => 'trim',
+                'default' => '',
             ],
         ],
         'lot' => [
@@ -93,6 +98,7 @@ $result = [
                 'size' => '10',
                 'max' => '90',
                 'eval' => 'trim',
+                'default' => '',
             ],
         ],
         'premise_type' => [
@@ -107,6 +113,7 @@ $result = [
                 'size' => 1,
                 'minitems' => 0,
                 'maxitems' => 1,
+                'default' => 0,
             ],
         ],
         'internal_thoroughfare' => [
@@ -117,6 +124,7 @@ $result = [
                 'size' => '10',
                 'max' => '90',
                 'eval' => 'trim',
+                'default' => '',
             ],
         ],
         'reference_location' => [
@@ -127,6 +135,7 @@ $result = [
                 'size' => '10',
                 'max' => '90',
                 'eval' => 'trim',
+                'default' => '',
             ],
         ],
         'post_code' => [
@@ -137,6 +146,7 @@ $result = [
                 'size' => '30',
                 'max' => '90',
                 'eval' => 'trim',
+                'default' => '',
             ],
         ],
         'rural_delivery' => [
@@ -147,6 +157,7 @@ $result = [
                 'size' => '10',
                 'max' => '90',
                 'eval' => 'trim',
+                'default' => '',
             ],
         ],
         'latitude_degrees_measure' => [
@@ -203,6 +214,7 @@ $result = [
                 'items' => [['label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_addresses.latitude_direction_code.I.0', 'value' => 'N'], ['label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_addresses.latitude_direction_code.I.1', 'value' => 'S']],
                 'size' => 1,
                 'maxitems' => 1,
+                'default' => 0,
             ],
         ],
         'longitude_degrees_measure' => [
@@ -259,6 +271,7 @@ $result = [
                 'items' => [['label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_addresses.longitude_direction_code.I.0', 'value' => 'W'], ['label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_addresses.longitude_direction_code.I.1', 'value' => 'E']],
                 'size' => 1,
                 'maxitems' => 1,
+                'default' => 0,
             ],
         ],
         'postal_delivery_point' => [
@@ -269,6 +282,7 @@ $result = [
                 'size' => '10',
                 'max' => '90',
                 'eval' => 'trim',
+                'default' => '',
             ],
         ],
         'post_office' => [
@@ -279,6 +293,7 @@ $result = [
                 'size' => '10',
                 'max' => '90',
                 'eval' => 'trim',
+                'default' => '',
             ],
         ],
         'post_town' => [
@@ -289,6 +304,7 @@ $result = [
                 'size' => '10',
                 'max' => '90',
                 'eval' => 'trim',
+                'default' => '',
             ],
         ],
         'administrative_area' => [
@@ -308,6 +324,7 @@ $result = [
                         'type' => 'suggest',
                     ],
                 ],
+                'default' => 0,
             ],
         ],
         'country' => [
@@ -327,6 +344,7 @@ $result = [
                         'type' => 'suggest',
                     ],
                 ],
+                'default' => 0,
             ],
         ],
         'images' => [
@@ -350,6 +368,7 @@ $result = [
                 'type' => 'text',
                 'cols' => '30',
                 'rows' => '5',
+                'default' => '',
             ],
         ],
     ],

@@ -42,6 +42,7 @@ $result = [
                 'size' => 1,
                 'minitems' => 0,
                 'maxitems' => 1,
+                'default' => 0,
             ],
         ],
         'ownership_type' => [
@@ -56,6 +57,7 @@ $result = [
                 'size' => 1,
                 'minitems' => 0,
                 'maxitems' => 1,
+                'default' => 0,
             ],
         ],
         'account_id' => [
@@ -66,6 +68,7 @@ $result = [
                 'size' => '30',
                 'max' => '30',
                 'eval' => 'trim',
+                'default' => '',
             ],
         ],
         'issuing_authority' => [
@@ -76,6 +79,7 @@ $result = [
                 'size' => '30',
                 'max' => '30',
                 'eval' => 'trim',
+                'default' => '',
             ],
         ],
         'account_type' => [
@@ -90,6 +94,7 @@ $result = [
                 'size' => 1,
                 'minitems' => 0,
                 'maxitems' => 1,
+                'default' => 0,
             ],
         ],
         'remarks' => [
@@ -99,6 +104,7 @@ $result = [
                 'type' => 'text',
                 'cols' => '30',
                 'rows' => '5',
+                'default' => '',
             ],
         ],
     ],

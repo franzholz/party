@@ -25,6 +25,7 @@ $result = [
                 'size' => '30',
                 'max' => '30',
                 'eval' => 'trim',
+                'default' => '',
             ],
         ],
         'title' => [
@@ -35,6 +36,7 @@ $result = [
                 'size' => '48',
                 'max' => '60',
                 'eval' => 'trim',
+                'default' => '',
             ],
         ],
         'long_title' => [
@@ -45,6 +47,7 @@ $result = [
                 'size' => '48',
                 'max' => '90',
                 'eval' => 'trim',
+                'default' => '',
             ],
         ],
     ],
