@@ -43,9 +43,7 @@ class PersonName extends Name
             return false;
         }
 
-        // Get all fields belonging to the type 'person name' and load the object
-        $typeFields = tx_party_div::getAllTypeFields($this->table, $rec);
-        parent::load($uid, $typeFields);
+        parent::load($uid);
     }
 
     /**

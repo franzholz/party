@@ -29,7 +29,7 @@ use JambageCom\Party\Model\Person;
  * @subpackage tx_party
  */
 
-class Parties
+class Parties extends BaseModel
 {
     /**
      * Loads all parties which belong to a certain PID.
@@ -80,7 +80,7 @@ class Parties
      * @param	string		$groupBy: The GROUP BY clause (optional)
      * @param	string		$orderBy: The ORDER BY clause (optional)
      * @param	string		$limit: The LIMIT clause (optional)
-     * @return	object		A tx_div2007_object instance with the selected persons/organisations
+     * @return	ArrayObject 	object with the selected persons/organisations
      */
     private function selectFromDatabase(
         $select,
@@ -101,7 +101,7 @@ class Parties
                 $limit
             );
         $result = $GLOBALS['TYPO3_DB']->sql_query($query);
-        $list = GeneralUtility::makeInstance('tx_div2007_object');
+        $list = [];
         if($result) {
             while($row = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($result)) {
                 if ($row['type'] == 0) {
@@ -111,10 +111,10 @@ class Parties
                     $item = GeneralUtility::makeInstance(Organisation::class);
                 }
                 $item->load($row['uid']);
-                $list->append($item);
+                $list[$row['uid']] = $item;
             }
             $GLOBALS['TYPO3_DB']->sql_free_result($result);
         }
-        return $list;
+        return new ArrayObject($list);
     }
 }

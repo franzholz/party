@@ -1,3 +1,6 @@
+2024-01-20 Franz Holzinger <franz@ttproducts.de>
+    * Remove dependancy on div2007
+
 2024-01-17 Franz Holzinger <franz@ttproducts.de>
     * Remove hotlist feature
     * use allowedNewTables TSConfig in the Configuration folder

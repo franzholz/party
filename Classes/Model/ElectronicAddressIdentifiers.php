@@ -48,8 +48,8 @@ class ElectronicAddressIdentifiers extends BaseModel
         // Load all addresses from the database and build the object
         $query = $GLOBALS['TYPO3_DB']->SELECTquery('electronic_address_identifier,standard', $this->table, $this->table . '.party=' . $partyUid, $groupBy, $orderBy);
         $result = $GLOBALS['TYPO3_DB']->sql_query($query);
-        $list = GeneralUtility::makeInstance('tx_div2007_object');
-        
+        $list = [];
+
         if($result) {
             while($row = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($result)) {
                 $item = GeneralUtility::makeInstance(ElectronicAddressIdentifier::class);
@@ -58,11 +58,10 @@ class ElectronicAddressIdentifiers extends BaseModel
                 if ($item->get('standard') == 1) {
                     $this->set('standard', $item);
                 }
-                $list->append($item);
+                $list[$row['uid']] = $item;
             }
             $GLOBALS['TYPO3_DB']->sql_free_result($result);
         }
-        $this->set('list', $list);
+        $this->set('list', new ArrayObject($list));
     }
-
 }

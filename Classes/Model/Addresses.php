@@ -55,8 +55,8 @@ class Addresses extends BaseModel
                 $orderBy
             );
         $result = $GLOBALS['TYPO3_DB']->sql_query($query);
-        $list = GeneralUtility::makeInstance('tx_div2007_object');
-        
+        $list = []
+
         if($result) {
             while($row = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($result)) {
                 $item = GeneralUtility::makeInstance(Address::class);
@@ -65,11 +65,11 @@ class Addresses extends BaseModel
                 if ($item->get('standard') == 1) {
                     $this->set('standard', $item);
                 }
-                $list->append($item);
+                $list[$row['uid']] = $item;
             }
             $GLOBALS['TYPO3_DB']->sql_free_result($result);
         }
-        $this->set('list', $list);
+        $this->set('list', new ArrayObject($list));
     }
 
 
