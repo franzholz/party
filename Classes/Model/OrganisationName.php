@@ -39,7 +39,7 @@ class OrganisationName extends Name
         $rec = \TYPO3\CMS\Backend\Utility\BackendUtility::getRecord($this->table, $uid, 'type');
 
         if ($rec['type'] != 1) {
-            return false;
+            return;
         }
 
         parent::load($uid);

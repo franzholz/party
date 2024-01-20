@@ -40,7 +40,7 @@ class PersonName extends Name
         // Check that the name is a person name
         $rec = \TYPO3\CMS\Backend\Utility\BackendUtility::getRecord($this->table, $uid, 'type');
         if (!$rec['type'] == 0) {
-            return false;
+            return;
         }
 
         parent::load($uid);
