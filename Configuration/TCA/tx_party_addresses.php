@@ -32,6 +32,7 @@ $result = [
                 'foreign_selector' => 'party',
                 'maxitems' => 99,
                 'appearance' => $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['party']['inline_appearance']['combined'],
+                'default' => 0,
             ],
         ],
         'locality' => [
@@ -339,6 +340,7 @@ $result = [
                 // Image type = 1 (Address)
                 'maxitems' => 99,
                 'appearance' => $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['party']['inline_appearance']['default'],
+                'default' => 0,
             ],
         ],
         'remarks' => [

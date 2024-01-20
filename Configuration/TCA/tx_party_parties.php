@@ -415,6 +415,7 @@ $result = [
                 ],
                 'maxitems' => 99,
                 'appearance' => $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['party']['inline_appearance']['default'],
+                'default' => '',
             ],
         ],
         'addresses' => [
@@ -428,6 +429,7 @@ $result = [
                 'foreign_selector' => 'address',
                 'maxitems' => 99,
                 'appearance' => $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['party']['inline_appearance']['combined'],
+                'default' => '',
             ],
         ],
         'accounts' => [
@@ -439,6 +441,7 @@ $result = [
                 'foreign_field' => 'party',
                 'maxitems' => 99,
                 'appearance' => $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['party']['inline_appearance']['default'],
+                'default' => '',
             ],
         ],
         'contact_numbers' => [
@@ -452,6 +455,7 @@ $result = [
                 'foreign_selector' => 'contact_number',
                 'maxitems' => 99,
                 'appearance' => $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['party']['inline_appearance']['combined'],
+                'default' => '',
             ],
         ],
         'countries_of_residence' => [
@@ -463,6 +467,7 @@ $result = [
                 'foreign_field' => 'party',
                 'maxitems' => 99,
                 'appearance' => $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['party']['inline_appearance']['default'],
+                'default' => '',
             ],
         ],
         'documents' => [
@@ -474,6 +479,7 @@ $result = [
                 'foreign_field' => 'party',
                 'maxitems' => 99,
                 'appearance' => $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['party']['inline_appearance']['default'],
+                'default' => '',
             ],
         ],
         'electronic_address_identifiers' => [
@@ -487,6 +493,7 @@ $result = [
                 'foreign_selector' => 'electronic_address_identifier',
                 'maxitems' => 99,
                 'appearance' => $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['party']['inline_appearance']['combined'],
+                'default' => '',
             ],
         ],
         'images' => [
@@ -500,6 +507,7 @@ $result = [
                 // Any party type => Image type = 0 (Party)
                 'maxitems' => 99,
                 'appearance' => $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['party']['inline_appearance']['default'],
+                'default' => '',
             ],
         ],
         'nationalities' => [
@@ -511,6 +519,7 @@ $result = [
                 'foreign_field' => 'party',
                 'maxitems' => 99,
                 'appearance' => $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['party']['inline_appearance']['default'],
+                'default' => '',
             ],
         ],
         'relationships' => [
@@ -522,6 +531,7 @@ $result = [
                 'foreign_field' => 'primary_party',
                 'maxitems' => 99,
                 'appearance' => $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['party']['inline_appearance']['default'],
+                'default' => '',
             ],
         ],
         'revenues' => [
@@ -533,6 +543,7 @@ $result = [
                 'foreign_field' => 'party',
                 'maxitems' => 99,
                 'appearance' => $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['party']['inline_appearance']['default'],
+                'default' => '',
             ],
         ],
         'vehicles' => [
@@ -544,6 +555,7 @@ $result = [
                 'foreign_field' => 'party',
                 'maxitems' => 99,
                 'appearance' => $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['party']['inline_appearance']['default'],
+                'default' => '',
             ],
         ],
         'contacts' => [
@@ -555,6 +567,7 @@ $result = [
                 'foreign_field' => 'party',
                 'maxitems' => 99,
                 'appearance' => $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['party']['inline_appearance']['default'],
+                'default' => '',
             ],
         ],
         'visas' => [
@@ -566,6 +579,7 @@ $result = [
                 'foreign_field' => 'party',
                 'maxitems' => 99,
                 'appearance' => $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['party']['inline_appearance']['default'],
+                'default' => '',
             ],
         ],
         'disabilities' => [
@@ -577,6 +591,7 @@ $result = [
                 'foreign_field' => 'party',
                 'maxitems' => 99,
                 'appearance' => $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['party']['inline_appearance']['default'],
+                'default' => '',
             ],
         ],
         'languages' => [
@@ -588,6 +603,7 @@ $result = [
                 'foreign_field' => 'party',
                 'maxitems' => 99,
                 'appearance' => $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['party']['inline_appearance']['default'],
+                'default' => '',
             ],
         ],
         'marks' => [
@@ -599,6 +615,7 @@ $result = [
                 'foreign_field' => 'party',
                 'maxitems' => 99,
                 'appearance' => $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['party']['inline_appearance']['default'],
+                'default' => '',
             ],
         ],
         'occupations' => [
@@ -610,6 +627,7 @@ $result = [
                 'foreign_field' => 'party',
                 'maxitems' => 99,
                 'appearance' => $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['party']['inline_appearance']['default'],
+                'default' => '',
             ],
         ],
         'qualifications' => [
@@ -621,6 +639,7 @@ $result = [
                 'foreign_field' => 'party',
                 'maxitems' => 99,
                 'appearance' => $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['party']['inline_appearance']['default'],
+                'default' => '',
             ],
         ],
         'stock_markets' => [
@@ -632,6 +651,7 @@ $result = [
                 'foreign_field' => 'party',
                 'maxitems' => 99,
                 'appearance' => $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['party']['inline_appearance']['default'],
+                'default' => '',
             ],
         ],
         'events' => [
@@ -643,6 +663,7 @@ $result = [
                 'foreign_field' => 'party',
                 'maxitems' => 99,
                 'appearance' => $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['party']['inline_appearance']['default'],
+                'default' => '',
             ],
         ],
         'identifiers' => [
@@ -654,6 +675,7 @@ $result = [
                 'foreign_field' => 'party',
                 'maxitems' => 99,
                 'appearance' => $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['party']['inline_appearance']['default'],
+                'default' => '',
             ],
         ],
         'memberships' => [
@@ -665,6 +687,7 @@ $result = [
                 'foreign_field' => 'party',
                 'maxitems' => 99,
                 'appearance' => $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['party']['inline_appearance']['default'],
+                'default' => '',
             ],
         ],
         'allergies' => [
@@ -691,6 +714,7 @@ $result = [
                 'foreign_field' => 'party',
                 'maxitems' => 99,
                 'appearance' => $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['party']['inline_appearance']['default'],
+                'default' => '',
             ],
         ],
         'preferences' => [
@@ -702,6 +726,7 @@ $result = [
                 'foreign_field' => 'party',
                 'maxitems' => 99,
                 'appearance' => $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['party']['inline_appearance']['default'],
+                'default' => '',
             ],
         ],
     ],

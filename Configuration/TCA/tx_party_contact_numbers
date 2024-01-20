@@ -28,6 +28,7 @@ $result = [
 				'foreign_selector' => 'party',
 				'maxitems' => 99,
 				'appearance' => $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['party']['inline_appearance']['combined'],
+				'default' => '',
 			)
 		),
 		'media_type' => Array (
