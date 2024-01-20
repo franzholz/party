@@ -110,4 +110,33 @@ abstract class BaseModel
 		$result = $this->storage[$key];
 		return $result;
 	}
+	
+	/**
+	 * Find out if this object has something in his data array
+	 *
+	 * @return	boolean		is it empty?
+	 */
+	public function isEmpty () {
+		$result = ($this->count() == 0);
+		return $result;
+	}
+
+	/**
+	 * Find out if this object has something in his data array
+	 *
+	 * @return	boolean		is something in it?
+	 */
+	public function isNotEmpty () {
+		$result = ($this->count() > 0);
+		return $result;
+	}
+
+	/**
+	 * Counts the elements in the array.
+	 *
+	 * @return	integer		number of elements
+	 */
+	public function count () {
+		return count($this->storage);
+	}
 }
