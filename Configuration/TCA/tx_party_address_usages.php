@@ -55,7 +55,7 @@ $result = [
                 'renderType' => 'selectSingle',
                 'items' => [['label' => '', 'value' => 0]],
                 'foreign_table' => 'tx_party_usages',
-                'foreign_table_where' => 'AND tx_party_usages.pid=###STORAGE_PID### ORDER BY tx_party_usages.title',
+                'foreign_table_where' => 'AND tx_party_usages.pid=###PAGE_TSCONFIG_ID### ORDER BY tx_party_usages.title',
                 'size' => 1,
                 'minitems' => 0,
                 'maxitems' => 1,
