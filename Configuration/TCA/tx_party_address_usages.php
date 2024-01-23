@@ -23,6 +23,7 @@ $result = [
             'label' => 'LLL:EXT:party/Resources/Private/Language/locallang_db.xlf:tx_party_address_usages.party',
             'config' => [
                 'type' => 'group',
+                'internal_type' => 'db',
                 'allowed' => 'tx_party_parties',
                 'size' => 1,
                 'minitems' => 0,
@@ -42,6 +43,7 @@ $result = [
             // )
             'config' => [
                 'type' => 'group',
+                'internal_type' => 'db',
                 'allowed' => 'tx_party_addresses',
                 'size' => 1,
                 'minitems' => 0,
