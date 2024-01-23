@@ -30,6 +30,7 @@ $result = [
                 'foreign_field' => 'address',
                 'foreign_label' => 'party',
                 'foreign_selector' => 'party',
+                'foreign_unique' => 'party',
                 'maxitems' => 99,
                 'appearance' => $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['party']['inline_appearance']['combined'],
                 'default' => 0,
